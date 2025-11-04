@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>gestion-red</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="comandos-y-cmdlets-de-gestión-de-red">Comandos y cmdlets de
+gestión de red</h1>
+<hr />
+<h2 id="temario">Temario</h2>
+<ul>
+<li><a href="#comandos-y-cmdlets-de-gestión-de-red">Comandos y cmdlets
+de gestión de red</a>
+<ul>
+<li><a href="#temario">Temario</a></li>
+<li><a href="#cmd--comandos-de-red">CMD — Comandos de Red</a></li>
+<li><a href="#powershell--cmdlets-de-red">PowerShell — Cmdlets de
+Red</a></li>
+</ul></li>
+</ul>
+<p><a href="./../readme.md#3-windows">Regresar a la guía
+principal</a></p>
+<hr />
+<h2 id="cmd-comandos-de-red">CMD — Comandos de Red</h2>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ipconfig</code></td>
+<td>Muestra la configuración IP de los adaptadores de red.</td>
+</tr>
+<tr>
+<td><code>ipconfig /all</code></td>
+<td>Muestra información completa, incluyendo direcciones MAC y DNS.</td>
+</tr>
+<tr>
+<td><code>ipconfig /release</code></td>
+<td>Libera la dirección IP obtenida por DHCP.</td>
+</tr>
+<tr>
+<td><code>ipconfig /renew</code></td>
+<td>Solicita una nueva IP al servidor DHCP.</td>
+</tr>
+<tr>
+<td><code>ping &lt;host&gt;</code></td>
+<td>Comprueba la conectividad con otro host o dirección IP.</td>
+</tr>
+<tr>
+<td><code>tracert &lt;host&gt;</code></td>
+<td>Rastrea la ruta que siguen los paquetes hasta un destino.</td>
+</tr>
+<tr>
+<td><code>nslookup &lt;dominio&gt;</code></td>
+<td>Consulta los registros DNS de un dominio.</td>
+</tr>
+<tr>
+<td><code>netstat</code></td>
+<td>Muestra las conexiones de red activas y puertos abiertos.</td>
+</tr>
+<tr>
+<td><code>netstat -ano</code></td>
+<td>Muestra los puertos y procesos asociados (PID).</td>
+</tr>
+<tr>
+<td><code>netsh</code></td>
+<td>Permite configurar parámetros de red (IP, firewall, Wi-Fi,
+etc.).</td>
+</tr>
+<tr>
+<td><code>netsh wlan show profiles</code></td>
+<td>Muestra los perfiles de redes Wi-Fi guardadas.</td>
+</tr>
+<tr>
+<td><code>netsh wlan show profile &lt;nombre&gt; key=clear</code></td>
+<td>Muestra la contraseña guardada de una red Wi-Fi.</td>
+</tr>
+<tr>
+<td><code>route print</code></td>
+<td>Muestra la tabla de enrutamiento de Windows.</td>
+</tr>
+<tr>
+<td><code>arp -a</code></td>
+<td>Muestra la tabla ARP (asociación IP–MAC).</td>
+</tr>
+<tr>
+<td><code>getmac</code></td>
+<td>Muestra las direcciones MAC de los adaptadores de red.</td>
+</tr>
+<tr>
+<td><code>net use</code></td>
+<td>Conecta o muestra conexiones a recursos compartidos.</td>
+</tr>
+<tr>
+<td><code>net share</code></td>
+<td>Muestra o administra carpetas compartidas.</td>
+</tr>
+<tr>
+<td><code>net view</code></td>
+<td>Muestra los equipos disponibles en la red local.</td>
+</tr>
+<tr>
+<td><code>telnet &lt;host&gt; &lt;puerto&gt;</code></td>
+<td>Comprueba si un puerto remoto está abierto (si Telnet está
+habilitado).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="powershell-cmdlets-de-red">PowerShell — Cmdlets de Red</h2>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr>
+<th>Cmdlet</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Get-NetIPAddress</code></td>
+<td>Muestra las direcciones IP configuradas.</td>
+</tr>
+<tr>
+<td><code>New-NetIPAddress</code></td>
+<td>Asigna una nueva dirección IP manualmente.</td>
+</tr>
+<tr>
+<td><code>Remove-NetIPAddress</code></td>
+<td>Elimina una dirección IP configurada.</td>
+</tr>
+<tr>
+<td><code>Get-NetAdapter</code></td>
+<td>Muestra los adaptadores de red y su estado.</td>
+</tr>
+<tr>
+<td><code>Enable-NetAdapter</code> /
+<code>Disable-NetAdapter</code></td>
+<td>Activa o desactiva un adaptador de red.</td>
+</tr>
+<tr>
+<td><code>Get-NetIPConfiguration</code></td>
+<td>Muestra información IP y DNS más detallada.</td>
+</tr>
+<tr>
+<td><code>Get-NetRoute</code></td>
+<td>Muestra la tabla de rutas IP.</td>
+</tr>
+<tr>
+<td><code>New-NetRoute</code></td>
+<td>Crea una nueva ruta estática.</td>
+</tr>
+<tr>
+<td><code>Get-DnsClientServerAddress</code></td>
+<td>Muestra las direcciones de servidores DNS configuradas.</td>
+</tr>
+<tr>
+<td><code>Set-DnsClientServerAddress</code></td>
+<td>Cambia los servidores DNS de un adaptador.</td>
+</tr>
+<tr>
+<td><code>Test-Connection &lt;host&gt;</code></td>
+<td>Equivalente avanzado de <code>ping</code>, con más opciones.</td>
+</tr>
+<tr>
+<td><code>Resolve-DnsName &lt;dominio&gt;</code></td>
+<td>Consulta DNS (reemplazo de <code>nslookup</code>).</td>
+</tr>
+<tr>
+<td><code>Get-NetTCPConnection</code></td>
+<td>Muestra las conexiones TCP activas (similar a
+<code>netstat</code>).</td>
+</tr>
+<tr>
+<td><code>Get-NetNeighbor</code></td>
+<td>Muestra la tabla ARP (similar a <code>arp -a</code>).</td>
+</tr>
+<tr>
+<td><code>Get-NetFirewallRule</code></td>
+<td>Lista las reglas activas del Firewall de Windows.</td>
+</tr>
+<tr>
+<td><code>New-NetFirewallRule</code></td>
+<td>Crea una nueva regla de firewall.</td>
+</tr>
+<tr>
+<td><code>Set-NetFirewallRule</code></td>
+<td>Modifica una regla existente del firewall.</td>
+</tr>
+<tr>
+<td><code>Remove-NetFirewallRule</code></td>
+<td>Elimina una regla del firewall.</td>
+</tr>
+<tr>
+<td><code>Get-NetAdapterStatistics</code></td>
+<td>Muestra estadísticas de tráfico de red por adaptador.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><a href="./../readme.md#3-windows">Regresar a la guía
+principal</a></p>
+<blockquote>
+<p><strong>Autor:</strong> Fravelz</p>
+</blockquote>
+</body>
+</html>

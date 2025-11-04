@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>threading</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1 id="threading-en-python">Threading en Python</h1>
+<hr />
+<h2 id="temario">Temario</h2>
+<ul>
+<li><a href="#threading-en-python">Threading en Python</a>
+<ul>
+<li><a href="#temario">Temario</a></li>
+<li><a href="#1-qué-es-threading">1) ¿Qué es threading?</a></li>
+<li><a href="#2-conceptos-clave">2) Conceptos clave</a></li>
+<li><a href="#3-crear-y-usar-hilos--ejemplos-básicos">3) Crear y usar
+hilos — ejemplos básicos</a>
+<ul>
+<li><a href="#a-usando-thread-con-target">a) Usando Thread con
+target</a></li>
+<li><a href="#b-subclassing-lhread">b) Subclassing lhread</a></li>
+</ul></li>
+<li><a href="#4-daemon-threads-y-uso-correcto">4) Daemon threads y uso
+correcto</a></li>
+<li><a href="#5-sincronización--primitivas-importantes">5)
+Sincronización — primitivas importantes</a>
+<ul>
+<li><a href="#lock-mutual-exclusion">Lock (mutual exclusion)</a></li>
+<li><a
+href="#rlock-reentrant-lock--permite-re-entradas-desde-mismo-hilo">RLock
+(reentrant lock) — permite re-entradas desde mismo hilo</a></li>
+<li><a href="#event--señalización-simple-flag">Event — señalización
+simple (flag)</a></li>
+<li><a href="#condition--esperas-con-notificación">Condition — esperas
+con notificación</a></li>
+<li><a href="#semaphore--contador">Semaphore — contador</a></li>
+<li><a href="#barrier--sincronizar-n-hilos-en-un-punto">Barrier —
+sincronizar N hilos en un punto</a></li>
+</ul></li>
+<li><a href="#6-comunicación-segura-entre-hilos-queuequeue">6)
+Comunicación segura entre hilos: queue.Queue</a></li>
+<li><a href="#7-manejo-de-excepciones-en-hilos">7) Manejo de excepciones
+en hilos</a></li>
+<li><a href="#8-threadpoolexecutor-alta-abstracción">8)
+ThreadPoolExecutor (alta abstracción)</a></li>
+<li><a href="#9-gil--cuándo-usar-threading-vs-multiprocessing">9) GIL —
+cuándo usar threading vs multiprocessing</a></li>
+<li><a href="#10-operaciones-atómicas-y-seguridad">10) Operaciones
+atómicas y seguridad</a></li>
+<li><a href="#11-cancelación-y-parada-de-hilos">11) Cancelación y parada
+de hilos</a></li>
+<li><a href="#12-thread-local-storage">12) Thread-local storage</a></li>
+<li><a href="#13-debugging-y-utilidades">13) Debugging y
+utilidades</a></li>
+<li><a href="#14-buenas-prácticas">14) Buenas prácticas</a></li>
+<li><a href="#15-ejemplos-prácticos-útiles">15) Ejemplos prácticos
+(útiles)</a>
+<ul>
+<li><a href="#a-producer-consumer-con-queue-resumen">a)
+Producer-consumer con Queue (resumen)</a></li>
+<li><a href="#b-pool-de-threads-simple-con-thread-y-queue">b) Pool de
+threads simple con Thread y Queue</a></li>
+<li><a href="#c-uso-real-con-requests-io-bound">c) Uso real con requests
+(I/O-bound)</a></li>
+</ul></li>
+<li><a href="#16-limitaciones-y-alternativas">16) Limitaciones y
+alternativas</a></li>
+<li><a href="#17-resumen">17) Resumen</a></li>
+</ul></li>
+</ul>
+<p><a href="./../../readme.md#5-python">Regresar a la Guía
+Principal</a></p>
+<hr />
+<h2 id="qué-es-threading">1) ¿Qué es threading?</h2>
+<p><code>threading</code> es el módulo estándar de Python para
+<strong>concurrencia mediante hilos</strong> (threads). Permite ejecutar
+varias tareas aparentemente al mismo tiempo dentro del mismo proceso. Es
+ideal para operaciones <strong>I/O-bound</strong> (espera de red, disco,
+etc.). Importarlo:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span></code></pre></div>
+<hr />
+<h2 id="conceptos-clave">2) Conceptos clave</h2>
+<ul>
+<li><strong>Thread (hilo):</strong> unidad de ejecución.</li>
+<li><strong>Daemon thread:</strong> hilo que no impide que el proceso
+termine; se mata cuando el programa principal acaba.</li>
+<li><strong>GIL (Global Interpreter Lock):</strong> en CPython, impide
+que varios hilos ejecuten bytecode Python al mismo tiempo — eso limita
+el paralelismo real para tareas CPU-bound.</li>
+<li><strong>Race condition:</strong> condición de carrera cuando varios
+hilos acceden/actualizan recursos compartidos sin sincronización.</li>
+<li><strong>Thread-safe:</strong> código que puede ejecutarse en varios
+hilos sin errores por concurrencia.</li>
+</ul>
+<hr />
+<h2 id="crear-y-usar-hilos-ejemplos-básicos">3) Crear y usar hilos —
+ejemplos básicos</h2>
+<h3 id="a-usando-thread-con-target">a) Usando Thread con target</h3>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker(n):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Worker </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> empieza&quot;</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Worker </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> termina&quot;</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>threads <span class="op">=</span> []</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(i,), name<span class="op">=</span><span class="ss">f&quot;worker-</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    t.start()</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    threads.append(t)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> threads:</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    t.join()  <span class="co"># esperar que termine cada hilo</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Todos terminados&quot;</span>)</span></code></pre></div>
+<h3 id="b-subclassing-lhread">b) Subclassing lhread</h3>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading, time</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MiHilo(threading.Thread):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n):</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name<span class="op">=</span><span class="ss">f&quot;MiHilo-</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.n <span class="op">=</span> n</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> run(<span class="va">self</span>):</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> comenzar&quot;</span>)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="dv">1</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> terminar&quot;</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> MiHilo(<span class="dv">1</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>h.start()</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>h.join()</span></code></pre></div>
+<hr />
+<h2 id="daemon-threads-y-uso-correcto">4) Daemon threads y uso
+correcto</h2>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(<span class="dv">1</span>,), daemon<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t.start()</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Si el main thread termina, el hilo daemon se termina abruptamente.</span></span></code></pre></div>
+<p>Usa daemon para tareas de fondo opcionales (logs en tiempo real,
+watchers). Para trabajo crítico, <strong>no</strong> uses daemon;
+asegúrate de <code>join()</code>.</p>
+<hr />
+<h2 id="sincronización-primitivas-importantes">5) Sincronización —
+primitivas importantes</h2>
+<h3 id="lock-mutual-exclusion">Lock (mutual exclusion)</h3>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lock <span class="op">=</span> threading.Lock()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> lock:</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># región crítica</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div>
+<h3 id="rlock-reentrant-lock-permite-re-entradas-desde-mismo-hilo">RLock
+(reentrant lock) — permite re-entradas desde mismo hilo</h3>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rlock <span class="op">=</span> threading.RLock()</span></code></pre></div>
+<h3 id="event-señalización-simple-flag">Event — señalización simple
+(flag)</h3>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>event <span class="op">=</span> threading.Event()</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># hilo espera:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>event.wait()  <span class="co"># bloquea hasta que event.set()</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># hilo que despierta:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>event.<span class="bu">set</span>()</span></code></pre></div>
+<h3 id="condition-esperas-con-notificación">Condition — esperas con
+notificación</h3>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> threading.Condition()</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> cond:</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    cond.wait()  <span class="co"># espera notificación</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># otro hilo:</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    cond.notify()</span></code></pre></div>
+<h3 id="semaphore-contador">Semaphore — contador</h3>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sem <span class="op">=</span> threading.Semaphore(<span class="dv">3</span>)  <span class="co"># máximo 3 entradas simultáneas</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sem:</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># acceso limitado</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre></div>
+<h3 id="barrier-sincronizar-n-hilos-en-un-punto">Barrier — sincronizar N
+hilos en un punto</h3>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bar <span class="op">=</span> threading.Barrier(<span class="dv">3</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>bar.wait()  <span class="co"># todos los hilos esperan aquí hasta que lleguen los 3</span></span></code></pre></div>
+<hr />
+<h2 id="comunicación-segura-entre-hilos-queue.queue">6) Comunicación
+segura entre hilos: queue.Queue</h2>
+<p><code>queue.Queue</code> es <strong>thread-safe</strong> y la forma
+recomendada para pasar datos entre hilos (producer-consumer).</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading, queue, time</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> queue.Queue()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> producer():</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        q.put(i)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;produjo&quot;</span>, i)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.2</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    q.put(<span class="va">None</span>)  <span class="co"># sentinel para indicar fin</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> consumer():</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> q.get()</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> item <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;consumió&quot;</span>, item)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        q.task_done()</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> threading.Thread(target<span class="op">=</span>producer)</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> threading.Thread(target<span class="op">=</span>consumer)</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>t1.start()<span class="op">;</span> t2.start()</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>t1.join()<span class="op">;</span> q.join()</span></code></pre></div>
+<hr />
+<h2 id="manejo-de-excepciones-en-hilos">7) Manejo de excepciones en
+hilos</h2>
+<p>Las excepciones en <code>Thread</code> no se propagan al hilo
+principal. Opciones:</p>
+<ul>
+<li>Usar <code>concurrent.futures.ThreadPoolExecutor</code> para obtener
+<code>Future</code> y atrapar excepciones.</li>
+<li>Capturar y guardar excepciones en el propio hilo y consultarlas
+después. Ejemplo con <code>ThreadPoolExecutor</code>:</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> trabajo(x):</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="dv">3</span>:</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;boom&quot;</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span><span class="dv">2</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">3</span>) <span class="im">as</span> ex:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    futures <span class="op">=</span> [ex.submit(trabajo, i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> futures:</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(f.result())</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;error en hilo:&quot;</span>, e)</span></code></pre></div>
+<hr />
+<h2 id="threadpoolexecutor-alta-abstracción">8) ThreadPoolExecutor (alta
+abstracción)</h2>
+<p>Más cómodo que crear hilos manualmente.</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor, as_completed</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tarea(n):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n<span class="op">*</span>n</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">4</span>) <span class="im">as</span> pool:</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    futures <span class="op">=</span> [pool.submit(tarea, i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> as_completed(futures):</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(f.result())</span></code></pre></div>
+<hr />
+<h2 id="gil-cuándo-usar-threading-vs-multiprocessing">9) GIL — cuándo
+usar threading vs multiprocessing</h2>
+<ul>
+<li><strong>I/O-bound:</strong> usa <code>threading</code> (o
+<code>asyncio</code>) — hilos dan mejoras reales (espera de I/O libera
+GIL).</li>
+<li><strong>CPU-bound:</strong> <code>threading</code> no escala por
+GIL; usa <code>multiprocessing</code> (procesos) o extensiones nativas
+(<code>numpy</code>, C) que sueltan GIL. Explicación corta: el GIL
+permite que solo un hilo ejecute bytecode Python simultáneamente; por
+eso multiples hilos no aceleran cálculos puros en CPython.</li>
+</ul>
+<hr />
+<h2 id="operaciones-atómicas-y-seguridad">10) Operaciones atómicas y
+seguridad</h2>
+<ul>
+<li>Algunos objetos y operaciones son atómicas en CPython (por ejemplo,
+asignación simple de variable, operaciones sobre tipos integrales?) —
+<strong>no confíes en ello</strong>.</li>
+<li>Ejemplo inseguro (race):</li>
+</ul>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NO usar sin lock</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> incr():</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> counter</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># no es atómico: leer-modificar-escribir</span></span></code></pre></div>
+<p>Siempre protege con <code>Lock</code> si hay acceso concurrente.</p>
+<hr />
+<h2 id="cancelación-y-parada-de-hilos">11) Cancelación y parada de
+hilos</h2>
+<p>No existe <code>Thread.kill()</code> seguro. Patrones para parar:</p>
+<ul>
+<li>Usar <code>threading.Event()</code> como bandera de parada:</li>
+</ul>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>stop_event <span class="op">=</span> threading.Event()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker():</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> stop_event.is_set():</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># trabajo</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># detener:</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>stop_event.<span class="bu">set</span>()</span></code></pre></div>
+<ul>
+<li>Usar sentinels en <code>queue</code> (<code>None</code>).</li>
+</ul>
+<hr />
+<h2 id="thread-local-storage">12) Thread-local storage</h2>
+<p>Datos separados por hilo:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>local <span class="op">=</span> threading.local()</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker(val):</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    local.x <span class="op">=</span> val</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(local.x)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(<span class="dv">1</span>,))</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(<span class="dv">2</span>,))</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>t1.start()<span class="op">;</span> t2.start()</span></code></pre></div>
+<p>Cada hilo ve su propio <code>local.x</code>.</p>
+<hr />
+<h2 id="debugging-y-utilidades">13) Debugging y utilidades</h2>
+<ul>
+<li><code>threading.enumerate()</code> → lista hilos activos.</li>
+<li><code>threading.active_count()</code> → cuenta.</li>
+<li><code>threading.current_thread().name</code> → nombre actual.</li>
+<li>Poner logs (no prints) con <code>logging</code> y
+<code>threadName</code> en el formato para seguir hilos.</li>
+<li>Para debug avanzado:
+<code>faulthandler.dump_traceback_later()</code> o
+<code>threading.settrace()</code> (poco común).</li>
+</ul>
+<p>Ejemplo de logging:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging, threading, time</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>logging.basicConfig(level<span class="op">=</span>logging.INFO, <span class="bu">format</span><span class="op">=</span><span class="st">&quot;</span><span class="sc">%(threadName)s</span><span class="st">: </span><span class="sc">%(message)s</span><span class="st">&quot;</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker():</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    logging.info(<span class="st">&quot;start&quot;</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    logging.info(<span class="st">&quot;end&quot;</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, name<span class="op">=</span><span class="st">&quot;hilo-1&quot;</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>t.start()<span class="op">;</span> t.join()</span></code></pre></div>
+<hr />
+<h2 id="buenas-prácticas">14) Buenas prácticas</h2>
+<ul>
+<li>Para I/O concurrency, prefiere <code>ThreadPoolExecutor</code> o
+<code>asyncio</code> según el caso.</li>
+<li>Evita variables globales mutables; usa <code>queue.Queue</code> y
+<code>Locks</code>.</li>
+<li>No uses <code>daemon=True</code> para tareas que deben terminar
+correctamente.</li>
+<li>Mantén regiones críticas lo más cortas posible (reduce
+contención).</li>
+<li>Si necesitas paralelismo real para CPU-bound, usa
+<code>multiprocessing</code> o librerías que suelten el GIL.</li>
+<li>Añade timeouts a <code>join()</code> y bloqueos
+(<code>lock.acquire(timeout=...)</code>) si corres riesgos de
+deadlock.</li>
+</ul>
+<hr />
+<h2 id="ejemplos-prácticos-útiles">15) Ejemplos prácticos (útiles)</h2>
+<h3 id="a-producer-consumer-con-queue-resumen">a) Producer-consumer con
+Queue (resumen)</h3>
+<p>Ya mostrado en la sección de Queue. Es el patrón más útil y seguro
+para comunicación.</p>
+<h3 id="b-pool-de-threads-simple-con-thread-y-queue">b) Pool de threads
+simple con Thread y Queue</h3>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading, queue, time</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker(q):</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        fn, args <span class="op">=</span> q.get()</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> fn <span class="kw">is</span> <span class="va">None</span>:</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>            fn(<span class="op">*</span>args)</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">finally</span>:</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>            q.task_done()</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> queue.Queue()</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>threads <span class="op">=</span> []</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(q,))</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    t.start()</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    threads.append(t)</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Encolar tareas</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    q.put((<span class="bu">print</span>, (<span class="ss">f&quot;task </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span>,)))</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>q.join()</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co"># parar hilos</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> threads:</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    q.put((<span class="va">None</span>, <span class="va">None</span>))</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> threads:</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    t.join()</span></code></pre></div>
+<h3 id="c-uso-real-con-requests-io-bound">c) Uso real con requests
+(I/O-bound)</h3>
+<div class="sourceCode" id="cb19"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> [<span class="st">&quot;https://example.com&quot;</span>]<span class="op">*</span><span class="dv">10</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch(url):</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> requests.get(url)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(r.content)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">5</span>) <span class="im">as</span> ex:</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> <span class="bu">list</span>(ex.<span class="bu">map</span>(fetch, urls))</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results)</span></code></pre></div>
+<hr />
+<h2 id="limitaciones-y-alternativas">16) Limitaciones y
+alternativas</h2>
+<ul>
+<li><p><code>threading</code> no es la mejor opción para CPU-bound por
+el GIL.</p></li>
+<li><p>Alternativas:</p>
+<ul>
+<li><p><code>multiprocessing</code> — procesos (paralelismo
+real).</p></li>
+<li><p><code>asyncio</code> — concurrencia en un solo hilo usando
+corutinas (muy eficiente para I/O con muchas conexiones).</p></li>
+<li><p><code>concurrent.futures.ProcessPoolExecutor</code> — API
+parecida a ThreadPool pero con procesos.</p></li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="resumen">17) Resumen</h2>
+<ul>
+<li>Usa <code>threading</code> para <strong>I/O-bound</strong>.</li>
+<li>Protege recursos compartidos con <code>Lock</code>,
+<code>RLock</code>, o usa <code>Queue</code>.</li>
+<li>Para excepciones y manejo fácil, usa
+<code>ThreadPoolExecutor</code>.</li>
+<li>No hay forma segura de matar hilos; implementa mecanismo cooperativo
+(Event/sentinels).</li>
+<li>Si necesitas paralelismo CPU puro, usa
+<code>multiprocessing</code>.</li>
+</ul>
+<hr />
+<p><a href="./../../readme.md#5-python">Regresar a la Guía
+Principal</a></p>
+<blockquote>
+<p><strong>Autor:</strong> Fravelz</p>
+</blockquote>
+</body>
+</html>

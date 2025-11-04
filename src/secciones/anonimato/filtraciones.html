@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>filtraciones</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="filtraciones-de-datos">Filtraciones de datos</h1>
+<p>Guía para saber si tus datos están filtrados:</p>
+<hr />
+<h2 id="temario">Temario</h2>
+<ul>
+<li><a href="#filtraciones-de-datos">Filtraciones de datos</a>
+<ul>
+<li><a href="#temario">Temario</a></li>
+<li><a href="#precauciones">Precauciones</a></li>
+<li><a href="#1-have-i-been-pwned">1. Have I been pwned</a></li>
+<li><a href="#2-firefox-monitor">2. Firefox Monitor</a></li>
+<li><a href="#3-dark-web-google">3. Dark Web Google</a></li>
+<li><a href="#4-inteligencex">4. InteligenceX</a></li>
+<li><a href="#5-dehashed">5. Dehashed</a></li>
+</ul></li>
+</ul>
+<p><a href="./../readme.md#9-privacidad-y-anonimato">Regresar a la guía
+principal</a></p>
+<hr />
+<h2 id="precauciones">Precauciones</h2>
+<p>Para que tus datos no sean filtrados, lo mejor que se puede hacer es
+no <strong>caer en estafas ni en phishing</strong> por internet.</p>
+<p>Como también si una empresa cae en un hackeo y se filtran los datos
+de todos sus clientes como por ejemplo es hackeado Facebook por un
+ciberdelincuente y accede a los datos y los filtra.</p>
+<p>Lo que sucede es que la empresa esta obligada a mencionar a sus
+usuarios que fue hackeada, y los usuarios deberán cambiar sus
+contraseñas lo más rápido posible y si hay otras cuentas de otras
+empresas que utilizas la misma contraseña también habrá que
+cambiarlos.</p>
+<hr />
+<h2 id="have-i-been-pwned">1. Have I been pwned</h2>
+<p>Anteriormente hablamos de esta herramienta, en la sesión de
+<code>6. herramientas generales</code>, pero la volvemos a mencionar
+porque cumple con la función de las herramientas de esta archivo.</p>
+<p>Have I been pwned: (<a href="https://haveibeenpwned.com/">Ir a
+HaveIbeenPwned</a>) Sirve para buscar si tu información ha sido filtrada
+por medio del correo electrónico.</p>
+<hr />
+<h2 id="firefox-monitor">2. Firefox Monitor</h2>
+<p>Esta herramienta Firefox monitor también es igual que la anterior
+solo que es un servicio oficial del propio Firefox <a
+href="https://www.google.com/url?sa=t&amp;source=web&amp;rct=j&amp;opi=89978449&amp;url=https://translate.google.com/translate%3Fu%3Dhttps://monitor.mozilla.org/%26hl%3Des%26sl%3Den%26tl%3Des%26client%3Dsrp&amp;ved=2ahUKEwj9_qy8-6OQAxUqSjABHZHXDf8QFnoECBUQAQ&amp;usg=AOvVaw2H3Ecmq4usWvGz2VmX9YLp">Ir
+a Firefox Monitor</a></p>
+<hr />
+<h2 id="dark-web-google">3. Dark Web Google</h2>
+<p>Esta extensión sirve para tu cuenta personal de Google, Google ofrece
+medidas de seguridad para tu cuenta como también medidas de privacidad y
+búsqueda de filtraciones en la Dark Web, puedes acceder en el siguiente
+enlace o también entrando en configuraciones de tu perfil de Google:</p>
+<p><a
+href="https://myactivity.google.com/dark-web-report/dashboard?hl=es&amp;utm_source=google-account&amp;utm_medium=web&amp;utm_campaign=my_account_dark_web_report_member_card&amp;pli=1">Ir
+a Google Reporte Dark Web</a></p>
+<hr />
+<h2 id="inteligencex">4. InteligenceX</h2>
+<p>InteligenceX sirve igual como los otros a diferencia que con una
+supscripcion puedes ver los datos filtrados de los correos que
+busques:</p>
+<p><a href="https://intelx.io/">Ir a InteligenceX</a></p>
+<hr />
+<h2 id="dehashed">5. Dehashed</h2>
+<p>Es una herramienta similar a las anteriores, pero reúne las mejores
+cosas: https://dehashed.com/</p>
+<p>Permite ver datos filtrados, con las versiones pagas.</p>
+<hr />
+<p><a href="./../readme.md#9-privacidad-y-anonimato">Regresar a la guía
+principal</a></p>
+<blockquote>
+<p><strong>Autor:</strong> Fravelz</p>
+</blockquote>
+</body>
+</html>
