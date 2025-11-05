@@ -1,7 +1,7 @@
 
 function Linea() {
     return (
-        <hr className="border-gray-600 my-4" />
+        <hr className="border-gray-600 my-6" />
     );
 }
 

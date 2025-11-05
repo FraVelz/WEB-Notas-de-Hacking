@@ -1,0 +1,1 @@
+md5sum, awk, cut, stat, mktemp -p, watch -n 1 ls -l

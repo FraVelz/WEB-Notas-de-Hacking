@@ -54,8 +54,6 @@ function App() {
 
       <main className="
       p-4
-      bg-gray-900
-      min-h-screen
       ">
         <Readme />
 
@@ -85,7 +83,7 @@ function App() {
 
       <footer className="
       text-gray-400
-      bg-gray-950
+      bg-gray-900
       p-5 gap-3
       ">
         <div className="
@@ -99,12 +97,12 @@ function App() {
           </div>
 
           <div className="flex gap-6">
-            <Enlace href="https://github.com/FraVelz">
+            <Enlace target="_blank" href="https://github.com/FraVelz">
               <Imagen width={50} src="./../public/github.png" alt="imagen github" />
             </Enlace>
 
 
-            <Enlace href="https://www.youtube.com/@fravelz">
+            <Enlace target="_blank" href="https://www.youtube.com/@fravelz">
               <Imagen width={50} src="./../public/youtube.png" alt="imagen youtube" />
             </Enlace>
           </div>

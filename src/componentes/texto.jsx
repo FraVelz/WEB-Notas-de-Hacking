@@ -6,6 +6,7 @@ function Texto({ children, className = "", select="auto" }) {
         select-${select}
         ${className}
         text-lg
+        py-2
         `}>
               {children}
         </p>
