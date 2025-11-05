@@ -1,33 +1,23 @@
-import Titulos from "./componentes/titulos.jsx";
+import Titulo from "./componentes/titulo.jsx";
+import Enlace from "./componentes/enlace.jsx";
+import Texto from "./componentes/texto.jsx";
 
 function Readme() {
   return (
     <div className="
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
+      hyphens-auto hyphens: auto;
+      wrap-break-word
     ">
 
-    <h1 id="repositorio-para-aprender-ciberseguridad">
+    <Titulo title="h1">
       Repositorio para aprender Ciberseguridad
-    </h1>
-
-    <Titulos title="h1">
-      Repositorio para aprender Ciberseguridad
-    </Titulos>
+    </Titulo>
 
     <p>¡Bienvenido y que tengas un buen viaje!</p>
 
     <hr />
 
-    <Titulos title="h2">Temario</Titulos>
+    <Titulo title="h2">Temario</Titulo>
 
     <ul className="
           bg-gray-950
@@ -114,7 +104,8 @@ function Readme() {
       </li>
     </ul>
     <hr />
-    <h2 id="conceptos-básicos">0. Conceptos Básicos</h2>
+    <Titulo title="h2" id="conceptos-básicos">0. Conceptos Básicos</Titulo>
+
     <p><strong>Duración aproximada:</strong> 20 min.</p>
     <p>
       Antes de investigar, te recomiendo leer los siguientes
@@ -147,7 +138,7 @@ function Readme() {
       </li>
     </ul>
     <hr />
-    <h2 id="virtualización">1. Virtualización</h2>
+    <Titulo title="h2" id="virtualización">1. Virtualización</Titulo>
     <p><strong>Duración aproximada (2h diarias):</strong> 2 días.</p>
     <p>
       Si quieres ver un video de YouTube completo de virtualización con
@@ -203,7 +194,7 @@ function Readme() {
       <figcaption aria-hidden="true">Imagen de VirtualBox</figcaption>
     </figure>
     <hr />
-    <h2 id="linux-y-bash-script">2. Linux y Bash Script</h2>
+    <Titulo title="h2" id="linux-y-bash-script">2. Linux y Bash Script</Titulo>
     <p><strong>Duración aproximada (2h diarias):</strong> 1 mes.</p>
     <p>
       Estos temas están relacionados porque los comandos que aprendes en Linux
@@ -372,7 +363,7 @@ function Readme() {
       </li>
     </ul>
     <hr />
-    <h2 id="windows">3. Windows</h2>
+    <Titulo title="h2" id="windows">3. Windows</Titulo>
     <p><strong>Duración aproximada (2h diarias):</strong> 1 mes.</p>
     <p>Todo acerca de windows, para el hacking:</p>
     <ol type="1">
@@ -478,7 +469,7 @@ function Readme() {
       </li>
     </ul>
     <hr />
-    <h2 id="redes">4. Redes</h2>
+    <Titulo title="h2" id="redes">4. Redes</Titulo>
     <p><strong>Duración aproximada (2h diarias):</strong> 1 semana.</p>
     <p>
       Aprender sobre redes (no es indispensable aprender como funciona, la parte
@@ -527,7 +518,7 @@ function Readme() {
       </li>
     </ul>
     <hr />
-    <h2 id="python">5. Python</h2>
+    <Titulo title="h2" id="python">5. Python</Titulo>
     <p><strong>Duración aproximada (2h diarias):</strong> 1 mes.</p>
     <p>Notas:</p>
     <ul>
@@ -647,7 +638,7 @@ function Readme() {
       </li>
     </ul>
     <hr />
-    <h2 id="pentesting">6. Pentesting</h2>
+    <Titulo title="h2" id="pentesting">6. Pentesting</Titulo>
     <p>Temario:</p>
     <ol type="1">
       <li>
@@ -663,7 +654,7 @@ function Readme() {
     </ol>
     <p>…</p>
     <hr />
-    <h2 id="osint">7. OSINT</h2>
+    <Titulo title="h2" id="osint">7. OSINT</Titulo>
     <p><strong>Temario:</strong></p>
     <ol type="1">
       <li>
@@ -681,7 +672,7 @@ function Readme() {
     </ol>
     <p>…</p>
     <hr />
-    <h2 id="privacidad-y-anonimato">8. Privacidad y Anonimato</h2>
+    <Titulo title="h2" id="privacidad-y-anonimato">8. Privacidad y Anonimato</Titulo>
     <ol type="1">
       <li>
         <p>
@@ -702,32 +693,28 @@ function Readme() {
       </li>
       <li>
         <p>
-          Saber si están filtrados tus datos:
-          <a href="./anonimato/filtraciones.md">Ir a investigar</a>
-        </p>
-      </li>
-    </ol>
-    <p>…</p>
-    <p>
-      Conceptos generales:
-      <a href="./anonimato/conceptos-generales.md">Ir a conceptos generales</a>
-    </p>
-    <hr />
-    <h2 id="información">Información</h2>
-    <p>
-      Te agradecería mucho, que dieras una <strong>estrella (like)</strong> al
-      Repositorio, no te cuesta nada y así apoyas al creador, del Repositorio
-      estaría muy agradecido.
-    </p>
-    <p>Notas de cada actualización, y mucho más:</p>
-    <p>
-      <a href="./otros/notas-actualizacion.md">Ir a notas de Actualización</a>
-    </p>
-    <p><strong>Actualización:</strong> 0.2.5</p>
-    <p><strong>Autor:</strong> Fravelz</p>
-
-    <script type="module" src="/src/main.jsx"></script>
-</div>
+            Saber si están filtrados tus datos:
+            <a href="./anonimato/filtraciones.md">Ir a investigar</a>
+          </p>
+        </li>
+      </ol>
+      <p>…</p>
+      <p>
+        Conceptos generales:
+        <a href="./anonimato/conceptos-generales.md">Ir a conceptos generales</a>
+      </p>
+      <hr />
+      <Titulo title="h2" id="información">Información</Titulo>
+      <p>
+        Te agradecería mucho, que dieras una <strong>estrella (like)</strong> al
+        Repositorio, no te cuesta nada y así apoyas al creador, del Repositorio
+        estaría muy agradecido.
+      </p>
+      <p>Notas de cada actualización, y mucho más:</p>
+      <p>
+        <a href="./otros/notas-actualizacion.md">Ir a notas de Actualización</a>
+      </p>
+    </div>
   );
 };
 

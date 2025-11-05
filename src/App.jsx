@@ -1,6 +1,9 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Readme from "./readme.jsx";
 
+import Enlace from "./componentes/enlace.jsx";
+import Imagen from "./componentes/imagen.jsx";
+import Texto from "./componentes/texto.jsx";
 
 function Inicio() {
   return <h1>Bienvenido al inicio</h1>;
@@ -19,8 +22,9 @@ function App() {
     <>
       <header className="
       flex items-center gap-4
-      justify-between p-2
+      justify-between p-2 px-4
       bg-gray-800
+      text-gray-100
       border-b-2 border-gray-700
       select-none
       ">
@@ -28,14 +32,16 @@ function App() {
         flex items-center gap-4
         select-none
         ">
-          <img
-          className="
-          w-14 h-14
-          rounded-full
-          object-cover
-          border-2 border-gray-400
-          "
-          src="/public/logo-fravelz.jpg" alt="Logo de fravelz" draggable="false" />
+          <Imagen 
+            width={56}
+            src="./../public/logo-fravelz.jpg"
+            alt="Logo de fravelz"
+            className="
+            rounded-full
+            object-cover
+            border-2 border-gray-400
+            "
+          />
 
           <h1 className="font-bold text-2xl">Fravelz</h1>
         </div>
@@ -78,12 +84,33 @@ function App() {
       </main>
 
       <footer className="
-      block
+      text-gray-400
       bg-gray-950
+      p-5 gap-3
       ">
-        <p>Autor: Fravelz</p>
-        <p>Contacto: (discord) fravelz</p>ua
-        <p>Ultima Actualizacion: </p>
+        <div className="
+        flex items-center
+        justify-between
+        ">
+          <div classname="">
+            <Texto><b>Autor:</b> Fravelz</Texto>
+
+            <Texto><b>Contacto: </b><span className="select-all">fravelz_@hotmail.com</span></Texto>
+          </div>
+
+          <div className="flex gap-6">
+            <Enlace href="https://github.com/FraVelz">
+              <Imagen width={50} src="./../public/github.png" alt="imagen github" />
+            </Enlace>
+
+
+            <Enlace href="https://www.youtube.com/@fravelz">
+              <Imagen width={50} src="./../public/youtube.png" alt="imagen youtube" />
+            </Enlace>
+          </div>
+        </div>
+
+        <Texto className="text-center mt-5"><b>Ultima Actualizacion:</b> Nov 04 del 2025</Texto>
       </footer>
     </>
  )
