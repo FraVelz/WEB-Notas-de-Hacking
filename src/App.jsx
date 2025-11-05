@@ -93,9 +93,9 @@ function App() {
         justify-between
         ">
           <div classname="">
-            <Texto><b>Autor:</b> Fravelz</Texto>
+            <Texto select="none"><b>Autor:</b> Fravelz</Texto>
 
-            <Texto><b>Contacto: </b><span className="select-all">fravelz_@hotmail.com</span></Texto>
+            <Texto select="none"><b>Contacto: </b><span className="select-all">fravelz_@hotmail.com</span></Texto>
           </div>
 
           <div className="flex gap-6">
@@ -110,7 +110,7 @@ function App() {
           </div>
         </div>
 
-        <Texto className="text-center mt-5"><b>Ultima Actualizacion:</b> Nov 04 del 2025</Texto>
+        <Texto className="text-center mt-5" select="none"><b>Ultima Actualizacion:</b> Nov 05 del 2025</Texto>
       </footer>
     </>
  )
