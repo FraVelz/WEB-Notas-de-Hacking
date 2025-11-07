@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ayuda-soporte</title>
+
+</head>
+
+<body>
+  <h1 id="comandos-y-cmdlets-de-ayuda-y-soporte">Comandos y cmdlets de
+    ayuda y soporte</h1>
+  <hr />
+  <h2 id="temario">Temario</h2>
+  <ul>
+    <li><a href="#comandos-y-cmdlets-de-ayuda-y-soporte">Comandos y cmdlets
+        de ayuda y soporte</a>
+      <ul>
+        <li><a href="#temario">Temario</a></li>
+        <li><a href="#1-comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda
+            y soporte en CMD</a></li>
+        <li><a href="#2-cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de
+            ayuda y soporte en PowerShell</a></li>
+        <li><a href="#3-ayuda-interactiva-y-documentación">3. Ayuda interactiva
+            y documentación</a></li>
+        <li><a href="#sugerencia-práctica">Sugerencia práctica</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p><a href="./../readme.md#3-windows">Regresar a la guía
+      principal</a></p>
+  <hr />
+  <h2 id="comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda y
+    soporte en CMD</h2>
+  <table>
+    <colgroup>
+      <col style="width: 14%" />
+      <col style="width: 61%" />
+      <col style="width: 24%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Comando</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>help</code></td>
+        <td>Muestra todos los comandos disponibles de CMD.</td>
+        <td><code>help</code></td>
+      </tr>
+      <tr>
+        <td><code>help &lt;comando&gt;</code></td>
+        <td>Muestra información sobre un comando específico.</td>
+        <td><code>help dir</code></td>
+      </tr>
+      <tr>
+        <td><code>&lt;comando&gt; /?</code></td>
+        <td>Muestra la ayuda de un comando. Es equivalente a
+          <code>help &lt;comando&gt;</code>.
+        </td>
+        <td><code>ipconfig /?</code></td>
+      </tr>
+      <tr>
+        <td><code>systeminfo</code></td>
+        <td>Muestra información detallada del sistema (versión, RAM, BIOS, red,
+          etc.).</td>
+        <td><code>systeminfo</code></td>
+      </tr>
+      <tr>
+        <td><code>hostname</code></td>
+        <td>Muestra el nombre del equipo.</td>
+        <td><code>hostname</code></td>
+      </tr>
+      <tr>
+        <td><code>ver</code></td>
+        <td>Muestra la versión de Windows.</td>
+        <td><code>ver</code></td>
+      </tr>
+      <tr>
+        <td><code>set</code></td>
+        <td>Lista todas las variables de entorno.</td>
+        <td><code>set</code></td>
+      </tr>
+      <tr>
+        <td><code>echo %VARIABLE%</code></td>
+        <td>Muestra el valor de una variable de entorno.</td>
+        <td><code>echo %PATH%</code></td>
+      </tr>
+      <tr>
+        <td><code>driverquery</code></td>
+        <td>Lista los controladores instalados.</td>
+        <td><code>driverquery /v</code></td>
+      </tr>
+      <tr>
+        <td><code>tasklist</code></td>
+        <td>Muestra los procesos en ejecución.</td>
+        <td><code>tasklist</code></td>
+      </tr>
+      <tr>
+        <td><code>taskkill</code></td>
+        <td>Cierra un proceso por nombre o PID.</td>
+        <td><code>taskkill /IM notepad.exe /F</code></td>
+      </tr>
+      <tr>
+        <td><code>sfc /scannow</code></td>
+        <td>Escanea y repara archivos del sistema dañados.</td>
+        <td><code>sfc /scannow</code></td>
+      </tr>
+      <tr>
+        <td><code>chkdsk</code></td>
+        <td>Verifica y repara errores en el disco.</td>
+        <td><code>chkdsk C: /f</code></td>
+      </tr>
+      <tr>
+        <td><code>ipconfig /all</code></td>
+        <td>Muestra toda la información de red.</td>
+        <td><code>ipconfig /all</code></td>
+      </tr>
+      <tr>
+        <td><code>ping</code></td>
+        <td>Comprueba la conectividad con un host.</td>
+        <td><code>ping google.com</code></td>
+      </tr>
+      <tr>
+        <td><code>tracert</code></td>
+        <td>Muestra la ruta que sigue un paquete hasta un destino.</td>
+        <td><code>tracert google.com</code></td>
+      </tr>
+      <tr>
+        <td><code>netstat</code></td>
+        <td>Muestra conexiones de red activas.</td>
+        <td><code>netstat -an</code></td>
+      </tr>
+      <tr>
+        <td><code>systemreset</code></td>
+        <td>Abre el asistente para restablecer Windows.</td>
+        <td><code>systemreset</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <h2 id="cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de ayuda y
+    soporte en PowerShell</h2>
+  <table>
+    <colgroup>
+      <col style="width: 26%" />
+      <col style="width: 44%" />
+      <col style="width: 29%" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>Cmdlet</th>
+        <th>Descripción</th>
+        <th>Ejemplo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>Get-Help</code></td>
+        <td>Muestra ayuda general o detallada sobre un cmdlet.</td>
+        <td><code>Get-Help Get-Process</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-Command</code></td>
+        <td>Lista todos los cmdlets disponibles.</td>
+        <td><code>Get-Command</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-Alias</code></td>
+        <td>Muestra los alias (atajos) de comandos.</td>
+        <td><code>Get-Alias</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-Process</code></td>
+        <td>Lista los procesos activos.</td>
+        <td><code>Get-Process</code></td>
+      </tr>
+      <tr>
+        <td><code>Stop-Process</code></td>
+        <td>Termina un proceso.</td>
+        <td><code>Stop-Process -Name notepad -Force</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-Service</code></td>
+        <td>Lista los servicios del sistema.</td>
+        <td><code>Get-Service</code></td>
+      </tr>
+      <tr>
+        <td><code>Restart-Service</code></td>
+        <td>Reinicia un servicio.</td>
+        <td><code>Restart-Service -Name Spooler</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-EventLog</code></td>
+        <td>Muestra eventos del sistema, aplicación o seguridad.</td>
+        <td><code>Get-EventLog -LogName System -Newest 10</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-ComputerInfo</code></td>
+        <td>Información detallada del sistema (hardware, BIOS, red, etc.).</td>
+        <td><code>Get-ComputerInfo</code></td>
+      </tr>
+      <tr>
+        <td><code>Test-Connection</code></td>
+        <td>Versión avanzada de <code>ping</code>.</td>
+        <td><code>Test-Connection google.com -Count 4</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-HotFix</code></td>
+        <td>Muestra actualizaciones instaladas.</td>
+        <td><code>Get-HotFix</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-WmiObject Win32_OperatingSystem</code></td>
+        <td>Información avanzada del sistema operativo.</td>
+        <td><code>Get-WmiObject Win32_OperatingSystem</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-ChildItem Env:</code></td>
+        <td>Lista las variables de entorno.</td>
+        <td><code>Get-ChildItem Env:</code></td>
+      </tr>
+      <tr>
+        <td><code>$Env:PATH</code></td>
+        <td>Muestra una variable de entorno.</td>
+        <td><code>$Env:PATH</code></td>
+      </tr>
+      <tr>
+        <td><code>Clear-Host</code></td>
+        <td>Limpia la consola (equivalente a <code>cls</code>).</td>
+        <td><code>Clear-Host</code></td>
+      </tr>
+      <tr>
+        <td><code>Get-EventViewer</code> <em>(nuevo en PS 7+)</em></td>
+        <td>Acceso más directo al Visor de Eventos.</td>
+        <td><code>Get-EventViewer -LogName Application</code></td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <h2 id="ayuda-interactiva-y-documentación">3. Ayuda interactiva y
+    documentación</h2>
+  <ul>
+    <li>
+      <p>En <strong>CMD</strong>:</p>
+      <ul>
+        <li><code>help</code> → lista básica.</li>
+        <li><code>&lt;comando&gt; /?</code> → manual rápido.</li>
+      </ul>
+    </li>
+    <li>
+      <p>En <strong>PowerShell</strong>:</p>
+      <ul>
+        <li><code>Update-Help</code> → descarga la ayuda más reciente (requiere
+          conexión).</li>
+        <li><code>Get-Help &lt;cmdlet&gt; -Detailed</code> → descripción,
+          parámetros y ejemplos.</li>
+        <li><code>Get-Help &lt;cmdlet&gt; -Online</code> → abre la documentación
+          oficial en el navegador.</li>
+      </ul>
+    </li>
+  </ul>
+  <hr />
+  <h2 id="sugerencia-práctica">Sugerencia práctica</h2>
+  <p>Para explorar PowerShell como un pro:</p>
+  <div class="sourceCode" id="cb1">
+    <pre
+      class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> <span class="op">|</span> <span class="fu">Out-GridView</span></span></code></pre>
+  </div>
+  <p>Te abre una ventana interactiva donde puedes <strong>buscar, filtrar
+      y explorar</strong> todos los cmdlets disponibles.</p>
+  <hr />
+  <p><a href="./../readme.md#3-windows">Regresar a la guía
+      principal</a></p>
+  <blockquote>
+    <p><strong>Autor:</strong> Fravelz</p>
+  </blockquote>
+</body>
+
+</html>

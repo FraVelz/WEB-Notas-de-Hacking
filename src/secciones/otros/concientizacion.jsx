@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>concientizacion</title>
+
+</head>
+
+<body>
+  <h1 id="la-concientización-en-la-ciberseguridad">La Concientización en
+    la Ciberseguridad</h1>
+  <p>La concientización en ciberseguridad es uno de los pilares más
+    importantes para proteger una empresa, o uno mismo, de ataques
+    cibernéticos. La mayoría los ataques no se basan en hackeos avanzados,
+    sino en errores humanos, por ejemplo, dar clic en un enlace malicioso,
+    usar una red pública sin protección o compartir información sensible sin
+    pensarlo.</p>
+  <hr />
+  <h2 id="temario">Temario</h2>
+  <ul>
+    <li><a href="#la-concientización-en-la-ciberseguridad">La
+        Concientización en la Ciberseguridad</a>
+      <ul>
+        <li><a href="#temario">Temario</a></li>
+        <li><a href="#qué-es-la-concientización-en-ciberseguridad">¿Qué es la
+            concientización en ciberseguridad?</a></li>
+        <li><a href="#1-redes-wi-fi-públicas-o-desconocidas">1. Redes Wi-Fi
+            públicas o desconocidas</a></li>
+        <li><a href="#2-phishing-suplantación-para-robar-datos">2. Phishing
+            (suplantación para robar datos)</a></li>
+        <li><a href="#3-enlaces-y-urls-maliciosas">3. Enlaces y URLs
+            maliciosas</a></li>
+        <li><a href="#4-códigos-qr-maliciosos">4. Códigos QR maliciosos</a></li>
+        <li><a href="#5-contraseñas-débiles-o-reutilizadas">5. Contraseñas
+            débiles o reutilizadas</a></li>
+        <li><a href="#6-software-y-actualizaciones">6. Software y
+            actualizaciones</a></li>
+        <li><a href="#7-ingeniería-social">7. Ingeniería social</a></li>
+        <li><a href="#8-dispositivos-físicos">8. Dispositivos físicos</a></li>
+        <li><a href="#hábitos-esenciales-de-ciberseguridad-personal">Hábitos
+            esenciales de ciberseguridad personal</a></li>
+        <li><a href="#en-resumen">En resumen</a></li>
+      </ul>
+    </li>
+  </ul>
+  <p><a href="./../readme.md#temario">Regresar a la guía principal</a></p>
+  <hr />
+  <h2 id="qué-es-la-concientización-en-ciberseguridad">¿Qué es la
+    concientización en ciberseguridad?</h2>
+  <p>Es el conjunto de conocimientos, hábitos y comportamientos que te
+    ayudan a reconocer, evitar y responder correctamente ante amenazas
+    digitales. Su objetivo es que tú seas la primera línea de defensa,
+    evitando caer en trampas que los hackers usan para robar información o
+    dinero.</p>
+  <p>A continuación los riesgos más comunes y cómo prevenirlos…</p>
+  <hr />
+  <h2 id="redes-wi-fi-públicas-o-desconocidas">1. Redes Wi-Fi públicas o
+    desconocidas</h2>
+  <p><strong>Ejemplo:</strong> Conectarte al Wi-Fi gratis de un café,
+    aeropuerto o centro comercial.</p>
+  <p><strong>Riesgo:</strong> Los atacantes pueden:</p>
+  <ul>
+    <li>Espiar lo que haces (interceptar tráfico no cifrado).</li>
+    <li>Crear una red falsa con un nombre similar (“FreeAirportWiFi”).</li>
+    <li>Inyectar virus o redirigirte a sitios falsos.</li>
+  </ul>
+  <p><strong>Qué hacer:</strong></p>
+  <ul>
+    <li>Evita conectarte a redes públicas sin necesidad.</li>
+    <li>Si debes hacerlo, usa una VPN.</li>
+    <li>Nunca entres a tu banco, correo o redes sociales en una red
+      pública.</li>
+    <li>Desactiva la conexión automática a redes Wi-Fi.</li>
+  </ul>
+  <hr />
+  <h2 id="phishing-suplantación-para-robar-datos">2. Phishing
+    (suplantación para robar datos)</h2>
+  <p><strong>Ejemplo:</strong> Te llega un correo o mensaje diciendo que
+    tu cuenta será suspendida, con un botón para “verificar”.</p>
+  <p><strong>Riesgo:</strong> El enlace te lleva a una página falsa (muy
+    parecida a la real) que roba tus credenciales.</p>
+  <p><strong>Cómo detectarlo:</strong></p>
+  <ul>
+    <li>
+      <p>El remitente o dominio es sospechoso (por ejemplo:
+        <code>micorreo@banc0.com</code> en lugar de
+        <code>micorreo@banco.com</code>).
+      </p>
+    </li>
+    <li>
+      <p>Te presionan con urgencia (“haz clic ahora o perderás tu
+        cuenta”).</p>
+    </li>
+    <li>
+      <p>Tiene errores ortográficos o frases extrañas.</p>
+    </li>
+  </ul>
+  <p><strong>Qué hacer:</strong></p>
+  <ul>
+    <li>No abras enlaces desde correos o mensajes sospechosos.</li>
+    <li>Escribe tú mismo la URL oficial en el navegador.</li>
+    <li>Activa la verificación en dos pasos (2FA) en tus cuentas.</li>
+  </ul>
+  <hr />
+  <h2 id="enlaces-y-urls-maliciosas">3. Enlaces y URLs maliciosas</h2>
+  <p><strong>Ejemplo:</strong> Un amigo te manda un enlace “gracioso” o de
+    una “oferta increíble”.</p>
+  <p><strong>Riesgo:</strong> Puede ser una web que descarga malware o
+    roba tu sesión.</p>
+  <p><strong>Cómo protegerte:</strong></p>
+  <ul>
+    <li>Pasa el cursor por encima del enlace antes de abrirlo (sin hacer
+      clic) para ver la dirección real.</li>
+    <li>Usa acortadores con precaución (<code>bit.ly</code>,
+      <code>tinyurl</code>) —algunos ocultan direcciones falsas.
+    </li>
+    <li>Si dudas, analiza el enlace con <a href="https://www.virustotal.com">VirusTotal.com</a>.</li>
+  </ul>
+  <hr />
+  <h2 id="códigos-qr-maliciosos">4. Códigos QR maliciosos</h2>
+  <p><strong>Ejemplo:</strong> Ves un QR pegado en una pared o en una mesa
+    de restaurante.</p>
+  <p><strong>Riesgo:</strong> Puede redirigirte a una web fraudulenta o
+    descargar una app maliciosa.</p>
+  <p><strong>Prevención:</strong></p>
+  <ul>
+    <li>No escanees QRs en lugares desconocidos o públicos.</li>
+    <li>Verifica que el QR no esté pegado encima de otro (común en
+      fraudes).</li>
+    <li>Usa apps que muestren la URL antes de abrirla.</li>
+  </ul>
+  <hr />
+  <h2 id="contraseñas-débiles-o-reutilizadas">5. Contraseñas débiles o
+    reutilizadas</h2>
+  <p><strong>Riesgo:</strong> Si un sitio donde usaste tu contraseña se
+    filtra, los atacantes pueden acceder a todas tus otras cuentas.</p>
+  <p><strong>Buenas prácticas:</strong></p>
+  <ul>
+    <li>Usa contraseñas largas, únicas y aleatorias (mínimo 12
+      caracteres).</li>
+    <li>Usa un gestor de contraseñas (como Bitwarden, KeePass o
+      1Password).</li>
+    <li>Activa autenticación de dos factores (2FA) siempre que sea
+      posible.</li>
+  </ul>
+  <hr />
+  <h2 id="software-y-actualizaciones">6. Software y actualizaciones</h2>
+  <p><strong>Riesgo:</strong> Usar sistemas o apps desactualizadas te deja
+    vulnerable a exploits conocidos.</p>
+  <p><strong>Consejos:</strong></p>
+  <ul>
+    <li>Mantén tu sistema operativo y navegador actualizados.</li>
+    <li>Instala software solo desde fuentes oficiales.</li>
+    <li>Evita cracks o programas piratas —muchos incluyen troyanos o
+      spyware.</li>
+  </ul>
+  <hr />
+  <h2 id="ingeniería-social">7. Ingeniería social</h2>
+  <p><strong>Ejemplo:</strong> Un atacante se hace pasar por técnico de
+    soporte o amigo para obtener tus datos.</p>
+  <p><strong>Qué hacer:</strong></p>
+  <ul>
+    <li>Desconfía de cualquier persona que te pida datos personales o
+      contraseñas.</li>
+    <li>Verifica su identidad por otro medio oficial.</li>
+    <li>Nunca compartas códigos de verificación o contraseñas, ni siquiera
+      “por ayuda”.</li>
+  </ul>
+  <hr />
+  <h2 id="dispositivos-físicos">8. Dispositivos físicos</h2>
+  <p><strong>Ejemplo:</strong> Conectas una memoria USB que
+    encontraste.</p>
+  <p><strong>Riesgo:</strong> Puede tener malware que infecte tu
+    computadora.</p>
+  <p><strong>Prevención:</strong></p>
+  <ul>
+    <li>No conectes USBs desconocidas.</li>
+    <li>Desactiva la ejecución automática.</li>
+    <li>Escanea los dispositivos externos con un antivirus.</li>
+  </ul>
+  <hr />
+  <h2 id="hábitos-esenciales-de-ciberseguridad-personal">Hábitos
+    esenciales de ciberseguridad personal</h2>
+  <ul>
+    <li>Usa contraseñas únicas y seguras.</li>
+    <li>Activa el 2FA.</li>
+    <li>Elimina apps o archivos que no uses.</li>
+    <li>No compartas datos personales en redes sociales.</li>
+    <li>Revisa los permisos de tus apps (micrófono, cámara, ubicación).</li>
+    <li>Desconfía de mensajes o llamadas “urgentes” que pidan datos o
+      dinero.</li>
+    <li>Haz copias de seguridad de tus archivos importantes.</li>
+  </ul>
+  <hr />
+  <h2 id="en-resumen">En resumen</h2>
+  <blockquote>
+    <p>La mejor defensa contra los ciberataques no es la tecnología, sino la
+      educación del usuario.</p>
+  </blockquote>
+  <p><a href="https://www.youtube.com/watch?v=Bz1jX-dH3K8">Video de
+      YouTube para profundizar en este y más temas - Hixec</a></p>
+  <p>Los hackers no siempre rompen sistemas, muchas veces simplemente
+    engañan personas. Ser consciente, desconfiar con criterio y actuar con
+    precaución puede evitarte el 90% de los problemas de seguridad.</p>
+  <hr />
+  <p><a href="./../readme.md#temario">Regresar a la guía principal</a></p>
+  <blockquote>
+    <p><strong>Autor:</strong> Fravelz</p>
+  </blockquote>
+</body>
+
+</html>
