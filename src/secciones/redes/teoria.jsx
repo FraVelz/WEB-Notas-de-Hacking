@@ -1,231 +1,190 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+import Titulo from "./../../componentes/titulo.jsx";
+import Lista from "./../../componentes/lista.jsx";
+import Texto from "./../../componentes/texto.jsx";
+import Linea from "./../../componentes/linea.jsx";
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>teoria</title>
-
-</head>
-
-<body>
-  <h1 id="parte-teórica-conceptos">Parte Teórica (conceptos)</h1>
-  <hr />
-  <h2 id="temario">Temario</h2>
-  <ul>
-    <li><a href="#parte-teórica-conceptos">Parte Teórica (conceptos)</a>
-      <ul>
-        <li><a href="#temario">Temario</a></li>
-        <li><a href="#1-base-fundamentos">1. base (fundamentos)</a></li>
-        <li><a href="#2-historia-de-las-redes">2. Historia de las redes</a></li>
-        <li><a href="#3-modelos-de-redes">3. Modelos de redes</a>
-          <ul>
-            <li><a href="#modelo-osi-open-systems-interconnection"><strong>Modelo
+function nameabcd({ }) {
+  return (
+    <>
+      <Titulo title="h1" id="parte-teórica-conceptos">Parte Teórica (conceptos)</Titulo>
+      <Linea />
+      <Titulo title="h2" id="temario">Temario</Titulo>
+      <Lista>
+        <li><a href="#parte-teórica-conceptos">Parte Teórica (conceptos)</a>
+          <Lista>
+            <li><a href="#temario">Temario</a></li>
+            <li><a href="#1-base-fundamentos">1. base (fundamentos)</a></li>
+            <li><a href="#2-historia-de-las-redes">2. Historia de las redes</a></li>
+            <li><a href="#3-modelos-de-redes">3. Modelos de redes</a>
+              <Lista>
+                <li><a href="#modelo-osi-open-systems-interconnection"><strong>Modelo
                   OSI (Open Systems Interconnection)</strong></a></li>
-            <li><a href="#modelo-tcpip"><strong>Modelo TCP/IP</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#4-tipos-de-redes-según-su-alcance">4. Tipos de redes según
-            su alcance</a></li>
-        <li><a href="#5-arquitectura-cliente-servidor">5. Arquitectura
-            Cliente-Servidor</a>
-          <ul>
-            <li><a href="#componentes-principales"><strong>Componentes
+                <li><a href="#modelo-tcpip"><strong>Modelo TCP/IP</strong></a></li>
+              </Lista>
+            </li>
+            <li><a href="#4-tipos-de-redes-según-su-alcance">4. Tipos de redes según
+              su alcance</a></li>
+            <li><a href="#5-arquitectura-cliente-servidor">5. Arquitectura
+              Cliente-Servidor</a>
+              <Lista>
+                <li><a href="#componentes-principales"><strong>Componentes
                   principales:</strong></a></li>
-            <li><a href="#funcionamiento"><strong>Funcionamiento:</strong></a></li>
-            <li><a href="#ventajas"><strong>Ventajas:</strong></a></li>
-            <li><a href="#desventajas"><strong>Desventajas:</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#6-arquitectura-de-red">6. Arquitectura de Red</a>
-          <ul>
-            <li><a href="#tipos-comunes-de-arquitectura-de-red"><strong>Tipos
+                <li><a href="#funcionamiento"><strong>Funcionamiento:</strong></a></li>
+                <li><a href="#ventajas"><strong>Ventajas:</strong></a></li>
+                <li><a href="#desventajas"><strong>Desventajas:</strong></a></li>
+              </Lista>
+            </li>
+            <li><a href="#6-arquitectura-de-red">6. Arquitectura de Red</a>
+              <Lista>
+                <li><a href="#tipos-comunes-de-arquitectura-de-red"><strong>Tipos
                   comunes de arquitectura de red:</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#7-protocolos-de-red">7. Protocolos de red</a>
-          <ul>
-            <li><a href="#funciones-principales-de-los-protocolos"><strong>Funciones
+              </Lista>
+            </li>
+            <li><a href="#7-protocolos-de-red">7. Protocolos de red</a>
+              <Lista>
+                <li><a href="#funciones-principales-de-los-protocolos"><strong>Funciones
                   principales de los protocolos:</strong></a></li>
-            <li><a href="#ejemplos-de-protocolos-comunes"><strong>Ejemplos de
+                <li><a href="#ejemplos-de-protocolos-comunes"><strong>Ejemplos de
                   protocolos comunes:</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#8-comunicaciones-en-redes">8. Comunicaciones en Redes</a>
-          <ul>
-            <li><a href="#tipos-de-comunicación"><strong>Tipos de
+              </Lista>
+            </li>
+            <li><a href="#8-comunicaciones-en-redes">8. Comunicaciones en Redes</a>
+              <Lista>
+                <li><a href="#tipos-de-comunicación"><strong>Tipos de
                   comunicación:</strong></a></li>
-            <li><a href="#medios-de-transmisión"><strong>Medios de
+                <li><a href="#medios-de-transmisión"><strong>Medios de
                   transmisión:</strong></a></li>
-            <li><a href="#procesos-clave-en-la-comunicación"><strong>Procesos clave
+                <li><a href="#procesos-clave-en-la-comunicación"><strong>Procesos clave
                   en la comunicación:</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#9-protocolos-de-aplicación">9. Protocolos de
-            Aplicación</a>
-          <ul>
-            <li><a href="#funciones-principales"><strong>Funciones
+              </Lista>
+            </li>
+            <li><a href="#9-protocolos-de-aplicación">9. Protocolos de
+              Aplicación</a>
+              <Lista>
+                <li><a href="#funciones-principales"><strong>Funciones
                   principales:</strong></a></li>
-            <li><a href="#ejemplos-importantes"><strong>Ejemplos
+                <li><a href="#ejemplos-importantes"><strong>Ejemplos
                   importantes:</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#10-direcciones-ip">10. Direcciones IP</a>
-          <ul>
-            <li><a href="#tipos-de-direcciones-ip"><strong>Tipos de direcciones
+              </Lista>
+            </li>
+            <li><a href="#10-direcciones-ip">10. Direcciones IP</a>
+              <Lista>
+                <li><a href="#tipos-de-direcciones-ip"><strong>Tipos de direcciones
                   IP:</strong></a></li>
-            <li><a href="#clases-de-direcciones-ip-ipv4"><strong>Clases de
+                <li><a href="#clases-de-direcciones-ip-ipv4"><strong>Clases de
                   direcciones IP (IPv4):</strong></a></li>
-            <li><a href="#funciones-de-la-ip"><strong>Funciones de la
+                <li><a href="#funciones-de-la-ip"><strong>Funciones de la
                   IP:</strong></a></li>
-            <li><a href="#relación-con-los-protocolos-de-aplicación"><strong>Relación con
+                <li><a href="#relación-con-los-protocolos-de-aplicación"><strong>Relación con
                   los protocolos de aplicación:</strong></a></li>
-          </ul>
+              </Lista>
+            </li>
+          </Lista>
         </li>
-      </ul>
-    </li>
-  </ul>
-  <p><a href="./../readme.md#4-redes">Regresar a la Guía Principal</a></p>
-  <hr />
-  <h2 id="base-fundamentos">1. base (fundamentos)</h2>
-  <p><strong>¿Qué son las redes?</strong></p>
-  <ul>
-    <li>
-      <p>Una <strong>red</strong> es un conjunto de dispositivos
-        conectados entre sí que comparten información y recursos.</p>
-    </li>
-    <li>
-      <p>Los dispositivos dentro de una red se llaman
-        <strong>nodos</strong>. Los nodos son puntos de conexión y pueden ser
-        cualquier dispositivo capaz de conectarse a la red, como computadoras,
-        teléfonos, impresoras o servidores.
-      </p>
-    </li>
-    <li>
-      <p>El <strong>Internet</strong> es la red más grande del mundo,
-        conectando millones de dispositivos alrededor del planeta.</p>
-    </li>
-  </ul>
-  <p><strong>Componentes de una red:</strong></p>
-  <ul>
-    <li>
-      <p><strong>Nodo:</strong> Cualquier dispositivo conectado a la
-        red.</p>
-    </li>
-    <li>
-      <p><strong>Medio de transmisión:</strong> Puede ser
-        <strong>cableado</strong> (como cables de cobre o fibra óptica) o
-        <strong>inalámbrico</strong> (como Wi-Fi o Bluetooth).
-      </p>
-    </li>
-    <li>
-      <p><strong>Dispositivos de red:</strong> Facilitan el tráfico de
-        información dentro de la red. Ejemplos incluyen
-        <strong>routers</strong>, <strong>switches</strong> y <strong>puntos de
-          acceso</strong>.
-      </p>
-    </li>
-    <li>
-      <p><strong>Protocolo:</strong> Conjunto de reglas y estándares que
-        permite la comunicación entre dos dispositivos, asegurando que se
-        entiendan correctamente.</p>
-    </li>
-  </ul>
-  <p><strong>Conceptos básicos de redes:</strong></p>
-  <ul>
-    <li>
-      <p><strong>Cliente:</strong> Dispositivo que solicita servicios o
-        información de otro dispositivo (el servidor).</p>
-    </li>
-    <li>
-      <p><strong>Servidor:</strong> Dispositivo que ofrece servicios o
-        información a otros dispositivos (clientes).</p>
-    </li>
-    <li>
-      <p><strong>IP:</strong> Dirección única que identifica a cada
-        dispositivo en la red.</p>
-    </li>
-    <li>
-      <p><strong>Puerto:</strong> Punto de conexión dentro de un
-        dispositivo que permite la comunicación de servicios
-        específicos.</p>
-    </li>
-    <li>
-      <p><strong>Protocolo:</strong> Reglas que regulan cómo se envía y
-        recibe la información en la red.</p>
-    </li>
-  </ul>
-  <p><strong>Funciones principales:</strong></p>
-  <ul>
-    <li>Compartir recursos.</li>
-    <li>Comunicación.</li>
-    <li>Almacenamiento de datos.</li>
-  </ul>
-  <hr />
-  <h2 id="historia-de-las-redes">2. Historia de las redes</h2>
-  <ol type="1">
-    <li>
-      <p><strong>Década de 1960 – Orígenes</strong></p>
-      <ul>
-        <li>Se crean las primeras ideas de redes para compartir información
-          entre computadoras.</li>
-        <li><strong>ARPANET (1969)</strong>: La primera red a gran escala,
-          financiada por el Departamento de Defensa de EE. UU., conectaba
-          universidades y laboratorios.</li>
-        <li>Objetivo: comunicación eficiente y compartir recursos
-          informáticos.</li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>Década de 1970 – Protocolos y
-          estandarización</strong></p>
-      <ul>
-        <li>Se desarrolla <strong>TCP/IP</strong>: protocolo que permite que
-          diferentes redes se comuniquen.</li>
-        <li>Se crean redes locales (<strong>LANs</strong>) para conectar
-          computadoras dentro de una misma institución.</li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>Década de 1980 – Expansión</strong></p>
-      <ul>
-        <li>Aparición de <strong>Ethernet</strong>: tecnología que facilita la
-          comunicación en redes locales.</li>
-        <li>Nace <strong>Internet como red de redes</strong>, conectando
-          múltiples LANs y WANs (redes de área amplia).</li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>Década de 1990 – Internet comercial</strong></p>
-      <ul>
-        <li>La red se abre a fines comerciales y al público general.</li>
-        <li>Surge la <strong>World Wide Web (WWW)</strong> con navegadores
-          web.</li>
-        <li>Popularización del correo electrónico y servicios de
-          mensajería.</li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>Años 2000 en adelante – Redes modernas</strong></p>
-      <ul>
-        <li>Expansión de <strong>Wi-Fi</strong> y <strong>redes móviles (3G, 4G,
+      </Lista>
+      <Texto><a href="./../readme.md#4-redes">Regresar a la Guía Principal</a></Texto>
+      <Linea />
+      <Titulo title="h2" id="base-fundamentos">1. base (fundamentos)</Titulo>
+      <Texto><strong>¿Qué son las redes?</strong></Texto>
+      <Lista>
+        <li>Una <strong>red</strong> es un conjunto de dispositivos
+          conectados entre sí que comparten información y recursos.</li>    <li>Los dispositivos dentro de una red se llaman
+          <strong>nodos</strong>. Los nodos son puntos de conexión y pueden ser
+          cualquier dispositivo capaz de conectarse a la red, como computadoras,
+          teléfonos, impresoras o servidores.
+        </li>    <li>El <strong>Internet</strong> es la red más grande del mundo,
+          conectando millones de dispositivos alrededor del planeta.</li>  </Lista>
+      <Texto><strong>Componentes de una red:</strong></Texto>
+      <Lista>
+        <li><strong>Nodo:</strong> Cualquier dispositivo conectado a la
+          red.</li>    <li><strong>Medio de transmisión:</strong> Puede ser
+          <strong>cableado</strong> (como cables de cobre o fibra óptica) o
+          <strong>inalámbrico</strong> (como Wi-Fi o Bluetooth).
+        </li>    <li><strong>Dispositivos de red:</strong> Facilitan el tráfico de
+          información dentro de la red. Ejemplos incluyen
+          <strong>routers</strong>, <strong>switches</strong> y <strong>puntos de
+            acceso</strong>.
+        </li>    <li><strong>Protocolo:</strong> Conjunto de reglas y estándares que
+          permite la comunicación entre dos dispositivos, asegurando que se
+          entiendan correctamente.</li>  </Lista>
+      <Texto><strong>Conceptos básicos de redes:</strong></Texto>
+      <Lista>
+        <li><strong>Cliente:</strong> Dispositivo que solicita servicios o
+          información de otro dispositivo (el servidor).</li>    <li><strong>Servidor:</strong> Dispositivo que ofrece servicios o
+            información a otros dispositivos (clientes).</li>    <li><strong>IP:</strong> Dirección única que identifica a cada
+              dispositivo en la red.</li>    <li><strong>Puerto:</strong> Punto de conexión dentro de un
+                dispositivo que permite la comunicación de servicios
+                específicos.</li>    <li><strong>Protocolo:</strong> Reglas que regulan cómo se envía y
+                  recibe la información en la red.</li>  </Lista>
+      <Texto><strong>Funciones principales:</strong></Texto>
+      <Lista>
+        <li>Compartir recursos.</li>
+        <li>Comunicación.</li>
+        <li>Almacenamiento de datos.</li>
+      </Lista>
+      <Linea />
+      <Titulo title="h2" id="historia-de-las-redes">2. Historia de las redes</Titulo>
+      <ol type="1">
+        <li><strong>Década de 1960 – Orígenes</strong></Texto>
+        <Lista>
+          <li>Se crean las primeras ideas de redes para compartir información
+            entre computadoras.</li>
+          <li><strong>ARPANET (1969)</strong>: La primera red a gran escala,
+            financiada por el Departamento de Defensa de EE. UU., conectaba
+            universidades y laboratorios.</li>
+          <li>Objetivo: comunicación eficiente y compartir recursos
+            informáticos.</li>
+        </Lista>
+      </li>
+      <li>
+        <Texto><strong>Década de 1970 – Protocolos y
+          estandarización</strong></Texto>
+        <Lista>
+          <li>Se desarrolla <strong>TCP/IP</strong>: protocolo que permite que
+            diferentes redes se comuniquen.</li>
+          <li>Se crean redes locales (<strong>LANs</strong>) para conectar
+            computadoras dentro de una misma institución.</li>
+        </Lista>
+      </li>
+      <li>
+        <Texto><strong>Década de 1980 – Expansión</strong></Texto>
+        <Lista>
+          <li>Aparición de <strong>Ethernet</strong>: tecnología que facilita la
+            comunicación en redes locales.</li>
+          <li>Nace <strong>Internet como red de redes</strong>, conectando
+            múltiples LANs y WANs (redes de área amplia).</li>
+        </Lista>
+      </li>
+      <li>
+        <Texto><strong>Década de 1990 – Internet comercial</strong></Texto>
+        <Lista>
+          <li>La red se abre a fines comerciales y al público general.</li>
+          <li>Surge la <strong>World Wide Web (WWW)</strong> con navegadores
+            web.</li>
+          <li>Popularización del correo electrónico y servicios de
+            mensajería.</li>
+        </Lista>
+      </li>
+      <li>
+        <Texto><strong>Años 2000 en adelante – Redes modernas</strong></Texto>
+        <Lista>
+          <li>Expansión de <strong>Wi-Fi</strong> y <strong>redes móviles (3G, 4G,
             5G)</strong>.</li>
-        <li>Redes sociales, streaming y servicios en la nube transforman la
-          forma de comunicarse.</li>
-        <li>Mayor enfoque en seguridad y privacidad.</li>
-      </ul>
-    </li>
-  </ol>
-  <hr />
-  <h2 id="modelos-de-redes">3. Modelos de redes</h2>
-  <p>Los modelos ayudan a entender cómo funciona la comunicación entre
-    dispositivos:</p>
-  <h3 id="modelo-osi-open-systems-interconnection"><strong>Modelo OSI
-      (Open Systems Interconnection)</strong></h3>
-  <ul>
+          <li>Redes sociales, streaming y servicios en la nube transforman la
+            forma de comunicarse.</li>
+          <li>Mayor enfoque en seguridad y privacidad.</li>
+        </Lista>
+      </li>
+    </ol >
+  <Linea />
+  <Titulo title="h2" id="modelos-de-redes">3. Modelos de redes</Titulo>
+  <Texto>Los modelos ayudan a entender cómo funciona la comunicación entre
+    dispositivos:</Texto>
+  <Titulo title="h3" id="modelo-osi-open-systems-interconnection"><strong>Modelo OSI
+      (Open Systems Interconnection)</strong></Titulo>
+  <Lista>
     <li>
-      <p>Divide la comunicación en <strong>7 capas</strong>:</p>
+      <Texto>Divide la comunicación en <strong>7 capas</strong>:</Texto>
       <ol type="1">
         <li><strong>Física</strong>: cables, señales eléctricas o de luz.</li>
         <li><strong>Enlace de datos</strong>: control de errores y transmisión
@@ -241,14 +200,11 @@
           navegador, correo).</li>
       </ol>
     </li>
-  </ul>
-  <h3 id="modelo-tcpip"><strong>Modelo TCP/IP</strong></h3>
-  <ul>
+  </Lista>
+  <Titulo title="h3" id="modelo-tcpip"><strong>Modelo TCP/IP</strong></Titulo>
+  <Lista>
     <li>
-      <p>Más práctico y usado en Internet.</p>
-    </li>
-    <li>
-      <p>Tiene <strong>4 capas</strong>:</p>
+      <Texto>Más práctico y usado en Internet.</li>    <li>Tiene <strong>4 capas</strong>:</Texto>
       <ol type="1">
         <li><strong>Acceso a red</strong>: transmisión física de datos.</li>
         <li><strong>Internet</strong>: direccionamiento y enrutamiento
@@ -259,11 +215,11 @@
           SMTP.</li>
       </ol>
     </li>
-  </ul>
-  <hr />
-  <h2 id="tipos-de-redes-según-su-alcance">4. Tipos de redes según su
-    alcance</h2>
-  <ul>
+  </Lista >
+  <Linea />
+  <Titulo title="h2" id="tipos-de-redes-según-su-alcance">4. Tipos de redes según su
+    alcance</Titulo>
+  <Lista>
     <li><strong>LAN (Local Area Network)</strong>: red local, p. ej., en una
       casa o escuela.</li>
     <li><strong>WAN (Wide Area Network)</strong>: red de largo alcance,
@@ -272,118 +228,110 @@
       ciudad.</li>
     <li><strong>PAN (Personal Area Network)</strong>: dispositivos cercanos,
       p. ej., Bluetooth.</li>
-  </ul>
-  <hr />
-  <h2 id="arquitectura-cliente-servidor">5. Arquitectura
-    Cliente-Servidor</h2>
-  <p>La <strong>arquitectura cliente-servidor</strong> es un modelo de
+  </Lista>
+  <Linea />
+  <Titulo title="h2" id="arquitectura-cliente-servidor">5. Arquitectura
+    Cliente-Servidor</Titulo>
+  <Texto>La <strong>arquitectura cliente-servidor</strong> es un modelo de
     diseño de sistemas en el que las tareas se distribuyen entre dos tipos
     de entidades: <strong>clientes</strong> y
     <strong>servidores</strong>.
-  </p>
-  <h3 id="componentes-principales"><strong>Componentes
-      principales:</strong></h3>
-  <ul>
+  </Texto>
+  <Titulo title="h3" id="componentes-principales"><strong>Componentes
+      principales:</strong></Titulo>
+  <Lista>
     <li>
-      <p><strong>Servidor:</strong> Es un equipo o programa que
+      <Texto><strong>Servidor:</strong> Es un equipo o programa que
         <strong>ofrece servicios</strong> o recursos a otros dispositivos.
         Ejemplo: un servidor web que envía páginas HTML.
-      </p>
-    </li>
-    <li>
-      <p><strong>Cliente:</strong> Es un equipo o programa que
+      </li>    <li><strong>Cliente:</strong> Es un equipo o programa que
         <strong>solicita servicios</strong> al servidor. Ejemplo: un navegador
         web que solicita páginas a un servidor.
-      </p>
-    </li>
-    <li>
-      <p><strong>Red:</strong> Medio que permite la comunicación entre
+      </li>    <li><strong>Red:</strong> Medio que permite la comunicación entre
         cliente y servidor. Puede ser cableada (Ethernet) o inalámbrica
-        (Wi-Fi).</p>
-    </li>
-  </ul>
-  <h3 id="funcionamiento"><strong>Funcionamiento:</strong></h3>
+        (Wi-Fi).</li>  </Lista>
+  <Titulo title="h3" id="funcionamiento"><strong>Funcionamiento:</strong></Titulo>
   <ol type="1">
     <li>El cliente envía una <strong>solicitud</strong> al servidor.</li>
     <li>El servidor procesa la solicitud.</li>
     <li>El servidor envía una <strong>respuesta</strong> al cliente.</li>
   </ol>
   <blockquote>
-    <p>Ejemplo práctico: Cuando abres YouTube:</p>
-    <ul>
+    <Texto>Ejemplo práctico: Cuando abres YouTube:</Texto>
+    <Lista>
       <li>Tu navegador (cliente) pide un video.</li>
       <li>Los servidores de YouTube lo envían.</li>
       <li>Tu navegador reproduce el video.</li>
-    </ul>
+    </Lista>
   </blockquote>
-  <h3 id="ventajas"><strong>Ventajas:</strong></h3>
-  <ul>
+  <Titulo title="h3" id="ventajas"><strong>Ventajas:</strong></Titulo>
+  <Lista>
     <li>Centralización de datos y control.</li>
     <li>Facilita la administración y seguridad.</li>
     <li>Escalabilidad: se pueden añadir más clientes sin cambiar el
       servidor.</li>
-  </ul>
-  <h3 id="desventajas"><strong>Desventajas:</strong></h3>
-  <ul>
+  </Lista>
+  <Titulo title="h3" id="desventajas"><strong>Desventajas:</strong></Titulo>
+  <Lista>
     <li>Si el servidor falla, los clientes quedan sin servicio.</li>
     <li>Requiere buena infraestructura para manejar muchos clientes.</li>
-  </ul>
-  <hr />
-  <h2 id="arquitectura-de-red">6. Arquitectura de Red</h2>
-  <p>La <strong>arquitectura de red</strong> describe cómo los
+  </Lista>
+  <Linea />
+  <Titulo title="h2" id="arquitectura-de-red">6. Arquitectura de Red</Titulo>
+  <Texto>La <strong>arquitectura de red</strong> describe cómo los
     <strong>dispositivos y servicios están organizados y conectados</strong>
     para comunicarse. La arquitectura cliente-servidor es un tipo de
     arquitectura de red, pero existen otros modelos, como
     <strong>peer-to-peer (P2P)</strong>.
-  </p>
-  <h3 id="tipos-comunes-de-arquitectura-de-red"><strong>Tipos comunes de
-      arquitectura de red:</strong></h3>
+  </Texto>
+  <Titulo title="h3" id="tipos-comunes-de-arquitectura-de-red"><strong>Tipos comunes de
+      arquitectura de red:</strong></Titulo>
   <ol type="1">
     <li>
-      <p><strong>Cliente-Servidor (como vimos):</strong></p>
-      <ul>
+      <Texto><strong>Cliente-Servidor (como vimos):</strong></Texto>
+      <Lista>
         <li>Un servidor central da servicios a múltiples clientes.</li>
-      </ul>
+      </Lista>
     </li>
     <li>
-      <p><strong>Peer-to-Peer (P2P):</strong></p>
-      <ul>
+      <Texto><strong>Peer-to-Peer (P2P):</strong></Texto>
+      <Lista>
         <li>Todos los dispositivos son iguales, pueden <strong>servir y pedir
             recursos</strong>.</li>
         <li>Ejemplo: aplicaciones de torrents.</li>
-      </ul>
+      </Lista>
     </li>
     <li>
-      <p><strong>Red en estrella:</strong></p>
-      <ul>
+      <Texto><strong>Red en estrella:</strong></Texto>
+      <Lista>
         <li>Todos los dispositivos están conectados a un <strong>hub o switch
             central</strong>.</li>
         <li>Muy usado en redes locales (LAN).</li>
-      </ul>
+      </Lista>
     </li>
     <li>
-      <p><strong>Red en malla:</strong></p>
-      <ul>
+      <Texto><strong>Red en malla:</strong></Texto>
+      <Lista>
         <li>Cada dispositivo está conectado a varios otros dispositivos.</li>
         <li>Alta confiabilidad y redundancia.</li>
-      </ul>
+      </Lista>
     </li>
   </ol>
-  <hr />
-  <h2 id="protocolos-de-red">7. Protocolos de red</h2>
-  <p>Un <strong>protocolo de red</strong> es un conjunto de <strong>reglas
+  <Linea />
+  <Titulo title="h2" id="protocolos-de-red">7. Protocolos de red</Titulo>
+  <Texto>Un <strong>protocolo de red</strong> es un conjunto de <strong>reglas
       y estándares</strong> que permiten que los dispositivos se comuniquen
-    correctamente a través de una red.</p>
-  <h3 id="funciones-principales-de-los-protocolos"><strong>Funciones
-      principales de los protocolos:</strong></h3>
-  <ul>
+    correctamente a través de una red.</Texto>
+  <Titulo title="h3" id="funciones-principales-de-los-protocolos"><strong>Funciones
+      principales de los protocolos:</strong></Titulo>
+  <Lista>
     <li>Determinan <strong>cómo se envían los datos</strong>.</li>
     <li>Definen <strong>cómo se reciben y verifican</strong>.</li>
     <li>Aseguran que <strong>dispositivos distintos puedan
         entenderse</strong>.</li>
-  </ul>
-  <h3 id="ejemplos-de-protocolos-comunes"><strong>Ejemplos de protocolos
-      comunes:</strong></h3>
+  </Lista>
+  <Titulo title="h3" id="ejemplos-de-protocolos-comunes"><strong>Ejemplos de protocolos
+      comunes:</strong></Titulo>
   <table>
     <colgroup>
       <col style="width: 31%" />
@@ -436,50 +384,50 @@
     </tbody>
   </table>
   <blockquote>
-    <p>Nota: Muchos protocolos trabajan <strong>juntos en capas</strong>
-      según el modelo OSI o TCP/IP.</p>
+    <Texto>Nota: Muchos protocolos trabajan <strong>juntos en capas</strong>
+      según el modelo OSI o TCP/IP.</Texto>
   </blockquote>
-  <hr />
-  <h2 id="comunicaciones-en-redes">8. Comunicaciones en Redes</h2>
-  <p>La <strong>comunicación en redes</strong> es el proceso mediante el
+  <Linea />
+  <Titulo title="h2" id="comunicaciones-en-redes">8. Comunicaciones en Redes</Titulo>
+  <Texto>La <strong>comunicación en redes</strong> es el proceso mediante el
     cual los <strong>dispositivos intercambian información</strong>
-    siguiendo protocolos.</p>
-  <h3 id="tipos-de-comunicación"><strong>Tipos de
-      comunicación:</strong></h3>
+    siguiendo protocolos.</Texto>
+  <Titulo title="h3" id="tipos-de-comunicación"><strong>Tipos de
+      comunicación:</strong></Titulo>
   <ol type="1">
     <li>
-      <p><strong>Unicast:</strong></p>
-      <ul>
+      <Texto><strong>Unicast:</strong></Texto>
+      <Lista>
         <li>Comunicación de un dispositivo a otro específico.</li>
         <li>Ejemplo: enviar un mensaje privado.</li>
-      </ul>
+      </Lista>
     </li>
     <li>
-      <p><strong>Broadcast:</strong></p>
-      <ul>
+      <Texto><strong>Broadcast:</strong></Texto>
+      <Lista>
         <li>Comunicación de un dispositivo a <strong>todos</strong> los
           dispositivos de la red.</li>
         <li>Ejemplo: anuncios dentro de una red local.</li>
-      </ul>
+      </Lista>
     </li>
     <li>
-      <p><strong>Multicast:</strong></p>
-      <ul>
+      <Texto><strong>Multicast:</strong></Texto>
+      <Lista>
         <li>Comunicación a un <strong>grupo específico</strong> de
           dispositivos.</li>
         <li>Ejemplo: transmisión de video en vivo a varios usuarios.</li>
-      </ul>
+      </Lista>
     </li>
   </ol>
-  <h3 id="medios-de-transmisión"><strong>Medios de
-      transmisión:</strong></h3>
-  <ul>
+  <Titulo title="h3" id="medios-de-transmisión"><strong>Medios de
+      transmisión:</strong></Titulo>
+  <Lista>
     <li><strong>Alámbricos:</strong> Cable Ethernet, fibra óptica.</li>
     <li><strong>Inalámbricos:</strong> Wi-Fi, Bluetooth, redes móviles
       (4G/5G).</li>
-  </ul>
-  <h3 id="procesos-clave-en-la-comunicación"><strong>Procesos clave en la
-      comunicación:</strong></h3>
+  </Lista>
+  <Titulo title="h3" id="procesos-clave-en-la-comunicación"><strong>Procesos clave en la
+      comunicación:</strong></Titulo>
   <ol type="1">
     <li><strong>Codificación y empaquetado de datos</strong> (se forman los
       paquetes de información).</li>
@@ -487,23 +435,23 @@
     <li><strong>Recepción y verificación</strong> de errores.</li>
     <li><strong>Entrega</strong> al dispositivo o aplicación correcta.</li>
   </ol>
-  <hr />
-  <h2 id="protocolos-de-aplicación">9. Protocolos de Aplicación</h2>
-  <p>Los <strong>protocolos de aplicación</strong> son reglas que permiten
+  <Linea />
+  <Titulo title="h2" id="protocolos-de-aplicación">9. Protocolos de Aplicación</Titulo>
+  <Texto>Los <strong>protocolos de aplicación</strong> son reglas que permiten
     a los <strong>programas o aplicaciones</strong> comunicarse a través de
     la red. Trabajan en la <strong>capa más alta</strong> de los modelos de
-    red (OSI o TCP/IP).</p>
-  <h3 id="funciones-principales"><strong>Funciones
-      principales:</strong></h3>
-  <ul>
+    red (OSI o TCP/IP).</Texto>
+  <Titulo title="h3" id="funciones-principales"><strong>Funciones
+      principales:</strong></Titulo>
+  <Lista>
     <li>Definen cómo las aplicaciones intercambian datos.</li>
     <li>Permiten que diferentes programas se entiendan aunque sean de
       fabricantes distintos.</li>
     <li>Usan protocolos de transporte como <strong>TCP o UDP</strong> para
       enviar los datos.</li>
-  </ul>
-  <h3 id="ejemplos-importantes"><strong>Ejemplos
-      importantes:</strong></h3>
+  </Lista>
+  <Titulo title="h3" id="ejemplos-importantes"><strong>Ejemplos
+      importantes:</strong></Titulo>
   <table>
     <colgroup>
       <col style="width: 20%" />
@@ -551,77 +499,78 @@
     </tbody>
   </table>
   <blockquote>
-    <p>Nota: Cada protocolo de aplicación funciona <strong>encima de TCP o
-        UDP</strong> para garantizar que los datos lleguen correctamente.</p>
+    <Texto>Nota: Cada protocolo de aplicación funciona <strong>encima de TCP o
+        UDP</strong> para garantizar que los datos lleguen correctamente.</Texto>
   </blockquote>
-  <hr />
-  <h2 id="direcciones-ip">10. Direcciones IP</h2>
-  <p>Una <strong>dirección IP (Internet Protocol)</strong> es un
+  <Linea />
+  <Titulo title="h2" id="direcciones-ip">10. Direcciones IP</Titulo>
+  <Texto>Una <strong>dirección IP (Internet Protocol)</strong> es un
     <strong>identificador único</strong> que permite que un dispositivo se
     comunique en una red. Funciona como una <strong>dirección
       postal</strong> para enviar información.
-  </p>
-  <h3 id="tipos-de-direcciones-ip"><strong>Tipos de direcciones
-      IP:</strong></h3>
+  </Texto>
+  <Titulo title="h3" id="tipos-de-direcciones-ip"><strong>Tipos de direcciones
+      IP:</strong></Titulo>
   <ol type="1">
     <li>
-      <p><strong>IPv4:</strong></p>
-      <ul>
+      <Texto><strong>IPv4:</strong></Texto>
+      <Lista>
         <li>Formato: <code>192.168.1.10</code> (números de 0 a 255).</li>
         <li>Ejemplo: <code>172.16.0.5</code></li>
         <li>Tiene espacio limitado (~4.000 millones de direcciones).</li>
-      </ul>
+      </Lista>
     </li>
     <li>
-      <p><strong>IPv6:</strong></p>
-      <ul>
+      <Texto><strong>IPv6:</strong></Texto>
+      <Lista>
         <li>Formato: <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></li>
         <li>Diseñada para soportar millones de dispositivos más.</li>
-      </ul>
+      </Lista>
     </li>
   </ol>
-  <h3 id="clases-de-direcciones-ip-ipv4"><strong>Clases de direcciones IP
-      (IPv4):</strong></h3>
-  <ul>
+  <Titulo title="h3" id="clases-de-direcciones-ip-ipv4"><strong>Clases de direcciones IP
+      (IPv4):</strong></Titulo>
+  <Lista>
     <li><strong>Públicas:</strong> Únicas en Internet, accesibles desde
       cualquier lugar.</li>
     <li><strong>Privadas:</strong> Usadas en redes locales, no accesibles
       directamente desde Internet. Ej: <code>192.168.0.0/16</code></li>
-  </ul>
-  <h3 id="funciones-de-la-ip"><strong>Funciones de la IP:</strong></h3>
-  <ul>
+  </Lista>
+  <Titulo title="h3" id="funciones-de-la-ip"><strong>Funciones de la IP:</strong></Titulo>
+  <Lista>
     <li>Identificar dispositivos en la red.</li>
     <li>Dirigir los paquetes de datos hacia el destino correcto.</li>
-  </ul>
-  <h3 id="relación-con-los-protocolos-de-aplicación"><strong>Relación con
-      los protocolos de aplicación:</strong></h3>
-  <ul>
+  </Lista>
+  <Titulo title="h3" id="relación-con-los-protocolos-de-aplicación"><strong>Relación con
+      los protocolos de aplicación:</strong></Titulo>
+  <Lista>
     <li>Los <strong>protocolos de aplicación</strong> usan la
       <strong>IP</strong> para localizar a los dispositivos y el
       <strong>puerto</strong> para identificar la aplicación dentro de ese
       dispositivo.
     </li>
-  </ul>
+  </Lista>
   <blockquote>
-    <p>Ejemplo práctico:</p>
-    <ul>
+    <Texto>Ejemplo práctico:</Texto>
+    <Lista>
       <li>
-        <p>Quiero abrir un sitio web:</p>
-        <ul>
+        <Texto>Quiero abrir un sitio web:</Texto>
+        <Lista>
           <li>Mi navegador usa <strong>HTTP/HTTPS</strong> (protocolo de
             aplicación).</li>
           <li>Se conecta a la <strong>IP del servidor web</strong> (dirección
             IP).</li>
           <li>Los datos llegan gracias a TCP/IP.</li>
-        </ul>
+        </Lista>
       </li>
-    </ul>
+    </Lista>
   </blockquote>
-  <hr />
-  <p><a href="./../readme.md#4-redes">Regresar a la Guía Principal</a></p>
+  <Linea />
+  <Texto><a href="./../readme.md#4-redes">Regresar a la Guía Principal</a></Texto>
   <blockquote>
-    <p><strong>Autor:</strong> Fravelz</p>
+    <Texto><strong>Autor:</strong> Fravelz</Texto>
   </blockquote>
-</body>
-
-</html>
+</>
+);
+}
+export default nameabcd;

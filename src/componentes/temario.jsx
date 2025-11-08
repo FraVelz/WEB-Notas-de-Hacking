@@ -1,42 +1,53 @@
 
-function Enlace({ href, children }) {
-  return (
-    <a href={href}>{children}</a>
-  );
-}
 
-function Temario() {
+import Lista from "./lista.jsx";
+import Enlace from "./enlace.jsx";
+
+function Temario({ className = "" }) {
     return (
-    <ul>
-      <li><a href="#0-conceptos-básicos">0. Conceptos Básicos</a></li>
-      <li><a href="#1-virtualización">1. Virtualización</a></li>
-      <li>
-        <a href="#2-linux-y-bash-script">2. Linux y Bash Script</a>
-        <ul>
-          <li>
-            <a href="#1-linux-comandos-por-secciones"
-              >1. Linux (comandos por secciones)</a
-            >
-          </li>
-          <li>
-            <a href="#2-linux-comandos-individuales"
-              >2. Linux (comandos individuales)</a
-            >
-          </li>
-          <li><a href="#3-bash-script">3. Bash Script</a></li>
-          <li><a href="#4-practica-general">4. Practica general</a></li>
-        </ul>
-      </li>
-      <li><a href="#3-windows">3. Windows</a></li>
-      <li><a href="#4-redes">4. Redes</a></li>
-      <li><a href="#5-python">5. Python</a></li>
-      <li><a href="#6-pentesting">6. Pentesting</a></li>
-      <li><a href="#7-osint">7. OSINT</a></li>
-      <li>
-        <a href="#8-privacidad-y-anonimato">8. Privacidad y Anonimato</a>
-      </li>
-      <li><a href="#información">Información</a></li>
-    </ul>
+        <Lista className={className}>
+            <li>
+                <Enlace href="#1-conceptos-básicos">Conceptos Básicos</Enlace>
+            </li>
+            <li>
+                <Enlace href="#2-virtualización">Virtualización</Enlace>
+            </li>
+            <li>
+                <Enlace href="#2-linux-y-bash-script">Linux y Bash Script</Enlace>
+                <Lista className="list-[upper-roman] my-3">
+                    <li>
+                        <Enlace href="#1-linux-comandos-por-secciones">Linux (comandos por secciones)</Enlace>
+                    </li>
+                    <li>
+                        <Enlace href="#2-linux-comandos-individuales">Linux (comandos individuales)</Enlace>
+                    </li>
+                    <li>
+                        <Enlace href="#3-bash-script">Bash Script</Enlace>
+                    </li>
+                </Lista>
+            </li>
+            <li>
+                <Enlace href="#4-windows">Windows</Enlace>
+            </li>
+            <li>
+                <Enlace href="#5-redes">Redes</Enlace>
+            </li>
+            <li>
+                <Enlace href="#6-python">Python</Enlace>
+            </li>
+            <li>
+                <Enlace href="#7-pentesting">Pentesting</Enlace>
+            </li>
+            <li>
+                <Enlace href="#8-osint">OSINT</Enlace>
+            </li>
+            <li>
+                <Enlace href="#9-privacidad-y-anonimato">Privacidad y Anonimato</Enlace>
+            </li>
+            <li>
+                <Enlace href="#10-información">Información</Enlace>
+            </li>
+        </Lista>
     );
 }
 

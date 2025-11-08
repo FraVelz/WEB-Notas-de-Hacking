@@ -1,14 +1,14 @@
 function Definicion() {
   return (
     <>
-      <h1 id="definiciones">Definiciones</h1>
-      <p>Definiciones y diferencias entre privacidad y anonimato.</p>
-      <hr />
-      <h2 id="temario">Temario</h2>
-      <ul>
+      <Titulo title="h1" id="definiciones">Definiciones</Titulo>
+      <Texto>Definiciones y diferencias entre privacidad y anonimato.</Texto>
+      <Linea />
+      <Titulo title="h2" id="temario">Temario</Titulo>
+      <Lista>
         <li>
           <a href="#definiciones">Definiciones</a>
-          <ul>
+          <Lista>
             <li>
               <a href="#temario">Temario</a>
             </li>
@@ -24,87 +24,69 @@ function Definicion() {
             <li>
               <a href="#en-resumen">En resumen</a>
             </li>
-          </ul>
+          </Lista>
         </li>
-      </ul>
-      <p>
+      </Lista>
+      <Texto>
         <a href="./../readme.md#10-privacidad-y-anonimato">
           Regresar a la guía principal
         </a>
-      </p>
-      <hr />
-      <h2 id="privacidad">Privacidad</h2>
-      <p>
+      </Texto>
+      <Linea />
+      <Titulo title="h2" id="privacidad">Privacidad</Titulo>
+      <Texto>
         La <strong>privacidad</strong> se refiere al{" "}
         <strong>
           control que una persona tiene sobre su información personal
         </strong>
         : qué datos comparte, con quién, cuándo y para qué.
-      </p>
-      <ul>
+      </Texto>
+      <Lista>
         <li>
-          <p>
-            <strong>Idea central:</strong> “Yo decido quién sabe qué sobre mí.”
-          </p>
-        </li>
-        <li>
-          <p>Ejemplo:</p>
-          <ul>
-            <li>
-              <p>
-                Cuando configuras tus redes sociales para que solo tus amigos
-                vean tus fotos, estás <strong>protegiendo tu privacidad</strong>
-                .
-              </p>
-            </li>
-            <li>
-              <p>
-                Si das tu nombre y correo a una empresa, pero solo para recibir
-                un servicio, esperas que{" "}
-                <strong>no usen esos datos para otra cosa</strong>.
-              </p>
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <p>Privacidad = tener el control de tus datos personales.</p>
-      <hr />
-      <h2 id="anonimato">Anonimato</h2>
-      <p>
+          <strong>Idea central:</strong> “Yo decido quién sabe qué sobre mí.”
+        </li>        <li>Ejemplo:</Texto>
+        <Lista>
+          <li>
+            <Texto>
+              Cuando configuras tus redes sociales para que solo tus amigos
+              vean tus fotos, estás <strong>protegiendo tu privacidad</strong>
+              .
+          </li>            <li>
+            Si das tu nombre y correo a una empresa, pero solo para recibir
+            un servicio, esperas que{" "}
+            <strong>no usen esos datos para otra cosa</strong>.
+          </li>          </Lista>
+      </li>
+    </Lista >
+      <Texto>Privacidad = tener el control de tus datos personales.</Texto>
+      <Linea />
+      <Titulo title="h2" id="anonimato">Anonimato</Titulo>
+      <Texto>
         El <strong>anonimato</strong> significa que{" "}
         <strong>nadie puede saber quién eres realmente</strong>, aunque vean tus
         acciones o tus mensajes.
-      </p>
-      <ul>
+      </Texto>
+      <Lista>
         <li>
-          <p>
             <strong>Idea central:</strong> “Pueden ver lo que hago, pero no
             saben que soy yo.”
-          </p>
-        </li>
-        <li>
-          <p>Ejemplo:</p>
-          <ul>
+          </li>        <li>Ejemplo:</Texto>
+          <Lista>
             <li>
-              <p>
+              <Texto>
                 Si publicas un comentario en un foro con un nombre falso o
                 navegas por Tor sin revelar tu identidad, estás{" "}
                 <strong>actuando de forma anónima</strong>.
-              </p>
-            </li>
-            <li>
-              <p>
+              </li>            <li>
                 Los “whistleblowers” (personas que revelan información
                 confidencial de forma segura) buscan{" "}
                 <strong>mantener el anonimato</strong>.
-              </p>
-            </li>
-          </ul>
+              </li>          </Lista>
         </li>
-      </ul>
-      <p>Anonimato = ocultar tu identidad.</p>
-      <hr />
-      <h2 id="diferencias-clave">Diferencias clave</h2>
+      </Lista >
+      <Texto>Anonimato = ocultar tu identidad.</Texto>
+      <Linea />
+      <Titulo title="h2" id="diferencias-clave">Diferencias clave</Titulo>
       <table>
         <colgroup>
           <col style="width: 13%" />
@@ -149,33 +131,27 @@ function Definicion() {
           </tr>
         </tbody>
       </table>
-      <hr />
-      <h2 id="en-resumen">En resumen</h2>
-      <ul>
+      <Linea />
+      <Titulo title="h2" id="en-resumen">En resumen</Titulo>
+      <Lista>
         <li>
-          <p>
             Puedes tener <strong>privacidad sin anonimato</strong>: por ejemplo,
             tu banco sabe quién eres, pero <strong>protege tus datos</strong>.
-          </p>
-        </li>
-        <li>
-          <p>
+          </li>        <li>
             Y puedes tener <strong>anonimato sin privacidad</strong>: si actúas
             con un seudónimo, pero tus mensajes quedan guardados o analizados,{" "}
             <strong>no tienes privacidad</strong> aunque nadie sepa tu nombre.
-          </p>
-        </li>
-      </ul>
-      <hr />
-      <p>
+          </li>      </Lista>
+      <Linea />
+      <Texto>
         <a href="./../readme.md#10-privacidad-y-anonimato">
           Regresar a la guía principal
         </a>
-      </p>
+      </Texto>
       <blockquote>
-        <p>
+        <Texto>
           <strong>Autor:</strong> Fravelz
-        </p>
+        </Texto>
       </blockquote>
     </>
   );

@@ -1,14 +1,14 @@
 function Huella_Digital() {
   return (
     <>
-      <h1 id="definiciones">Definiciones</h1>
-      <p>Definiciones y diferencias entre privacidad y anonimato.</p>
-      <hr />
-      <h2 id="temario">Temario</h2>
-      <ul>
+      <Titulo title="h1" id="definiciones">Definiciones</Titulo>
+      <Texto>Definiciones y diferencias entre privacidad y anonimato.</Texto>
+      <Linea />
+      <Titulo title="h2" id="temario">Temario</Titulo>
+      <Lista>
         <li>
           <a href="#definiciones">Definiciones</a>
-          <ul>
+          <Lista>
             <li>
               <a href="#temario">Temario</a>
             </li>
@@ -29,52 +29,51 @@ function Huella_Digital() {
                 Visualizar tu huella digital al navegar
               </a>
             </li>
-          </ul>
+          </Lista>
         </li>
-      </ul>
-      <p>
+      </Lista>
+      <Texto>
         <a href="./../readme.md#9-privacidad-y-anonimato">
           Regresar a la guía principal
         </a>
-      </p>
-      <hr />
-      <h2 id="qué-es-la-huella-digital">¿Qué es la huella digital?</h2>
-      <p>
+      </Texto>
+      <Linea />
+      <Titulo title="h2" id="qué-es-la-huella-digital">¿Qué es la huella digital?</Titulo>
+      <Texto>
         Es{" "}
         <strong>
           el rastro que dejamos cada vez que usamos internet o dispositivos
           digitales
         </strong>
         . Incluye todo lo que generamos, compartimos o registramos en línea.
-      </p>
-      <ul>
+      </Texto>
+      <Lista>
         <li>
-          <p>
-            <strong>Ejemplo:</strong>
-          </p>
-          <ul>
-            <li>Publicar fotos o comentarios en redes sociales</li>
-            <li>Entrar a un sitio web o buscar algo en Google</li>
-            <li>Comprar en tiendas online</li>
-            <li>Usar apps o enviar mensajes</li>
-          </ul>
-        </li>
-      </ul>
-      <p>
+          <strong>Ejemplo:</strong>
+        </Texto>
+        <Lista>
+          <li>Publicar fotos o comentarios en redes sociales</li>
+          <li>Entrar a un sitio web o buscar algo en Google</li>
+          <li>Comprar en tiendas online</li>
+          <li>Usar apps o enviar mensajes</li>
+        </Lista>
+      </li>
+    </Lista >
+      <Texto>
         Cada acción deja{" "}
         <strong>
           información que puede ser almacenada, analizada o usada por terceros
         </strong>
         .
-      </p>
-      <hr />
-      <h2 id="tipos-de-huella-digital">Tipos de huella digital</h2>
+      </Texto>
+      <Linea />
+      <Titulo title="h2" id="tipos-de-huella-digital">Tipos de huella digital</Titulo>
       <ol type="1">
         <li>
-          <p>
+          <Texto>
             <strong>Activa:</strong>
-          </p>
-          <ul>
+          </Texto>
+          <Lista>
             <li>
               Todo lo que{" "}
               <strong>tú publicas o compartes voluntariamente</strong>.
@@ -83,13 +82,13 @@ function Huella_Digital() {
               Ejemplo: fotos en Instagram, comentarios en foros, mensajes en
               WhatsApp.
             </li>
-          </ul>
+          </Lista>
         </li>
         <li>
-          <p>
+          <Texto>
             <strong>Pasiva:</strong>
-          </p>
-          <ul>
+          </Texto>
+          <Lista>
             <li>
               Información que{" "}
               <strong>se genera sin que tú la publiques directamente</strong>.
@@ -98,35 +97,27 @@ function Huella_Digital() {
               Ejemplo: dirección IP, historial de navegación, cookies,
               geolocalización de tu celular.
             </li>
-          </ul>
+          </Lista>
         </li>
       </ol>
-      <hr />
-      <h2 id="por-qué-es-importante">Por qué es importante</h2>
-      <ul>
+      <Linea />
+      <Titulo title="h2" id="por-qué-es-importante">Por qué es importante</Titulo>
+      <Lista>
         <li>
-          <p>
+          <Texto>
             Puede afectar tu <strong>privacidad</strong> y seguridad.
-          </p>
-        </li>
-        <li>
-          <p>
+          </li>        <li>
             Las empresas y gobiernos pueden usar tu huella digital para
             <strong>publicidad, análisis de comportamiento o vigilancia</strong>
             .
-          </p>
-        </li>
-        <li>
-          <p>
+          </li>        <li>
             También puede afectar tu <strong>reputación</strong>, profesional o
             personal, si algo que publicaste se hace público o se interpreta
             mal.
-          </p>
-        </li>
-      </ul>
-      <hr />
-      <h2 id="cómo-protegerla">Cómo protegerla</h2>
-      <ul>
+          </li>      </Lista>
+      <Linea />
+      <Titulo title="h2" id="cómo-protegerla">Cómo protegerla</Titulo>
+      <Lista>
         <li>
           Configura <strong>privacidad</strong> en redes sociales y apps.
         </li>
@@ -139,30 +130,30 @@ function Huella_Digital() {
           Piensa antes de publicar: todo lo que subes deja un{" "}
           <strong>rastro permanente</strong>.
         </li>
-      </ul>
-      <hr />
-      <h2 id="visualizar-tu-huella-digital-al-navegar">
+      </Lista>
+      <Linea />
+      <Titulo title="h2" id="visualizar-tu-huella-digital-al-navegar">
         Visualizar tu huella digital al navegar
-      </h2>
-      <p>
+      </Titulo>
+      <Texto>
         En la página <em>“Cover your tracks”</em>,{" "}
         <strong>puedes ver toda la información actual que tu navegador</strong>{" "}
         puede dar a las páginas webs, cuando tú navegas, te dan incluso algunos
         consejos para ciertos casos.
-      </p>
-      <p>
+      </Texto>
+      <Texto>
         <a href="https://coveryourtracks.eff.org/">Ir a Cover your tracks</a>
-      </p>
-      <hr />
-      <p>
+      </Texto>
+      <Linea />
+      <Texto>
         <a href="./../readme.md#9-privacidad-y-anonimato">
           Regresar a la guía principal
         </a>
-      </p>
+      </Texto>
       <blockquote>
-        <p>
+        <Texto>
           <strong>Autor:</strong> Fravelz
-        </p>
+        </Texto>
       </blockquote>
     </>
   );
