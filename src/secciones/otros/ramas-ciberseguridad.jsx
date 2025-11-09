@@ -1,7 +1,16 @@
+import Estructura, { TemarioAside } from "./../../componentes/estructura.jsx";
+
 import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}></Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -11,34 +20,34 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#ramas-y-especializaciones-de-ciberseguridad">Ramas y
-          Especializaciones de ciberseguridad</a>
+        <li><Enlace href="#ramas-y-especializaciones-de-ciberseguridad">Ramas y
+          Especializaciones de ciberseguridad</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-seguridad-ofensiva-ethical-hacking-o-red-team">1.
-              Seguridad Ofensiva (Ethical Hacking o Red Team)</a></li>
-            <li><a href="#2-seguridad-defensiva-blue-team">2. Seguridad Defensiva
-              (Blue Team)</a></li>
-            <li><a href="#3-ciberinteligencia-cyber-threat-intelligence">3.
-              Ciberinteligencia (Cyber Threat Intelligence)</a></li>
-            <li><a href="#4-criptografía-y-seguridad-de-la-información">4.
-              Criptografía y Seguridad de la Información</a></li>
-            <li><a href="#5-seguridad-en-redes">5. Seguridad en Redes</a></li>
-            <li><a href="#6-seguridad-en-la-nube-cloud-security">6. Seguridad en la
-              Nube (Cloud Security)</a></li>
-            <li><a href="#7-seguridad-en-aplicaciones">7. Seguridad en
-              Aplicaciones</a></li>
-            <li><a href="#8-gobernanza-riesgo-y-cumplimiento-grc">8. Gobernanza,
-              Riesgo y Cumplimiento (GRC)</a></li>
-            <li><a href="#9-seguridad-industrial-y-de-infraestructuras-críticas">9.
-              Seguridad Industrial y de Infraestructuras Críticas</a></li>
-            <li><a href="#10-ciberseguridad-en-ia-y-datos">10. Ciberseguridad en IA
-              y Datos</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-seguridad-ofensiva-ethical-hacking-o-red-team">1.
+              Seguridad Ofensiva (Ethical Hacking o Red Team)</Enlace ></li>
+            <li><Enlace href="#2-seguridad-defensiva-blue-team">2. Seguridad Defensiva
+              (Blue Team)</Enlace ></li>
+            <li><Enlace href="#3-ciberinteligencia-cyber-threat-intelligence">3.
+              Ciberinteligencia (Cyber Threat Intelligence)</Enlace ></li>
+            <li><Enlace href="#4-criptografía-y-seguridad-de-la-información">4.
+              Criptografía y Seguridad de la Información</Enlace ></li>
+            <li><Enlace href="#5-seguridad-en-redes">5. Seguridad en Redes</Enlace ></li>
+            <li><Enlace href="#6-seguridad-en-la-nube-cloud-security">6. Seguridad en la
+              Nube (Cloud Security)</Enlace ></li>
+            <li><Enlace href="#7-seguridad-en-aplicaciones">7. Seguridad en
+              Aplicaciones</Enlace ></li>
+            <li><Enlace href="#8-gobernanza-riesgo-y-cumplimiento-grc">8. Gobernanza,
+              Riesgo y Cumplimiento (GRC)</Enlace ></li>
+            <li><Enlace href="#9-seguridad-industrial-y-de-infraestructuras-críticas">9.
+              Seguridad Industrial y de Infraestructuras Críticas</Enlace ></li>
+            <li><Enlace href="#10-ciberseguridad-en-ia-y-datos">10. Ciberseguridad en IA
+              y Datos</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-ramas-y-especializaciones-de-ciberseguridad">Regresar
-        a la guía principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-ramas-y-especializaciones-de-ciberseguridad">Regresar
+        a la guía principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="seguridad-ofensiva-ethical-hacking-o-red-team">1. Seguridad
         Ofensiva (Ethical Hacking o Red Team)</Titulo>
@@ -179,8 +188,8 @@ function nameabcd({ }) {
           información.</strong></li>
       </Lista>
       <Linea />
-      <Texto><a href="./../readme.md#3-ramas-y-especializaciones-de-ciberseguridad">Regresar
-        a la guía principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-ramas-y-especializaciones-de-ciberseguridad">Regresar
+        a la guía principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

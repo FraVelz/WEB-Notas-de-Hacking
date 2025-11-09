@@ -9,50 +9,50 @@ function nameabcd({ }) {
       <Titulo title="h1" id="request-en-python">Request en Python</Titulo>
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#request-en-python">Request en Python</a>
+        <li><Enlace href="#request-en-python">Request en Python</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-qué-es-requests">1) ¿Qué es requests?</a></li>
-            <li><a href="#2-instalación-y-configuración-básica">2) Instalación y
-              configuración básica</a></li>
-            <li><a href="#3-uso-básico--peticiones-http">3) Uso básico — Peticiones
-              HTTP</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-qué-es-requests">1) ¿Qué es requests?</Enlace ></li>
+            <li><Enlace href="#2-instalación-y-configuración-básica">2) Instalación y
+              configuración básica</Enlace ></li>
+            <li><Enlace href="#3-uso-básico--peticiones-http">3) Uso básico — Peticiones
+              HTTP</Enlace >
               <Lista>
-                <li><a href="#get">GET</a></li>
-                <li><a href="#post">POST</a></li>
-                <li><a href="#otros-métodos">Otros métodos</a></li>
+                <li><Enlace href="#get">GET</Enlace ></li>
+                <li><Enlace href="#post">POST</Enlace ></li>
+                <li><Enlace href="#otros-métodos">Otros métodos</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#4-elementos-importantes-de-la-respuesta-response">4)
-              Elementos importantes de la respuesta (Response)</a></li>
-            <li><a href="#5-parámetros-útiles-en-la-petición">5) Parámetros útiles
-              en la petición</a></li>
-            <li><a href="#6-sesiones-requestssession">6) Sesiones
-              (requests.Session)</a></li>
-            <li><a href="#7-autenticación-ssl-y-proxies">7) Autenticación, SSL y
-              proxies</a></li>
-            <li><a href="#8-manejo-de-errores-y-excepciones">8) Manejo de errores y
-              excepciones</a></li>
-            <li><a href="#9-ejemplos-completos">9) Ejemplos completos</a>
+            <li><Enlace href="#4-elementos-importantes-de-la-respuesta-response">4)
+              Elementos importantes de la respuesta (Response)</Enlace ></li>
+            <li><Enlace href="#5-parámetros-útiles-en-la-petición">5) Parámetros útiles
+              en la petición</Enlace ></li>
+            <li><Enlace href="#6-sesiones-requestssession">6) Sesiones
+              (requests.Session)</Enlace ></li>
+            <li><Enlace href="#7-autenticación-ssl-y-proxies">7) Autenticación, SSL y
+              proxies</Enlace ></li>
+            <li><Enlace href="#8-manejo-de-errores-y-excepciones">8) Manejo de errores y
+              excepciones</Enlace ></li>
+            <li><Enlace href="#9-ejemplos-completos">9) Ejemplos completos</Enlace >
               <Lista>
-                <li><a href="#a-petición-get-con-parámetros">a) Petición GET con
-                  parámetros</a></li>
-                <li><a href="#b-petición-post-con-json">b) Petición POST con
-                  JSON</a></li>
-                <li><a href="#c-uso-de-sesión-con-cookies">c) Uso de sesión con
-                  cookies</a></li>
-                <li><a href="#d-descarga-de-archivo-por-streaming">d) Descarga de
-                  archivo por streaming</a></li>
+                <li><Enlace href="#a-petición-get-con-parámetros">a) Petición GET con
+                  parámetros</Enlace ></li>
+                <li><Enlace href="#b-petición-post-con-json">b) Petición POST con
+                  JSON</Enlace ></li>
+                <li><Enlace href="#c-uso-de-sesión-con-cookies">c) Uso de sesión con
+                  cookies</Enlace ></li>
+                <li><Enlace href="#d-descarga-de-archivo-por-streaming">d) Descarga de
+                  archivo por streaming</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#10-buenas-prácticas-y-consideraciones">10) Buenas
-              prácticas y consideraciones</a></li>
-            <li><a href="#11-resumen-rápido">11) Resumen rápido</a></li>
+            <li><Enlace href="#10-buenas-prácticas-y-consideraciones">10) Buenas
+              prácticas y consideraciones</Enlace ></li>
+            <li><Enlace href="#11-resumen-rápido">11) Resumen rápido</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-es-requests">1) ¿Qué es requests?</Titulo>
       <Lista>
@@ -66,14 +66,14 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="instalación-y-configuración-básica">2) Instalación y
         configuración básica</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install requests</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">pip</span> install requests</span></code></pre>
       </div>
       <Texto>Luego en tu script:</Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span></code></pre>
       </div>
       <Texto>Asegúrate de que la versión de Python sea compatible (por ejemplo
         Python 3.8+ según su documentación).</Texto>
@@ -82,26 +82,26 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="uso-básico-peticiones-http">3) Uso básico — Peticiones HTTP</Titulo>
       <Titulo title="h3" id="get">GET</Titulo>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(<span class="st">&quot;https://api.example.com/data&quot;</span>)</span>
-            <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)        <span class="co"># código de estado HTTP</span></span>
-            <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)               <span class="co"># contenido como texto</span></span>
-            <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.json())             <span class="co"># si es JSON, lo transforma en dict/list</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.get(<span className="st">&quot;https://api.example.com/data&quot;</span>)</span>
+            <span id="cb3-4"><Enlace href="#cb3-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.status_code)        <span className="co"># código de estado HTTP</span></span>
+            <span id="cb3-5"><Enlace href="#cb3-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.text)               <span className="co"># contenido como texto</span></span>
+            <span id="cb3-6"><Enlace href="#cb3-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.json())             <span className="co"># si es JSON, lo transforma en dict/list</span></span></code></pre>
       </div>
       <Titulo title="h3" id="post">POST</Titulo>
       <Texto>Enviar datos:</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>payload <span class="op">=</span> {<span class="st">&quot;username&quot;</span>: <span class="st">&quot;usuario&quot;</span>, <span class="st">&quot;password&quot;</span>: <span class="st">&quot;secreto&quot;</span>}</span>
-            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.post(<span class="st">&quot;https://api.example.com/login&quot;</span>, data<span class="op">=</span>payload)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >payload <span className="op">=</span> {<span className="st">&quot;username&quot;</span>: <span className="st">&quot;usuario&quot;</span>, <span className="st">&quot;password&quot;</span>: <span className="st">&quot;secreto&quot;</span>}</span>
+            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.post(<span className="st">&quot;https://api.example.com/login&quot;</span>, data<span className="op">=</span>payload)</span></code></pre>
       </div>
       <Texto>Enviar JSON:</Texto>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.post(<span class="st">&quot;https://api.example.com/login&quot;</span>, json<span class="op">=</span>payload)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.post(<span className="st">&quot;https://api.example.com/login&quot;</span>, json<span className="op">=</span>payload)</span></code></pre>
       </div>
       <Titulo title="h3" id="otros-métodos">Otros métodos</Titulo>
       <Texto>También puedes usar <code>requests.put()</code>,
@@ -200,14 +200,14 @@ function nameabcd({ }) {
         cabeceras comunes, autenticación) entre múltiples peticiones. Mejora el
         rendimiento al reutilizar conexiones. Ejemplo:
       </Texto>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> requests.Session()</span>
-            <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>s.headers.update({<span class="st">&quot;User-Agent&quot;</span>: <span class="st">&quot;MiApp/1.0&quot;</span>})</span>
-            <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>response1 <span class="op">=</span> s.get(<span class="st">&quot;https://api.example.com/resource1&quot;</span>)</span>
-            <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>response2 <span class="op">=</span> s.get(<span class="st">&quot;https://api.example.com/resource2&quot;</span>)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb6-2"><Enlace href="#cb6-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb6-3"><Enlace href="#cb6-3" aria-hidden="true" tabindex="-1"></Enlace >s <span className="op">=</span> requests.Session()</span>
+            <span id="cb6-4"><Enlace href="#cb6-4" aria-hidden="true" tabindex="-1"></Enlace >s.headers.update({<span className="st">&quot;User-Agent&quot;</span>: <span className="st">&quot;MiApp/1.0&quot;</span>})</span>
+            <span id="cb6-5"><Enlace href="#cb6-5" aria-hidden="true" tabindex="-1"></Enlace >response1 <span className="op">=</span> s.get(<span className="st">&quot;https://api.example.com/resource1&quot;</span>)</span>
+            <span id="cb6-6"><Enlace href="#cb6-6" aria-hidden="true" tabindex="-1"></Enlace >response2 <span className="op">=</span> s.get(<span className="st">&quot;https://api.example.com/resource2&quot;</span>)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="autenticación-ssl-y-proxies">7) Autenticación, SSL y
@@ -227,70 +227,70 @@ function nameabcd({ }) {
         excepciones</Titulo>
       <Texto>Es importante manejar posibles fallos (timeout, conexión rechazada,
         etc.). Ejemplo:</Texto>
-      <div class="sourceCode" id="cb7">
+      <div className="sourceCode" id="cb7">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
-            <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(<span class="st">&quot;https://api.example.com&quot;</span>, timeout<span class="op">=</span><span class="dv">5</span>)</span>
-            <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    response.raise_for_status()</span>
-            <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> requests.exceptions.HTTPError <span class="im">as</span> errh:</span>
-            <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;HTTP Error:&quot;</span>, errh)</span>
-            <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> requests.exceptions.<span class="pp">ConnectionError</span> <span class="im">as</span> errc:</span>
-            <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Error de conexión:&quot;</span>, errc)</span>
-            <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> requests.exceptions.Timeout <span class="im">as</span> errt:</span>
-            <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Timeout:&quot;</span>, errt)</span>
-            <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> requests.exceptions.RequestException <span class="im">as</span> err:</span>
-            <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Otro error:&quot;</span>, err)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb7-2"><Enlace href="#cb7-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb7-3"><Enlace href="#cb7-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">try</span>:</span>
+            <span id="cb7-4"><Enlace href="#cb7-4" aria-hidden="true" tabindex="-1"></Enlace >    response <span className="op">=</span> requests.get(<span className="st">&quot;https://api.example.com&quot;</span>, timeout<span className="op">=</span><span className="dv">5</span>)</span>
+            <span id="cb7-5"><Enlace href="#cb7-5" aria-hidden="true" tabindex="-1"></Enlace >    response.raise_for_status()</span>
+            <span id="cb7-6"><Enlace href="#cb7-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">except</span> requests.exceptions.HTTPError <span className="im">as</span> errh:</span>
+            <span id="cb7-7"><Enlace href="#cb7-7" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;HTTP Error:&quot;</span>, errh)</span>
+            <span id="cb7-8"><Enlace href="#cb7-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">except</span> requests.exceptions.<span className="pp">ConnectionError</span> <span className="im">as</span> errc:</span>
+            <span id="cb7-9"><Enlace href="#cb7-9" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Error de conexión:&quot;</span>, errc)</span>
+            <span id="cb7-10"><Enlace href="#cb7-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">except</span> requests.exceptions.Timeout <span className="im">as</span> errt:</span>
+            <span id="cb7-11"><Enlace href="#cb7-11" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Timeout:&quot;</span>, errt)</span>
+            <span id="cb7-12"><Enlace href="#cb7-12" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">except</span> requests.exceptions.RequestException <span className="im">as</span> err:</span>
+            <span id="cb7-13"><Enlace href="#cb7-13" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Otro error:&quot;</span>, err)</span></code></pre>
       </div>
       <Texto>Este patrón aparece en tutoriales de <code>requests</code>.</Texto>
       <Linea />
       <Titulo title="h2" id="ejemplos-completos">9) Ejemplos completos</Titulo>
       <Titulo title="h3" id="a-petición-get-con-parámetros">a) Petición GET con
         parámetros</Titulo>
-      <div class="sourceCode" id="cb8">
+      <div className="sourceCode" id="cb8">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://httpbin.org/get&quot;</span></span>
-            <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>params <span class="op">=</span> {<span class="st">&quot;q&quot;</span>: <span class="st">&quot;python&quot;</span>, <span class="st">&quot;page&quot;</span>: <span class="dv">1</span>}</span>
-            <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url, params<span class="op">=</span>params)</span>
-            <span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.url)       <span class="co"># muestra la URL final con query string</span></span>
-            <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span>
-            <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.json())</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb8-2"><Enlace href="#cb8-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb8-3"><Enlace href="#cb8-3" aria-hidden="true" tabindex="-1"></Enlace >url <span className="op">=</span> <span className="st">&quot;https://httpbin.org/get&quot;</span></span>
+            <span id="cb8-4"><Enlace href="#cb8-4" aria-hidden="true" tabindex="-1"></Enlace >params <span className="op">=</span> {<span className="st">&quot;q&quot;</span>: <span className="st">&quot;python&quot;</span>, <span className="st">&quot;page&quot;</span>: <span className="dv">1</span>}</span>
+            <span id="cb8-5"><Enlace href="#cb8-5" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.get(url, params<span className="op">=</span>params)</span>
+            <span id="cb8-6"><Enlace href="#cb8-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.url)       <span className="co"># muestra la URL final con query string</span></span>
+            <span id="cb8-7"><Enlace href="#cb8-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.status_code)</span>
+            <span id="cb8-8"><Enlace href="#cb8-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.json())</span></code></pre>
       </div>
       <Titulo title="h3" id="b-petición-post-con-json">b) Petición POST con JSON</Titulo>
-      <div class="sourceCode" id="cb9">
+      <div className="sourceCode" id="cb9">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://httpbin.org/post&quot;</span></span>
-            <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>payload <span class="op">=</span> {<span class="st">&quot;username&quot;</span>: <span class="st">&quot;user&quot;</span>, <span class="st">&quot;password&quot;</span>: <span class="st">&quot;pass&quot;</span>}</span>
-            <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.post(url, json<span class="op">=</span>payload)</span>
-            <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.status_code)</span>
-            <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.json())</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb9-2"><Enlace href="#cb9-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb9-3"><Enlace href="#cb9-3" aria-hidden="true" tabindex="-1"></Enlace >url <span className="op">=</span> <span className="st">&quot;https://httpbin.org/post&quot;</span></span>
+            <span id="cb9-4"><Enlace href="#cb9-4" aria-hidden="true" tabindex="-1"></Enlace >payload <span className="op">=</span> {<span className="st">&quot;username&quot;</span>: <span className="st">&quot;user&quot;</span>, <span className="st">&quot;password&quot;</span>: <span className="st">&quot;pass&quot;</span>}</span>
+            <span id="cb9-5"><Enlace href="#cb9-5" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.post(url, json<span className="op">=</span>payload)</span>
+            <span id="cb9-6"><Enlace href="#cb9-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.status_code)</span>
+            <span id="cb9-7"><Enlace href="#cb9-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.json())</span></code></pre>
       </div>
       <Titulo title="h3" id="c-uso-de-sesión-con-cookies">c) Uso de sesión con cookies</Titulo>
-      <div class="sourceCode" id="cb10">
+      <div className="sourceCode" id="cb10">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> requests.Session()</span>
-            <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>s.get(<span class="st">&quot;https://httpbin.org/cookies/set/sessioncookie/12345&quot;</span>)</span>
-            <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> s.get(<span class="st">&quot;https://httpbin.org/cookies&quot;</span>)</span>
-            <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.text)  <span class="co"># Verás que la cookie se mantiene</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb10-2"><Enlace href="#cb10-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb10-3"><Enlace href="#cb10-3" aria-hidden="true" tabindex="-1"></Enlace >s <span className="op">=</span> requests.Session()</span>
+            <span id="cb10-4"><Enlace href="#cb10-4" aria-hidden="true" tabindex="-1"></Enlace >s.get(<span className="st">&quot;https://httpbin.org/cookies/set/sessioncookie/12345&quot;</span>)</span>
+            <span id="cb10-5"><Enlace href="#cb10-5" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> s.get(<span className="st">&quot;https://httpbin.org/cookies&quot;</span>)</span>
+            <span id="cb10-6"><Enlace href="#cb10-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.text)  <span className="co"># Verás que la cookie se mantiene</span></span></code></pre>
       </div>
       <Titulo title="h3" id="d-descarga-de-archivo-por-streaming">d) Descarga de archivo por
         streaming</Titulo>
-      <div class="sourceCode" id="cb11">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-          <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">&quot;https://example.com/largefile.zip&quot;</span></span>
-          <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> requests.get(url, stream<span class="op">=</span><span class="va">True</span>) <span class="im">as</span> r:</span>
-          <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    r.raise_for_status()</span>
-          <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;largefile.zip&quot;</span>, <span class="st">&quot;wb&quot;</span>) <span class="im">as</span> f:</span>
-          <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> chunk <span class="kw">in</span> r.iter_content(chunk_size<span class="op">=</span><span class="dv">8192</span>):</span>
-          <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>            f.write(chunk)</span></code></pre>
+      <div className="sourceCode" id="cb11">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+          <span id="cb11-2"><Enlace href="#cb11-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb11-3"><Enlace href="#cb11-3" aria-hidden="true" tabindex="-1"></Enlace >url <span className="op">=</span> <span className="st">&quot;https://example.com/largefile.zip&quot;</span></span>
+          <span id="cb11-4"><Enlace href="#cb11-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> requests.get(url, stream<span className="op">=</span><span className="va">True</span>) <span className="im">as</span> r:</span>
+          <span id="cb11-5"><Enlace href="#cb11-5" aria-hidden="true" tabindex="-1"></Enlace >    r.raise_for_status()</span>
+          <span id="cb11-6"><Enlace href="#cb11-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">with</span> <span className="bu">open</span>(<span className="st">&quot;largefile.zip&quot;</span>, <span className="st">&quot;wb&quot;</span>) <span className="im">as</span> f:</span>
+          <span id="cb11-7"><Enlace href="#cb11-7" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">for</span> chunk <span className="kw">in</span> r.iter_content(chunk_size<span className="op">=</span><span className="dv">8192</span>):</span>
+          <span id="cb11-8"><Enlace href="#cb11-8" aria-hidden="true" tabindex="-1"></Enlace >            f.write(chunk)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="buenas-prácticas-y-consideraciones">10) Buenas prácticas y
@@ -316,8 +316,8 @@ function nameabcd({ }) {
                 verificación SSL, proxies.</li>    <li>Debes instalarla aparte y aplicarla con buenas
                   prácticas.</li>  </Lista>
       <Linea />
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

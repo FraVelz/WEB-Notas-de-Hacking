@@ -2,6 +2,14 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+   </Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -10,37 +18,37 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#ncat-en-linux">Ncat en Linux</a>
+        <li><Enlace href="#ncat-en-linux">Ncat en Linux</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#qué-hace-ecat">¿Qué hace ecat?</a></li>
-            <li><a href="#usos-típicos">Usos típicos</a></li>
-            <li><a href="#opciones-comunes-útiles-y-seguras">Opciones comunes
-              (útiles y seguras)</a></li>
-            <li><a href="#ejemplos-prácticos">Ejemplos prácticos</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#qué-hace-ecat">¿Qué hace ecat?</Enlace ></li>
+            <li><Enlace href="#usos-típicos">Usos típicos</Enlace ></li>
+            <li><Enlace href="#opciones-comunes-útiles-y-seguras">Opciones comunes
+              (útiles y seguras)</Enlace ></li>
+            <li><Enlace href="#ejemplos-prácticos">Ejemplos prácticos</Enlace >
               <Lista>
-                <li><a href="#cliente-simple-tcp">Cliente simple (TCP)</a></li>
-                <li><a href="#servidor-que-acepta-una-conexión">Servidor que acepta una
-                  conexión</a></li>
-                <li><a href="#servidor-que-acepta-múltiples-conexiones-keep-open">Servidor que
-                  acepta múltiples conexiones (keep-open)</a></li>
-                <li><a href="#udp-cliente-y-servidor">UDP (cliente y servidor)</a></li>
-                <li><a href="#transferir-archivo-cliente---servidor">Transferir archivo
-                  (cliente -&gt; servidor)</a></li>
-                <li><a href="#conexión-cifrada-ssltls-cliente">Conexión cifrada SSL/TLS
-                  (cliente)</a></li>
-                <li><a href="#usar-proxy-socks5">Usar proxy SOCKS5</a></li>
-                <li><a href="#ejecutar-comando-remota-solo-en-entornos-controlados">Ejecutar
-                  comando remota (solo en entornos controlados)</a></li>
+                <li><Enlace href="#cliente-simple-tcp">Cliente simple (TCP)</Enlace ></li>
+                <li><Enlace href="#servidor-que-acepta-una-conexión">Servidor que acepta una
+                  conexión</Enlace ></li>
+                <li><Enlace href="#servidor-que-acepta-múltiples-conexiones-keep-open">Servidor que
+                  acepta múltiples conexiones (keep-open)</Enlace ></li>
+                <li><Enlace href="#udp-cliente-y-servidor">UDP (cliente y servidor)</Enlace ></li>
+                <li><Enlace href="#transferir-archivo-cliente---servidor">Transferir archivo
+                  (cliente -&gt; servidor)</Enlace ></li>
+                <li><Enlace href="#conexión-cifrada-ssltls-cliente">Conexión cifrada SSL/TLS
+                  (cliente)</Enlace ></li>
+                <li><Enlace href="#usar-proxy-socks5">Usar proxy SOCKS5</Enlace ></li>
+                <li><Enlace href="#ejecutar-comando-remota-solo-en-entornos-controlados">Ejecutar
+                  comando remota (solo en entornos controlados)</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#seguridad-y-buenas-prácticas">Seguridad y buenas
-              prácticas</a></li>
+            <li><Enlace href="#seguridad-y-buenas-prácticas">Seguridad y buenas
+              prácticas</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-hace-ecat">¿Qué hace ecat?</Titulo>
       <Texto><code>ncat</code> (o <strong>Ncat</strong>) es la versión moderna de
@@ -95,67 +103,67 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="ejemplos-prácticos">Ejemplos prácticos</Titulo>
       <Titulo title="h3" id="cliente-simple-tcp">Cliente simple (TCP)</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> 192.168.1.10 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> 192.168.1.10 8080</span></code></pre>
       </div>
       <Titulo title="h3" id="servidor-que-acepta-una-conexión">Servidor que acepta una
         conexión</Titulo>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">-l</span> <span class="at">-p</span> 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">-l</span> <span className="at">-p</span> 8080</span></code></pre>
       </div>
       <Titulo title="h3" id="servidor-que-acepta-múltiples-conexiones-keep-open">Servidor que
         acepta múltiples conexiones (keep-open)</Titulo>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">-l</span> <span class="at">-k</span> <span class="at">-p</span> 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">-l</span> <span className="at">-k</span> <span className="at">-p</span> 8080</span></code></pre>
       </div>
       <Titulo title="h3" id="udp-cliente-y-servidor">UDP (cliente y servidor)</Titulo>
       <Texto>Servidor UDP:</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">-u</span> <span class="at">-l</span> <span class="at">-p</span> 6000</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">-u</span> <span className="at">-l</span> <span className="at">-p</span> 6000</span></code></pre>
       </div>
       <Texto>Cliente UDP:</Texto>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">-u</span> 192.168.1.10 6000</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">-u</span> 192.168.1.10 6000</span></code></pre>
       </div>
       <Titulo title="h3" id="transferir-archivo-cliente---servidor">Transferir archivo
         (cliente -&gt; servidor)</Titulo>
       <Texto>Servidor (recibe):</Texto>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">-l</span> <span class="at">-p</span> 9000 <span class="op">&gt;</span> recibido.bin</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">-l</span> <span className="at">-p</span> 9000 <span className="op">&gt;</span> recibido.bin</span></code></pre>
       </div>
       <Texto>Cliente (envía):</Texto>
-      <div class="sourceCode" id="cb7">
+      <div className="sourceCode" id="cb7">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> 192.168.1.20 9000 <span class="op">&lt;</span> archivo.bin</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> 192.168.1.20 9000 <span className="op">&lt;</span> archivo.bin</span></code></pre>
       </div>
       <Titulo title="h3" id="conexión-cifrada-ssltls-cliente">Conexión cifrada SSL/TLS
         (cliente)</Titulo>
-      <div class="sourceCode" id="cb8">
+      <div className="sourceCode" id="cb8">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">--ssl</span> ejemplo.com 443</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">--ssl</span> ejemplo.com 443</span></code></pre>
       </div>
       <Titulo title="h3" id="usar-proxy-socks5">Usar proxy SOCKS5</Titulo>
-      <div class="sourceCode" id="cb9">
+      <div className="sourceCode" id="cb9">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">--proxy</span> 10.0.0.1:1080 <span class="at">--proxy-type</span> socks5 ejemplo.com 80</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">--proxy</span> 10.0.0.1:1080 <span className="at">--proxy-type</span> socks5 ejemplo.com 80</span></code></pre>
       </div>
       <Titulo title="h3" id="ejecutar-comando-remota-solo-en-entornos-controlados">Ejecutar
         comando remota (solo en entornos controlados)</Titulo>
       <Texto>Servidor (escucha y ejecuta /bin/bash cuando alguien conecta):</Texto>
-      <div class="sourceCode" id="cb10">
+      <div className="sourceCode" id="cb10">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> <span class="at">-l</span> <span class="at">-p</span> 4444 <span class="at">--exec</span> <span class="st">&quot;/bin/bash&quot;</span> <span class="at">-k</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> <span className="at">-l</span> <span className="at">-p</span> 4444 <span className="at">--exec</span> <span className="st">&quot;/bin/bash&quot;</span> <span className="at">-k</span></span></code></pre>
       </div>
       <Texto>Cliente (conecta y obtiene shell):</Texto>
-      <div class="sourceCode" id="cb11">
+      <div className="sourceCode" id="cb11">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ncat</span> 192.168.1.20 4444</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ncat</span> 192.168.1.20 4444</span></code></pre>
       </div>
       <Texto><strong>Nunca</strong> hagas esto en máquinas expuestas sin
         autorización.</Texto>
@@ -173,8 +181,8 @@ function nameabcd({ }) {
           usa firewall para restringir accesos.</li>    <li>Mantén <code>ncat</code> actualizado (la implementación viene con
             Nmap).</li>  </Lista>
       <Linea />
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

@@ -2,6 +2,14 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+   </Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -10,31 +18,31 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#less-en-linux">Less en Linux</a>
+        <li><Enlace href="#less-en-linux">Less en Linux</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a>
+            <li><Enlace href="#temario">Temario</Enlace >
               <Lista>
-                <li><a href="#qué-hace-exactamente">¿Qué hace exactamente?</a></li>
-                <li><a href="#controles-básicos-dentro-de-less">Controles básicos dentro
-                  de <code>less</code></a></li>
-                <li><a href="#ejemplos-útiles">Ejemplos útiles</a></li>
-                <li><a href="#en-resumen">En resumen</a></li>
+                <li><Enlace href="#qué-hace-exactamente">¿Qué hace exactamente?</Enlace ></li>
+                <li><Enlace href="#controles-básicos-dentro-de-less">Controles básicos dentro
+                  de <code>less</code></Enlace ></li>
+                <li><Enlace href="#ejemplos-útiles">Ejemplos útiles</Enlace ></li>
+                <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
               </Lista>
             </li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Texto>–</Texto>
       <Titulo title="h3" id="qué-hace-exactamente">¿Qué hace exactamente?</Titulo>
       <Texto><code>less</code> muestra el contenido <strong>por páginas</strong>,
         no todo de golpe. Esto es muy útil cuando el archivo es largo (como
         logs, código, o configuraciones grandes).</Texto>
       <Texto>Ejemplo:</Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> archivo.txt</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">less</span> archivo.txt</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="controles-básicos-dentro-de-less">Controles básicos dentro de
@@ -86,23 +94,23 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h3" id="ejemplos-útiles">Ejemplos útiles</Titulo>
       <Texto>Ver varios archivos:</Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> <span class="pp">*</span>.txt</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">less</span> <span className="pp">*</span>.txt</span></code></pre>
       </div>
       <Texto>(Mueve con <code>:n</code> para siguiente archivo y <code>:p</code>
         para anterior)</Texto>
       <Texto>Ver salida de un comando largo (por ejemplo, un <code>ls</code> con
         muchos resultados):</Texto>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">less</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">ls</span> <span className="at">-l</span> <span className="kw">|</span> <span className="fu">less</span></span></code></pre>
       </div>
       <Texto>Buscar dentro de un log:</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">less</span> /var/log/syslog</span>
-            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Luego escribe /error para buscar la palabra &quot;error&quot;</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">less</span> /var/log/syslog</span>
+            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Luego escribe /error para buscar la palabra &quot;error&quot;</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="en-resumen">En resumen</Titulo>
@@ -113,8 +121,8 @@ function nameabcd({ }) {
         <li><strong>Permite búsqueda y navegación avanzada</strong>.</li>
       </Lista>
       <Linea />
-      <Texto><a href="./../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

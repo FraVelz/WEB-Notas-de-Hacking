@@ -10,23 +10,23 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#variables-de-entorno">Variables de Entorno</a>
+        <li><Enlace href="#variables-de-entorno">Variables de Entorno</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a>
+            <li><Enlace href="#temario">Temario</Enlace >
               <Lista>
-                <li><a href="#tipos-de-variables-de-entorno">Tipos de variables de
-                  entorno</a></li>
-                <li><a href="#cómo-ver-las-variables-de-entorno">Cómo ver las variables
-                  de entorno</a></li>
-                <li><a href="#editar-o-crear-variables">Editar o crear
-                  variables</a></li>
+                <li><Enlace href="#tipos-de-variables-de-entorno">Tipos de variables de
+                  entorno</Enlace ></li>
+                <li><Enlace href="#cómo-ver-las-variables-de-entorno">Cómo ver las variables
+                  de entorno</Enlace ></li>
+                <li><Enlace href="#editar-o-crear-variables">Editar o crear
+                  variables</Enlace ></li>
               </Lista>
             </li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h3" id="tipos-de-variables-de-entorno">Tipos de variables de
         entorno</Titulo>
@@ -65,10 +65,10 @@ function nameabcd({ }) {
           <Texto><code>set</code> → muestra todas las variables de usuario y del
             sistema.</li>        <li><code>echo %VARIABLE%</code> → muestra el valor de una variable
             específica. Ejemplo:</Texto>
-          <div class="sourceCode" id="cb1">
+          <div className="sourceCode" id="cb1">
             <pre
-              class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="pp">%</span><span class="va">PATH</span><span class="pp">%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="pp">%</span><span class="va">USERPROFILE</span><span class="pp">%</span></span></code></pre>
+              className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">echo</span> <span className="pp">%</span><span className="va">PATH</span><span className="pp">%</span></span>
+<span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">echo</span> <span className="pp">%</span><span className="va">USERPROFILE</span><span className="pp">%</span></span></code></pre>
           </div>
         </li>
       </Lista>
@@ -81,10 +81,10 @@ function nameabcd({ }) {
             variables.</li>        <li>
           <Texto><code>$Env:VARIABLE</code> → muestra el valor de una variable
             específica. Ejemplo:</Texto>
-          <div class="sourceCode" id="cb2">
+          <div className="sourceCode" id="cb2">
             <pre
-              class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">$Env</span><span class="op">:</span><span class="va">PATH</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$Env</span><span class="op">:</span><span class="va">USERNAME</span></span></code></pre>
+              className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$Env</span><span className="op">:</span><span className="va">PATH</span></span>
+<span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$Env</span><span className="op">:</span><span className="va">USERNAME</span></span></code></pre>
           </div>
         </li>
       </Lista>
@@ -115,8 +115,8 @@ function nameabcd({ }) {
     </li>
   </Lista>
   <Linea />
-  <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-      principal</a></Texto>
+  <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+      principal</Enlace ></Texto>
   <blockquote>
     <Texto><strong>Autor:</strong> Fravelz</Texto>
   </blockquote>

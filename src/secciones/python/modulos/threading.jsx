@@ -10,71 +10,71 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#threading-en-python">Threading en Python</a>
+        <li><Enlace href="#threading-en-python">Threading en Python</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-qué-es-threading">1) ¿Qué es threading?</a></li>
-            <li><a href="#2-conceptos-clave">2) Conceptos clave</a></li>
-            <li><a href="#3-crear-y-usar-hilos--ejemplos-básicos">3) Crear y usar
-              hilos — ejemplos básicos</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-qué-es-threading">1) ¿Qué es threading?</Enlace ></li>
+            <li><Enlace href="#2-conceptos-clave">2) Conceptos clave</Enlace ></li>
+            <li><Enlace href="#3-crear-y-usar-hilos--ejemplos-básicos">3) Crear y usar
+              hilos — ejemplos básicos</Enlace >
               <Lista>
-                <li><a href="#a-usando-thread-con-target">a) Usando Thread con
-                  target</a></li>
-                <li><a href="#b-subclassing-lhread">b) Subclassing lhread</a></li>
+                <li><Enlace href="#a-usando-thread-con-target">a) Usando Thread con
+                  target</Enlace ></li>
+                <li><Enlace href="#b-subclassing-lhread">b) Subclassing lhread</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#4-daemon-threads-y-uso-correcto">4) Daemon threads y uso
-              correcto</a></li>
-            <li><a href="#5-sincronización--primitivas-importantes">5)
-              Sincronización — primitivas importantes</a>
+            <li><Enlace href="#4-daemon-threads-y-uso-correcto">4) Daemon threads y uso
+              correcto</Enlace ></li>
+            <li><Enlace href="#5-sincronización--primitivas-importantes">5)
+              Sincronización — primitivas importantes</Enlace >
               <Lista>
-                <li><a href="#lock-mutual-exclusion">Lock (mutual exclusion)</a></li>
-                <li><a href="#rlock-reentrant-lock--permite-re-entradas-desde-mismo-hilo">RLock
-                  (reentrant lock) — permite re-entradas desde mismo hilo</a></li>
-                <li><a href="#event--señalización-simple-flag">Event — señalización
-                  simple (flag)</a></li>
-                <li><a href="#condition--esperas-con-notificación">Condition — esperas
-                  con notificación</a></li>
-                <li><a href="#semaphore--contador">Semaphore — contador</a></li>
-                <li><a href="#barrier--sincronizar-n-hilos-en-un-punto">Barrier —
-                  sincronizar N hilos en un punto</a></li>
+                <li><Enlace href="#lock-mutual-exclusion">Lock (mutual exclusion)</Enlace ></li>
+                <li><Enlace href="#rlock-reentrant-lock--permite-re-entradas-desde-mismo-hilo">RLock
+                  (reentrant lock) — permite re-entradas desde mismo hilo</Enlace ></li>
+                <li><Enlace href="#event--señalización-simple-flag">Event — señalización
+                  simple (flag)</Enlace ></li>
+                <li><Enlace href="#condition--esperas-con-notificación">Condition — esperas
+                  con notificación</Enlace ></li>
+                <li><Enlace href="#semaphore--contador">Semaphore — contador</Enlace ></li>
+                <li><Enlace href="#barrier--sincronizar-n-hilos-en-un-punto">Barrier —
+                  sincronizar N hilos en un punto</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#6-comunicación-segura-entre-hilos-queuequeue">6)
-              Comunicación segura entre hilos: queue.Queue</a></li>
-            <li><a href="#7-manejo-de-excepciones-en-hilos">7) Manejo de excepciones
-              en hilos</a></li>
-            <li><a href="#8-threadpoolexecutor-alta-abstracción">8)
-              ThreadPoolExecutor (alta abstracción)</a></li>
-            <li><a href="#9-gil--cuándo-usar-threading-vs-multiprocessing">9) GIL —
-              cuándo usar threading vs multiprocessing</a></li>
-            <li><a href="#10-operaciones-atómicas-y-seguridad">10) Operaciones
-              atómicas y seguridad</a></li>
-            <li><a href="#11-cancelación-y-parada-de-hilos">11) Cancelación y parada
-              de hilos</a></li>
-            <li><a href="#12-thread-local-storage">12) Thread-local storage</a></li>
-            <li><a href="#13-debugging-y-utilidades">13) Debugging y
-              utilidades</a></li>
-            <li><a href="#14-buenas-prácticas">14) Buenas prácticas</a></li>
-            <li><a href="#15-ejemplos-prácticos-útiles">15) Ejemplos prácticos
-              (útiles)</a>
+            <li><Enlace href="#6-comunicación-segura-entre-hilos-queuequeue">6)
+              Comunicación segura entre hilos: queue.Queue</Enlace ></li>
+            <li><Enlace href="#7-manejo-de-excepciones-en-hilos">7) Manejo de excepciones
+              en hilos</Enlace ></li>
+            <li><Enlace href="#8-threadpoolexecutor-alta-abstracción">8)
+              ThreadPoolExecutor (alta abstracción)</Enlace ></li>
+            <li><Enlace href="#9-gil--cuándo-usar-threading-vs-multiprocessing">9) GIL —
+              cuándo usar threading vs multiprocessing</Enlace ></li>
+            <li><Enlace href="#10-operaciones-atómicas-y-seguridad">10) Operaciones
+              atómicas y seguridad</Enlace ></li>
+            <li><Enlace href="#11-cancelación-y-parada-de-hilos">11) Cancelación y parada
+              de hilos</Enlace ></li>
+            <li><Enlace href="#12-thread-local-storage">12) Thread-local storage</Enlace ></li>
+            <li><Enlace href="#13-debugging-y-utilidades">13) Debugging y
+              utilidades</Enlace ></li>
+            <li><Enlace href="#14-buenas-prácticas">14) Buenas prácticas</Enlace ></li>
+            <li><Enlace href="#15-ejemplos-prácticos-útiles">15) Ejemplos prácticos
+              (útiles)</Enlace >
               <Lista>
-                <li><a href="#a-producer-consumer-con-queue-resumen">a)
-                  Producer-consumer con Queue (resumen)</a></li>
-                <li><a href="#b-pool-de-threads-simple-con-thread-y-queue">b) Pool de
-                  threads simple con Thread y Queue</a></li>
-                <li><a href="#c-uso-real-con-requests-io-bound">c) Uso real con requests
-                  (I/O-bound)</a></li>
+                <li><Enlace href="#a-producer-consumer-con-queue-resumen">a)
+                  Producer-consumer con Queue (resumen)</Enlace ></li>
+                <li><Enlace href="#b-pool-de-threads-simple-con-thread-y-queue">b) Pool de
+                  threads simple con Thread y Queue</Enlace ></li>
+                <li><Enlace href="#c-uso-real-con-requests-io-bound">c) Uso real con requests
+                  (I/O-bound)</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#16-limitaciones-y-alternativas">16) Limitaciones y
-              alternativas</a></li>
-            <li><a href="#17-resumen">17) Resumen</a></li>
+            <li><Enlace href="#16-limitaciones-y-alternativas">16) Limitaciones y
+              alternativas</Enlace ></li>
+            <li><Enlace href="#17-resumen">17) Resumen</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-es-threading">1) ¿Qué es threading?</Titulo>
       <Texto><code>threading</code> es el módulo estándar de Python para
@@ -83,9 +83,9 @@ function nameabcd({ }) {
         ideal para operaciones <strong>I/O-bound</strong> (espera de red, disco,
         etc.). Importarlo:
       </Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> threading</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="conceptos-clave">2) Conceptos clave</Titulo>
@@ -105,53 +105,53 @@ function nameabcd({ }) {
       <Titulo title="h2" id="crear-y-usar-hilos-ejemplos-básicos">3) Crear y usar hilos —
         ejemplos básicos</Titulo>
       <Titulo title="h3" id="a-usando-thread-con-target">a) Usando Thread con target</Titulo>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker(n):</span>
-            <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Worker </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> empieza&quot;</span>)</span>
-            <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
-            <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;Worker </span><span class="sc">{</span>n<span class="sc">}</span><span class="ss"> termina&quot;</span>)</span>
-            <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>threads <span class="op">=</span> []</span>
-            <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-            <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(i,), name<span class="op">=</span><span class="ss">f&quot;worker-</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-            <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    t.start()</span>
-            <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    threads.append(t)</span>
-            <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> threads:</span>
-            <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    t.join()  <span class="co"># esperar que termine cada hilo</span></span>
-            <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Todos terminados&quot;</span>)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> threading</span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> time</span>
+            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> worker(n):</span>
+            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="ss">f&quot;Worker </span><span className="sc">{</span>n<span className="sc">}</span><span className="ss"> empieza&quot;</span>)</span>
+            <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace >    time.sleep(<span className="dv">1</span>)</span>
+            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="ss">f&quot;Worker </span><span className="sc">{</span>n<span className="sc">}</span><span className="ss"> termina&quot;</span>)</span>
+            <span id="cb2-8"><Enlace href="#cb2-8" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-9"><Enlace href="#cb2-9" aria-hidden="true" tabindex="-1"></Enlace >threads <span className="op">=</span> []</span>
+            <span id="cb2-10"><Enlace href="#cb2-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">3</span>):</span>
+            <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace >    t <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(i,), name<span className="op">=</span><span className="ss">f&quot;worker-</span><span className="sc">{</span>i<span className="sc">}</span><span className="ss">&quot;</span>)</span>
+            <span id="cb2-12"><Enlace href="#cb2-12" aria-hidden="true" tabindex="-1"></Enlace >    t.start()</span>
+            <span id="cb2-13"><Enlace href="#cb2-13" aria-hidden="true" tabindex="-1"></Enlace >    threads.append(t)</span>
+            <span id="cb2-14"><Enlace href="#cb2-14" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-15"><Enlace href="#cb2-15" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> t <span className="kw">in</span> threads:</span>
+            <span id="cb2-16"><Enlace href="#cb2-16" aria-hidden="true" tabindex="-1"></Enlace >    t.join()  <span className="co"># esperar que termine cada hilo</span></span>
+            <span id="cb2-17"><Enlace href="#cb2-17" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-18"><Enlace href="#cb2-18" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(<span className="st">&quot;Todos terminados&quot;</span>)</span></code></pre>
       </div>
       <Titulo title="h3" id="b-subclassing-lhread">b) Subclassing lhread</Titulo>
-      <div class="sourceCode" id="cb3">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading, time</span>
-          <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MiHilo(threading.Thread):</span>
-          <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, n):</span>
-          <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name<span class="op">=</span><span class="ss">f&quot;MiHilo-</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">&quot;</span>)</span>
-          <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.n <span class="op">=</span> n</span>
-          <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> run(<span class="va">self</span>):</span>
-          <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> comenzar&quot;</span>)</span>
-          <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="dv">1</span>)</span>
-          <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss"> terminar&quot;</span>)</span>
-          <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> MiHilo(<span class="dv">1</span>)</span>
-          <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>h.start()</span>
-          <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>h.join()</span></code></pre>
+      <div className="sourceCode" id="cb3">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> threading, time</span>
+          <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> MiHilo(threading.Thread):</span>
+          <span id="cb3-4"><Enlace href="#cb3-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, n):</span>
+          <span id="cb3-5"><Enlace href="#cb3-5" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">super</span>().<span className="fu">__init__</span>(name<span className="op">=</span><span className="ss">f&quot;MiHilo-</span><span className="sc">{</span>n<span className="sc">}</span><span className="ss">&quot;</span>)</span>
+          <span id="cb3-6"><Enlace href="#cb3-6" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.n <span className="op">=</span> n</span>
+          <span id="cb3-7"><Enlace href="#cb3-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb3-8"><Enlace href="#cb3-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> run(<span className="va">self</span>):</span>
+          <span id="cb3-9"><Enlace href="#cb3-9" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="ss">f&quot;</span><span className="sc">{</span><span className="va">self</span><span className="sc">.</span>name<span className="sc">}</span><span className="ss"> comenzar&quot;</span>)</span>
+          <span id="cb3-10"><Enlace href="#cb3-10" aria-hidden="true" tabindex="-1"></Enlace >        time.sleep(<span className="dv">1</span>)</span>
+          <span id="cb3-11"><Enlace href="#cb3-11" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="ss">f&quot;</span><span className="sc">{</span><span className="va">self</span><span className="sc">.</span>name<span className="sc">}</span><span className="ss"> terminar&quot;</span>)</span>
+          <span id="cb3-12"><Enlace href="#cb3-12" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb3-13"><Enlace href="#cb3-13" aria-hidden="true" tabindex="-1"></Enlace >h <span className="op">=</span> MiHilo(<span className="dv">1</span>)</span>
+          <span id="cb3-14"><Enlace href="#cb3-14" aria-hidden="true" tabindex="-1"></Enlace >h.start()</span>
+          <span id="cb3-15"><Enlace href="#cb3-15" aria-hidden="true" tabindex="-1"></Enlace >h.join()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="daemon-threads-y-uso-correcto">4) Daemon threads y uso
         correcto</Titulo>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(<span class="dv">1</span>,), daemon<span class="op">=</span><span class="va">True</span>)</span>
-            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>t.start()</span>
-            <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Si el main thread termina, el hilo daemon se termina abruptamente.</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >t <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(<span className="dv">1</span>,), daemon<span className="op">=</span><span className="va">True</span>)</span>
+            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace >t.start()</span>
+            <span id="cb4-3"><Enlace href="#cb4-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Si el main thread termina, el hilo daemon se termina abruptamente.</span></span></code></pre>
       </div>
       <Texto>Usa daemon para tareas de fondo opcionales (logs en tiempo real,
         watchers). Para trabajo crítico, <strong>no</strong> uses daemon;
@@ -160,84 +160,84 @@ function nameabcd({ }) {
       <Titulo title="h2" id="sincronización-primitivas-importantes">5) Sincronización —
         primitivas importantes</Titulo>
       <Titulo title="h3" id="lock-mutual-exclusion">Lock (mutual exclusion)</Titulo>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>lock <span class="op">=</span> threading.Lock()</span>
-            <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> lock:</span>
-            <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># región crítica</span></span>
-            <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace >lock <span className="op">=</span> threading.Lock()</span>
+            <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> lock:</span>
+            <span id="cb5-3"><Enlace href="#cb5-3" aria-hidden="true" tabindex="-1"></Enlace >    <span className="co"># región crítica</span></span>
+            <span id="cb5-4"><Enlace href="#cb5-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">pass</span></span></code></pre>
       </div>
       <Titulo title="h3" id="rlock-reentrant-lock-permite-re-entradas-desde-mismo-hilo">RLock
         (reentrant lock) — permite re-entradas desde mismo hilo</Titulo>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>rlock <span class="op">=</span> threading.RLock()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace >rlock <span className="op">=</span> threading.RLock()</span></code></pre>
       </div>
       <Titulo title="h3" id="event-señalización-simple-flag">Event — señalización simple
         (flag)</Titulo>
-      <div class="sourceCode" id="cb7">
+      <div className="sourceCode" id="cb7">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>event <span class="op">=</span> threading.Event()</span>
-            <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># hilo espera:</span></span>
-            <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>event.wait()  <span class="co"># bloquea hasta que event.set()</span></span>
-            <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># hilo que despierta:</span></span>
-            <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>event.<span class="bu">set</span>()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace >event <span className="op">=</span> threading.Event()</span>
+            <span id="cb7-2"><Enlace href="#cb7-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb7-3"><Enlace href="#cb7-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># hilo espera:</span></span>
+            <span id="cb7-4"><Enlace href="#cb7-4" aria-hidden="true" tabindex="-1"></Enlace >event.wait()  <span className="co"># bloquea hasta que event.set()</span></span>
+            <span id="cb7-5"><Enlace href="#cb7-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># hilo que despierta:</span></span>
+            <span id="cb7-6"><Enlace href="#cb7-6" aria-hidden="true" tabindex="-1"></Enlace >event.<span className="bu">set</span>()</span></code></pre>
       </div>
       <Titulo title="h3" id="condition-esperas-con-notificación">Condition — esperas con
         notificación</Titulo>
-      <div class="sourceCode" id="cb8">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> threading.Condition()</span>
-          <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> cond:</span>
-          <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    cond.wait()  <span class="co"># espera notificación</span></span>
-          <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># otro hilo:</span></span>
-          <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    cond.notify()</span></code></pre>
+      <div className="sourceCode" id="cb8">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace >cond <span className="op">=</span> threading.Condition()</span>
+          <span id="cb8-2"><Enlace href="#cb8-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> cond:</span>
+          <span id="cb8-3"><Enlace href="#cb8-3" aria-hidden="true" tabindex="-1"></Enlace >    cond.wait()  <span className="co"># espera notificación</span></span>
+          <span id="cb8-4"><Enlace href="#cb8-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="co"># otro hilo:</span></span>
+          <span id="cb8-5"><Enlace href="#cb8-5" aria-hidden="true" tabindex="-1"></Enlace >    cond.notify()</span></code></pre>
       </div>
       <Titulo title="h3" id="semaphore-contador">Semaphore — contador</Titulo>
-      <div class="sourceCode" id="cb9">
+      <div className="sourceCode" id="cb9">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sem <span class="op">=</span> threading.Semaphore(<span class="dv">3</span>)  <span class="co"># máximo 3 entradas simultáneas</span></span>
-            <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> sem:</span>
-            <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># acceso limitado</span></span>
-            <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace >sem <span className="op">=</span> threading.Semaphore(<span className="dv">3</span>)  <span className="co"># máximo 3 entradas simultáneas</span></span>
+            <span id="cb9-2"><Enlace href="#cb9-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> sem:</span>
+            <span id="cb9-3"><Enlace href="#cb9-3" aria-hidden="true" tabindex="-1"></Enlace >    <span className="co"># acceso limitado</span></span>
+            <span id="cb9-4"><Enlace href="#cb9-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">pass</span></span></code></pre>
       </div>
       <Titulo title="h3" id="barrier-sincronizar-n-hilos-en-un-punto">Barrier — sincronizar N
         hilos en un punto</Titulo>
-      <div class="sourceCode" id="cb10">
+      <div className="sourceCode" id="cb10">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>bar <span class="op">=</span> threading.Barrier(<span class="dv">3</span>)</span>
-            <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>bar.wait()  <span class="co"># todos los hilos esperan aquí hasta que lleguen los 3</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace >bar <span className="op">=</span> threading.Barrier(<span className="dv">3</span>)</span>
+            <span id="cb10-2"><Enlace href="#cb10-2" aria-hidden="true" tabindex="-1"></Enlace >bar.wait()  <span className="co"># todos los hilos esperan aquí hasta que lleguen los 3</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="comunicación-segura-entre-hilos-queue.queue">6) Comunicación
         segura entre hilos: queue.Queue</Titulo>
       <Texto><code>queue.Queue</code> es <strong>thread-safe</strong> y la forma
         recomendada para pasar datos entre hilos (producer-consumer).</Texto>
-      <div class="sourceCode" id="cb11">
+      <div className="sourceCode" id="cb11">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading, queue, time</span>
-            <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> queue.Queue()</span>
-            <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> producer():</span>
-            <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-            <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        q.put(i)</span>
-            <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;produjo&quot;</span>, i)</span>
-            <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.2</span>)</span>
-            <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    q.put(<span class="va">None</span>)  <span class="co"># sentinel para indicar fin</span></span>
-            <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> consumer():</span>
-            <span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-            <span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>        item <span class="op">=</span> q.get()</span>
-            <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> item <span class="kw">is</span> <span class="va">None</span>:</span>
-            <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-            <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;consumió&quot;</span>, item)</span>
-            <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>        q.task_done()</span>
-            <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> threading.Thread(target<span class="op">=</span>producer)</span>
-            <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> threading.Thread(target<span class="op">=</span>consumer)</span>
-            <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>t1.start()<span class="op">;</span> t2.start()</span>
-            <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>t1.join()<span class="op">;</span> q.join()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> threading, queue, time</span>
+            <span id="cb11-2"><Enlace href="#cb11-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb11-3"><Enlace href="#cb11-3" aria-hidden="true" tabindex="-1"></Enlace >q <span className="op">=</span> queue.Queue()</span>
+            <span id="cb11-4"><Enlace href="#cb11-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb11-5"><Enlace href="#cb11-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> producer():</span>
+            <span id="cb11-6"><Enlace href="#cb11-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">5</span>):</span>
+            <span id="cb11-7"><Enlace href="#cb11-7" aria-hidden="true" tabindex="-1"></Enlace >        q.put(i)</span>
+            <span id="cb11-8"><Enlace href="#cb11-8" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="st">&quot;produjo&quot;</span>, i)</span>
+            <span id="cb11-9"><Enlace href="#cb11-9" aria-hidden="true" tabindex="-1"></Enlace >        time.sleep(<span className="fl">0.2</span>)</span>
+            <span id="cb11-10"><Enlace href="#cb11-10" aria-hidden="true" tabindex="-1"></Enlace >    q.put(<span className="va">None</span>)  <span className="co"># sentinel para indicar fin</span></span>
+            <span id="cb11-11"><Enlace href="#cb11-11" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb11-12"><Enlace href="#cb11-12" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> consumer():</span>
+            <span id="cb11-13"><Enlace href="#cb11-13" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">while</span> <span className="va">True</span>:</span>
+            <span id="cb11-14"><Enlace href="#cb11-14" aria-hidden="true" tabindex="-1"></Enlace >        item <span className="op">=</span> q.get()</span>
+            <span id="cb11-15"><Enlace href="#cb11-15" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">if</span> item <span className="kw">is</span> <span className="va">None</span>:</span>
+            <span id="cb11-16"><Enlace href="#cb11-16" aria-hidden="true" tabindex="-1"></Enlace >            <span className="cf">break</span></span>
+            <span id="cb11-17"><Enlace href="#cb11-17" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="st">&quot;consumió&quot;</span>, item)</span>
+            <span id="cb11-18"><Enlace href="#cb11-18" aria-hidden="true" tabindex="-1"></Enlace >        q.task_done()</span>
+            <span id="cb11-19"><Enlace href="#cb11-19" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb11-20"><Enlace href="#cb11-20" aria-hidden="true" tabindex="-1"></Enlace >t1 <span className="op">=</span> threading.Thread(target<span className="op">=</span>producer)</span>
+            <span id="cb11-21"><Enlace href="#cb11-21" aria-hidden="true" tabindex="-1"></Enlace >t2 <span className="op">=</span> threading.Thread(target<span className="op">=</span>consumer)</span>
+            <span id="cb11-22"><Enlace href="#cb11-22" aria-hidden="true" tabindex="-1"></Enlace >t1.start()<span className="op">;</span> t2.start()</span>
+            <span id="cb11-23"><Enlace href="#cb11-23" aria-hidden="true" tabindex="-1"></Enlace >t1.join()<span className="op">;</span> q.join()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="manejo-de-excepciones-en-hilos">7) Manejo de excepciones en
@@ -251,38 +251,38 @@ function nameabcd({ }) {
         <li>Capturar y guardar excepciones en el propio hilo y consultarlas
           después. Ejemplo con <code>ThreadPoolExecutor</code>:</li>
       </Lista>
-      <div class="sourceCode" id="cb12">
+      <div className="sourceCode" id="cb12">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor</span>
-            <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> trabajo(x):</span>
-            <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">==</span> <span class="dv">3</span>:</span>
-            <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">raise</span> <span class="pp">ValueError</span>(<span class="st">&quot;boom&quot;</span>)</span>
-            <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x<span class="op">*</span><span class="dv">2</span></span>
-            <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">3</span>) <span class="im">as</span> ex:</span>
-            <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    futures <span class="op">=</span> [ex.submit(trabajo, i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>)]</span>
-            <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> futures:</span>
-            <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-            <span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(f.result())</span>
-            <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
-            <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;error en hilo:&quot;</span>, e)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb12-1"><Enlace href="#cb12-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">from</span> concurrent.futures <span className="im">import</span> ThreadPoolExecutor</span>
+            <span id="cb12-2"><Enlace href="#cb12-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb12-3"><Enlace href="#cb12-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> trabajo(x):</span>
+            <span id="cb12-4"><Enlace href="#cb12-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">if</span> x <span className="op">==</span> <span className="dv">3</span>:</span>
+            <span id="cb12-5"><Enlace href="#cb12-5" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">raise</span> <span className="pp">ValueError</span>(<span className="st">&quot;boom&quot;</span>)</span>
+            <span id="cb12-6"><Enlace href="#cb12-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">return</span> x<span className="op">*</span><span className="dv">2</span></span>
+            <span id="cb12-7"><Enlace href="#cb12-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb12-8"><Enlace href="#cb12-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> ThreadPoolExecutor(max_workers<span className="op">=</span><span className="dv">3</span>) <span className="im">as</span> ex:</span>
+            <span id="cb12-9"><Enlace href="#cb12-9" aria-hidden="true" tabindex="-1"></Enlace >    futures <span className="op">=</span> [ex.submit(trabajo, i) <span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">5</span>)]</span>
+            <span id="cb12-10"><Enlace href="#cb12-10" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">for</span> f <span className="kw">in</span> futures:</span>
+            <span id="cb12-11"><Enlace href="#cb12-11" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">try</span>:</span>
+            <span id="cb12-12"><Enlace href="#cb12-12" aria-hidden="true" tabindex="-1"></Enlace >            <span className="bu">print</span>(f.result())</span>
+            <span id="cb12-13"><Enlace href="#cb12-13" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">except</span> <span className="pp">Exception</span> <span className="im">as</span> e:</span>
+            <span id="cb12-14"><Enlace href="#cb12-14" aria-hidden="true" tabindex="-1"></Enlace >            <span className="bu">print</span>(<span className="st">&quot;error en hilo:&quot;</span>, e)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="threadpoolexecutor-alta-abstracción">8) ThreadPoolExecutor (alta
         abstracción)</Titulo>
       <Texto>Más cómodo que crear hilos manualmente.</Texto>
-      <div class="sourceCode" id="cb13">
+      <div className="sourceCode" id="cb13">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor, as_completed</span>
-            <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tarea(n):</span>
-            <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> n<span class="op">*</span>n</span>
-            <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">4</span>) <span class="im">as</span> pool:</span>
-            <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    futures <span class="op">=</span> [pool.submit(tarea, i) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
-            <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> f <span class="kw">in</span> as_completed(futures):</span>
-            <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(f.result())</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb13-1"><Enlace href="#cb13-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">from</span> concurrent.futures <span className="im">import</span> ThreadPoolExecutor, as_completed</span>
+            <span id="cb13-2"><Enlace href="#cb13-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb13-3"><Enlace href="#cb13-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> tarea(n):</span>
+            <span id="cb13-4"><Enlace href="#cb13-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">return</span> n<span className="op">*</span>n</span>
+            <span id="cb13-5"><Enlace href="#cb13-5" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb13-6"><Enlace href="#cb13-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> ThreadPoolExecutor(max_workers<span className="op">=</span><span className="dv">4</span>) <span className="im">as</span> pool:</span>
+            <span id="cb13-7"><Enlace href="#cb13-7" aria-hidden="true" tabindex="-1"></Enlace >    futures <span className="op">=</span> [pool.submit(tarea, i) <span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">10</span>)]</span>
+            <span id="cb13-8"><Enlace href="#cb13-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">for</span> f <span className="kw">in</span> as_completed(futures):</span>
+            <span id="cb13-9"><Enlace href="#cb13-9" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(f.result())</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="gil-cuándo-usar-threading-vs-multiprocessing">9) GIL — cuándo
@@ -308,14 +308,14 @@ function nameabcd({ }) {
         </li>
         <li>Ejemplo inseguro (race):</li>
       </Lista>
-      <div class="sourceCode" id="cb14">
+      <div className="sourceCode" id="cb14">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># NO usar sin lock</span></span>
-            <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>counter <span class="op">=</span> <span class="dv">0</span></span>
-            <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> incr():</span>
-            <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> counter</span>
-            <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>):</span>
-            <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>        counter <span class="op">+=</span> <span class="dv">1</span>  <span class="co"># no es atómico: leer-modificar-escribir</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb14-1"><Enlace href="#cb14-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># NO usar sin lock</span></span>
+            <span id="cb14-2"><Enlace href="#cb14-2" aria-hidden="true" tabindex="-1"></Enlace >counter <span className="op">=</span> <span className="dv">0</span></span>
+            <span id="cb14-3"><Enlace href="#cb14-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> incr():</span>
+            <span id="cb14-4"><Enlace href="#cb14-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">global</span> counter</span>
+            <span id="cb14-5"><Enlace href="#cb14-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">for</span> _ <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">10000</span>):</span>
+            <span id="cb14-6"><Enlace href="#cb14-6" aria-hidden="true" tabindex="-1"></Enlace >        counter <span className="op">+=</span> <span className="dv">1</span>  <span className="co"># no es atómico: leer-modificar-escribir</span></span></code></pre>
       </div>
       <Texto>Siempre protege con <code>Lock</code> si hay acceso concurrente.</Texto>
       <Linea />
@@ -325,17 +325,17 @@ function nameabcd({ }) {
       <Lista>
         <li>Usar <code>threading.Event()</code> como bandera de parada:</li>
       </Lista>
-      <div class="sourceCode" id="cb15">
+      <div className="sourceCode" id="cb15">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>stop_event <span class="op">=</span> threading.Event()</span>
-            <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker():</span>
-            <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="kw">not</span> stop_event.is_set():</span>
-            <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>        <span class="co"># trabajo</span></span>
-            <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
-            <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># detener:</span></span>
-            <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>stop_event.<span class="bu">set</span>()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb15-1"><Enlace href="#cb15-1" aria-hidden="true" tabindex="-1"></Enlace >stop_event <span className="op">=</span> threading.Event()</span>
+            <span id="cb15-2"><Enlace href="#cb15-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb15-3"><Enlace href="#cb15-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> worker():</span>
+            <span id="cb15-4"><Enlace href="#cb15-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">while</span> <span className="kw">not</span> stop_event.is_set():</span>
+            <span id="cb15-5"><Enlace href="#cb15-5" aria-hidden="true" tabindex="-1"></Enlace >        <span className="co"># trabajo</span></span>
+            <span id="cb15-6"><Enlace href="#cb15-6" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">pass</span></span>
+            <span id="cb15-7"><Enlace href="#cb15-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb15-8"><Enlace href="#cb15-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># detener:</span></span>
+            <span id="cb15-9"><Enlace href="#cb15-9" aria-hidden="true" tabindex="-1"></Enlace >stop_event.<span className="bu">set</span>()</span></code></pre>
       </div>
       <Lista>
         <li>Usar sentinels en <code>queue</code> (<code>None</code>).</li>
@@ -343,17 +343,17 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="thread-local-storage">12) Thread-local storage</Titulo>
       <Texto>Datos separados por hilo:</Texto>
-      <div class="sourceCode" id="cb16">
+      <div className="sourceCode" id="cb16">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading</span>
-            <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>local <span class="op">=</span> threading.local()</span>
-            <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker(val):</span>
-            <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    local.x <span class="op">=</span> val</span>
-            <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(local.x)</span>
-            <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(<span class="dv">1</span>,))</span>
-            <span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(<span class="dv">2</span>,))</span>
-            <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>t1.start()<span class="op">;</span> t2.start()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb16-1"><Enlace href="#cb16-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> threading</span>
+            <span id="cb16-2"><Enlace href="#cb16-2" aria-hidden="true" tabindex="-1"></Enlace >local <span className="op">=</span> threading.local()</span>
+            <span id="cb16-3"><Enlace href="#cb16-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> worker(val):</span>
+            <span id="cb16-4"><Enlace href="#cb16-4" aria-hidden="true" tabindex="-1"></Enlace >    local.x <span className="op">=</span> val</span>
+            <span id="cb16-5"><Enlace href="#cb16-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(local.x)</span>
+            <span id="cb16-6"><Enlace href="#cb16-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb16-7"><Enlace href="#cb16-7" aria-hidden="true" tabindex="-1"></Enlace >t1 <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(<span className="dv">1</span>,))</span>
+            <span id="cb16-8"><Enlace href="#cb16-8" aria-hidden="true" tabindex="-1"></Enlace >t2 <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(<span className="dv">2</span>,))</span>
+            <span id="cb16-9"><Enlace href="#cb16-9" aria-hidden="true" tabindex="-1"></Enlace >t1.start()<span className="op">;</span> t2.start()</span></code></pre>
       </div>
       <Texto>Cada hilo ve su propio <code>local.x</code>.</Texto>
       <Linea />
@@ -371,17 +371,17 @@ function nameabcd({ }) {
         </li>
       </Lista>
       <Texto>Ejemplo de logging:</Texto>
-      <div class="sourceCode" id="cb17">
+      <div className="sourceCode" id="cb17">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging, threading, time</span>
-            <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>logging.basicConfig(level<span class="op">=</span>logging.INFO, <span class="bu">format</span><span class="op">=</span><span class="st">&quot;</span><span class="sc">%(threadName)s</span><span class="st">: </span><span class="sc">%(message)s</span><span class="st">&quot;</span>)</span>
-            <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker():</span>
-            <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    logging.info(<span class="st">&quot;start&quot;</span>)</span>
-            <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="dv">1</span>)</span>
-            <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    logging.info(<span class="st">&quot;end&quot;</span>)</span>
-            <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, name<span class="op">=</span><span class="st">&quot;hilo-1&quot;</span>)</span>
-            <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>t.start()<span class="op">;</span> t.join()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb17-1"><Enlace href="#cb17-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> logging, threading, time</span>
+            <span id="cb17-2"><Enlace href="#cb17-2" aria-hidden="true" tabindex="-1"></Enlace >logging.basicConfig(level<span className="op">=</span>logging.INFO, <span className="bu">format</span><span className="op">=</span><span className="st">&quot;</span><span className="sc">%(threadName)s</span><span className="st">: </span><span className="sc">%(message)s</span><span className="st">&quot;</span>)</span>
+            <span id="cb17-3"><Enlace href="#cb17-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> worker():</span>
+            <span id="cb17-4"><Enlace href="#cb17-4" aria-hidden="true" tabindex="-1"></Enlace >    logging.info(<span className="st">&quot;start&quot;</span>)</span>
+            <span id="cb17-5"><Enlace href="#cb17-5" aria-hidden="true" tabindex="-1"></Enlace >    time.sleep(<span className="dv">1</span>)</span>
+            <span id="cb17-6"><Enlace href="#cb17-6" aria-hidden="true" tabindex="-1"></Enlace >    logging.info(<span className="st">&quot;end&quot;</span>)</span>
+            <span id="cb17-7"><Enlace href="#cb17-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb17-8"><Enlace href="#cb17-8" aria-hidden="true" tabindex="-1"></Enlace >t <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, name<span className="op">=</span><span className="st">&quot;hilo-1&quot;</span>)</span>
+            <span id="cb17-9"><Enlace href="#cb17-9" aria-hidden="true" tabindex="-1"></Enlace >t.start()<span className="op">;</span> t.join()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="buenas-prácticas">14) Buenas prácticas</Titulo>
@@ -411,53 +411,53 @@ function nameabcd({ }) {
         para comunicación.</Texto>
       <Titulo title="h3" id="b-pool-de-threads-simple-con-thread-y-queue">b) Pool de threads
         simple con Thread y Queue</Titulo>
-      <div class="sourceCode" id="cb18">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> threading, queue, time</span>
-          <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> worker(q):</span>
-          <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-          <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>        fn, args <span class="op">=</span> q.get()</span>
-          <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> fn <span class="kw">is</span> <span class="va">None</span>:</span>
-          <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
-          <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-          <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>            fn(<span class="op">*</span>args)</span>
-          <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">finally</span>:</span>
-          <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>            q.task_done()</span>
-          <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> queue.Queue()</span>
-          <span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>threads <span class="op">=</span> []</span>
-          <span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>):</span>
-          <span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> threading.Thread(target<span class="op">=</span>worker, args<span class="op">=</span>(q,))</span>
-          <span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>    t.start()</span>
-          <span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    threads.append(t)</span>
-          <span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Encolar tareas</span></span>
-          <span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-          <span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>    q.put((<span class="bu">print</span>, (<span class="ss">f&quot;task </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">&quot;</span>,)))</span>
-          <span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>q.join()</span>
-          <span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co"># parar hilos</span></span>
-          <span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> threads:</span>
-          <span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    q.put((<span class="va">None</span>, <span class="va">None</span>))</span>
-          <span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t <span class="kw">in</span> threads:</span>
-          <span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>    t.join()</span></code></pre>
+      <div className="sourceCode" id="cb18">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb18-1"><Enlace href="#cb18-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> threading, queue, time</span>
+          <span id="cb18-2"><Enlace href="#cb18-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb18-3"><Enlace href="#cb18-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> worker(q):</span>
+          <span id="cb18-4"><Enlace href="#cb18-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">while</span> <span className="va">True</span>:</span>
+          <span id="cb18-5"><Enlace href="#cb18-5" aria-hidden="true" tabindex="-1"></Enlace >        fn, args <span className="op">=</span> q.get()</span>
+          <span id="cb18-6"><Enlace href="#cb18-6" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">if</span> fn <span className="kw">is</span> <span className="va">None</span>:</span>
+          <span id="cb18-7"><Enlace href="#cb18-7" aria-hidden="true" tabindex="-1"></Enlace >            <span className="cf">break</span></span>
+          <span id="cb18-8"><Enlace href="#cb18-8" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">try</span>:</span>
+          <span id="cb18-9"><Enlace href="#cb18-9" aria-hidden="true" tabindex="-1"></Enlace >            fn(<span className="op">*</span>args)</span>
+          <span id="cb18-10"><Enlace href="#cb18-10" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">finally</span>:</span>
+          <span id="cb18-11"><Enlace href="#cb18-11" aria-hidden="true" tabindex="-1"></Enlace >            q.task_done()</span>
+          <span id="cb18-12"><Enlace href="#cb18-12" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb18-13"><Enlace href="#cb18-13" aria-hidden="true" tabindex="-1"></Enlace >q <span className="op">=</span> queue.Queue()</span>
+          <span id="cb18-14"><Enlace href="#cb18-14" aria-hidden="true" tabindex="-1"></Enlace >threads <span className="op">=</span> []</span>
+          <span id="cb18-15"><Enlace href="#cb18-15" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> _ <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">4</span>):</span>
+          <span id="cb18-16"><Enlace href="#cb18-16" aria-hidden="true" tabindex="-1"></Enlace >    t <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(q,))</span>
+          <span id="cb18-17"><Enlace href="#cb18-17" aria-hidden="true" tabindex="-1"></Enlace >    t.start()</span>
+          <span id="cb18-18"><Enlace href="#cb18-18" aria-hidden="true" tabindex="-1"></Enlace >    threads.append(t)</span>
+          <span id="cb18-19"><Enlace href="#cb18-19" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb18-20"><Enlace href="#cb18-20" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Encolar tareas</span></span>
+          <span id="cb18-21"><Enlace href="#cb18-21" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">10</span>):</span>
+          <span id="cb18-22"><Enlace href="#cb18-22" aria-hidden="true" tabindex="-1"></Enlace >    q.put((<span className="bu">print</span>, (<span className="ss">f&quot;task </span><span className="sc">{</span>i<span className="sc">}</span><span className="ss">&quot;</span>,)))</span>
+          <span id="cb18-23"><Enlace href="#cb18-23" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb18-24"><Enlace href="#cb18-24" aria-hidden="true" tabindex="-1"></Enlace >q.join()</span>
+          <span id="cb18-25"><Enlace href="#cb18-25" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># parar hilos</span></span>
+          <span id="cb18-26"><Enlace href="#cb18-26" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> _ <span className="kw">in</span> threads:</span>
+          <span id="cb18-27"><Enlace href="#cb18-27" aria-hidden="true" tabindex="-1"></Enlace >    q.put((<span className="va">None</span>, <span className="va">None</span>))</span>
+          <span id="cb18-28"><Enlace href="#cb18-28" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> t <span className="kw">in</span> threads:</span>
+          <span id="cb18-29"><Enlace href="#cb18-29" aria-hidden="true" tabindex="-1"></Enlace >    t.join()</span></code></pre>
       </div>
       <Titulo title="h3" id="c-uso-real-con-requests-io-bound">c) Uso real con requests
         (I/O-bound)</Titulo>
-      <div class="sourceCode" id="cb19">
+      <div className="sourceCode" id="cb19">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-            <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> concurrent.futures <span class="im">import</span> ThreadPoolExecutor</span>
-            <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>urls <span class="op">=</span> [<span class="st">&quot;https://example.com&quot;</span>]<span class="op">*</span><span class="dv">10</span></span>
-            <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fetch(url):</span>
-            <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> requests.get(url)</span>
-            <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(r.content)</span>
-            <span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> ThreadPoolExecutor(max_workers<span class="op">=</span><span class="dv">5</span>) <span class="im">as</span> ex:</span>
-            <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> <span class="bu">list</span>(ex.<span class="bu">map</span>(fetch, urls))</span>
-            <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb19-1"><Enlace href="#cb19-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
+            <span id="cb19-2"><Enlace href="#cb19-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">from</span> concurrent.futures <span className="im">import</span> ThreadPoolExecutor</span>
+            <span id="cb19-3"><Enlace href="#cb19-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb19-4"><Enlace href="#cb19-4" aria-hidden="true" tabindex="-1"></Enlace >urls <span className="op">=</span> [<span className="st">&quot;https://example.com&quot;</span>]<span className="op">*</span><span className="dv">10</span></span>
+            <span id="cb19-5"><Enlace href="#cb19-5" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb19-6"><Enlace href="#cb19-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> fetch(url):</span>
+            <span id="cb19-7"><Enlace href="#cb19-7" aria-hidden="true" tabindex="-1"></Enlace >    r <span className="op">=</span> requests.get(url)</span>
+            <span id="cb19-8"><Enlace href="#cb19-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">return</span> <span className="bu">len</span>(r.content)</span>
+            <span id="cb19-9"><Enlace href="#cb19-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb19-10"><Enlace href="#cb19-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> ThreadPoolExecutor(max_workers<span className="op">=</span><span className="dv">5</span>) <span className="im">as</span> ex:</span>
+            <span id="cb19-11"><Enlace href="#cb19-11" aria-hidden="true" tabindex="-1"></Enlace >    results <span className="op">=</span> <span className="bu">list</span>(ex.<span className="bu">map</span>(fetch, urls))</span>
+            <span id="cb19-12"><Enlace href="#cb19-12" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(results)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="limitaciones-y-alternativas">16) Limitaciones y
@@ -490,8 +490,8 @@ function nameabcd({ }) {
     </li>
   </Lista>
   <Linea />
-  <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-      Principal</a></Texto>
+  <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+      Principal</Enlace ></Texto>
   <blockquote>
     <Texto><strong>Autor:</strong> Fravelz</Texto>
   </blockquote>

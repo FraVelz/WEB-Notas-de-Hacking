@@ -1,3 +1,5 @@
+import Estructura from "../../componentes/estructura.jsx";
+
 import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
@@ -5,11 +7,9 @@ import Linea from "./../../componentes/linea.jsx";
 
 function nameabcd({ }) {
   return (
-    <>
-      <Titulo title="h1" id="osint">OSINT</Titulo>
-      <Texto><a href="./../readme.md#7-osint">Regresar a la guía principal</a></Texto>
-      <Linea />
-      <Titulo title="h2" id="qué-es">¿Qué es?</Titulo>
+    <Estructura>
+      <Titulo title="h1" className="text-center">OSINT</Titulo>
+
       <Texto>Open Source Intelligence Network (OSINT) Inteligencia de fuentes
         abiertas, es el proceso de recopilar, analizar y utilizar, información
         publica accesible legalmente para obtener inteligencia útil, esta
@@ -48,13 +48,10 @@ function nameabcd({ }) {
       <Texto>Es una rama del osint, que se encarga de recopilar y analizar datos
         provenientes de redes sociales, foros y comunidades en línea.</Texto>
       <Lista>
-        <li>Monitoreo de actividades y publicaciones.</li>    <li>Análisis de sentimientos y tendencias.</li>  </Lista>
-      <Linea />
-      <Texto><a href="./../readme.md#7-osint">Regresar a la guía principal</a></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
-    </>
+        <li>Monitoreo de actividades y publicaciones.</li>    <li>Análisis de sentimientos y tendencias.</li>
+      </Lista>
+    </Estructura>
   );
 }
+
 export default nameabcd;

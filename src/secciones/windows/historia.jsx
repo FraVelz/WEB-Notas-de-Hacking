@@ -10,32 +10,32 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#historia">Historia</a>
+        <li><Enlace href="#historia">Historia</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a>
+            <li><Enlace href="#temario">Temario</Enlace >
               <Lista>
-                <li><a href="#1-orígenes-windows-10-a-3x-1985-1994">1. Orígenes: Windows
-                  1.0 a 3.x (1985-1994)</a></li>
-                <li><a href="#2-windows-95-a-98-1995-2000">2. Windows 95 a 98
-                  (1995-2000)</a></li>
-                <li><a href="#3-windows-me-y-windows-2000-2000-2001">3. Windows ME y
-                  Windows 2000 (2000-2001)</a></li>
-                <li><a href="#4-windows-xp-2001-2007">4. Windows XP (2001-2007)</a></li>
-                <li><a href="#5-windows-vista-2007-2009">5. Windows Vista
-                  (2007-2009)</a></li>
-                <li><a href="#6-windows-7-2009-2015">6. Windows 7 (2009-2015)</a></li>
-                <li><a href="#7-windows-8-y-81-2012-2015">7. Windows 8 y 8.1
-                  (2012-2015)</a></li>
-                <li><a href="#8-windows-10-2015-2025">8. Windows 10 (2015-2025)</a></li>
-                <li><a href="#9-windows-11-2021-presente">9. Windows 11
-                  (2021-presente)</a></li>
+                <li><Enlace href="#1-orígenes-windows-10-a-3x-1985-1994">1. Orígenes: Windows
+                  1.0 a 3.x (1985-1994)</Enlace ></li>
+                <li><Enlace href="#2-windows-95-a-98-1995-2000">2. Windows 95 a 98
+                  (1995-2000)</Enlace ></li>
+                <li><Enlace href="#3-windows-me-y-windows-2000-2000-2001">3. Windows ME y
+                  Windows 2000 (2000-2001)</Enlace ></li>
+                <li><Enlace href="#4-windows-xp-2001-2007">4. Windows XP (2001-2007)</Enlace ></li>
+                <li><Enlace href="#5-windows-vista-2007-2009">5. Windows Vista
+                  (2007-2009)</Enlace ></li>
+                <li><Enlace href="#6-windows-7-2009-2015">6. Windows 7 (2009-2015)</Enlace ></li>
+                <li><Enlace href="#7-windows-8-y-81-2012-2015">7. Windows 8 y 8.1
+                  (2012-2015)</Enlace ></li>
+                <li><Enlace href="#8-windows-10-2015-2025">8. Windows 10 (2015-2025)</Enlace ></li>
+                <li><Enlace href="#9-windows-11-2021-presente">9. Windows 11
+                  (2021-presente)</Enlace ></li>
               </Lista>
             </li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h3" id="orígenes-windows-1.0-a-3.x-1985-1994">1. Orígenes: Windows 1.0 a
         3.x (1985-1994)</Titulo>
@@ -123,8 +123,8 @@ function nameabcd({ }) {
         Cada versión buscó combinar <strong>usabilidad, estabilidad y nuevas
           tecnologías</strong>, aunque no todas fueron exitosas en su momento.</Texto>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

@@ -11,138 +11,138 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#re-en-python-expreciones-regulares">Re en Python
-          (expreciones regulares)</a>
+        <li><Enlace href="#re-en-python-expreciones-regulares">Re en Python
+          (expreciones regulares)</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#qué-es-re">¿Qué es re?</a></li>
-            <li><a href="#funciones-principales">FUNCIONES PRINCIPALES</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#qué-es-re">¿Qué es re?</Enlace ></li>
+            <li><Enlace href="#funciones-principales">FUNCIONES PRINCIPALES</Enlace >
               <Lista>
-                <li><a href="#1-rematchpatrón-texto">1. re.match(patrón, texto)</a></li>
-                <li><a href="#2-researchpatrón-texto">2. re.search(patrón,
-                  texto)</a></li>
-                <li><a href="#3-refindallpatrón-texto">3. re.findall(patrón,
-                  texto)</a></li>
-                <li><a href="#4-refinditerpatrón-texto">4. re.finditer(patrón,
-                  texto)</a></li>
-                <li><a href="#5-resubpatrón-reemplazo-texto-count0">5. re.sub(patrón,
-                  reemplazo, texto, count=0)</a></li>
-                <li><a href="#6-resplitpatrón-texto-maxsplit0">6. re.split(patrón,
-                  texto, maxsplit=0)</a></li>
-                <li><a href="#7-recompilepatrón-flags0">7. re.compile(patrón,
-                  flags=0)</a></li>
+                <li><Enlace href="#1-rematchpatrón-texto">1. re.match(patrón, texto)</Enlace ></li>
+                <li><Enlace href="#2-researchpatrón-texto">2. re.search(patrón,
+                  texto)</Enlace ></li>
+                <li><Enlace href="#3-refindallpatrón-texto">3. re.findall(patrón,
+                  texto)</Enlace ></li>
+                <li><Enlace href="#4-refinditerpatrón-texto">4. re.finditer(patrón,
+                  texto)</Enlace ></li>
+                <li><Enlace href="#5-resubpatrón-reemplazo-texto-count0">5. re.sub(patrón,
+                  reemplazo, texto, count=0)</Enlace ></li>
+                <li><Enlace href="#6-resplitpatrón-texto-maxsplit0">6. re.split(patrón,
+                  texto, maxsplit=0)</Enlace ></li>
+                <li><Enlace href="#7-recompilepatrón-flags0">7. re.compile(patrón,
+                  flags=0)</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#objetos-match">OBJETOS Match</a></li>
-            <li><a href="#metacaracteres-más-importantes">METACARACTERES MÁS
-              IMPORTANTES</a></li>
-            <li><a href="#secuencias-especiales">SECUENCIAS ESPECIALES</a></li>
-            <li><a href="#flags-comunes">FLAGS COMUNES</a></li>
-            <li><a href="#ejemplos-prácticos">EJEMPLOS PRÁCTICOS</a>
+            <li><Enlace href="#objetos-match">OBJETOS Match</Enlace ></li>
+            <li><Enlace href="#metacaracteres-más-importantes">METACARACTERES MÁS
+              IMPORTANTES</Enlace ></li>
+            <li><Enlace href="#secuencias-especiales">SECUENCIAS ESPECIALES</Enlace ></li>
+            <li><Enlace href="#flags-comunes">FLAGS COMUNES</Enlace ></li>
+            <li><Enlace href="#ejemplos-prácticos">EJEMPLOS PRÁCTICOS</Enlace >
               <Lista>
-                <li><a href="#1-validar-un-correo-electrónico">1. Validar un correo
-                  electrónico</a></li>
-                <li><a href="#2-extraer-números-de-un-texto">2. Extraer números de un
-                  texto</a></li>
-                <li><a href="#3-reemplazar-palabras">3. Reemplazar palabras</a></li>
-                <li><a href="#4-separar-texto-por-comas-o-espacios">4. Separar texto por
-                  comas o espacios</a></li>
+                <li><Enlace href="#1-validar-un-correo-electrónico">1. Validar un correo
+                  electrónico</Enlace ></li>
+                <li><Enlace href="#2-extraer-números-de-un-texto">2. Extraer números de un
+                  texto</Enlace ></li>
+                <li><Enlace href="#3-reemplazar-palabras">3. Reemplazar palabras</Enlace ></li>
+                <li><Enlace href="#4-separar-texto-por-comas-o-espacios">4. Separar texto por
+                  comas o espacios</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#buenas-prácticas">Buenas prácticas</a></li>
-            <li><a href="#ejercicio-rápido">Ejercicio rápido</a></li>
+            <li><Enlace href="#buenas-prácticas">Buenas prácticas</Enlace ></li>
+            <li><Enlace href="#ejercicio-rápido">Ejercicio rápido</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-es-re">¿Qué es re?</Titulo>
       <Texto>El módulo <strong><code>re</code></strong> (de <em>regular
         expressions</em>, expresiones regulares) permite <strong>buscar,
           reemplazar y analizar texto mediante patrones</strong>.</Texto>
       <Texto>Se importa con:</Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> re</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="funciones-principales">FUNCIONES PRINCIPALES</Titulo>
       <Titulo title="h3" id="re.matchpatrón-texto">1. re.match(patrón, texto)</Titulo>
       <Texto>Busca <strong>solo al inicio del texto</strong>.</Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.match(<span class="vs">r&quot;Hola&quot;</span>, <span class="st">&quot;Hola mundo&quot;</span>)</span>
-            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group())  <span class="co"># Hola</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> re</span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace >m <span className="op">=</span> re.match(<span className="vs">r&quot;Hola&quot;</span>, <span className="st">&quot;Hola mundo&quot;</span>)</span>
+            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.group())  <span className="co"># Hola</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="re.searchpatrón-texto">2. re.search(patrón, texto)</Titulo>
       <Texto>Busca <strong>en cualquier parte</strong> del texto (la primera
         coincidencia).</Texto>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>re.search(<span class="vs">r&quot;mundo&quot;</span>, <span class="st">&quot;Hola mundo&quot;</span>).group()  <span class="co"># mundo</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace >re.search(<span className="vs">r&quot;mundo&quot;</span>, <span className="st">&quot;Hola mundo&quot;</span>).group()  <span className="co"># mundo</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="re.findallpatrón-texto">3. re.findall(patrón, texto)</Titulo>
       <Texto>Devuelve <strong>todas las coincidencias</strong> en una lista.</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="vs">r&quot;\d+&quot;</span>, <span class="st">&quot;Edad 17 años, código 2025&quot;</span>)  <span class="co"># [&#39;17&#39;, &#39;2025&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >re.findall(<span className="vs">r&quot;\d+&quot;</span>, <span className="st">&quot;Edad 17 años, código 2025&quot;</span>)  <span className="co"># [&#39;17&#39;, &#39;2025&#39;]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="re.finditerpatrón-texto">4. re.finditer(patrón, texto)</Titulo>
       <Texto>Devuelve un <strong>iterador</strong> con objetos <code>Match</code>
         (útil para posiciones).</Texto>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m <span class="kw">in</span> re.finditer(<span class="vs">r&quot;\d+&quot;</span>, <span class="st">&quot;x=5 y=10 z=20&quot;</span>):</span>
-            <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(m.group(), m.start(), m.end())</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> m <span className="kw">in</span> re.finditer(<span className="vs">r&quot;\d+&quot;</span>, <span className="st">&quot;x=5 y=10 z=20&quot;</span>):</span>
+            <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(m.group(), m.start(), m.end())</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="re.subpatrón-reemplazo-texto-count0">5. re.sub(patrón,
         reemplazo, texto, count=0)</Titulo>
       <Texto><strong>Reemplaza</strong> coincidencias por otro texto.</Texto>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>re.sub(<span class="vs">r&quot;\d+&quot;</span>, <span class="st">&quot;X&quot;</span>, <span class="st">&quot;Tengo 2 perros y 3 gatos&quot;</span>)  <span class="co"># &#39;Tengo X perros y X gatos&#39;</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace >re.sub(<span className="vs">r&quot;\d+&quot;</span>, <span className="st">&quot;X&quot;</span>, <span className="st">&quot;Tengo 2 perros y 3 gatos&quot;</span>)  <span className="co"># &#39;Tengo X perros y X gatos&#39;</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="re.splitpatrón-texto-maxsplit0">6. re.split(patrón, texto,
         maxsplit=0)</Titulo>
       <Texto><strong>Divide el texto</strong> usando el patrón como separador.</Texto>
-      <div class="sourceCode" id="cb7">
+      <div className="sourceCode" id="cb7">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&quot;\s+&quot;</span>, <span class="st">&quot;uno   dos tres&quot;</span>)  <span class="co"># [&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace >re.split(<span className="vs">r&quot;\s+&quot;</span>, <span className="st">&quot;uno   dos tres&quot;</span>)  <span className="co"># [&#39;uno&#39;, &#39;dos&#39;, &#39;tres&#39;]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="re.compilepatrón-flags0">7. re.compile(patrón, flags=0)</Titulo>
       <Texto>Compila el patrón para reutilizarlo muchas veces (más eficiente).</Texto>
-      <div class="sourceCode" id="cb8">
+      <div className="sourceCode" id="cb8">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>patron <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;\d+&quot;</span>)</span>
-            <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(patron.findall(<span class="st">&quot;a1b22c333&quot;</span>))  <span class="co"># [&#39;1&#39;, &#39;22&#39;, &#39;333&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace >patron <span className="op">=</span> re.<span className="bu">compile</span>(<span className="vs">r&quot;\d+&quot;</span>)</span>
+            <span id="cb8-2"><Enlace href="#cb8-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(patron.findall(<span className="st">&quot;a1b22c333&quot;</span>))  <span className="co"># [&#39;1&#39;, &#39;22&#39;, &#39;333&#39;]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="objetos-match">OBJETOS Match</Titulo>
       <Texto>Cuando haces <code>match()</code> o <code>search()</code>, obtienes
         un objeto con información útil:</Texto>
-      <div class="sourceCode" id="cb9">
+      <div className="sourceCode" id="cb9">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.search(<span class="vs">r&quot;(\d+)&quot;</span>, <span class="st">&quot;Edad: 25 años&quot;</span>)</span>
-            <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group())    <span class="co"># &#39;25&#39;</span></span>
-            <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.start())    <span class="co"># 6</span></span>
-            <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.end())      <span class="co"># 8</span></span>
-            <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.span())     <span class="co"># (6, 8)</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace >m <span className="op">=</span> re.search(<span className="vs">r&quot;(\d+)&quot;</span>, <span className="st">&quot;Edad: 25 años&quot;</span>)</span>
+            <span id="cb9-2"><Enlace href="#cb9-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.group())    <span className="co"># &#39;25&#39;</span></span>
+            <span id="cb9-3"><Enlace href="#cb9-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.start())    <span className="co"># 6</span></span>
+            <span id="cb9-4"><Enlace href="#cb9-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.end())      <span className="co"># 8</span></span>
+            <span id="cb9-5"><Enlace href="#cb9-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.span())     <span className="co"># (6, 8)</span></span></code></pre>
       </div>
       <Texto>Si hay <strong>grupos</strong> (entre paréntesis):</Texto>
-      <div class="sourceCode" id="cb10">
+      <div className="sourceCode" id="cb10">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> re.search(<span class="vs">r&quot;(\d+)\s*(años)&quot;</span>, <span class="st">&quot;Edad: 25 años&quot;</span>)</span>
-            <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.groups())   <span class="co"># (&#39;25&#39;, &#39;años&#39;)</span></span>
-            <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">1</span>))   <span class="co"># &#39;25&#39;</span></span>
-            <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(m.group(<span class="dv">2</span>))   <span class="co"># &#39;años&#39;</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace >m <span className="op">=</span> re.search(<span className="vs">r&quot;(\d+)\s*(años)&quot;</span>, <span className="st">&quot;Edad: 25 años&quot;</span>)</span>
+            <span id="cb10-2"><Enlace href="#cb10-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.groups())   <span className="co"># (&#39;25&#39;, &#39;años&#39;)</span></span>
+            <span id="cb10-3"><Enlace href="#cb10-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.group(<span className="dv">1</span>))   <span className="co"># &#39;25&#39;</span></span>
+            <span id="cb10-4"><Enlace href="#cb10-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(m.group(<span className="dv">2</span>))   <span className="co"># &#39;años&#39;</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="metacaracteres-más-importantes">METACARACTERES MÁS
@@ -310,45 +310,45 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Texto>Ejemplo:</Texto>
-      <div class="sourceCode" id="cb11">
+      <div className="sourceCode" id="cb11">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>patron <span class="op">=</span> re.<span class="bu">compile</span>(<span class="vs">r&quot;&quot;&quot;</span></span>
-            <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="vs">    ^\d</span><span class="sc">{4}</span><span class="vs">     # 4 dígitos al inicio</span></span>
-            <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="vs">    -\d</span><span class="sc">{2}</span><span class="vs">     # guion y 2 dígitos</span></span>
-            <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="vs">    -\d</span><span class="sc">{2}</span><span class="vs">$    # guion y 2 dígitos al final</span></span>
-            <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="vs">&quot;&quot;&quot;</span>, re.VERBOSE)</span>
-            <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(patron.match(<span class="st">&quot;2025-10-27&quot;</span>)))  <span class="co"># True</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace >patron <span className="op">=</span> re.<span className="bu">compile</span>(<span className="vs">r&quot;&quot;&quot;</span></span>
+            <span id="cb11-2"><Enlace href="#cb11-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="vs">    ^\d</span><span className="sc">{4}</span><span className="vs">     # 4 dígitos al inicio</span></span>
+            <span id="cb11-3"><Enlace href="#cb11-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="vs">    -\d</span><span className="sc">{2}</span><span className="vs">     # guion y 2 dígitos</span></span>
+            <span id="cb11-4"><Enlace href="#cb11-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="vs">    -\d</span><span className="sc">{2}</span><span className="vs">$    # guion y 2 dígitos al final</span></span>
+            <span id="cb11-5"><Enlace href="#cb11-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="vs">&quot;&quot;&quot;</span>, re.VERBOSE)</span>
+            <span id="cb11-6"><Enlace href="#cb11-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(<span className="bu">bool</span>(patron.match(<span className="st">&quot;2025-10-27&quot;</span>)))  <span className="co"># True</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="ejemplos-prácticos">EJEMPLOS PRÁCTICOS</Titulo>
       <Titulo title="h3" id="validar-un-correo-electrónico">1. Validar un correo
         electrónico</Titulo>
-      <div class="sourceCode" id="cb12">
+      <div className="sourceCode" id="cb12">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-            <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>patron <span class="op">=</span> <span class="vs">r&quot;^[\w\.-]+@[\w\.-]+\.\w+$&quot;</span></span>
-            <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">bool</span>(re.match(patron, <span class="st">&quot;usuario@mail.com&quot;</span>)))  <span class="co"># True</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb12-1"><Enlace href="#cb12-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> re</span>
+            <span id="cb12-2"><Enlace href="#cb12-2" aria-hidden="true" tabindex="-1"></Enlace >patron <span className="op">=</span> <span className="vs">r&quot;^[\w\.-]+@[\w\.-]+\.\w+$&quot;</span></span>
+            <span id="cb12-3"><Enlace href="#cb12-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(<span className="bu">bool</span>(re.match(patron, <span className="st">&quot;usuario@mail.com&quot;</span>)))  <span className="co"># True</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="extraer-números-de-un-texto">2. Extraer números de un texto</Titulo>
-      <div class="sourceCode" id="cb13">
+      <div className="sourceCode" id="cb13">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="vs">r&quot;\d+&quot;</span>, <span class="st">&quot;ID123, edad 45, año 2025&quot;</span>)  <span class="co"># [&#39;123&#39;, &#39;45&#39;, &#39;2025&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb13-1"><Enlace href="#cb13-1" aria-hidden="true" tabindex="-1"></Enlace >re.findall(<span className="vs">r&quot;\d+&quot;</span>, <span className="st">&quot;ID123, edad 45, año 2025&quot;</span>)  <span className="co"># [&#39;123&#39;, &#39;45&#39;, &#39;2025&#39;]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="reemplazar-palabras">3. Reemplazar palabras</Titulo>
-      <div class="sourceCode" id="cb14">
+      <div className="sourceCode" id="cb14">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">&quot;Hola mundo cruel&quot;</span></span>
-            <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>nuevo <span class="op">=</span> re.sub(<span class="vs">r&quot;cruel&quot;</span>, <span class="st">&quot;hermoso&quot;</span>, texto)</span>
-            <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nuevo)  <span class="co"># Hola mundo hermoso</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb14-1"><Enlace href="#cb14-1" aria-hidden="true" tabindex="-1"></Enlace >texto <span className="op">=</span> <span className="st">&quot;Hola mundo cruel&quot;</span></span>
+            <span id="cb14-2"><Enlace href="#cb14-2" aria-hidden="true" tabindex="-1"></Enlace >nuevo <span className="op">=</span> re.sub(<span className="vs">r&quot;cruel&quot;</span>, <span className="st">&quot;hermoso&quot;</span>, texto)</span>
+            <span id="cb14-3"><Enlace href="#cb14-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(nuevo)  <span className="co"># Hola mundo hermoso</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h3" id="separar-texto-por-comas-o-espacios">4. Separar texto por comas o
         espacios</Titulo>
-      <div class="sourceCode" id="cb15">
+      <div className="sourceCode" id="cb15">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>re.split(<span class="vs">r&quot;[, ]+&quot;</span>, <span class="st">&quot;rojo, verde azul,amarillo&quot;</span>)  <span class="co"># [&#39;rojo&#39;, &#39;verde&#39;, &#39;azul&#39;, &#39;amarillo&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb15-1"><Enlace href="#cb15-1" aria-hidden="true" tabindex="-1"></Enlace >re.split(<span className="vs">r&quot;[, ]+&quot;</span>, <span className="st">&quot;rojo, verde azul,amarillo&quot;</span>)  <span className="co"># [&#39;rojo&#39;, &#39;verde&#39;, &#39;azul&#39;, &#39;amarillo&#39;]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="buenas-prácticas">Buenas prácticas</Titulo>
@@ -359,22 +359,22 @@ function nameabcd({ }) {
         <code>*</code> o <code>+</code> para <strong>modo no codicioso</strong>
         (lazy).
       </Texto>
-      <div class="sourceCode" id="cb16">
+      <div className="sourceCode" id="cb16">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>re.findall(<span class="vs">r&quot;&lt;.*?&gt;&quot;</span>, <span class="st">&quot;&lt;a&gt;&lt;b&gt;&quot;</span>)  <span class="co"># [&#39;&lt;a&gt;&#39;, &#39;&lt;b&gt;&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb16-1"><Enlace href="#cb16-1" aria-hidden="true" tabindex="-1"></Enlace >re.findall(<span className="vs">r&quot;&lt;.*?&gt;&quot;</span>, <span className="st">&quot;&lt;a&gt;&lt;b&gt;&quot;</span>)  <span className="co"># [&#39;&lt;a&gt;&#39;, &#39;&lt;b&gt;&#39;]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="ejercicio-rápido">Ejercicio rápido</Titulo>
       <Texto>Extrae todos los nombres de usuario de correos:</Texto>
-      <div class="sourceCode" id="cb17">
+      <div className="sourceCode" id="cb17">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-            <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>texto <span class="op">=</span> <span class="st">&quot;Correos: ana@mail.com, juan123@dominio.org&quot;</span></span>
-            <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(re.findall(<span class="vs">r&quot;(\w+)@&quot;</span>, texto))  <span class="co"># [&#39;ana&#39;, &#39;juan123&#39;]</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb17-1"><Enlace href="#cb17-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> re</span>
+            <span id="cb17-2"><Enlace href="#cb17-2" aria-hidden="true" tabindex="-1"></Enlace >texto <span className="op">=</span> <span className="st">&quot;Correos: ana@mail.com, juan123@dominio.org&quot;</span></span>
+            <span id="cb17-3"><Enlace href="#cb17-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(re.findall(<span className="vs">r&quot;(\w+)@&quot;</span>, texto))  <span className="co"># [&#39;ana&#39;, &#39;juan123&#39;]</span></span></code></pre>
       </div>
       <Linea />
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

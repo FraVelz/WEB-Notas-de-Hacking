@@ -3,7 +3,7 @@
 
 import Titulo from "./componentes/titulo.jsx";
 import Linea from "./componentes/linea.jsx";
-import Lista, { Item } from "./componentes/lista.jsx";
+import Lista from "./componentes/lista.jsx";
 import Enlace from "./componentes/enlace.jsx";
 import Texto from "./componentes/texto.jsx";
 import Estructura, { TemarioAside } from "./componentes/estructura.jsx";
@@ -81,12 +81,12 @@ function Readme() {
                 <Titulo title="h2" className="lg:hidden">Temario</Titulo>
 
                 <Temario className="
-            bg-gray-900
-            rounded-md
-            p-4 mb-4
-            list-decimal
-            2xl:hidden
-            " />
+                bg-gray-900
+                rounded-md
+                p-4 mb-4
+                list-decimal
+                2xl:hidden
+                " />
 
                 <Titulo title="h2">Bienvenida y Cosas previas a tener en cuenta dentro de cada seccion</Titulo>
 
@@ -109,21 +109,8 @@ function Readme() {
                 </Lista>
 
                 <Linea />
-                <Linea />
 
-                <Titulo title="h2" id="2-linux-y-bash-script">Linux y Bash Script</Titulo>
-
-                <Texto><b>Duración aproximada (2h diarias):</b> 1 mes.</Texto>
-
-                <Texto>
-                    Estos temas están relacionados porque los comandos que aprendes en Linux
-                    también se pueden usar dentro de los archivos de Bash ScripEn otras
-                    palabras, Bash actúa como una extensión del sistema que te permite
-                    automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
-                    condicional sin tener que escribirlos uno por uno en la terminal.
-                </Texto>
-
-                <Titulo title="h3" id="1-linux-comandos-por-secciones">Linux (comandos por secciones)</Titulo>
+               <Titulo title="h3" id="1-linux-comandos-por-secciones">Linux (comandos por secciones)</Titulo>
 
                 <Lista className="
             p1 list-disc my-2
@@ -534,7 +521,7 @@ function Readme() {
                 <Texto>…</Texto>
 
                 <Texto>
-                    Conceptos generales: <Enlace href="./anonimato/conceptos-generales.md">Ir a conceptos generales</Enlace>
+                    Conceptos generales: <Enlace href="./anonimato/privacidad-anonimato.md">Ir a conceptos generales</Enlace>
                 </Texto>
 
                 <Linea />

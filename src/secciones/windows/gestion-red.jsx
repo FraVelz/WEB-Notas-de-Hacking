@@ -11,18 +11,18 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-y-cmdlets-de-gestión-de-red">Comandos y cmdlets
-          de gestión de red</a>
+        <li><Enlace href="#comandos-y-cmdlets-de-gestión-de-red">Comandos y cmdlets
+          de gestión de red</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#cmd--comandos-de-red">CMD — Comandos de Red</a></li>
-            <li><a href="#powershell--cmdlets-de-red">PowerShell — Cmdlets de
-              Red</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#cmd--comandos-de-red">CMD — Comandos de Red</Enlace ></li>
+            <li><Enlace href="#powershell--cmdlets-de-red">PowerShell — Cmdlets de
+              Red</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="cmd-comandos-de-red">CMD — Comandos de Red</Titulo>
       <table>
@@ -214,8 +214,8 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

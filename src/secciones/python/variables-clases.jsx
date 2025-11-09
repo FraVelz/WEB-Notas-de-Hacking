@@ -11,20 +11,20 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#variables-protegidas-y-privadas-en-clases">Variables
-          protegidas y privadas en clases</a>
+        <li><Enlace href="#variables-protegidas-y-privadas-en-clases">Variables
+          protegidas y privadas en clases</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-self_variable-un-guion-bajo">1. self._variable (un guion
-              bajo)</a></li>
-            <li><a href="#2-self__variable-doble-guion-bajo">2. self.__variable
-              (doble guion bajo)</a></li>
-            <li><a href="#en-resumen">En resumen</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-self_variable-un-guion-bajo">1. self._variable (un guion
+              bajo)</Enlace ></li>
+            <li><Enlace href="#2-self__variable-doble-guion-bajo">2. self.__variable
+              (doble guion bajo)</Enlace ></li>
+            <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="self._variable-un-guion-bajo">1. self._variable (un guion
         bajo)</Titulo>
@@ -38,14 +38,14 @@ function nameabcd({ }) {
       <Texto>Python <strong>no bloquea</strong> su acceso; es solo una
         <strong>advertencia entre programadores</strong>.
       </Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
-            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._nombre <span class="op">=</span> nombre  <span class="co"># protegido</span></span>
-            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Persona(<span class="st">&quot;Ana&quot;</span>)</span>
-            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p._nombre)  <span class="co"># 😅 Funciona, pero no deberías accederlo así</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> Persona:</span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, nombre):</span>
+            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>._nombre <span className="op">=</span> nombre  <span className="co"># protegido</span></span>
+            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace >p <span className="op">=</span> Persona(<span className="st">&quot;Ana&quot;</span>)</span>
+            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p._nombre)  <span className="co"># 😅 Funciona, pero no deberías accederlo así</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="self.__variable-doble-guion-bajo">2. self.__variable (doble
@@ -57,20 +57,20 @@ function nameabcd({ }) {
         atributo</strong> para evitar que se sobrescriba o se acceda fácilmente
         desde fuera de la clase.</Texto>
       <Texto>Por ejemplo:</Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
-            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__nombre <span class="op">=</span> nombre  <span class="co"># privado (name mangling)</span></span>
-            <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Persona(<span class="st">&quot;Luis&quot;</span>)</span>
-            <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.__nombre)  <span class="co"># ❌ Error: AttributeError</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> Persona:</span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, nombre):</span>
+            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.__nombre <span className="op">=</span> nombre  <span className="co"># privado (name mangling)</span></span>
+            <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace >p <span className="op">=</span> Persona(<span className="st">&quot;Luis&quot;</span>)</span>
+            <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p.__nombre)  <span className="co"># ❌ Error: AttributeError</span></span></code></pre>
       </div>
       <Texto>Pero internamente Python lo guarda así</Texto>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p._Persona__nombre)  <span class="co"># ✅ Luis</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p._Persona__nombre)  <span className="co"># ✅ Luis</span></span></code></pre>
       </div>
       <Texto>En otras palabras:</Texto>
       <Lista>
@@ -124,8 +124,8 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Linea />
-      <Texto><a href="./../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

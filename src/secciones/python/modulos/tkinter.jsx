@@ -10,43 +10,43 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#tkinter-en-python">Tkinter en Python</a>
+        <li><Enlace href="#tkinter-en-python">Tkinter en Python</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#qué-es-tkinter">¿Qué es Tkinter?</a></li>
-            <li><a href="#primer-ejemplo-ventana-básica">Primer ejemplo: ventana
-              básica</a></li>
-            <li><a href="#widgets-principales">Widgets principales</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#qué-es-tkinter">¿Qué es Tkinter?</Enlace ></li>
+            <li><Enlace href="#primer-ejemplo-ventana-básica">Primer ejemplo: ventana
+              básica</Enlace ></li>
+            <li><Enlace href="#widgets-principales">Widgets principales</Enlace >
               <Lista>
-                <li><a href="#ejemplo-con-varios-widgets">Ejemplo con varios
-                  widgets</a></li>
+                <li><Enlace href="#ejemplo-con-varios-widgets">Ejemplo con varios
+                  widgets</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#gestores-de-diseño">Gestores de diseño</a>
+            <li><Enlace href="#gestores-de-diseño">Gestores de diseño</Enlace >
               <Lista>
-                <li><a href="#ejemplo">Ejemplo</a></li>
+                <li><Enlace href="#ejemplo">Ejemplo</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#eventos-y-comandos">Eventos y comandos</a></li>
-            <li><a href="#frames-y-organización">Frames y organización</a></li>
-            <li><a href="#widgets-más-avanzados">Widgets más avanzados</a>
+            <li><Enlace href="#eventos-y-comandos">Eventos y comandos</Enlace ></li>
+            <li><Enlace href="#frames-y-organización">Frames y organización</Enlace ></li>
+            <li><Enlace href="#widgets-más-avanzados">Widgets más avanzados</Enlace >
               <Lista>
-                <li><a href="#checkbutton">Checkbutton</a></li>
-                <li><a href="#radiobutton">Radiobutton</a></li>
-                <li><a href="#listbox">Listbox</a></li>
+                <li><Enlace href="#checkbutton">Checkbutton</Enlace ></li>
+                <li><Enlace href="#radiobutton">Radiobutton</Enlace ></li>
+                <li><Enlace href="#listbox">Listbox</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#colores-y-fuentes">Colores y fuentes</a></li>
-            <li><a href="#imágenes">Imágenes</a></li>
-            <li><a href="#menús">Menús</a></li>
-            <li><a href="#ventanas-emergentes">Ventanas emergentes</a></li>
-            <li><a href="#ejemplo-completo">Ejemplo completo</a></li>
-            <li><a href="#resumen-rápido">Resumen rápido</a></li>
+            <li><Enlace href="#colores-y-fuentes">Colores y fuentes</Enlace ></li>
+            <li><Enlace href="#imágenes">Imágenes</Enlace ></li>
+            <li><Enlace href="#menús">Menús</Enlace ></li>
+            <li><Enlace href="#ventanas-emergentes">Ventanas emergentes</Enlace ></li>
+            <li><Enlace href="#ejemplo-completo">Ejemplo completo</Enlace ></li>
+            <li><Enlace href="#resumen-rápido">Resumen rápido</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-es-tkinter">¿Qué es Tkinter?</Titulo>
       <Texto><strong>Tkinter</strong> es la biblioteca <strong>nativa de Python
@@ -57,14 +57,14 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="primer-ejemplo-ventana-básica">Primer ejemplo: ventana
         básica</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tkinter <span class="im">as</span> tk</span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ventana <span class="op">=</span> tk.Tk()                <span class="co"># Crea la ventana principal</span></span>
-            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ventana.title(<span class="st">&quot;Mi primera GUI&quot;</span>)  <span class="co"># Título</span></span>
-            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>ventana.geometry(<span class="st">&quot;400x300&quot;</span>)      <span class="co"># Tamaño (ancho x alto)</span></span>
-            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ventana.mainloop()               <span class="co"># Inicia el bucle principal</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> tkinter <span className="im">as</span> tk</span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace >ventana <span className="op">=</span> tk.Tk()                <span className="co"># Crea la ventana principal</span></span>
+            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace >ventana.title(<span className="st">&quot;Mi primera GUI&quot;</span>)  <span className="co"># Título</span></span>
+            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace >ventana.geometry(<span className="st">&quot;400x300&quot;</span>)      <span className="co"># Tamaño (ancho x alto)</span></span>
+            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace >ventana.mainloop()               <span className="co"># Inicia el bucle principal</span></span></code></pre>
       </div>
       <Texto>🔹 <code>Tk()</code> → crea la aplicación. 🔹 <code>mainloop()</code>
         → mantiene la ventana abierta escuchando eventos (clics, teclas,
@@ -128,25 +128,25 @@ function nameabcd({ }) {
       </table>
       <Linea />
       <Titulo title="h3" id="ejemplo-con-varios-widgets">Ejemplo con varios widgets</Titulo>
-      <div class="sourceCode" id="cb2">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tkinter <span class="im">as</span> tk</span>
-          <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar():</span>
-          <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    etiqueta.config(text<span class="op">=</span><span class="ss">f&quot;Hola, </span><span class="sc">{</span>entrada<span class="sc">.</span>get()<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-          <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>ventana <span class="op">=</span> tk.Tk()</span>
-          <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ventana.title(<span class="st">&quot;Ejemplo Widgets&quot;</span>)</span>
-          <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>etiqueta <span class="op">=</span> tk.Label(ventana, text<span class="op">=</span><span class="st">&quot;Escribe tu nombre:&quot;</span>)</span>
-          <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>etiqueta.pack()</span>
-          <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>entrada <span class="op">=</span> tk.Entry(ventana)</span>
-          <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>entrada.pack()</span>
-          <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>boton <span class="op">=</span> tk.Button(ventana, text<span class="op">=</span><span class="st">&quot;Saludar&quot;</span>, command<span class="op">=</span>saludar)</span>
-          <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>boton.pack()</span>
-          <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ventana.mainloop()</span></code></pre>
+      <div className="sourceCode" id="cb2">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> tkinter <span className="im">as</span> tk</span>
+          <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> saludar():</span>
+          <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace >    etiqueta.config(text<span className="op">=</span><span className="ss">f&quot;Hola, </span><span className="sc">{</span>entrada<span className="sc">.</span>get()<span className="sc">}</span><span className="ss">!&quot;</span>)</span>
+          <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace >ventana <span className="op">=</span> tk.Tk()</span>
+          <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace >ventana.title(<span className="st">&quot;Ejemplo Widgets&quot;</span>)</span>
+          <span id="cb2-8"><Enlace href="#cb2-8" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb2-9"><Enlace href="#cb2-9" aria-hidden="true" tabindex="-1"></Enlace >etiqueta <span className="op">=</span> tk.Label(ventana, text<span className="op">=</span><span className="st">&quot;Escribe tu nombre:&quot;</span>)</span>
+          <span id="cb2-10"><Enlace href="#cb2-10" aria-hidden="true" tabindex="-1"></Enlace >etiqueta.pack()</span>
+          <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb2-12"><Enlace href="#cb2-12" aria-hidden="true" tabindex="-1"></Enlace >entrada <span className="op">=</span> tk.Entry(ventana)</span>
+          <span id="cb2-13"><Enlace href="#cb2-13" aria-hidden="true" tabindex="-1"></Enlace >entrada.pack()</span>
+          <span id="cb2-14"><Enlace href="#cb2-14" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb2-15"><Enlace href="#cb2-15" aria-hidden="true" tabindex="-1"></Enlace >boton <span className="op">=</span> tk.Button(ventana, text<span className="op">=</span><span className="st">&quot;Saludar&quot;</span>, command<span className="op">=</span>saludar)</span>
+          <span id="cb2-16"><Enlace href="#cb2-16" aria-hidden="true" tabindex="-1"></Enlace >boton.pack()</span>
+          <span id="cb2-17"><Enlace href="#cb2-17" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb2-18"><Enlace href="#cb2-18" aria-hidden="true" tabindex="-1"></Enlace >ventana.mainloop()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="gestores-de-diseño">Gestores de diseño</Titulo>
@@ -174,122 +174,122 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Titulo title="h3" id="ejemplo">Ejemplo</Titulo>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>etiqueta1.grid(row<span class="op">=</span><span class="dv">0</span>, column<span class="op">=</span><span class="dv">0</span>)</span>
-            <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>entrada1.grid(row<span class="op">=</span><span class="dv">0</span>, column<span class="op">=</span><span class="dv">1</span>)</span>
-            <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>boton.grid(row<span class="op">=</span><span class="dv">1</span>, column<span class="op">=</span><span class="dv">0</span>, columnspan<span class="op">=</span><span class="dv">2</span>)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace >etiqueta1.grid(row<span className="op">=</span><span className="dv">0</span>, column<span className="op">=</span><span className="dv">0</span>)</span>
+            <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace >entrada1.grid(row<span className="op">=</span><span className="dv">0</span>, column<span className="op">=</span><span className="dv">1</span>)</span>
+            <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace >boton.grid(row<span className="op">=</span><span className="dv">1</span>, column<span className="op">=</span><span className="dv">0</span>, columnspan<span className="op">=</span><span className="dv">2</span>)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="eventos-y-comandos">Eventos y comandos</Titulo>
       <Texto>Puedes ejecutar funciones al hacer clic o escribir algo.</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> al_hacer_click():</span>
-            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;¡Botón presionado!&quot;</span>)</span>
-            <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>boton <span class="op">=</span> tk.Button(ventana, text<span class="op">=</span><span class="st">&quot;Haz clic&quot;</span>, command<span class="op">=</span>al_hacer_click)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> al_hacer_click():</span>
+            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;¡Botón presionado!&quot;</span>)</span>
+            <span id="cb4-3"><Enlace href="#cb4-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb4-4"><Enlace href="#cb4-4" aria-hidden="true" tabindex="-1"></Enlace >boton <span className="op">=</span> tk.Button(ventana, text<span className="op">=</span><span className="st">&quot;Haz clic&quot;</span>, command<span className="op">=</span>al_hacer_click)</span></code></pre>
       </div>
       <Texto>También puedes manejar eventos con <code>.bind()</code>:</Texto>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tecla_presionada(evento):</span>
-            <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Tecla:&quot;</span>, evento.char)</span>
-            <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>ventana.bind(<span class="st">&quot;&lt;Key&gt;&quot;</span>, tecla_presionada)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> tecla_presionada(evento):</span>
+            <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Tecla:&quot;</span>, evento.char)</span>
+            <span id="cb5-3"><Enlace href="#cb5-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb5-4"><Enlace href="#cb5-4" aria-hidden="true" tabindex="-1"></Enlace >ventana.bind(<span className="st">&quot;&lt;Key&gt;&quot;</span>, tecla_presionada)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="frames-y-organización">Frames y organización</Titulo>
       <Texto>Los <strong>Frames</strong> permiten dividir la interfaz en
         secciones.</Texto>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>frame_superior <span class="op">=</span> tk.Frame(ventana)</span>
-            <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>frame_superior.pack()</span>
-            <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>tk.Label(frame_superior, text<span class="op">=</span><span class="st">&quot;Arriba&quot;</span>).pack()</span>
-            <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>tk.Label(ventana, text<span class="op">=</span><span class="st">&quot;Abajo&quot;</span>).pack()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace >frame_superior <span className="op">=</span> tk.Frame(ventana)</span>
+            <span id="cb6-2"><Enlace href="#cb6-2" aria-hidden="true" tabindex="-1"></Enlace >frame_superior.pack()</span>
+            <span id="cb6-3"><Enlace href="#cb6-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb6-4"><Enlace href="#cb6-4" aria-hidden="true" tabindex="-1"></Enlace >tk.Label(frame_superior, text<span className="op">=</span><span className="st">&quot;Arriba&quot;</span>).pack()</span>
+            <span id="cb6-5"><Enlace href="#cb6-5" aria-hidden="true" tabindex="-1"></Enlace >tk.Label(ventana, text<span className="op">=</span><span className="st">&quot;Abajo&quot;</span>).pack()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="widgets-más-avanzados">Widgets más avanzados</Titulo>
       <Titulo title="h3" id="checkbutton">Checkbutton</Titulo>
-      <div class="sourceCode" id="cb7">
+      <div className="sourceCode" id="cb7">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>var <span class="op">=</span> tk.BooleanVar()</span>
-            <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tk.Checkbutton(ventana, text<span class="op">=</span><span class="st">&quot;Acepto términos&quot;</span>, variable<span class="op">=</span>var).pack()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace >var <span className="op">=</span> tk.BooleanVar()</span>
+            <span id="cb7-2"><Enlace href="#cb7-2" aria-hidden="true" tabindex="-1"></Enlace >tk.Checkbutton(ventana, text<span className="op">=</span><span className="st">&quot;Acepto términos&quot;</span>, variable<span className="op">=</span>var).pack()</span></code></pre>
       </div>
       <Titulo title="h3" id="radiobutton">Radiobutton</Titulo>
-      <div class="sourceCode" id="cb8">
+      <div className="sourceCode" id="cb8">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>opcion <span class="op">=</span> tk.StringVar(value<span class="op">=</span><span class="st">&quot;A&quot;</span>)</span>
-            <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tk.Radiobutton(ventana, text<span class="op">=</span><span class="st">&quot;Opción A&quot;</span>, variable<span class="op">=</span>opcion, value<span class="op">=</span><span class="st">&quot;A&quot;</span>).pack()</span>
-            <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tk.Radiobutton(ventana, text<span class="op">=</span><span class="st">&quot;Opción B&quot;</span>, variable<span class="op">=</span>opcion, value<span class="op">=</span><span class="st">&quot;B&quot;</span>).pack()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace >opcion <span className="op">=</span> tk.StringVar(value<span className="op">=</span><span className="st">&quot;A&quot;</span>)</span>
+            <span id="cb8-2"><Enlace href="#cb8-2" aria-hidden="true" tabindex="-1"></Enlace >tk.Radiobutton(ventana, text<span className="op">=</span><span className="st">&quot;Opción A&quot;</span>, variable<span className="op">=</span>opcion, value<span className="op">=</span><span className="st">&quot;A&quot;</span>).pack()</span>
+            <span id="cb8-3"><Enlace href="#cb8-3" aria-hidden="true" tabindex="-1"></Enlace >tk.Radiobutton(ventana, text<span className="op">=</span><span className="st">&quot;Opción B&quot;</span>, variable<span className="op">=</span>opcion, value<span className="op">=</span><span className="st">&quot;B&quot;</span>).pack()</span></code></pre>
       </div>
       <Titulo title="h3" id="listbox">Listbox</Titulo>
-      <div class="sourceCode" id="cb9">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>lista <span class="op">=</span> tk.Listbox(ventana)</span>
-          <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> [<span class="st">&quot;Python&quot;</span>, <span class="st">&quot;C++&quot;</span>, <span class="st">&quot;Java&quot;</span>]:</span>
-          <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    lista.insert(tk.END, i)</span>
-          <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>lista.pack()</span></code></pre>
+      <div className="sourceCode" id="cb9">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace >lista <span className="op">=</span> tk.Listbox(ventana)</span>
+          <span id="cb9-2"><Enlace href="#cb9-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> [<span className="st">&quot;Python&quot;</span>, <span className="st">&quot;C++&quot;</span>, <span className="st">&quot;Java&quot;</span>]:</span>
+          <span id="cb9-3"><Enlace href="#cb9-3" aria-hidden="true" tabindex="-1"></Enlace >    lista.insert(tk.END, i)</span>
+          <span id="cb9-4"><Enlace href="#cb9-4" aria-hidden="true" tabindex="-1"></Enlace >lista.pack()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="colores-y-fuentes">Colores y fuentes</Titulo>
-      <div class="sourceCode" id="cb10">
+      <div className="sourceCode" id="cb10">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>tk.Label(ventana, text<span class="op">=</span><span class="st">&quot;Texto colorido&quot;</span>, fg<span class="op">=</span><span class="st">&quot;white&quot;</span>, bg<span class="op">=</span><span class="st">&quot;blue&quot;</span>, font<span class="op">=</span>(<span class="st">&quot;Arial&quot;</span>, <span class="dv">14</span>, <span class="st">&quot;bold&quot;</span>)).pack()</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace >tk.Label(ventana, text<span className="op">=</span><span className="st">&quot;Texto colorido&quot;</span>, fg<span className="op">=</span><span className="st">&quot;white&quot;</span>, bg<span className="op">=</span><span className="st">&quot;blue&quot;</span>, font<span className="op">=</span>(<span className="st">&quot;Arial&quot;</span>, <span className="dv">14</span>, <span className="st">&quot;bold&quot;</span>)).pack()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="imágenes">Imágenes</Titulo>
       <Texto>Tkinter soporta imágenes con <code>PhotoImage</code> (formato
         <code>.png</code>, <code>.gif</code>).
       </Texto>
-      <div class="sourceCode" id="cb11">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>img <span class="op">=</span> tk.PhotoImage(<span class="bu">file</span><span class="op">=</span><span class="st">&quot;imagen.png&quot;</span>)</span>
-          <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>tk.Label(ventana, image<span class="op">=</span>img).pack()</span>
-          <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ventana.mainloop()</span></code></pre>
+      <div className="sourceCode" id="cb11">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace >img <span className="op">=</span> tk.PhotoImage(<span className="bu">file</span><span className="op">=</span><span className="st">&quot;imagen.png&quot;</span>)</span>
+          <span id="cb11-2"><Enlace href="#cb11-2" aria-hidden="true" tabindex="-1"></Enlace >tk.Label(ventana, image<span className="op">=</span>img).pack()</span>
+          <span id="cb11-3"><Enlace href="#cb11-3" aria-hidden="true" tabindex="-1"></Enlace >ventana.mainloop()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="menús">Menús</Titulo>
-      <div class="sourceCode" id="cb12">
+      <div className="sourceCode" id="cb12">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>menu <span class="op">=</span> tk.Menu(ventana)</span>
-            <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ventana.config(menu<span class="op">=</span>menu)</span>
-            <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>submenu <span class="op">=</span> tk.Menu(menu, tearoff<span class="op">=</span><span class="dv">0</span>)</span>
-            <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>menu.add_cascade(label<span class="op">=</span><span class="st">&quot;Archivo&quot;</span>, menu<span class="op">=</span>submenu)</span>
-            <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>submenu.add_command(label<span class="op">=</span><span class="st">&quot;Nuevo&quot;</span>)</span>
-            <span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>submenu.add_command(label<span class="op">=</span><span class="st">&quot;Salir&quot;</span>, command<span class="op">=</span>ventana.quit)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb12-1"><Enlace href="#cb12-1" aria-hidden="true" tabindex="-1"></Enlace >menu <span className="op">=</span> tk.Menu(ventana)</span>
+            <span id="cb12-2"><Enlace href="#cb12-2" aria-hidden="true" tabindex="-1"></Enlace >ventana.config(menu<span className="op">=</span>menu)</span>
+            <span id="cb12-3"><Enlace href="#cb12-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb12-4"><Enlace href="#cb12-4" aria-hidden="true" tabindex="-1"></Enlace >submenu <span className="op">=</span> tk.Menu(menu, tearoff<span className="op">=</span><span className="dv">0</span>)</span>
+            <span id="cb12-5"><Enlace href="#cb12-5" aria-hidden="true" tabindex="-1"></Enlace >menu.add_cascade(label<span className="op">=</span><span className="st">&quot;Archivo&quot;</span>, menu<span className="op">=</span>submenu)</span>
+            <span id="cb12-6"><Enlace href="#cb12-6" aria-hidden="true" tabindex="-1"></Enlace >submenu.add_command(label<span className="op">=</span><span className="st">&quot;Nuevo&quot;</span>)</span>
+            <span id="cb12-7"><Enlace href="#cb12-7" aria-hidden="true" tabindex="-1"></Enlace >submenu.add_command(label<span className="op">=</span><span className="st">&quot;Salir&quot;</span>, command<span className="op">=</span>ventana.quit)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="ventanas-emergentes">Ventanas emergentes</Titulo>
-      <div class="sourceCode" id="cb13">
+      <div className="sourceCode" id="cb13">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tkinter <span class="im">import</span> messagebox</span>
-            <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>messagebox.showinfo(<span class="st">&quot;Título&quot;</span>, <span class="st">&quot;Hola desde una ventana emergente&quot;</span>)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb13-1"><Enlace href="#cb13-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">from</span> tkinter <span className="im">import</span> messagebox</span>
+            <span id="cb13-2"><Enlace href="#cb13-2" aria-hidden="true" tabindex="-1"></Enlace >messagebox.showinfo(<span className="st">&quot;Título&quot;</span>, <span className="st">&quot;Hola desde una ventana emergente&quot;</span>)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="ejemplo-completo">Ejemplo completo</Titulo>
-      <div class="sourceCode" id="cb14">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tkinter <span class="im">as</span> tk</span>
-          <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tkinter <span class="im">import</span> messagebox</span>
-          <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> saludar():</span>
-          <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    nombre <span class="op">=</span> entrada.get()</span>
-          <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nombre:</span>
-          <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>        messagebox.showinfo(<span class="st">&quot;Saludo&quot;</span>, <span class="ss">f&quot;Hola, </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">!&quot;</span>)</span>
-          <span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-          <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>        messagebox.showwarning(<span class="st">&quot;Advertencia&quot;</span>, <span class="st">&quot;Debes ingresar un nombre&quot;</span>)</span>
-          <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>ventana <span class="op">=</span> tk.Tk()</span>
-          <span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>ventana.title(<span class="st">&quot;App Completa&quot;</span>)</span>
-          <span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>ventana.geometry(<span class="st">&quot;300x200&quot;</span>)</span>
-          <span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>tk.Label(ventana, text<span class="op">=</span><span class="st">&quot;Tu nombre:&quot;</span>).pack(pady<span class="op">=</span><span class="dv">5</span>)</span>
-          <span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>entrada <span class="op">=</span> tk.Entry(ventana)</span>
-          <span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>entrada.pack(pady<span class="op">=</span><span class="dv">5</span>)</span>
-          <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>tk.Button(ventana, text<span class="op">=</span><span class="st">&quot;Saludar&quot;</span>, command<span class="op">=</span>saludar).pack(pady<span class="op">=</span><span class="dv">10</span>)</span>
-          <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
-          <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>ventana.mainloop()</span></code></pre>
+      <div className="sourceCode" id="cb14">
+        <pre className="sourceCode python"><code className="sourceCode python"><span id="cb14-1"><Enlace href="#cb14-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> tkinter <span className="im">as</span> tk</span>
+          <span id="cb14-2"><Enlace href="#cb14-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">from</span> tkinter <span className="im">import</span> messagebox</span>
+          <span id="cb14-3"><Enlace href="#cb14-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb14-4"><Enlace href="#cb14-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> saludar():</span>
+          <span id="cb14-5"><Enlace href="#cb14-5" aria-hidden="true" tabindex="-1"></Enlace >    nombre <span className="op">=</span> entrada.get()</span>
+          <span id="cb14-6"><Enlace href="#cb14-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">if</span> nombre:</span>
+          <span id="cb14-7"><Enlace href="#cb14-7" aria-hidden="true" tabindex="-1"></Enlace >        messagebox.showinfo(<span className="st">&quot;Saludo&quot;</span>, <span className="ss">f&quot;Hola, </span><span className="sc">{</span>nombre<span className="sc">}</span><span className="ss">!&quot;</span>)</span>
+          <span id="cb14-8"><Enlace href="#cb14-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">else</span>:</span>
+          <span id="cb14-9"><Enlace href="#cb14-9" aria-hidden="true" tabindex="-1"></Enlace >        messagebox.showwarning(<span className="st">&quot;Advertencia&quot;</span>, <span className="st">&quot;Debes ingresar un nombre&quot;</span>)</span>
+          <span id="cb14-10"><Enlace href="#cb14-10" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb14-11"><Enlace href="#cb14-11" aria-hidden="true" tabindex="-1"></Enlace >ventana <span className="op">=</span> tk.Tk()</span>
+          <span id="cb14-12"><Enlace href="#cb14-12" aria-hidden="true" tabindex="-1"></Enlace >ventana.title(<span className="st">&quot;App Completa&quot;</span>)</span>
+          <span id="cb14-13"><Enlace href="#cb14-13" aria-hidden="true" tabindex="-1"></Enlace >ventana.geometry(<span className="st">&quot;300x200&quot;</span>)</span>
+          <span id="cb14-14"><Enlace href="#cb14-14" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb14-15"><Enlace href="#cb14-15" aria-hidden="true" tabindex="-1"></Enlace >tk.Label(ventana, text<span className="op">=</span><span className="st">&quot;Tu nombre:&quot;</span>).pack(pady<span className="op">=</span><span className="dv">5</span>)</span>
+          <span id="cb14-16"><Enlace href="#cb14-16" aria-hidden="true" tabindex="-1"></Enlace >entrada <span className="op">=</span> tk.Entry(ventana)</span>
+          <span id="cb14-17"><Enlace href="#cb14-17" aria-hidden="true" tabindex="-1"></Enlace >entrada.pack(pady<span className="op">=</span><span className="dv">5</span>)</span>
+          <span id="cb14-18"><Enlace href="#cb14-18" aria-hidden="true" tabindex="-1"></Enlace >tk.Button(ventana, text<span className="op">=</span><span className="st">&quot;Saludar&quot;</span>, command<span className="op">=</span>saludar).pack(pady<span className="op">=</span><span className="dv">10</span>)</span>
+          <span id="cb14-19"><Enlace href="#cb14-19" aria-hidden="true" tabindex="-1"></Enlace ></span>
+          <span id="cb14-20"><Enlace href="#cb14-20" aria-hidden="true" tabindex="-1"></Enlace >ventana.mainloop()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="resumen-rápido">Resumen rápido</Titulo>
@@ -339,8 +339,8 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Linea />
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

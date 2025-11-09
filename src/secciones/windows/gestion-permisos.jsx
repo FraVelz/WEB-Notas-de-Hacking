@@ -11,25 +11,25 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-y-cmdlets-de-gestión-de-permisos">Comandos y
-          cmdlets de gestión de permisos</a>
+        <li><Enlace href="#comandos-y-cmdlets-de-gestión-de-permisos">Comandos y
+          cmdlets de gestión de permisos</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#cmd--comandos-de-gestión-de-permisos">CMD — Comandos de
-              Gestión de Permisos</a></li>
-            <li><a href="#powershell--cmdlets-de-gestión-de-permisos">PowerShell —
-              Cmdlets de Gestión de Permisos</a></li>
-            <li><a href="#ejemplos-prácticos">Ejemplos prácticos</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#cmd--comandos-de-gestión-de-permisos">CMD — Comandos de
+              Gestión de Permisos</Enlace ></li>
+            <li><Enlace href="#powershell--cmdlets-de-gestión-de-permisos">PowerShell —
+              Cmdlets de Gestión de Permisos</Enlace ></li>
+            <li><Enlace href="#ejemplos-prácticos">Ejemplos prácticos</Enlace >
               <Lista>
-                <li><a href="#cmd">CMD</a></li>
-                <li><a href="#powershell">PowerShell</a></li>
+                <li><Enlace href="#cmd">CMD</Enlace ></li>
+                <li><Enlace href="#powershell">PowerShell</Enlace ></li>
               </Lista>
             </li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="cmd-comandos-de-gestión-de-permisos">CMD — Comandos de Gestión
         de Permisos</Titulo>
@@ -168,22 +168,22 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="ejemplos-prácticos">Ejemplos prácticos</Titulo>
       <Titulo title="h3" id="cmd">CMD</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">icacls</span> <span class="st">&quot;C:\Proyecto&quot;</span> /grant Juan:<span class="er">(</span><span class="ex">R,W</span><span class="kw">)</span></span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">takeown</span> /f <span class="st">&quot;C:\Proyecto\archivo.txt&quot;</span></span></code></pre>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">icacls</span> <span className="st">&quot;C:\Proyecto&quot;</span> /grant Juan:<span className="er">(</span><span className="ex">R,W</span><span className="kw">)</span></span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">takeown</span> /f <span className="st">&quot;C:\Proyecto\archivo.txt&quot;</span></span></code></pre>
       </div>
       <Titulo title="h3" id="powershell">PowerShell</Titulo>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">$acl</span> <span class="op">=</span> <span class="fu">Get-Acl</span> <span class="st">&quot;C:\Proyecto&quot;</span></span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$rule</span> <span class="op">=</span> <span class="fu">New-Object</span> System<span class="op">.</span><span class="fu">Security</span><span class="op">.</span><span class="fu">AccessControl</span><span class="op">.</span><span class="fu">FileSystemAccessRule</span><span class="op">(</span><span class="st">&quot;Juan&quot;</span><span class="op">,</span><span class="st">&quot;Modify&quot;</span><span class="op">,</span><span class="st">&quot;Allow&quot;</span><span class="op">)</span></span>
-            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="va">$acl</span><span class="op">.</span><span class="fu">AddAccessRule</span><span class="op">(</span><span class="va">$rule</span><span class="op">)</span></span>
-            <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Acl</span> <span class="st">&quot;C:\Proyecto&quot;</span> <span class="va">$acl</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$acl</span> <span className="op">=</span> <span className="fu">Get-Acl</span> <span className="st">&quot;C:\Proyecto&quot;</span></span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$rule</span> <span className="op">=</span> <span className="fu">New-Object</span> System<span className="op">.</span><span className="fu">Security</span><span className="op">.</span><span className="fu">AccessControl</span><span className="op">.</span><span className="fu">FileSystemAccessRule</span><span className="op">(</span><span className="st">&quot;Juan&quot;</span><span className="op">,</span><span className="st">&quot;Modify&quot;</span><span className="op">,</span><span className="st">&quot;Allow&quot;</span><span className="op">)</span></span>
+            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$acl</span><span className="op">.</span><span className="fu">AddAccessRule</span><span className="op">(</span><span className="va">$rule</span><span className="op">)</span></span>
+            <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Acl</span> <span className="st">&quot;C:\Proyecto&quot;</span> <span className="va">$acl</span></span></code></pre>
       </div>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

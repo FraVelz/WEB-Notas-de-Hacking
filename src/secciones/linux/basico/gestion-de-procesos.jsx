@@ -1,40 +1,39 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Estructura from "../../componentes/estructura.jsx";
+import Titulo from "../../../componentes/titulo.jsx";
+import Lista from "../../../componentes/lista.jsx";
+import Texto from "../../../componentes/texto.jsx";
+import Linea from "../../../componentes/linea.jsx";
+import Estructura from "../../../componentes/estructura.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+      <li><Enlace href="#terminologías">Terminologías</Enlace ></li>
+      <li><Enlace href="#comandos-para-ver-procesos">Comandos para ver procesos</Enlace ></li>
+      <li><Enlace href="#ejecución-de-procesos">Ejecución de procesos</Enlace ></li>
+      <li><Enlace href="#control-de-trabajos">Control de trabajos</Enlace ></li>
+      <li><Enlace href="#señales-a-procesos">Señales a procesos</Enlace ></li>
+      <li><Enlace href="#prioridades-de-procesos">Prioridades de procesos</Enlace ></li>
+      <li><Enlace href="#espera-y-sincronización">Espera y sincronización</Enlace ></li>
+      <li><Enlace href="#redirección-y-procesos">Redirección y procesos</Enlace ></li>
+      <li><Enlace href="#información-de-procesos">Información de procesos</Enlace ></li>
+      <li><Enlace href="#procesos-huérfanos-y-zombis">Procesos huérfanos y zombis</Enlace ></li>
+      <li><Enlace href="#resumen-visual">Resumen visual</Enlace ></li>
+    </Lista>
+  );
+}
 
 function Gestion_Procesos() {
   return (
     <Estructura>
       <Titulo title="h1" id="gestión-de-procesos">Gestión de procesos</Titulo>
       <Linea />
-      
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li>
-          <a href="#gestión-de-procesos">Gestión de procesos</a>
-          <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#terminologías">Terminologías</a></li>
-            <li><a href="#comandos-para-ver-procesos">Comandos para ver procesos</a></li>
-            <li><a href="#ejecución-de-procesos">Ejecución de procesos</a></li>
-            <li><a href="#control-de-trabajos">Control de trabajos</a></li>
-            <li><a href="#señales-a-procesos">Señales a procesos</a></li>
-            <li><a href="#prioridades-de-procesos">Prioridades de procesos</a></li>
-            <li><a href="#espera-y-sincronización">Espera y sincronización</a></li>
-            <li><a href="#redirección-y-procesos">Redirección y procesos</a></li>
-            <li><a href="#información-de-procesos">Información de procesos</a></li>
-            <li><a href="#procesos-huérfanos-y-zombis">Procesos huérfanos y zombis</a></li>
-            <li><a href="#resumen-visual">Resumen visual</a></li>
-          </Lista>
-        </li>
-      </Lista>
+
 
       <Texto>
-        <a href="./../readme.md#2-linux-y-bash-script">Regresar a la guía principal</a>
+        <Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía principal</Enlace >
       </Texto>
-      
+
       <Linea />
       <Titulo title="h2" id="terminologías">Terminologías</Titulo>
       <Lista>
@@ -51,7 +50,7 @@ function Gestion_Procesos() {
           </Lista>
         </li>
         <li>
-          <strong>Señales</strong>: Mensajes que el kernel o el usuario pueden enviar a un proceso 
+          <strong>Señales</strong>: Mensajes que el kernel o el usuario pueden enviar a un proceso
           (ej: <code>SIGKILL</code>, <code>SIGSTOP</code>, <code>SIGINT</code>).
         </li>
       </Lista>
@@ -66,8 +65,8 @@ function Gestion_Procesos() {
           <div className="sourceCode">
             <pre className="sourceCode bash">
               <code className="sourceCode bash">
-ps aux                # Para monitorear recursos
-ps -ef                # Para ver jerarquía y relaciones entre los procesos
+                ps aux                # Para monitorear recursos
+                ps -ef                # Para ver jerarquía y relaciones entre los procesos
               </code>
             </pre>
           </div>
@@ -132,8 +131,8 @@ ps -ef                # Para ver jerarquía y relaciones entre los procesos
             </pre>
           </div>
           <Texto>
-            El shell sigue disponible mientras el proceso corre. Tener en cuenta que normalmente 
-            al cerrar la shell el proceso se termina, pero se puede utilizar el comando <code>disown</code> 
+            El shell sigue disponible mientras el proceso corre. Tener en cuenta que normalmente
+            al cerrar la shell el proceso se termina, pero se puede utilizar el comando <code>disown</code>
             en la shell para que el proceso no dependa de la shell.
           </Texto>
         </li>
@@ -142,8 +141,8 @@ ps -ef                # Para ver jerarquía y relaciones entre los procesos
           <div className="sourceCode">
             <pre className="sourceCode bash">
               <code className="sourceCode bash">
-long_task.sh &
-echo "Sigo usando la terminal"
+                long_task.sh &
+                echo "Sigo usando la terminal"
               </code>
             </pre>
           </div>
@@ -159,10 +158,10 @@ echo "Sigo usando la terminal"
       <div className="sourceCode">
         <pre className="sourceCode bash">
           <code className="sourceCode bash">
-jobs          # lista los procesos de fondo en la sesión actual
-fg %1         # lleva el job 1 al primer plano
-bg %2         # reanuda el job 2 en segundo plano
-Ctrl + Z      # pausa el proceso actual
+            jobs          # lista los procesos de fondo en la sesión actual
+            fg %1         # lleva el job 1 al primer plano
+            bg %2         # reanuda el job 2 en segundo plano
+            Ctrl + Z      # pausa el proceso actual
           </code>
         </pre>
       </div>
@@ -175,7 +174,7 @@ Ctrl + Z      # pausa el proceso actual
       </div>
 
       <Texto>
-        Luego das <code>Ctrl+Z</code> se pausa el proceso (importante no equivocarse con 
+        Luego das <code>Ctrl+Z</code> se pausa el proceso (importante no equivocarse con
         <code>Ctrl+C</code> porque este terminaría el proceso en vez de pausarlo), cuando escribas:
       </Texto>
 
@@ -192,7 +191,7 @@ Ctrl + Z      # pausa el proceso actual
       </figure>
 
       <Texto>
-        Con el comando <code>fg %1</code> o <code>bg %1</code> puedes des pausar el proceso, 
+        Con el comando <code>fg %1</code> o <code>bg %1</code> puedes des pausar el proceso,
         con las implicaciones que se dieron arriba.
       </Texto>
 
@@ -204,10 +203,10 @@ Ctrl + Z      # pausa el proceso actual
           <div className="sourceCode">
             <pre className="sourceCode bash">
               <code className="sourceCode bash">
-kill -9 1234    # SIGKILL (fuerza el cierre)
-kill -15 1234   # SIGTERM (solicita terminación limpia)
-kill -STOP 1234 # pausa proceso
-kill -CONT 1234 # reanuda proceso detenido
+                kill -9 1234    # SIGKILL (fuerza el cierre)
+                kill -15 1234   # SIGTERM (solicita terminación limpia)
+                kill -STOP 1234 # pausa proceso
+                kill -CONT 1234 # reanuda proceso detenido
               </code>
             </pre>
           </div>
@@ -217,8 +216,8 @@ kill -CONT 1234 # reanuda proceso detenido
           <div className="sourceCode">
             <pre className="sourceCode bash">
               <code className="sourceCode bash">
-pkill firefox
-killall nano
+                pkill firefox
+                killall nano
               </code>
             </pre>
           </div>
@@ -305,15 +304,15 @@ killall nano
       <Lista>
         <li>
           <Texto>
-            <strong>Huérfano</strong>: cuando el proceso padre termina antes que su hijo. 
-            El proceso hijo pasa a ser adoptado por el <strong>init</strong> o <strong>systemd</strong>. 
+            <strong>Huérfano</strong>: cuando el proceso padre termina antes que su hijo.
+            El proceso hijo pasa a ser adoptado por el <strong>init</strong> o <strong>systemd</strong>.
             No es dañino, pero indica una gestión no controlada de procesos.
           </Texto>
         </li>
         <li>
           <Texto>
-            <strong>Zombi</strong>: proceso que terminó, pero su entrada en la tabla de procesos 
-            aún existe porque su padre no leyó su estado de salida (<code>wait()</code> no fue llamado). 
+            <strong>Zombi</strong>: proceso que terminó, pero su entrada en la tabla de procesos
+            aún existe porque su padre no leyó su estado de salida (<code>wait()</code> no fue llamado).
             Se muestran con estado <code>Z</code>.
           </Texto>
           <div className="sourceCode">
@@ -373,7 +372,7 @@ killall nano
           </tr>
         </tbody>
       </table>
-    </Estructura>
+    </Estructura >
   );
 }
 

@@ -10,30 +10,30 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#python">Python</a>
+        <li><Enlace href="#python">Python</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#resumen">Resumen</a></li>
-            <li><a href="#️tcp-transmission-control-protocol">️TCP (Transmission
-              Control Protocol)</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#resumen">Resumen</Enlace ></li>
+            <li><Enlace href="#️tcp-transmission-control-protocol">️TCP (Transmission
+              Control Protocol)</Enlace >
               <Lista>
-                <li><a href="#servidor-tcp">Servidor TCP</a></li>
-                <li><a href="#cliente-tcp">Cliente TCP</a></li>
+                <li><Enlace href="#servidor-tcp">Servidor TCP</Enlace ></li>
+                <li><Enlace href="#cliente-tcp">Cliente TCP</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#udp-user-datagram-protocol">UDP (User Datagram
-              Protocol)</a>
+            <li><Enlace href="#udp-user-datagram-protocol">UDP (User Datagram
+              Protocol)</Enlace >
               <Lista>
-                <li><a href="#servidor-udp">Servidor UDP</a></li>
-                <li><a href="#cliente-udp">Cliente UDP</a></li>
+                <li><Enlace href="#servidor-udp">Servidor UDP</Enlace ></li>
+                <li><Enlace href="#cliente-udp">Cliente UDP</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#diferencias-rápidas">Diferencias rápidas</a></li>
+            <li><Enlace href="#diferencias-rápidas">Diferencias rápidas</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="resumen">Resumen</Titulo>
       <Texto>Los <strong>sockets</strong> permiten la <strong>comunicación entre
@@ -53,42 +53,42 @@ function nameabcd({ }) {
         <li>Ideal para chats, transferencias, HTTP, etc.</li>
       </Lista>
       <Titulo title="h3" id="servidor-tcp">Servidor TCP</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># servidor_tcp.py</span></span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> socket</span>
-            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>HOST <span class="op">=</span> <span class="st">&#39;127.0.0.1&#39;</span>   <span class="co"># Dirección local</span></span>
-            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>PORT <span class="op">=</span> <span class="dv">5000</span>          <span class="co"># Puerto del servidor</span></span>
-            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_STREAM) <span class="im">as</span> s:</span>
-            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    s.bind((HOST, PORT))     <span class="co"># Asociar dirección y puerto</span></span>
-            <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    s.listen()               <span class="co"># Escuchar conexiones</span></span>
-            <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Servidor TCP esperando conexión...&quot;</span>)</span>
-            <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    conn, addr <span class="op">=</span> s.accept()  <span class="co"># Aceptar cliente</span></span>
-            <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> conn:</span>
-            <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Conectado a:&quot;</span>, addr)</span>
-            <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">while</span> <span class="va">True</span>:</span>
-            <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>            data <span class="op">=</span> conn.recv(<span class="dv">1024</span>)      <span class="co"># Recibir datos</span></span>
-            <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> <span class="kw">not</span> data:</span>
-            <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
-            <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;Cliente dice:&quot;</span>, data.decode())</span>
-            <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>            conn.sendall(<span class="st">b&quot;Mensaje recibido&quot;</span>)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># servidor_tcp.py</span></span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> socket</span>
+            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace >HOST <span className="op">=</span> <span className="st">&#39;127.0.0.1&#39;</span>   <span className="co"># Dirección local</span></span>
+            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace >PORT <span className="op">=</span> <span className="dv">5000</span>          <span className="co"># Puerto del servidor</span></span>
+            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_STREAM) <span className="im">as</span> s:</span>
+            <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace >    s.bind((HOST, PORT))     <span className="co"># Asociar dirección y puerto</span></span>
+            <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace >    s.listen()               <span className="co"># Escuchar conexiones</span></span>
+            <span id="cb1-10"><Enlace href="#cb1-10" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Servidor TCP esperando conexión...&quot;</span>)</span>
+            <span id="cb1-11"><Enlace href="#cb1-11" aria-hidden="true" tabindex="-1"></Enlace >    conn, addr <span className="op">=</span> s.accept()  <span className="co"># Aceptar cliente</span></span>
+            <span id="cb1-12"><Enlace href="#cb1-12" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">with</span> conn:</span>
+            <span id="cb1-13"><Enlace href="#cb1-13" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="st">&quot;Conectado a:&quot;</span>, addr)</span>
+            <span id="cb1-14"><Enlace href="#cb1-14" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">while</span> <span className="va">True</span>:</span>
+            <span id="cb1-15"><Enlace href="#cb1-15" aria-hidden="true" tabindex="-1"></Enlace >            data <span className="op">=</span> conn.recv(<span className="dv">1024</span>)      <span className="co"># Recibir datos</span></span>
+            <span id="cb1-16"><Enlace href="#cb1-16" aria-hidden="true" tabindex="-1"></Enlace >            <span className="cf">if</span> <span className="kw">not</span> data:</span>
+            <span id="cb1-17"><Enlace href="#cb1-17" aria-hidden="true" tabindex="-1"></Enlace >                <span className="cf">break</span></span>
+            <span id="cb1-18"><Enlace href="#cb1-18" aria-hidden="true" tabindex="-1"></Enlace >            <span className="bu">print</span>(<span className="st">&quot;Cliente dice:&quot;</span>, data.decode())</span>
+            <span id="cb1-19"><Enlace href="#cb1-19" aria-hidden="true" tabindex="-1"></Enlace >            conn.sendall(<span className="st">b&quot;Mensaje recibido&quot;</span>)</span></code></pre>
       </div>
       <Titulo title="h3" id="cliente-tcp">Cliente TCP</Titulo>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cliente_tcp.py</span></span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> socket</span>
-            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>HOST <span class="op">=</span> <span class="st">&#39;127.0.0.1&#39;</span></span>
-            <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>PORT <span class="op">=</span> <span class="dv">5000</span></span>
-            <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_STREAM) <span class="im">as</span> s:</span>
-            <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    s.<span class="ex">connect</span>((HOST, PORT))</span>
-            <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    s.sendall(<span class="st">b&quot;Hola servidor TCP&quot;</span>)</span>
-            <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> s.recv(<span class="dv">1024</span>)</span>
-            <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Servidor responde:&quot;</span>, data.decode())</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># cliente_tcp.py</span></span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> socket</span>
+            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace >HOST <span className="op">=</span> <span className="st">&#39;127.0.0.1&#39;</span></span>
+            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace >PORT <span className="op">=</span> <span className="dv">5000</span></span>
+            <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_STREAM) <span className="im">as</span> s:</span>
+            <span id="cb2-8"><Enlace href="#cb2-8" aria-hidden="true" tabindex="-1"></Enlace >    s.<span className="ex">connect</span>((HOST, PORT))</span>
+            <span id="cb2-9"><Enlace href="#cb2-9" aria-hidden="true" tabindex="-1"></Enlace >    s.sendall(<span className="st">b&quot;Hola servidor TCP&quot;</span>)</span>
+            <span id="cb2-10"><Enlace href="#cb2-10" aria-hidden="true" tabindex="-1"></Enlace >    data <span className="op">=</span> s.recv(<span className="dv">1024</span>)</span>
+            <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Servidor responde:&quot;</span>, data.decode())</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="udp-user-datagram-protocol">UDP (User Datagram Protocol)</Titulo>
@@ -98,35 +98,35 @@ function nameabcd({ }) {
         <li>Ideal para streaming, juegos, mensajes cortos.</li>
       </Lista>
       <Titulo title="h3" id="servidor-udp">Servidor UDP</Titulo>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># servidor_udp.py</span></span>
-            <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> socket</span>
-            <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>HOST <span class="op">=</span> <span class="st">&#39;127.0.0.1&#39;</span></span>
-            <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>PORT <span class="op">=</span> <span class="dv">6000</span></span>
-            <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_DGRAM) <span class="im">as</span> s:</span>
-            <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    s.bind((HOST, PORT))</span>
-            <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Servidor UDP esperando mensajes...&quot;</span>)</span>
-            <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> <span class="va">True</span>:</span>
-            <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        data, addr <span class="op">=</span> s.recvfrom(<span class="dv">1024</span>)</span>
-            <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Mensaje de&quot;</span>, addr, <span class="st">&quot;:&quot;</span>, data.decode())</span>
-            <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        s.sendto(<span class="st">b&quot;Mensaje recibido&quot;</span>, addr)</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># servidor_udp.py</span></span>
+            <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> socket</span>
+            <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb3-4"><Enlace href="#cb3-4" aria-hidden="true" tabindex="-1"></Enlace >HOST <span className="op">=</span> <span className="st">&#39;127.0.0.1&#39;</span></span>
+            <span id="cb3-5"><Enlace href="#cb3-5" aria-hidden="true" tabindex="-1"></Enlace >PORT <span className="op">=</span> <span className="dv">6000</span></span>
+            <span id="cb3-6"><Enlace href="#cb3-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb3-7"><Enlace href="#cb3-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_DGRAM) <span className="im">as</span> s:</span>
+            <span id="cb3-8"><Enlace href="#cb3-8" aria-hidden="true" tabindex="-1"></Enlace >    s.bind((HOST, PORT))</span>
+            <span id="cb3-9"><Enlace href="#cb3-9" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Servidor UDP esperando mensajes...&quot;</span>)</span>
+            <span id="cb3-10"><Enlace href="#cb3-10" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">while</span> <span className="va">True</span>:</span>
+            <span id="cb3-11"><Enlace href="#cb3-11" aria-hidden="true" tabindex="-1"></Enlace >        data, addr <span className="op">=</span> s.recvfrom(<span className="dv">1024</span>)</span>
+            <span id="cb3-12"><Enlace href="#cb3-12" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="st">&quot;Mensaje de&quot;</span>, addr, <span className="st">&quot;:&quot;</span>, data.decode())</span>
+            <span id="cb3-13"><Enlace href="#cb3-13" aria-hidden="true" tabindex="-1"></Enlace >        s.sendto(<span className="st">b&quot;Mensaje recibido&quot;</span>, addr)</span></code></pre>
       </div>
       <Titulo title="h3" id="cliente-udp">Cliente UDP</Titulo>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cliente_udp.py</span></span>
-            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> socket</span>
-            <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>HOST <span class="op">=</span> <span class="st">&#39;127.0.0.1&#39;</span></span>
-            <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>PORT <span class="op">=</span> <span class="dv">6000</span></span>
-            <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_DGRAM) <span class="im">as</span> s:</span>
-            <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    s.sendto(<span class="st">b&quot;Hola servidor UDP&quot;</span>, (HOST, PORT))</span>
-            <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    data, _ <span class="op">=</span> s.recvfrom(<span class="dv">1024</span>)</span>
-            <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Servidor responde:&quot;</span>, data.decode())</span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># cliente_udp.py</span></span>
+            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> socket</span>
+            <span id="cb4-3"><Enlace href="#cb4-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb4-4"><Enlace href="#cb4-4" aria-hidden="true" tabindex="-1"></Enlace >HOST <span className="op">=</span> <span className="st">&#39;127.0.0.1&#39;</span></span>
+            <span id="cb4-5"><Enlace href="#cb4-5" aria-hidden="true" tabindex="-1"></Enlace >PORT <span className="op">=</span> <span className="dv">6000</span></span>
+            <span id="cb4-6"><Enlace href="#cb4-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb4-7"><Enlace href="#cb4-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">with</span> socket.socket(socket.AF_INET, socket.SOCK_DGRAM) <span className="im">as</span> s:</span>
+            <span id="cb4-8"><Enlace href="#cb4-8" aria-hidden="true" tabindex="-1"></Enlace >    s.sendto(<span className="st">b&quot;Hola servidor UDP&quot;</span>, (HOST, PORT))</span>
+            <span id="cb4-9"><Enlace href="#cb4-9" aria-hidden="true" tabindex="-1"></Enlace >    data, _ <span className="op">=</span> s.recvfrom(<span className="dv">1024</span>)</span>
+            <span id="cb4-10"><Enlace href="#cb4-10" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="st">&quot;Servidor responde:&quot;</span>, data.decode())</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="diferencias-rápidas">Diferencias rápidas</Titulo>
@@ -165,8 +165,8 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Linea />
-      <Texto><a href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

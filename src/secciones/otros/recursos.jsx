@@ -1,7 +1,16 @@
+import Estructura, { TemarioAside } from "./../../componentes/estructura.jsx";
+
 import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}></Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -11,27 +20,27 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#recursos-para-aprender-ciberseguridad">Recursos para
-          Aprender Ciberseguridad</a>
+        <li><Enlace href="#recursos-para-aprender-ciberseguridad">Recursos para
+          Aprender Ciberseguridad</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#video-youtube--temario-completo">Video YouTube – Temario
-              completo</a></li>
-            <li><a href="#academia-s4vitar">Academia S4vitar</a></li>
-            <li><a href="#academia-hixec">Academia Hixec</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#video-youtube--temario-completo">Video YouTube – Temario
+              completo</Enlace ></li>
+            <li><Enlace href="#academia-s4vitar">Academia S4vitar</Enlace ></li>
+            <li><Enlace href="#academia-hixec">Academia Hixec</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#temario">Regresar a la guía principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#temario">Regresar a la guía principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="video-youtube-temario-completo">Video YouTube – Temario
         completo</Titulo>
       <Texto><strong>Duración:</strong> Aproximadamente 1 hora</Texto>
-      <Texto><strong>Canal:</strong> <a href="https://www.youtube.com/@Xerosec">Xerosec</a></Texto>
+      <Texto><strong>Canal:</strong> <Enlace href="https://www.youtube.com/@Xerosec">Xerosec</Enlace ></Texto>
       <Texto><strong>Título:</strong> 📝 <em>Aprende Hacking Ético desde 0 GRATIS
         | Cómo empezar en Ciberseguridad | Guía de Aprendizaje 2025</em></Texto>
-      <Texto><strong>Enlace directo:</strong> <a href="https://www.youtube.com/watch?v=fUs1LM2b3JA&amp;sttick=0">Ver
-        video en YouTube</a></Texto>
+      <Texto><strong>Enlace directo:</strong> <Enlace href="https://www.youtube.com/watch?v=fUs1LM2b3JA&amp;sttick=0">Ver
+        video en YouTube</Enlace ></Texto>
       <Texto>Este video ofrece una guía completa para comenzar en ciberseguridad
         desde cero. Presenta un <strong>temario bien estructurado</strong> con
         los fundamentos básicos, incluyendo <strong>conceptos iniciales,
@@ -56,7 +65,7 @@ function nameabcd({ }) {
           prepararse para los certificados.</li>    <li>Numeroso contenido gratuito en su canal de YouTube, de
           <strong>resolución de máquinas y mucho más</strong>.
         </li>  </Lista>
-      <Texto><strong>Sitio web y plataforma de práctica:</strong> 🔗 <a href="https://hack4u.io/">https://hack4u.io/</a></Texto>
+      <Texto><strong>Sitio web y plataforma de práctica:</strong> 🔗 <Enlace href="https://hack4u.io/">https://hack4u.io/</Enlace ></Texto>
       <blockquote>
         <Texto>Algunos temas de Linux y Python presentes en este repositorio
           provienen de conceptos aprendidos en la Academia S4vitar y su canal de
@@ -70,14 +79,14 @@ function nameabcd({ }) {
         claros y están orientados a comprender los fundamentos de la
         ciberseguridad desde una perspectiva conceptual y profesional.
       </Texto>
-      <Texto><strong>Sitio web:</strong> 🔗 <a href="https://hixec.com/">https://hixec.com/</a></Texto>
+      <Texto><strong>Sitio web:</strong> 🔗 <Enlace href="https://hixec.com/">https://hixec.com/</Enlace ></Texto>
       <blockquote>
         <Texto>Los apuntes de este repositorio relacionados con privacidad,
           anonimato y seguridad en Windows están inspirados en contenidos
           aprendidos en la Academia Hixec y su canal de YouTube.</Texto>
       </blockquote>
       <Linea />
-      <Texto><a href="./../readme.md#temario">Regresar a la guía principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#temario">Regresar a la guía principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

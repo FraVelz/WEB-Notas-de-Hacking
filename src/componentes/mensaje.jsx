@@ -14,6 +14,7 @@ function Mensaje({ children, onClose }) {
             bg-gray-900
             rounded-2xl border-2 border-gray-700
             hover:border-gray-600
+            lg:w-2/4
             
             p-6 shadow-lg text-center
             ">

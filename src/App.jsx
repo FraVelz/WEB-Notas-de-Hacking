@@ -6,8 +6,7 @@ import { lazy, useState } from "react";
 // * Apartados Especificos ************************************************** //
 
 // Anonimato
-const Conceptos_Generales = lazy(() => import("./secciones/anonimato/conceptos-generales.jsx"));
-const Definicion = lazy(() => import("./secciones/anonimato/definicion.jsx"));
+const Privacidad_Y_Anonimato = lazy(() => import("./secciones/anonimato/privacidad-anonimato.jsx"));
 const Filtraciones = lazy(() => import("./secciones/anonimato/filtraciones.jsx"));
 const Huella_Digital = lazy(() => import("./secciones/anonimato/huella-digital.jsx"));
 const User_Agent = lazy(() => import("./secciones/anonimato/user-agent.jsx"));
@@ -21,22 +20,26 @@ const Mitos = lazy(() => import("./secciones/conceptos-basicos/mitos.jsx"));
 const Virtualizacion = lazy(() => import("./secciones/virtualizacion/virtualizacion.jsx"));
 
 // Linux
-const Arrays = lazy(() => import("./secciones/linux/arrays.jsx"));
-const Atajos_De_Teclado = lazy(() => import("./secciones/linux/atajos-de-teclado.jsx"));
-const Ayuda_Linux = lazy(() => import("./secciones/linux/ayuda-linux.jsx"));
 const Bandit_Resolucion = lazy(() => import("./secciones/linux/bandit-resolucion.jsx"));
-const Busqueda = lazy(() => import("./secciones/linux/busqueda.jsx"));
-const Comandos_Linux = lazy(() => import("./secciones/linux/comandos-linux.jsx"));
-const Condiciones = lazy(() => import("./secciones/linux/condiciones.jsx"));
-const Entrada_Y_Salida = lazy(() => import("./secciones/linux/entrada-y-salida.jsx"));
-const EstControl = lazy(() => import("./secciones/linux/estControl.jsx"));
-const Funciones_Externas = lazy(() => import("./secciones/linux/funciones-externas.jsx"));
-const Funciones = lazy(() => import("./secciones/linux/funciones.jsx"));
-const Fundaments = lazy(() => import("./secciones/linux/fundaments.jsx"));
-const Gestion_De_Procesos = lazy(() => import("./secciones/linux/gestion-de-procesos.jsx"));
-const Grupos_Y_Usuarios = lazy(() => import("./secciones/linux/grupos-y-usuarios.jsx"));
-const Manipulacion_De_Strings = lazy(() => import("./secciones/linux/manipulacion-de-strings.jsx"));
-const Permisos = lazy(() => import("./secciones/linux/permisos.jsx"));
+
+// Linux/Basico
+const Atajos_De_Teclado = lazy(() => import("./secciones/linux/basico/atajos-de-teclado.jsx"));
+const Ayuda_Linux = lazy(() => import("./secciones/linux/basico/ayuda-linux.jsx"));
+const Busqueda = lazy(() => import("./secciones/linux/basico/busqueda.jsx"));
+const Comandos_Linux = lazy(() => import("./secciones/linux/basico/comandos-linux.jsx"));
+const Fundaments = lazy(() => import("./secciones/linux/basico/fundamentos.jsx"));
+const Gestion_De_Procesos = lazy(() => import("./secciones/linux/basico/gestion-de-procesos.jsx"));
+const Grupos_Y_Usuarios = lazy(() => import("./secciones/linux/basico/grupos-y-usuarios.jsx"));
+const Permisos = lazy(() => import("./secciones/linux/basico/permisos.jsx"));
+
+// Linux/Bash-Script
+const Arrays = lazy(() => import("./secciones/linux/bash-script/arrays.jsx"));
+const Condiciones = lazy(() => import("./secciones/linux/bash-script/condiciones.jsx"));
+const Entrada_Y_Salida = lazy(() => import("./secciones/linux/bash-script/entrada-y-salida.jsx"));
+const EstControl = lazy(() => import("./secciones/linux/bash-script/estControl.jsx"));
+const Funciones_Externas = lazy(() => import("./secciones/linux/bash-script/funciones-externas.jsx"));
+const Funciones = lazy(() => import("./secciones/linux/bash-script/funciones.jsx"));
+const Manipulacion_De_Strings = lazy(() => import("./secciones/linux/bash-script/manipulacion-de-strings.jsx"));
 
 // Linux/Comandos
 const Cifrado_Cesar_Tr = lazy(() => import("./secciones/linux/comandos/cifrado-cesar-tr.jsx"));
@@ -111,11 +114,18 @@ const Variables_Entorno = lazy(() => import("./secciones/windows/variables-entor
 function Desplegable({ titulo = "", masInfo = "", children }) {
   return (
     <details>
-      <summary className="cursor-pointer">
+      <summary className="
+      cursor-pointer
+      text-gray-400
+      hover:text-gray-200
+      select-none
+      ">
         {titulo} {masInfo}
       </summary>
 
-      <Lista>
+      <Lista className="
+      text-gray-400
+      ">
         {children}
       </Lista>
     </details>
@@ -124,8 +134,10 @@ function Desplegable({ titulo = "", masInfo = "", children }) {
 
 function Enlace_R({ children, to, className = "" }) {
   return (
-    <Link className={`
+    <Link draggable="false" className={`
     cursor-pointer
+    hover:text-gray-200
+    select-none
     ${className}
     `} to={to}>{children}</Link>
   );
@@ -193,7 +205,7 @@ function App() {
             "
           />
 
-          <h1 className="font-bold text-2xl">Fravelz</h1>
+          <h1 className="text-2xl"><strong>Fravelz</strong></h1>
         </div>
 
         <div className="text-right">
@@ -225,22 +237,26 @@ function App() {
             rounded-md
             p-4
             ">
-              <Link className="block" to="/">Inicio</Link>
+              <Link draggable="false" className="
+              block select-none
+            text-gray-300
+            hover:text-gray-200
+              " to="/">Inicio</Link>
 
               <Lista className="">
                 {/* Conceptos Básicos */}
                 <Desplegable titulo="Conceptos Básicos"
                   masInfo={<Boton_I texto="Mas Info.">
-                      <Titulo title="h2" id="1-conceptos-básicos">Conceptos Básicos</Titulo>
+                    <Titulo title="h2" id="1-conceptos-básicos">Conceptos Básicos</Titulo>
 
-                      <Texto><strong>Duración aproximada:</strong> 25min de lectura.</Texto>
+                    <Texto><strong>Duración aproximada:</strong> 25min de lectura.</Texto>
 
-                      <Texto className="text-left">
-                        En esta seccion se encontrara, explicaciones de los términos
-                        fundamentales, y reglas importantes de la seguridad informática. Es
-                        importante entenderlos, ya que se usan constantemente en el campo de la
-                        ciberseguridad y hacking.
-                      </Texto>
+                    <Texto className="text-left">
+                      En esta seccion se encontrara, explicaciones de los términos
+                      fundamentales, y reglas importantes de la seguridad informática. Es
+                      importante entenderlos, ya que se usan constantemente en el campo de la
+                      ciberseguridad y hacking.
+                    </Texto>
                   </Boton_I>}
                 >
                   <li><Enlace_R to="/mitos">Desmitiendo Mitos</Enlace_R></li>
@@ -255,11 +271,11 @@ function App() {
 
                     <Texto><strong>Duración aproximada (2h diarias):</strong> 2 días con practica.</Texto>
 
-                      <Texto className="text-left">
-                        En esta seccion se encontrara, una guia corta, y resumida
-                        acerca de la virtualizacion con material extra para aprender mas,
-                        y la explicacion del porque es importante, y mucho mas.
-                      </Texto>
+                    <Texto className="text-left">
+                      En esta seccion se encontrara, una guia corta, y resumida
+                      acerca de la virtualizacion con material extra para aprender mas,
+                      y la explicacion del porque es importante, y mucho mas.
+                    </Texto>
                   </Boton_I>}
                 >
                   <li><Enlace_R to="/virtualizacion">Virtualizacion</Enlace_R></li>
@@ -268,18 +284,19 @@ function App() {
                 {/* Linux y Bash Script */}
                 <Desplegable titulo="Linux y Bash Script"
                   masInfo={<Boton_I texto="Mas Info.">
-                      <Titulo title="h2" id="1-conceptos-básicos">Conceptos Básicos</Titulo>
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
 
-                      <Texto><strong>Duración aproximada:</strong> 25min de lectura.</Texto>
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
 
-                      <Texto className="text-left">
-                        En esta seccion se encontrara, explicaciones de los términos
-                        fundamentales, y reglas importantes de la seguridad informática. Es
-                        importante entenderlos, ya que se usan constantemente en el campo de la
-                        ciberseguridad y hacking.
-                      </Texto>
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash Script. En otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
                   </Boton_I>}
-                  >                 
+                >
 
                   <Desplegable titulo="Linux Basico">
                     <li><Enlace_R to="/fundamentos">Fundamentos Linux</Enlace_R></li>
@@ -315,7 +332,21 @@ function App() {
                 </Desplegable>
 
                 {/* Windows */}
-                <Desplegable titulo="Windows">
+                <Desplegable titulo="Windows"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/historia_windows">Historia de Windows</Enlace_R></li>
                   <li><Enlace_R to="/navegacion_windows">Navegación</Enlace_R></li>
                   <li><Enlace_R to="/directorios_windows">Directorios</Enlace_R></li>
@@ -332,7 +363,21 @@ function App() {
                 </Desplegable>
 
                 {/* Redes */}
-                <Desplegable titulo="Redes">
+                <Desplegable titulo="Redes"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/teoria_redes">Teoría de Redes</Enlace_R></li>
                   <li><Enlace_R to="/cidrs_hosts">CIDRs y Hosts</Enlace_R></li>
                   <li><Enlace_R to="/subnetting">Subnetting</Enlace_R></li>
@@ -340,7 +385,21 @@ function App() {
                 </Desplegable>
 
                 {/* Python */}
-                <Desplegable titulo="Python">
+                <Desplegable titulo="Python"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/python_completo">Python Completo</Enlace_R></li>
                   <li><Enlace_R to="/clases_python">Clases en Python</Enlace_R></li>
                   <li><Enlace_R to="/variables_clases">Variables de Clase</Enlace_R></li>
@@ -361,20 +420,62 @@ function App() {
                 </Desplegable>
 
                 {/* Pentesting */}
-                <Desplegable titulo="Pentesting">
+                <Desplegable titulo="Pentesting"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/fases_pentesting">Fases del Pentesting</Enlace_R></li>
                   <li><Enlace_R to="/cajas">Tipos de Cajas</Enlace_R></li>
                 </Desplegable>
 
                 {/* OSINT */}
-                <Desplegable titulo="OSINT">
+                <Desplegable titulo="OSINT"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/osint_basico">OSINT Básico</Enlace_R></li>
                   <li><Enlace_R to="/terminologia_osint">Terminología</Enlace_R></li>
                   <li><Enlace_R to="/google_dorks">Google Dorks</Enlace_R></li>
                 </Desplegable>
 
                 {/* Privacidad y Anonimato */}
-                <Desplegable titulo="Privacidad y Anonimato">
+                <Desplegable titulo="Privacidad y Anonimato"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/privacidad_y_anonimato">Privacidad y Anonimato</Enlace_R></li>
                   <li><Enlace_R to="/huella_digital">Huella Digital</Enlace_R></li>
                   <li><Enlace_R to="/user_agent">User Agent</Enlace_R></li>
@@ -382,7 +483,21 @@ function App() {
                 </Desplegable>
 
                 {/* Otros */}
-                <Desplegable titulo="Otros">
+                <Desplegable titulo="Otros"
+                  masInfo={<Boton_I texto="Mas Info.">
+                    <Titulo title="h2">Linux y Bash Script</Titulo>
+
+                    <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
+
+                    <Texto className="text-left">
+                      Estos temas están relacionados porque los comandos que aprendes en Linux
+                      también se pueden usar dentro de los archivos de Bash ScripEn otras
+                      palabras, Bash actúa como una extensión del sistema que te permite
+                      automatizar esos comandos, combinarlos y ejecutarlos de forma secuencial o
+                      condicional sin tener que escribirlos uno por uno en la terminal.
+                    </Texto>
+                  </Boton_I>}
+                >
                   <li><Enlace_R to="/concientizacion">Concientización</Enlace_R></li>
                   <li><Enlace_R to="/distribuciones_linux">Distribuciones Linux</Enlace_R></li>
                   <li><Enlace_R to="/herramientas">Herramientas</Enlace_R></li>
@@ -400,14 +515,14 @@ function App() {
 
             {/* Conceptos Básicos */}
             <Route path='/virtualizacion' element={<Virtualizacion />} />
- 
+
             {/* Conceptos Básicos */}
             <Route path='/conceptos_basicos' element={<Conceptos_Basicos />} />
             <Route path='/legalidad_hacking' element={<Legalidad_Hacking />} />
             <Route path='/mitos' element={<Mitos />} />
 
             {/* Anonimato */}
-            <Route path='/privacidad_y_anonimato' element={<Conceptos_Generales />} />
+            <Route path='/privacidad_y_anonimato' element={<Privacidad_Y_Anonimato />} />
             <Route path='/huella_digital' element={<Huella_Digital />} />
             <Route path='/user_agent' element={<User_Agent />} />
             <Route path='/filtracion_de_datos' element={<Filtraciones />} />

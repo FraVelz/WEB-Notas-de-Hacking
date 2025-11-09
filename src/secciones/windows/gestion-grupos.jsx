@@ -10,29 +10,29 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-y-cmdlets-de-grupos">Comandos y cmdlets de
-          grupos</a>
+        <li><Enlace href="#comandos-y-cmdlets-de-grupos">Comandos y cmdlets de
+          grupos</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-comandos-de-gestión-de-grupos-en-cmd">1. Comandos de
-              gestión de grupos en CMD</a></li>
-            <li><a href="#2-cmdlets-de-gestión-de-grupos-en-powershell">2. Cmdlets
-              de gestión de grupos en PowerShell</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-comandos-de-gestión-de-grupos-en-cmd">1. Comandos de
+              gestión de grupos en CMD</Enlace ></li>
+            <li><Enlace href="#2-cmdlets-de-gestión-de-grupos-en-powershell">2. Cmdlets
+              de gestión de grupos en PowerShell</Enlace >
               <Lista>
-                <li><a href="#grupos-locales">Grupos locales</a></li>
-                <li><a href="#grupos-de-dominio-active-directory">Grupos de dominio
-                  (Active Directory)</a></li>
+                <li><Enlace href="#grupos-locales">Grupos locales</Enlace ></li>
+                <li><Enlace href="#grupos-de-dominio-active-directory">Grupos de dominio
+                  (Active Directory)</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#3-comparativa-cmd-vs-powershell">3. Comparativa CMD vs
-              PowerShell</a></li>
-            <li><a href="#4-atajos-y-comandos-gráficos">4. Atajos y comandos
-              gráficos</a></li>
+            <li><Enlace href="#3-comparativa-cmd-vs-powershell">3. Comparativa CMD vs
+              PowerShell</Enlace ></li>
+            <li><Enlace href="#4-atajos-y-comandos-gráficos">4. Atajos y comandos
+              gráficos</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="comandos-de-gestión-de-grupos-en-cmd">1. Comandos de gestión de
         grupos en CMD</Titulo>
@@ -324,8 +324,8 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

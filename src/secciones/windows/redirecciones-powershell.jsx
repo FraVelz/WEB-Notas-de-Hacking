@@ -11,23 +11,23 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#redirecciones-en-powershell-operadores-lógicos-y-de-redirección">Redirecciones
-          en Powershell (operadores lógicos y de redirección)</a>
+        <li><Enlace href="#redirecciones-en-powershell-operadores-lógicos-y-de-redirección">Redirecciones
+          en Powershell (operadores lógicos y de redirección)</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#tipos-de-salida-en-powershell">Tipos de salida en
-              PowerShell</a></li>
-            <li><a href="#operadores-de-redirección">Operadores de
-              redirección</a></li>
-            <li><a href="#operadores-lógicos">Operadores lógicos</a></li>
-            <li><a href="#ejemplos-combinados">Ejemplos combinados</a></li>
-            <li><a href="#tip-extra-usar-redirecciones-dentro-de-scripts">Tip extra:
-              usar redirecciones dentro de scripts</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#tipos-de-salida-en-powershell">Tipos de salida en
+              PowerShell</Enlace ></li>
+            <li><Enlace href="#operadores-de-redirección">Operadores de
+              redirección</Enlace ></li>
+            <li><Enlace href="#operadores-lógicos">Operadores lógicos</Enlace ></li>
+            <li><Enlace href="#ejemplos-combinados">Ejemplos combinados</Enlace ></li>
+            <li><Enlace href="#tip-extra-usar-redirecciones-dentro-de-scripts">Tip extra:
+              usar redirecciones dentro de scripts</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="tipos-de-salida-en-powershell">Tipos de salida en
         PowerShell</Titulo>
@@ -251,33 +251,33 @@ function nameabcd({ }) {
       </table>
       <Linea />
       <Titulo title="h2" id="ejemplos-combinados">Ejemplos combinados</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Guarda salida y errores en archivos diferentes</span></span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> C<span class="op">:</span>\ <span class="dv">1</span><span class="op">&gt;</span>salida<span class="op">.</span><span class="fu">txt</span> <span class="dv">2</span><span class="op">&gt;</span>errores<span class="op">.</span><span class="fu">txt</span></span>
-            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Guarda todo en un solo archivo</span></span>
-            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> C<span class="op">:</span>\ <span class="op">*&gt;</span> todo<span class="op">.</span><span class="fu">txt</span></span>
-            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Si un archivo existe, muestra un mensaje</span></span>
-            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Test-Path</span> <span class="st">&quot;C:\config.txt&quot;</span> <span class="op">&amp;&amp;</span> <span class="fu">Write-Host</span> <span class="st">&quot;Existe&quot;</span> <span class="op">||</span> <span class="fu">Write-Host</span> <span class="st">&quot;No existe&quot;</span></span>
-            <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Redirigir salida a un archivo y también verla en pantalla</span></span>
-            <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Process</span> <span class="op">|</span> <span class="fu">Tee-Object</span> <span class="op">-</span>FilePath procesos<span class="op">.</span><span class="fu">txt</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Guarda salida y errores en archivos diferentes</span></span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> C<span className="op">:</span>\ <span className="dv">1</span><span className="op">&gt;</span>salida<span className="op">.</span><span className="fu">txt</span> <span className="dv">2</span><span className="op">&gt;</span>errores<span className="op">.</span><span className="fu">txt</span></span>
+            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Guarda todo en un solo archivo</span></span>
+            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> C<span className="op">:</span>\ <span className="op">*&gt;</span> todo<span className="op">.</span><span className="fu">txt</span></span>
+            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Si un archivo existe, muestra un mensaje</span></span>
+            <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Test-Path</span> <span className="st">&quot;C:\config.txt&quot;</span> <span className="op">&amp;&amp;</span> <span className="fu">Write-Host</span> <span className="st">&quot;Existe&quot;</span> <span className="op">||</span> <span className="fu">Write-Host</span> <span className="st">&quot;No existe&quot;</span></span>
+            <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-10"><Enlace href="#cb1-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Redirigir salida a un archivo y también verla en pantalla</span></span>
+            <span id="cb1-11"><Enlace href="#cb1-11" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Process</span> <span className="op">|</span> <span className="fu">Tee-Object</span> <span className="op">-</span>FilePath procesos<span className="op">.</span><span className="fu">txt</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="tip-extra-usar-redirecciones-dentro-de-scripts">Tip extra: usar
         redirecciones dentro de scripts</Titulo>
       <Texto>En scripts (<code>.ps1</code>), puedes controlar redirecciones con
         más precisión:</Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ErrorActionPreference</span> <span class="op">=</span> <span class="st">&quot;SilentlyContinue&quot;</span>   <span class="co"># Ignora errores</span></span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Item</span> <span class="st">&quot;C:\noexiste.txt&quot;</span> <span class="op">*&gt;</span> log<span class="op">.</span><span class="fu">txt</span>         <span class="co"># Redirige todo</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$ErrorActionPreference</span> <span className="op">=</span> <span className="st">&quot;SilentlyContinue&quot;</span>   <span className="co"># Ignora errores</span></span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Item</span> <span className="st">&quot;C:\noexiste.txt&quot;</span> <span className="op">*&gt;</span> log<span className="op">.</span><span className="fu">txt</span>         <span className="co"># Redirige todo</span></span></code></pre>
       </div>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

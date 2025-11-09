@@ -10,20 +10,20 @@ function nameabcd({ }) {
         gestión de procesos</Titulo>
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-y-cmdlets-de-gestión-de-procesos">Comandos y
-          cmdlets de gestión de procesos</a>
+        <li><Enlace href="#comandos-y-cmdlets-de-gestión-de-procesos">Comandos y
+          cmdlets de gestión de procesos</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-comandos-de-gestión-de-procesos-en-cmd">1. Comandos de
-              gestión de procesos en CMD</a></li>
-            <li><a href="#2-cmdlets-de-gestión-de-procesos-en-powershell">2. Cmdlets
-              de gestión de procesos en PowerShell</a></li>
-            <li><a href="#3-comparativa-rápida-cmd-vs-powershell">3. Comparativa
-              rápida CMD vs PowerShell</a></li>
-            <li><a href="#4-comandos-gráficos-y-herramientas-integradas">4. Comandos
-              gráficos y herramientas integradas</a></li>
-            <li><a href="#ejemplos-útiles-de-powershell">Ejemplos útiles de
-              PowerShell</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-comandos-de-gestión-de-procesos-en-cmd">1. Comandos de
+              gestión de procesos en CMD</Enlace ></li>
+            <li><Enlace href="#2-cmdlets-de-gestión-de-procesos-en-powershell">2. Cmdlets
+              de gestión de procesos en PowerShell</Enlace ></li>
+            <li><Enlace href="#3-comparativa-rápida-cmd-vs-powershell">3. Comparativa
+              rápida CMD vs PowerShell</Enlace ></li>
+            <li><Enlace href="#4-comandos-gráficos-y-herramientas-integradas">4. Comandos
+              gráficos y herramientas integradas</Enlace ></li>
+            <li><Enlace href="#ejemplos-útiles-de-powershell">Ejemplos útiles de
+              PowerShell</Enlace ></li>
           </Lista>
         </li>
       </Lista>
@@ -318,23 +318,23 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="ejemplos-útiles-de-powershell">Ejemplos útiles de
         PowerShell</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver los 5 procesos que más consumen CPU</span></span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Process</span> <span class="op">|</span> <span class="fu">Sort-Object</span> CPU <span class="op">-</span>Descending <span class="op">|</span> <span class="fu">Select-Object</span> <span class="op">-</span>First <span class="dv">5</span></span>
-            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver todos los procesos de un usuario específico</span></span>
-            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-WmiObject</span> Win32_Process <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op"></span> <span class="va">$_</span><span class="op">.</span><span class="fu">GetOwner</span><span class="op">().</span><span class="fu">User</span> <span class="op">-eq</span> <span class="st">&quot;Francisco&quot;</span> <span class="op"></span></span>
-            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cerrar todos los procesos de Notepad</span></span>
-            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Process</span> notepad <span class="op">|</span> <span class="fu">Stop-Process</span> <span class="op">-</span>Force</span>
-            <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Abrir el Bloc de notas como administrador</span></span>
-            <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Start-Process</span> <span class="st">&quot;notepad.exe&quot;</span> <span class="op">-</span>Verb RunAs</span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver los 5 procesos que más consumen CPU</span></span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Process</span> <span className="op">|</span> <span className="fu">Sort-Object</span> CPU <span className="op">-</span>Descending <span className="op">|</span> <span className="fu">Select-Object</span> <span className="op">-</span>First <span className="dv">5</span></span>
+            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver todos los procesos de un usuario específico</span></span>
+            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-WmiObject</span> Win32_Process <span className="op">|</span> <span className="fu">Where-Object</span> <span className="op"></span> <span className="va">$_</span><span className="op">.</span><span className="fu">GetOwner</span><span className="op">().</span><span className="fu">User</span> <span className="op">-eq</span> <span className="st">&quot;Francisco&quot;</span> <span className="op"></span></span>
+            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Cerrar todos los procesos de Notepad</span></span>
+            <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Process</span> notepad <span className="op">|</span> <span className="fu">Stop-Process</span> <span className="op">-</span>Force</span>
+            <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-10"><Enlace href="#cb1-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Abrir el Bloc de notas como administrador</span></span>
+            <span id="cb1-11"><Enlace href="#cb1-11" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Start-Process</span> <span className="st">&quot;notepad.exe&quot;</span> <span className="op">-</span>Verb RunAs</span></code></pre>
       </div>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

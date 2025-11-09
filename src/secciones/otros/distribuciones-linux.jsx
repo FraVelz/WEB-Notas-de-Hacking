@@ -1,7 +1,35 @@
+import Estructura, { TemarioAside, TemarioAsideCompleto } from "./../../componentes/estructura.jsx";
+
 import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+      <li><Enlace href="#1-distribuciones-populares-en-ciberseguridad">1.
+        Distribuciones populares en ciberseguridad</Enlace ></li>
+      <li><Enlace href="#2-por-qué-elegir-linux">2. ¿Por qué elegir Linux?</Enlace ></li>
+      <li><Enlace href="#3-linux-en-ciberseguridad">3. Linux en
+        ciberseguridad</Enlace ></li>
+      <li><Enlace href="#5-principales-diferencias-entre-distribuciones">5.
+        Principales diferencias entre distribuciones</Enlace ></li>
+      <li><Enlace href="#6-debian">6. Debian</Enlace >
+        <Lista>
+          <li><Enlace href="#sistema-de-gestión-de-paquetes">Sistema de gestión de
+            paquetes</Enlace ></li>
+          <li><Enlace href="#aprendizaje-y-personalización">Aprendizaje y
+            personalización</Enlace ></li>
+          <li><Enlace href="#estabilidad-y-soporte">Estabilidad y soporte</Enlace ></li>
+          <li><Enlace href="#seguridad-y-privacidad">Seguridad y privacidad</Enlace ></li>
+        </Lista>
+      </li>
+      <li><Enlace href="#7-conclusión">7. Conclusión</Enlace ></li>
+    </Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -25,32 +53,7 @@ function nameabcd({ }) {
       </Texto>
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><a href="#distribuciones-de-linux">Distribuciones de Linux</a>
-          <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-distribuciones-populares-en-ciberseguridad">1.
-              Distribuciones populares en ciberseguridad</a></li>
-            <li><a href="#2-por-qué-elegir-linux">2. ¿Por qué elegir Linux?</a></li>
-            <li><a href="#3-linux-en-ciberseguridad">3. Linux en
-              ciberseguridad</a></li>
-            <li><a href="#5-principales-diferencias-entre-distribuciones">5.
-              Principales diferencias entre distribuciones</a></li>
-            <li><a href="#6-debian">6. Debian</a>
-              <Lista>
-                <li><a href="#sistema-de-gestión-de-paquetes">Sistema de gestión de
-                  paquetes</a></li>
-                <li><a href="#aprendizaje-y-personalización">Aprendizaje y
-                  personalización</a></li>
-                <li><a href="#estabilidad-y-soporte">Estabilidad y soporte</a></li>
-                <li><a href="#seguridad-y-privacidad">Seguridad y privacidad</a></li>
-              </Lista>
-            </li>
-            <li><a href="#7-conclusión">7. Conclusión</a></li>
-          </Lista>
-        </li>
-      </Lista>
-      <Texto><a href="./../readme.md#temario">Regresar a la guía principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#temario">Regresar a la guía principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="distribuciones-populares-en-ciberseguridad">1. Distribuciones
         populares en ciberseguridad</Titulo>
@@ -183,14 +186,16 @@ function nameabcd({ }) {
           comunidad</strong>.
       </Texto>
       <Linea />
-      <Texto><a href="./../readme.md#temario">Regresar a la guía principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#temario">Regresar a la guía principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz<br />
-          <strong>Colaborador:</strong> <span class="citation" data-cites="studentethical">@studentethical</span> (Student
+          <strong>Colaborador:</strong> <span className="citation" data-cites="studentethical">@studentethical</span> (Student
           Ethical)
         </Texto>
       </blockquote>
-    </>
+
+      <TemarioAsideCompleto />
+   </>
   );
 }
 export default nameabcd;

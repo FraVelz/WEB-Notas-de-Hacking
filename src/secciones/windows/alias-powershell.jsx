@@ -10,30 +10,30 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#alias-en-powershell">Alias en powershell</a>
+        <li><Enlace href="#alias-en-powershell">Alias en powershell</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#qué-es-un-alias">Qué es un alias</a></li>
-            <li><a href="#alias-comunes-en-powershell">Alias comunes en
-              PowerShell</a></li>
-            <li><a href="#cmdlets-relacionados-con-alias">Cmdlets relacionados con
-              alias</a></li>
-            <li><a href="#ejemplos-prácticos">Ejemplos prácticos</a></li>
-            <li><a href="#alias-persistentes">Alias persistentes</a></li>
-            <li><a href="#nota-importante">Nota importante</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#qué-es-un-alias">Qué es un alias</Enlace ></li>
+            <li><Enlace href="#alias-comunes-en-powershell">Alias comunes en
+              PowerShell</Enlace ></li>
+            <li><Enlace href="#cmdlets-relacionados-con-alias">Cmdlets relacionados con
+              alias</Enlace ></li>
+            <li><Enlace href="#ejemplos-prácticos">Ejemplos prácticos</Enlace ></li>
+            <li><Enlace href="#alias-persistentes">Alias persistentes</Enlace ></li>
+            <li><Enlace href="#nota-importante">Nota importante</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="qué-es-un-alias">Qué es un alias</Titulo>
       <Texto>Un <strong>alias</strong> es simplemente un <strong>nombre
         alternativo</strong> para un comando existente. Por ejemplo:</Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span>     <span class="co"># Nombre completo</span></span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>                <span class="co"># Alias</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span>     <span className="co"># Nombre completo</span></span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">ls</span>                <span className="co"># Alias</span></span></code></pre>
       </div>
       <Texto>Ambos hacen lo mismo: listar archivos y carpetas.</Texto>
       <Linea />
@@ -206,22 +206,22 @@ function nameabcd({ }) {
       </table>
       <Linea />
       <Titulo title="h2" id="ejemplos-prácticos">Ejemplos prácticos</Titulo>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver todos los alias</span></span>
-            <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Alias</span></span>
-            <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un alias personalizado</span></span>
-            <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Alias</span> editar <span class="st">&quot;notepad.exe&quot;</span></span>
-            <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Usar el alias</span></span>
-            <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>editar archivo<span class="op">.</span><span class="fu">txt</span></span>
-            <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver qué comando ejecuta un alias</span></span>
-            <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Alias</span> <span class="fu">ls</span></span>
-            <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Eliminar un alias</span></span>
-            <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Remove-Item</span> alias<span class="op">:</span>editar</span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver todos los alias</span></span>
+            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Alias</span></span>
+            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Crear un alias personalizado</span></span>
+            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> editar <span className="st">&quot;notepad.exe&quot;</span></span>
+            <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Usar el alias</span></span>
+            <span id="cb2-8"><Enlace href="#cb2-8" aria-hidden="true" tabindex="-1"></Enlace >editar archivo<span className="op">.</span><span className="fu">txt</span></span>
+            <span id="cb2-9"><Enlace href="#cb2-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-10"><Enlace href="#cb2-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver qué comando ejecuta un alias</span></span>
+            <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Alias</span> <span className="fu">ls</span></span>
+            <span id="cb2-12"><Enlace href="#cb2-12" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb2-13"><Enlace href="#cb2-13" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Eliminar un alias</span></span>
+            <span id="cb2-14"><Enlace href="#cb2-14" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Remove-Item</span> alias<span className="op">:</span>editar</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="alias-persistentes">Alias persistentes</Titulo>
@@ -232,15 +232,15 @@ function nameabcd({ }) {
       <Texto>Para hacerlos <strong>permanentes</strong>, agrégalos al
         <strong>perfil de PowerShell</strong>:
       </Texto>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>notepad <span class="va">$PROFILE</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace >notepad <span className="va">$PROFILE</span></span></code></pre>
       </div>
       <Texto>Luego agrega tus alias personalizados:</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Alias</span> editar notepad<span class="op">.</span><span class="fu">exe</span></span>
-            <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Alias</span> borrar <span class="fu">Remove-Item</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> editar notepad<span className="op">.</span><span className="fu">exe</span></span>
+            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> borrar <span className="fu">Remove-Item</span></span></code></pre>
       </div>
       <Texto>Guarda el archivo y la próxima vez que abras PowerShell, estarán
         disponibles.</Texto>
@@ -251,16 +251,16 @@ function nameabcd({ }) {
           <Texto>Los alias <strong>no aceptan parámetros por defecto</strong>. Por
             ejemplo, <code>Set-Alias buscar "Get-ChildItem -Recurse"</code> ❌ no
             funcionará. En ese caso, usa una <strong>función</strong>:</Texto>
-          <div class="sourceCode" id="cb5">
+          <div className="sourceCode" id="cb5">
             <pre
-              class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> buscar <span class="op">{</span> <span class="fu">Get-ChildItem</span> <span class="op">-</span>Recurse @args <span class="op">}</span></span>
-                <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-Alias</span> buscar buscar</span></code></pre>
+              className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">function</span> buscar <span className="op">{</span> <span className="fu">Get-ChildItem</span> <span className="op">-</span>Recurse @args <span className="op">}</span></span>
+                <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> buscar buscar</span></code></pre>
           </div>
         </li>
       </Lista>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

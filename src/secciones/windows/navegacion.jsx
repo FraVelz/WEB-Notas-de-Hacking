@@ -10,33 +10,33 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-de-navegación">Comandos de Navegación</a>
+        <li><Enlace href="#comandos-de-navegación">Comandos de Navegación</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-windows-cmd-command-prompt">1. Windows CMD (Command
-              Prompt)</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-windows-cmd-command-prompt">1. Windows CMD (Command
+              Prompt)</Enlace >
               <Lista>
-                <li><a href="#navegación-por-directorios">Navegación por
-                  directorios</a></li>
-                <li><a href="#gestión-de-archivos">Gestión de archivos</a></li>
-                <li><a href="#gestión-de-carpetas">Gestión de carpetas</a></li>
+                <li><Enlace href="#navegación-por-directorios">Navegación por
+                  directorios</Enlace ></li>
+                <li><Enlace href="#gestión-de-archivos">Gestión de archivos</Enlace ></li>
+                <li><Enlace href="#gestión-de-carpetas">Gestión de carpetas</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#2-powershell-cmdlets">2. PowerShell (cmdlets)</a>
+            <li><Enlace href="#2-powershell-cmdlets">2. PowerShell (cmdlets)</Enlace >
               <Lista>
-                <li><a href="#navegación-por-directorios-cmdlets">Navegación por
-                  directorios (cmdlets)</a></li>
-                <li><a href="#gestión-de-archivos-cmdlets">Gestión de archivos
-                  (cmdlets)</a></li>
-                <li><a href="#gestión-de-carpetas-cmdlets">Gestión de carpetas
-                  (cmdlets)</a></li>
+                <li><Enlace href="#navegación-por-directorios-cmdlets">Navegación por
+                  directorios (cmdlets)</Enlace ></li>
+                <li><Enlace href="#gestión-de-archivos-cmdlets">Gestión de archivos
+                  (cmdlets)</Enlace ></li>
+                <li><Enlace href="#gestión-de-carpetas-cmdlets">Gestión de carpetas
+                  (cmdlets)</Enlace ></li>
               </Lista>
             </li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="windows-cmd-command-prompt">1. Windows CMD (Command Prompt)</Titulo>
       <Titulo title="h3" id="navegación-por-directorios">Navegación por directorios</Titulo>
@@ -249,8 +249,8 @@ function nameabcd({ }) {
         <li><code>-Filter "*.txt"</code> → filtrar por extensión</li>
       </Lista>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

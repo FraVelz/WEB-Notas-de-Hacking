@@ -11,22 +11,22 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-y-cmdlets-de-ayuda-y-soporte">Comandos y cmdlets
-          de ayuda y soporte</a>
+        <li><Enlace href="#comandos-y-cmdlets-de-ayuda-y-soporte">Comandos y cmdlets
+          de ayuda y soporte</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda
-              y soporte en CMD</a></li>
-            <li><a href="#2-cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de
-              ayuda y soporte en PowerShell</a></li>
-            <li><a href="#3-ayuda-interactiva-y-documentación">3. Ayuda interactiva
-              y documentación</a></li>
-            <li><a href="#sugerencia-práctica">Sugerencia práctica</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda
+              y soporte en CMD</Enlace ></li>
+            <li><Enlace href="#2-cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de
+              ayuda y soporte en PowerShell</Enlace ></li>
+            <li><Enlace href="#3-ayuda-interactiva-y-documentación">3. Ayuda interactiva
+              y documentación</Enlace ></li>
+            <li><Enlace href="#sugerencia-práctica">Sugerencia práctica</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda y
         soporte en CMD</Titulo>
@@ -264,15 +264,15 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="sugerencia-práctica">Sugerencia práctica</Titulo>
       <Texto>Para explorar PowerShell como un pro:</Texto>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-Command</span> <span class="op">|</span> <span class="fu">Out-GridView</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Command</span> <span className="op">|</span> <span className="fu">Out-GridView</span></span></code></pre>
       </div>
       <Texto>Te abre una ventana interactiva donde puedes <strong>buscar, filtrar
         y explorar</strong> todos los cmdlets disponibles.</Texto>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

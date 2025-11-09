@@ -11,21 +11,21 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#directorios-importantes-de-windows">Directorios
-          Importantes de Windows</a>
+        <li><Enlace href="#directorios-importantes-de-windows">Directorios
+          Importantes de Windows</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#directorios-del-sistema">Directorios del sistema</a></li>
-            <li><a href="#directorios-de-usuario">Directorios de usuario</a></li>
-            <li><a href="#directorios-de-programas">Directorios de
-              programas</a></li>
-            <li><a href="#directorios-temporales-y-de-sistema-adicional">Directorios
-              temporales y de sistema adicional</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#directorios-del-sistema">Directorios del sistema</Enlace ></li>
+            <li><Enlace href="#directorios-de-usuario">Directorios de usuario</Enlace ></li>
+            <li><Enlace href="#directorios-de-programas">Directorios de
+              programas</Enlace ></li>
+            <li><Enlace href="#directorios-temporales-y-de-sistema-adicional">Directorios
+              temporales y de sistema adicional</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="directorios-del-sistema">Directorios del sistema</Titulo>
       <Texto>Estos contienen archivos de Windows y componentes esenciales del
@@ -175,8 +175,8 @@ function nameabcd({ }) {
         </li>    <li><code>AppData</code> y <code>Temp</code> se pueden limpiar con
           cuidado para liberar espacio.</li>  </Lista>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

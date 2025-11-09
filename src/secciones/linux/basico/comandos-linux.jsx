@@ -1,33 +1,41 @@
-import Estructura from "./../../componentes/estructura.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Estructura from "../../../componentes/estructura.jsx";
+import Titulo from "../../../componentes/titulo.jsx";
+import Lista from "../../../componentes/lista.jsx";
+import Texto from "../../../componentes/texto.jsx";
+import Linea from "../../../componentes/linea.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+    </Lista>
+  );
+}
 
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
       <li>
-        <a href="#introducción-a-linux-para-ciberseguridad">Introducción a Linux para Ciberseguridad</a>
+        <Enlace href="#introducción-a-linux-para-ciberseguridad">Introducción a Linux para Ciberseguridad</Enlace >
         <Lista>
-          <li><a href="#temario">Temario</a></li>
-          <li><a href="#1-historia">1. Historia</a></li>
-          <li><a href="#2-filosofía-de-linux">2. Filosofía de Linux</a></li>
-          <li><a href="#3-componentes-de-linux">3. Componentes de Linux</a></li>
-          <li><a href="#4-arquitectura-de-linux">4. Arquitectura de Linux</a></li>
-          <li><a href="#5-jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema de Archivos (FHS)</a></li>
-          <li><a href="#6-qué-es-comando">6. Qué es comando?</a></li>
-          <li><a href="#7-variables-de-entorno">7. Variables de entorno</a></li>
-          <li><a href="#8-comandos-de-linux">8. Comandos de Linux</a></li>
+          <li><Enlace href="#temario">Temario</Enlace ></li>
+          <li><Enlace href="#1-historia">1. Historia</Enlace ></li>
+          <li><Enlace href="#2-filosofía-de-linux">2. Filosofía de Linux</Enlace ></li>
+          <li><Enlace href="#3-componentes-de-linux">3. Componentes de Linux</Enlace ></li>
+          <li><Enlace href="#4-arquitectura-de-linux">4. Arquitectura de Linux</Enlace ></li>
+          <li><Enlace href="#5-jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema de Archivos (FHS)</Enlace ></li>
+          <li><Enlace href="#6-qué-es-comando">6. Qué es comando?</Enlace ></li>
+          <li><Enlace href="#7-variables-de-entorno">7. Variables de entorno</Enlace ></li>
+          <li><Enlace href="#8-comandos-de-linux">8. Comandos de Linux</Enlace ></li>
           <li>
-            <a href="#9-permisos-y-usuarios">9. Permisos y usuarios</a>
+            <Enlace href="#9-permisos-y-usuarios">9. Permisos y usuarios</Enlace >
             <Lista>
-              <li><a href="#ver-permisos">Ver permisos</a></li>
-              <li><a href="#cambiar-permisos">Cambiar permisos</a></li>
-              <li><a href="#cambiar-propietario">Cambiar propietario</a></li>
+              <li><Enlace href="#ver-permisos">Ver permisos</Enlace ></li>
+              <li><Enlace href="#cambiar-permisos">Cambiar permisos</Enlace ></li>
+              <li><Enlace href="#cambiar-propietario">Cambiar propietario</Enlace ></li>
             </Lista>
           </li>
-          <li><a href="#10-sudo">10. Sudo</a></li>
+          <li><Enlace href="#10-sudo">10. Sudo</Enlace ></li>
         </Lista>
       </li>
     </Lista>
@@ -40,6 +48,7 @@ function Comandos_Linux({ }) {
       <Estructura>
         <Titulo title="h1" id="introducción-a-linux-para-ciberseguridad">Introducción a Linux
           para Ciberseguridad</Titulo>
+
         <Texto>Linux es un <strong>sistema operativo (SO)</strong>, al igual que
           Windows, macOS, iOS o Android. Un SO gestiona los recursos de hardware
           de una computadora y permite la comunicación entre aplicaciones y
@@ -55,12 +64,12 @@ function Comandos_Linux({ }) {
           servidores, dispositivos embebidos, mainframes y sistemas móviles como
           Android.</Texto>
         <Linea />
-        <Titulo title="h2" id="temario">Temario</Titulo>
-        <Temario className="bg-gray-900 rounded-md p-4 mb-4 list-decimal 2xl:hidden" />
+
+        <TemarioCompleto temario={Temario} />
 
         <Texto>Listo quieres volver a la guía principal.</Texto>
-        <Texto><a href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</a></Texto>
+        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
+          principal</Enlace ></Texto>
         <blockquote>
           <Texto><strong>Autor:</strong> Fravelz<br />
             <strong>Colaborador:</strong> <span className="citation" data-cites="studentethical">@studentethical</span> (Student
@@ -451,12 +460,12 @@ function Comandos_Linux({ }) {
         <Titulo title="h3" id="ver-permisos">Ver permisos</Titulo>
         <div className="sourceCode" id="cb1">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">ls</span> <span className="at">-l</span></span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">ls</span> <span className="at">-l</span></span></code></pre>
         </div>
         <Texto>Salida típica:</Texto>
         <div className="sourceCode" id="cb2">
           <pre
-            className="sourceCode sh"><code className="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabIndex="-1"></a><span className="ex">-rwxr-xr--</span></span></code></pre>
+            className="sourceCode sh"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="ex">-rwxr-xr--</span></span></code></pre>
         </div>
         <Texto>Interpretación:</Texto>
         <Lista>
@@ -473,7 +482,7 @@ function Comandos_Linux({ }) {
         <Titulo title="h3" id="cambiar-permisos">Cambiar permisos</Titulo>
         <div className="sourceCode" id="cb3">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">chmod</span> 755 archivo.sh</span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chmod</span> 755 archivo.sh</span></code></pre>
         </div>
         <Lista>
           <li><code>7</code> → rwx</li>
@@ -483,13 +492,13 @@ function Comandos_Linux({ }) {
         <Texto>Otra forma:</Texto>
         <div className="sourceCode" id="cb4">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">chmod</span> u+x script.sh   <span className="co"># Dar permiso de ejecución al usuario</span></span>
-              <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabIndex="-1"></a><span className="fu">chmod</span> g-w archivo.txt <span className="co"># Quitar permiso de escritura al grupo</span></span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chmod</span> u+x script.sh   <span className="co"># Dar permiso de ejecución al usuario</span></span>
+              <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chmod</span> g-w archivo.txt <span className="co"># Quitar permiso de escritura al grupo</span></span></code></pre>
         </div>
         <Titulo title="h3" id="cambiar-propietario">Cambiar propietario</Titulo>
         <div className="sourceCode" id="cb5">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">chown</span> usuario:grupo archivo.txt</span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chown</span> usuario:grupo archivo.txt</span></code></pre>
         </div>
         <Linea />
         <Titulo title="h2" id="sudo">10. Sudo</Titulo>
@@ -507,7 +516,7 @@ function Comandos_Linux({ }) {
         <Texto>Cuando escribes:</Texto>
         <div className="sourceCode" id="cb6">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">sudo</span> comando</span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> comando</span></code></pre>
         </div>
         <Texto>Linux hace lo siguiente:</Texto>
         <Lista>
@@ -524,7 +533,7 @@ function Comandos_Linux({ }) {
         <Titulo title="h3" id="ejemplo-práctico">2. <strong>Ejemplo práctico</strong></Titulo>
         <div className="sourceCode" id="cb7">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">sudo</span> apt update</span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> apt update</span></code></pre>
         </div>
         <Lista>
           <li><code>apt update</code> actualiza la lista de paquetes en
@@ -539,12 +548,12 @@ function Comandos_Linux({ }) {
         <Texto>Si escribes:</Texto>
         <div className="sourceCode" id="cb8">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">sudo</span> <span className="at">-i</span></span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> <span className="at">-i</span></span></code></pre>
         </div>
         <Texto>o</Texto>
         <div className="sourceCode" id="cb9">
           <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabIndex="-1"></a><span className="fu">sudo</span> su</span></code></pre>
+            className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> su</span></code></pre>
         </div>
         <Lista>
           <li>Obtienes un <strong>shell de root</strong>, es decir, todos los
@@ -562,8 +571,8 @@ function Comandos_Linux({ }) {
         </Lista>
         <Linea />
         <Texto>Listo quieres volver a la guía principal.</Texto>
-        <Texto><a href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</a></Texto>
+        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
+          principal</Enlace ></Texto>
         <blockquote>
           <Texto><strong>Autor:</strong> Fravelz<br />
             <strong>Colaborador:</strong> <span className="citation" data-cites="studentethical">@studentethical</span> (Student
@@ -575,7 +584,7 @@ function Comandos_Linux({ }) {
       <aside className="hidden 2xl:block sticky top-5 self-start w-4/5 min-w-72 max-w-fit">
         <Titulo title="h2" className="select-none">Temario</Titulo>
         <Temario className="bg-gray-900 rounded-md p-4 mb-4 list-decimal" />
-      </aside>
+      </Enlace side>
     </>
   );
 }

@@ -11,30 +11,30 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comandos-y-cmdlets-de-gestión-de-usuarios">Comandos y
-          cmdlets de gestión de usuarios</a>
+        <li><Enlace href="#comandos-y-cmdlets-de-gestión-de-usuarios">Comandos y
+          cmdlets de gestión de usuarios</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-comandos-de-gestión-de-usuarios-en-cmd">1. Comandos de
-              gestión de usuarios en CMD</a></li>
-            <li><a href="#2-cmdlets-de-gestión-de-usuarios-en-powershell">2. Cmdlets
-              de gestión de usuarios en PowerShell</a>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-comandos-de-gestión-de-usuarios-en-cmd">1. Comandos de
+              gestión de usuarios en CMD</Enlace ></li>
+            <li><Enlace href="#2-cmdlets-de-gestión-de-usuarios-en-powershell">2. Cmdlets
+              de gestión de usuarios en PowerShell</Enlace >
               <Lista>
-                <li><a href="#usuarios-locales">Usuarios locales</a></li>
-                <li><a href="#grupos-locales">Grupos locales</a></li>
-                <li><a href="#información-y-autenticación">Información y
-                  autenticación</a></li>
-                <li><a href="#active-directory-solo-si-tienes-ad-instalado">Active
-                  Directory (solo si tienes AD instalado)</a></li>
+                <li><Enlace href="#usuarios-locales">Usuarios locales</Enlace ></li>
+                <li><Enlace href="#grupos-locales">Grupos locales</Enlace ></li>
+                <li><Enlace href="#información-y-autenticación">Información y
+                  autenticación</Enlace ></li>
+                <li><Enlace href="#active-directory-solo-si-tienes-ad-instalado">Active
+                  Directory (solo si tienes AD instalado)</Enlace ></li>
               </Lista>
             </li>
-            <li><a href="#3-comandos-útiles-para-entornos-mixtos-cmd--powershell">3.
-              Comandos útiles para entornos mixtos (CMD + PowerShell)</a></li>
+            <li><Enlace href="#3-comandos-útiles-para-entornos-mixtos-cmd--powershell">3.
+              Comandos útiles para entornos mixtos (CMD + PowerShell)</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="comandos-de-gestión-de-usuarios-en-cmd">1. Comandos de gestión
         de usuarios en CMD</Titulo>
@@ -383,8 +383,8 @@ function nameabcd({ }) {
         </tbody>
       </table>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

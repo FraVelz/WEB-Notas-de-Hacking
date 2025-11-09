@@ -10,16 +10,16 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#comodines">Comodines</a>
+        <li><Enlace href="#comodines">Comodines</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#1-comodines-básicos">1. Comodines básicos</a></li>
-            <li><a href="#2-ejemplos-prácticos">2. Ejemplos prácticos</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#1-comodines-básicos">1. Comodines básicos</Enlace ></li>
+            <li><Enlace href="#2-ejemplos-prácticos">2. Ejemplos prácticos</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="comodines-básicos">1. Comodines básicos</Titulo>
       <table style="width:100%;">
@@ -72,42 +72,42 @@ function nameabcd({ }) {
       <Lista>
         <li><strong>Listar todos los archivos de un tipo</strong>:</li>
       </Lista>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span> *.jpg</span></code></pre>
+          className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">dir</span> *.jpg</span></code></pre>
       </div>
       <Texto>o en PowerShell:</Texto>
-      <div class="sourceCode" id="cb2">
+      <div className="sourceCode" id="cb2">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> <span class="op">*.</span><span class="fu">jpg</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> <span className="op">*.</span><span className="fu">jpg</span></span></code></pre>
       </div>
       <Lista>
         <li><strong>Borrar todos los archivos de texto</strong>:</li>
       </Lista>
-      <div class="sourceCode" id="cb3">
+      <div className="sourceCode" id="cb3">
         <pre
-          class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">del</span> *.txt</span></code></pre>
+          className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">del</span> *.txt</span></code></pre>
       </div>
       <Texto>o PowerShell:</Texto>
-      <div class="sourceCode" id="cb4">
+      <div className="sourceCode" id="cb4">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Remove-Item</span> <span class="op">*.</span><span class="fu">txt</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Remove-Item</span> <span className="op">*.</span><span className="fu">txt</span></span></code></pre>
       </div>
       <Lista>
         <li><strong>Copiar todos los archivos que empiecen con
           “doc”</strong>:</li>
       </Lista>
-      <div class="sourceCode" id="cb5">
+      <div className="sourceCode" id="cb5">
         <pre
-          class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">copy</span> doc*.* D:\Backup\</span></code></pre>
+          className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">copy</span> doc*.* D:\Backup\</span></code></pre>
       </div>
       <Lista>
         <li><strong>Renombrar archivos específicos con patrón</strong>
           (PowerShell):</li>
       </Lista>
-      <div class="sourceCode" id="cb6">
+      <div className="sourceCode" id="cb6">
         <pre
-          class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Rename-Item</span> <span class="st">&quot;archivo?.txt&quot;</span> <span class="op">-</span>NewName <span class="st">&quot;nuevo_?.txt&quot;</span></span></code></pre>
+          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Rename-Item</span> <span className="st">&quot;archivo?.txt&quot;</span> <span className="op">-</span>NewName <span className="st">&quot;nuevo_?.txt&quot;</span></span></code></pre>
       </div>
       <Linea />
       <Texto><strong>Tip importante:</strong></Texto>
@@ -116,8 +116,8 @@ function nameabcd({ }) {
         avanzadas con corchetes, rangos y negaciones.
       </Texto>
       <Linea />
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>

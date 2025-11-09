@@ -1,7 +1,16 @@
+import Estructura, { TemarioAside } from "./../../componentes/estructura.jsx";
+
 import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}></Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -13,23 +22,23 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#notas-de-actualizaciones">Notas de actualizaciones</a>
+        <li><Enlace href="#notas-de-actualizaciones">Notas de actualizaciones</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#herramientas-utilizadas">Herramientas utilizadas</a></li>
-            <li><a href="#colabores-más-importantes">Colabores más
-              importantes</a></li>
-            <li><a href="#actualización-existentes">Actualización
-              Existentes</a></li>
-            <li><a href="#actualización-00v---010v">Actualización (0.0v -
-              0.1.0v)</a></li>
-            <li><a href="#actualización-10v---020v">Actualización (1.0v -
-              0.2.0v)</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#herramientas-utilizadas">Herramientas utilizadas</Enlace ></li>
+            <li><Enlace href="#colabores-más-importantes">Colabores más
+              importantes</Enlace ></li>
+            <li><Enlace href="#actualización-existentes">Actualización
+              Existentes</Enlace ></li>
+            <li><Enlace href="#actualización-00v---010v">Actualización (0.0v -
+              0.1.0v)</Enlace ></li>
+            <li><Enlace href="#actualización-10v---020v">Actualización (1.0v -
+              0.2.0v)</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#informaci%c3%b3n">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#informaci%c3%b3n">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="herramientas-utilizadas">Herramientas utilizadas</Titulo>
       <Lista>
@@ -45,7 +54,7 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="colabores-más-importantes">Colabores más importantes</Titulo>
       <ol type="1">
-        <li>Student Ethical <strong>(<span class="citation" data-cites="studentethical">@studentethical</span>)</strong>
+        <li>Student Ethical <strong>(<span className="citation" data-cites="studentethical">@studentethical</span>)</strong>
         </li>
       </ol>
       <Texto>…</Texto>
@@ -175,12 +184,7 @@ function nameabcd({ }) {
           para que los temas que se muestren en este mismo, sean los más
           importantes y fundamentales.</li>  </Lista>
       <Texto>…</Texto>
-      <Linea />
-      <Texto><a href="./../readme.md#informaci%c3%b3n">Regresar a la guía
-        principal</a></Texto>
-      <blockquote>
-        <Texto><strong>autor:</strong> Fravelz</Texto>
-      </blockquote>
+      <T
     </>
   );
 }

@@ -11,20 +11,20 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#diferencias-entre-powershell-y-cmd">Diferencias entre
-          Powershell y CMD</a>
+        <li><Enlace href="#diferencias-entre-powershell-y-cmd">Diferencias entre
+          Powershell y CMD</Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#cmd-command-prompt">CMD (Command Prompt)</a></li>
-            <li><a href="#powershell">PowerShell</a></li>
-            <li><a href="#diferencias-clave-en-práctica">Diferencias clave en
-              práctica</a></li>
-            <li><a href="#ejemplo">Ejemplo</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#cmd-command-prompt">CMD (Command Prompt)</Enlace ></li>
+            <li><Enlace href="#powershell">PowerShell</Enlace ></li>
+            <li><Enlace href="#diferencias-clave-en-práctica">Diferencias clave en
+              práctica</Enlace ></li>
+            <li><Enlace href="#ejemplo">Ejemplo</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-        principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+        principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="cmd-command-prompt">CMD (Command Prompt)</Titulo>
       <Lista>
@@ -121,24 +121,24 @@ function nameabcd({ }) {
   <Lista>
     <li>CMD:</li>
   </Lista>
-  <div class="sourceCode" id="cb1">
+  <div className="sourceCode" id="cb1">
     <pre
-      class="sourceCode cmd"><code class="sourceCode dosbat"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">dir</span> <span class="kw">|</span> <span class="kw">find</span> <span class="st">&quot;archivo.txt&quot;</span></span></code></pre>
+      className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">dir</span> <span className="kw">|</span> <span className="kw">find</span> <span className="st">&quot;archivo.txt&quot;</span></span></code></pre>
   </div>
   <Lista>
     <li>PowerShell:</li>
   </Lista>
-  <div class="sourceCode" id="cb2">
+  <div className="sourceCode" id="cb2">
     <pre
-      class="sourceCode powershell"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> <span class="op">|</span> <span class="fu">Where-Object</span> <span class="op">{</span> <span class="va">$_</span><span class="op">.</span><span class="fu">Name</span> <span class="op">-eq</span> <span class="st">&quot;archivo.txt&quot;</span> <span class="op">}</span></span></code></pre>
+      className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> <span className="op">|</span> <span className="fu">Where-Object</span> <span className="op">{</span> <span className="va">$_</span><span className="op">.</span><span className="fu">Name</span> <span className="op">-eq</span> <span className="st">&quot;archivo.txt&quot;</span> <span className="op">}</span></span></code></pre>
   </div>
   <blockquote>
     <Texto>En PowerShell trabajas con objetos (<code>$_.Name</code>) y no solo
       con texto, lo que te da muchísima más flexibilidad.</Texto>
   </blockquote>
   <Linea />
-  <Texto><a href="./../readme.md#3-windows">Regresar a la guía
-      principal</a></Texto>
+  <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
+      principal</Enlace ></Texto>
   <blockquote>
     <Texto><strong>Autor:</strong> Fravelz</Texto>
   </blockquote>

@@ -1,32 +1,37 @@
-import Estructura from "./../../componentes/estructura.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Estructura, { TemarioCompleto, TemarioAsideCompleto } from "../../componentes/estructura.jsx";
 
-function TemarioAnonimato({ className = "" }) {
+import Titulo from "../../componentes/titulo.jsx";
+import Lista from "../../componentes/lista.jsx";
+import Texto from "../../componentes/texto.jsx";
+import Linea from "../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
+
+function Temario({ className = "" }) {
 	return (
 		<Lista className={className}>
+			<li><Enlace href="#1">1. Internet: niveles o capas</Enlace ></li>
 			<li>
-				<a href="#conceptos-generales-privacidad-anonimato-y-mucho-mas">Conceptos Generales (privacidad, Anonimato y mucho mas)</a>
+				<Enlace href="#2">2. El anonimato digital</Enlace >
 				<Lista>
-					<li><a href="#temario">Temario</a></li>
-					<li><a href="#1-internet-niveles-o-capas">1. Internet: niveles o capas</a></li>
-					<li>
-						<a href="#2-el-anonimato-digital">2. El anonimato digital</a>
-						<Lista>
-							<li><a href="#cómo-se-logra">Cómo se logra</a></li>
-							<li><a href="#buenas-prácticas-de-anonimato">Buenas prácticas de anonimato</a></li>
-						</Lista>
-					</li>
-					<li><a href="#3-deep-web-vs-dark-web">3. Deep Web vs Dark Web</a></li>
-					<li><a href="#4-legalidad-y-ética">4. Legalidad y ética</a></li>
-					<li><a href="#5-tecnologías-principales">5. Tecnologías principales</a></li>
-					<li><a href="#6-riesgos-de-la-dark-web">6. Riesgos de la Dark Web</a></li>
-					<li><a href="#7-usos-legítimos-del-anonimato-y-la-dark-web">7. Usos legítimos del anonimato y la Dark Web</a></li>
+					<li><Enlace href="#cómo-se-logra">Cómo se logra</Enlace ></li>
+					<li><Enlace href="#buenas-prácticas-de-anonimato">Buenas prácticas de anonimato</Enlace ></li>
 				</Lista>
 			</li>
-		</Lista>
+			<li><Enlace href="#3">3. Deep Web vs Dark Web</Enlace ></li>
+			<li><Enlace href="#4">4. Legalidad y ética</Enlace ></li>
+			<li><Enlace href="#5">5. Tecnologías principales</Enlace ></li>
+			<li><Enlace href="#6">6. Riesgos de la Dark Web</Enlace ></li>
+			<li><Enlace href="#7">7. Usos legítimos del anonimato y la Dark Web</Enlace ></li>
+			<li>
+				<Enlace href="#8">8. Que es Privacidad</Enlace>
+			</li>
+			<li>
+				<Enlace href="#9">9. Que es Anonimato</Enlace>
+			</li>
+			<li>
+				<Enlace href="#10">10. Diferencias clave entre privacidad y anonimato</Enlace>
+			</li>
+		</Lista >
 	);
 }
 
@@ -34,25 +39,15 @@ function Conceptos_Generales() {
 	return (
 		<>
 			<Estructura>
-				<Titulo title="h1" id="conceptos-generales-privacidad-anonimato-y-mucho-mas">
+				<Titulo title="h1" className="text-center">
 					Conceptos Generales (privacidad, Anonimato y mucho mas)
 				</Titulo>
 
-				<Linea />
-
-				<Titulo title="h2" id="temario">Temario</Titulo>
-
-				<TemarioAnonimato className="bg-gray-900 rounded-md p-4 mb-4 list-decimal 2xl:hidden" />
-
-				<Texto>
-					<a href="./../readme.md#9-privacidad-y-anonimato">
-						Regresar a la guía principal
-					</a>
-				</Texto>
+				<TemarioCompleto temario={Temario} />
 
 				<Linea />
 
-				<Titulo title="h2" id="internet-niveles-o-capas">1. Internet: niveles o capas</Titulo>
+				<Titulo title="h2" id="1">1. Internet: niveles o capas</Titulo>
 
 				<Texto>
 					El Internet puede dividirse en tres niveles según la
@@ -119,7 +114,7 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Titulo title="h2" id="el-anonimato-digital">2. El anonimato digital</Titulo>
+				<Titulo title="h2" id="2">2. El anonimato digital</Titulo>
 
 				<Texto>
 					El <strong>anonimato</strong> es la capacidad de
@@ -171,7 +166,7 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Titulo title="h2" id="deep-web-vs-dark-web">3. Deep Web vs Dark Web</Titulo>
+				<Titulo title="h2" id="3">3. Deep Web vs Dark Web</Titulo>
 
 				<table>
 					<thead>
@@ -209,7 +204,7 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Titulo title="h2" id="legalidad-y-ética">4. Legalidad y ética</Titulo>
+				<Titulo title="h2" id="4">4. Legalidad y ética</Titulo>
 
 				<Lista>
 					<li>
@@ -226,9 +221,8 @@ function Conceptos_Generales() {
 						que usan la Dark Web para proteger fuentes o investigar delitos.
 					</li>
 					<li>
-						<Texto>
-							También existen <strong>proyectos legítimos</strong>:
-						</Texto>
+						También existen <strong>proyectos legítimos</strong>:
+
 						<Lista>
 							<li>SecureDrop (para denuncias anónimas a medios).</li>
 							<li>Hidden Wiki (índice de sitios .onion).</li>
@@ -239,7 +233,7 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Titulo title="h2" id="tecnologías-principales">5. Tecnologías principales</Titulo>
+				<Titulo title="h2" id="5">5. Tecnologías principales</Titulo>
 
 				<table>
 					<thead>
@@ -297,7 +291,7 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Titulo title="h2" id="riesgos-de-la-dark-web">6. Riesgos de la Dark Web</Titulo>
+				<Titulo title="h2" id="6">6. Riesgos de la Dark Web</Titulo>
 
 				<Lista>
 					<li>
@@ -322,7 +316,7 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Titulo title="h2" id="usos-legítimos-del-anonimato-y-la-dark-web">
+				<Titulo title="h2" id="7">
 					7. Usos legítimos del anonimato y la Dark Web
 				</Titulo>
 
@@ -336,22 +330,125 @@ function Conceptos_Generales() {
 
 				<Linea />
 
-				<Texto>
-					<a href="./../readme.md#9-privacidad-y-anonimato">
-						Regresar a la guía principal
-					</a>
-				</Texto>
-				<blockquote>
-					<Texto>
-						<strong>Autor:</strong> Fravelz
-					</Texto>
-				</blockquote>
-			</Estructura>
+				<Titulo title="h2" id="8">8. Privacidad</Titulo>
 
-			<aside className="hidden 2xl:block sticky top-5 self-start w-4/5 min-w-72 max-w-fit">
-				<Titulo title="h2" className="select-none">Temario</Titulo>
-				<TemarioAnonimato className="bg-gray-900 rounded-md p-4 mb-4 list-decimal" />
-			</aside>
+				<Texto>
+					La <strong>privacidad</strong> se refiere al{' '}
+					<strong>control que una persona tiene sobre su información personal</strong>:
+					qué datos comparte, con quién, cuándo y para qué.
+				</Texto>
+
+				<Lista>
+					<li>
+						<strong>Idea central:</strong> “Yo decido quién sabe qué sobre mí.”
+					</li>
+					<li>
+						Ejemplo:
+						<Lista>
+							<li>
+								Cuando configuras tus redes sociales para que solo tus amigos
+								vean tus fotos, estás <strong>protegiendo tu privacidad</strong>.
+							</li>
+							<li>
+								Si das tu nombre y correo a una empresa, pero solo para recibir
+								un servicio, esperas que <strong>no usen esos datos para otra cosa</strong>.
+							</li>
+						</Lista>
+					</li>
+				</Lista>
+
+				<Texto>Privacidad = tener el control de tus datos personales.</Texto>
+				<Linea />
+
+				<Titulo title="h2" id="9">9. Anonimato</Titulo>
+
+				<Texto>
+					El <strong>anonimato</strong> significa que <strong>nadie puede saber quién eres realmente</strong>,
+					aunque vean tus acciones o tus mensajes.
+				</Texto>
+
+				<Lista>
+					<li>
+						<strong>Idea central:</strong> “Pueden ver lo que hago, pero no saben que soy yo.”
+					</li>
+					<li>
+						Ejemplo:
+
+						<Lista>
+							<li>
+								Si publicas un comentario en un foro con un nombre falso o
+								navegas por Tor sin revelar tu identidad, estás{' '}
+								<strong>actuando de forma anónima</strong>.
+							</li>
+							<li>
+								Los “whistleblowers” (personas que revelan información confidencial
+								de forma segura) buscan <strong>mantener el anonimato</strong>.
+							</li>
+						</Lista>
+					</li>
+				</Lista>
+
+				<Texto>Anonimato = ocultar tu identidad.</Texto>
+
+				<Linea />
+
+				<Titulo title="h2" id="10">10. Diferencias clave</Titulo>
+
+				<table>
+					<colgroup>
+						<col style={{ width: '13%' }} />
+						<col style={{ width: '42%' }} />
+						<col style={{ width: '44%' }} />
+					</colgroup>
+					<thead>
+						<tr>
+							<th>Aspecto</th>
+							<th>
+								<strong>Privacidad</strong>
+							</th>
+							<th>
+								<strong>Anonimato</strong>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Qué protege</td>
+							<td>Tus <strong>datos personales</strong></td>
+							<td>Tu <strong>identidad</strong></td>
+						</tr>
+						<tr>
+							<td>Control</td>
+							<td>Tú decides qué compartir</td>
+							<td>Nadie puede identificarte</td>
+						</tr>
+						<tr>
+							<td>Ejemplo</td>
+							<td>No publicar tu dirección</td>
+							<td>Publicar con un seudónimo</td>
+						</tr>
+						<tr>
+							<td>En internet</td>
+							<td>Configurar permisos, cifrar mensajes</td>
+							<td>Usar VPN, Tor, criptomonedas privadas</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<Lista>
+					<li>
+						Puedes tener <strong>privacidad sin anonimato</strong>: por ejemplo,
+						tu banco sabe quién eres, pero <strong>protege tus datos</strong>.
+					</li>
+					<li>
+						Y puedes tener <strong>anonimato sin privacidad</strong>: si actúas
+						con un seudónimo, pero tus mensajes quedan guardados o analizados,
+						<strong> no tienes privacidad</strong> aunque nadie sepa tu nombre.
+					</li>
+				</Lista>
+			</Estructura >
+
+			<TemarioAsideCompleto temario={Temario} />
 		</>
 	);
 }

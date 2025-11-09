@@ -6,7 +6,7 @@ import Linea from "./../../componentes/linea.jsx";
 function nameabcd({ }) {
   return (
     <>
-      <Titulo title="h1" id="decorador-classmethod">Decorador <span class="citation" data-cites="classmethod">@classmethod</span></Titulo>
+      <Titulo title="h1" id="decorador-classmethod">Decorador <span className="citation" data-cites="classmethod">@classmethod</span></Titulo>
       <Texto><code>@classmethod</code> permite crear funciones que pueden
         <strong>acceder o modificar el estado de la clase</strong>, sin
         necesidad de crear un objeto.
@@ -14,43 +14,43 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
-        <li><a href="#decorador-classmethod">Decorador <span class="citation"
-          data-cites="classmethod">@classmethod</span></a>
+        <li><Enlace href="#decorador-classmethod">Decorador <span className="citation"
+          data-cites="classmethod">@classmethod</span></Enlace >
           <Lista>
-            <li><a href="#temario">Temario</a></li>
-            <li><a href="#ejemplo">Ejemplo</a></li>
-            <li><a href="#diferencias-entre-tipos-de-métodos">Diferencias entre
-              tipos de métodos</a></li>
-            <li><a href="#en-resumen">En resumen</a></li>
+            <li><Enlace href="#temario">Temario</Enlace ></li>
+            <li><Enlace href="#ejemplo">Ejemplo</Enlace ></li>
+            <li><Enlace href="#diferencias-entre-tipos-de-métodos">Diferencias entre
+              tipos de métodos</Enlace ></li>
+            <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
           </Lista>
         </li>
       </Lista>
-      <Texto><a href="./../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="ejemplo">Ejemplo</Titulo>
-      <div class="sourceCode" id="cb1">
+      <div className="sourceCode" id="cb1">
         <pre
-          class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Persona:</span>
-            <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    poblacion <span class="op">=</span> <span class="dv">0</span>  <span class="co"># Atributo de clase</span></span>
-            <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, nombre):</span>
-            <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.nombre <span class="op">=</span> nombre</span>
-            <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        Persona.poblacion <span class="op">+=</span> <span class="dv">1</span></span>
-            <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
-            <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> cuantos_hay(cls):</span>
-            <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f&quot;Hay </span><span class="sc">(</span>cls<span class="sc">.</span>poblacion<span class="sc">)</span><span class="ss"> personas registradas.&quot;</span></span>
-            <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Podemos llamar al método sin crear objetos:</span></span>
-            <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Persona.cuantos_hay())  <span class="co"># Hay 0 personas registradas.</span></span>
-            <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear algunos objetos:</span></span>
-            <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> Persona(<span class="st">&quot;Ana&quot;</span>)</span>
-            <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> Persona(<span class="st">&quot;Luis&quot;</span>)</span>
-            <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-            <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar de nuevo:</span></span>
-            <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Persona.cuantos_hay())  <span class="co"># Hay 2 personas registradas.</span></span></code></pre>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> Persona:</span>
+            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace >    poblacion <span className="op">=</span> <span className="dv">0</span>  <span className="co"># Atributo de clase</span></span>
+            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, nombre):</span>
+            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.nombre <span className="op">=</span> nombre</span>
+            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace >        Persona.poblacion <span className="op">+=</span> <span className="dv">1</span></span>
+            <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="at">@classmethod</span></span>
+            <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> cuantos_hay(cls):</span>
+            <span id="cb1-10"><Enlace href="#cb1-10" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">return</span> <span className="ss">f&quot;Hay </span><span className="sc">(</span>cls<span className="sc">.</span>poblacion<span className="sc">)</span><span className="ss"> personas registradas.&quot;</span></span>
+            <span id="cb1-11"><Enlace href="#cb1-11" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-12"><Enlace href="#cb1-12" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Podemos llamar al método sin crear objetos:</span></span>
+            <span id="cb1-13"><Enlace href="#cb1-13" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(Persona.cuantos_hay())  <span className="co"># Hay 0 personas registradas.</span></span>
+            <span id="cb1-14"><Enlace href="#cb1-14" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-15"><Enlace href="#cb1-15" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Crear algunos objetos:</span></span>
+            <span id="cb1-16"><Enlace href="#cb1-16" aria-hidden="true" tabindex="-1"></Enlace >p1 <span className="op">=</span> Persona(<span className="st">&quot;Ana&quot;</span>)</span>
+            <span id="cb1-17"><Enlace href="#cb1-17" aria-hidden="true" tabindex="-1"></Enlace >p2 <span className="op">=</span> Persona(<span className="st">&quot;Luis&quot;</span>)</span>
+            <span id="cb1-18"><Enlace href="#cb1-18" aria-hidden="true" tabindex="-1"></Enlace ></span>
+            <span id="cb1-19"><Enlace href="#cb1-19" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Llamar de nuevo:</span></span>
+            <span id="cb1-20"><Enlace href="#cb1-20" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(Persona.cuantos_hay())  <span className="co"># Hay 2 personas registradas.</span></span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="diferencias-entre-tipos-de-métodos">Diferencias entre tipos de
@@ -106,8 +106,8 @@ function nameabcd({ }) {
           clase</strong>, puede <strong>usar o modificar atributos de la
             clase</strong> y se puede llamar sin crear una instancia.</li>  </Lista>
       <Linea />
-      <Texto><a href="./../readme.md#5-python">Regresar a la Guía
-        Principal</a></Texto>
+      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>
