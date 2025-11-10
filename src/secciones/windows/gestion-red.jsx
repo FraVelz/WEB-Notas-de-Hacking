@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -26,10 +27,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="cmd-comandos-de-red">CMD — Comandos de Red</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 38%" />
-          <col style="width: 61%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -120,10 +117,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="powershell-cmdlets-de-red">PowerShell — Cmdlets de Red</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 42%" />
-          <col style="width: 57%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>

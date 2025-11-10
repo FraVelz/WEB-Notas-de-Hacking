@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -148,11 +149,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="metacaracteres-más-importantes">METACARACTERES MÁS
         IMPORTANTES</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 10%" />
-          <col style="width: 46%" />
-          <col style="width: 43%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Símbolo</th>
@@ -192,19 +188,19 @@ function nameabcd({ }) {
             <td><code>colou?r</code> → “color”, “colour”</td>
           </tr>
           <tr>
-            <td><code>{n}</code></td>
+            <td><code>{"{"}n{"}"}</code></td>
             <td>Exactamente n repeticiones</td>
-            <td><code>\d{4}</code> → “2025”</td>
+            <td><code>\d{"{"}4{"}"}</code> → “2025”</td>
           </tr>
           <tr>
-            <td><code>{n,}</code></td>
+            <td><code>{"{"}n,{"}"}</code></td>
             <td>n o más</td>
-            <td><code>\d{2,}</code></td>
+            <td><code>\d{"{"}2,{"}"}</code></td>
           </tr>
           <tr>
-            <td><code>{n, m}</code></td>
+            <td><code>{"{"}n, m{"}"}</code></td>
             <td>entre n y m</td>
-            <td><code>\d{2, 4}</code></td>
+            <td><code>\d{"{"}2, 4{"}"}</code></td>
           </tr>
           <tr>
             <td><code>[]</code></td>
@@ -352,7 +348,7 @@ function nameabcd({ }) {
       </div>
       <Linea />
       <Titulo title="h2" id="buenas-prácticas">Buenas prácticas</Titulo>
-      <Texto>✅ Usa <code>r"..."</code> (raw strings) para no tener que escapar
+      <Texto>✅ Usa <code>r"./..."</code> (raw strings) para no tener que escapar
         <code>\</code>. ✅ Compila patrones que usarás muchas veces con
         <code>re.compile()</code>. ✅ Usa <code>re.fullmatch()</code> si
         necesitas que toda la cadena coincida. ✅ Usa <code>?</code> después de

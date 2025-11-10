@@ -4,7 +4,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
-import Enlace from "../../componentes/enlace.jsx";
+import Enlace from "./../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -38,6 +38,18 @@ function nameabcd({ }) {
       <Estructura>
         <Titulo title="h1" id="la-concientización-en-la-ciberseguridad">La Concientización en
           la Ciberseguridad</Titulo>
+
+        <Texto>
+          Enlace para aprender a reconocer Phishing, y concientizar a las personas en entornos laborales:
+        </Texto>
+
+        <Lista className="
+            p1 list-disc
+            ">
+          <li>
+            <Enlace href="https:/phishingquiz.withgoogle.com/">Ir a Phishing Quiz With Google</Enlace>
+          </li>
+        </Lista>
         <Texto>La concientización en ciberseguridad es uno de los pilares más
           importantes para proteger una empresa, o uno mismo, de ataques
           cibernéticos. La mayoría los ataques no se basan en hackeos avanzados,
@@ -198,8 +210,8 @@ function nameabcd({ }) {
           precaución puede evitarte el 90% de los problemas de seguridad.</Texto>
       </Estructura>
 
-      <TemarioAsideCompleto />
-   </>
+      <TemarioAsideCompleto temario={Temario} />
+    </>
   );
 }
 export default nameabcd;

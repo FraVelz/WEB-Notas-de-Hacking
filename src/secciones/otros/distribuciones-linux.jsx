@@ -4,7 +4,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
-import Enlace from "../../componentes/enlace.jsx";
+import Enlace from "./../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -194,7 +194,7 @@ function nameabcd({ }) {
         </Texto>
       </blockquote>
 
-      <TemarioAsideCompleto />
+      <TemarioAsideCompleto temario={Temario} />
    </>
   );
 }

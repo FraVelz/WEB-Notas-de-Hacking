@@ -1,10 +1,10 @@
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/estructura.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura.jsx";
 
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Linea from "../../../componentes/linea.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -33,6 +33,38 @@ function Arrays() {
   return (
     <>
       <Estructura>
+
+            <Linea />
+
+           <Texto>O si prefieres video de YouTube:</Texto>
+
+            <Lista className="
+            p1 list-disc my-2
+            ">
+                <li>
+                    <Enlace href="https:/www.youtube.com/watch?v=RUorAzaDftg">Ir a curso de bash script desde cero - El pinguino de mario (30m)</Enlace>
+                </li>
+                <li>
+                    <Enlace href="https:/www.youtube.com/watch?v=H4ayPYcZEfI">Ir a curso de bash script desde cero - Fazt
+                        (2h 23m)</Enlace>
+                </li>
+                <li>
+                    <Enlace href="https:/www.youtube.com/results?search_query=curso+de+bash+script+desde+cero">Buscar curso
+                        de bash script desde cero</Enlace>
+                </li>
+            </Lista>
+
+            <Texto>Practica general</Texto>
+
+            <Lista className="
+            p1 list-disc my-2
+            ">
+                <li>
+                    <Enlace href="./linux/bandit-resolucion.md">Ir a Practicar con bandit</Enlace>
+                </li>
+            </Lista>
+
+ 
         <Titulo title="h1" id="arrays-en-bash-script">
           Arrays en bash script
         </Titulo>

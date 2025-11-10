@@ -1,10 +1,10 @@
-import Titulo from "../../../componentes/titulo";
-import Lista from "../../../componentes/lista";
-import Linea from "../../../componentes/linea";
-import Texto from "../../../componentes/texto";
-import Enlace from "../../../componentes/enlace";
+import Titulo from "./../../../componentes/titulo";
+import Lista from "./../../../componentes/lista";
+import Linea from "./../../../componentes/linea";
+import Texto from "./../../../componentes/texto";
+import Enlace from "./../../../componentes/enlace";
 
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/estructura";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura";
 
 function Temario({ className = "" }) {
   return (

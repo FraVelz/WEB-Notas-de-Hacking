@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -39,11 +40,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="alias-comunes-en-powershell">Alias comunes en PowerShell</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 19%" />
-          <col style="width: 17%" />
-          <col style="width: 63%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Alias</th>
@@ -154,11 +150,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="cmdlets-relacionados-con-alias">Cmdlets relacionados con
         alias</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 28%" />
-          <col style="width: 43%" />
-          <col style="width: 28%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -253,7 +244,7 @@ function nameabcd({ }) {
             funcionará. En ese caso, usa una <strong>función</strong>:</Texto>
           <div className="sourceCode" id="cb5">
             <pre
-              className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">function</span> buscar <span className="op">{</span> <span className="fu">Get-ChildItem</span> <span className="op">-</span>Recurse @args <span className="op">}</span></span>
+              className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">function</span> buscar <span className="op">{"{"}</span> <span className="fu">Get-ChildItem</span> <span className="op">-</span>Recurse @args <span className="op">{"}"}</span></span>
                 <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> buscar buscar</span></code></pre>
           </div>
         </li>

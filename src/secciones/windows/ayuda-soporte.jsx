@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -31,11 +32,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda y
         soporte en CMD</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 14%" />
-          <col style="width: 61%" />
-          <col style="width: 24%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -143,11 +139,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de ayuda y
         soporte en PowerShell</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 26%" />
-          <col style="width: 44%" />
-          <col style="width: 29%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>

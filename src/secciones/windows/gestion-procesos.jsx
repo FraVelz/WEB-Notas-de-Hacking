@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -35,11 +36,6 @@ function nameabcd({ }) {
           (cmd)</strong>, preferiblemente con permisos de administrador.</Texto>
       </blockquote>
       <table>
-        <colgroup>
-          <col style="width: 29%" />
-          <col style="width: 42%" />
-          <col style="width: 28%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -126,12 +122,6 @@ function nameabcd({ }) {
           opciones que CMD.</Texto>
       </blockquote>
       <table>
-        <colgroup>
-          <col style="width: 19%" />
-          <col style="width: 27%" />
-          <col style="width: 30%" />
-          <col style="width: 22%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -221,11 +211,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="comparativa-rápida-cmd-vs-powershell">3. Comparativa rápida CMD
         vs PowerShell</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 23%" />
-          <col style="width: 35%" />
-          <col style="width: 41%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Tarea</th>
@@ -280,10 +265,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="comandos-gráficos-y-herramientas-integradas">4. Comandos
         gráficos y herramientas integradas</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 15%" />
-          <col style="width: 84%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>

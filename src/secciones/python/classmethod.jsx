@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -56,13 +57,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="diferencias-entre-tipos-de-métodos">Diferencias entre tipos de
         métodos</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 16%" />
-          <col style="width: 13%" />
-          <col style="width: 26%" />
-          <col style="width: 22%" />
-          <col style="width: 21%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Tipo de método</th>

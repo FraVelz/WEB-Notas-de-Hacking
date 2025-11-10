@@ -1,14 +1,14 @@
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Linea from "../../../componentes/linea.jsx";
-import Estructura from "../../../componentes/estructura.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Estructura, { TemarioCompleto, TemarioAsideCompleto } from "./../../../componentes/estructura.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-   </Lista>
+    </Lista>
   );
 }
 
@@ -18,7 +18,7 @@ function nameabcd({ }) {
       <Titulo title="h1" id="fundamentos-de-bash-script">Fundamentos de Bash Script</Titulo>
       <Linea />
 
-      <TemarioCompleto temario={Temario}/>
+      <TemarioCompleto temario={Temario} />
 
       <Titulo title="h2" id="temario">Temario</Titulo>
       <Lista>
@@ -58,6 +58,37 @@ function nameabcd({ }) {
         <pre
           className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co">#!/bin/bash</span></span></code></pre>
       </div>
+      <Texto>o si prefieres video de YouTube, puedes elegir alguno de estos:</Texto>
+
+      <Lista className="
+            p1 list-disc my-2
+            ">
+        <li>
+          <Enlace href="https:/www.youtube.com/watch?v=L906Kti3gzE">Ir a Curso de Linux - HolaMundo (35m)</Enlace>
+        </li>
+
+        <li>
+          <Enlace href="https:/www.youtube.com/watch?v=8v1cR7-msQ0">Ir a Curso de Linux - Hixec (3h)</Enlace>
+        </li>
+
+        <li>
+          <Enlace href="https:/www.youtube.com/results?search_query=curso+de+linux+desde+cero">Buscar Curso de Linux
+          </Enlace>
+        </li>
+      </Lista>
+
+      <Texto>Recursos extras:</Texto>
+
+      <Lista className="
+            p1 list-disc my-2
+            ">
+        <li>
+          <Enlace href="https://www.bonaval.com/kb/cheats-chuletas/comandos-basicos-linux">Ir a /www.bonaval.com/ Comandos
+            Basicos de Linux</Enlace>
+        </li>
+      </Lista>
+
+
       <Linea />
       <Titulo title="h2" id="imprimir-texto-y-comentarios">Imprimir texto y comentarios</Titulo>
       <Texto>Puedes imprimir texto con <code>echo</code> y escribir comentarios de

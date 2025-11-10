@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -35,11 +36,6 @@ function nameabcd({ }) {
         salida (streams)</strong>. Cada flujo tiene un número que se usa para
         redirigirlo:</Texto>
       <table>
-        <colgroup>
-          <col style="width: 6%" />
-          <col style="width: 65%" />
-          <col style="width: 27%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Flujo</th>
@@ -83,92 +79,7 @@ function nameabcd({ }) {
       </table>
       <Linea />
       <Titulo title="h2" id="operadores-de-redirección">Operadores de redirección</Titulo>
-      <table style="width:100%;">
-        <colgroup>
-          <col style="width: 4%" />
-          <col style="width: 26%" />
-          <col style="width: 20%" />
-          <col style="width: 26%" />
-          <col style="width: 21%" />
-        </colgroup>
-        <thead>
-          <tr>
-            <th>Operador</th>
-            <th>Significado</th>
-            <th>Ejemplo</th>
-            <th>Resultado</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>&gt;</code></td>
-            <td>Redirige la <strong>salida estándar (1)</strong> y sobrescribe el
-              archivo</td>
-            <td><code>Get-Process &gt; salida.txt</code></td>
-            <td>Guarda los procesos, sobrescribiendo el archivo si ya existe</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>&gt;&gt;</code></td>
-            <td>Redirige y <strong>agrega (append)</strong> al final del
-              archivo</td>
-            <td><code>Get-Service &gt;&gt; salida.txt</code></td>
-            <td>Agrega los servicios al final sin borrar lo anterior</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>2&gt;</code></td>
-            <td>Redirige <strong>errores</strong> a un archivo</td>
-            <td><code>Get-Item archivo_inexistente 2&gt; errores.txt</code></td>
-            <td>Guarda los errores</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>2&gt;&gt;</code></td>
-            <td>Redirige errores y <strong>agrega</strong> al archivo</td>
-            <td><code>Get-Item archivo_inexistente 2&gt;&gt; errores.txt</code></td>
-            <td>No sobrescribe</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>*&gt;</code></td>
-            <td>Redirige <strong>todos los flujos</strong> a un archivo</td>
-            <td><code>Get-Command *&gt; todo.txt</code></td>
-            <td>Guarda salidas, errores, advertencias, etc.</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>*&gt;</code></td>
-            <td>También puede combinarse con <code>&gt;&gt;</code></td>
-            <td><code>*&gt;</code> sobrescribe / <code>*&gt;&gt;</code> agrega</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Out-File</code></td>
-            <td>Envía la salida a un archivo (alternativa más potente)</td>
-            <td><code>Get-Process                                   | Out-File procesos.txt -Append</code></td>
-            <td>Más control (codificación, ancho de línea, etc.)</td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      <Linea />
-      <Titulo title="h2" id="operadores-lógicos">Operadores lógicos</Titulo>
-      <Texto>PowerShell usa operadores <strong>lógicos</strong> y <strong>de
-        control de flujo</strong> más avanzados que CMD:</Texto>
       <table>
-        <colgroup>
-          <col style="width: 4%" />
-          <col style="width: 24%" />
-          <col style="width: 17%" />
-          <col style="width: 22%" />
-          <col style="width: 8%" />
-          <col style="width: 0%" />
-          <col style="width: 8%" />
-          <col style="width: 12%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Operador</th>

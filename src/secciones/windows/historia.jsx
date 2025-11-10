@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -128,6 +129,15 @@ function nameabcd({ }) {
       <blockquote>
         <Texto><strong>Autor:</strong> Fravelz</Texto>
       </blockquote>
+            <Texto>O videos de YouTube:</Texto>
+
+            <Lista>
+                <li>
+                    <Enlace href="https://www.youtube.com/watch?v=sZ-i7yRZEaI">Ir a curso de Windows - Hixec (2h)</Enlace>
+                </li>
+            </Lista>
+
+ 
     </>
   );
 }

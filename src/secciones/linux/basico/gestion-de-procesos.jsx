@@ -1,9 +1,9 @@
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Linea from "../../../componentes/linea.jsx";
-import Estructura from "../../../componentes/estructura.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Estructura from "./../../../componentes/estructura.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (

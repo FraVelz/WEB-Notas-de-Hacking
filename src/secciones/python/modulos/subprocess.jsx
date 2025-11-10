@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -65,11 +66,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="diferencias-con-os.system">1. Diferencias con os.system()</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 29%" />
-          <col style="width: 34%" />
-          <col style="width: 35%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Característica</th>
@@ -247,7 +243,7 @@ function nameabcd({ }) {
             <span id="cb14-5"><Enlace href="#cb14-5" aria-hidden="true" tabindex="-1"></Enlace >subprocess.run([<span className="st">&quot;python3&quot;</span>, <span className="st">&quot;mi_script.py&quot;</span>])</span>
             <span id="cb14-6"><Enlace href="#cb14-6" aria-hidden="true" tabindex="-1"></Enlace >fin <span className="op">=</span> time.time()</span>
             <span id="cb14-7"><Enlace href="#cb14-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb14-8"><Enlace href="#cb14-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(<span className="ss">f&quot;Tiempo de ejecución: </span><span className="sc">{</span>fin <span className="op">-</span> inicio<span className="sc">:.2f}</span><span className="ss"> segundos&quot;</span>)</span></code></pre>
+            <span id="cb14-8"><Enlace href="#cb14-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(<span className="ss">f&quot;Tiempo de ejecución: </span><span className="sc">{"{"}</span>fin <span className="op">-</span> inicio<span className="sc">:.2f{"}"}</span><span className="ss"> segundos&quot;</span>)</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="ejemplo-completo-automatizador-de-sistema">12. Ejemplo completo:
@@ -272,10 +268,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="resumen-general">13. Resumen general</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 40%" />
-          <col style="width: 59%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Función</th>
@@ -326,4 +318,5 @@ function nameabcd({ }) {
     </>
   );
 }
+
 export default nameabcd;

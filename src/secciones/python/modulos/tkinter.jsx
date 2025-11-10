@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -132,7 +133,7 @@ function nameabcd({ }) {
         <pre className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> tkinter <span className="im">as</span> tk</span>
           <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> saludar():</span>
-          <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace >    etiqueta.config(text<span className="op">=</span><span className="ss">f&quot;Hola, </span><span className="sc">{</span>entrada<span className="sc">.</span>get()<span className="sc">}</span><span className="ss">!&quot;</span>)</span>
+          <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace >    etiqueta.config(text<span className="op">=</span><span className="ss">f&quot;Hola, </span><span className="sc">{"{"}</span>entrada<span className="sc">.</span>get()<span className="sc">{"}"}</span><span className="ss">!&quot;</span>)</span>
           <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace >ventana <span className="op">=</span> tk.Tk()</span>
           <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace >ventana.title(<span className="st">&quot;Ejemplo Widgets&quot;</span>)</span>
@@ -276,7 +277,7 @@ function nameabcd({ }) {
           <span id="cb14-4"><Enlace href="#cb14-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> saludar():</span>
           <span id="cb14-5"><Enlace href="#cb14-5" aria-hidden="true" tabindex="-1"></Enlace >    nombre <span className="op">=</span> entrada.get()</span>
           <span id="cb14-6"><Enlace href="#cb14-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">if</span> nombre:</span>
-          <span id="cb14-7"><Enlace href="#cb14-7" aria-hidden="true" tabindex="-1"></Enlace >        messagebox.showinfo(<span className="st">&quot;Saludo&quot;</span>, <span className="ss">f&quot;Hola, </span><span className="sc">{</span>nombre<span className="sc">}</span><span className="ss">!&quot;</span>)</span>
+          <span id="cb14-7"><Enlace href="#cb14-7" aria-hidden="true" tabindex="-1"></Enlace >        messagebox.showinfo(<span className="st">&quot;Saludo&quot;</span>, <span className="ss">f&quot;Hola, </span><span className="sc">{"{"}</span>nombre<span className="sc">{"}"}</span><span className="ss">!&quot;</span>)</span>
           <span id="cb14-8"><Enlace href="#cb14-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">else</span>:</span>
           <span id="cb14-9"><Enlace href="#cb14-9" aria-hidden="true" tabindex="-1"></Enlace >        messagebox.showwarning(<span className="st">&quot;Advertencia&quot;</span>, <span className="st">&quot;Debes ingresar un nombre&quot;</span>)</span>
           <span id="cb14-10"><Enlace href="#cb14-10" aria-hidden="true" tabindex="-1"></Enlace ></span>

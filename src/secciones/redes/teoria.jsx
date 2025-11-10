@@ -2,7 +2,9 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/estructura.jsx";
+import Enlace from "../../componentes/enlace.jsx";
+
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -83,7 +85,20 @@ function nameabcd({ }) {
       <Estructura>
         <Titulo title="h1" className="text-center">Parte Teórica (conceptos)</Titulo>
 
+        <Texto>Cursos videos de YouTube:</Texto>
+
+        <Lista>
+          <li>
+            <Enlace href="https:/www.youtube.com/watch?v=OLSKCWjI778">Ir curso de YouTube Contando bits - Redes Informáticas</Enlace>
+          </li>
+          <li>
+            <Enlace href="https:/www.youtube.com/watch?v=7ejIdyu8hug">Ir curso de YouTube Hixec - Redes para ciberseguridad</Enlace>
+          </li>
+        </Lista>
+
+
         <Linea />
+
         <TemarioCompleto temario={Temario} />
 
         <Titulo title="h2" id="base-fundamentos">1. base (fundamentos)</Titulo>
@@ -341,11 +356,6 @@ function nameabcd({ }) {
         <Titulo title="h3" id="ejemplos-de-protocolos-comunes"><strong>Ejemplos de protocolos
           comunes:</strong></Titulo>
         <table>
-          <colgroup>
-            <col style="width: 31%" />
-            <col style="width: 41%" />
-            <col style="width: 27%" />
-          </colgroup>
           <thead>
             <tr>
               <th>Protocolo</th>
@@ -461,11 +471,6 @@ function nameabcd({ }) {
         <Titulo title="h3" id="ejemplos-importantes"><strong>Ejemplos
           importantes:</strong></Titulo>
         <table>
-          <colgroup>
-            <col style="width: 20%" />
-            <col style="width: 40%" />
-            <col style="width: 39%" />
-          </colgroup>
           <thead>
             <tr>
               <th>Protocolo</th>

@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -95,7 +96,7 @@ function nameabcd({ }) {
       <Texto>Enviar datos:</Texto>
       <div className="sourceCode" id="cb4">
         <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >payload <span className="op">=</span> {<span className="st">&quot;username&quot;</span>: <span className="st">&quot;usuario&quot;</span>, <span className="st">&quot;password&quot;</span>: <span className="st">&quot;secreto&quot;</span>}</span>
+          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >payload <span className="op">=</span> {"{"}<span className="st">&quot;username&quot;</span>: <span className="st">&quot;usuario&quot;</span>, <span className="st">&quot;password&quot;</span>: <span className="st">&quot;secreto&quot;</span>{"}"}</span>
             <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.post(<span className="st">&quot;https://api.example.com/login&quot;</span>, data<span className="op">=</span>payload)</span></code></pre>
       </div>
       <Texto>Enviar JSON:</Texto>
@@ -131,10 +132,6 @@ function nameabcd({ }) {
         para mayor control:
       </Texto>
       <table>
-        <colgroup>
-          <col style="width: 15%" />
-          <col style="width: 84%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Parámetro</th>
@@ -205,7 +202,7 @@ function nameabcd({ }) {
           className="sourceCode python"><code className="sourceCode python"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
             <span id="cb6-2"><Enlace href="#cb6-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb6-3"><Enlace href="#cb6-3" aria-hidden="true" tabindex="-1"></Enlace >s <span className="op">=</span> requests.Session()</span>
-            <span id="cb6-4"><Enlace href="#cb6-4" aria-hidden="true" tabindex="-1"></Enlace >s.headers.update({<span className="st">&quot;User-Agent&quot;</span>: <span className="st">&quot;MiApp/1.0&quot;</span>})</span>
+            <span id="cb6-4"><Enlace href="#cb6-4" aria-hidden="true" tabindex="-1"></Enlace >s.headers.update({"{"}<span className="st">&quot;User-Agent&quot;</span>: <span className="st">&quot;MiApp/1.0&quot;</span>{"}"})</span>
             <span id="cb6-5"><Enlace href="#cb6-5" aria-hidden="true" tabindex="-1"></Enlace >response1 <span className="op">=</span> s.get(<span className="st">&quot;https://api.example.com/resource1&quot;</span>)</span>
             <span id="cb6-6"><Enlace href="#cb6-6" aria-hidden="true" tabindex="-1"></Enlace >response2 <span className="op">=</span> s.get(<span className="st">&quot;https://api.example.com/resource2&quot;</span>)</span></code></pre>
       </div>
@@ -253,7 +250,7 @@ function nameabcd({ }) {
           className="sourceCode python"><code className="sourceCode python"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
             <span id="cb8-2"><Enlace href="#cb8-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb8-3"><Enlace href="#cb8-3" aria-hidden="true" tabindex="-1"></Enlace >url <span className="op">=</span> <span className="st">&quot;https://httpbin.org/get&quot;</span></span>
-            <span id="cb8-4"><Enlace href="#cb8-4" aria-hidden="true" tabindex="-1"></Enlace >params <span className="op">=</span> {<span className="st">&quot;q&quot;</span>: <span className="st">&quot;python&quot;</span>, <span className="st">&quot;page&quot;</span>: <span className="dv">1</span>}</span>
+            <span id="cb8-4"><Enlace href="#cb8-4" aria-hidden="true" tabindex="-1"></Enlace >params <span className="op">=</span> {"{"}<span className="st">&quot;q&quot;</span>: <span className="st">&quot;python&quot;</span>, <span className="st">&quot;page&quot;</span>: <span className="dv">1</span>{"}"}</span>
             <span id="cb8-5"><Enlace href="#cb8-5" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.get(url, params<span className="op">=</span>params)</span>
             <span id="cb8-6"><Enlace href="#cb8-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.url)       <span className="co"># muestra la URL final con query string</span></span>
             <span id="cb8-7"><Enlace href="#cb8-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.status_code)</span>
@@ -265,7 +262,7 @@ function nameabcd({ }) {
           className="sourceCode python"><code className="sourceCode python"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> requests</span>
             <span id="cb9-2"><Enlace href="#cb9-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb9-3"><Enlace href="#cb9-3" aria-hidden="true" tabindex="-1"></Enlace >url <span className="op">=</span> <span className="st">&quot;https://httpbin.org/post&quot;</span></span>
-            <span id="cb9-4"><Enlace href="#cb9-4" aria-hidden="true" tabindex="-1"></Enlace >payload <span className="op">=</span> {<span className="st">&quot;username&quot;</span>: <span className="st">&quot;user&quot;</span>, <span className="st">&quot;password&quot;</span>: <span className="st">&quot;pass&quot;</span>}</span>
+            <span id="cb9-4"><Enlace href="#cb9-4" aria-hidden="true" tabindex="-1"></Enlace >payload <span className="op">=</span> {"{"}<span className="st">&quot;username&quot;</span>: <span className="st">&quot;user&quot;</span>, <span className="st">&quot;password&quot;</span>: <span className="st">&quot;pass&quot;</span>{"}"}</span>
             <span id="cb9-5"><Enlace href="#cb9-5" aria-hidden="true" tabindex="-1"></Enlace >response <span className="op">=</span> requests.post(url, json<span className="op">=</span>payload)</span>
             <span id="cb9-6"><Enlace href="#cb9-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.status_code)</span>
             <span id="cb9-7"><Enlace href="#cb9-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(response.json())</span></code></pre>

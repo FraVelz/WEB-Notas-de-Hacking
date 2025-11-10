@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -131,13 +132,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="diferencias-rápidas">Diferencias rápidas</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 15%" />
-          <col style="width: 13%" />
-          <col style="width: 16%" />
-          <col style="width: 15%" />
-          <col style="width: 38%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Protocolo</th>

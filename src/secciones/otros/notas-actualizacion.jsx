@@ -4,7 +4,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
-import Enlace from "../../componentes/enlace.jsx";
+import Enlace from "./../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -65,10 +65,6 @@ function nameabcd({ }) {
       </Texto>
       <Texto><strong>Fase 1:</strong></Texto>
       <table>
-        <colgroup>
-          <col style="width: 39%" />
-          <col style="width: 60%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Nombre de la actualización</th>
@@ -184,7 +180,6 @@ function nameabcd({ }) {
           para que los temas que se muestren en este mismo, sean los más
           importantes y fundamentales.</li>  </Lista>
       <Texto>…</Texto>
-      <T
     </>
   );
 }

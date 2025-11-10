@@ -4,7 +4,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
-import Enlace from "../../componentes/enlace.jsx";
+import Enlace from "./../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -24,7 +24,7 @@ function nameabcd({ }) {
         <Titulo title="h1" className="text-center">Subnetting</Titulo>
         <Linea />
 
-        <TemarioCompleto />
+        <TemarioCompleto temario={Temario} />
 
         <Titulo title="h2" id="en-palabras-simples">En palabras simples</Titulo>
         <Texto><strong>Subnetting</strong> (o <strong>subneteo</strong>) es un
@@ -43,10 +43,6 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h2" id="conceptos-clave">Conceptos clave</Titulo>
         <table>
-          <colgroup>
-            <col style="width: 16%" />
-            <col style="width: 83%" />
-          </colgroup>
           <thead>
             <tr>
               <th>Término</th>

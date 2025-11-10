@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -111,13 +112,13 @@ function nameabcd({ }) {
             <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="im">import</span> time</span>
             <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> worker(n):</span>
-            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="ss">f&quot;Worker </span><span className="sc">{</span>n<span className="sc">}</span><span className="ss"> empieza&quot;</span>)</span>
+            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="ss">f&quot;Worker </span><span className="sc">{"{"}</span>n<span className="sc">{"}"}</span><span className="ss"> empieza&quot;</span>)</span>
             <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace >    time.sleep(<span className="dv">1</span>)</span>
-            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="ss">f&quot;Worker </span><span className="sc">{</span>n<span className="sc">}</span><span className="ss"> termina&quot;</span>)</span>
+            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">print</span>(<span className="ss">f&quot;Worker </span><span className="sc">{"{"}</span>n<span className="sc">{"}"}</span><span className="ss"> termina&quot;</span>)</span>
             <span id="cb2-8"><Enlace href="#cb2-8" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb2-9"><Enlace href="#cb2-9" aria-hidden="true" tabindex="-1"></Enlace >threads <span className="op">=</span> []</span>
             <span id="cb2-10"><Enlace href="#cb2-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">3</span>):</span>
-            <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace >    t <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(i,), name<span className="op">=</span><span className="ss">f&quot;worker-</span><span className="sc">{</span>i<span className="sc">}</span><span className="ss">&quot;</span>)</span>
+            <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace >    t <span className="op">=</span> threading.Thread(target<span className="op">=</span>worker, args<span className="op">=</span>(i,), name<span className="op">=</span><span className="ss">f&quot;worker-</span><span className="sc">{"{"}</span>i<span className="sc">{"}"}</span><span className="ss">&quot;</span>)</span>
             <span id="cb2-12"><Enlace href="#cb2-12" aria-hidden="true" tabindex="-1"></Enlace >    t.start()</span>
             <span id="cb2-13"><Enlace href="#cb2-13" aria-hidden="true" tabindex="-1"></Enlace >    threads.append(t)</span>
             <span id="cb2-14"><Enlace href="#cb2-14" aria-hidden="true" tabindex="-1"></Enlace ></span>
@@ -132,13 +133,13 @@ function nameabcd({ }) {
           <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> MiHilo(threading.Thread):</span>
           <span id="cb3-4"><Enlace href="#cb3-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, n):</span>
-          <span id="cb3-5"><Enlace href="#cb3-5" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">super</span>().<span className="fu">__init__</span>(name<span className="op">=</span><span className="ss">f&quot;MiHilo-</span><span className="sc">{</span>n<span className="sc">}</span><span className="ss">&quot;</span>)</span>
+          <span id="cb3-5"><Enlace href="#cb3-5" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">super</span>().<span className="fu">__init__</span>(name<span className="op">=</span><span className="ss">f&quot;MiHilo-</span><span className="sc">{"{"}</span>n<span className="sc">{"}"}</span><span className="ss">&quot;</span>)</span>
           <span id="cb3-6"><Enlace href="#cb3-6" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.n <span className="op">=</span> n</span>
           <span id="cb3-7"><Enlace href="#cb3-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb3-8"><Enlace href="#cb3-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> run(<span className="va">self</span>):</span>
-          <span id="cb3-9"><Enlace href="#cb3-9" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="ss">f&quot;</span><span className="sc">{</span><span className="va">self</span><span className="sc">.</span>name<span className="sc">}</span><span className="ss"> comenzar&quot;</span>)</span>
+          <span id="cb3-9"><Enlace href="#cb3-9" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="ss">f&quot;</span><span className="sc">{"{"}</span><span className="va">self</span><span className="sc">.</span>name<span className="sc">{"}"}</span><span className="ss"> comenzar&quot;</span>)</span>
           <span id="cb3-10"><Enlace href="#cb3-10" aria-hidden="true" tabindex="-1"></Enlace >        time.sleep(<span className="dv">1</span>)</span>
-          <span id="cb3-11"><Enlace href="#cb3-11" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="ss">f&quot;</span><span className="sc">{</span><span className="va">self</span><span className="sc">.</span>name<span className="sc">}</span><span className="ss"> terminar&quot;</span>)</span>
+          <span id="cb3-11"><Enlace href="#cb3-11" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="ss">f&quot;</span><span className="sc">{"{"}</span><span className="va">self</span><span className="sc">.</span>name<span className="sc">{"}"}</span><span className="ss"> terminar&quot;</span>)</span>
           <span id="cb3-12"><Enlace href="#cb3-12" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb3-13"><Enlace href="#cb3-13" aria-hidden="true" tabindex="-1"></Enlace >h <span className="op">=</span> MiHilo(<span className="dv">1</span>)</span>
           <span id="cb3-14"><Enlace href="#cb3-14" aria-hidden="true" tabindex="-1"></Enlace >h.start()</span>
@@ -433,7 +434,7 @@ function nameabcd({ }) {
           <span id="cb18-19"><Enlace href="#cb18-19" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb18-20"><Enlace href="#cb18-20" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Encolar tareas</span></span>
           <span id="cb18-21"><Enlace href="#cb18-21" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">10</span>):</span>
-          <span id="cb18-22"><Enlace href="#cb18-22" aria-hidden="true" tabindex="-1"></Enlace >    q.put((<span className="bu">print</span>, (<span className="ss">f&quot;task </span><span className="sc">{</span>i<span className="sc">}</span><span className="ss">&quot;</span>,)))</span>
+          <span id="cb18-22"><Enlace href="#cb18-22" aria-hidden="true" tabindex="-1"></Enlace >    q.put((<span className="bu">print</span>, (<span className="ss">f&quot;task </span><span className="sc">{"{"}</span>i<span className="sc">{"}"}</span><span className="ss">&quot;</span>,)))</span>
           <span id="cb18-23"><Enlace href="#cb18-23" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb18-24"><Enlace href="#cb18-24" aria-hidden="true" tabindex="-1"></Enlace >q.join()</span>
           <span id="cb18-25"><Enlace href="#cb18-25" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># parar hilos</span></span>
@@ -464,38 +465,37 @@ function nameabcd({ }) {
         alternativas</Titulo>
       <Lista>
         <li><code>threading</code> no es la mejor opción para CPU-bound por
-          el GIL.</li>    <li>Alternativas:</Texto>
+          el GIL.</li>    <li>Alternativas:</li>
         <Lista>
           <li>
-            <Texto><code>multiprocessing</code> — procesos (paralelismo
-              real).</li>        <li><code>asyncio</code> — concurrencia en un solo hilo usando
-                corutinas (muy eficiente para I/O con muchas conexiones).</li>        <li><code>concurrent.futures.ProcessPoolExecutor</code> — API
-                  parecida a ThreadPool pero con procesos.</li>      </Lista>
-      </li>
-    </Lista >
-  <Linea />
-  <Titulo title="h2" id="resumen">17) Resumen</Titulo>
-  <Lista>
-    <li>Usa <code>threading</code> para <strong>I/O-bound</strong>.</li>
-    <li>Protege recursos compartidos con <code>Lock</code>,
-      <code>RLock</code>, o usa <code>Queue</code>.
-    </li>
-    <li>Para excepciones y manejo fácil, usa
-      <code>ThreadPoolExecutor</code>.
-    </li>
-    <li>No hay forma segura de matar hilos; implementa mecanismo cooperativo
-      (Event/sentinels).</li>
-    <li>Si necesitas paralelismo CPU puro, usa
-      <code>multiprocessing</code>.
-    </li>
-  </Lista>
-  <Linea />
-  <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-      Principal</Enlace ></Texto>
-  <blockquote>
-    <Texto><strong>Autor:</strong> Fravelz</Texto>
-  </blockquote>
-</>
-);
+            <code>multiprocessing</code> — procesos (paralelismo
+            real).</li>        <li><code>asyncio</code> — concurrencia en un solo hilo usando
+              corutinas (muy eficiente para I/O con muchas conexiones).</li>        <li><code>concurrent.futures.ProcessPoolExecutor</code> — API
+                parecida a ThreadPool pero con procesos.</li>      </Lista>
+      </Lista>
+      <Linea />
+      <Titulo title="h2" id="resumen">17) Resumen</Titulo>
+      <Lista>
+        <li>Usa <code>threading</code> para <strong>I/O-bound</strong>.</li>
+        <li>Protege recursos compartidos con <code>Lock</code>,
+          <code>RLock</code>, o usa <code>Queue</code>.
+        </li>
+        <li>Para excepciones y manejo fácil, usa
+          <code>ThreadPoolExecutor</code>.
+        </li>
+        <li>No hay forma segura de matar hilos; implementa mecanismo cooperativo
+          (Event/sentinels).</li>
+        <li>Si necesitas paralelismo CPU puro, usa
+          <code>multiprocessing</code>.
+        </li>
+      </Lista>
+      <Linea />
+      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
+        Principal</Enlace ></Texto>
+      <blockquote>
+        <Texto><strong>Autor:</strong> Fravelz</Texto>
+      </blockquote>
+    </>
+  );
 }
 export default nameabcd;

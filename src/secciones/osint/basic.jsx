@@ -1,4 +1,4 @@
-import Estructura from "../../componentes/estructura.jsx";
+import Estructura from "./../../componentes/estructura.jsx";
 
 import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";

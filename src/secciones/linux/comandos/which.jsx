@@ -1,9 +1,10 @@
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura.jsx";
 
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -99,10 +100,6 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h3" id="en-resumen">En resumen</Titulo>
         <table>
-          <colgroup>
-            <col style="width: 21%" />
-            <col style="width: 78%" />
-          </colgroup>
           <thead>
             <tr>
               <th>Opción</th>

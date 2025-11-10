@@ -1,8 +1,10 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/estructura.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
+
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -114,12 +116,7 @@ function nameabcd({ }) {
         <Texto>➡️ Muestra solo los primeros 16 bytes.</Texto>
         <Linea />
         <Titulo title="h2" id="en-resumen">En resumen</Titulo>
-        <table style="width:100%;">
-          <colgroup>
-            <col style="width: 26%" />
-            <col style="width: 31%" />
-            <col style="width: 41%" />
-          </colgroup>
+        <table>
           <thead>
             <tr>
               <th>Modo</th>

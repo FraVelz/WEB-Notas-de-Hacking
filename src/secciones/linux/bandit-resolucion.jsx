@@ -2,7 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
-import Estructura, { TemarioAsideCompleto } from "../../componentes/estructura.jsx";
+import Estructura, { TemarioAsideCompleto } from "./../../componentes/estructura.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -331,14 +331,14 @@ function nameabcd({ }) {
           </summary>
           <div className="sourceCode" id="cb16">
             <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb16-1"><Enlace href="#cb16-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="fu">grep</span> <span className="at">-a</span> === <span className="kw">|</span> <span className="fu">awk</span> <span className="st">&#39;NF{print $NF}&#39;</span></span></code></pre>
+              className="sourceCode bash"><code className="sourceCode bash"><span id="cb16-1"><Enlace href="#cb16-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="fu">grep</span> <span className="at">-a</span> === <span className="kw">|</span> <span className="fu">awk</span> <span className="st">&#39;{"NF{print $NF}"}&#39;</span></span></code></pre>
           </div>
           <Texto>Filtra por líneas que contengan <code>===</code>, pero como el
             archivo contiene caracteres binarios indicamos al filtrado que queremos
             procesar todo como texto <code>grep -a</code>, y luego obtenemos, solo
             lo que nos interesa quitando las cosas extras, colocando solo la última
             palabra de cada línea con una conciencia
-            <code>awk 'NF{print $NF}'</code>.
+            <code>{"awk 'NF{print $NF}'"}</code>
           </Texto>
         </details>
         <Linea />

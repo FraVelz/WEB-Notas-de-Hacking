@@ -1,10 +1,10 @@
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Linea from "../../../componentes/linea.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
-import { TemarioCompleto } from "../../../componentes/estructura.jsx";
+import { TemarioCompleto } from "./../../../componentes/estructura.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -52,14 +52,14 @@ function nameabcd({ }) {
         dos formas equivalentes:</Texto>
       <div className="sourceCode" id="cb1">
         <pre className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Forma 1 (más común)</span></span>
-          <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">mi_funcion()</span> <span className="kw">{</span></span>
+          <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">mi_funcion()</span> <span className="kw">{"{"}</span></span>
           <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="st">&quot;Hola desde la función&quot;</span></span>
-          <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">}</span></span>
+          <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">{"}"}</span></span>
           <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace ></span>
           <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Forma 2 (menos usada)</span></span>
-          <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">function</span><span className="fu"> mi_funcion2</span> <span className="kw">{</span></span>
+          <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">function</span><span className="fu"> mi_funcion2</span> <span className="kw">{"}"}</span></span>
           <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="st">&quot;Hola desde la función 2&quot;</span></span>
-          <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">}</span></span></code></pre>
+          <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">{"}"}</span></span></code></pre>
       </div>
       <Texto><strong>Llamar una función:</strong></Texto>
       <div className="sourceCode" id="cb2">
@@ -98,7 +98,7 @@ function nameabcd({ }) {
       <Texto>Ejemplo:</Texto>
       <div className="sourceCode" id="cb3">
         <pre
-          className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">saludar()</span> <span className="kw">{</span></span>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">saludar()</span> <span className="kw">{"{"}</span></span>
             <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="st">&quot;Hola </span><span className="va">$1</span><span className="st"> </span><span className="va">$2</span><span className="st">&quot;</span></span>
             <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">}</span></span>
             <span id="cb3-4"><Enlace href="#cb3-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
@@ -113,9 +113,9 @@ function nameabcd({ }) {
       </Texto>
       <div className="sourceCode" id="cb4">
         <pre
-          className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">sumar()</span> <span className="kw">{</span></span>
+          className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">sumar()</span> <span className="kw">{"{"}</span></span>
             <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="va">$((</span> <span className="va">$1</span> <span className="op">+</span> <span className="va">$2</span> <span className="va">))</span></span>
-            <span id="cb4-3"><Enlace href="#cb4-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">}</span></span>
+            <span id="cb4-3"><Enlace href="#cb4-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">{"}"}</span></span>
             <span id="cb4-4"><Enlace href="#cb4-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb4-5"><Enlace href="#cb4-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">resultado</span><span className="op">=</span><span className="va">$(</span><span className="ex">sumar</span> 5 7<span className="va">)</span></span>
             <span id="cb4-6"><Enlace href="#cb4-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">echo</span> <span className="st">&quot;La suma es: </span><span className="va">$resultado</span><span className="st">&quot;</span></span>
@@ -130,10 +130,10 @@ function nameabcd({ }) {
         <pre
           className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">mensaje</span><span className="op">=</span><span className="st">&quot;Hola mundo&quot;</span></span>
             <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb5-3"><Enlace href="#cb5-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">cambiar()</span> <span className="kw">{</span></span>
+            <span id="cb5-3"><Enlace href="#cb5-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">cambiar()</span> <span className="kw">{"{"}</span></span>
             <span id="cb5-4"><Enlace href="#cb5-4" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">local</span> <span className="va">mensaje</span><span className="op">=</span><span className="st">&quot;Soy local&quot;</span></span>
             <span id="cb5-5"><Enlace href="#cb5-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="st">&quot;Dentro: </span><span className="va">$mensaje</span><span className="st">&quot;</span></span>
-            <span id="cb5-6"><Enlace href="#cb5-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">}</span></span>
+            <span id="cb5-6"><Enlace href="#cb5-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">{"}"}</span></span>
             <span id="cb5-7"><Enlace href="#cb5-7" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb5-8"><Enlace href="#cb5-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">echo</span> <span className="st">&quot;Antes: </span><span className="va">$mensaje</span><span className="st">&quot;</span></span>
             <span id="cb5-9"><Enlace href="#cb5-9" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">cambiar</span></span>
@@ -141,11 +141,6 @@ function nameabcd({ }) {
       </div>
       <Texto><strong>Diferencias clave:</strong></Texto>
       <table>
-        <colgroup>
-          <col style="width: 9%" />
-          <col style="width: 38%" />
-          <col style="width: 52%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Tipo</th>
@@ -264,8 +259,8 @@ function nameabcd({ }) {
         <pre
           className="sourceCode bash"><code className="sourceCode bash"><span id="cb13-1"><Enlace href="#cb13-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co">#!/bin/bash</span></span>
             <span id="cb13-2"><Enlace href="#cb13-2" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb13-3"><Enlace href="#cb13-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">sumar()</span> <span className="kw">{</span> <span className="bu">echo</span> <span className="va">$((</span> <span className="va">$1</span> <span className="op">+</span> <span className="va">$2</span> <span className="va">))</span><span className="kw">;</span> <span className="kw">}</span></span>
-            <span id="cb13-4"><Enlace href="#cb13-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">restar()</span> <span className="kw">{</span> <span className="bu">echo</span> <span className="va">$((</span> <span className="va">$1</span> <span className="op">-</span> <span className="va">$2</span> <span className="va">))</span><span className="kw">;</span> <span className="kw">}</span></span>
+            <span id="cb13-3"><Enlace href="#cb13-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">sumar()</span> <span className="kw">{"{"}</span> <span className="bu">echo</span> <span className="va">$((</span> <span className="va">$1</span> <span className="op">+</span> <span className="va">$2</span> <span className="va">))</span><span className="kw">;</span> <span className="kw">{"}"}</span></span>
+            <span id="cb13-4"><Enlace href="#cb13-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">restar()</span> <span className="kw">{"{"}</span> <span className="bu">echo</span> <span className="va">$((</span> <span className="va">$1</span> <span className="op">-</span> <span className="va">$2</span> <span className="va">))</span><span className="kw">;</span> <span className="kw">{"}"}</span></span>
             <span id="cb13-5"><Enlace href="#cb13-5" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb13-6"><Enlace href="#cb13-6" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">if</span> <span className="bu">[</span> <span className="va">$#</span> <span className="ot">-lt</span> 3 <span className="bu">]</span><span className="kw">;</span> <span className="cf">then</span></span>
             <span id="cb13-7"><Enlace href="#cb13-7" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="st">&quot;Uso: </span><span className="va">$0</span><span className="st"> [suma|resta] num1 num2&quot;</span></span>
@@ -284,10 +279,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="en-resumen">En resumen</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 23%" />
-          <col style="width: 76%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Concepto</th>
@@ -297,7 +288,7 @@ function nameabcd({ }) {
         <tbody>
           <tr>
             <td>Definir función</td>
-            <td><code>nombre() {... }</code></td>
+            <td><code>{"nombre() {... }"}</code></td>
           </tr>
           <tr>
             <td>Llamar función</td>

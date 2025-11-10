@@ -1,7 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -171,7 +172,7 @@ function nameabcd({ }) {
             <span id="cb6-7"><Enlace href="#cb6-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">if</span> <span className="va">__name__</span> <span className="op">==</span> <span className="st">&quot;__main__&quot;</span>:</span>
             <span id="cb6-8"><Enlace href="#cb6-8" aria-hidden="true" tabindex="-1"></Enlace >    lock <span className="op">=</span> Lock()</span>
             <span id="cb6-9"><Enlace href="#cb6-9" aria-hidden="true" tabindex="-1"></Enlace >    <span className="cf">for</span> i <span className="kw">in</span> <span className="bu">range</span>(<span className="dv">3</span>):</span>
-            <span id="cb6-10"><Enlace href="#cb6-10" aria-hidden="true" tabindex="-1"></Enlace >        Process(target<span className="op">=</span>imprimir, args<span className="op">=</span>(lock, <span className="ss">f&quot;Proceso </span><span className="sc">{</span>i<span className="sc">}</span><span className="ss">&quot;</span>)).start()</span></code></pre>
+            <span id="cb6-10"><Enlace href="#cb6-10" aria-hidden="true" tabindex="-1"></Enlace >        Process(target<span className="op">=</span>imprimir, args<span className="op">=</span>(lock, <span className="ss">f&quot;Proceso </span><span className="sc">{"{"}</span>i<span className="sc">{"}"}</span><span className="ss">&quot;</span>)).start()</span></code></pre>
       </div>
       <Linea />
       <Titulo title="h2" id="ejemplo-completo">Ejemplo completo</Titulo>
@@ -182,9 +183,9 @@ function nameabcd({ }) {
             <span id="cb7-3"><Enlace href="#cb7-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb7-4"><Enlace href="#cb7-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">def</span> trabajo(q):</span>
             <span id="cb7-5"><Enlace href="#cb7-5" aria-hidden="true" tabindex="-1"></Enlace >    nombre <span className="op">=</span> current_process().name</span>
-            <span id="cb7-6"><Enlace href="#cb7-6" aria-hidden="true" tabindex="-1"></Enlace >    q.put(<span className="ss">f&quot;</span><span className="sc">{</span>nombre<span className="sc">}</span><span className="ss"> inicia tarea&quot;</span>)</span>
+            <span id="cb7-6"><Enlace href="#cb7-6" aria-hidden="true" tabindex="-1"></Enlace >    q.put(<span className="ss">f&quot;</span><span className="sc">{"{"}</span>nombre<span className="sc">{"}"}</span><span className="ss"> inicia tarea&quot;</span>)</span>
             <span id="cb7-7"><Enlace href="#cb7-7" aria-hidden="true" tabindex="-1"></Enlace >    time.sleep(<span className="dv">1</span>)</span>
-            <span id="cb7-8"><Enlace href="#cb7-8" aria-hidden="true" tabindex="-1"></Enlace >    q.put(<span className="ss">f&quot;</span><span className="sc">{</span>nombre<span className="sc">}</span><span className="ss"> termina tarea&quot;</span>)</span>
+            <span id="cb7-8"><Enlace href="#cb7-8" aria-hidden="true" tabindex="-1"></Enlace >    q.put(<span className="ss">f&quot;</span><span className="sc">{"{"}</span>nombre<span className="sc">{"}"}</span><span className="ss"> termina tarea&quot;</span>)</span>
             <span id="cb7-9"><Enlace href="#cb7-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
             <span id="cb7-10"><Enlace href="#cb7-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">if</span> <span className="va">__name__</span> <span className="op">==</span> <span className="st">&quot;__main__&quot;</span>:</span>
             <span id="cb7-11"><Enlace href="#cb7-11" aria-hidden="true" tabindex="-1"></Enlace >    q <span className="op">=</span> Queue()</span>
@@ -199,10 +200,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="resumen-rápido">Resumen rápido</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 39%" />
-          <col style="width: 60%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Herramienta</th>

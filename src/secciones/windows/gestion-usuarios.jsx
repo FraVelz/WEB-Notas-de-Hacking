@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -43,12 +44,6 @@ function nameabcd({ }) {
           sistema (cmd)</strong> con permisos de administrador.</Texto>
       </blockquote>
       <table>
-        <colgroup>
-          <col style="width: 23%" />
-          <col style="width: 37%" />
-          <col style="width: 23%" />
-          <col style="width: 14%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -156,11 +151,6 @@ function nameabcd({ }) {
       </blockquote>
       <Titulo title="h3" id="usuarios-locales">Usuarios locales</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 13%" />
-          <col style="width: 28%" />
-          <col style="width: 57%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -204,11 +194,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h3" id="grupos-locales">Grupos locales</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 17%" />
-          <col style="width: 29%" />
-          <col style="width: 52%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -252,11 +237,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h3" id="información-y-autenticación">Información y autenticación</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 41%" />
-          <col style="width: 35%" />
-          <col style="width: 22%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -286,11 +266,6 @@ function nameabcd({ }) {
       <Titulo title="h3" id="active-directory-solo-si-tienes-ad-instalado">Active Directory
         (solo si tienes AD instalado)</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 9%" />
-          <col style="width: 24%" />
-          <col style="width: 65%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -337,11 +312,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="comandos-útiles-para-entornos-mixtos-cmd-powershell">3. Comandos
         útiles para entornos mixtos (CMD + PowerShell)</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 20%" />
-          <col style="width: 32%" />
-          <col style="width: 47%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Tarea</th>

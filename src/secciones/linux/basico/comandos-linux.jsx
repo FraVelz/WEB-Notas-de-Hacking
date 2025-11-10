@@ -1,23 +1,13 @@
-import Estructura from "../../../componentes/estructura.jsx";
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Linea from "../../../componentes/linea.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-    </Lista>
-  );
-}
-
-function Temario({ className = "" }) {
-  return (
-    <Lista className={className}>
-      <li>
-        <Enlace href="#introducción-a-linux-para-ciberseguridad">Introducción a Linux para Ciberseguridad</Enlace >
-        <Lista>
           <li><Enlace href="#temario">Temario</Enlace ></li>
           <li><Enlace href="#1-historia">1. Historia</Enlace ></li>
           <li><Enlace href="#2-filosofía-de-linux">2. Filosofía de Linux</Enlace ></li>
@@ -36,8 +26,6 @@ function Temario({ className = "" }) {
             </Lista>
           </li>
           <li><Enlace href="#10-sudo">10. Sudo</Enlace ></li>
-        </Lista>
-      </li>
     </Lista>
   );
 }
@@ -584,7 +572,7 @@ function Comandos_Linux({ }) {
       <aside className="hidden 2xl:block sticky top-5 self-start w-4/5 min-w-72 max-w-fit">
         <Titulo title="h2" className="select-none">Temario</Titulo>
         <Temario className="bg-gray-900 rounded-md p-4 mb-4 list-decimal" />
-      </Enlace side>
+      </aside>
     </>
   );
 }

@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -41,11 +42,6 @@ function nameabcd({ }) {
           (CMD)</strong> con permisos de administrador.</Texto>
       </blockquote>
       <table>
-        <colgroup>
-          <col style="width: 33%" />
-          <col style="width: 35%" />
-          <col style="width: 30%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -129,11 +125,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h3" id="grupos-locales">Grupos locales</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 20%" />
-          <col style="width: 29%" />
-          <col style="width: 50%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -185,11 +176,6 @@ function nameabcd({ }) {
       <Texto><em>(solo si tienes instalado el módulo <code>ActiveDirectory</code>
         y estás en un dominio)</em></Texto>
       <table>
-        <colgroup>
-          <col style="width: 13%" />
-          <col style="width: 29%" />
-          <col style="width: 57%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -239,11 +225,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="comparativa-cmd-vs-powershell">3. Comparativa CMD vs
         PowerShell</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 17%" />
-          <col style="width: 33%" />
-          <col style="width: 48%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Tarea</th>
@@ -294,13 +275,10 @@ function nameabcd({ }) {
           </tr>
         </tbody>
       </table>
+
       <Linea />
       <Titulo title="h2" id="atajos-y-comandos-gráficos">4. Atajos y comandos gráficos</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 33%" />
-          <col style="width: 66%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>

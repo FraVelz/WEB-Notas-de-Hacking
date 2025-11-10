@@ -1,8 +1,8 @@
-import Titulo from "./../../componentes/titulo.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -260,11 +260,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="resumen-rápido">Resumen rápido</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 19%" />
-          <col style="width: 54%" />
-          <col style="width: 26%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Función</th>

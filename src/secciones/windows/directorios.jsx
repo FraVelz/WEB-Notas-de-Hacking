@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -31,11 +32,6 @@ function nameabcd({ }) {
       <Texto>Estos contienen archivos de Windows y componentes esenciales del
         sistema operativo:</Texto>
       <table>
-        <colgroup>
-          <col style="width: 14%" />
-          <col style="width: 15%" />
-          <col style="width: 70%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Directorio</th>
@@ -79,11 +75,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="directorios-de-usuario">Directorios de usuario</Titulo>
       <Texto>Contienen los datos de cada usuario y configuraciones personales:</Texto>
       <table>
-        <colgroup>
-          <col style="width: 14%" />
-          <col style="width: 20%" />
-          <col style="width: 64%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Directorio</th>
@@ -131,11 +122,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="directorios-de-programas">Directorios de programas</Titulo>
       <Texto>Donde se instalan las aplicaciones:</Texto>
       <table>
-        <colgroup>
-          <col style="width: 27%" />
-          <col style="width: 19%" />
-          <col style="width: 52%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Directorio</th>

@@ -1,8 +1,10 @@
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Enlace from "../../../componentes/enlace.jsx";
-import Linea from "../../../componentes/linea.jsx";
+import { TemarioCompleto } from "../../../componentes/estructura.jsx";
+
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Enlace from "./../../../componentes/enlace.jsx";
+import Linea from "./../../../componentes/linea.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -49,7 +51,7 @@ function nameabcd({ }) {
       </blockquote>
       <Texto><strong>Ejemplo 2: Rango de números:</strong></Texto>
       <div className="sourceCode" id="cb2">
-        <pre className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> <span className="dt">{</span><span className="dv">1</span><span className="dt">..</span><span className="dv">3</span><span className="dt">}</span><span className="kw">;</span> <span className="cf">do</span> </span>
+        <pre className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">for</span> i <span className="kw">in</span> <span className="dt">{"{"}</span><span className="dv">1</span><span className="dt">..</span><span className="dv">3</span><span className="dt">{"}"}</span><span className="kw">;</span> <span className="cf">do</span> </span>
           <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="bu">echo</span> <span className="st">&quot;Contando: </span><span className="va">$i</span><span className="st">&quot;</span></span>
           <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ><span className="cf">done</span></span></code></pre>
       </div>

@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "./../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -22,13 +23,7 @@ function nameabcd({ }) {
         principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="comodines-básicos">1. Comodines básicos</Titulo>
-      <table style="width:100%;">
-        <colgroup>
-          <col style="width: 18%" />
-          <col style="width: 26%" />
-          <col style="width: 13%" />
-          <col style="width: 41%" />
-        </colgroup>
+      <table>
         <thead>
           <tr>
             <th>Comodín</th>

@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -32,7 +33,7 @@ function nameabcd({ }) {
         entorno</Titulo>
       <ol type="1">
         <li><strong>Variables del sistema</strong>: Aplican a todos los
-          usuarios del equipo. Por ejemplo:</Texto>
+          usuarios del equipo. Por ejemplo:
         <Lista>
           <li><code>PATH</code>: lista de rutas donde Windows busca
             ejecutables.</li>
@@ -62,9 +63,9 @@ function nameabcd({ }) {
       <Texto><strong>Usando CMD</strong>:</Texto>
       <Lista>
         <li>
-          <Texto><code>set</code> → muestra todas las variables de usuario y del
+          <code>set</code> → muestra todas las variables de usuario y del
             sistema.</li>        <li><code>echo %VARIABLE%</code> → muestra el valor de una variable
-            específica. Ejemplo:</Texto>
+            específica. Ejemplo:
           <div className="sourceCode" id="cb1">
             <pre
               className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">echo</span> <span className="pp">%</span><span className="va">PATH</span><span className="pp">%</span></span>
@@ -77,7 +78,7 @@ function nameabcd({ }) {
       <Texto><strong>Usando PowerShell</strong>:</Texto>
       <Lista>
         <li>
-          <Texto><code>Get-ChildItem Env:</code> → lista todas las
+          <code>Get-ChildItem Env:</code> → lista todas las
             variables.</li>        <li>
           <Texto><code>$Env:VARIABLE</code> → muestra el valor de una variable
             específica. Ejemplo:</Texto>

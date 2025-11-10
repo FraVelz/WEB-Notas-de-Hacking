@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -41,10 +42,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="windows-cmd-command-prompt">1. Windows CMD (Command Prompt)</Titulo>
       <Titulo title="h3" id="navegación-por-directorios">Navegación por directorios</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 20%" />
-          <col style="width: 79%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -78,10 +75,6 @@ function nameabcd({ }) {
       </table>
       <Titulo title="h3" id="gestión-de-archivos">Gestión de archivos</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 35%" />
-          <col style="width: 64%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -113,10 +106,6 @@ function nameabcd({ }) {
       </table>
       <Titulo title="h3" id="gestión-de-carpetas">Gestión de carpetas</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 53%" />
-          <col style="width: 46%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -149,10 +138,6 @@ function nameabcd({ }) {
       <Titulo title="h3" id="navegación-por-directorios-cmdlets">Navegación por directorios
         (cmdlets)</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 28%" />
-          <col style="width: 71%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -186,10 +171,6 @@ function nameabcd({ }) {
       </table>
       <Titulo title="h3" id="gestión-de-archivos-cmdlets">Gestión de archivos (cmdlets)</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 16%" />
-          <col style="width: 83%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
@@ -220,10 +201,6 @@ function nameabcd({ }) {
       </table>
       <Titulo title="h3" id="gestión-de-carpetas-cmdlets">Gestión de carpetas (cmdlets)</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 61%" />
-          <col style="width: 38%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>

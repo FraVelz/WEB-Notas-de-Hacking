@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -115,12 +116,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="en-resumen">En resumen</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 15%" />
-          <col style="width: 27%" />
-          <col style="width: 24%" />
-          <col style="width: 33%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Tipo</th>

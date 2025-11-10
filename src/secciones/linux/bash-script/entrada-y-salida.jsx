@@ -1,9 +1,10 @@
-import Estructura, { TemarioCompleto, TemarioAsideCompleto } from "../../../componentes/estructura.jsx";
+import Estructura, { TemarioCompleto, TemarioAsideCompleto } from "./../../../componentes/estructura.jsx";
 
-import Titulo from "../../../componentes/titulo.jsx";
-import Lista from "../../../componentes/lista.jsx";
-import Texto from "../../../componentes/texto.jsx";
-import Linea from "../../../componentes/linea.jsx";
+import Titulo from "./../../../componentes/titulo.jsx";
+import Lista from "./../../../componentes/lista.jsx";
+import Texto from "./../../../componentes/texto.jsx";
+import Linea from "./../../../componentes/linea.jsx";
+import Enlace from "../../../componentes/enlace.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -53,11 +54,6 @@ function nameabcd({ }) {
         <Texto>En Bash hay <strong>3 descriptores de archivos
           principales</strong>:</Texto>
         <table>
-          <colgroup>
-            <col style="width: 12%" />
-            <col style="width: 20%" />
-            <col style="width: 67%" />
-          </colgroup>
           <thead>
             <tr>
               <th>Descriptor</th>

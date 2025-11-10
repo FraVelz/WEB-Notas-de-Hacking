@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -267,10 +268,6 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="resumen-rápido">Resumen rápido</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 43%" />
-          <col style="width: 56%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Concepto</th>

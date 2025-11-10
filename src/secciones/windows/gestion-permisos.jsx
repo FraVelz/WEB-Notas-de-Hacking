@@ -2,6 +2,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Texto from "./../../componentes/texto.jsx";
 import Linea from "./../../componentes/linea.jsx";
+import Enlace from "../../componentes/enlace.jsx";
 
 function nameabcd({ }) {
   return (
@@ -34,10 +35,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="cmd-comandos-de-gestión-de-permisos">CMD — Comandos de Gestión
         de Permisos</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 32%" />
-          <col style="width: 67%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Comando</th>
@@ -102,10 +99,6 @@ function nameabcd({ }) {
       <Titulo title="h2" id="powershell-cmdlets-de-gestión-de-permisos">PowerShell — Cmdlets
         de Gestión de Permisos</Titulo>
       <table>
-        <colgroup>
-          <col style="width: 56%" />
-          <col style="width: 43%" />
-        </colgroup>
         <thead>
           <tr>
             <th>Cmdlet</th>
