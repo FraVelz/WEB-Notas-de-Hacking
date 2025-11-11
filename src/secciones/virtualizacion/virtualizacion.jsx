@@ -1,9 +1,8 @@
-import Titulo from "./../../componentes/titulo";
-import Texto from "./../../componentes/texto";
 import Enlace from "./../../componentes/enlace";
-import Lista from "./../../componentes/lista";
 import Estructura from "./../../componentes/estructura";
-
+import Lista from "./../../componentes/lista";
+import Texto from "./../../componentes/texto";
+import Titulo from "./../../componentes/titulo";
 function Virtualizacion() {
     return (
         <Estructura>

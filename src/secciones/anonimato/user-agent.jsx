@@ -1,11 +1,9 @@
-import Estructura, { TemarioAside, TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "./../../componentes/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
 import Linea from "./../../componentes/linea.jsx";
 import Lista from "./../../componentes/lista.jsx";
-import Enlace from "./../../componentes/enlace.jsx";
 import Texto from "./../../componentes/texto.jsx";
-
+import Titulo from "./../../componentes/titulo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>

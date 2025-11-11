@@ -1,13 +1,10 @@
-import Estructura, { TemarioCompleto, TemarioAsideCompleto } from "./../../componentes/estructura";
-
-import Titulo from "./../../componentes/titulo";
-import Lista from "./../../componentes/lista";
-import Linea from "./../../componentes/linea";
-import Texto from "./../../componentes/texto";
-import Enlace from "./../../componentes/enlace";
-
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/tabla";
-
+import Enlace from "./../../componentes/enlace";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura";
+import Linea from "./../../componentes/linea";
+import Lista from "./../../componentes/lista";
+import Texto from "./../../componentes/texto";
+import Titulo from "./../../componentes/titulo";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>

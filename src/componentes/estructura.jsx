@@ -18,7 +18,7 @@ function TemarioAside({ children }) {
   return (
     <>
       <aside className="
-        hidden 2xl:block z-0
+        hidden 2xl:block
         sticky top-5 self-start
         w-4/5
         min-w-72 max-w-fit

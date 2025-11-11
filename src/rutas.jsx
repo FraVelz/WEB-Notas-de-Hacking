@@ -1,10 +1,12 @@
 import Readme from "./readme.jsx";
 
 import { Routes, Route } from "react-router-dom";
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
+import Rutas_Dinamicas from "./rutas_dinamicas.jsx";
 
 
 function Rutas_Configuracion() {
+
     // ********** Anonimato
     const Privacidad_Y_Anonimato = lazy(() => import("./secciones/anonimato/privacidad-anonimato.jsx"));
     const Filtraciones = lazy(() => import("./secciones/anonimato/filtraciones.jsx"));
@@ -110,110 +112,115 @@ function Rutas_Configuracion() {
     const Variables_Entorno = lazy(() => import("./secciones/windows/variables-entorno.jsx"));
 
     return (
-        <Routes>
-            {/* ********** Rutas principales ********** */}
-            <Route path="/" element={<Readme />} />
+        <div className="flex flex-col lg:flex-row flex-1 w-full h-fit gap-4 lg:gap-6">
+            <Rutas_Dinamicas />
+            <Suspense fallback={<div className="text-gray-400 p-4">Cargando...</div>}>
+                <Routes>
+                    {/* ********** Rutas principales ********** */}
+                    <Route path="/" element={<Readme />} />
 
-            {/* ********** Conceptos Básicos ********** */}
-            <Route path='/virtualizacion' element={<Virtualizacion />} />
+                    {/* ********** Conceptos Básicos ********** */}
+                    <Route path='/virtualizacion' element={<Virtualizacion />} />
 
-            {/* ********** Conceptos Básicos ********** */}
-            <Route path='/conceptos_basicos' element={<Conceptos_Basicos />} />
-            <Route path='/legalidad_hacking' element={<Legalidad_Hacking />} />
-            <Route path='/mitos' element={<Mitos />} />
+                    {/* ********** Conceptos Básicos ********** */}
+                    <Route path='/conceptos_basicos' element={<Conceptos_Basicos />} />
+                    <Route path='/legalidad_hacking' element={<Legalidad_Hacking />} />
+                    <Route path='/mitos' element={<Mitos />} />
 
-            {/* ********** Anonimato ********** */}
-            <Route path='/privacidad_y_anonimato' element={<Privacidad_Y_Anonimato />} />
-            <Route path='/huella_digital' element={<Huella_Digital />} />
-            <Route path='/user_agent' element={<User_Agent />} />
-            <Route path='/filtracion_de_datos' element={<Filtraciones />} />
+                    {/* ********** Anonimato ********** */}
+                    <Route path='/privacidad_y_anonimato' element={<Privacidad_Y_Anonimato />} />
+                    <Route path='/huella_digital' element={<Huella_Digital />} />
+                    <Route path='/user_agent' element={<User_Agent />} />
+                    <Route path='/filtracion_de_datos' element={<Filtraciones />} />
 
-            {/* ********** Linux ********** */}
-            <Route path='/arrays' element={<Arrays />} />
-            <Route path='/atajos_de_teclado' element={<Atajos_De_Teclado />} />
-            <Route path='/ayuda_linux' element={<Ayuda_Linux />} />
-            <Route path='/bandit_resolucion' element={<Bandit_Resolucion />} />
-            <Route path='/busqueda' element={<Busqueda />} />
-            <Route path='/comandos_linux' element={<Comandos_Linux />} />
-            <Route path='/condiciones' element={<Condiciones />} />
-            <Route path='/entrada_y_salida' element={<Entrada_Y_Salida />} />
-            <Route path='/estructuras_control' element={<EstControl />} />
-            <Route path='/funciones_externas' element={<Funciones_Externas />} />
-            <Route path='/funciones' element={<Funciones />} />
-            <Route path='/fundamentos' element={<Fundaments />} />
-            <Route path='/gestion_de_procesos' element={<Gestion_De_Procesos />} />
-            <Route path='/grupos_y_usuarios' element={<Grupos_Y_Usuarios />} />
-            <Route path='/manipulacion_de_strings' element={<Manipulacion_De_Strings />} />
-            <Route path='/permisos' element={<Permisos />} />
+                    {/* ********** Linux ********** */}
+                    <Route path='/arrays' element={<Arrays />} />
+                    <Route path='/atajos_de_teclado' element={<Atajos_De_Teclado />} />
+                    <Route path='/ayuda_linux' element={<Ayuda_Linux />} />
+                    <Route path='/bandit_resolucion' element={<Bandit_Resolucion />} />
+                    <Route path='/busqueda' element={<Busqueda />} />
+                    <Route path='/comandos_linux' element={<Comandos_Linux />} />
+                    <Route path='/condiciones' element={<Condiciones />} />
+                    <Route path='/entrada_y_salida' element={<Entrada_Y_Salida />} />
+                    <Route path='/estructuras_control' element={<EstControl />} />
+                    <Route path='/funciones_externas' element={<Funciones_Externas />} />
+                    <Route path='/funciones' element={<Funciones />} />
+                    <Route path='/fundamentos' element={<Fundaments />} />
+                    <Route path='/gestion_de_procesos' element={<Gestion_De_Procesos />} />
+                    <Route path='/grupos_y_usuarios' element={<Grupos_Y_Usuarios />} />
+                    <Route path='/manipulacion_de_strings' element={<Manipulacion_De_Strings />} />
+                    <Route path='/permisos' element={<Permisos />} />
 
-            {/* ********** Linux/Comandos ********** */}
-            <Route path='/cifrado_cesar' element={<Cifrado_Cesar_Tr />} />
-            <Route path='/diff' element={<Diff />} />
-            <Route path='/less' element={<Less />} />
-            <Route path='/ncat' element={<Ncat />} />
-            <Route path='/netcat' element={<Netcat />} />
-            <Route path='/wc' element={<Wc />} />
-            <Route path='/which' element={<Which />} />
-            <Route path='/xxd' element={<Xxd />} />
+                    {/* ********** Linux/Comandos ********** */}
+                    <Route path='/cifrado_cesar' element={<Cifrado_Cesar_Tr />} />
+                    <Route path='/diff' element={<Diff />} />
+                    <Route path='/less' element={<Less />} />
+                    <Route path='/ncat' element={<Ncat />} />
+                    <Route path='/netcat' element={<Netcat />} />
+                    <Route path='/wc' element={<Wc />} />
+                    <Route path='/which' element={<Which />} />
+                    <Route path='/xxd' element={<Xxd />} />
 
-            {/* ********** OSINT ********** */}
-            <Route path='/osint_basico' element={<Basic />} />
-            <Route path='/google_dorks' element={<GoogleDoorks />} />
-            <Route path='/terminologia_osint' element={<Terminologia />} />
+                    {/* ********** OSINT ********** */}
+                    <Route path='/osint_basico' element={<Basic />} />
+                    <Route path='/google_dorks' element={<GoogleDoorks />} />
+                    <Route path='/terminologia_osint' element={<Terminologia />} />
 
-            {/* ********** Otros ********** */}
-            <Route path='/concientizacion' element={<Concientizacion />} />
-            <Route path='/distribuciones_linux' element={<Distribuciones_Linux />} />
-            <Route path='/herramientas' element={<Herramientas />} />
-            <Route path='/notas_actualizacion' element={<Notas_Actualizacion />} />
-            <Route path='/ramas_ciberseguridad' element={<Ramas_Ciberseguridad />} />
-            <Route path='/recursos' element={<Recursos />} />
+                    {/* ********** Otros ********** */}
+                    <Route path='/concientizacion' element={<Concientizacion />} />
+                    <Route path='/distribuciones_linux' element={<Distribuciones_Linux />} />
+                    <Route path='/herramientas' element={<Herramientas />} />
+                    <Route path='/notas_actualizacion' element={<Notas_Actualizacion />} />
+                    <Route path='/ramas_ciberseguridad' element={<Ramas_Ciberseguridad />} />
+                    <Route path='/recursos' element={<Recursos />} />
 
-            {/* ********** Pentesting ********** */}
-            <Route path='/cajas' element={<Cajas />} />
-            <Route path='/fases_pentesting' element={<Fases />} />
+                    {/* ********** Pentesting ********** */}
+                    <Route path='/cajas' element={<Cajas />} />
+                    <Route path='/fases_pentesting' element={<Fases />} />
 
-            {/* ********** Python ********** */}
-            <Route path='/clases_python' element={<Clases_Python />} />
-            <Route path='/classmethod' element={<Classmethod />} />
-            <Route path='/getter_setter' element={<Getter_Setter />} />
-            <Route path='/property' element={<Property />} />
-            <Route path='/python_completo' element={<Todo_Python />} />
-            <Route path='/variables_clases' element={<Variables_Clases />} />
+                    {/* ********** Python ********** */}
+                    <Route path='/clases_python' element={<Clases_Python />} />
+                    <Route path='/classmethod' element={<Classmethod />} />
+                    <Route path='/getter_setter' element={<Getter_Setter />} />
+                    <Route path='/property' element={<Property />} />
+                    <Route path='/python_completo' element={<Todo_Python />} />
+                    <Route path='/variables_clases' element={<Variables_Clases />} />
 
-            {/* ********** Python/Módulos ********** */}
-            <Route path='/multiprocessing' element={<Multiprocessing />} />
-            <Route path='/os_python' element={<Os />} />
-            <Route path='/re_python' element={<Re />} />
-            <Route path='/request' element={<Request />} />
-            <Route path='/sockets' element={<Sockets />} />
-            <Route path='/subprocess' element={<Subprocess />} />
-            <Route path='/sys' element={<Sys />} />
-            <Route path='/threading' element={<Threading />} />
-            <Route path='/tkinter' element={<Tkinter />} />
+                    {/* ********** Python/Módulos ********** */}
+                    <Route path='/multiprocessing' element={<Multiprocessing />} />
+                    <Route path='/os_python' element={<Os />} />
+                    <Route path='/re_python' element={<Re />} />
+                    <Route path='/request' element={<Request />} />
+                    <Route path='/sockets' element={<Sockets />} />
+                    <Route path='/subprocess' element={<Subprocess />} />
+                    <Route path='/sys' element={<Sys />} />
+                    <Route path='/threading' element={<Threading />} />
+                    <Route path='/tkinter' element={<Tkinter />} />
 
-            {/* ********** Redes ********** */}
-            <Route path='/cidrs_hosts' element={<Cidrs_Hosts />} />
-            <Route path='/herramientas_redes' element={<Herramientas_Redes />} />
-            <Route path='/subnetting' element={<Subnetting />} />
-            <Route path='/teoria_redes' element={<Teoria />} />
+                    {/* ********** Redes ********** */}
+                    <Route path='/cidrs_hosts' element={<Cidrs_Hosts />} />
+                    <Route path='/herramientas_redes' element={<Herramientas_Redes />} />
+                    <Route path='/subnetting' element={<Subnetting />} />
+                    <Route path='/teoria_redes' element={<Teoria />} />
 
-            {/* ********** Windows ********** */}
-            <Route path='/alias_powershell' element={<Alias_Powershell />} />
-            <Route path='/ayuda_soporte' element={<Ayuda_Soporte />} />
-            <Route path='/comodines' element={<Comodines />} />
-            <Route path='/directorios_windows' element={<Directorios />} />
-            <Route path='/gestion_grupos_windows' element={<Gestion_Grupos />} />
-            <Route path='/gestion_permisos_windows' element={<Gestion_Permisos />} />
-            <Route path='/gestion_procesos_windows' element={<Gestion_Procesos />} />
-            <Route path='/gestion_red_windows' element={<Gestion_Red />} />
-            <Route path='/gestion_usuarios_windows' element={<Gestion_Usuarios />} />
-            <Route path='/historia_windows' element={<Historia />} />
-            <Route path='/navegacion_windows' element={<Navegacion />} />
-            <Route path='/powershell_cmd' element={<Powershell_Cmd />} />
-            <Route path='/redirecciones_powershell' element={<Redirecciones_Powershell />} />
-            <Route path='/variables_entorno_windows' element={<Variables_Entorno />} />
-        </Routes>
+                    {/* ********** Windows ********** */}
+                    <Route path='/alias_powershell' element={<Alias_Powershell />} />
+                    <Route path='/ayuda_soporte' element={<Ayuda_Soporte />} />
+                    <Route path='/comodines' element={<Comodines />} />
+                    <Route path='/directorios_windows' element={<Directorios />} />
+                    <Route path='/gestion_grupos_windows' element={<Gestion_Grupos />} />
+                    <Route path='/gestion_permisos_windows' element={<Gestion_Permisos />} />
+                    <Route path='/gestion_procesos_windows' element={<Gestion_Procesos />} />
+                    <Route path='/gestion_red_windows' element={<Gestion_Red />} />
+                    <Route path='/gestion_usuarios_windows' element={<Gestion_Usuarios />} />
+                    <Route path='/historia_windows' element={<Historia />} />
+                    <Route path='/navegacion_windows' element={<Navegacion />} />
+                    <Route path='/powershell_cmd' element={<Powershell_Cmd />} />
+                    <Route path='/redirecciones_powershell' element={<Redirecciones_Powershell />} />
+                    <Route path='/variables_entorno_windows' element={<Variables_Entorno />} />
+                </Routes>
+            </Suspense>
+        </div>
     );
 }
 

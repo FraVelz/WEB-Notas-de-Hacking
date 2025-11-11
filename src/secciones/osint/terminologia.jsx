@@ -1,10 +1,6 @@
 import Estructura from "./../../componentes/estructura.jsx";
-
-import Titulo from "./../../componentes/titulo.jsx";
 import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Linea from "./../../componentes/linea.jsx";
-
+import Titulo from "./../../componentes/titulo.jsx";
 function nameabcd({ }) {
   return (
     <>

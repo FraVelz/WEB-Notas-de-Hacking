@@ -44,8 +44,9 @@ function Readme() {
                     </Texto>
 
                     <Texto>
-                        <b>Errores:</b> Por ahora hay secciones que no son legibles en pc, pero son mas o menos legibles
-                        en dispositivos moviles o dimensiones de pantalla similar a dispositivos moviles.
+                        <b>Errores:</b> Por ahora, los apartados no se pueden ingresar directamente por medio de url, sino que 
+                        tienes que ingresar directamente a la pagina principal y luego aceder al apartado especifico, tambien hay secciones que
+                        no son legibles en pc, pero son mas o menos legibles en dispositivos moviles o dimensiones de pantalla similar a dispositivos moviles.
                     </Texto>
 
                     <Texto>

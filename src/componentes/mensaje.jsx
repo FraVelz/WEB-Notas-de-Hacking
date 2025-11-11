@@ -1,6 +1,7 @@
+import { createPortal } from 'react-dom';
 
 function Mensaje({ children, onClose }) {
-    return (
+    return createPortal(
         <div className="
         bg-black/50
         cursor-default
@@ -34,7 +35,8 @@ function Mensaje({ children, onClose }) {
                 "
                 >Cerrar</button>
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
 
