@@ -7,6 +7,7 @@ import Lista from "./componentes/lista.jsx";
 import Enlace from "./componentes/enlace.jsx";
 import Texto from "./componentes/texto.jsx";
 import Estructura from "./componentes/estructura.jsx";
+import Animacion from "./animacion.jsx";
 
 function Readme() {
     return (
@@ -19,8 +20,6 @@ function Readme() {
 
             <Linea />
 
-            <Titulo title="h2" className="lg:hidden">Temario</Titulo>
-
             <Titulo title="h2">Bienvenida y Cosas previas a tener en cuenta dentro de cada seccion</Titulo>
 
             <Texto>
@@ -29,16 +28,44 @@ function Readme() {
                 es esta área.
             </Texto>
 
-            <Texto>
-                Por ahora hay secciones que no son legibles en pc, pero son mas o menos legibles
-                en dispositivos moviles o dimensiones de pantalla similar a dispositivos moviles.
-            </Texto>
+            <div className="
+            flex flex-col lg:flex-row
+            justify-center align-middle
+            ">
+                <div className="
+                bg-gray-900
+                rounded-2xl
+                hyphens-auto hyphens: auto;
+                wrap-break-word
+                p-4
+                ">
+                    <Texto>
+                        <b>Informacion:</b> Cada session tiene un boton de un resumen que dice mas informacion, y esta organizada en orden de temas.
+                    </Texto>
 
-            <Texto>Hay otras secciones que contienen mas que todo tablas que les falta un formateo y 
-                estilo, como tambien otro tipo de elementos, haciendo que estos no sean suficientemente 
-                legibles o desordenados :v
-            </Texto>
-       </Estructura>
+                    <Texto>
+                        <b>Errores:</b> Por ahora hay secciones que no son legibles en pc, pero son mas o menos legibles
+                        en dispositivos moviles o dimensiones de pantalla similar a dispositivos moviles.
+                    </Texto>
+
+                    <Texto>
+                        Secciones como las que contienen tablas que les falta un formateo y
+                        estilo, secciones que les hace falta estilos incompletos en pantallas de pc, secciones con informacion poco clara o desordenada o no olganizada correctamente y secciones con informacion incompleta.
+                    </Texto>
+
+                    <Texto>
+                        Todas las anteriores secciones :v, y mucho mas estaran en 
+                        construccion y mejoramiento continuo, NOS VEMOSS!!!
+                    </Texto>
+
+                    <Texto>....</Texto>
+                </div>
+
+                <div className="flex justify-center lg:w-96 lg:h-96">
+                    <Animacion />
+                </div>
+            </div>
+        </Estructura>
     );
 };
 

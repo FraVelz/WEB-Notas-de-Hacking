@@ -2,8 +2,8 @@ import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../compo
 import Titulo from "./../../componentes/titulo.jsx";
 import Linea from "./../../componentes/linea.jsx";
 import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
 import Enlace from "./../../componentes/enlace.jsx";
+import Texto from "./../../componentes/texto.jsx";
 import Nota from "./../../componentes/nota.jsx";
 
 function Temario({ className="" }) {
@@ -25,27 +25,26 @@ function NameAbcd() {
 
 				<Titulo title="h2" className="2xl:hidden">Temario</Titulo>
 
-				<Lista>[Ciberseguridad](#ciberseguridad)</Lista>
-
-				<Texto>  - [Temario](#temario)</Texto>
-				<Texto>  - [0. Seguridad de la información Vs Seguridad informática Vs Ciberseguridad](#0-seguridad-de-la-información-vs-seguridad-informática-vs-ciberseguridad)</Texto>
-				<Texto>  - [1. ¿Qué es?](#1-qué-es)</Texto>
-				<Texto>  - [2. Objetivos](#2-objetivos)</Texto>
-				<Texto>  - [3. Terminologías](#3-terminologías)</Texto>
-				<Texto>    - [Exploit](#exploit)</Texto>
-				<Texto>    - [Payload](#payload)</Texto>
-				<Texto>    - [0-day (Zero-Day)](#0-day-zero-day)</Texto>
-				<Texto>    - [Malware y tipos de Malware](#malware-y-tipos-de-malware)</Texto>
-				<Texto>    - [Vulnerabilidad](#vulnerabilidad)</Texto>
-				<Texto>    - [Amenaza](#amenaza)</Texto>
-				<Texto>    - [Riesgo](#riesgo)</Texto>
-				<Texto>  - [3. Amenazas comunes](#3-amenazas-comunes)</Texto>
-				<Texto>  - [4. Vectores de ataque](#4-vectores-de-ataque)</Texto>
-				<Texto>  - [5. Buenas prácticas de seguridad](#5-buenas-prácticas-de-seguridad)</Texto>
-				<Texto>  - [6. Áreas de ciberseguridad](#6-áreas-de-ciberseguridad)</Texto>
-				<Texto>  - [7. Tipos de hackers (por su actuar)](#7-tipos-de-hackers-por-su-actuar)</Texto>
-				<Texto>  - [8. Tipos de hackers (por su rol)](#8-tipos-de-hackers-por-su-rol)</Texto>
-				<Texto>  - [9. Herramientas básicas en ciberseguridad](#9-herramientas-básicas-en-ciberseguridad)</Texto>
+				<ul>[Ciberseguridad](#ciberseguridad)</ul>
+				<ul>  [Temario](#temario)</ul>
+				<ul>  [0. Seguridad de la información Vs Seguridad informática Vs Ciberseguridad](#0-seguridad-de-la-información-vs-seguridad-informática-vs-ciberseguridad)</ul>
+				<ul>  [1. ¿Qué es?](#1-qué-es)</ul>
+				<ul>  [2. Objetivos](#2-objetivos)</ul>
+				<ul>  [3. Terminologías](#3-terminologías)</ul>
+				<ul>    [Exploit](#exploit)</ul>
+				<ul>    [Payload](#payload)</ul>
+				<ul>    [0-day (Zero-Day)](#0-day-zero-day)</ul>
+				<ul>    [Malware y tipos de Malware](#malware-y-tipos-de-malware)</ul>
+				<ul>    [Vulnerabilidad](#vulnerabilidad)</ul>
+				<ul>    [Amenaza](#amenaza)</ul>
+				<ul>    [Riesgo](#riesgo)</ul>
+				<ul>  [3. Amenazas comunes](#3-amenazas-comunes)</ul>
+				<ul>  [4. Vectores de ataque](#4-vectores-de-ataque)</ul>
+				<ul>  [5. Buenas prácticas de seguridad](#5-buenas-prácticas-de-seguridad)</ul>
+				<ul>  [6. Áreas de ciberseguridad](#6-áreas-de-ciberseguridad)</ul>
+				<ul>  [7. Tipos de hackers (por su actuar)](#7-tipos-de-hackers-por-su-actuar)</ul>
+				<ul>  [8. Tipos de hackers (por su rol)](#8-tipos-de-hackers-por-su-rol)</ul>
+				<ul>  [9. Herramientas básicas en ciberseguridad](#9-herramientas-básicas-en-ciberseguridad)</ul>
 				<Enlace href="./../readme.md#0-conceptos-básicos">Regresar a la guía principal</Enlace>
 
 				<Linea />
@@ -64,12 +63,9 @@ function NameAbcd() {
 
 				<Titulo title="h2">2. Objetivos</Titulo>
 
-				<Lista><b>Confidencialidad:</b> Solo las personas autorizadas acceden a la información.</Lista>
-
-				<Lista><b>Integridad:</b> La información no puede ser alterada sin permiso.</Lista>
-
-				<Lista><b>Disponibilidad:</b> Los sistemas y datos deben estar accesibles cuando se necesiten.</Lista>
-
+				<ul><b>Confidencialidad:</b> Solo las personas autorizadas acceden a la información.</ul>
+				<ul><b>Integridad:</b> La información no puede ser alterada sin permiso.</ul>
+				<ul><b>Disponibilidad:</b> Los sistemas y datos deben estar accesibles cuando se necesiten.</ul>
 				<Linea />
 
 				<Titulo title="h2">3. Terminologías</Titulo>
@@ -82,19 +78,13 @@ function NameAbcd() {
 
 				<Texto>(en español, <i>carga útil</i>) es <b>lo que el exploit ejecuta una vez que logra entrar</b>.</Texto>
 				<Texto>Piensa así:</Texto>
-				<Lista>El <i>exploit</i> es la <b>llave que abre la puerta</b>.</Lista>
-
-				<Lista>El <i>payload</i> es <b>lo que metes una vez abierta</b>.</Lista>
-
+				<ul>El <i>exploit</i> es la <b>llave que abre la puerta</b>.</ul>
+				<ul>El <i>payload</i> es <b>lo que metes una vez abierta</b>.</ul>
 				<Texto>Algunos tipos de payloads:</Texto>
-				<Lista><b>Reverse shell:</b> le da al atacante control remoto sobre la máquina.</Lista>
-
-				<Lista><b>Meterpreter / comandos personalizados:</b> carga herramientas para moverse por el sistema.</Lista>
-
-				<Lista><b>Downloader:</b> descarga malware adicional o instala puertas traseras (<i>backdoors</i>).</Lista>
-
-				<Lista><b>Privilege escalation payloads:</b> aumentan permisos dentro del sistema.</Lista>
-
+				<ul><b>Reverse shell:</b> le da al atacante control remoto sobre la máquina.</ul>
+				<ul><b>Meterpreter / comandos personalizados:</b> carga herramientas para moverse por el sistema.</ul>
+				<ul><b>Downloader:</b> descarga malware adicional o instala puertas traseras (<i>backdoors</i>).</ul>
+				<ul><b>Privilege escalation payloads:</b> aumentan permisos dentro del sistema.</ul>
 				<Texto>En herramientas como <b>Metasploit</b>, esto se ve muy claro: eliges un exploit y luego le asocias un payload.</Texto>
 				<Titulo title="h3">0-day (Zero-Day)</Titulo>
 
@@ -106,20 +96,13 @@ function NameAbcd() {
 
 				<Texto>(Malicious Software) Cualquier tipo de código malicioso que busca aprovecharse de una vulnerabilidad y casuar daño.</Texto>
 				<Texto>Tipos:</Texto>
-				<Lista>Troyanos</Lista>
-
-				<Lista>Virus</Lista>
-
-				<Lista>Gusanos</Lista>
-
-				<Lista>Rogue</Lista>
-
-				<Lista>Adware</Lista>
-
-				<Lista>Spyware</Lista>
-
-				<Lista>Ransomware</Lista>
-
+				<ul>Troyanos</ul>
+				<ul>Virus</ul>
+				<ul>Gusanos</ul>
+				<ul>Rogue</ul>
+				<ul>Adware</ul>
+				<ul>Spyware</ul>
+				<ul>Ransomware</ul>
 				<Titulo title="h3">Vulnerabilidad</Titulo>
 
 				<Texto>Fallo de configuración, de diseño o de implementación que pone en riesgo la seguridad del entorno o sistema.</Texto>
@@ -133,97 +116,65 @@ function NameAbcd() {
 
 				<Titulo title="h2">3. Amenazas comunes</Titulo>
 
-				<Lista><b>Malware:</b> Software malicioso (virus, troyanos, gusanos, ransomware, spyware).</Lista>
-
-				<Lista><b>Phishing:</b> Engaños (emails o mensajes falsos) para robar credenciales.</Lista>
-
-				<Lista><b>Ingeniería Social:</b> Manipular personas para obtener información.</Lista>
-
-				<Lista><b>Ataques DDoS:</b> sobrecargar un servidor para dejarlo fuera de servicio.</Lista>
-
-				<Lista><b>Exploits:</b> Aprovechar vulnerabilidades en software y sistemas.</Lista>
-
+				<ul><b>Malware:</b> Software malicioso (virus, troyanos, gusanos, ransomware, spyware).</ul>
+				<ul><b>Phishing:</b> Engaños (emails o mensajes falsos) para robar credenciales.</ul>
+				<ul><b>Ingeniería Social:</b> Manipular personas para obtener información.</ul>
+				<ul><b>Ataques DDoS:</b> sobrecargar un servidor para dejarlo fuera de servicio.</ul>
+				<ul><b>Exploits:</b> Aprovechar vulnerabilidades en software y sistemas.</ul>
 				<Linea />
 
 				<Titulo title="h2">4. Vectores de ataque</Titulo>
 
 				<Texto>Son los caminos que usan los atacantes:</Texto>
-				<Lista>Correos electrónicos.</Lista>
-
-				<Lista>Redes wifi inseguras.</Lista>
-
-				<Lista>Descargas de archivos.</Lista>
-
-				<Lista>Aplicaciones maliciosas.</Lista>
-
-				<Lista>Dispositivos externos (USB).</Lista>
-
+				<ul>Correos electrónicos.</ul>
+				<ul>Redes wifi inseguras.</ul>
+				<ul>Descargas de archivos.</ul>
+				<ul>Aplicaciones maliciosas.</ul>
+				<ul>Dispositivos externos (USB).</ul>
 				<Linea />
 
 				<Titulo title="h2">5. Buenas prácticas de seguridad</Titulo>
 
-				<Lista>Usar contraseñas seguras (y diferentes en cada cuenta).</Lista>
-
-				<Lista>Activar la autenticación en dos pasos (2FA).</Lista>
-
-				<Lista>Mantener software y sistemas actualizados.</Lista>
-
-				<Lista>Hacer copias de seguridad (backups).</Lista>
-
-				<Lista>Usar VPN en redes públicas.</Lista>
-
-				<Lista>No haga clic en enlaces sospechosos.</Lista>
-
+				<ul>Usar contraseñas seguras (y diferentes en cada cuenta).</ul>
+				<ul>Activar la autenticación en dos pasos (2FA).</ul>
+				<ul>Mantener software y sistemas actualizados.</ul>
+				<ul>Hacer copias de seguridad (backups).</ul>
+				<ul>Usar VPN en redes públicas.</ul>
+				<ul>No haga clic en enlaces sospechosos.</ul>
 				<Linea />
 
 				<Titulo title="h2">6. Áreas de ciberseguridad</Titulo>
 
-				<Lista><b>Seguridad de Redes:</b> Proteger tráfico de datos.</Lista>
-
-				<Lista><b>Seguridad de la Información:</b> Proteger datos en depósito y en tránsito.</Lista>
-
-				<Lista><b>Seguridad en la Nube:</b> Protección en servicios iCloud.</Lista>
-
-				<Lista><b>Criptografía:</b> Usar algoritmos para proteger información. (ej: cifrado AES, RSA).</Lista>
-
-				<Lista><b>Ciberinteligencia:</b> Detección y análisis de amenazas.</Lista>
-
-				<Lista><b>Hacking Ético:</b> Buscar vulnerabilidades para fortalecer sistemas.</Lista>
-
+				<ul><b>Seguridad de Redes:</b> Proteger tráfico de datos.</ul>
+				<ul><b>Seguridad de la Información:</b> Proteger datos en depósito y en tránsito.</ul>
+				<ul><b>Seguridad en la Nube:</b> Protección en servicios iCloud.</ul>
+				<ul><b>Criptografía:</b> Usar algoritmos para proteger información. (ej: cifrado AES, RSA).</ul>
+				<ul><b>Ciberinteligencia:</b> Detección y análisis de amenazas.</ul>
+				<ul><b>Hacking Ético:</b> Buscar vulnerabilidades para fortalecer sistemas.</ul>
 				<Linea />
 
 				<Titulo title="h2">7. Tipos de hackers (por su actuar)</Titulo>
 
-				<Lista><b>White hat:</b> Éticos, ayudan a mejorar la seguridad.</Lista>
-
-				<Lista><b>Black hat:</b> Atacantes maliciosos.</Lista>
-
-				<Lista><b>Grey hat:</b> A veces actúan éticamente, otras veces no.</Lista>
-
+				<ul><b>White hat:</b> Éticos, ayudan a mejorar la seguridad.</ul>
+				<ul><b>Black hat:</b> Atacantes maliciosos.</ul>
+				<ul><b>Grey hat:</b> A veces actúan éticamente, otras veces no.</ul>
 				<Texto>Normalmente a los "hackers de sombrero, negro o gris" se les da el nombre de ciberdelincuentes.</Texto>
 				<Linea />
 
 				<Titulo title="h2">8. Tipos de hackers (por su rol)</Titulo>
 
-				<Lista><b>Red team:</b> Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u organización.</Lista>
-
-				<Lista><b>Blue team:</b> Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa si los de <b>red team</b> encuentran alguna falla.</Lista>
-
-				<Lista><b>Purple team:</b> híbrido (colaboración), es una mezcla de ambos mundos de red team, y blue team.</Lista>
-
+				<ul><b>Red team:</b> Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u organización.</ul>
+				<ul><b>Blue team:</b> Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa si los de <b>red team</b> encuentran alguna falla.</ul>
+				<ul><b>Purple team:</b> híbrido (colaboración), es una mezcla de ambos mundos de red team, y blue team.</ul>
 				<Texto>Existen más tipos de hackers por su rol, pero son muy desconocidos normalmente en el mundo laboral, y comunidades onlines.</Texto>
 				<Linea />
 
 				<Titulo title="h2">9. Herramientas básicas en ciberseguridad</Titulo>
 
-				<Lista><b>Wireshark:</b> Análisis de tráfico de red.</Lista>
-
-				<Lista><b>Nmap:</b> Escaneo de puertos y redes.</Lista>
-
-				<Lista><b>Metasploit:</b> Pruebas de penetración.</Lista>
-
-				<Lista><b>Kali Linux:</b> Sistema operativo con herramientas de hacking ético, se puede utilizar otros no importa, pero kali ya viene con las herramientas incluidas.</Lista>
-
+				<ul><b>Wireshark:</b> Análisis de tráfico de red.</ul>
+				<ul><b>Nmap:</b> Escaneo de puertos y redes.</ul>
+				<ul><b>Metasploit:</b> Pruebas de penetración.</ul>
+				<ul><b>Kali Linux:</b> Sistema operativo con herramientas de hacking ético, se puede utilizar otros no importa, pero kali ya viene con las herramientas incluidas.</ul>
 				<Linea />
 
 				<Texto>Para conocer muchos más conceptos y fortalecer los aprendidos, también esta este video de YouTube:</Texto>

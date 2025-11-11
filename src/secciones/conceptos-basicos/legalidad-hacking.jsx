@@ -6,6 +6,8 @@ import Linea from "./../../componentes/linea";
 import Texto from "./../../componentes/texto";
 import Enlace from "./../../componentes/enlace";
 
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/tabla";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -39,13 +41,13 @@ function Legalidad_Hacking({ }) {
       <Estructura>
         <Titulo title="h1" className="text-center">Legalidad en el Hacking</Titulo>
 
+        <TemarioCompleto temario={Temario} />
+
         <Texto>Entender los <strong>aspectos legales y éticos del hacking</strong>
           es <strong>fundamental</strong> antes de practicar pentesting o
           cualquier tipo de actividad relacionada con ciberseguridad.</Texto>
 
         <Linea />
-
-        <TemarioCompleto temario={Temario} />
 
         <Titulo title="h2" id="1-qué-es-el-hacking-ético">1. ¿Qué es el hacking ético?</Titulo>
 
@@ -80,48 +82,45 @@ function Legalidad_Hacking({ }) {
         <Texto>El <strong>Código Penal Colombiano (Ley 1273 de 2009)</strong>
           protege la “información y los datos” en el ciberespacio. Algunos delitos
           contemplados son:</Texto>
-        <table>
-          <thead>
-            <tr>
-              <th>Delito</th>
-              <th>Artículo</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Delito", "Artículo", "Descripción"]} />
+
           <tbody>
-            <tr>
-              <td><strong>Acceso abusivo a un sistema informático</strong></td>
-              <td>Art. 269A</td>
-              <td>Entrar sin permiso a un sistema o red.</td>
-            </tr>
-            <tr>
-              <td><strong>Obstaculización ilegítima de sistema informático o
-                red</strong></td>
-              <td>Art. 269B</td>
-              <td>Bloquear o afectar el funcionamiento de un sistema.</td>
-            </tr>
-            <tr>
-              <td><strong>Interceptación de datos informáticos</strong></td>
-              <td>Art. 269C</td>
-              <td>Escuchar o capturar comunicaciones o datos privados.</td>
-            </tr>
-            <tr>
-              <td><strong>Daño informático</strong></td>
-              <td>Art. 269D</td>
-              <td>Borrar, alterar o deteriorar información.</td>
-            </tr>
-            <tr>
-              <td><strong>Uso de software malicioso (malware)</strong></td>
-              <td>Art. 269E</td>
-              <td>Crear, distribuir o usar programas para atacar.</td>
-            </tr>
-            <tr>
-              <td><strong>Violación de datos personales</strong></td>
-              <td>Art. 269F</td>
-              <td>Acceder o divulgar información privada.</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica><strong>Acceso abusivo a un sistema informático</strong></TablaUnica>
+              <TablaUnica>Art. 269A</TablaUnica>
+              <TablaUnica>Entrar sin permiso a un sistema o red.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Obstaculización ilegítima de sistema informático o
+                red</strong></TablaUnica>
+              <TablaUnica>Art. 269B</TablaUnica>
+              <TablaUnica>Bloquear o afectar el funcionamiento de un sistema.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Interceptación de datos informáticos</strong></TablaUnica>
+              <TablaUnica>Art. 269C</TablaUnica>
+              <TablaUnica>Escuchar o capturar comunicaciones o datos privados.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Daño informático</strong></TablaUnica>
+              <TablaUnica>Art. 269D</TablaUnica>
+              <TablaUnica>Borrar, alterar o deteriorar información.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Uso de software malicioso (malware)</strong></TablaUnica>
+              <TablaUnica>Art. 269E</TablaUnica>
+              <TablaUnica>Crear, distribuir o usar programas para atacar.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Violación de datos personales</strong></TablaUnica>
+              <TablaUnica>Art. 269F</TablaUnica>
+              <TablaUnica>Acceder o divulgar información privada.</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
+
         <Texto><strong>Sanciones:</strong> Pueden incluir <strong>penas de
           prisión</strong> y <strong>multas económicas</strong> dependiendo de la
           gravedad del caso.</Texto>
@@ -130,7 +129,9 @@ function Legalidad_Hacking({ }) {
         <Texto>Un hacker ético debe seguir un conjunto de <strong>principios morales
           y profesionales</strong>, llamados <strong>“código ético del
             hacker”</strong> o <strong>“ética del pentester”</strong>.</Texto>
+
         <Titulo title="h3" id="principios-éticos-básicos">Principios éticos básicos</Titulo>
+
         <ol type="1">
           <li><strong>Actuar siempre con autorización.</strong> Nunca realizar
             pruebas o ataques sin permiso explícito del propietario del
@@ -145,120 +146,109 @@ function Legalidad_Hacking({ }) {
                 contrato.</li>      </ol>
         <Linea />
         <Titulo title="h2" id="4-ejemplos-prácticos">4. Ejemplos prácticos</Titulo>
-        <table>
-          <thead>
-            <tr>
-              <th>Situación</th>
-              <th>Legalidad</th>
-              <th>Ética</th>
-              <th>Comentario</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Situación", "Legalidad", "Ética", "Resumen"]} />
+
           <tbody>
-            <tr>
-              <td>Escanear tu propia red doméstica</td>
-              <td>✅ Legal</td>
-              <td>✅ Ético</td>
-              <td>Aprendizaje personal o seguridad propia.</td>
-            </tr>
-            <tr>
-              <td>Hacer pentesting en una empresa con permiso firmado</td>
-              <td>✅ Legal</td>
-              <td>✅ Ético</td>
-              <td>Práctica profesional aprobada.</td>
-            </tr>
-            <tr>
-              <td>Escanear puertos de una empresa sin permiso</td>
-              <td>❌ Ilegal</td>
-              <td>❌ No ético</td>
-              <td>Se considera acceso no autorizado.</td>
-            </tr>
-            <tr>
-              <td>Encontrar una falla y venderla en la dark web</td>
-              <td>❌ Ilegal</td>
-              <td>❌ No ético</td>
-              <td>Se convierte en cibercrimen.</td>
-            </tr>
-            <tr>
-              <td>Reportar una vulnerabilidad responsablemente</td>
-              <td>✅ Legal</td>
-              <td>✅ Ético</td>
-              <td>Ejemplo de conducta profesional.</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica>Escanear tu propia red doméstica</TablaUnica>
+              <TablaUnica>✅ Legal</TablaUnica>
+              <TablaUnica>✅ Ético</TablaUnica>
+              <TablaUnica>Aprendizaje personal o seguridad propia.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Hacer pentesting en una empresa con permiso firmado</TablaUnica>
+              <TablaUnica>✅ Legal</TablaUnica>
+              <TablaUnica>✅ Ético</TablaUnica>
+              <TablaUnica>Práctica profesional aprobada.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Escanear puertos de una empresa sin permiso</TablaUnica>
+              <TablaUnica>❌ Ilegal</TablaUnica>
+              <TablaUnica>❌ No ético</TablaUnica>
+              <TablaUnica>Se considera acceso no autorizado.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Encontrar una falla y venderla en la dark web</TablaUnica>
+              <TablaUnica>❌ Ilegal</TablaUnica>
+              <TablaUnica>❌ No ético</TablaUnica>
+              <TablaUnica>Se convierte en cibercrimen.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Reportar una vulnerabilidad responsablemente</TablaUnica>
+              <TablaUnica>✅ Legal</TablaUnica>
+              <TablaUnica>✅ Ético</TablaUnica>
+              <TablaUnica>Ejemplo de conducta profesional.</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
         <Linea />
         <Titulo title="h2" id="5-tipos-de-hackers-según-la-ética">5. Tipos de hackers según la
           ética</Titulo>
         <Texto>Bueno esto lo vimos en el otro archivo en el de conceptos básicos,
           pero no esta de más, repasarlo.</Texto>
-        <table>
-          <thead>
-            <tr>
-              <th>Tipo de hacker</th>
-              <th>Descripción</th>
-              <th>Ejemplo</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Tipo de hacker", "Descripción", "Ejemplo"]} />
+
           <tbody>
-            <tr>
-              <td>🏳️ <strong>White Hat (Sombrero Blanco)</strong></td>
-              <td>Usa sus conocimientos para proteger sistemas.</td>
-              <td>Pentester o investigador de seguridad.</td>
-            </tr>
-            <tr>
-              <td>⚫ <strong>Black Hat (Sombrero Negro)</strong></td>
-              <td>Usa sus habilidades para atacar o robar.</td>
-              <td>Ciberdelincuente, estafador digital.</td>
-            </tr>
-            <tr>
-              <td>⚪⚫ <strong>Gray Hat (Sombrero Gris)</strong></td>
-              <td>Descubre vulnerabilidades sin permiso, pero no con mala
-                intención.</td>
-              <td>Encuentra una falla y la reporta sin dañar, aunque sin
-                autorización.</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica>🏳️ <strong>White Hat (Sombrero Blanco)</strong></TablaUnica>
+              <TablaUnica>Usa sus conocimientos para proteger sistemas.</TablaUnica>
+              <TablaUnica>Pentester o investigador de seguridad.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>⚫ <strong>Black Hat (Sombrero Negro)</strong></TablaUnica>
+              <TablaUnica>Usa sus habilidades para atacar o robar.</TablaUnica>
+              <TablaUnica>Ciberdelincuente, estafador digital.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>⚪⚫ <strong>Gray Hat (Sombrero Gris)</strong></TablaUnica>
+              <TablaUnica>Descubre vulnerabilidades sin permiso, pero no con mala
+                intención.</TablaUnica>
+              <TablaUnica>Encuentra una falla y la reporta sin dañar, aunque sin
+                autorización.</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
+
         <Linea />
+
         <Titulo title="h2" id="6-en-resumen">6. En resumen</Titulo>
-        <table>
-          <thead>
-            <tr>
-              <th>Tema</th>
-              <th>Legal</th>
-              <th>Ético</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Tema", "Legal", "Ético"]} />
+
           <tbody>
-            <tr>
-              <td>Hacer pentesting con autorización</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>Acceder a sistemas ajenos</td>
-              <td>❌</td>
-              <td>❌</td>
-            </tr>
-            <tr>
-              <td>Aprender hacking en entornos controlados (laboratorios, VMs,
-                TryHackMe, HackTheBox)</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
-            <tr>
-              <td>Publicar datos o contraseñas de otros</td>
-              <td>❌</td>
-              <td>❌</td>
-            </tr>
-            <tr>
-              <td>Reportar fallas de forma responsable</td>
-              <td>✅</td>
-              <td>✅</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica>Hacer pentesting con autorización</TablaUnica>
+              <TablaUnica>✅</TablaUnica>
+              <TablaUnica>✅</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Acceder a sistemas ajenos</TablaUnica>
+              <TablaUnica>❌</TablaUnica>
+              <TablaUnica>❌</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Aprender hacking en entornos controlados (laboratorios, VMs,
+                TryHackMe, HackTheBox)</TablaUnica>
+              <TablaUnica>✅</TablaUnica>
+              <TablaUnica>✅</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Publicar datos o contraseñas de otros</TablaUnica>
+              <TablaUnica>❌</TablaUnica>
+              <TablaUnica>❌</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Reportar fallas de forma responsable</TablaUnica>
+              <TablaUnica>✅</TablaUnica>
+              <TablaUnica>✅</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
       </Estructura>
 
       <TemarioAsideCompleto temario={Temario} />

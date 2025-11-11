@@ -5,6 +5,7 @@ function Estructura({ children }) {
     <div className="
         bg-gray-900
         rounded-2xl
+        h-fit
         min-w-2/4
         hyphens-auto hyphens: auto;
         wrap-break-word

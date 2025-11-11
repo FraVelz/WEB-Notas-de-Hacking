@@ -1,6 +1,6 @@
 import Readme from "./readme.jsx";
 
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, HashRouter } from "react-router-dom";
 import { lazy, useState } from "react";
 
 import Enlace_R from "./componentes/enlaces_dinamicos.jsx";
@@ -102,13 +102,14 @@ function App() {
 
       <main className="
       flex flex-col lg:flex-row
+      flex-1
+      h-fit
       gap-4 lg:gap-6
       p-4
       ">
-        <BrowserRouter basename="/WEB-Notas-de-Hacking">
+        <HashRouter>
           <aside id="secciones" className="
           h-fit
-          lg:h-screen
           lg:max-h-4/5
           lg:sticky lg:top-5
           lg:w-4/5 lg:min-w-72 lg:max-w-fit
@@ -377,7 +378,7 @@ function App() {
           </aside>
 
           <Rutas_Configuracion />
-       </BrowserRouter>
+       </HashRouter>
       </main>
 
       <footer className="

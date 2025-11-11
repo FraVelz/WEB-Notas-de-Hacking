@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://fravelz.github.io/WEB-Notas-de-Hacking",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,6 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.17.7",
+    "@lottiefiles/dotlottie-vue": "^0.10.7",
     "@tailwindcss/cli": "^4.1.16",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

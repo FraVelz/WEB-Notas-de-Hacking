@@ -147,27 +147,27 @@ def ModificarTexto(lineas):
         # Si termina una tabla
         if en_tabla and not linea.startswith('|'):
             contenido_tabla = "\n".join(tabla_actual)
-            resultado += insertar(f'<Tabla>\n{contenido_tabla}\n</Tabla>\n')
+            resultado += insertar(f'<Tabla>\n{contenido_tabla}\n</Tabla>')
             tabla_actual = []
             en_tabla = False
 
         # === LISTAS ===
-        if linea.startswith('* '):
+        if linea.strip().startswith('* '):
             if not importado['Lista']:
                 importaciones += '\nimport Lista from "./../../componentes/lista.jsx";'
                 importado['Lista'] = 1
             item = linea.replace('* ', '')
             item = reemplazar_estilos_md(escapar_llaves(item))
-            resultado += insertar(f'<Lista>{item}</Lista>\n')
+            resultado += insertar(f'<ul>{item}</ul>')
             continue
 
-        if linea.startswith('- '):
+        if linea.strip().startswith('- '):
             if not importado['Lista']:
                 importaciones += '\nimport Lista from "./../../componentes/lista.jsx";'
                 importado['Lista'] = 1
             item = linea.replace('- ', '')
             item = reemplazar_estilos_md(escapar_llaves(item))
-            resultado += insertar(f'<Lista>{item}</Lista>\n')
+            resultado += insertar(f'<ul>{item}</ul>')
             continue
 
 

@@ -75,7 +75,7 @@ function Virtualizacion() {
 
             <Texto>Todo lo deberías tener más o menos así en VirtualBox:</Texto>
 
-            <img src="./../public/image-virtualbox.png" alt="Imagen de VirtualBox" className="
+            <img src="./image-virtualbox.png" alt="Imagen de VirtualBox" className="
             py-4
             " />
         </Estructura>
