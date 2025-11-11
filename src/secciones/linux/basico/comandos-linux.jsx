@@ -1,9 +1,11 @@
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura.jsx";
+
 import Titulo from "./../../../componentes/titulo.jsx";
 import Lista from "./../../../componentes/lista.jsx";
 import Texto from "./../../../componentes/texto.jsx";
 import Linea from "./../../../componentes/linea.jsx";
 import Enlace from "./../../../componentes/enlace.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/tabla.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -55,18 +57,8 @@ function Comandos_Linux({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Texto>Listo quieres volver a la guía principal.</Texto>
-        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</Enlace ></Texto>
-        <blockquote>
-          <Texto><strong>Autor:</strong> Fravelz<br />
-            <strong>Colaborador:</strong> <span className="citation" data-cites="studentethical">@studentethical</span> (Student
-            Ethical)
-          </Texto>
-        </blockquote>
-
-        <Linea />
         <Titulo title="h2" id="historia">1. Historia</Titulo>
+
         <Lista>
           <li><strong>1970</strong>: Ken Thompson y Dennis Ritchie (trabajaban
             en AT&amp;T). ellos crean <strong>Unix</strong>.</li>
@@ -84,112 +76,111 @@ function Comandos_Linux({ }) {
             de líneas de código</strong> y más de <strong>600
               distribuciones</strong>.</li>
         </Lista>
+
         <Texto>Ejemplos de distros populares: Ubuntu, Debian, Fedora, OpenSUSE,
           Manjaro, Gentoo, Red Hat, Linux Mint, Elementary y Parrot OS (enfocada
           en ciberseguridad).</Texto>
+
         <Linea />
+
         <Titulo title="h2" id="filosofía-de-linux">2. Filosofía de Linux</Titulo>
+
         <Texto>Linux se basa en la <strong>simplicidad, modularidad y
           apertura</strong>. Su enfoque es crear herramientas pequeñas que
           realizan una tarea bien definida y que pueden combinarse.</Texto>
         <Texto><strong>Principios clave:</strong></Texto>
-        <table>
-          <colgroup>
-            <col style={{ width: '28%' }} />
-            <col style={{ width: '71%' }} />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Principio</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Principio", "Descripción"]} />
+
           <tbody>
-            <tr>
-              <td><em>Everything is a file</em></td>
-              <td>Todos los elementos del sistema (dispositivos, configuraciones,
-                procesos) se gestionan como archivos.</td>
-            </tr>
-            <tr>
-              <td><em>Small, single-purpose programs</em></td>
-              <td>Programas pequeños que hacen una sola cosa y la hacen bien.</td>
-            </tr>
-            <tr>
-              <td><em>Ability to chain programs together</em></td>
-              <td>Se pueden combinar programas para tareas complejas (ejemplo:
-                pipes).</td>
-            </tr>
-            <tr>
-              <td><em>Avoid captive user interfaces</em></td>
-              <td>Se privilegia la terminal/shell en lugar de depender de interfaces
-                gráficas.</td>
-            </tr>
-            <tr>
-              <td><em>Configuration data stored in text files</em></td>
-              <td>Los archivos de configuración son simples archivos de texto
-                (ejemplo: <code>/etc/passwd</code>).</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica><em>Everything is a file</em></TablaUnica>
+              <TablaUnica>Todos los elementos del sistema (dispositivos, configuraciones,
+                procesos) se gestionan como archivos.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><em>Small, single-purpose programs</em></TablaUnica>
+              <TablaUnica>Programas pequeños que hacen una sola cosa y la hacen bien.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><em>Ability to chain programs together</em></TablaUnica>
+              <TablaUnica>Se pueden combinar programas para tareas complejas (ejemplo:
+                pipes).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><em>Avoid captive user interfaces</em></TablaUnica>
+              <TablaUnica>Se privilegia la terminal/shell en lugar de depender de interfaces
+                gráficas.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><em>Configuration data stored in text files</em></TablaUnica>
+              <TablaUnica>Los archivos de configuración son simples archivos de texto
+                (ejemplo: <code>/etc/passwd</code>).</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
+
         <Linea />
+
         <Titulo title="h2" id="componentes-de-linux">3. Componentes de Linux</Titulo>
-        <table>
-          <colgroup>
-            <col style={{ width: '25%' }} />
-            <col style={{ width: '74%' }} />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Componente</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Componente", "Descripción"]} />
+
           <tbody>
-            <tr>
-              <td><strong>Bootloader</strong></td>
-              <td>Inicia el arranque del SO (ejemplo: GRUB).</td>
-            </tr>
-            <tr>
-              <td><strong>Kernel (núcleo)</strong></td>
-              <td>Gestiona CPU, memoria y hardware.</td>
-            </tr>
-            <tr>
-              <td><strong>Daemons</strong></td>
-              <td>Servicios en segundo plano (impresión, programación de tareas,
-                etc.).</td>
-            </tr>
-            <tr>
-              <td><strong>Shell</strong></td>
-              <td>Interfaz de línea de comandos (ejemplo: Bash, Zsh, Fish).</td>
-            </tr>
-            <tr>
-              <td><strong>Graphics server</strong></td>
-              <td>Maneja gráficos y ventanas (ejemplo: servidor X).</td>
-            </tr>
-            <tr>
-              <td><strong>Window Manager / GUI</strong></td>
-              <td>Entornos gráficos como GNOME, KDE, MATE.</td>
-            </tr>
-            <tr>
-              <td><strong>Utilities</strong></td>
-              <td>Programas y herramientas para el usuario.</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica><strong>Bootloader</strong></TablaUnica>
+              <TablaUnica>Inicia el arranque del SO (ejemplo: GRUB).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Kernel (núcleo)</strong></TablaUnica>
+              <TablaUnica>Gestiona CPU, memoria y hardware.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Daemons</strong></TablaUnica>
+              <TablaUnica>Servicios en segundo plano (impresión, programación de tareas,
+                etc.).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Shell</strong></TablaUnica>
+              <TablaUnica>Interfaz de línea de comandos (ejemplo: Bash, Zsh, Fish).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Graphics server</strong></TablaUnica>
+              <TablaUnica>Maneja gráficos y ventanas (ejemplo: servidor X).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Window Manager / GUI</strong></TablaUnica>
+              <TablaUnica>Entornos gráficos como GNOME, KDE, MATE.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Utilities</strong></TablaUnica>
+              <TablaUnica>Programas y herramientas para el usuario.</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
+
         <Linea />
+
         <Titulo title="h2" id="arquitectura-de-linux">4. Arquitectura de Linux</Titulo>
+
         <Texto>Linux se organiza en capas:</Texto>
-        <ol type="1">
+
+        <Lista>
           <li><strong>Hardware:</strong> CPU, RAM, disco, periféricos.</li>
           <li><strong>Kernel:</strong> Controla y virtualiza el
             hardware.</li>
           <li><strong>Shell:</strong> Intérprete de comandos (CLI).</li>
           <li><strong>System Utilities:</strong> Herramientas y aplicaciones
             que interactúan con el sistema.</li>
-        </ol>
+        </Lista>
+
         <Linea />
+
         <Titulo title="h2" id="jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema
           de Archivos (FHS)</Titulo>
+
         <Texto>Linux organiza los archivos en una <strong>estructura en forma de
           árbol</strong>, con <code>/</code> como raíz.</Texto>
         <table>
@@ -538,11 +529,14 @@ function Comandos_Linux({ }) {
           <pre
             className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> <span className="at">-i</span></span></code></pre>
         </div>
+
         <Texto>o</Texto>
+        
         <div className="sourceCode" id="cb9">
           <pre
             className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> su</span></code></pre>
         </div>
+
         <Lista>
           <li>Obtienes un <strong>shell de root</strong>, es decir, todos los
             comandos que escribas después se ejecutan con permisos de
@@ -550,17 +544,18 @@ function Comandos_Linux({ }) {
           <li>Esto es más riesgoso porque cualquier error puede afectar
             gravemente el sistema.</li>
         </Lista>
+
         <Titulo title="h3" id="seguridad-y-tiempo-de-sesión">4. <strong>Seguridad y tiempo de
           sesión</strong></Titulo>
+
         <Lista>
           <li><code>sudo</code> recuerda tu contraseña durante unos minutos
             (por defecto 5) para que no tengas que escribirla cada vez.</li>
           <li>Si tu usuario no está en sudoers, no podrás usarlo.</li>
         </Lista>
+
         <Linea />
-        <Texto>Listo quieres volver a la guía principal.</Texto>
-        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</Enlace ></Texto>
+        
         <blockquote>
           <Texto><strong>Autor:</strong> Fravelz<br />
             <strong>Colaborador:</strong> <span className="citation" data-cites="studentethical">@studentethical</span> (Student
@@ -569,10 +564,7 @@ function Comandos_Linux({ }) {
         </blockquote>
       </Estructura>
 
-      <aside className="hidden 2xl:block sticky top-5 self-start w-4/5 min-w-72 max-w-fit">
-        <Titulo title="h2" className="select-none">Temario</Titulo>
-        <Temario className="bg-gray-900 rounded-md p-4 mb-4 list-decimal" />
-      </aside>
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

@@ -47,9 +47,6 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</Enlace ></Texto>
-        <Linea />
         <Titulo title="h2" id="cabecera-del-script">Cabecera del Script</Titulo>
         <Texto>La <strong>cabecera</strong> o <em>shebang</em> indica qué intérprete
           ejecutará el script.</Texto>
