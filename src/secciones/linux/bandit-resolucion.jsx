@@ -1,9 +1,12 @@
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Enlace from "./../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -67,35 +70,20 @@ function nameabcd({ }) {
         <Texto>Página Web: https://overthewire.org/wargames/bandit/</Texto>
         <Texto>SSH Información</Texto>
         <Texto>Host:</Texto>
-        <div className="sourceCode" id="cb1">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">bandit.labs.overthewire.org</span></span></code></pre>
-        </div>
-        <div className="sourceCode" id="cb2">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">Port:</span> 2220</span></code></pre>
-        </div>
+        <CodeBlock code={`bandit.labs.overthewire.org`} language="bash" />
+        <CodeBlock code={`Port: 2220`} language="bash" />
         <Texto>Comando para cambiar de terminal y habilitar el comando clear:</Texto>
-        <div className="sourceCode" id="cb3">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">export</span> <span className="va">TERM</span><span className="op">=</span>xterm</span></code></pre>
-        </div>
+        <CodeBlock code={`export TERM=xterm`} language="bash" />
         <details>
           <summary>
             Comando ssh para conectarse a bandit
           </summary>
           <Texto>Para conectarse a bandit0 se puede hacer con el siguiente
             comando:</Texto>
-          <div className="sourceCode" id="cb4">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">ssh</span> bandit0@bandit.labs.overthewire.org <span className="at">-p</span> 2220</span></code></pre>
-          </div>
+          <CodeBlock code={`ssh bandit0@bandit.labs.overthewire.org -p 2220`} language="bash" />
           <Texto>Después de conectarte al servicio, bandit te pedirá una contraseña,
             en este caso la contraseña es</Texto>
-          <div className="sourceCode" id="cb5">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">bandit0</span></span></code></pre>
-          </div>
+          <CodeBlock code={`bandit0`} language="bash" />
           En vez de colocar bandit0 colocas bandit1 para el siguiente nivel, en
           cada nivel debes obtener una contraseña, que se dará las instrucciones
           en la página web (<Enlace href="https://overthewire.org/wargames/bandit/">Ir
@@ -107,40 +95,32 @@ function nameabcd({ }) {
           saltar algún nivel, para luego estudiarlo.</Texto>
         <Texto>Aunque, en la página oficial, ya hay material, para aprender, y
           pistas de como resolver los ejercicios (todo en ingles).</Texto>
-        <table>
-          <colgroup>
-            <col style="width: 28%" />
-            <col style="width: 71%" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Rango</th>
-              <th>Dificultad y Temática</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>bandit0 a bandit6</td>
-              <td>fácil, conceptos básicos y filtrado de archivos</td>
-            </tr>
-            <tr>
-              <td>bandit7 a bandit9</td>
-              <td>fácil, filtrado de texto en archivos</td>
-            </tr>
-            <tr>
-              <td>bandit10 a bandit13</td>
-              <td>fácil-intermedio, decodificación</td>
-            </tr>
-            <tr>
-              <td>bandit14 a …</td>
-              <td>fácil-intermedio, redes</td>
-            </tr>
-            <tr>
-              <td>…</td>
-              <td>…</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["Rango", "Dificultad y Temática"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>bandit0 a bandit6</TablaUnica>
+      <TablaUnica>fácil, conceptos básicos y filtrado de archivos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>bandit7 a bandit9</TablaUnica>
+      <TablaUnica>fácil, filtrado de texto en archivos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>bandit10 a bandit13</TablaUnica>
+      <TablaUnica>fácil-intermedio, decodificación</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>bandit14 a …</TablaUnica>
+      <TablaUnica>fácil-intermedio, redes</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>…</TablaUnica>
+      <TablaUnica>…</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <Texto>Página web:</Texto>
         <figure>
           <img src="./../images/bandit-overthewire.png" alt="Imagen de página web de bandit" />
@@ -159,10 +139,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb6">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> readme.md</span></code></pre>
-          </div>
+          <CodeBlock code={`cat readme.md`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit1">Bandit1</Titulo>
@@ -171,12 +148,9 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb7">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> ./-</span></code></pre>
-          </div>
+          <CodeBlock code={`cat ./-`} language="bash" />
           <Texto>Se indica que en el directorio actual existe un archivo que se llama
-            <code>-</code> y lo muestra.
+            - y lo muestra.
           </Texto>
         </details>
         <Linea />
@@ -187,12 +161,9 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb8">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> <span className="st">&quot;./--spaces in this filename--&quot;</span></span></code></pre>
-          </div>
-          <Texto>Indica que con <code>"</code>, que en el repositorio actual existe un
-            archivo con espacios de línea y <code>-</code> guiones, y lo
+          <CodeBlock code={`cat "./--spaces in this filename--"`} language="bash" />
+          <Texto>Indica que con ", que en el repositorio actual existe un
+            archivo con espacios de línea y - guiones, y lo
             muestra.</Texto>
         </details>
         <Linea />
@@ -203,11 +174,8 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb9">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> <span className="st">&quot;inhere/...Hiding-From-You&quot;</span></span></code></pre>
-          </div>
-          <Texto>Indica con <code>"</code> el texto como tal aparece, es la ruta y
+          <CodeBlock code={`cat "inhere/...Hiding-From-You"`} language="bash" />
+          <Texto>Indica con " el texto como tal aparece, es la ruta y
             nombre del archivo, en el repositorio, y lo muestra.</Texto>
         </details>
         <Linea />
@@ -218,13 +186,10 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb10">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb10-1"><Enlace href="#cb10-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">find</span> ./inhere/ <span className="at">-type</span> f <span className="kw">|</span> <span className="fu">xargs</span> file</span></code></pre>
-          </div>
-          <Texto>Busca en la carpeta <code>inhere</code>, busca los archivos
-            <code>-type f</code>, y muestra el tipo de datos que contenga
-            <code>xargs file</code> cada archivo.
+          <CodeBlock code={`find ./inhere/ -type f | xargs file`} language="bash" />
+          <Texto>Busca en la carpeta inhere, busca los archivos
+            -type f, y muestra el tipo de datos que contenga
+            xargs file cada archivo.
           </Texto>
           <Texto>El archivo que sea ascii text, es el que contendrá la clave para el
             siguiente nivel.</Texto>
@@ -241,13 +206,10 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb11">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb11-1"><Enlace href="#cb11-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">find</span> ./inhere/ <span className="at">-type</span> f <span className="at">-size</span> 1033c</span></code></pre>
-          </div>
-          <Texto>Busca en <code>inhere</code> un archivo <code>-type f</code> que
-            contenga un tamaño de 1033 bytes <code>-size 1033c</code>.</Texto>
-          <Texto>Dará la ruta del archivo que cumpla con los requisitos de tamaño si
+          <CodeBlock code={`find ./inhere/ -type f -size 1033c`} language="bash" />
+          <Texto>Busca en inhere un archivo -type f que
+            contenga un tamaño de 1033 bytes -size 1033c.</Texto>
+          <Texto>Dará la ruta del archivo que cumpla con los requisitos de tamaño sí
             hay solo 1, ese tendrá la clave.</Texto>
         </details>
         <Linea />
@@ -263,16 +225,13 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb12">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb12-1"><Enlace href="#cb12-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">find</span> / <span className="at">-user</span> bandit7 <span className="at">-group</span> bandit6 <span className="at">-size</span> 33c <span className="dv">2</span><span className="op">&gt;</span>/dev/null</span></code></pre>
-          </div>
-          <Texto>Busca desde <code>/</code> archivo o carpeta que contenga, como
-            permisos de usuario bandit7 <code>-user bandit7</code>, como grupo
-            <code>-group bandit6</code>, y que contenga un tamaño de 33 bytes
-            <code>-size 33c</code>, habrán archivos que cumplan los requerimientos,
+          <CodeBlock code={`find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`} language="bash" />
+          <Texto>Busca desde / archivo o carpeta que contenga, como
+            permisos de usuario bandit7 -user bandit7, como grupo
+            -group bandit6, y que contenga un tamaño de 33 bytes
+            -size 33c, habrán archivos que cumplan los requerimientos,
             pero no serán accesibles y darán error, entonces esos archivos no lo
-            mostramos en la terminal con <code>2&gt;/dev/null</code>.
+            mostramos en la terminal con 2&gt;/dev/null.
           </Texto>
           <Texto>Mostrará la dirección del archivo que tendrá la clave.</Texto>
         </details>
@@ -280,10 +239,7 @@ function nameabcd({ }) {
           <summary>
             Clave para el siguiente
           </summary>
-          <div className="sourceCode" id="cb13">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb13-1"><Enlace href="#cb13-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj</span></span></code></pre>
-          </div>
+          <CodeBlock code={`morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit7">Bandit7</Titulo>
@@ -293,13 +249,10 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb14">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb14-1"><Enlace href="#cb14-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="fu">grep</span> millionth</span></code></pre>
-          </div>
-          <Texto>Muestra el archivo <code>cat data.txt</code> y filtra todo el texto
-            para solo mostrar la línea que contenga <code>millionth</code>,
-            <code>grep millionth</code>.
+          <CodeBlock code={`cat data.txt | grep millionth`} language="bash" />
+          <Texto>Muestra el archivo cat data.txt y filtra todo el texto
+            para solo mostrar la línea que contenga millionth,
+            grep millionth.
           </Texto>
         </details>
         <Linea />
@@ -311,17 +264,14 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb15">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb15-1"><Enlace href="#cb15-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="fu">sort</span> <span className="kw">|</span> <span className="fu">uniq</span> <span className="at">-u</span></span></code></pre>
-          </div>
+          <CodeBlock code={`cat data.txt | sort | uniq -u`} language="bash" />
           <Texto>Organizar las líneas del archivo, para que hagan líneas consecutivas
-            repetidas <code>sort</code>, luego con <code>uniq -u</code>, elimina
+            repetidas sort, luego con uniq -u, elimina
             todas las líneas consecutivas repetidas y solo muestra las que no tiene
             repeticiones.</Texto>
         </details>
         <Linea />
-        <Titulo title="h2" id="bandit9">Bandit9</Titulo>
+  <Titulo title="h2" id="bandit9">Bandit9</Titulo>
         <Texto><strong>Pista:</strong> La contraseña para el siguiente nivel se
           almacena en el archivo data.txt en una de las pocas cadenas legibles por
           humanos, precedida por varios caracteres ‘=’.</Texto>
@@ -329,16 +279,11 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb16">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb16-1"><Enlace href="#cb16-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="fu">grep</span> <span className="at">-a</span> === <span className="kw">|</span> <span className="fu">awk</span> <span className="st">&#39;{"NF{print $NF}"}&#39;</span></span></code></pre>
-          </div>
-          <Texto>Filtra por líneas que contengan <code>===</code>, pero como el
-            archivo contiene caracteres binarios indicamos al filtrado que queremos
-            procesar todo como texto <code>grep -a</code>, y luego obtenemos, solo
-            lo que nos interesa quitando las cosas extras, colocando solo la última
-            palabra de cada línea con una conciencia
-            <code>{"awk 'NF{print $NF}'"}</code>
+          <CodeBlock code={`cat data.txt | grep -a === | awk 'NF{print $NF}'`} language="bash" />
+          <Texto>Filtra por líneas que contengan ===. Como el archivo contiene
+            caracteres binarios, indicamos al filtrado que procese todo como texto
+            con <strong>grep -a</strong>, y luego extraemos únicamente la última
+            palabra de cada línea usando <code>{`awk 'NF{print $NF}'`}</code>.
           </Texto>
         </details>
         <Linea />
@@ -351,21 +296,15 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb17">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb17-1"><Enlace href="#cb17-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">base64</span> <span className="at">-d</span> data.txt</span></code></pre>
-          </div>
-          <Texto>Utilizamos el comando <code>base64 -d</code> para decodificar el
-            archivo <code>data.txt</code>.</Texto>
+          <CodeBlock code={`base64 -d data.txt`} language="bash" />
+          <Texto>Utilizamos el comando base64 -d para decodificar el
+            archivo data.txt.</Texto>
         </details>
         <details>
           <summary>
             Clave para el siguiente
           </summary>
-          <div className="sourceCode" id="cb18">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb18-1"><Enlace href="#cb18-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr</span></span></code></pre>
-          </div>
+          <CodeBlock code={`dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit11-contiene-clave-para-el-siguiente">Bandit11 (contiene
@@ -377,11 +316,8 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb19">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb19-1"><Enlace href="#cb19-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="fu">tr</span> <span className="st">&#39;[A-Za-z]&#39;</span> <span className="st">&#39;[N-ZA-Mn-za-m]&#39;</span></span></code></pre>
-          </div>
-          <Texto>La información de <code>data.txt</code> con tr remplaza los
+          <CodeBlock code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
+          <Texto>La información de data.txt con tr remplaza los
             caracteres de mayúscula y minúscula, a los mismos caracteres pero
             rotados 13 veces, como un cifrado cesar, para descifrar en este
             caso.</Texto>
@@ -390,10 +326,7 @@ function nameabcd({ }) {
           <summary>
             Clave para el siguiente
           </summary>
-          <div className="sourceCode" id="cb20">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb20-1"><Enlace href="#cb20-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4</span></span></code></pre>
-          </div>
+          <CodeBlock code={`7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit12">Bandit12</Titulo>
@@ -404,22 +337,16 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb21">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb21-1"><Enlace href="#cb21-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">cat</span> data.txt <span className="kw">|</span> <span className="ex">xxd</span> <span className="at">-r</span> <span className="op">&gt;</span> data_new</span></code></pre>
-          </div>
-          <Texto>El contenido del archivo <code>data.txt</code> lo redirige al comando
-            <code>xxd -r</code> que convierte datos binarios, a un texto decimal
+          <CodeBlock code={`cat data.txt | xxd -r > data_new`} language="bash" />
+          <Texto>El contenido del archivo data.txt lo redirige al comando
+            xxd -r que convierte datos binarios, a un texto decimal
             legible, y el resultado lo redirige a un nuevo archivo llamado
-            <code>data_new</code>.
+            data_new.
           </Texto>
           <Texto>Luego te salen puros archivos comprimidos, para descomprimirlos en
             general sin utilizar la herramienta específica para descomprimir un
             archivo de cada tipo puedes utilizar:</Texto>
-          <div className="sourceCode" id="cb22">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb22-1"><Enlace href="#cb22-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">7z</span> x data_new</span></code></pre>
-          </div>
+          <CodeBlock code={`7z x data_new`} language="bash" />
           <Texto>Te sale un nuevo archivo comprimido, y vuelves a repetir el anterior
             comando para descomprimir, así sucesivamente hasta que te salga el
             archivo de texto con la clave.</Texto>
@@ -437,14 +364,11 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb23">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb23-1"><Enlace href="#cb23-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">chmod</span> 600 bandit14.key</span>
-                <span id="cb23-2"><Enlace href="#cb23-2" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">ssh</span> <span className="at">-i</span> bandit14.key bandit14@bandit.labs.overthewire.org <span className="at">-p</span> 2220</span></code></pre>
-          </div>
+          <CodeBlock code={`chmod 600 bandit14.key
+ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bash" />
           <Texto>Se dan los permisos correspondientes, donde la clave solo pueda ser
             leída, y manipulada por el usuario, y luego se utiliza el comando ssh
-            todo igual, pero agregando la línea <code>-i nombre_clave</code>.</Texto>
+            todo igual, pero agregando la línea -i nombre_clave.</Texto>
           <Texto>Ya estarías en el nivel bandit14.</Texto>
         </details>
         <Linea />
@@ -458,13 +382,9 @@ function nameabcd({ }) {
           </summary>
           <Texto>Primero buscas la clave, del usuario actual donde se mencionó
             anteriormente, y la copias:</Texto>
-          <div className="sourceCode" id="cb24">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb24-1"><Enlace href="#cb24-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">nc</span> localhost 30000</span></code></pre>
-          </div>
-          <Texto>Conectando al protocolo <code>locahost</code> y puerto
-            <code>30000</code>, luego pegas la clave y te pasara la clave, del
-            siguiente nivel.
+          <CodeBlock code={`nc localhost 30000`} language="bash" />
+          <Texto>Conectando a <strong>localhost</strong> y puerto 30000; luego
+            pega la clave y te pasará la contraseña del siguiente nivel.
           </Texto>
         </details>
         <Linea />
@@ -477,10 +397,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb25">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb25-1"><Enlace href="#cb25-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">ncat</span> <span className="at">--ssl</span> 127.0.0.1 30001</span></code></pre>
-          </div>
+          <CodeBlock code={`ncat --ssl 127.0.0.1 30001`} language="bash" />
           <Texto>Y pegas la clave del usuario actual, te dará la clave para el
             siguiente.</Texto>
           <Texto>…</Texto>
@@ -489,40 +406,28 @@ function nameabcd({ }) {
           <summary>
             Clave para el siguiente
           </summary>
-          <div className="sourceCode" id="cb26">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb26-1"><Enlace href="#cb26-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx</span></span></code></pre>
-          </div>
+          <CodeBlock code={`kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit16">Bandit16</Titulo>
         <Texto><strong>Pista:</strong> Las credenciales para el siguiente nivel se
-          pueden recuperar mediante la presentación de la Contraseña del nivel
-          actual a un puerto en localhost en el rango 31000 a 32000. Primero
-          averigüe cuál de estos puertos tiene un servidor Escuchándolos. A
-          continuación, averigüe cuáles de ellos hablan SSL/TLS y cuáles No lo
-          hagas. Solo hay 1 servidor que dará las siguientes credenciales, el
-          Otros simplemente te enviarán lo que sea que le envíes.</Texto>
+          pueden recuperar presentando la contraseña del nivel actual a un
+          puerto en localhost en el rango 31000–32000. Primero averigua cuál de
+          estos puertos tiene un servidor escuchando. A continuación, determina
+          cuáles de ellos hablan SSL/TLS y cuáles no. Solo hay un servidor que
+          devolverá la contraseña del siguiente nivel; los demás simplemente
+          reenviarán lo que les envíes.</Texto>
         <details>
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb27">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb27-1"><Enlace href="#cb27-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">nmap</span> <span className="at">--open</span> <span className="at">-T5</span> <span className="at">-v</span> <span className="at">-n</span> <span className="at">-p31000-32000</span> 127.0.0.1</span></code></pre>
-          </div>
-          <Texto>Por el protocolo tcp, buscar puertos abiertos
-            (<code>nmap --open</code>), controlar el temporizador y rendimiento del
-            escaneo <code>-T5</code> existen (<code>-T0</code> lento, pero revisa
-            bien, hasta, <code>-T5</code> rápido para el escaneo) <code>-v</code>
-            modo verbose que sirve para que vaya mostrando el resultado antes de
-            mostrar todo por consola, <code>-n</code> para no aplicar resolución
-            dns, <code>-p31000-32000</code> el rango, y el <code>127.0.0.1</code> es
-            el puerto.</Texto>
-          <div className="sourceCode" id="cb28">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb28-1"><Enlace href="#cb28-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">ncat</span> <span className="at">--ssl</span> 127.0.0.1 <span className="op">&lt;</span>puerto<span className="op">&gt;</span></span></code></pre>
-          </div>
+          <CodeBlock code={`nmap --open -T5 -v -n -p31000-32000 127.0.0.1`} language="bash" />
+          <Texto>Escanea por puertos TCP abiertos (<code>--open</code>), ajusta
+            la velocidad con <code>-T5</code> y usa <code>-v</code> para ver salida
+            en tiempo real. <code>-n</code> evita resolución DNS; <code>-p</code>
+            indica el rango de puertos. <code>127.0.0.1</code> es la dirección
+            (host) local donde realizar el escaneo.</Texto>
+          <CodeBlock code={`ncat --ssl 127.0.0.1`} language="bash" />
           <Texto>Para conectarse con cifrado a dicho puertos, pegando la clave, y
             alguno de ellos dará la clave para el siguiente nivel.</Texto>
         </details>
@@ -539,10 +444,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb29">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb29-1"><Enlace href="#cb29-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">diff</span> passwords.old passwords.new</span></code></pre>
-          </div>
+          <CodeBlock code={`diff passwords.old passwords.new`} language="bash" />
           <Texto>Muestra las diferencias entre los dos archivos.</Texto>
         </details>
         <Linea />
@@ -555,10 +457,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb30">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb30-1"><Enlace href="#cb30-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">entrar</span> al con ssh pero agregando al final bash para ejecutar la terminal bash</span></code></pre>
-          </div>
+          <CodeBlock code={`entrar al con ssh pero agregando al final bash para ejecutar la terminal bash`} language="bash" />
           <Texto>Esto es como una especie de inyección de código antes que se ejecute
             el .bashrc</Texto>
         </details>
@@ -574,30 +473,23 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <div className="sourceCode" id="cb31">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb31-1"><Enlace href="#cb31-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">entrar</span> al con ssh pero agregando al final bash para ejecutar la terminal bash</span></code></pre>
-          </div>
+          <CodeBlock code={`entrar al con ssh pero agregando al final bash para ejecutar la terminal bash`} language="bash" />
           <Texto>Esto es como una especie de inyección de código antes que se ejecute
-            el .bashrc, y leer el <code>readme</code>.</Texto>
+            el .bashrc, y leer el readme.</Texto>
         </details>
         <details>
           <summary>
             Clave para el siguiente
           </summary>
-          <div className="sourceCode" id="cb32">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb32-1"><Enlace href="#cb32-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO</span></span></code></pre>
-          </div>
+          <CodeBlock code={`0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit20">Bandit20</Titulo>
         <Texto><strong>Pista:</strong> En el directorio personal hay un binario
-          setuid que realiza lo siguiente: se conecta a localhost en el puerto que
-          especifiques como argumento de línea de comandos. Luego, lee una línea
-          de texto de la conexión y la compara con la contraseña del nivel
-          anterior (bandit20). Si la contraseña es correcta, transmite la
-          contraseña del siguiente nivel (bandit21).</Texto>
+          setuid que se conecta a localhost en el puerto que especifiques como
+          argumento. Luego lee una línea de texto de la conexión y la compara con
+          la contraseña del nivel anterior (bandit20). Si la contraseña es
+          correcta, transmite la contraseña del siguiente nivel (bandit21).</Texto>
         <Texto><strong>NOTA:</strong> Intenta conectarte a tu propio demonio de red
           para comprobar si funciona como esperas.</Texto>
         <details>
@@ -605,17 +497,11 @@ function nameabcd({ }) {
             Posible solucion
           </summary>
           <Texto>Abres 2 terminales.</Texto>
-          <div className="sourceCode" id="cb33">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb33-1"><Enlace href="#cb33-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">./archivo</span></span></code></pre>
-          </div>
+          <CodeBlock code={`./archivo`} language="bash" />
           <Texto>En una ejecutas el archivo y en la otra ejecutas el comando para
             abrir un puerto con el comando nc y envías la clave anterior en este
             comando.</Texto>
-          <div className="sourceCode" id="cb34">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb34-1"><Enlace href="#cb34-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">nc</span> <span className="at">-nlvp</span> 1234</span></code></pre>
-          </div>
+          <CodeBlock code={`nc -nlvp 1234`} language="bash" />
           <Texto>Te debería devolver el archivo donde ejecutaste esta clave.</Texto>
         </details>
         <Linea />
@@ -641,7 +527,7 @@ function nameabcd({ }) {
           comando que se está ejecutando.</Texto>
         <Texto><strong>NOTA:</strong> Analizar scripts de shell escritos por otros
           es una habilidad muy útil. El script de este nivel está diseñado para
-          ser fácil de leer. Si tiene problemas para comprender su funcionamiento,
+          ser fácil de leer. Sí tiene problemas para comprender su funcionamiento,
           intente ejecutarlo para ver la información de depuración que
           muestra.</Texto>
         <details>
@@ -658,7 +544,7 @@ function nameabcd({ }) {
           intervalos regulares mediante cron, el programador de tareas basado en
           tiempo. Consulta el archivo /etc/cron.d/ para ver la configuración y el
           comando que se está ejecutando.</Texto>
-        <Texto><strong>NOTA:</strong> Este nivel requiere que crees tu primer script
+        <Texto><strong>NOTA:</strong> Este nivel requiere que crees tú primer script
           de shell. ¡Es un gran paso y deberías sentirte orgulloso/a cuando lo
           logres!</Texto>
         <Texto><strong>NOTA 2:</strong> Ten en cuenta que tu script de shell se
@@ -668,22 +554,19 @@ function nameabcd({ }) {
             Posible solucion
           </summary>
           <Texto>Analizar el script del usuario, y crear un archivo en una ruta
-            temporal <code>mktemp -p</code>, y copiarla donde el script ejecuta los
+            temporal mktemp -p, y copiarla donde el script ejecuta los
             archivos.</Texto>
         </details>
         <details>
           <summary>
             Clave para el siguiente
           </summary>
-          <div className="sourceCode" id="cb35">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb35-1"><Enlace href="#cb35-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8</span></span></code></pre>
-          </div>
+          <CodeBlock code={`gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit24">Bandit24</Titulo>
         <Texto><strong>Pista:</strong> Un demonio está escuchando en el puerto 30002
-          y te proporcionará la contraseña de bandit25 si le das la contraseña de
+          y te proporcionará la contraseña de bandit25 sí le das la contraseña de
           bandit24 y un código PIN secreto de 4 dígitos. No hay forma de obtener
           el código PIN excepto probando las 10 000 combinaciones posibles, un
           método conocido como fuerza bruta.</Texto>
@@ -694,8 +577,8 @@ function nameabcd({ }) {
           </summary>
           <Texto>crear un bucle para hacer todas las combinaciones posibles y
             redirigirlas a un archivo, el archivo (en directorio temporar) lo
-            rediriges, a <code>nc</code> utilizando la informacion dada, y filtrar
-            para eliminar las opciones que tengan <code>Wrong</code>.</Texto>
+            rediriges, a nc utilizando la informacion dada, y filtrar
+            para eliminar las opciones que tengan Wrong.</Texto>
         </details>
         <Texto><Enlace href="https://www.site24x7.com/es/tools/crontab/cron-generator.html">Web
           para practicar expresiones tareas Cron</Enlace ></Texto>
@@ -705,7 +588,7 @@ function nameabcd({ }) {
           debería ser bastante sencillo… El shell del usuario bandit26 no es
           /bin/bash, sino otro. Averigua cuál es, cómo funciona y cómo salir de
           él.</Texto>
-        <Texto>NOTA: Si eres usuario de Windows y normalmente usas PowerShell para
+        <Texto>NOTA: Sí eres usuario de Windows y normalmente usas PowerShell para
           conectarte por SSH a bandit, ten en cuenta que PowerShell suele causar
           problemas con la solución propuesta para este nivel. Deberías usar la
           línea de comandos.</Texto>
@@ -714,7 +597,7 @@ function nameabcd({ }) {
             Posible solucion
           </summary>
           <Texto>Entrar en el modo visual del archivo more, que se ejecuta y con
-            <code>:set shell=/bin/bash</code> y <code>:shell</code> obtener la
+            :set shell=/bin/bash y :shell obtener la
             shell.
           </Texto>
         </details>
@@ -727,29 +610,26 @@ function nameabcd({ }) {
             Posible solucion
           </summary>
           <Texto>el nivel es similar a uno en el pasado, pero ahora busca utilizar
-            <code>cat</code> directamente.
+            cat directamente.
           </Texto>
         </details>
         <Linea />
         <Titulo title="h2" id="bandit27-contiene-clave-propia">Bandit27 (contiene clave
           propia)</Titulo>
         <Texto><strong>Pista:</strong> Existe un repositorio Git en
-          <code>ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo</code>
+          ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo
           a través del puerto 2220. La contraseña del usuario bandit27-git es la
           misma que la del usuario bandit27.
         </Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <div className="sourceCode" id="cb36">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb36-1"><Enlace href="#cb36-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo</span></span></code></pre>
-        </div>
+        <CodeBlock code={`ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
           </summary>
           <Texto>Puede que la conexión no funcione desde la terminal de bandit en el
-            formato <code>protocolo://usuario@url:puerto/ruta</code>, tienes que
+            formato protocolo://usuario@url:puerto/ruta, tienes que
             clonar en un terminal personal, y luego colocar la clave del nivel
             actual, luego en el archivo readme estará la clave del siguiente
             nivel.</Texto>
@@ -758,10 +638,7 @@ function nameabcd({ }) {
           <summary>
             Clave Propia
           </summary>
-          <div className="sourceCode" id="cb37">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb37-1"><Enlace href="#cb37-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="ex">upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB</span></span></code></pre>
-          </div>
+          <CodeBlock code={`upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit28">Bandit28</Titulo>
@@ -771,21 +648,15 @@ function nameabcd({ }) {
           misma que la del usuario bandit28.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <div className="sourceCode" id="cb38">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb38-1"><Enlace href="#cb38-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo</span></span></code></pre>
-        </div>
+        <CodeBlock code={`ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
           </summary>
           <Texto>Clonar repo, colocar la clave, y revisar commits pasados.</Texto>
           <Texto>Comandos importantes:</Texto>
-          <div className="sourceCode" id="cb39">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb39-1"><Enlace href="#cb39-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">git</span> log</span>
-                <span id="cb39-2"><Enlace href="#cb39-2" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">git</span> show <span className="op">&lt;</span>identificador<span className="op">&gt;</span></span></code></pre>
-          </div>
+          <CodeBlock code={`git log
+git show`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit29">Bandit29</Titulo>
@@ -795,10 +666,7 @@ function nameabcd({ }) {
           misma que la del usuario bandit29.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <div className="sourceCode" id="cb40">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb40-1"><Enlace href="#cb40-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo</span></span></code></pre>
-        </div>
+        <CodeBlock code={`ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
@@ -806,11 +674,8 @@ function nameabcd({ }) {
           <Texto>Buscar ramas, y mirar ramas según el enunciado, viendo el archivo
             readme.</Texto>
           <Texto>Comandos importantes:</Texto>
-          <div className="sourceCode" id="cb41">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb41-1"><Enlace href="#cb41-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">git</span> branch</span>
-                <span id="cb41-2"><Enlace href="#cb41-2" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">git</span> switch <span className="op">&lt;</span>rama<span className="op">&gt;</span></span></code></pre>
-          </div>
+          <CodeBlock code={`git branch
+git switch`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit30">Bandit30</Titulo>
@@ -820,33 +685,24 @@ function nameabcd({ }) {
           misma que la del usuario bandit30.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <div className="sourceCode" id="cb42">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb42-1"><Enlace href="#cb42-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo</span></span></code></pre>
-        </div>
+        <CodeBlock code={`ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
           </summary>
           <Texto>Comandos importantes:</Texto>
-          <div className="sourceCode" id="cb43">
-            <pre
-              className="sourceCode bash"><code className="sourceCode bash"><span id="cb43-1"><Enlace href="#cb43-1" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">git</span> tag</span>
-                <span id="cb43-2"><Enlace href="#cb43-2" aria-hidden="true" tabindex="-1"></Enlace >  <span className="fu">git</span> show <span className="op">&lt;</span>tag<span className="op">&gt;</span></span></code></pre>
-          </div>
+          <CodeBlock code={`git tag
+git show`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit31">Bandit31</Titulo>
-        <Texto><strong>Pista:</strong> Hay un repositorio de gits en
+        <Texto><strong>Pista:</strong> Hay un repositorio Git en
           ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo
-          Vía el puerto 2220. La contraseña para el usuario bandit31-gitEs lo
-          mismo que para el usuario bandit31.</Texto>
-        <Texto>Clone el repositorio y busque la contraseña para el siguiente
+          a través del puerto 2220. La contraseña para el usuario
+          bandit31-git es la misma que para el usuario bandit31.</Texto>
+        <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <div className="sourceCode" id="cb44">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb44-1"><Enlace href="#cb44-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo</span></span></code></pre>
-        </div>
+        <CodeBlock code={`ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
@@ -857,16 +713,13 @@ function nameabcd({ }) {
         <Titulo title="h2" id="bandit32">Bandit32</Titulo>
         <Texto><strong>Pista:</strong> Después de todo este rollo de Git, es hora de
           otra escapada. ¡Buena suerte!</Texto>
-        <div className="sourceCode" id="cb45">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb45-1"><Enlace href="#cb45-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo</span></span></code></pre>
-        </div>
+        <CodeBlock code={`ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
           </summary>
           <Texto>Entrar con ssh como normalmente, y conseguir una terminal shell con
-            <code>$0</code> y luego una bash <code>bash</code>.
+            $0 y luego una bash bash.
           </Texto>
           <Texto>Fin de los niveles actualmente.</Texto>
         </details>

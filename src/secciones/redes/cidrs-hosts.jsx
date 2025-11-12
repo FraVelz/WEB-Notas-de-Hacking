@@ -1,9 +1,12 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -45,13 +48,10 @@ function nameabcd({ }) {
           forma compacta.</Texto>
         <Linea />
         <Titulo title="h3" id="ejemplo">Ejemplo</Titulo>
-        <div className="sourceCode" id="cb1">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">192.168.1.0/24</span></span></code></pre>
-        </div>
+        <CodeBlock code={`192.168.1.0/24`} language="bash" />
         <Lista>
-          <li><code>192.168.1.0</code> → Dirección de red</li>
-          <li><code>/24</code> → Indica <strong>cuántos bits</strong> de la
+          <li>192.168.1.0 → Dirección de red</li>
+          <li>/24 → Indica <strong>cuántos bits</strong> de la
             dirección se usan para la <strong>parte de red</strong>.</li>
         </Lista>
         <Texto>💭 En este caso:</Texto>
@@ -62,39 +62,34 @@ function nameabcd({ }) {
         </Lista>
         <Linea />
         <Titulo title="h3" id="cómo-se-interpreta">Cómo se interpreta</Titulo>
-        <Texto>Cada número después de la barra <code>/</code> indica cuántos bits de
+        <Texto>Cada número después de la barra / indica cuántos bits de
           la IP pertenecen a la red:</Texto>
-        <table>
-          <thead>
-            <tr>
-              <th>CIDR</th>
-              <th>Máscara de subred</th>
-              <th># de hosts posibles</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>/8</td>
-              <td>255.0.0.0</td>
-              <td>16,777,214</td>
-            </tr>
-            <tr>
-              <td>/16</td>
-              <td>255.255.0.0</td>
-              <td>65,534</td>
-            </tr>
-            <tr>
-              <td>/24</td>
-              <td>255.255.255.0</td>
-              <td>254</td>
-            </tr>
-            <tr>
-              <td>/30</td>
-              <td>255.255.255.252</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["CIDR", "Máscara de subred", "# de hosts posibles"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>/8</TablaUnica>
+      <TablaUnica>255.0.0.0</TablaUnica>
+      <TablaUnica>16,777,214</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>/16</TablaUnica>
+      <TablaUnica>255.255.0.0</TablaUnica>
+      <TablaUnica>65,534</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>/24</TablaUnica>
+      <TablaUnica>255.255.255.0</TablaUnica>
+      <TablaUnica>254</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>/30</TablaUnica>
+      <TablaUnica>255.255.255.252</TablaUnica>
+      <TablaUnica>2</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <blockquote>
           <Texto>(Se restan 2 hosts: uno para la dirección de red y otro para
             broadcast)</Texto>
@@ -107,35 +102,26 @@ function nameabcd({ }) {
             parte identifica al host</strong>.
         </Texto>
         <Texto>Por ejemplo:</Texto>
-        <table>
-          <thead>
-            <tr>
-              <th>IP</th>
-              <th>Máscara</th>
-              <th>Binario (simplificado)</th>
-              <th>Significado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>192.168.1.10</td>
-              <td>255.255.255.0</td>
-              <td>11111111.11111111.11111111.00000000</td>
-              <td>24 bits para red, 8 para hosts</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["IP", "Máscara", "Binario (simplificado)", "Significado"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>192.168.1.10</TablaUnica>
+      <TablaUnica>255.255.255.0</TablaUnica>
+      <TablaUnica>11111111.11111111.11111111.00000000</TablaUnica>
+      <TablaUnica>24 bits para red, 8 para hosts</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <Linea />
         <Titulo title="h3" id="máscara-de-host">Máscara de host</Titulo>
         <Texto>A veces se habla de “máscara de host”, que simplemente es <strong>el
           complemento</strong> de la máscara de red.</Texto>
-        <Texto>👉 Si la máscara de red es <code>255.255.255.0</code> entonces la
+        <Texto>👉 Sí la máscara de red es 255.255.255.0 entonces la
           <strong>máscara de host</strong> es:
         </Texto>
-        <div className="sourceCode" id="cb2">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">0.0.0.255</span></span></code></pre>
-        </div>
+        <CodeBlock code={`0.0.0.255`} language="bash" />
         <Texto>Porque:</Texto>
         <Lista>
           <li>Los bits 1 (255) indican red</li>
@@ -146,55 +132,46 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h2" id="relación-entre-cidr-y-máscaras">3. Relación entre CIDR y
           máscaras</Titulo>
-        <table>
-          <thead>
-            <tr>
-              <th>CIDR</th>
-              <th>Máscara de red</th>
-              <th>Máscara de host</th>
-              <th># Hosts válidos</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>/8</td>
-              <td>255.0.0.0</td>
-              <td>0.255.255.255</td>
-              <td>16,777,214</td>
-            </tr>
-            <tr>
-              <td>/16</td>
-              <td>255.255.0.0</td>
-              <td>0.0.255.255</td>
-              <td>65,534</td>
-            </tr>
-            <tr>
-              <td>/24</td>
-              <td>255.255.255.0</td>
-              <td>0.0.0.255</td>
-              <td>254</td>
-            </tr>
-            <tr>
-              <td>/30</td>
-              <td>255.255.255.252</td>
-              <td>0.0.0.3</td>
-              <td>2</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["CIDR", "Máscara de red", "Máscara de host", "# Hosts válidos"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>/8</TablaUnica>
+      <TablaUnica>255.0.0.0</TablaUnica>
+      <TablaUnica>0.255.255.255</TablaUnica>
+      <TablaUnica>16,777,214</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>/16</TablaUnica>
+      <TablaUnica>255.255.0.0</TablaUnica>
+      <TablaUnica>0.0.255.255</TablaUnica>
+      <TablaUnica>65,534</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>/24</TablaUnica>
+      <TablaUnica>255.255.255.0</TablaUnica>
+      <TablaUnica>0.0.0.255</TablaUnica>
+      <TablaUnica>254</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>/30</TablaUnica>
+      <TablaUnica>255.255.255.252</TablaUnica>
+      <TablaUnica>0.0.0.3</TablaUnica>
+      <TablaUnica>2</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <Linea />
         <Titulo title="h2" id="ejemplo-práctico">4. Ejemplo práctico</Titulo>
         <Texto>Supón que tienes:</Texto>
-        <div className="sourceCode" id="cb3">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">Red:</span> 10.0.0.0/24</span></code></pre>
-        </div>
+        <CodeBlock code={`Red: 10.0.0.0/24`} language="bash" />
         <Texto>Entonces:</Texto>
         <Lista>
-          <li>Máscara de red: <code>255.255.255.0</code></li>
-          <li>Máscara de host: <code>0.0.0.255</code></li>
-          <li>Rango de hosts: <code>10.0.0.1</code> → <code>10.0.0.254</code></li>
-          <li>Dirección de broadcast: <code>10.0.0.255</code></li>
+          <li>Máscara de red: 255.255.255.0</li>
+          <li>Máscara de host: 0.0.0.255</li>
+          <li>Rango de hosts: 10.0.0.1 → 10.0.0.254</li>
+          <li>Dirección de broadcast: 10.0.0.255</li>
           <li>Total hosts: 254</li>
         </Lista>
       </Estructura>

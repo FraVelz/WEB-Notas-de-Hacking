@@ -1,8 +1,10 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -40,189 +42,160 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="windows-cmd-command-prompt">1. Windows CMD (Command Prompt)</Titulo>
       <Titulo title="h3" id="navegación-por-directorios">Navegación por directorios</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>cd</code> o <code>chdir</code></td>
-            <td>Cambiar de directorio. Ej:
-              <code>cd C:\Usuarios\Francisco</code>
-            </td>
-          </tr>
-          <tr>
-            <td><code>cd ..</code></td>
-            <td>Subir un nivel de carpeta</td>
-          </tr>
-          <tr>
-            <td><code>cd \</code></td>
-            <td>Ir al directorio raíz de la unidad actual</td>
-          </tr>
-          <tr>
-            <td><code>dir</code></td>
-            <td>Listar archivos y carpetas del directorio actual</td>
-          </tr>
-          <tr>
-            <td><code>tree</code></td>
-            <td>Mostrar la estructura de carpetas en forma de árbol</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>cd o chdir</TablaUnica>
+      <TablaUnica>Cambiar de directorio. Ej:
+              cd C:\Usuarios\Francisco</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>cd ..</TablaUnica>
+      <TablaUnica>Subir un nivel de carpeta</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>cd \</TablaUnica>
+      <TablaUnica>Ir al directorio raíz de la unidad actual</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>dir</TablaUnica>
+      <TablaUnica>Listar archivos y carpetas del directorio actual</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>tree</TablaUnica>
+      <TablaUnica>Mostrar la estructura de carpetas en forma de árbol</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Titulo title="h3" id="gestión-de-archivos">Gestión de archivos</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>copy origen destino</code></td>
-            <td>Copiar archivos. Ej: <code>copy archivo.txt D:\Backup\</code></td>
-          </tr>
-          <tr>
-            <td><code>xcopy origen destino /s /e</code></td>
-            <td>Copiar directorios con subcarpetas</td>
-          </tr>
-          <tr>
-            <td><code>move origen destino</code></td>
-            <td>Mover archivos o cambiar nombre</td>
-          </tr>
-          <tr>
-            <td><code>del archivo</code></td>
-            <td>Borrar un archivo</td>
-          </tr>
-          <tr>
-            <td><code>ren archivo nuevo_nombre</code></td>
-            <td>Cambiar nombre de un archivo</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>copy origen destino</TablaUnica>
+      <TablaUnica>Copiar archivos. Ej: copy archivo.txt D:\Backup\</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>xcopy origen destino /s /e</TablaUnica>
+      <TablaUnica>Copiar directorios con subcarpetas</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>move origen destino</TablaUnica>
+      <TablaUnica>Mover archivos o cambiar nombre</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>del archivo</TablaUnica>
+      <TablaUnica>Borrar un archivo</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>ren archivo nuevo_nombre</TablaUnica>
+      <TablaUnica>Cambiar nombre de un archivo</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Titulo title="h3" id="gestión-de-carpetas">Gestión de carpetas</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>mkdir nombre_carpeta</code> o
-              <code>md nombre_carpeta</code>
-            </td>
-            <td>Crear carpeta</td>
-          </tr>
-          <tr>
-            <td><code>rmdir nombre_carpeta</code> o
-              <code>rd nombre_carpeta</code>
-            </td>
-            <td>Eliminar carpeta vacía</td>
-          </tr>
-          <tr>
-            <td><code>rmdir /s nombre_carpeta</code></td>
-            <td>Eliminar carpeta con todo su contenido</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>mkdir nombre_carpeta o
+              md nombre_carpeta</TablaUnica>
+      <TablaUnica>Crear carpeta</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>rmdir nombre_carpeta o
+              rd nombre_carpeta</TablaUnica>
+      <TablaUnica>Eliminar carpeta vacía</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>rmdir /s nombre_carpeta</TablaUnica>
+      <TablaUnica>Eliminar carpeta con todo su contenido</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="powershell-cmdlets">2. PowerShell (cmdlets)</Titulo>
       <Texto>PowerShell tiene cmdlets más potentes y consistentes. Se escriben en
         formato <strong>Verbo-Sustantivo</strong>.</Texto>
       <Titulo title="h3" id="navegación-por-directorios-cmdlets">Navegación por directorios
         (cmdlets)</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Set-Location</code> o <code>cd</code></td>
-            <td>Cambiar de directorio. Ej:
-              <code>Set-Location C:\Usuarios\Francisco</code>
-            </td>
-          </tr>
-          <tr>
-            <td><code>Get-Location</code> o <code>pwd</code></td>
-            <td>Mostrar la ruta actual</td>
-          </tr>
-          <tr>
-            <td><code>Get-ChildItem</code> o <code>ls</code></td>
-            <td>Listar archivos y carpetas</td>
-          </tr>
-          <tr>
-            <td><code>Push-Location</code> o <code>pushd</code></td>
-            <td>Guardar directorio actual y moverse a otro</td>
-          </tr>
-          <tr>
-            <td><code>Pop-Location</code> o <code>popd</code></td>
-            <td>Volver al directorio guardado</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Set-Location o cd</TablaUnica>
+      <TablaUnica>Cambiar de directorio. Ej:
+              Set-Location C:\Usuarios\Francisco</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-Location o pwd</TablaUnica>
+      <TablaUnica>Mostrar la ruta actual</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-ChildItem o ls</TablaUnica>
+      <TablaUnica>Listar archivos y carpetas</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Push-Location o pushd</TablaUnica>
+      <TablaUnica>Guardar directorio actual y moverse a otro</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Pop-Location o popd</TablaUnica>
+      <TablaUnica>Volver al directorio guardado</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Titulo title="h3" id="gestión-de-archivos-cmdlets">Gestión de archivos (cmdlets)</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Copy-Item</code></td>
-            <td>Copiar archivos o carpetas. Ej:
-              <code>Copy-Item archivo.txt D:\Backup\</code>
-            </td>
-          </tr>
-          <tr>
-            <td><code>Move-Item</code></td>
-            <td>Mover archivos o cambiar nombre</td>
-          </tr>
-          <tr>
-            <td><code>Remove-Item</code></td>
-            <td>Eliminar archivos o carpetas (<code>-Recurse</code> para
-              contenido)</td>
-          </tr>
-          <tr>
-            <td><code>Rename-Item</code></td>
-            <td>Cambiar nombre de archivo o carpeta</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Copy-Item</TablaUnica>
+      <TablaUnica>Copiar archivos o carpetas. Ej:
+              Copy-Item archivo.txt D:\Backup\</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Move-Item</TablaUnica>
+      <TablaUnica>Mover archivos o cambiar nombre</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-Item</TablaUnica>
+      <TablaUnica>Eliminar archivos o carpetas (-Recurse para
+              contenido)</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Rename-Item</TablaUnica>
+      <TablaUnica>Cambiar nombre de archivo o carpeta</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Titulo title="h3" id="gestión-de-carpetas-cmdlets">Gestión de carpetas (cmdlets)</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>New-Item -ItemType Directory -Name "Nombre"</code></td>
-            <td>Crear carpeta</td>
-          </tr>
-          <tr>
-            <td><code>Remove-Item -Recurse "Nombre"</code></td>
-            <td>Eliminar carpeta y contenido</td>
-          </tr>
-        </tbody>
-      </table>
-      <Texto><strong>Opciones útiles de <code>Get-ChildItem</code></strong></Texto>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>New-Item -ItemType Directory -Name "Nombre"</TablaUnica>
+      <TablaUnica>Crear carpeta</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-Item -Recurse "Nombre"</TablaUnica>
+      <TablaUnica>Eliminar carpeta y contenido</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
+      <Texto><strong>Opciones útiles de Get-ChildItem</strong></Texto>
       <Lista>
-        <li><code>-Recurse</code> → listar recursivamente subdirectorios</li>
-        <li><code>-File</code> → solo archivos</li>
-        <li><code>-Directory</code> → solo carpetas</li>
-        <li><code>-Filter "*.txt"</code> → filtrar por extensión</li>
+        <li>-Recurse → listar recursivamente subdirectorios</li>
+        <li>-File → solo archivos</li>
+        <li>-Directory → solo carpetas</li>
+        <li>-Filter "*.txt" → filtrar por extensión</li>
       </Lista>
       <Linea />
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía

@@ -1,9 +1,11 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function Temario({ className = "" }) {
 	return (
 		<Lista className={className}>
@@ -21,10 +23,10 @@ function Temario({ className = "" }) {
 			<li><Enlace href="#6">6. Riesgos de la Dark Web</Enlace ></li>
 			<li><Enlace href="#7">7. Usos legítimos del anonimato y la Dark Web</Enlace ></li>
 			<li>
-				<Enlace href="#8">8. Que es Privacidad</Enlace>
+				<Enlace href="#8">8. Qué es Privacidad</Enlace>
 			</li>
 			<li>
-				<Enlace href="#9">9. Que es Anonimato</Enlace>
+				<Enlace href="#9">9. Qué es Anonimato</Enlace>
 			</li>
 			<li>
 				<Enlace href="#10">10. Diferencias clave entre privacidad y anonimato</Enlace>
@@ -38,7 +40,7 @@ function Conceptos_Generales() {
 		<>
 			<Estructura>
 				<Titulo title="h1" className="text-center">
-					Conceptos Generales (privacidad, Anonimato y mucho mas)
+					Conceptos Generales (privacidad, Anonimato y mucho más)
 				</Titulo>
 
 				<TemarioCompleto temario={Temario} />
@@ -51,64 +53,37 @@ function Conceptos_Generales() {
 					El Internet puede dividirse en tres niveles según la
 					<strong>visibilidad y accesibilidad</strong> de la información:
 				</Texto>
-				<table>
-					<thead>
-						<tr>
-							<th>Nivel</th>
-							<th>Nombre</th>
-							<th>Acceso</th>
-							<th>Ejemplos</th>
-							<th>Características</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<strong>1</strong>
-							</td>
-							<td>
-								<strong>Surface Web</strong> (Web superficial)
-							</td>
-							<td>Pública, indexada por Google, Bing, etc.</td>
-							<td>YouTube, Wikipedia, Twitter</td>
-							<td>
-								Cualquiera puede acceder desde un navegador normal. Representa
-								solo entre el <strong>4% y el 10%</strong> de toda la web.
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<strong>2</strong>
-							</td>
-							<td>
-								<strong>Deep Web</strong>
-							</td>
-							<td>Privada, no indexada</td>
-							<td>
-								Bases de datos académicas, correos, intranets, archivos médicos
-							</td>
-							<td>
-								Requiere autenticación o enlaces directos. Es
+				<Tabla>
+  <TablaCabezera headers={["Nivel", "Nombre", "Acceso", "Ejemplos", "Características"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>1</strong></TablaUnica>
+      <TablaUnica><strong>Surface Web</strong> (Web superficial)</TablaUnica>
+      <TablaUnica>Pública, indexada por Google, Bing, etc.</TablaUnica>
+      <TablaUnica>YouTube, Wikipedia, Twitter</TablaUnica>
+      <TablaUnica>Cualquiera puede acceder desde un navegador normal. Representa
+								solo entre el <strong>4% y el 10%</strong> de toda la web.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>2</strong></TablaUnica>
+      <TablaUnica><strong>Deep Web</strong></TablaUnica>
+      <TablaUnica>Privada, no indexada</TablaUnica>
+      <TablaUnica>Bases de datos académicas, correos, intranets, archivos médicos</TablaUnica>
+      <TablaUnica>Requiere autenticación o enlaces directos. Es
 								<strong>legal</strong> y se usa a diario. Ejemplo: Gmail, banca
-								online, plataformas educativas.
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<strong>3</strong>
-							</td>
-							<td>
-								<strong>Dark Web</strong>
-							</td>
-							<td>Oculta, accesible solo con software especial</td>
-							<td>Sitios .onion en TOR</td>
-							<td>
-								Usa redes anónimas cifradas. Contiene tanto foros y proyectos
-								legítimos como actividades ilegales.
-							</td>
-						</tr>
-					</tbody>
-				</table>
+								online, plataformas educativas.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>3</strong></TablaUnica>
+      <TablaUnica><strong>Dark Web</strong></TablaUnica>
+      <TablaUnica>Oculta, accesible solo con software especial</TablaUnica>
+      <TablaUnica>Sitios .onion en TOR</TablaUnica>
+      <TablaUnica>Usa redes anónimas cifradas. Contiene tanto foros y proyectos
+								legítimos como actividades ilegales.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
 
 				<Linea />
 
@@ -125,11 +100,11 @@ function Conceptos_Generales() {
 				<Lista>
 					<li>
 						<strong>Red TOR (The Onion Router):</strong> red que enruta tus
-						datos por varios nodos cifrados, haciendo casi imposible rastrear tu
+						datos por varios nodos cifrados, haciendo casi imposible rastrear tú
 						IP real.
 					</li>
 					<li>
-						<strong>VPN (Red Privada Virtual):</strong> oculta tu IP y cifra tu
+						<strong>VPN (Red Privada Virtual):</strong> oculta tú IP y cifra tú
 						conexión, pero depende del servidor VPN (no es totalmente anónima).
 					</li>
 					<li>
@@ -158,7 +133,7 @@ function Conceptos_Generales() {
 					</li>
 					<li>Desactivar JavaScript en TOR (reduce riesgo de exploits).</li>
 					<li>
-						No descargar archivos desde la Dark Web (podrían revelar tu IP).
+						No descargar archivos desde la Dark Web (podrían revelar tú IP).
 					</li>
 				</Lista>
 
@@ -166,39 +141,32 @@ function Conceptos_Generales() {
 
 				<Titulo title="h2" id="3">3. Deep Web vs Dark Web</Titulo>
 
-				<table>
-					<thead>
-						<tr>
-							<th>Aspecto</th>
-							<th>Deep Web</th>
-							<th>Dark Web</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Acceso</td>
-							<td>Navegadores normales</td>
-							<td>TOR u otras redes anónimas</td>
-						</tr>
-						<tr>
-							<td>Legalidad</td>
-							<td>Legal</td>
-							<td>Puede tener contenido legal o ilegal</td>
-						</tr>
-						<tr>
-							<td>Ejemplo</td>
-							<td>Gmail, Google Drive, bases de datos privadas</td>
-							<td>Sitios .onion, foros, mercados, servicios ocultos</td>
-						</tr>
-						<tr>
-							<td>Propósito</td>
-							<td>Privacidad, acceso restringido</td>
-							<td>
-								Anonimato total, libertad de expresión o actividades ilegales
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<Tabla>
+  <TablaCabezera headers={["Aspecto", "Deep Web", "Dark Web"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Acceso</TablaUnica>
+      <TablaUnica>Navegadores normales</TablaUnica>
+      <TablaUnica>TOR u otras redes anónimas</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Legalidad</TablaUnica>
+      <TablaUnica>Legal</TablaUnica>
+      <TablaUnica>Puede tener contenido legal o ilegal</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Ejemplo</TablaUnica>
+      <TablaUnica>Gmail, Google Drive, bases de datos privadas</TablaUnica>
+      <TablaUnica>Sitios .onion, foros, mercados, servicios ocultos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Propósito</TablaUnica>
+      <TablaUnica>Privacidad, acceso restringido</TablaUnica>
+      <TablaUnica>Anonimato total, libertad de expresión o actividades ilegales</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
 
 				<Linea />
 
@@ -233,59 +201,38 @@ function Conceptos_Generales() {
 
 				<Titulo title="h2" id="5">5. Tecnologías principales</Titulo>
 
-				<table>
-					<thead>
-						<tr>
-							<th>Tecnología</th>
-							<th>Función</th>
-							<th>Detalles</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<strong>TOR (The Onion Router)</strong>
-							</td>
-							<td>Enrutamiento anónimo</td>
-							<td>
-								Cada nodo solo conoce el anterior y el siguiente. Sitios .onion
-								son invisibles desde la web normal.
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<strong>I2P (Invisible Internet Project)</strong>
-							</td>
-							<td>Red anónima alternativa</td>
-							<td>Más rápida que TOR en conexiones internas.</td>
-						</tr>
-						<tr>
-							<td>
-								<strong>Freenet</strong>
-							</td>
-							<td>Almacenamiento y comunicación anónima</td>
-							<td>Basado en compartir fragmentos cifrados de información.</td>
-						</tr>
-						<tr>
-							<td>
-								<strong>Tails OS</strong>
-							</td>
-							<td>Sistema operativo anónimo</td>
-							<td>
-								No guarda datos al apagar. Ideal para investigar o navegar seguro.
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<strong>PGP (Pretty Good Privacy)</strong>
-							</td>
-							<td>Cifrado de mensajes</td>
-							<td>
-								Permite enviar correos imposibles de leer sin la clave privada.
-							</td>
-						</tr>
-					</tbody>
-				</table>
+				<Tabla>
+  <TablaCabezera headers={["Tecnología", "Función", "Detalles"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>TOR (The Onion Router)</strong></TablaUnica>
+      <TablaUnica>Enrutamiento anónimo</TablaUnica>
+      <TablaUnica>Cada nodo solo conoce el anterior y el siguiente. Sitios .onion
+								son invisibles desde la web normal.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>I2P (Invisible Internet Project)</strong></TablaUnica>
+      <TablaUnica>Red anónima alternativa</TablaUnica>
+      <TablaUnica>Más rápida que TOR en conexiones internas.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Freenet</strong></TablaUnica>
+      <TablaUnica>Almacenamiento y comunicación anónima</TablaUnica>
+      <TablaUnica>Basado en compartir fragmentos cifrados de información.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Tails OS</strong></TablaUnica>
+      <TablaUnica>Sistema operativo anónimo</TablaUnica>
+      <TablaUnica>No guarda datos al apagar. Ideal para investigar o navegar seguro.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>PGP (Pretty Good Privacy)</strong></TablaUnica>
+      <TablaUnica>Cifrado de mensajes</TablaUnica>
+      <TablaUnica>Permite enviar correos imposibles de leer sin la clave privada.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
 
 				<Linea />
 
@@ -343,14 +290,14 @@ function Conceptos_Generales() {
 					<li>
 						Ejemplo:
 						<Lista>
-							<li>
-								Cuando configuras tus redes sociales para que solo tus amigos
-								vean tus fotos, estás <strong>protegiendo tu privacidad</strong>.
-							</li>
-							<li>
-								Si das tu nombre y correo a una empresa, pero solo para recibir
-								un servicio, esperas que <strong>no usen esos datos para otra cosa</strong>.
-							</li>
+								<li>
+									Cuando configuras tus redes sociales para que solo tus amigos
+									vean tus fotos, estás <strong>protegiendo tu privacidad</strong>.
+								</li>
+								<li>
+									Si das tu nombre y correo a una empresa, pero solo para recibir
+									un servicio, esperas que <strong>no usen esos datos para otra cosa</strong>.
+								</li>
 						</Lista>
 					</li>
 				</Lista>
@@ -392,49 +339,35 @@ function Conceptos_Generales() {
 
 				<Titulo title="h2" id="10">10. Diferencias clave</Titulo>
 
-				<table>
-					<colgroup>
-						<col style={{ width: '13%' }} />
-						<col style={{ width: '42%' }} />
-						<col style={{ width: '44%' }} />
-					</colgroup>
-					<thead>
-						<tr>
-							<th>Aspecto</th>
-							<th>
-								<strong>Privacidad</strong>
-							</th>
-							<th>
-								<strong>Anonimato</strong>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Qué protege</td>
-							<td>Tus <strong>datos personales</strong></td>
-							<td>Tu <strong>identidad</strong></td>
-						</tr>
-						<tr>
-							<td>Control</td>
-							<td>Tú decides qué compartir</td>
-							<td>Nadie puede identificarte</td>
-						</tr>
-						<tr>
-							<td>Ejemplo</td>
-							<td>No publicar tu dirección</td>
-							<td>Publicar con un seudónimo</td>
-						</tr>
-						<tr>
-							<td>En internet</td>
-							<td>Configurar permisos, cifrar mensajes</td>
-							<td>Usar VPN, Tor, criptomonedas privadas</td>
-						</tr>
-					</tbody>
-				</table>
+				<Tabla>
+  <TablaCabezera headers={["Aspecto", "<strong>Privacidad</strong>", "<strong>Anonimato</strong>"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Qué protege</TablaUnica>
+      <TablaUnica>Tus <strong>datos personales</strong></TablaUnica>
+      <TablaUnica>Tú <strong>identidad</strong></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Control</TablaUnica>
+      <TablaUnica>Tú decides qué compartir</TablaUnica>
+      <TablaUnica>Nadie puede identificarte</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Ejemplo</TablaUnica>
+      <TablaUnica>No publicar tú dirección</TablaUnica>
+      <TablaUnica>Publicar con un seudónimo</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>En internet</TablaUnica>
+      <TablaUnica>Configurar permisos, cifrar mensajes</TablaUnica>
+      <TablaUnica>Usar VPN, Tor, criptomonedas privadas</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
 
 				<Lista>
-					<li>
+						<li>
 						Puedes tener <strong>privacidad sin anonimato</strong>: por ejemplo,
 						tu banco sabe quién eres, pero <strong>protege tus datos</strong>.
 					</li>

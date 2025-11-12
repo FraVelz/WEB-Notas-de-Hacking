@@ -192,7 +192,7 @@ Normalmente a los "hackers de sombrero, negro o gris" se les da el nombre de cib
 
 - **Red team:** Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u organización.
 
-- **Blue team:** Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa si los de **red team** encuentran alguna falla.
+- **Blue team:** Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa sí los de **red team** encuentran alguna falla.
 
 - **Purple team:** híbrido (colaboración), es una mezcla de ambos mundos de red team, y blue team.
 
@@ -218,7 +218,7 @@ Para conocer muchos más conceptos y fortalecer los aprendidos, también esta es
 
 ---
 
-Listo, si ya terminaste de leer el archivo de los conceptos básicos de Ciberseguridad, puedes regresar a la guía principal con el siguiente enlace:
+Listo, sí ya terminaste de leer el archivo de los conceptos básicos de Ciberseguridad, puedes regresar a la guía principal con el siguiente enlace:
 
 [Regresar a la guía principal](./../readme.md#0-conceptos-básicos)
 

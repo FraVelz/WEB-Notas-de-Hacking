@@ -1,9 +1,9 @@
-import Enlace from "./../../componentes/enlace";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura";
-import Linea from "./../../componentes/linea";
-import Lista from "./../../componentes/lista";
-import Texto from "./../../componentes/texto";
-import Titulo from "./../../componentes/titulo";
+import Enlace from "../../componentes/atomos/enlace";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura";
+import Linea from "../../componentes/atomos/linea";
+import Lista from "../../componentes/moleculas/lista";
+import Texto from "./../../componentes/atomos/texto";
+import Titulo from "../../componentes/moleculas/titulo";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -20,8 +20,8 @@ function Temario({ className = "" }) {
         <Enlace href="#cómo-protegerla">Cómo protegerla</Enlace >
       </li>
       <li>
-        <Enlace href="#visualizar-tu-huella-digital-al-navegar">
-          Visualizar tu huella digital al navegar
+        <Enlace href="#visualizar-tú-huella-digital-al-navegar">
+          Visualizar tú huella digital al navegar
         </Enlace >
       </li>
     </Lista>
@@ -98,7 +98,7 @@ function Huella_Digital() {
               </li>
               <li>
                 Ejemplo: dirección IP, historial de navegación, cookies,
-                geolocalización de tu celular.
+                geolocalización de tú celular.
               </li>
             </Lista>
           </li>
@@ -107,14 +107,14 @@ function Huella_Digital() {
         <Titulo title="h2" id="por-qué-es-importante">Por qué es importante</Titulo>
         <Lista>
           <li>
-            Puede afectar tu <strong>privacidad</strong> y seguridad.
+            Puede afectar tú <strong>privacidad</strong> y seguridad.
           </li>        <li>
-            Las empresas y gobiernos pueden usar tu huella digital para
+            Las empresas y gobiernos pueden usar tú huella digital para
             <strong>publicidad, análisis de comportamiento o vigilancia</strong>
             .
           </li>        <li>
-            También puede afectar tu <strong>reputación</strong>, profesional o
-            personal, si algo que publicaste se hace público o se interpreta
+            También puede afectar tú <strong>reputación</strong>, profesional o
+            personal, sí algo que publicaste se hace público o se interpreta
             mal.
           </li>      </Lista>
         <Linea />
@@ -134,12 +134,12 @@ function Huella_Digital() {
           </li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="visualizar-tu-huella-digital-al-navegar">
-          Visualizar tu huella digital al navegar
+        <Titulo title="h2" id="visualizar-tú-huella-digital-al-navegar">
+          Visualizar tú huella digital al navegar
         </Titulo>
         <Texto>
           En la página <em>“Cover your tracks”</em>,{" "}
-          <strong>puedes ver toda la información actual que tu navegador</strong>{" "}
+          <strong>puedes ver toda la información actual que tú navegador</strong>{" "}
           puede dar a las páginas webs, cuando tú navegas, te dan incluso algunos
           consejos para ciertos casos.
         </Texto>

@@ -1,6 +1,6 @@
-import Estructura from "./../../componentes/estructura.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Estructura from "../../componentes/organismos/estructura.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
 function nameabcd({ }) {
   return (
     <>

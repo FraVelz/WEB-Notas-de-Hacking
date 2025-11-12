@@ -1,8 +1,11 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -22,91 +25,66 @@ function nameabcd({ }) {
         principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="comodines-básicos">1. Comodines básicos</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Comodín</th>
-            <th>Significado</th>
-            <th>Ejemplo CMD / PowerShell</th>
-            <th>Explicación</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>*</code></td>
-            <td>Cualquier número de caracteres (0 o más)</td>
-            <td><code>dir *.txt</code></td>
-            <td>Lista todos los archivos que terminan en <code>.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>?</code></td>
-            <td>Cualquier carácter individual</td>
-            <td><code>dir archivo?.txt</code></td>
-            <td>Coincide con <code>archivo1.txt</code>, <code>archivoA.txt</code>,
-              pero no <code>archivo10.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>[ ]</code> (solo PowerShell)</td>
-            <td>Coincide con un carácter dentro de los corchetes</td>
-            <td><code>Get-ChildItem a[12].txt</code></td>
-            <td>Coincide con <code>a1.txt</code> y <code>a2.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>[! ]</code> o <code>[^ ]</code> (solo PowerShell)</td>
-            <td>Negación de caracteres</td>
-            <td><code>Get-ChildItem a[!1].txt</code></td>
-            <td>Coincide con archivos que empiecen con <code>a</code> y no tengan
-              <code>1</code> en esa posición
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comodín", "Significado", "Ejemplo CMD / PowerShell", "Explicación"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>*</TablaUnica>
+      <TablaUnica>Cualquier número de caracteres (0 o más)</TablaUnica>
+      <TablaUnica>dir *.txt</TablaUnica>
+      <TablaUnica>Lista todos los archivos que terminan en .txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>?</TablaUnica>
+      <TablaUnica>Cualquier carácter individual</TablaUnica>
+      <TablaUnica>dir archivo?.txt</TablaUnica>
+      <TablaUnica>Coincide con archivo1.txt, archivoA.txt,
+              pero no archivo10.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>[ ] (solo PowerShell)</TablaUnica>
+      <TablaUnica>Coincide con un carácter dentro de los corchetes</TablaUnica>
+      <TablaUnica>Get-ChildItem a[12].txt</TablaUnica>
+      <TablaUnica>Coincide con a1.txt y a2.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>[! ] o [^ ] (solo PowerShell)</TablaUnica>
+      <TablaUnica>Negación de caracteres</TablaUnica>
+      <TablaUnica>Get-ChildItem a[!1].txt</TablaUnica>
+      <TablaUnica>Coincide con archivos que empiecen con a y no tengan
+              1 en esa posición</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="ejemplos-prácticos">2. Ejemplos prácticos</Titulo>
       <Lista>
         <li><strong>Listar todos los archivos de un tipo</strong>:</li>
       </Lista>
-      <div className="sourceCode" id="cb1">
-        <pre
-          className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">dir</span> *.jpg</span></code></pre>
-      </div>
+      <CodeBlock code={`dir *.jpg`} language="bash" />
       <Texto>o en PowerShell:</Texto>
-      <div className="sourceCode" id="cb2">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> <span className="op">*.</span><span className="fu">jpg</span></span></code></pre>
-      </div>
+      <CodeBlock code={`Get-ChildItem *.jpg`} language="bash" />
       <Lista>
         <li><strong>Borrar todos los archivos de texto</strong>:</li>
       </Lista>
-      <div className="sourceCode" id="cb3">
-        <pre
-          className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">del</span> *.txt</span></code></pre>
-      </div>
+      <CodeBlock code={`del *.txt`} language="bash" />
       <Texto>o PowerShell:</Texto>
-      <div className="sourceCode" id="cb4">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Remove-Item</span> <span className="op">*.</span><span className="fu">txt</span></span></code></pre>
-      </div>
+      <CodeBlock code={`Remove-Item *.txt`} language="bash" />
       <Lista>
         <li><strong>Copiar todos los archivos que empiecen con
           “doc”</strong>:</li>
       </Lista>
-      <div className="sourceCode" id="cb5">
-        <pre
-          className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">copy</span> doc*.* D:\Backup\</span></code></pre>
-      </div>
+      <CodeBlock code={`copy doc*.* D:\Backup\`} language="bash" />
       <Lista>
         <li><strong>Renombrar archivos específicos con patrón</strong>
           (PowerShell):</li>
       </Lista>
-      <div className="sourceCode" id="cb6">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Rename-Item</span> <span className="st">&quot;archivo?.txt&quot;</span> <span className="op">-</span>NewName <span className="st">&quot;nuevo_?.txt&quot;</span></span></code></pre>
-      </div>
+      <CodeBlock code={`Rename-Item "archivo?.txt" -NewName "nuevo_?.txt"`} language="bash" />
       <Linea />
       <Texto><strong>Tip importante:</strong></Texto>
-      <Texto>En CMD los comodines son muy básicos (<code>*</code> y
-        <code>?</code>), mientras que en PowerShell puedes usar expresiones más
+      <Texto>En CMD los comodines son muy básicos (* y
+        ?), mientras que en PowerShell puedes usar expresiones más
         avanzadas con corchetes, rangos y negaciones.
       </Texto>
       <Linea />

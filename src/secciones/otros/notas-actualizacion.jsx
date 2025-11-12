@@ -1,8 +1,10 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}></Lista>
@@ -57,83 +59,75 @@ function nameabcd({ }) {
       <Texto>…</Texto>
       <Linea />
       <Titulo title="h2" id="actualización-existentes">Actualización Existentes</Titulo>
-      <Texto>Para rangos de fechas <code>-</code>, para fechas específicas
-        <code>;</code>.
+      <Texto>Para rangos de fechas -, para fechas específicas
+        ;.
       </Texto>
       <Texto><strong>Fase 1:</strong></Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre de la actualización</th>
-            <th>fecha de cambios</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Update 0.0.1</td>
-            <td>Sep 4, 2025</td>
-          </tr>
-          <tr>
-            <td>Update 0.0.2</td>
-            <td>Sep 5, 2025</td>
-          </tr>
-          <tr>
-            <td>Update 0.0.3</td>
-            <td>Sep 6, 2025; Sep 20, 2025 - Sep 22, 2025</td>
-          </tr>
-          <tr>
-            <td>Update 0.0.4</td>
-            <td>Sep 23, 2025</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Nombre de la actualización", "fecha de cambios"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Update 0.0.1</TablaUnica>
+      <TablaUnica>Sep 4, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Update 0.0.2</TablaUnica>
+      <TablaUnica>Sep 5, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Update 0.0.3</TablaUnica>
+      <TablaUnica>Sep 6, 2025; Sep 20, 2025 - Sep 22, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Update 0.0.4</TablaUnica>
+      <TablaUnica>Sep 23, 2025</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Texto><strong>Fase 2:</strong></Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre de la actualización</th>
-            <th>fecha de cambios</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Actualización: 0.0.5</td>
-            <td>Sep 25, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.0.6</td>
-            <td>Sep 26, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.0.7</td>
-            <td>Sep 27, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.0.8</td>
-            <td>Sep 29, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.0.9</td>
-            <td>Sep 30, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.1.0</td>
-            <td>Oct 1, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.1.1</td>
-            <td>Oct 2, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.1.2</td>
-            <td>Oct 3, 2025</td>
-          </tr>
-          <tr>
-            <td>Actualización: 0.1.3</td>
-            <td>Oct 9, 2025</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Nombre de la actualización", "fecha de cambios"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.0.5</TablaUnica>
+      <TablaUnica>Sep 25, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.0.6</TablaUnica>
+      <TablaUnica>Sep 26, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.0.7</TablaUnica>
+      <TablaUnica>Sep 27, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.0.8</TablaUnica>
+      <TablaUnica>Sep 29, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.0.9</TablaUnica>
+      <TablaUnica>Sep 30, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.1.0</TablaUnica>
+      <TablaUnica>Oct 1, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.1.1</TablaUnica>
+      <TablaUnica>Oct 2, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.1.2</TablaUnica>
+      <TablaUnica>Oct 3, 2025</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Actualización: 0.1.3</TablaUnica>
+      <TablaUnica>Oct 9, 2025</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="actualización-0.0v---0.1.0v">Actualización (0.0v - 0.1.0v)</Titulo>
       <Texto><strong>actualizaciones diarias desde:</strong> 2025-09-20</Texto>
@@ -159,8 +153,8 @@ function nameabcd({ }) {
         <li><strong>Se organizó mejor el temario</strong> y <strong>los
           títulos</strong> de la parte del readme para que fuesen más
           claros.</li>    <li>Se agregó más contenido, y se completó mucha información
-            incompleta como la parte de los <code>no fundamentales</code> del
-          <strong>temario</strong>, y el apartado de <code>3. bash script</code>
+            incompleta como la parte de los no fundamentales del
+          <strong>temario</strong>, y el apartado de 3. bash script
           para que ese apartado fuese lo más completo posible explicando temas de
           bash script.
         </li>    <li>En anteriores actualizaciones había organizado las carpetas, en
@@ -170,10 +164,10 @@ function nameabcd({ }) {
           enlaces.</li>    <li>Previamente se habían <strong>agregado también 10
             archivos</strong> que decía una ruta especifica para cada rama en la
           seguridad que aparecen en el apartado de
-          <code>5. Ramas y Especializaciones de ciberseguridad</code>.
-        </li>    <li>Se agregó un nuevo apartado <code>Windows</code> y también
-          <code>Privacidad y anonimato</code>.
-        </li>    <li>Se organizó mejor el <code>readme.md</code> archivo principal,
+          5. Ramas y Especializaciones de ciberseguridad.
+        </li>    <li>Se agregó un nuevo apartado Windows y también
+          Privacidad y anonimato.
+        </li>    <li>Se organizó mejor el readme.md archivo principal,
           para que los temas que se muestren en este mismo, sean los más
           importantes y fundamentales.</li>  </Lista>
       <Texto>…</Texto>

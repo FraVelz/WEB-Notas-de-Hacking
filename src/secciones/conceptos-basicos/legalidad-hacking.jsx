@@ -1,10 +1,10 @@
-import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/tabla";
-import Enlace from "./../../componentes/enlace";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura";
-import Linea from "./../../componentes/linea";
-import Lista from "./../../componentes/lista";
-import Texto from "./../../componentes/texto";
-import Titulo from "./../../componentes/titulo";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla";
+import Enlace from "../../componentes/atomos/enlace";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura";
+import Linea from "../../componentes/atomos/linea";
+import Lista from "../../componentes/moleculas/lista";
+import Texto from "./../../componentes/atomos/texto";
+import Titulo from "../../componentes/moleculas/titulo";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -133,7 +133,7 @@ function Legalidad_Hacking({ }) {
           <li><strong>Actuar siempre con autorización.</strong> Nunca realizar
             pruebas o ataques sin permiso explícito del propietario del
             sistema.</li>        <li><strong>No causar daño.</strong> No alterar, borrar o exponer
-              datos de los sistemas que se prueban.</li>        <li><strong>Respetar la privacidad.</strong> Si se accede a
+              datos de los sistemas que se prueban.</li>        <li><strong>Respetar la privacidad.</strong> Sí se accede a
                 información sensible, mantenerla confidencial.</li>        <li><strong>Reportar las vulnerabilidades de forma
                   responsable.</strong> Informar al dueño del sistema, no publicarlas sin
             su consentimiento.</li>        <li><strong>No aprovecharse del conocimiento.</strong> El
@@ -149,7 +149,7 @@ function Legalidad_Hacking({ }) {
 
           <tbody>
             <TablaFila>
-              <TablaUnica>Escanear tu propia red doméstica</TablaUnica>
+              <TablaUnica>Escanear tú propia red doméstica</TablaUnica>
               <TablaUnica>✅ Legal</TablaUnica>
               <TablaUnica>✅ Ético</TablaUnica>
               <TablaUnica>Aprendizaje personal o seguridad propia.</TablaUnica>

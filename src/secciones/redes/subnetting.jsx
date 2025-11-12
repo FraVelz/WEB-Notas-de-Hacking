@@ -1,9 +1,12 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -40,48 +43,39 @@ function nameabcd({ }) {
           parte se comporta como una “mini red” dentro de la red principal.</Texto>
         <Linea />
         <Titulo title="h2" id="conceptos-clave">Conceptos clave</Titulo>
-        <table>
-          <thead>
-            <tr>
-              <th>Término</th>
-              <th>Significado</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>IP Address</strong></td>
-              <td>Dirección única que identifica un dispositivo en la red (ej:
-                <code>192.168.1.10</code>).
-              </td>
-            </tr>
-            <tr>
-              <td><strong>Network ID</strong></td>
-              <td>Parte de la IP que identifica la red.</td>
-            </tr>
-            <tr>
-              <td><strong>Host ID</strong></td>
-              <td>Parte que identifica a un dispositivo (host) dentro de esa red.</td>
-            </tr>
-            <tr>
-              <td><strong>Subnet Mask</strong></td>
-              <td>Indica cuántos bits pertenecen a la red y cuántos al host. (Ej:
-                <code>255.255.255.0</code> o <code>/24</code>).
-              </td>
-            </tr>
-            <tr>
-              <td><strong>CIDR Notation</strong></td>
-              <td>Forma abreviada de expresar la máscara (ej: <code>/24</code>
-                equivale a <code>255.255.255.0</code>).</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["Término", "Significado"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>IP Address</strong></TablaUnica>
+      <TablaUnica>Dirección única que identifica un dispositivo en la red (ej:
+                192.168.1.10).</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Network ID</strong></TablaUnica>
+      <TablaUnica>Parte de la IP que identifica la red.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Host ID</strong></TablaUnica>
+      <TablaUnica>Parte que identifica a un dispositivo (host) dentro de esa red.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Subnet Mask</strong></TablaUnica>
+      <TablaUnica>Indica cuántos bits pertenecen a la red y cuántos al host. (Ej:
+                255.255.255.0 o /24).</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>CIDR Notation</strong></TablaUnica>
+      <TablaUnica>Forma abreviada de expresar la máscara (ej: /24
+                equivale a 255.255.255.0).</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <Linea />
         <Titulo title="h2" id="ejemplo-básico">Ejemplo básico</Titulo>
         <Texto>Supongamos que tienes la red:</Texto>
-        <div className="sourceCode" id="cb1">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="ex">192.168.1.0</span> /24</span></code></pre>
-        </div>
+        <CodeBlock code={`192.168.1.0 /24`} language="bash" />
         <Texto>Esto significa:</Texto>
         <Lista>
           <li><strong>Rango total:</strong> 192.168.1.0 – 192.168.1.255</li>
@@ -89,30 +83,25 @@ function nameabcd({ }) {
           <li><strong>Host válidos:</strong> 254 (porque una es la dirección de
             red y otra la de broadcast)</li>
         </Lista>
-        <Texto>Si haces <strong>subnetting</strong> y divides <code>/24</code> en
+        <Texto>Sí haces <strong>subnetting</strong> y divides /24 en
           <strong>dos subredes /25</strong>, obtienes:
         </Texto>
-        <table>
-          <thead>
-            <tr>
-              <th>Subred</th>
-              <th>Rango de IPs</th>
-              <th>Broadcast</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>192.168.1.0/25</td>
-              <td>192.168.1.0 – 192.168.1.127</td>
-              <td>192.168.1.127</td>
-            </tr>
-            <tr>
-              <td>192.168.1.128/25</td>
-              <td>192.168.1.128 – 192.168.1.255</td>
-              <td>192.168.1.255</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["Subred", "Rango de IPs", "Broadcast"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>192.168.1.0/25</TablaUnica>
+      <TablaUnica>192.168.1.0 – 192.168.1.127</TablaUnica>
+      <TablaUnica>192.168.1.127</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>192.168.1.128/25</TablaUnica>
+      <TablaUnica>192.168.1.128 – 192.168.1.255</TablaUnica>
+      <TablaUnica>192.168.1.255</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <Texto>Ahora tienes <strong>dos subredes</strong> con <strong>126 hosts
           válidos</strong> cada una.</Texto>
         <Linea />

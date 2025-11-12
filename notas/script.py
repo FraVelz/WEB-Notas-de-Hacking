@@ -182,7 +182,7 @@ def ModificarTexto(lineas):
         # === TEXTO NORMAL ===
         if linea.strip():
             if not importado['Texto']:
-                importaciones += '\nimport Texto from "./../../componentes/texto.jsx";'
+                importaciones += '\nimport Texto from "./../../componentes/atomos/texto.jsx";'
                 importado['Texto'] = 1
             linea = reemplazar_estilos_md(escapar_llaves(linea))
             resultado += insertar(f'<Texto>{linea}</Texto>')

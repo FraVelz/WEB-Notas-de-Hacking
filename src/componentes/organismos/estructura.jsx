@@ -1,4 +1,4 @@
-import Titulo from "./titulo";
+import Titulo from "../moleculas/titulo";
 
 function Estructura({ children }) {
   return (

@@ -1,9 +1,9 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -80,8 +80,8 @@ function nameabcd({ }) {
         <Texto><strong>Qué hacer:</strong></Texto>
         <Lista>
           <li>Evita conectarte a redes públicas sin necesidad.</li>
-          <li>Si debes hacerlo, usa una VPN.</li>
-          <li>Nunca entres a tu banco, correo o redes sociales en una red
+          <li>Sí debes hacerlo, usa una VPN.</li>
+          <li>Nunca entres a tú banco, correo o redes sociales en una red
             pública.</li>
           <li>Desactiva la conexión automática a redes Wi-Fi.</li>
         </Lista>
@@ -89,15 +89,15 @@ function nameabcd({ }) {
         <Titulo title="h2" id="phishing-suplantación-para-robar-datos">2. Phishing
           (suplantación para robar datos)</Titulo>
         <Texto><strong>Ejemplo:</strong> Te llega un correo o mensaje diciendo que
-          tu cuenta será suspendida, con un botón para “verificar”.</Texto>
+          tú cuenta será suspendida, con un botón para “verificar”.</Texto>
         <Texto><strong>Riesgo:</strong> El enlace te lleva a una página falsa (muy
           parecida a la real) que roba tus credenciales.</Texto>
         <Texto><strong>Cómo detectarlo:</strong></Texto>
         <Lista>
           <li>El remitente o dominio es sospechoso (por ejemplo:
-            <code>micorreo@banc0.com</code> en lugar de
-            <code>micorreo@banco.com</code>).
-          </li>    <li>Te presionan con urgencia (“haz clic ahora o perderás tu
+            micorreo@banc0.com en lugar de
+            micorreo@banco.com).
+          </li>    <li>Te presionan con urgencia (“haz clic ahora o perderás tú
             cuenta”).</li>    <li>Tiene errores ortográficos o frases extrañas.</li>  </Lista>
         <Texto><strong>Qué hacer:</strong></Texto>
         <Lista>
@@ -110,15 +110,15 @@ function nameabcd({ }) {
         <Texto><strong>Ejemplo:</strong> Un amigo te manda un enlace “gracioso” o de
           una “oferta increíble”.</Texto>
         <Texto><strong>Riesgo:</strong> Puede ser una web que descarga malware o
-          roba tu sesión.</Texto>
+          roba tú sesión.</Texto>
         <Texto><strong>Cómo protegerte:</strong></Texto>
         <Lista>
           <li>Pasa el cursor por encima del enlace antes de abrirlo (sin hacer
             clic) para ver la dirección real.</li>
-          <li>Usa acortadores con precaución (<code>bit.ly</code>,
-            <code>tinyurl</code>) —algunos ocultan direcciones falsas.
+          <li>Usa acortadores con precaución (bit.ly,
+            tinyurl) —algunos ocultan direcciones falsas.
           </li>
-          <li>Si dudas, analiza el enlace con <Enlace href="https://www.virustotal.com">VirusTotal.com</Enlace >.</li>
+          <li>Sí dudas, analiza el enlace con <Enlace href="https://www.virustotal.com">VirusTotal.com</Enlace >.</li>
         </Lista>
         <Linea />
         <Titulo title="h2" id="códigos-qr-maliciosos">4. Códigos QR maliciosos</Titulo>
@@ -136,7 +136,7 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h2" id="contraseñas-débiles-o-reutilizadas">5. Contraseñas débiles o
           reutilizadas</Titulo>
-        <Texto><strong>Riesgo:</strong> Si un sitio donde usaste tu contraseña se
+        <Texto><strong>Riesgo:</strong> Sí un sitio donde usaste tú contraseña se
           filtra, los atacantes pueden acceder a todas tus otras cuentas.</Texto>
         <Texto><strong>Buenas prácticas:</strong></Texto>
         <Lista>
@@ -153,7 +153,7 @@ function nameabcd({ }) {
           vulnerable a exploits conocidos.</Texto>
         <Texto><strong>Consejos:</strong></Texto>
         <Lista>
-          <li>Mantén tu sistema operativo y navegador actualizados.</li>
+          <li>Mantén tú sistema operativo y navegador actualizados.</li>
           <li>Instala software solo desde fuentes oficiales.</li>
           <li>Evita cracks o programas piratas —muchos incluyen troyanos o
             spyware.</li>
@@ -174,7 +174,7 @@ function nameabcd({ }) {
         <Titulo title="h2" id="dispositivos-físicos">8. Dispositivos físicos</Titulo>
         <Texto><strong>Ejemplo:</strong> Conectas una memoria USB que
           encontraste.</Texto>
-        <Texto><strong>Riesgo:</strong> Puede tener malware que infecte tu
+        <Texto><strong>Riesgo:</strong> Puede tener malware que infecte tú
           computadora.</Texto>
         <Texto><strong>Prevención:</strong></Texto>
         <Lista>

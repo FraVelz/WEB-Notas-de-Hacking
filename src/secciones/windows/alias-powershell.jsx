@@ -1,8 +1,11 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -30,208 +33,186 @@ function nameabcd({ }) {
       <Titulo title="h2" id="qué-es-un-alias">Qué es un alias</Titulo>
       <Texto>Un <strong>alias</strong> es simplemente un <strong>nombre
         alternativo</strong> para un comando existente. Por ejemplo:</Texto>
-      <div className="sourceCode" id="cb1">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span>     <span className="co"># Nombre completo</span></span>
-            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">ls</span>                <span className="co"># Alias</span></span></code></pre>
-      </div>
+      <CodeBlock code={`Get-ChildItem     # Nombre completo
+ls                # Alias`} language="bash" />
       <Texto>Ambos hacen lo mismo: listar archivos y carpetas.</Texto>
       <Linea />
       <Titulo title="h2" id="alias-comunes-en-powershell">Alias comunes en PowerShell</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Alias</th>
-            <th>Cmdlet equivalente</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>ls</code></td>
-            <td><code>Get-ChildItem</code></td>
-            <td>Lista archivos y carpetas.</td>
-          </tr>
-          <tr>
-            <td><code>dir</code></td>
-            <td><code>Get-ChildItem</code></td>
-            <td>Igual que <code>ls</code> (compatibilidad con CMD).</td>
-          </tr>
-          <tr>
-            <td><code>cd</code></td>
-            <td><code>Set-Location</code></td>
-            <td>Cambia de directorio.</td>
-          </tr>
-          <tr>
-            <td><code>pwd</code></td>
-            <td><code>Get-Location</code></td>
-            <td>Muestra el directorio actual.</td>
-          </tr>
-          <tr>
-            <td><code>cat</code>, <code>type</code></td>
-            <td><code>Get-Content</code></td>
-            <td>Muestra el contenido de un archivo.</td>
-          </tr>
-          <tr>
-            <td><code>echo</code>, <code>write</code></td>
-            <td><code>Write-Output</code></td>
-            <td>Imprime texto en pantalla.</td>
-          </tr>
-          <tr>
-            <td><code>cls</code>, <code>clear</code></td>
-            <td><code>Clear-Host</code></td>
-            <td>Limpia la pantalla.</td>
-          </tr>
-          <tr>
-            <td><code>cp</code>, <code>copy</code></td>
-            <td><code>Copy-Item</code></td>
-            <td>Copia archivos o carpetas.</td>
-          </tr>
-          <tr>
-            <td><code>mv</code>, <code>move</code></td>
-            <td><code>Move-Item</code></td>
-            <td>Mueve o renombra archivos.</td>
-          </tr>
-          <tr>
-            <td><code>rm</code>, <code>del</code>, <code>erase</code></td>
-            <td><code>Remove-Item</code></td>
-            <td>Elimina archivos o carpetas.</td>
-          </tr>
-          <tr>
-            <td><code>man</code>, <code>help</code></td>
-            <td><code>Get-Help</code></td>
-            <td>Muestra ayuda de un cmdlet.</td>
-          </tr>
-          <tr>
-            <td><code>ps</code></td>
-            <td><code>Get-Process</code></td>
-            <td>Lista procesos activos.</td>
-          </tr>
-          <tr>
-            <td><code>kill</code></td>
-            <td><code>Stop-Process</code></td>
-            <td>Finaliza un proceso.</td>
-          </tr>
-          <tr>
-            <td><code>gcm</code></td>
-            <td><code>Get-Command</code></td>
-            <td>Busca cmdlets o funciones.</td>
-          </tr>
-          <tr>
-            <td><code>gal</code></td>
-            <td><code>Get-Alias</code></td>
-            <td>Muestra todos los alias.</td>
-          </tr>
-          <tr>
-            <td><code>sal</code></td>
-            <td><code>Set-Alias</code></td>
-            <td>Crea un alias nuevo.</td>
-          </tr>
-          <tr>
-            <td><code>nal</code></td>
-            <td><code>New-Alias</code></td>
-            <td>Crea un alias y lo guarda (persistente si lo defines en el
-              perfil).</td>
-          </tr>
-          <tr>
-            <td><code>pal</code></td>
-            <td><code>Pop-Location</code></td>
-            <td>Vuelve al directorio anterior.</td>
-          </tr>
-          <tr>
-            <td><code>pushd</code></td>
-            <td><code>Push-Location</code></td>
-            <td>Guarda el directorio actual en una pila.</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Alias", "Cmdlet equivalente", "Descripción"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>ls</TablaUnica>
+      <TablaUnica>Get-ChildItem</TablaUnica>
+      <TablaUnica>Lista archivos y carpetas.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>dir</TablaUnica>
+      <TablaUnica>Get-ChildItem</TablaUnica>
+      <TablaUnica>Igual que ls (compatibilidad con CMD).</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>cd</TablaUnica>
+      <TablaUnica>Set-Location</TablaUnica>
+      <TablaUnica>Cambia de directorio.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>pwd</TablaUnica>
+      <TablaUnica>Get-Location</TablaUnica>
+      <TablaUnica>Muestra el directorio actual.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>cat, type</TablaUnica>
+      <TablaUnica>Get-Content</TablaUnica>
+      <TablaUnica>Muestra el contenido de un archivo.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>echo, write</TablaUnica>
+      <TablaUnica>Write-Output</TablaUnica>
+      <TablaUnica>Imprime texto en pantalla.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>cls, clear</TablaUnica>
+      <TablaUnica>Clear-Host</TablaUnica>
+      <TablaUnica>Limpia la pantalla.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>cp, copy</TablaUnica>
+      <TablaUnica>Copy-Item</TablaUnica>
+      <TablaUnica>Copia archivos o carpetas.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>mv, move</TablaUnica>
+      <TablaUnica>Move-Item</TablaUnica>
+      <TablaUnica>Mueve o renombra archivos.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>rm, del, erase</TablaUnica>
+      <TablaUnica>Remove-Item</TablaUnica>
+      <TablaUnica>Elimina archivos o carpetas.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>man, help</TablaUnica>
+      <TablaUnica>Get-Help</TablaUnica>
+      <TablaUnica>Muestra ayuda de un cmdlet.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>ps</TablaUnica>
+      <TablaUnica>Get-Process</TablaUnica>
+      <TablaUnica>Lista procesos activos.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>kill</TablaUnica>
+      <TablaUnica>Stop-Process</TablaUnica>
+      <TablaUnica>Finaliza un proceso.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>gcm</TablaUnica>
+      <TablaUnica>Get-Command</TablaUnica>
+      <TablaUnica>Busca cmdlets o funciones.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>gal</TablaUnica>
+      <TablaUnica>Get-Alias</TablaUnica>
+      <TablaUnica>Muestra todos los alias.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>sal</TablaUnica>
+      <TablaUnica>Set-Alias</TablaUnica>
+      <TablaUnica>Crea un alias nuevo.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>nal</TablaUnica>
+      <TablaUnica>New-Alias</TablaUnica>
+      <TablaUnica>Crea un alias y lo guarda (persistente sí lo defines en el
+              perfil).</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>pal</TablaUnica>
+      <TablaUnica>Pop-Location</TablaUnica>
+      <TablaUnica>Vuelve al directorio anterior.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>pushd</TablaUnica>
+      <TablaUnica>Push-Location</TablaUnica>
+      <TablaUnica>Guarda el directorio actual en una pila.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="cmdlets-relacionados-con-alias">Cmdlets relacionados con
         alias</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-Alias</code></td>
-            <td>Muestra todos los alias definidos actualmente.</td>
-            <td><code>Get-Alias</code></td>
-          </tr>
-          <tr>
-            <td><code>Get-Alias &lt;alias&gt;</code></td>
-            <td>Muestra el comando que representa un alias.</td>
-            <td><code>Get-Alias ls</code></td>
-          </tr>
-          <tr>
-            <td><code>Set-Alias &lt;nombre&gt; &lt;comando&gt;</code></td>
-            <td>Crea un alias temporal.</td>
-            <td><code>Set-Alias borrar Remove-Item</code></td>
-          </tr>
-          <tr>
-            <td><code>New-Alias &lt;nombre&gt; &lt;comando&gt;</code></td>
-            <td>Crea un alias (igual que <code>Set-Alias</code>).</td>
-            <td><code>New-Alias abrir notepad</code></td>
-          </tr>
-          <tr>
-            <td><code>Export-Alias &lt;archivo&gt;</code></td>
-            <td>Exporta todos los alias a un archivo.</td>
-            <td><code>Export-Alias alias.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>Import-Alias &lt;archivo&gt;</code></td>
-            <td>Importa alias desde un archivo.</td>
-            <td><code>Import-Alias alias.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-Item alias:&lt;nombre&gt;</code></td>
-            <td>Elimina un alias.</td>
-            <td><code>Remove-Item alias:borrar</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-Alias</TablaUnica>
+      <TablaUnica>Muestra todos los alias definidos actualmente.</TablaUnica>
+      <TablaUnica>Get-Alias</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-Alias &lt;alias&gt;</TablaUnica>
+      <TablaUnica>Muestra el comando que representa un alias.</TablaUnica>
+      <TablaUnica>Get-Alias ls</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Set-Alias &lt;nombre&gt; &lt;comando&gt;</TablaUnica>
+      <TablaUnica>Crea un alias temporal.</TablaUnica>
+      <TablaUnica>Set-Alias borrar Remove-Item</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>New-Alias &lt;nombre&gt; &lt;comando&gt;</TablaUnica>
+      <TablaUnica>Crea un alias (igual que Set-Alias).</TablaUnica>
+      <TablaUnica>New-Alias abrir notepad</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Export-Alias &lt;archivo&gt;</TablaUnica>
+      <TablaUnica>Exporta todos los alias a un archivo.</TablaUnica>
+      <TablaUnica>Export-Alias alias.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Import-Alias &lt;archivo&gt;</TablaUnica>
+      <TablaUnica>Importa alias desde un archivo.</TablaUnica>
+      <TablaUnica>Import-Alias alias.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-Item alias:&lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Elimina un alias.</TablaUnica>
+      <TablaUnica>Remove-Item alias:borrar</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="ejemplos-prácticos">Ejemplos prácticos</Titulo>
-      <div className="sourceCode" id="cb2">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver todos los alias</span></span>
-            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Alias</span></span>
-            <span id="cb2-3"><Enlace href="#cb2-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb2-4"><Enlace href="#cb2-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Crear un alias personalizado</span></span>
-            <span id="cb2-5"><Enlace href="#cb2-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> editar <span className="st">&quot;notepad.exe&quot;</span></span>
-            <span id="cb2-6"><Enlace href="#cb2-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb2-7"><Enlace href="#cb2-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Usar el alias</span></span>
-            <span id="cb2-8"><Enlace href="#cb2-8" aria-hidden="true" tabindex="-1"></Enlace >editar archivo<span className="op">.</span><span className="fu">txt</span></span>
-            <span id="cb2-9"><Enlace href="#cb2-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb2-10"><Enlace href="#cb2-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver qué comando ejecuta un alias</span></span>
-            <span id="cb2-11"><Enlace href="#cb2-11" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Alias</span> <span className="fu">ls</span></span>
-            <span id="cb2-12"><Enlace href="#cb2-12" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb2-13"><Enlace href="#cb2-13" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Eliminar un alias</span></span>
-            <span id="cb2-14"><Enlace href="#cb2-14" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Remove-Item</span> alias<span className="op">:</span>editar</span></code></pre>
-      </div>
+      <CodeBlock code={`# Ver todos los alias
+Get-Alias
+
+# Crear un alias personalizado
+Set-Alias editar "notepad.exe"
+
+# Usar el alias
+editar archivo.txt
+
+# Ver qué comando ejecuta un alias
+Get-Alias ls
+
+# Eliminar un alias
+Remove-Item alias:editar`} language="bash" />
       <Linea />
       <Titulo title="h2" id="alias-persistentes">Alias persistentes</Titulo>
-      <Texto>Por defecto, los alias creados con <code>Set-Alias</code> o
-        <code>New-Alias</code> <strong>solo duran mientras PowerShell está
+      <Texto>Por defecto, los alias creados con Set-Alias o
+        New-Alias <strong>solo duran mientras PowerShell está
           abierto</strong>.
       </Texto>
       <Texto>Para hacerlos <strong>permanentes</strong>, agrégalos al
         <strong>perfil de PowerShell</strong>:
       </Texto>
-      <div className="sourceCode" id="cb3">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace >notepad <span className="va">$PROFILE</span></span></code></pre>
-      </div>
+      <CodeBlock code={`notepad $PROFILE`} language="bash" />
       <Texto>Luego agrega tus alias personalizados:</Texto>
-      <div className="sourceCode" id="cb4">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> editar notepad<span className="op">.</span><span className="fu">exe</span></span>
-            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> borrar <span className="fu">Remove-Item</span></span></code></pre>
-      </div>
+      <CodeBlock code={`Set-Alias editar notepad.exe
+Set-Alias borrar Remove-Item`} language="bash" />
       <Texto>Guarda el archivo y la próxima vez que abras PowerShell, estarán
         disponibles.</Texto>
       <Linea />
@@ -239,13 +220,10 @@ function nameabcd({ }) {
       <Lista>
         <li>
           <Texto>Los alias <strong>no aceptan parámetros por defecto</strong>. Por
-            ejemplo, <code>Set-Alias buscar "Get-ChildItem -Recurse"</code> ❌ no
+            ejemplo, Set-Alias buscar "Get-ChildItem -Recurse" ❌ no
             funcionará. En ese caso, usa una <strong>función</strong>:</Texto>
-          <div className="sourceCode" id="cb5">
-            <pre
-              className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">function</span> buscar <span className="op">{"{"}</span> <span className="fu">Get-ChildItem</span> <span className="op">-</span>Recurse @args <span className="op">{"}"}</span></span>
-                <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Set-Alias</span> buscar buscar</span></code></pre>
-          </div>
+          <CodeBlock code={`function buscar { Get-ChildItem -Recurse @args }
+Set-Alias buscar buscar`} language="bash" />
         </li>
       </Lista>
       <Linea />

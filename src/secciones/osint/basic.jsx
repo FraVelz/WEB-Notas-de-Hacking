@@ -1,8 +1,8 @@
-import Estructura from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Estructura from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
 function nameabcd({ }) {
   return (
     <Estructura>
@@ -29,7 +29,7 @@ function nameabcd({ }) {
               y videos.(terminal).</li>    <li>The Harvester para recolectar correos, subdominios y datos
                 públicos desde buscadores y servicios.</li>    <li>Maigret Sherlock para buscar perfiles de usuario para buscar
                   perfiles de usuarios en múltiples redes sociales, usando un nombre de
-                  usuario.</li>    <li><code>Have i been pwned?</code> Para comprobar si un correo
+                  usuario.</li>    <li>Have i been pwned? Para comprobar sí un correo
                     electrónico a estado involucrado en filtraciones de datos.</li>    <li>Showdan para encontrar dispositivos, conectados a internet y
                       expuestos públicamente.</li>    <li>Buscadores de imágenes como google lens, yandex o TI.</li>    <li>OSINT Framework.com</li>  </Lista>
       <Texto>Opcionales:</Texto>

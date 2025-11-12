@@ -3,7 +3,7 @@ import Titulo from "./../../componentes/titulo.jsx";
 import Linea from "./../../componentes/linea.jsx";
 import Lista from "./../../componentes/lista.jsx";
 import Enlace from "./../../componentes/enlace.jsx";
-import Texto from "./../../componentes/texto.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
 import Nota from "./../../componentes/nota.jsx";
 
 function Temario({ className="" }) {
@@ -164,7 +164,7 @@ function NameAbcd() {
 				<Titulo title="h2">8. Tipos de hackers (por su rol)</Titulo>
 
 				<ul><b>Red team:</b> Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u organización.</ul>
-				<ul><b>Blue team:</b> Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa si los de <b>red team</b> encuentran alguna falla.</ul>
+				<ul><b>Blue team:</b> Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa sí los de <b>red team</b> encuentran alguna falla.</ul>
 				<ul><b>Purple team:</b> híbrido (colaboración), es una mezcla de ambos mundos de red team, y blue team.</ul>
 				<Texto>Existen más tipos de hackers por su rol, pero son muy desconocidos normalmente en el mundo laboral, y comunidades onlines.</Texto>
 				<Linea />
@@ -182,7 +182,7 @@ function NameAbcd() {
 
 				<Linea />
 
-				<Texto>Listo, si ya terminaste de leer el archivo de los conceptos básicos de Ciberseguridad, puedes regresar a la guía principal con el siguiente enlace:</Texto>
+				<Texto>Listo, sí ya terminaste de leer el archivo de los conceptos básicos de Ciberseguridad, puedes regresar a la guía principal con el siguiente enlace:</Texto>
 				<Enlace href="./../readme.md#0-conceptos-básicos">Regresar a la guía principal</Enlace>
 
 				<Nota>**Autor:** Fravelz</Nota>

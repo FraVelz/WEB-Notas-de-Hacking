@@ -1,8 +1,10 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -24,8 +26,8 @@ function nameabcd({ }) {
                 <li><Enlace href="#grupos-locales">Grupos locales</Enlace ></li>
                 <li><Enlace href="#información-y-autenticación">Información y
                   autenticación</Enlace ></li>
-                <li><Enlace href="#active-directory-solo-si-tienes-ad-instalado">Active
-                  Directory (solo si tienes AD instalado)</Enlace ></li>
+                <li><Enlace href="#active-directory-solo-sí-tienes-ad-instalado">Active
+                  Directory (solo sí tienes AD instalado)</Enlace ></li>
               </Lista>
             </li>
             <li><Enlace href="#3-comandos-útiles-para-entornos-mixtos-cmd--powershell">3.
@@ -42,315 +44,282 @@ function nameabcd({ }) {
         <Texto>Estos comandos funcionan directamente desde <strong>Símbolo del
           sistema (cmd)</strong> con permisos de administrador.</Texto>
       </blockquote>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>net user</code></td>
-            <td>Muestra todos los usuarios locales.</td>
-            <td><code>net user</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net user &lt;usuario&gt;</code></td>
-            <td>Muestra información sobre un usuario.</td>
-            <td><code>net user Francisco</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net user &lt;usuario&gt; &lt;contraseña&gt; /add</code></td>
-            <td>Crea un nuevo usuario.</td>
-            <td><code>net user Juan 1234 /add</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net user &lt;usuario&gt; /delete</code></td>
-            <td>Elimina un usuario.</td>
-            <td><code>net user Juan /delete</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net user &lt;usuario&gt; *</code></td>
-            <td>Cambia la contraseña del usuario (la pedirá).</td>
-            <td><code>net user Francisco *</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net user &lt;usuario&gt; /active:yes            | no</code></td>
-            <td>Activa o desactiva una cuenta.</td>
-            <td><code>net user Juan /active:no</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup</code></td>
-            <td>Muestra los grupos locales.</td>
-            <td><code>net localgroup</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;grupo&gt;</code></td>
-            <td>Muestra los usuarios del grupo.</td>
-            <td><code>net localgroup Administradores</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;grupo&gt; &lt;usuario&gt; /add</code></td>
-            <td>Agrega un usuario a un grupo.</td>
-            <td><code>net localgroup Administradores Juan /add</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;grupo&gt; &lt;usuario&gt; /delete</code></td>
-            <td>Quita un usuario de un grupo.</td>
-            <td><code>net localgroup Usuarios Juan /delete</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>whoami</code></td>
-            <td>Muestra el usuario actual.</td>
-            <td><code>whoami</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>echo %username%</code></td>
-            <td>Muestra el nombre de usuario desde variable de entorno.</td>
-            <td><code>echo %username%</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>control userpasswords2</code></td>
-            <td>Abre la interfaz avanzada de gestión de usuarios.</td>
-            <td><code>control userpasswords2</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>lusrmgr.msc</code></td>
-            <td>Abre la consola de usuarios y grupos locales (solo en Windows
-              Pro).</td>
-            <td><code>lusrmgr.msc</code></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Descripción", "Ejemplo", ""]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>net user</TablaUnica>
+      <TablaUnica>Muestra todos los usuarios locales.</TablaUnica>
+      <TablaUnica>net user</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net user &lt;usuario&gt;</TablaUnica>
+      <TablaUnica>Muestra información sobre un usuario.</TablaUnica>
+      <TablaUnica>net user Francisco</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net user &lt;usuario&gt; &lt;contraseña&gt; /add</TablaUnica>
+      <TablaUnica>Crea un nuevo usuario.</TablaUnica>
+      <TablaUnica>net user Juan 1234 /add</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net user &lt;usuario&gt; /delete</TablaUnica>
+      <TablaUnica>Elimina un usuario.</TablaUnica>
+      <TablaUnica>net user Juan /delete</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net user &lt;usuario&gt; *</TablaUnica>
+      <TablaUnica>Cambia la contraseña del usuario (la pedirá).</TablaUnica>
+      <TablaUnica>net user Francisco *</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net user &lt;usuario&gt; /active:yes            | no</TablaUnica>
+      <TablaUnica>Activa o desactiva una cuenta.</TablaUnica>
+      <TablaUnica>net user Juan /active:no</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup</TablaUnica>
+      <TablaUnica>Muestra los grupos locales.</TablaUnica>
+      <TablaUnica>net localgroup</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;grupo&gt;</TablaUnica>
+      <TablaUnica>Muestra los usuarios del grupo.</TablaUnica>
+      <TablaUnica>net localgroup Administradores</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;grupo&gt; &lt;usuario&gt; /add</TablaUnica>
+      <TablaUnica>Agrega un usuario a un grupo.</TablaUnica>
+      <TablaUnica>net localgroup Administradores Juan /add</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;grupo&gt; &lt;usuario&gt; /delete</TablaUnica>
+      <TablaUnica>Quita un usuario de un grupo.</TablaUnica>
+      <TablaUnica>net localgroup Usuarios Juan /delete</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>whoami</TablaUnica>
+      <TablaUnica>Muestra el usuario actual.</TablaUnica>
+      <TablaUnica>whoami</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>echo %username%</TablaUnica>
+      <TablaUnica>Muestra el nombre de usuario desde variable de entorno.</TablaUnica>
+      <TablaUnica>echo %username%</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>control userpasswords2</TablaUnica>
+      <TablaUnica>Abre la interfaz avanzada de gestión de usuarios.</TablaUnica>
+      <TablaUnica>control userpasswords2</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>lusrmgr.msc</TablaUnica>
+      <TablaUnica>Abre la consola de usuarios y grupos locales (solo en Windows
+              Pro).</TablaUnica>
+      <TablaUnica>lusrmgr.msc</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="cmdlets-de-gestión-de-usuarios-en-powershell">2. Cmdlets de
         gestión de usuarios en PowerShell</Titulo>
       <blockquote>
         <Texto>Estos cmdlets forman parte de los módulos
           <strong>Microsoft.PowerShell.LocalAccounts</strong> o
-          <strong>ActiveDirectory</strong> (si está instalado).
+          <strong>ActiveDirectory</strong> (sí está instalado).
         </Texto>
       </blockquote>
       <Titulo title="h3" id="usuarios-locales">Usuarios locales</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-LocalUser</code></td>
-            <td>Lista los usuarios locales.</td>
-            <td><code>Get-LocalUser</code></td>
-          </tr>
-          <tr>
-            <td><code>New-LocalUser</code></td>
-            <td>Crea un nuevo usuario local.</td>
-            <td><code>New-LocalUser -Name "Juan" -Password (Read-Host -AsSecureString "Contraseña")</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-LocalUser</code></td>
-            <td>Elimina un usuario local.</td>
-            <td><code>Remove-LocalUser -Name "Juan"</code></td>
-          </tr>
-          <tr>
-            <td><code>Set-LocalUser</code></td>
-            <td>Modifica las propiedades de un usuario.</td>
-            <td><code>Set-LocalUser -Name "Juan" -Description "Usuario de prueba"</code></td>
-          </tr>
-          <tr>
-            <td><code>Enable-LocalUser</code></td>
-            <td>Activa un usuario.</td>
-            <td><code>Enable-LocalUser -Name "Juan"</code></td>
-          </tr>
-          <tr>
-            <td><code>Disable-LocalUser</code></td>
-            <td>Desactiva un usuario.</td>
-            <td><code>Disable-LocalUser -Name "Juan"</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-LocalUser</TablaUnica>
+      <TablaUnica>Lista los usuarios locales.</TablaUnica>
+      <TablaUnica>Get-LocalUser</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>New-LocalUser</TablaUnica>
+      <TablaUnica>Crea un nuevo usuario local.</TablaUnica>
+      <TablaUnica>New-LocalUser -Name "Juan" -Password (Read-Host -AsSecureString "Contraseña")</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-LocalUser</TablaUnica>
+      <TablaUnica>Elimina un usuario local.</TablaUnica>
+      <TablaUnica>Remove-LocalUser -Name "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Set-LocalUser</TablaUnica>
+      <TablaUnica>Modifica las propiedades de un usuario.</TablaUnica>
+      <TablaUnica>Set-LocalUser -Name "Juan" -Description "Usuario de prueba"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Enable-LocalUser</TablaUnica>
+      <TablaUnica>Activa un usuario.</TablaUnica>
+      <TablaUnica>Enable-LocalUser -Name "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Disable-LocalUser</TablaUnica>
+      <TablaUnica>Desactiva un usuario.</TablaUnica>
+      <TablaUnica>Disable-LocalUser -Name "Juan"</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h3" id="grupos-locales">Grupos locales</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-LocalGroup</code></td>
-            <td>Lista los grupos locales.</td>
-            <td><code>Get-LocalGroup</code></td>
-          </tr>
-          <tr>
-            <td><code>New-LocalGroup</code></td>
-            <td>Crea un grupo nuevo.</td>
-            <td><code>New-LocalGroup -Name "Desarrolladores" -Description "Equipo de desarrollo"</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-LocalGroup</code></td>
-            <td>Elimina un grupo.</td>
-            <td><code>Remove-LocalGroup -Name "Desarrolladores"</code></td>
-          </tr>
-          <tr>
-            <td><code>Get-LocalGroupMember</code></td>
-            <td>Muestra los miembros de un grupo.</td>
-            <td><code>Get-LocalGroupMember -Group "Administradores"</code></td>
-          </tr>
-          <tr>
-            <td><code>Add-LocalGroupMember</code></td>
-            <td>Agrega un usuario o grupo a un grupo local.</td>
-            <td><code>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-LocalGroupMember</code></td>
-            <td>Quita un usuario de un grupo local.</td>
-            <td><code>Remove-LocalGroupMember -Group "Usuarios" -Member "Juan"</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-LocalGroup</TablaUnica>
+      <TablaUnica>Lista los grupos locales.</TablaUnica>
+      <TablaUnica>Get-LocalGroup</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>New-LocalGroup</TablaUnica>
+      <TablaUnica>Crea un grupo nuevo.</TablaUnica>
+      <TablaUnica>New-LocalGroup -Name "Desarrolladores" -Description "Equipo de desarrollo"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-LocalGroup</TablaUnica>
+      <TablaUnica>Elimina un grupo.</TablaUnica>
+      <TablaUnica>Remove-LocalGroup -Name "Desarrolladores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-LocalGroupMember</TablaUnica>
+      <TablaUnica>Muestra los miembros de un grupo.</TablaUnica>
+      <TablaUnica>Get-LocalGroupMember -Group "Administradores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Add-LocalGroupMember</TablaUnica>
+      <TablaUnica>Agrega un usuario o grupo a un grupo local.</TablaUnica>
+      <TablaUnica>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-LocalGroupMember</TablaUnica>
+      <TablaUnica>Quita un usuario de un grupo local.</TablaUnica>
+      <TablaUnica>Remove-LocalGroupMember -Group "Usuarios" -Member "Juan"</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h3" id="información-y-autenticación">Información y autenticación</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>whoami</code></td>
-            <td>Muestra el usuario actual (también en CMD).</td>
-            <td><code>whoami</code></td>
-          </tr>
-          <tr>
-            <td><code>[System.Security.Principal.WindowsIdentity]::GetCurrent().Name</code></td>
-            <td>Muestra el usuario actual con más detalle.</td>
-            <td><em>(copiar y ejecutar en PowerShell)</em></td>
-          </tr>
-          <tr>
-            <td><code>Get-ChildItem Env:USERNAME</code></td>
-            <td>Muestra el nombre de usuario como variable de entorno.</td>
-            <td><code>Get-ChildItem Env:USERNAME</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>whoami</TablaUnica>
+      <TablaUnica>Muestra el usuario actual (también en CMD).</TablaUnica>
+      <TablaUnica>whoami</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>[System.Security.Principal.WindowsIdentity]::GetCurrent().Name</TablaUnica>
+      <TablaUnica>Muestra el usuario actual con más detalle.</TablaUnica>
+      <TablaUnica><em>(copiar y ejecutar en PowerShell)</em></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-ChildItem Env:USERNAME</TablaUnica>
+      <TablaUnica>Muestra el nombre de usuario como variable de entorno.</TablaUnica>
+      <TablaUnica>Get-ChildItem Env:USERNAME</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
-      <Titulo title="h3" id="active-directory-solo-si-tienes-ad-instalado">Active Directory
-        (solo si tienes AD instalado)</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-ADUser</code></td>
-            <td>Muestra información de usuarios del dominio.</td>
-            <td><code>Get-ADUser -Filter *</code></td>
-          </tr>
-          <tr>
-            <td><code>New-ADUser</code></td>
-            <td>Crea un nuevo usuario en el dominio.</td>
-            <td>
-              <code>New-ADUser -Name "Carlos" -SamAccountName "carlos" -AccountPassword (Read-Host -AsSecureString "Contraseña") -Enabled $true</code>
-            </td>
-          </tr>
-          <tr>
-            <td><code>Set-ADUser</code></td>
-            <td>Modifica propiedades de un usuario del dominio.</td>
-            <td><code>Set-ADUser carlos -Title "Administrador"</code></td>
-          </tr>
-          <tr>
-            <td><code>Enable-ADAccount</code></td>
-            <td>Activa una cuenta de AD.</td>
-            <td><code>Enable-ADAccount carlos</code></td>
-          </tr>
-          <tr>
-            <td><code>Disable-ADAccount</code></td>
-            <td>Desactiva una cuenta de AD.</td>
-            <td><code>Disable-ADAccount carlos</code></td>
-          </tr>
-          <tr>
-            <td><code>Get-ADGroup</code></td>
-            <td>Muestra los grupos de dominio.</td>
-            <td><code>Get-ADGroup -Filter *</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Titulo title="h3" id="active-directory-solo-sí-tienes-ad-instalado">Active Directory
+        (solo sí tienes AD instalado)</Titulo>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-ADUser</TablaUnica>
+      <TablaUnica>Muestra información de usuarios del dominio.</TablaUnica>
+      <TablaUnica>Get-ADUser -Filter *</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>New-ADUser</TablaUnica>
+      <TablaUnica>Crea un nuevo usuario en el dominio.</TablaUnica>
+      <TablaUnica>New-ADUser -Name "Carlos" -SamAccountName "carlos" -AccountPassword (Read-Host -AsSecureString "Contraseña") -Enabled $true</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Set-ADUser</TablaUnica>
+      <TablaUnica>Modifica propiedades de un usuario del dominio.</TablaUnica>
+      <TablaUnica>Set-ADUser carlos -Title "Administrador"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Enable-ADAccount</TablaUnica>
+      <TablaUnica>Activa una cuenta de AD.</TablaUnica>
+      <TablaUnica>Enable-ADAccount carlos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Disable-ADAccount</TablaUnica>
+      <TablaUnica>Desactiva una cuenta de AD.</TablaUnica>
+      <TablaUnica>Disable-ADAccount carlos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-ADGroup</TablaUnica>
+      <TablaUnica>Muestra los grupos de dominio.</TablaUnica>
+      <TablaUnica>Get-ADGroup -Filter *</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="comandos-útiles-para-entornos-mixtos-cmd-powershell">3. Comandos
         útiles para entornos mixtos (CMD + PowerShell)</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Tarea</th>
-            <th>CMD</th>
-            <th>PowerShell</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ver usuario actual</td>
-            <td><code>whoami</code></td>
-            <td><code>whoami</code> o <code>$Env:USERNAME</code></td>
-          </tr>
-          <tr>
-            <td>Crear usuario</td>
-            <td><code>net user Juan 1234 /add</code></td>
-            <td><code>New-LocalUser -Name "Juan"</code></td>
-          </tr>
-          <tr>
-            <td>Eliminar usuario</td>
-            <td><code>net user Juan /delete</code></td>
-            <td><code>Remove-LocalUser -Name "Juan"</code></td>
-          </tr>
-          <tr>
-            <td>Agregar usuario a grupo</td>
-            <td><code>net localgroup Administradores Juan /add</code></td>
-            <td><code>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</code></td>
-          </tr>
-          <tr>
-            <td>Ver miembros de grupo</td>
-            <td><code>net localgroup Administradores</code></td>
-            <td><code>Get-LocalGroupMember -Group "Administradores"</code></td>
-          </tr>
-          <tr>
-            <td>Activar/desactivar usuario</td>
-            <td><code>net user Juan /active:yes</code></td>
-            <td><code>Enable-LocalUser -Name "Juan"</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Tarea", "CMD", "PowerShell"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Ver usuario actual</TablaUnica>
+      <TablaUnica>whoami</TablaUnica>
+      <TablaUnica>whoami o $Env:USERNAME</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Crear usuario</TablaUnica>
+      <TablaUnica>net user Juan 1234 /add</TablaUnica>
+      <TablaUnica>New-LocalUser -Name "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Eliminar usuario</TablaUnica>
+      <TablaUnica>net user Juan /delete</TablaUnica>
+      <TablaUnica>Remove-LocalUser -Name "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Agregar usuario a grupo</TablaUnica>
+      <TablaUnica>net localgroup Administradores Juan /add</TablaUnica>
+      <TablaUnica>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Ver miembros de grupo</TablaUnica>
+      <TablaUnica>net localgroup Administradores</TablaUnica>
+      <TablaUnica>Get-LocalGroupMember -Group "Administradores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Activar/desactivar usuario</TablaUnica>
+      <TablaUnica>net user Juan /active:yes</TablaUnica>
+      <TablaUnica>Enable-LocalUser -Name "Juan"</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
         principal</Enlace ></Texto>

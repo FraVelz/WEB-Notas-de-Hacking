@@ -2,7 +2,7 @@
 function Titulo({ title, children, className="", id="" }) {
     if (title=== 'h1') {
         if (id) {
-            return <h1 id={id} className={`text-3xl font-bold mb-2 ${className}`}>{children}</h1>;
+            return <h1 id={id} className={`text-3xl text-center font-bold mb-2 ${className}`}>{children}</h1>;
         }
         return <h1 className={`text-4xl font-bold mb-2 ${className}`}>{children}</h1>;
 

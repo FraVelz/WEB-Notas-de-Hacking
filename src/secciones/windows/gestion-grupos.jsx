@@ -1,8 +1,10 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -40,266 +42,242 @@ function nameabcd({ }) {
         <Texto>Todos estos comandos se ejecutan en <strong>Símbolo del sistema
           (CMD)</strong> con permisos de administrador.</Texto>
       </blockquote>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>net localgroup</code></td>
-            <td>Muestra todos los grupos locales del equipo.</td>
-            <td><code>net localgroup</code></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;nombre_grupo&gt;</code></td>
-            <td>Muestra los miembros del grupo.</td>
-            <td><code>net localgroup Administradores</code></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;nombre_grupo&gt; /add</code></td>
-            <td>Crea un nuevo grupo local.</td>
-            <td><code>net localgroup Desarrolladores /add</code></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;nombre_grupo&gt; /delete</code></td>
-            <td>Elimina un grupo local.</td>
-            <td><code>net localgroup Desarrolladores /delete</code></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;nombre_grupo&gt; &lt;usuario&gt; /add</code></td>
-            <td>Agrega un usuario al grupo.</td>
-            <td><code>net localgroup Administradores Juan /add</code></td>
-          </tr>
-          <tr>
-            <td><code>net localgroup &lt;nombre_grupo&gt; &lt;usuario&gt; /delete</code></td>
-            <td>Elimina un usuario del grupo.</td>
-            <td><code>net localgroup Administradores Juan /delete</code></td>
-          </tr>
-          <tr>
-            <td><code>net user &lt;usuario&gt;</code></td>
-            <td>Muestra los grupos a los que pertenece el usuario.</td>
-            <td><code>net user Juan</code></td>
-          </tr>
-          <tr>
-            <td><code>net group</code></td>
-            <td>(En redes de dominio) Muestra los grupos de dominio.</td>
-            <td><code>net group</code></td>
-          </tr>
-          <tr>
-            <td><code>net group &lt;nombre_grupo&gt;</code></td>
-            <td>Muestra los miembros del grupo de dominio.</td>
-            <td><code>net group Ventas</code></td>
-          </tr>
-          <tr>
-            <td><code>net group &lt;nombre_grupo&gt; /add</code></td>
-            <td>Crea un grupo de dominio (solo en AD).</td>
-            <td><code>net group Finanzas /add</code></td>
-          </tr>
-          <tr>
-            <td><code>net group &lt;nombre_grupo&gt; /delete</code></td>
-            <td>Elimina un grupo de dominio.</td>
-            <td><code>net group Finanzas /delete</code></td>
-          </tr>
-          <tr>
-            <td><code>net group &lt;nombre_grupo&gt; &lt;usuario&gt; /add</code></td>
-            <td>Agrega un usuario a un grupo del dominio.</td>
-            <td><code>net group Finanzas Juan /add</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>net localgroup</TablaUnica>
+      <TablaUnica>Muestra todos los grupos locales del equipo.</TablaUnica>
+      <TablaUnica>net localgroup</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;nombre_grupo&gt;</TablaUnica>
+      <TablaUnica>Muestra los miembros del grupo.</TablaUnica>
+      <TablaUnica>net localgroup Administradores</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;nombre_grupo&gt; /add</TablaUnica>
+      <TablaUnica>Crea un nuevo grupo local.</TablaUnica>
+      <TablaUnica>net localgroup Desarrolladores /add</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;nombre_grupo&gt; /delete</TablaUnica>
+      <TablaUnica>Elimina un grupo local.</TablaUnica>
+      <TablaUnica>net localgroup Desarrolladores /delete</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;nombre_grupo&gt; &lt;usuario&gt; /add</TablaUnica>
+      <TablaUnica>Agrega un usuario al grupo.</TablaUnica>
+      <TablaUnica>net localgroup Administradores Juan /add</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net localgroup &lt;nombre_grupo&gt; &lt;usuario&gt; /delete</TablaUnica>
+      <TablaUnica>Elimina un usuario del grupo.</TablaUnica>
+      <TablaUnica>net localgroup Administradores Juan /delete</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net user &lt;usuario&gt;</TablaUnica>
+      <TablaUnica>Muestra los grupos a los que pertenece el usuario.</TablaUnica>
+      <TablaUnica>net user Juan</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net group</TablaUnica>
+      <TablaUnica>(En redes de dominio) Muestra los grupos de dominio.</TablaUnica>
+      <TablaUnica>net group</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net group &lt;nombre_grupo&gt;</TablaUnica>
+      <TablaUnica>Muestra los miembros del grupo de dominio.</TablaUnica>
+      <TablaUnica>net group Ventas</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net group &lt;nombre_grupo&gt; /add</TablaUnica>
+      <TablaUnica>Crea un grupo de dominio (solo en AD).</TablaUnica>
+      <TablaUnica>net group Finanzas /add</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net group &lt;nombre_grupo&gt; /delete</TablaUnica>
+      <TablaUnica>Elimina un grupo de dominio.</TablaUnica>
+      <TablaUnica>net group Finanzas /delete</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>net group &lt;nombre_grupo&gt; &lt;usuario&gt; /add</TablaUnica>
+      <TablaUnica>Agrega un usuario a un grupo del dominio.</TablaUnica>
+      <TablaUnica>net group Finanzas Juan /add</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="cmdlets-de-gestión-de-grupos-en-powershell">2. Cmdlets de
         gestión de grupos en PowerShell</Titulo>
       <blockquote>
         <Texto>Estos cmdlets pertenecen al módulo
           <strong>Microsoft.PowerShell.LocalAccounts</strong> (para grupos
-          locales). Si usas Active Directory, también hay cmdlets del módulo
+          locales). Sí usas Active Directory, también hay cmdlets del módulo
           <strong>ActiveDirectory</strong>.
         </Texto>
       </blockquote>
       <Linea />
       <Titulo title="h3" id="grupos-locales">Grupos locales</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-LocalGroup</code></td>
-            <td>Muestra todos los grupos locales del sistema.</td>
-            <td><code>Get-LocalGroup</code></td>
-          </tr>
-          <tr>
-            <td><code>Get-LocalGroup -Name &lt;nombre&gt;</code></td>
-            <td>Muestra información detallada de un grupo.</td>
-            <td><code>Get-LocalGroup -Name "Administradores"</code></td>
-          </tr>
-          <tr>
-            <td><code>New-LocalGroup</code></td>
-            <td>Crea un grupo local nuevo.</td>
-            <td><code>New-LocalGroup -Name "Desarrolladores" -Description "Equipo de desarrollo"</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-LocalGroup</code></td>
-            <td>Elimina un grupo local.</td>
-            <td><code>Remove-LocalGroup -Name "Desarrolladores"</code></td>
-          </tr>
-          <tr>
-            <td><code>Get-LocalGroupMember</code></td>
-            <td>Muestra los miembros de un grupo local.</td>
-            <td><code>Get-LocalGroupMember -Group "Administradores"</code></td>
-          </tr>
-          <tr>
-            <td><code>Add-LocalGroupMember</code></td>
-            <td>Agrega un usuario o grupo a un grupo local.</td>
-            <td><code>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-LocalGroupMember</code></td>
-            <td>Quita un usuario o grupo de un grupo local.</td>
-            <td><code>Remove-LocalGroupMember -Group "Usuarios" -Member "Juan"</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-LocalGroup</TablaUnica>
+      <TablaUnica>Muestra todos los grupos locales del sistema.</TablaUnica>
+      <TablaUnica>Get-LocalGroup</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-LocalGroup -Name &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Muestra información detallada de un grupo.</TablaUnica>
+      <TablaUnica>Get-LocalGroup -Name "Administradores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>New-LocalGroup</TablaUnica>
+      <TablaUnica>Crea un grupo local nuevo.</TablaUnica>
+      <TablaUnica>New-LocalGroup -Name "Desarrolladores" -Description "Equipo de desarrollo"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-LocalGroup</TablaUnica>
+      <TablaUnica>Elimina un grupo local.</TablaUnica>
+      <TablaUnica>Remove-LocalGroup -Name "Desarrolladores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-LocalGroupMember</TablaUnica>
+      <TablaUnica>Muestra los miembros de un grupo local.</TablaUnica>
+      <TablaUnica>Get-LocalGroupMember -Group "Administradores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Add-LocalGroupMember</TablaUnica>
+      <TablaUnica>Agrega un usuario o grupo a un grupo local.</TablaUnica>
+      <TablaUnica>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-LocalGroupMember</TablaUnica>
+      <TablaUnica>Quita un usuario o grupo de un grupo local.</TablaUnica>
+      <TablaUnica>Remove-LocalGroupMember -Group "Usuarios" -Member "Juan"</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h3" id="grupos-de-dominio-active-directory">Grupos de dominio (Active
         Directory)</Titulo>
-      <Texto><em>(solo si tienes instalado el módulo <code>ActiveDirectory</code>
+      <Texto><em>(solo sí tienes instalado el módulo ActiveDirectory
         y estás en un dominio)</em></Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-ADGroup</code></td>
-            <td>Lista los grupos del dominio.</td>
-            <td><code>Get-ADGroup -Filter *</code></td>
-          </tr>
-          <tr>
-            <td><code>Get-ADGroupMember</code></td>
-            <td>Muestra los miembros de un grupo del dominio.</td>
-            <td><code>Get-ADGroupMember -Identity "Ventas"</code></td>
-          </tr>
-          <tr>
-            <td><code>New-ADGroup</code></td>
-            <td>Crea un grupo en Active Directory.</td>
-            <td><code>New-ADGroup -Name "Finanzas" -GroupScope Global -Path "OU=Departamentos,DC=empresa,DC=com"</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-ADGroup</code></td>
-            <td>Elimina un grupo del dominio.</td>
-            <td><code>Remove-ADGroup -Identity "Finanzas"</code></td>
-          </tr>
-          <tr>
-            <td><code>Add-ADGroupMember</code></td>
-            <td>Agrega usuarios o grupos a un grupo de dominio.</td>
-            <td><code>Add-ADGroupMember -Identity "Finanzas" -Members "Juan","Maria"</code></td>
-          </tr>
-          <tr>
-            <td><code>Remove-ADGroupMember</code></td>
-            <td>Elimina miembros de un grupo de dominio.</td>
-            <td><code>Remove-ADGroupMember -Identity "Finanzas" -Members "Juan"</code></td>
-          </tr>
-          <tr>
-            <td><code>Set-ADGroup</code></td>
-            <td>Modifica propiedades de un grupo.</td>
-            <td><code>Set-ADGroup -Identity "Finanzas" -Description "Grupo del área contable"</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-ADGroup</TablaUnica>
+      <TablaUnica>Lista los grupos del dominio.</TablaUnica>
+      <TablaUnica>Get-ADGroup -Filter *</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-ADGroupMember</TablaUnica>
+      <TablaUnica>Muestra los miembros de un grupo del dominio.</TablaUnica>
+      <TablaUnica>Get-ADGroupMember -Identity "Ventas"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>New-ADGroup</TablaUnica>
+      <TablaUnica>Crea un grupo en Active Directory.</TablaUnica>
+      <TablaUnica>New-ADGroup -Name "Finanzas" -GroupScope Global -Path "OU=Departamentos,DC=empresa,DC=com"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-ADGroup</TablaUnica>
+      <TablaUnica>Elimina un grupo del dominio.</TablaUnica>
+      <TablaUnica>Remove-ADGroup -Identity "Finanzas"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Add-ADGroupMember</TablaUnica>
+      <TablaUnica>Agrega usuarios o grupos a un grupo de dominio.</TablaUnica>
+      <TablaUnica>Add-ADGroupMember -Identity "Finanzas" -Members "Juan","Maria"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Remove-ADGroupMember</TablaUnica>
+      <TablaUnica>Elimina miembros de un grupo de dominio.</TablaUnica>
+      <TablaUnica>Remove-ADGroupMember -Identity "Finanzas" -Members "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Set-ADGroup</TablaUnica>
+      <TablaUnica>Modifica propiedades de un grupo.</TablaUnica>
+      <TablaUnica>Set-ADGroup -Identity "Finanzas" -Description "Grupo del área contable"</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="comparativa-cmd-vs-powershell">3. Comparativa CMD vs
         PowerShell</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Tarea</th>
-            <th>CMD</th>
-            <th>PowerShell</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ver grupos locales</td>
-            <td><code>net localgroup</code></td>
-            <td><code>Get-LocalGroup</code></td>
-          </tr>
-          <tr>
-            <td>Ver miembros de un grupo</td>
-            <td><code>net localgroup Administradores</code></td>
-            <td><code>Get-LocalGroupMember -Group "Administradores"</code></td>
-          </tr>
-          <tr>
-            <td>Crear un grupo</td>
-            <td><code>net localgroup Desarrolladores /add</code></td>
-            <td><code>New-LocalGroup -Name "Desarrolladores"</code></td>
-          </tr>
-          <tr>
-            <td>Eliminar un grupo</td>
-            <td><code>net localgroup Desarrolladores /delete</code></td>
-            <td><code>Remove-LocalGroup -Name "Desarrolladores"</code></td>
-          </tr>
-          <tr>
-            <td>Agregar usuario a grupo</td>
-            <td><code>net localgroup Administradores Juan /add</code></td>
-            <td><code>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</code></td>
-          </tr>
-          <tr>
-            <td>Quitar usuario del grupo</td>
-            <td><code>net localgroup Administradores Juan /delete</code></td>
-            <td><code>Remove-LocalGroupMember -Group "Administradores" -Member "Juan"</code></td>
-          </tr>
-          <tr>
-            <td>Listar grupos de dominio</td>
-            <td><code>net group</code></td>
-            <td><code>Get-ADGroup -Filter *</code></td>
-          </tr>
-          <tr>
-            <td>Crear grupo en dominio</td>
-            <td><code>net group Ventas /add</code></td>
-            <td><code>New-ADGroup -Name "Ventas" -GroupScope Global</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Tarea", "CMD", "PowerShell"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Ver grupos locales</TablaUnica>
+      <TablaUnica>net localgroup</TablaUnica>
+      <TablaUnica>Get-LocalGroup</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Ver miembros de un grupo</TablaUnica>
+      <TablaUnica>net localgroup Administradores</TablaUnica>
+      <TablaUnica>Get-LocalGroupMember -Group "Administradores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Crear un grupo</TablaUnica>
+      <TablaUnica>net localgroup Desarrolladores /add</TablaUnica>
+      <TablaUnica>New-LocalGroup -Name "Desarrolladores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Eliminar un grupo</TablaUnica>
+      <TablaUnica>net localgroup Desarrolladores /delete</TablaUnica>
+      <TablaUnica>Remove-LocalGroup -Name "Desarrolladores"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Agregar usuario a grupo</TablaUnica>
+      <TablaUnica>net localgroup Administradores Juan /add</TablaUnica>
+      <TablaUnica>Add-LocalGroupMember -Group "Administradores" -Member "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Quitar usuario del grupo</TablaUnica>
+      <TablaUnica>net localgroup Administradores Juan /delete</TablaUnica>
+      <TablaUnica>Remove-LocalGroupMember -Group "Administradores" -Member "Juan"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Listar grupos de dominio</TablaUnica>
+      <TablaUnica>net group</TablaUnica>
+      <TablaUnica>Get-ADGroup -Filter *</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Crear grupo en dominio</TablaUnica>
+      <TablaUnica>net group Ventas /add</TablaUnica>
+      <TablaUnica>New-ADGroup -Name "Ventas" -GroupScope Global</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
 
       <Linea />
       <Titulo title="h2" id="atajos-y-comandos-gráficos">4. Atajos y comandos gráficos</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>lusrmgr.msc</code></td>
-            <td>Abre la consola gráfica de <strong>Usuarios y Grupos
-              locales</strong> (solo Windows Pro y superior).</td>
-          </tr>
-          <tr>
-            <td><code>control userpasswords2</code></td>
-            <td>Permite administrar usuarios y grupos de forma avanzada.</td>
-          </tr>
-          <tr>
-            <td><code>compmgmt.msc</code> → “Usuarios y grupos locales”</td>
-            <td>Alternativa para versiones Pro.</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Descripción"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>lusrmgr.msc</TablaUnica>
+      <TablaUnica>Abre la consola gráfica de <strong>Usuarios y Grupos
+              locales</strong> (solo Windows Pro y superior).</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>control userpasswords2</TablaUnica>
+      <TablaUnica>Permite administrar usuarios y grupos de forma avanzada.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>compmgmt.msc → “Usuarios y grupos locales”</TablaUnica>
+      <TablaUnica>Alternativa para versiones Pro.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
         principal</Enlace ></Texto>

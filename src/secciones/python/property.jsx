@@ -1,13 +1,16 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function nameabcd({ }) {
   return (
     <>
       <Titulo title="h1" id="decorador-property">Decorador <span className="citation" data-cites="property">@property</span></Titulo>
-      <Texto><code>@property</code> se usa para <strong>encapsular
+      <Texto>@property se usa para <strong>encapsular
         atributos</strong>, <strong>añadir validaciones o lógica
           interna</strong>, pero sin cambiar la forma natural de acceder o
         modificar una variable.</Texto>
@@ -18,10 +21,10 @@ function nameabcd({ }) {
           <Lista>
             <li><Enlace href="#temario">Temario</Enlace ></li>
             <li><Enlace href="#qué-hace-property-en-python">¿Qué hace
-              <code>@property</code> en Python?</Enlace ></li>
+              @property en Python?</Enlace ></li>
             <li><Enlace href="#ejemplo-básico-sin-property">Ejemplo básico sin
-              <code>@property</code></Enlace ></li>
-            <li><Enlace href="#con-property">Con <code>@property</code></Enlace ></li>
+              @property</Enlace ></li>
+            <li><Enlace href="#con-property">Con @property</Enlace ></li>
             <li><Enlace href="#agregando-un-setter-para-modificar-el-valor">Agregando un
               <strong>setter</strong> para modificar el valor</Enlace ></li>
             <li><Enlace href="#también-existe-el-deleter-opcional">También existe el
@@ -33,9 +36,9 @@ function nameabcd({ }) {
       <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
         Principal</Enlace ></Texto>
       <Linea />
-      <Titulo title="h2" id="qué-hace-property-en-python">¿Qué hace <code>@property</code> en
+      <Titulo title="h2" id="qué-hace-property-en-python">¿Qué hace @property en
         Python?</Titulo>
-      <Texto>El decorador <strong><code>@property</code></strong> convierte un
+      <Texto>El decorador <strong>@property</strong> convierte un
         <strong>método de una clase</strong> en un <strong>atributo “solo de
           lectura”</strong> (al menos inicialmente).
       </Texto>
@@ -44,121 +47,95 @@ function nameabcd({ }) {
           directamente a una variable</strong>.</Texto>
       <Texto>En otras palabras:</Texto>
       <blockquote>
-        <Texto>Permite usar <em>métodos</em> como si fueran <em>atributos</em>,
+        <Texto>Permite usar <em>métodos</em> como sí fueran <em>atributos</em>,
           <strong>sin cambiar la sintaxis de acceso</strong>.
         </Texto>
       </blockquote>
       <Linea />
       <Titulo title="h2" id="ejemplo-básico-sin-property">Ejemplo básico sin
-        <code>@property</code>
+        @property
       </Titulo>
-      <div className="sourceCode" id="cb1">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> Persona:</span>
-            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, nombre):</span>
-            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.__nombre <span className="op">=</span> nombre  <span className="co"># atributo privado</span></span>
-            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> get_nombre(<span className="va">self</span>):</span>
-            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">return</span> <span className="va">self</span>.__nombre</span></code></pre>
-      </div>
+      <CodeBlock code={`class Persona:
+def __init__(self, nombre):
+self.__nombre = nombre  # atributo privado
+
+def get_nombre(self):
+return self.__nombre`} language="python" />
       <Texto>Uso:</Texto>
-      <div className="sourceCode" id="cb2">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace >p <span className="op">=</span> Persona(<span className="st">&quot;Ana&quot;</span>)</span>
-            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p.get_nombre())  <span className="co"># ✅ Funciona</span></span></code></pre>
-      </div>
-      <Texto>Pero se ve <em>feo</em> tener que escribir <code>.get_nombre()</code>
-        cada vez. Ahí entra <code>@property</code>.</Texto>
+      <CodeBlock code={`p = Persona("Ana")
+print(p.get_nombre())  # ✅ Funciona`} language="python" />
+      <Texto>Pero se ve <em>feo</em> tener que escribir .get_nombre()
+        cada vez. Ahí entra @property.</Texto>
       <Linea />
-      <Titulo title="h2" id="con-property">Con <code>@property</code></Titulo>
-      <div className="sourceCode" id="cb3">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> Persona:</span>
-            <span id="cb3-2"><Enlace href="#cb3-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, nombre):</span>
-            <span id="cb3-3"><Enlace href="#cb3-3" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.__nombre <span className="op">=</span> nombre</span>
-            <span id="cb3-4"><Enlace href="#cb3-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb3-5"><Enlace href="#cb3-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="at">@property</span></span>
-            <span id="cb3-6"><Enlace href="#cb3-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> nombre(<span className="va">self</span>):</span>
-            <span id="cb3-7"><Enlace href="#cb3-7" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">return</span> <span className="va">self</span>.__nombre</span></code></pre>
-      </div>
+      <Titulo title="h2" id="con-property">Con @property</Titulo>
+      <CodeBlock code={`class Persona:
+def __init__(self, nombre):
+self.__nombre = nombre
+
+@property
+def nombre(self):
+return self.__nombre`} language="python" />
       <Texto>Uso:</Texto>
-      <div className="sourceCode" id="cb4">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabindex="-1"></Enlace >p <span className="op">=</span> Persona(<span className="st">&quot;Luis&quot;</span>)</span>
-            <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p.nombre)  <span className="co"># ✅ Sin paréntesis, parece un atributo</span></span></code></pre>
-      </div>
+      <CodeBlock code={`p = Persona("Luis")
+print(p.nombre)  # ✅ Sin paréntesis, parece un atributo`} language="python" />
       <Lista>
-        <li>Python llama automáticamente al método <code>nombre()</code>
-          cuando escribes <code>p.nombre</code>.</li>    <li>Es solo de lectura por ahora (no se puede cambiar el valor
+        <li>Python llama automáticamente al método nombre()
+          cuando escribes p.nombre.</li>    <li>Es solo de lectura por ahora (no se puede cambiar el valor
             directamente).</li>  </Lista>
       <Linea />
       <Titulo title="h2" id="agregando-un-setter-para-modificar-el-valor">Agregando un
         <strong>setter</strong> para modificar el valor
       </Titulo>
-      <div className="sourceCode" id="cb5">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="kw">class</span> Persona:</span>
-            <span id="cb5-2"><Enlace href="#cb5-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> <span className="fu">__init__</span>(<span className="va">self</span>, nombre):</span>
-            <span id="cb5-3"><Enlace href="#cb5-3" aria-hidden="true" tabindex="-1"></Enlace >        <span className="va">self</span>.__nombre <span className="op">=</span> nombre</span>
-            <span id="cb5-4"><Enlace href="#cb5-4" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb5-5"><Enlace href="#cb5-5" aria-hidden="true" tabindex="-1"></Enlace >    <span className="at">@property</span></span>
-            <span id="cb5-6"><Enlace href="#cb5-6" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> nombre(<span className="va">self</span>):</span>
-            <span id="cb5-7"><Enlace href="#cb5-7" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">return</span> <span className="va">self</span>.__nombre</span>
-            <span id="cb5-8"><Enlace href="#cb5-8" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb5-9"><Enlace href="#cb5-9" aria-hidden="true" tabindex="-1"></Enlace >    <span className="at">@nombre.setter</span></span>
-            <span id="cb5-10"><Enlace href="#cb5-10" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> nombre(<span className="va">self</span>, nuevo_nombre):</span>
-            <span id="cb5-11"><Enlace href="#cb5-11" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">if</span> <span className="bu">len</span>(nuevo_nombre) <span className="op">&gt;</span> <span className="dv">0</span>:</span>
-            <span id="cb5-12"><Enlace href="#cb5-12" aria-hidden="true" tabindex="-1"></Enlace >            <span className="va">self</span>.__nombre <span className="op">=</span> nuevo_nombre</span>
-            <span id="cb5-13"><Enlace href="#cb5-13" aria-hidden="true" tabindex="-1"></Enlace >        <span className="cf">else</span>:</span>
-            <span id="cb5-14"><Enlace href="#cb5-14" aria-hidden="true" tabindex="-1"></Enlace >            <span className="bu">print</span>(<span className="st">&quot;❌ El nombre no puede estar vacío.&quot;</span>)</span></code></pre>
-      </div>
+      <CodeBlock code={`class Persona:
+def __init__(self, nombre):
+self.__nombre = nombre
+
+@property
+def nombre(self):
+return self.__nombre
+
+@nombre.setter
+def nombre(self, nuevo_nombre):
+if len(nuevo_nombre) > 0:
+self.__nombre = nuevo_nombre
+else:
+print("❌ El nombre no puede estar vacío.")`} language="python" />
       <Texto>Uso:</Texto>
-      <div className="sourceCode" id="cb6">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabindex="-1"></Enlace >p <span className="op">=</span> Persona(<span className="st">&quot;Carlos&quot;</span>)</span>
-            <span id="cb6-2"><Enlace href="#cb6-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p.nombre)   <span className="co"># ✅ Getter</span></span>
-            <span id="cb6-3"><Enlace href="#cb6-3" aria-hidden="true" tabindex="-1"></Enlace >p.nombre <span className="op">=</span> <span className="st">&quot;Andrés&quot;</span>  <span className="co"># ✅ Setter</span></span>
-            <span id="cb6-4"><Enlace href="#cb6-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">print</span>(p.nombre)   <span className="co"># Andrés</span></span>
-            <span id="cb6-5"><Enlace href="#cb6-5" aria-hidden="true" tabindex="-1"></Enlace >p.nombre <span className="op">=</span> <span className="st">&quot;&quot;</span>     <span className="co"># ❌ El nombre no puede estar vacío.</span></span></code></pre>
-      </div>
+      <CodeBlock code={`p = Persona("Carlos")
+print(p.nombre)   # ✅ Getter
+p.nombre = "Andrés"  # ✅ Setter
+print(p.nombre)   # Andrés
+p.nombre = ""     # ❌ El nombre no puede estar vacío.`} language="python" />
       <Linea />
       <Titulo title="h2" id="también-existe-el-deleter-opcional">También existe el deleter
         (opcional)</Titulo>
-      <div className="sourceCode" id="cb7">
-        <pre
-          className="sourceCode python"><code className="sourceCode python"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabindex="-1"></Enlace >    <span className="at">@nombre.deleter</span></span>
-            <span id="cb7-2"><Enlace href="#cb7-2" aria-hidden="true" tabindex="-1"></Enlace >    <span className="kw">def</span> nombre(<span className="va">self</span>):</span>
-            <span id="cb7-3"><Enlace href="#cb7-3" aria-hidden="true" tabindex="-1"></Enlace >        <span className="bu">print</span>(<span className="st">&quot;Eliminando el nombre...&quot;</span>)</span>
-            <span id="cb7-4"><Enlace href="#cb7-4" aria-hidden="true" tabindex="-1"></Enlace >        <span className="kw">del</span> <span className="va">self</span>.__nombre</span></code></pre>
-      </div>
+      <CodeBlock code={`@nombre.deleter
+def nombre(self):
+print("Eliminando el nombre...")
+del self.__nombre`} language="python" />
       <Linea />
       <Titulo title="h2" id="en-resumen">En resumen</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Decorador</th>
-            <th>Función</th>
-            <th>Qué hace</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>@property</code></td>
-            <td>Getter</td>
-            <td>Devuelve el valor (lectura)</td>
-          </tr>
-          <tr>
-            <td><code>@atributo.setter</code></td>
-            <td>Setter</td>
-            <td>Modifica el valor (escritura)</td>
-          </tr>
-          <tr>
-            <td><code>@atributo.deleter</code></td>
-            <td>Deleter</td>
-            <td>Elimina el atributo</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Decorador", "Función", "Qué hace"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>@property</TablaUnica>
+      <TablaUnica>Getter</TablaUnica>
+      <TablaUnica>Devuelve el valor (lectura)</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>@atributo.setter</TablaUnica>
+      <TablaUnica>Setter</TablaUnica>
+      <TablaUnica>Modifica el valor (escritura)</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>@atributo.deleter</TablaUnica>
+      <TablaUnica>Deleter</TablaUnica>
+      <TablaUnica>Elimina el atributo</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
         Principal</Enlace ></Texto>

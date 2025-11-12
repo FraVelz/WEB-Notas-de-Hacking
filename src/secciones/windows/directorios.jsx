@@ -1,8 +1,10 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -30,134 +32,118 @@ function nameabcd({ }) {
       <Titulo title="h2" id="directorios-del-sistema">Directorios del sistema</Titulo>
       <Texto>Estos contienen archivos de Windows y componentes esenciales del
         sistema operativo:</Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Directorio</th>
-            <th>Ruta típica</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Windows</strong></td>
-            <td><code>C:\Windows</code></td>
-            <td>Carpeta principal del sistema operativo. Contiene casi todo lo que
-              Windows necesita para funcionar.</td>
-          </tr>
-          <tr>
-            <td><strong>System32</strong></td>
-            <td><code>C:\Windows\System32</code></td>
-            <td>Archivos críticos del sistema, DLLs, ejecutables y utilidades de
-              Windows.</td>
-          </tr>
-          <tr>
-            <td><strong>SysWOW64</strong></td>
-            <td><code>C:\Windows\SysWOW64</code></td>
-            <td>Versiones de 32 bits de las librerías del sistema en sistemas
-              Windows de 64 bits.</td>
-          </tr>
-          <tr>
-            <td><strong>WinSxS</strong></td>
-            <td><code>C:\Windows\WinSxS</code></td>
-            <td>Componentes del sistema y librerías para compatibilidad.</td>
-          </tr>
-          <tr>
-            <td><strong>Temp del sistema</strong></td>
-            <td><code>C:\Windows\Temp</code></td>
-            <td>Archivos temporales del sistema. Puede limpiarse para liberar
-              espacio.</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Directorio", "Ruta típica", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>Windows</strong></TablaUnica>
+      <TablaUnica>C:\Windows</TablaUnica>
+      <TablaUnica>Carpeta principal del sistema operativo. Contiene casi todo lo que
+              Windows necesita para funcionar.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>System32</strong></TablaUnica>
+      <TablaUnica>C:\Windows\System32</TablaUnica>
+      <TablaUnica>Archivos críticos del sistema, DLLs, ejecutables y utilidades de
+              Windows.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>SysWOW64</strong></TablaUnica>
+      <TablaUnica>C:\Windows\SysWOW64</TablaUnica>
+      <TablaUnica>Versiones de 32 bits de las librerías del sistema en sistemas
+              Windows de 64 bits.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>WinSxS</strong></TablaUnica>
+      <TablaUnica>C:\Windows\WinSxS</TablaUnica>
+      <TablaUnica>Componentes del sistema y librerías para compatibilidad.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Temp del sistema</strong></TablaUnica>
+      <TablaUnica>C:\Windows\Temp</TablaUnica>
+      <TablaUnica>Archivos temporales del sistema. Puede limpiarse para liberar
+              espacio.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="directorios-de-usuario">Directorios de usuario</Titulo>
       <Texto>Contienen los datos de cada usuario y configuraciones personales:</Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Directorio</th>
-            <th>Ruta típica</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Users</strong></td>
-            <td><code>C:\Users</code></td>
-            <td>Carpeta raíz de los perfiles de usuario.</td>
-          </tr>
-          <tr>
-            <td><strong>Perfil del usuario</strong></td>
-            <td><code>C:\Users\&lt;Usuario&gt;</code></td>
-            <td>Carpeta personal de cada usuario con documentos, descargas y
-              configuraciones.</td>
-          </tr>
-          <tr>
-            <td><strong>Documentos</strong></td>
-            <td><code>C:\Users\&lt;Usuario&gt;\Documents</code></td>
-            <td>Documentos y archivos del usuario.</td>
-          </tr>
-          <tr>
-            <td><strong>Descargas</strong></td>
-            <td><code>C:\Users\&lt;Usuario&gt;\Downloads</code></td>
-            <td>Archivos descargados de Internet.</td>
-          </tr>
-          <tr>
-            <td><strong>Escritorio</strong></td>
-            <td><code>C:\Users\&lt;Usuario&gt;\Desktop</code></td>
-            <td>Archivos y accesos directos visibles en el escritorio.</td>
-          </tr>
-          <tr>
-            <td><strong>AppData</strong></td>
-            <td><code>C:\Users\&lt;Usuario&gt;\AppData</code></td>
-            <td>Archivos de configuración y datos de aplicaciones. Subcarpetas:
-              <code>Local</code>, <code>LocalLow</code>, <code>Roaming</code>.
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Directorio", "Ruta típica", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>Users</strong></TablaUnica>
+      <TablaUnica>C:\Users</TablaUnica>
+      <TablaUnica>Carpeta raíz de los perfiles de usuario.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Perfil del usuario</strong></TablaUnica>
+      <TablaUnica>C:\Users\&lt;Usuario&gt;</TablaUnica>
+      <TablaUnica>Carpeta personal de cada usuario con documentos, descargas y
+              configuraciones.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Documentos</strong></TablaUnica>
+      <TablaUnica>C:\Users\&lt;Usuario&gt;\Documents</TablaUnica>
+      <TablaUnica>Documentos y archivos del usuario.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Descargas</strong></TablaUnica>
+      <TablaUnica>C:\Users\&lt;Usuario&gt;\Downloads</TablaUnica>
+      <TablaUnica>Archivos descargados de Internet.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Escritorio</strong></TablaUnica>
+      <TablaUnica>C:\Users\&lt;Usuario&gt;\Desktop</TablaUnica>
+      <TablaUnica>Archivos y accesos directos visibles en el escritorio.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>AppData</strong></TablaUnica>
+      <TablaUnica>C:\Users\&lt;Usuario&gt;\AppData</TablaUnica>
+      <TablaUnica>Archivos de configuración y datos de aplicaciones. Subcarpetas:
+              Local, LocalLow, Roaming.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="directorios-de-programas">Directorios de programas</Titulo>
       <Texto>Donde se instalan las aplicaciones:</Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Directorio</th>
-            <th>Ruta típica</th>
-            <th>Función</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Archivos de programa (64 bits)</strong></td>
-            <td><code>C:\Program Files</code></td>
-            <td>Instalaciones de aplicaciones de 64 bits.</td>
-          </tr>
-          <tr>
-            <td><strong>Archivos de programa (32 bits)</strong></td>
-            <td><code>C:\Program Files (x86)</code></td>
-            <td>Instalaciones de aplicaciones de 32 bits en sistemas de 64
-              bits.</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Directorio", "Ruta típica", "Función"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>Archivos de programa (64 bits)</strong></TablaUnica>
+      <TablaUnica>C:\Program Files</TablaUnica>
+      <TablaUnica>Instalaciones de aplicaciones de 64 bits.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Archivos de programa (32 bits)</strong></TablaUnica>
+      <TablaUnica>C:\Program Files (x86)</TablaUnica>
+      <TablaUnica>Instalaciones de aplicaciones de 32 bits en sistemas de 64
+              bits.</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="directorios-temporales-y-de-sistema-adicional">Directorios
         temporales y de sistema adicional</Titulo>
       <Lista>
         <li><strong>Temp del usuario</strong>:
-          <code>C:\Users\&lt;Usuario&gt;\AppData\Local\Temp</code> → Archivos
+          C:\Users\&lt;Usuario&gt;\AppData\Local\Temp → Archivos
           temporales de programas.
-        </li>    <li><strong>Prefetch</strong>: <code>C:\Windows\Prefetch</code> →
-          Optimización de arranque y ejecución de programas.</li>    <li><strong>Recycle Bin</strong>: <code>C:\$Recycle.Bin</code> →
+        </li>    <li><strong>Prefetch</strong>: C:\Windows\Prefetch →
+          Optimización de arranque y ejecución de programas.</li>    <li><strong>Recycle Bin</strong>: C:\$Recycle.Bin →
             Papelera de reciclaje.</li>  </Lista>
       <Linea />
       <Titulo title="h2" id="tips">Tips</Titulo>
       <Lista>
-        <li>Nunca elimines carpetas como <code>System32</code> o
-          <code>WinSxS</code>.
-        </li>    <li><code>AppData</code> y <code>Temp</code> se pueden limpiar con
+        <li>Nunca elimines carpetas como System32 o
+          WinSxS.
+        </li>    <li>AppData y Temp se pueden limpiar con
           cuidado para liberar espacio.</li>  </Lista>
       <Linea />
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía

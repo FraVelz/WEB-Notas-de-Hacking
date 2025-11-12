@@ -1,9 +1,9 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -59,8 +59,8 @@ function nameabcd({ }) {
         <Texto><strong>Conceptos/práctica básica:</strong></Texto>
         <Lista>
           <li>Captura en una interfaz y luego aplica <strong>filtros de
-            visualización</strong> (p. ej. <code>http</code>,
-            <code>ip.addr == 10.0.0.5</code>) para aislar lo que te
+            visualización</strong> (p. ej. http,
+            ip.addr == 10.0.0.5) para aislar lo que te
             interesa.
           </li>    <li>Diferencia entre <em>capture filters</em> (filtran en el momento
             de captura) y <em>display filters</em> (filtran lo ya
@@ -89,7 +89,7 @@ function nameabcd({ }) {
             servicio/version corre en un puerto). Nmap tiene muchísimas opciones; la
             documentación oficial y el libro de Nmap son excelentes para progresar
             paso a paso.</li>  </Lista>
-        <Texto><strong>Recomendación:</strong> úsalo en tu propia red o en entornos
+        <Texto><strong>Recomendación:</strong> úsalo en tú propia red o en entornos
           de laboratorio (p. ej. máquinas virtuales o laboratorios vulnerables).
           Es la herramienta que muchas veces se usa como “primer vistazo” antes de
           cualquier otra prueba.</Texto>
@@ -99,7 +99,7 @@ function nameabcd({ }) {
         <Texto><strong>Qué es / para qué sirve:</strong></Texto>
         <Texto>Metasploit es un framework modular orientado a pruebas de penetración
           y desarrollo/ejecución de exploits. Permite combinar módulos (exploits,
-          payloads, auxiliares) para probar si una vulnerabilidad real puede ser
+          payloads, auxiliares) para probar sí una vulnerabilidad real puede ser
           explotada. Es una suite más orientada a la fase
           <em>explotación/post-explotación</em> de una evaluación de
           seguridad.
@@ -113,7 +113,7 @@ function nameabcd({ }) {
         <Texto><strong>Conceptos/práctica básica (alto nivel y ética):</strong></Texto>
         <Lista>
           <li>Metasploit es modular: <em>auxiliary</em> (escanear/recopilar),
-            <em>exploit</em> (intentarlo), <em>payload</em> (qué ejecutas si
+            <em>exploit</em> (intentarlo), <em>payload</em> (qué ejecutas sí
             funciona), <em>post</em> (acciones después de obtener acceso).
           </li>    <li><strong>Importante:</strong> usar Metasploit para atacar sistemas
             sin autorización es ilegal y dañino. Está pensado para laboratorios y
@@ -135,7 +135,7 @@ function nameabcd({ }) {
           una evaluación ética (resumen)</Titulo>
         <ol type="1">
           <li><strong>Descubrir</strong> hosts y servicios con Nmap.</li>    <li><strong>Analizar</strong> tráfico y problemas concretos con
-            Wireshark (si hace falta inspección de paquetes).</li>    <li><strong>Validar</strong> vulnerabilidades (con autorización)
+            Wireshark (sí hace falta inspección de paquetes).</li>    <li><strong>Validar</strong> vulnerabilidades (con autorización)
               usando Metasploit u otras herramientas especializadas.</li>  </ol>
         <Linea />
         <Titulo title="h2" id="recursos-oficiales-y-seguridad">Recursos oficiales y

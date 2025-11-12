@@ -1,0 +1,16 @@
+{
+  "needs_manual_fix": [
+    "src/secciones/windows/alias-powershell.jsx",
+    "src/secciones/windows/powershell-cmd.jsx",
+    "src/secciones/linux/bash-script/estControl.jsx",
+    "src/secciones/linux/bash-script/manipulacion-de-strings.jsx",
+    "src/secciones/linux/bash-script/funciones.jsx",
+    "src/secciones/python/modulos/threading.jsx",
+    "src/secciones/python/modulos/re.jsx",
+    "src/secciones/python/modulos/subprocess.jsx",
+    "src/secciones/python/modulos/tkinter.jsx",
+    "src/secciones/python/modulos/multiprocessing.jsx",
+    "src/secciones/python/modulos/request.jsx",
+    "src/secciones/python/todo-python.jsx"
+  ]
+}

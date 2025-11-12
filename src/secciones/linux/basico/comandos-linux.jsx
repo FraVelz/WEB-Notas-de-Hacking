@@ -1,31 +1,33 @@
-import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/tabla.jsx";
-import Enlace from "./../../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../../componentes/estructura.jsx";
-import Linea from "./../../../componentes/linea.jsx";
-import Lista from "./../../../componentes/lista.jsx";
-import Texto from "./../../../componentes/texto.jsx";
-import Titulo from "./../../../componentes/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
+
+import Enlace from "../../../componentes/atomos/enlace.jsx";
+import Linea from "../../../componentes/atomos/linea.jsx";
+import Lista from "../../../componentes/moleculas/lista.jsx";
+import Texto from "../../../componentes/atomos/texto.jsx";
+import Titulo from "../../../componentes/moleculas/titulo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-          <li><Enlace href="#temario">Temario</Enlace ></li>
-          <li><Enlace href="#1-historia">1. Historia</Enlace ></li>
-          <li><Enlace href="#2-filosofía-de-linux">2. Filosofía de Linux</Enlace ></li>
-          <li><Enlace href="#3-componentes-de-linux">3. Componentes de Linux</Enlace ></li>
-          <li><Enlace href="#4-arquitectura-de-linux">4. Arquitectura de Linux</Enlace ></li>
-          <li><Enlace href="#5-jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema de Archivos (FHS)</Enlace ></li>
-          <li><Enlace href="#6-qué-es-comando">6. Qué es comando?</Enlace ></li>
-          <li><Enlace href="#7-variables-de-entorno">7. Variables de entorno</Enlace ></li>
-          <li><Enlace href="#8-comandos-de-linux">8. Comandos de Linux</Enlace ></li>
-          <li>
-            <Enlace href="#9-permisos-y-usuarios">9. Permisos y usuarios</Enlace >
-            <Lista>
-              <li><Enlace href="#ver-permisos">Ver permisos</Enlace ></li>
-              <li><Enlace href="#cambiar-permisos">Cambiar permisos</Enlace ></li>
-              <li><Enlace href="#cambiar-propietario">Cambiar propietario</Enlace ></li>
-            </Lista>
-          </li>
-          <li><Enlace href="#10-sudo">10. Sudo</Enlace ></li>
+      <li><Enlace href="#1-historia">1. Historia</Enlace ></li>
+      <li><Enlace href="#2-filosofía-de-linux">2. Filosofía de Linux</Enlace ></li>
+      <li><Enlace href="#3-componentes-de-linux">3. Componentes de Linux</Enlace ></li>
+      <li><Enlace href="#4-arquitectura-de-linux">4. Arquitectura de Linux</Enlace ></li>
+      <li><Enlace href="#5-jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema de Archivos (FHS)</Enlace ></li>
+      <li><Enlace href="#6-qué-es-comando">6. Qué es comando?</Enlace ></li>
+      <li><Enlace href="#7-variables-de-entorno">7. Variables de entorno</Enlace ></li>
+      <li><Enlace href="#8-comandos-de-linux">8. Comandos de Linux</Enlace ></li>
+      <li>
+        <Enlace href="#9-permisos-y-usuarios">9. Permisos y usuarios</Enlace >
+        <Lista>
+          <li><Enlace href="#ver-permisos">Ver permisos</Enlace ></li>
+          <li><Enlace href="#cambiar-permisos">Cambiar permisos</Enlace ></li>
+          <li><Enlace href="#cambiar-propietario">Cambiar propietario</Enlace ></li>
+        </Lista>
+      </li>
+      <li><Enlace href="#10-sudo">10. Sudo</Enlace ></li>
     </Lista>
   );
 }
@@ -114,7 +116,7 @@ function Comandos_Linux({ }) {
             <TablaFila>
               <TablaUnica><em>Configuration data stored in text files</em></TablaUnica>
               <TablaUnica>Los archivos de configuración son simples archivos de texto
-                (ejemplo: <code>/etc/passwd</code>).</TablaUnica>
+                (ejemplo: /etc/passwd).</TablaUnica>
             </TablaFila>
           </tbody>
         </Tabla>
@@ -180,77 +182,72 @@ function Comandos_Linux({ }) {
           de Archivos (FHS)</Titulo>
 
         <Texto>Linux organiza los archivos en una <strong>estructura en forma de
-          árbol</strong>, con <code>/</code> como raíz.</Texto>
-        <table>
-          <thead>
-            <tr>
-              <th>Ruta</th>
-              <th>Descripción</th>
-            </tr>
-          </thead>
+          árbol</strong>, con / como raíz.</Texto>
+        <Tabla>
+          <TablaCabezera headers={["Ruta", "Descripción"]} />
           <tbody>
-            <tr>
-              <td><code>/</code></td>
-              <td>Raíz del sistema. Contiene lo necesario para arrancar.</td>
-            </tr>
-            <tr>
-              <td><code>/bin</code></td>
-              <td>Binarios esenciales para el usuario.</td>
-            </tr>
-            <tr>
-              <td><code>/boot</code></td>
-              <td>Archivos de arranque (kernel, GRUB).</td>
-            </tr>
-            <tr>
-              <td><code>/dev</code></td>
-              <td>Archivos de dispositivos (discos, USBs).</td>
-            </tr>
-            <tr>
-              <td><code>/etc</code></td>
-              <td>Configuración del sistema y aplicaciones.</td>
-            </tr>
-            <tr>
-              <td><code>/home</code></td>
-              <td>Directorios personales de cada usuario.</td>
-            </tr>
-            <tr>
-              <td><code>/lib</code></td>
-              <td>Bibliotecas compartidas necesarias para arrancar.</td>
-            </tr>
-            <tr>
-              <td><code>/media</code></td>
-              <td>Punto de montaje para dispositivos externos.</td>
-            </tr>
-            <tr>
-              <td><code>/mnt</code></td>
-              <td>Punto de montaje temporal.</td>
-            </tr>
-            <tr>
-              <td><code>/opt</code></td>
-              <td>Software opcional de terceros.</td>
-            </tr>
-            <tr>
-              <td><code>/root</code></td>
-              <td>Directorio personal del usuario root.</td>
-            </tr>
-            <tr>
-              <td><code>/sbin</code></td>
-              <td>Binarios de administración del sistema.</td>
-            </tr>
-            <tr>
-              <td><code>/tmp</code></td>
-              <td>Archivos temporales (se borran al reiniciar).</td>
-            </tr>
-            <tr>
-              <td><code>/usr</code></td>
-              <td>Programas y utilidades de usuario.</td>
-            </tr>
-            <tr>
-              <td><code>/var</code></td>
-              <td>Archivos variables (logs, correo, cron, etc.).</td>
-            </tr>
+            <TablaFila>
+              <TablaUnica>/</TablaUnica>
+              <TablaUnica>Raíz del sistema. Contiene lo necesario para arrancar.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/bin</TablaUnica>
+              <TablaUnica>Binarios esenciales para el usuario.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/boot</TablaUnica>
+              <TablaUnica>Archivos de arranque (kernel, GRUB).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/dev</TablaUnica>
+              <TablaUnica>Archivos de dispositivos (discos, USBs).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/etc</TablaUnica>
+              <TablaUnica>Configuración del sistema y aplicaciones.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/home</TablaUnica>
+              <TablaUnica>Directorios personales de cada usuario.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/lib</TablaUnica>
+              <TablaUnica>Bibliotecas compartidas necesarias para arrancar.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/media</TablaUnica>
+              <TablaUnica>Punto de montaje para dispositivos externos.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/mnt</TablaUnica>
+              <TablaUnica>Punto de montaje temporal.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/opt</TablaUnica>
+              <TablaUnica>Software opcional de terceros.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/root</TablaUnica>
+              <TablaUnica>Directorio personal del usuario root.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/sbin</TablaUnica>
+              <TablaUnica>Binarios de administración del sistema.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/tmp</TablaUnica>
+              <TablaUnica>Archivos temporales (se borran al reiniciar).</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/usr</TablaUnica>
+              <TablaUnica>Programas y utilidades de usuario.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/var</TablaUnica>
+              <TablaUnica>Archivos variables (logs, correo, cron, etc.).</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
         <Linea />
         <Texto><strong>Analogía</strong>, imagina Linux como una empresa:</Texto>
         <Lista>
@@ -279,151 +276,139 @@ function Comandos_Linux({ }) {
           “data:text”</Texto>
         <Linea />
         <Titulo title="h2" id="comandos-de-linux">8. Comandos de Linux</Titulo>
-        <table>
-          <colgroup>
-            <col style={{ width: '14%' }} />
-            <col style={{ width: '10%' }} />
-            <col style={{ width: '51%' }} />
-            <col style={{ width: '23%' }} />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Categoría</th>
-              <th>Comando</th>
-              <th>Descripción</th>
-              <th>Ejemplo</th>
-            </tr>
-          </thead>
+
+        <Tabla>
+          <TablaCabezera headers={["Categoría", "Comando", "Descripción", "Ejemplo"]} />
+
           <tbody>
-            <tr>
-              <td>Navegación</td>
-              <td><code>pwd</code></td>
-              <td>Muestra la ruta actual.</td>
-              <td><code>pwd</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>ls</code></td>
-              <td>Lista los archivos del directorio.</td>
-              <td><code>ls -la</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>cd</code></td>
-              <td>Cambia de directorio.</td>
-              <td><code>cd /home</code></td>
-            </tr>
-            <tr>
-              <td>Archivos y carpetas</td>
-              <td><code>cat</code></td>
-              <td>Muestra el contenido de un archivo.</td>
-              <td><code>cat archivo.txt</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>cp</code></td>
-              <td>Copia archivos o carpetas.</td>
-              <td><code>cp file.txt /tmp/</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>mv</code></td>
-              <td>Mueve o renombra archivos o carpetas.</td>
-              <td><code>mv file.txt new.txt</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>rm</code></td>
-              <td>Elimina archivos o carpetas.</td>
-              <td><code>rm -rf carpeta</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>touch</code></td>
-              <td>Crea un archivo vacío.</td>
-              <td><code>touch nota.txt</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>mkdir</code></td>
-              <td>Crea una carpeta.</td>
-              <td><code>mkdir proyectos</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>rmdir</code></td>
-              <td>Eliminar directorios vacíos.</td>
-              <td><code>rmdir proyectos</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>head -n 3</code></td>
-              <td>leer las primeras 3 líneas.</td>
-              <td><code>head -n 3</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>tail -n 3</code></td>
-              <td>leer las últimas 3 líneas.</td>
-              <td><code>tail -n 3</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>tree</code></td>
-              <td>Mostrar archivos y carpetas del directorio actual en forma de
-                árbol.</td>
-              <td><code>tree</code></td>
-            </tr>
-            <tr>
-              <td>Búsqueda</td>
-              <td><code>find</code></td>
-              <td>Busca archivos en el sistema.</td>
-              <td><code>find / -name "contraseña.txt"</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>grep</code></td>
-              <td>Busca texto dentro de archivos.</td>
-              <td><code>grep "admin" archivo.txt</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>locate</code></td>
-              <td>Busca rutas de archivos indexadas.</td>
-              <td><code>locate passwd</code></td>
-            </tr>
-            <tr>
-              <td>Sistema</td>
-              <td><code>whoami</code></td>
-              <td>Muestra el usuario actual.</td>
-              <td><code>whoami</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>uname -a</code></td>
-              <td>Muestra información del sistema.</td>
-              <td><code>uname -a</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>top</code> o <code>htop</code></td>
-              <td>Muestra procesos activos.</td>
-              <td><code>htop</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>ps aux</code></td>
-              <td>Lista todos los procesos.</td>
-              <td><code>ps aux | grep apache</code></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td><code>kill</code></td>
-              <td>Detiene un proceso.</td>
-              <td><code>kill 1234</code></td>
-            </tr>
+            <TablaFila>
+              <TablaUnica>Navegación</TablaUnica>
+              <TablaUnica>pwd</TablaUnica>
+              <TablaUnica>Muestra la ruta actual.</TablaUnica>
+              <TablaUnica>pwd</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>ls</TablaUnica>
+              <TablaUnica>Lista los archivos del directorio.</TablaUnica>
+              <TablaUnica>ls -la</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>cd</TablaUnica>
+              <TablaUnica>Cambia de directorio.</TablaUnica>
+              <TablaUnica>cd /home</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Archivos y carpetas</TablaUnica>
+              <TablaUnica>cat</TablaUnica>
+              <TablaUnica>Muestra el contenido de un archivo.</TablaUnica>
+              <TablaUnica>cat archivo.txt</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>cp</TablaUnica>
+              <TablaUnica>Copia archivos o carpetas.</TablaUnica>
+              <TablaUnica>cp file.txt /tmp/</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>mv</TablaUnica>
+              <TablaUnica>Mueve o renombra archivos o carpetas.</TablaUnica>
+              <TablaUnica>mv file.txt new.txt</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>rm</TablaUnica>
+              <TablaUnica>Elimina archivos o carpetas.</TablaUnica>
+              <TablaUnica>rm -rf carpeta</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>touch</TablaUnica>
+              <TablaUnica>Crea un archivo vacío.</TablaUnica>
+              <TablaUnica>touch nota.txt</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>mkdir</TablaUnica>
+              <TablaUnica>Crea una carpeta.</TablaUnica>
+              <TablaUnica>mkdir proyectos</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>rmdir</TablaUnica>
+              <TablaUnica>Eliminar directorios vacíos.</TablaUnica>
+              <TablaUnica>rmdir proyectos</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>head -n 3</TablaUnica>
+              <TablaUnica>leer las primeras 3 líneas.</TablaUnica>
+              <TablaUnica>head -n 3</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>tail -n 3</TablaUnica>
+              <TablaUnica>leer las últimas 3 líneas.</TablaUnica>
+              <TablaUnica>tail -n 3</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>tree</TablaUnica>
+              <TablaUnica>Mostrar archivos y carpetas del directorio actual en forma de.</TablaUnica>
+              <TablaUnica>tree</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Búsqueda</TablaUnica>
+              <TablaUnica>find</TablaUnica>
+              <TablaUnica>Busca archivos en el sistema.</TablaUnica>
+              <TablaUnica>find / -name "contraseña.txt"</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>grep</TablaUnica>
+              <TablaUnica>Busca texto dentro de archivos.</TablaUnica>
+              <TablaUnica>grep "admin" archivo.txt</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>locate</TablaUnica>
+              <TablaUnica>Busca rutas de archivos indexadas.</TablaUnica>
+              <TablaUnica>locate passwd</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Sistema</TablaUnica>
+              <TablaUnica>whoami</TablaUnica>
+              <TablaUnica>Muestra el usuario actual.</TablaUnica>
+              <TablaUnica>whoami</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>uname -a</TablaUnica>
+              <TablaUnica>Muestra información del sistema.</TablaUnica>
+              <TablaUnica>uname -a</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>top o htop</TablaUnica>
+              <TablaUnica>Muestra procesos activos.</TablaUnica>
+              <TablaUnica>htop</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>ps aux</TablaUnica>
+              <TablaUnica>Lista todos los procesos.</TablaUnica>
+              <TablaUnica>ps aux | grep apache</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica></TablaUnica>
+              <TablaUnica>kill</TablaUnica>
+              <TablaUnica>Detiene un proceso.</TablaUnica>
+              <TablaUnica>kill 1234</TablaUnica>
+            </TablaFila>
           </tbody>
-        </table>
+        </Tabla>
         <Texto>Y muchos más comandos, y variaciones de los mismos…</Texto>
         <Linea />
         <Titulo title="h2" id="permisos-y-usuarios">9. Permisos y usuarios</Titulo>
@@ -435,20 +420,14 @@ function Comandos_Linux({ }) {
           <li><strong>Otros (o)</strong> – todos los demás usuarios</li>
         </Lista>
         <Titulo title="h3" id="ver-permisos">Ver permisos</Titulo>
-        <div className="sourceCode" id="cb1">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">ls</span> <span className="at">-l</span></span></code></pre>
-        </div>
+        <Codigo code="ls -l" language="bash" />
         <Texto>Salida típica:</Texto>
-        <div className="sourceCode" id="cb2">
-          <pre
-            className="sourceCode sh"><code className="sourceCode bash"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="ex">-rwxr-xr--</span></span></code></pre>
-        </div>
+        <Codigo code="-rwxr-xr--" language="bash" />
         <Texto>Interpretación:</Texto>
         <Lista>
-          <li><code>r</code> → leer (read)</li>
-          <li><code>w</code> → escribir (write)</li>
-          <li><code>x</code> → ejecutar (execute)</li>
+          <li>r → leer (read)</li>
+          <li>w → escribir (write)</li>
+          <li>x → ejecutar (execute)</li>
         </Lista>
         <Texto>→ Ejemplo anterior:</Texto>
         <Lista>
@@ -457,32 +436,23 @@ function Comandos_Linux({ }) {
           <li>Otros: <strong>r–</strong> (solo leer)</li>
         </Lista>
         <Titulo title="h3" id="cambiar-permisos">Cambiar permisos</Titulo>
-        <div className="sourceCode" id="cb3">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb3-1"><Enlace href="#cb3-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chmod</span> 755 archivo.sh</span></code></pre>
-        </div>
+        <Codigo code="chmod 755 archivo.sh" language="bash" />
         <Lista>
-          <li><code>7</code> → rwx</li>
-          <li><code>5</code> → r-x (Esto da permisos completos al dueño, y solo
+          <li>7 → rwx</li>
+          <li>5 → r-x (Esto da permisos completos al dueño, y solo
             lectura/ejecución al resto.)</li>
         </Lista>
         <Texto>Otra forma:</Texto>
-        <div className="sourceCode" id="cb4">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb4-1"><Enlace href="#cb4-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chmod</span> u+x script.sh   <span className="co"># Dar permiso de ejecución al usuario</span></span>
-              <span id="cb4-2"><Enlace href="#cb4-2" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chmod</span> g-w archivo.txt <span className="co"># Quitar permiso de escritura al grupo</span></span></code></pre>
-        </div>
+        <Codigo code={`chmod u+x script.sh   # Dar permiso de ejecución al usuario
+chmod g-w archivo.txt # Quitar permiso de escritura al grupo`} language="bash" />
         <Titulo title="h3" id="cambiar-propietario">Cambiar propietario</Titulo>
-        <div className="sourceCode" id="cb5">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb5-1"><Enlace href="#cb5-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">chown</span> usuario:grupo archivo.txt</span></code></pre>
-        </div>
+        <Codigo code="chown usuario:grupo archivo.txt" language="bash" />
         <Linea />
         <Titulo title="h2" id="sudo">10. Sudo</Titulo>
-        <Texto>El comando <code>sudo</code> en Linux y sistemas tipo Unix significa
+        <Texto>El comando sudo en Linux y sistemas tipo Unix significa
           <strong>“superuser do”</strong> (hacer como superusuario). Básicamente,
           permite ejecutar comandos con <strong>privilegios de
-            administrador</strong>, incluso si tu usuario normal no los tiene. Esto
+            administrador</strong>, incluso sí tú usuario normal no los tiene. Esto
           es útil porque algunas acciones (como instalar programas, modificar
           archivos del sistema o cambiar configuraciones importantes) requieren
           permisos elevados para proteger el sistema de cambios accidentales. Así
@@ -491,49 +461,37 @@ function Comandos_Linux({ }) {
         <Titulo title="h3" id="ejecutar-un-comando-como-administrador">1. <strong>Ejecutar un
           comando como administrador</strong></Titulo>
         <Texto>Cuando escribes:</Texto>
-        <div className="sourceCode" id="cb6">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb6-1"><Enlace href="#cb6-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> comando</span></code></pre>
-        </div>
+        <Codigo code="sudo comando" language="bash" />
         <Texto>Linux hace lo siguiente:</Texto>
         <Lista>
-          <li>Te pregunta la contraseña de tu usuario (no la del root) si no la
+          <li>Te pregunta la contraseña de tú usuario (no la del root) sí no la
             has usado sudo recientemente.</li>
-          <li>Verifica que tu usuario esté en el archivo
-            <code>/etc/sudoers</code>, que define quién puede usar sudo y qué
+          <li>Verifica que tú usuario esté en el archivo
+            /etc/sudoers, que define quién puede usar sudo y qué
             comandos.
           </li>
-          <li>Si está permitido, ejecuta el comando con <strong>permisos de
-            root</strong>, es decir, como si fueras el administrador del
+          <li>Sí está permitido, ejecuta el comando con <strong>permisos de
+            root</strong>, es decir, como sí fueras el administrador del
             sistema.</li>
         </Lista>
         <Titulo title="h3" id="ejemplo-práctico">2. <strong>Ejemplo práctico</strong></Titulo>
-        <div className="sourceCode" id="cb7">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb7-1"><Enlace href="#cb7-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> apt update</span></code></pre>
-        </div>
+        <Codigo code="sudo apt update" language="bash" />
         <Lista>
-          <li><code>apt update</code> actualiza la lista de paquetes en
+          <li>apt update actualiza la lista de paquetes en
             sistemas basados en Debian (Ubuntu, Mint, etc.).</li>
           <li>Normalmente un usuario normal no puede cambiar la base de datos
             de paquetes.</li>
-          <li><code>sudo</code> permite hacerlo porque ejecuta el comando con
+          <li>sudo permite hacerlo porque ejecuta el comando con
             permisos de root.</li>
         </Lista>
         <Titulo title="h3" id="comando-interactivo">3. <strong>Comando
           interactivo</strong></Titulo>
-        <Texto>Si escribes:</Texto>
-        <div className="sourceCode" id="cb8">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb8-1"><Enlace href="#cb8-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> <span className="at">-i</span></span></code></pre>
-        </div>
+        <Texto>Sí escribes:</Texto>
+        <Codigo code="sudo -i" language="bash" />
 
         <Texto>o</Texto>
-        
-        <div className="sourceCode" id="cb9">
-          <pre
-            className="sourceCode bash"><code className="sourceCode bash"><span id="cb9-1"><Enlace href="#cb9-1" aria-hidden="true" tabIndex="-1"></Enlace ><span className="fu">sudo</span> su</span></code></pre>
-        </div>
+
+        <Codigo code="sudo su" language="bash" />
 
         <Lista>
           <li>Obtienes un <strong>shell de root</strong>, es decir, todos los
@@ -547,13 +505,13 @@ function Comandos_Linux({ }) {
           sesión</strong></Titulo>
 
         <Lista>
-          <li><code>sudo</code> recuerda tu contraseña durante unos minutos
+          <li>sudo recuerda tú contraseña durante unos minutos
             (por defecto 5) para que no tengas que escribirla cada vez.</li>
-          <li>Si tu usuario no está en sudoers, no podrás usarlo.</li>
+          <li>Sí tú usuario no está en sudoers, no podrás usarlo.</li>
         </Lista>
 
         <Linea />
-        
+
         <blockquote>
           <Texto><strong>Autor:</strong> Fravelz<br />
             <strong>Colaborador:</strong> <span className="citation" data-cites="studentethical">@studentethical</span> (Student

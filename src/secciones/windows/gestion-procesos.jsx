@@ -1,8 +1,11 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -34,85 +37,80 @@ function nameabcd({ }) {
         <Texto>Todos estos se ejecutan en <strong>Símbolo del sistema
           (cmd)</strong>, preferiblemente con permisos de administrador.</Texto>
       </blockquote>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>tasklist</code></td>
-            <td>Muestra todos los procesos en ejecución con su PID (identificador de
-              proceso).</td>
-            <td><code>tasklist</code></td>
-          </tr>
-          <tr>
-            <td><code>tasklist /v</code></td>
-            <td>Muestra información más detallada (ventana, usuario, tiempo,
-              etc.).</td>
-            <td><code>tasklist /v</code></td>
-          </tr>
-          <tr>
-            <td><code>tasklist /fi "imagename eq notepad.exe"</code></td>
-            <td>Filtra procesos por nombre.</td>
-            <td><code>tasklist /fi "imagename eq chrome.exe"</code></td>
-          </tr>
-          <tr>
-            <td><code>tasklist /fi "pid eq 1234"</code></td>
-            <td>Filtra por PID.</td>
-            <td><code>tasklist /fi "pid eq 4567"</code></td>
-          </tr>
-          <tr>
-            <td><code>taskkill /im &lt;nombre&gt;</code></td>
-            <td>Cierra un proceso por su nombre.</td>
-            <td><code>taskkill /im notepad.exe</code></td>
-          </tr>
-          <tr>
-            <td><code>taskkill /pid &lt;id&gt;</code></td>
-            <td>Cierra un proceso por su PID.</td>
-            <td><code>taskkill /pid 4567</code></td>
-          </tr>
-          <tr>
-            <td><code>taskkill /f /im &lt;nombre&gt;</code></td>
-            <td>Fuerza el cierre de un proceso.</td>
-            <td><code>taskkill /f /im chrome.exe</code></td>
-          </tr>
-          <tr>
-            <td><code>taskkill /f /t /im &lt;nombre&gt;</code></td>
-            <td>Cierra el proceso y todos sus procesos hijos.</td>
-            <td><code>taskkill /f /t /im explorer.exe</code></td>
-          </tr>
-          <tr>
-            <td><code>wmic process list brief</code></td>
-            <td>Lista los procesos (más resumido).</td>
-            <td><code>wmic process list brief</code></td>
-          </tr>
-          <tr>
-            <td><code>wmic process where name="notepad.exe" get processid</code></td>
-            <td>Muestra el PID de un proceso específico.</td>
-            <td><code>wmic process where name="chrome.exe" get processid</code></td>
-          </tr>
-          <tr>
-            <td><code>wmic process where name="notepad.exe" call terminate</code></td>
-            <td>Termina un proceso específico.</td>
-            <td><code>wmic process where name="chrome.exe" call terminate</code></td>
-          </tr>
-          <tr>
-            <td><code>wmic process get name,processid,priority</code></td>
-            <td>Muestra procesos con su prioridad.</td>
-            <td><code>wmic process get name,processid,priority</code></td>
-          </tr>
-          <tr>
-            <td><code>systeminfo</code></td>
-            <td>Información general del sistema, incluyendo tiempo de
-              ejecución.</td>
-            <td><code>systeminfo</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>tasklist</TablaUnica>
+      <TablaUnica>Muestra todos los procesos en ejecución con su PID (identificador de
+              proceso).</TablaUnica>
+      <TablaUnica>tasklist</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>tasklist /v</TablaUnica>
+      <TablaUnica>Muestra información más detallada (ventana, usuario, tiempo,
+              etc.).</TablaUnica>
+      <TablaUnica>tasklist /v</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>tasklist /fi "imagename eq notepad.exe"</TablaUnica>
+      <TablaUnica>Filtra procesos por nombre.</TablaUnica>
+      <TablaUnica>tasklist /fi "imagename eq chrome.exe"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>tasklist /fi "pid eq 1234"</TablaUnica>
+      <TablaUnica>Filtra por PID.</TablaUnica>
+      <TablaUnica>tasklist /fi "pid eq 4567"</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>taskkill /im &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Cierra un proceso por su nombre.</TablaUnica>
+      <TablaUnica>taskkill /im notepad.exe</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>taskkill /pid &lt;id&gt;</TablaUnica>
+      <TablaUnica>Cierra un proceso por su PID.</TablaUnica>
+      <TablaUnica>taskkill /pid 4567</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>taskkill /f /im &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Fuerza el cierre de un proceso.</TablaUnica>
+      <TablaUnica>taskkill /f /im chrome.exe</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>taskkill /f /t /im &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Cierra el proceso y todos sus procesos hijos.</TablaUnica>
+      <TablaUnica>taskkill /f /t /im explorer.exe</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>wmic process list brief</TablaUnica>
+      <TablaUnica>Lista los procesos (más resumido).</TablaUnica>
+      <TablaUnica>wmic process list brief</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>wmic process where name="notepad.exe" get processid</TablaUnica>
+      <TablaUnica>Muestra el PID de un proceso específico.</TablaUnica>
+      <TablaUnica>wmic process where name="chrome.exe" get processid</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>wmic process where name="notepad.exe" call terminate</TablaUnica>
+      <TablaUnica>Termina un proceso específico.</TablaUnica>
+      <TablaUnica>wmic process where name="chrome.exe" call terminate</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>wmic process get name,processid,priority</TablaUnica>
+      <TablaUnica>Muestra procesos con su prioridad.</TablaUnica>
+      <TablaUnica>wmic process get name,processid,priority</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>systeminfo</TablaUnica>
+      <TablaUnica>Información general del sistema, incluyendo tiempo de
+              ejecución.</TablaUnica>
+      <TablaUnica>systeminfo</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="cmdlets-de-gestión-de-procesos-en-powershell">2. Cmdlets de
         gestión de procesos en PowerShell</Titulo>
@@ -120,198 +118,178 @@ function nameabcd({ }) {
         <Texto>PowerShell ofrece control total sobre los procesos, con más detalle y
           opciones que CMD.</Texto>
       </blockquote>
-      <table>
-        <thead>
-          <tr>
-            <th>Cmdlet</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>Get-Process</code></td>
-            <td>Muestra todos los procesos en ejecución.</td>
-            <td><code>Get-Process</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Get-Process &lt;nombre&gt;</code></td>
-            <td>Muestra información de un proceso específico.</td>
-            <td><code>Get-Process notepad</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Get-Process                         | Sort-Object CPU -Descending</code></td>
-            <td>Ordena procesos por uso de CPU.</td>
-            <td><em>(muestra los que más consumen CPU)</em></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Stop-Process -Name &lt;nombre&gt;</code></td>
-            <td>Detiene un proceso por nombre.</td>
-            <td><code>Stop-Process -Name "notepad"</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Stop-Process -Id &lt;PID&gt;</code></td>
-            <td>Detiene un proceso por ID.</td>
-            <td><code>Stop-Process -Id 4567</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Stop-Process -Name &lt;nombre&gt; -Force</code></td>
-            <td>Fuerza la detención de un proceso.</td>
-            <td><code>Stop-Process -Name "chrome" -Force</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Start-Process &lt;ruta o nombre&gt;</code></td>
-            <td>Inicia un nuevo proceso.</td>
-            <td><code>Start-Process notepad</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Start-Process &lt;ruta&gt; -Verb RunAs</code></td>
-            <td>Ejecuta un proceso como administrador.</td>
-            <td><code>Start-Process "cmd.exe" -Verb RunAs</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Wait-Process -Name &lt;nombre&gt;</code></td>
-            <td>Espera a que un proceso termine antes de continuar.</td>
-            <td><code>Wait-Process -Name "notepad"</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Debug-Process -Name &lt;nombre&gt;</code></td>
-            <td>Inicia depuración de un proceso (avanzado).</td>
-            <td><code>Debug-Process -Name "notepad"</code></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Get-WmiObject Win32_Process</code></td>
-            <td>Obtiene información avanzada de los procesos.</td>
-            <td>
-              <code>Get-WmiObject Win32_Process                             | Select-Object Name,ProcessId,ThreadCount</code>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>Get-Process                         | Where-Object $_.CPU - gt 50</code></td>
-            <td>Filtra procesos que consumen más de cierto valor de CPU.</td>
-            <td><em>(personalizable)</em></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo", ""]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Get-Process</TablaUnica>
+      <TablaUnica>Muestra todos los procesos en ejecución.</TablaUnica>
+      <TablaUnica>Get-Process</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-Process &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Muestra información de un proceso específico.</TablaUnica>
+      <TablaUnica>Get-Process notepad</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-Process                         | Sort-Object CPU -Descending</TablaUnica>
+      <TablaUnica>Ordena procesos por uso de CPU.</TablaUnica>
+      <TablaUnica><em>(muestra los que más consumen CPU)</em></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Stop-Process -Name &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Detiene un proceso por nombre.</TablaUnica>
+      <TablaUnica>Stop-Process -Name "notepad"</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Stop-Process -Id &lt;PID&gt;</TablaUnica>
+      <TablaUnica>Detiene un proceso por ID.</TablaUnica>
+      <TablaUnica>Stop-Process -Id 4567</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Stop-Process -Name &lt;nombre&gt; -Force</TablaUnica>
+      <TablaUnica>Fuerza la detención de un proceso.</TablaUnica>
+      <TablaUnica>Stop-Process -Name "chrome" -Force</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Start-Process &lt;ruta o nombre&gt;</TablaUnica>
+      <TablaUnica>Inicia un nuevo proceso.</TablaUnica>
+      <TablaUnica>Start-Process notepad</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Start-Process &lt;ruta&gt; -Verb RunAs</TablaUnica>
+      <TablaUnica>Ejecuta un proceso como administrador.</TablaUnica>
+      <TablaUnica>Start-Process "cmd.exe" -Verb RunAs</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Wait-Process -Name &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Espera a que un proceso termine antes de continuar.</TablaUnica>
+      <TablaUnica>Wait-Process -Name "notepad"</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Debug-Process -Name &lt;nombre&gt;</TablaUnica>
+      <TablaUnica>Inicia depuración de un proceso (avanzado).</TablaUnica>
+      <TablaUnica>Debug-Process -Name "notepad"</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-WmiObject Win32_Process</TablaUnica>
+      <TablaUnica>Obtiene información avanzada de los procesos.</TablaUnica>
+      <TablaUnica>Get-WmiObject Win32_Process                             | Select-Object Name,ProcessId,ThreadCount</TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Get-Process                         | Where-Object $_.CPU - gt 50</TablaUnica>
+      <TablaUnica>Filtra procesos que consumen más de cierto valor de CPU.</TablaUnica>
+      <TablaUnica><em>(personalizable)</em></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="comparativa-rápida-cmd-vs-powershell">3. Comparativa rápida CMD
         vs PowerShell</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Tarea</th>
-            <th>CMD</th>
-            <th>PowerShell</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ver todos los procesos</td>
-            <td><code>tasklist</code></td>
-            <td><code>Get-Process</code></td>
-          </tr>
-          <tr>
-            <td>Ver un proceso específico</td>
-            <td><code>tasklist /fi "imagename eq chrome.exe"</code></td>
-            <td><code>Get-Process chrome</code></td>
-          </tr>
-          <tr>
-            <td>Terminar un proceso</td>
-            <td><code>taskkill /im notepad.exe</code></td>
-            <td><code>Stop-Process -Name notepad</code></td>
-          </tr>
-          <tr>
-            <td>Terminar un proceso por ID</td>
-            <td><code>taskkill /pid 4567</code></td>
-            <td><code>Stop-Process -Id 4567</code></td>
-          </tr>
-          <tr>
-            <td>Forzar cierre</td>
-            <td><code>taskkill /f /im chrome.exe</code></td>
-            <td><code>Stop-Process -Name chrome -Force</code></td>
-          </tr>
-          <tr>
-            <td>Iniciar un proceso</td>
-            <td><em>(no hay comando directo)</em></td>
-            <td><code>Start-Process notepad</code></td>
-          </tr>
-          <tr>
-            <td>Ver prioridad</td>
-            <td><code>wmic process get name,priority</code></td>
-            <td><code>(Get-Process notepad).PriorityClass</code></td>
-          </tr>
-          <tr>
-            <td>Cambiar prioridad</td>
-            <td><em>(usando wmic o scripts)</em></td>
-            <td><code>(Get-Process notepad).PriorityClass = "High"</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Tarea", "CMD", "PowerShell"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Ver todos los procesos</TablaUnica>
+      <TablaUnica>tasklist</TablaUnica>
+      <TablaUnica>Get-Process</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Ver un proceso específico</TablaUnica>
+      <TablaUnica>tasklist /fi "imagename eq chrome.exe"</TablaUnica>
+      <TablaUnica>Get-Process chrome</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Terminar un proceso</TablaUnica>
+      <TablaUnica>taskkill /im notepad.exe</TablaUnica>
+      <TablaUnica>Stop-Process -Name notepad</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Terminar un proceso por ID</TablaUnica>
+      <TablaUnica>taskkill /pid 4567</TablaUnica>
+      <TablaUnica>Stop-Process -Id 4567</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Forzar cierre</TablaUnica>
+      <TablaUnica>taskkill /f /im chrome.exe</TablaUnica>
+      <TablaUnica>Stop-Process -Name chrome -Force</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Iniciar un proceso</TablaUnica>
+      <TablaUnica><em>(no hay comando directo)</em></TablaUnica>
+      <TablaUnica>Start-Process notepad</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Ver prioridad</TablaUnica>
+      <TablaUnica>wmic process get name,priority</TablaUnica>
+      <TablaUnica>(Get-Process notepad).PriorityClass</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Cambiar prioridad</TablaUnica>
+      <TablaUnica><em>(usando wmic o scripts)</em></TablaUnica>
+      <TablaUnica>(Get-Process notepad).PriorityClass = "High"</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="comandos-gráficos-y-herramientas-integradas">4. Comandos
         gráficos y herramientas integradas</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Comando</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>taskmgr</code></td>
-            <td>Abre el <strong>Administrador de tareas</strong>.</td>
-          </tr>
-          <tr>
-            <td><code>resmon</code></td>
-            <td>Abre el <strong>Monitor de recursos</strong> (más detallado que el
-              Administrador).</td>
-          </tr>
-          <tr>
-            <td><code>perfmon</code></td>
-            <td>Abre el <strong>Monitor de rendimiento</strong>.</td>
-          </tr>
-          <tr>
-            <td><code>msconfig</code></td>
-            <td>Permite gestionar procesos de inicio.</td>
-          </tr>
-          <tr>
-            <td><code>services.msc</code></td>
-            <td>Abre la consola de servicios (algunos procesos se inician como
-              servicios).</td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Comando", "Descripción"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>taskmgr</TablaUnica>
+      <TablaUnica>Abre el <strong>Administrador de tareas</strong>.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>resmon</TablaUnica>
+      <TablaUnica>Abre el <strong>Monitor de recursos</strong> (más detallado que el
+              Administrador).</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>perfmon</TablaUnica>
+      <TablaUnica>Abre el <strong>Monitor de rendimiento</strong>.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>msconfig</TablaUnica>
+      <TablaUnica>Permite gestionar procesos de inicio.</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>services.msc</TablaUnica>
+      <TablaUnica>Abre la consola de servicios (algunos procesos se inician como
+              servicios).</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="ejemplos-útiles-de-powershell">Ejemplos útiles de
         PowerShell</Titulo>
-      <div className="sourceCode" id="cb1">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver los 5 procesos que más consumen CPU</span></span>
-            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Process</span> <span className="op">|</span> <span className="fu">Sort-Object</span> CPU <span className="op">-</span>Descending <span className="op">|</span> <span className="fu">Select-Object</span> <span className="op">-</span>First <span className="dv">5</span></span>
-            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Ver todos los procesos de un usuario específico</span></span>
-            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-WmiObject</span> Win32_Process <span className="op">|</span> <span className="fu">Where-Object</span> <span className="op"></span> <span className="va">$_</span><span className="op">.</span><span className="fu">GetOwner</span><span className="op">().</span><span className="fu">User</span> <span className="op">-eq</span> <span className="st">&quot;Francisco&quot;</span> <span className="op"></span></span>
-            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Cerrar todos los procesos de Notepad</span></span>
-            <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Process</span> notepad <span className="op">|</span> <span className="fu">Stop-Process</span> <span className="op">-</span>Force</span>
-            <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-10"><Enlace href="#cb1-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Abrir el Bloc de notas como administrador</span></span>
-            <span id="cb1-11"><Enlace href="#cb1-11" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Start-Process</span> <span className="st">&quot;notepad.exe&quot;</span> <span className="op">-</span>Verb RunAs</span></code></pre>
-      </div>
+      <CodeBlock code={`# Ver los 5 procesos que más consumen CPU
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 5
+
+# Ver todos los procesos de un usuario específico
+Get-WmiObject Win32_Process | Where-Object  $_.GetOwner().User -eq "Francisco"
+
+# Cerrar todos los procesos de Notepad
+Get-Process notepad | Stop-Process -Force
+
+# Abrir el Bloc de notas como administrador
+Start-Process "notepad.exe" -Verb RunAs`} language="bash" />
       <Linea />
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
         principal</Enlace ></Texto>

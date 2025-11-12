@@ -1,8 +1,8 @@
-import Enlace from "./../../componentes/enlace";
-import Estructura from "./../../componentes/estructura";
-import Lista from "./../../componentes/lista";
-import Texto from "./../../componentes/texto";
-import Titulo from "./../../componentes/titulo";
+import Enlace from "../../componentes/atomos/enlace";
+import Estructura from "../../componentes/organismos/estructura";
+import Lista from "../../componentes/moleculas/lista";
+import Texto from "./../../componentes/atomos/texto";
+import Titulo from "../../componentes/moleculas/titulo";
 function Virtualizacion() {
     return (
         <Estructura>
@@ -22,7 +22,7 @@ function Virtualizacion() {
             </Lista>
 
             <Texto>
-                Si quieres ver un video de YouTube completo de virtualización con
+                Sí quieres ver un video de YouTube completo de virtualización con
                 VirtualBox antes de empezar los siguientes pasos, elige alguno para
                 aprender a virtualizar y aprender como funciona VirtualBox:
             </Texto>
@@ -51,7 +51,7 @@ function Virtualizacion() {
             <Lista className="
             p-1 list-disc
             ">
-                <Texto><li>Sin importar tu sistema, usa una máquina virtual para trabajar sin dañar el original.</li></Texto>
+                <Texto><li>Sin importar tú sistema, usa una máquina virtual para trabajar sin dañar el original.</li></Texto>
 
                 <Texto><li>La opción más recomendable es VirtualBox, sencilla y muy utilizada (otras personas prefieren WMware, u otras formas de virtualizar).</li></Texto>
             </Lista>
@@ -59,7 +59,7 @@ function Virtualizacion() {
             <Texto>
                 Tras instalar Ubuntu (u otro sistema linux) y Windows, crea un punto de
                 restauración en la máquina virtual, esto es muy importante para recuperar
-                el sistema si se llega a romper.
+                el sistema sí se llega a romper.
             </Texto>
 
             <Lista className="

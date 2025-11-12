@@ -1,14 +1,12 @@
 
 // * Componentes ************************************************************ //
 
-import Titulo from "./componentes/titulo.jsx";
-import Linea from "./componentes/linea.jsx";
-import Lista from "./componentes/lista.jsx";
-import Enlace from "./componentes/enlace.jsx";
-import Texto from "./componentes/texto.jsx";
-import Estructura from "./componentes/estructura.jsx";
-import Animacion from "./animacion.jsx";
-import Dividido from "./componentes/dividido.jsx";
+import Titulo from "./componentes/moleculas/titulo.jsx";
+import Linea from "./componentes/atomos/linea.jsx";
+import Texto from "./componentes/atomos/texto.jsx";
+import Estructura from "./componentes/organismos/estructura.jsx";
+import Animacion from "./componentes/atomos/animacion.jsx";
+import Dividido from "./componentes/moleculas/dividido.jsx";
 
 function Readme() {
     return (
@@ -36,9 +34,7 @@ function Readme() {
                 </Texto>
 
                 <Texto>
-                    <b>Errores:</b> Por ahora, los apartados no se pueden ingresar directamente
-                    por medio de URL, sino que tienes que ingresar primero a la página principal
-                    y luego acceder al apartado específico. También hay secciones que no son legibles
+                    <b>Errores:</b> Por ahora, falta información, y También hay secciones que no son legibles
                     en PC, pero son más o menos legibles en dispositivos móviles o pantallas similares.
                 </Texto>
 

@@ -1,8 +1,11 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -34,157 +37,136 @@ function nameabcd({ }) {
       <Texto>PowerShell no solo maneja texto (como CMD), sino <strong>flujos de
         salida (streams)</strong>. Cada flujo tiene un número que se usa para
         redirigirlo:</Texto>
-      <table>
-        <thead>
-          <tr>
-            <th>Flujo</th>
-            <th>Descripción</th>
-            <th>Ejemplo de redirección</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>1</code></td>
-            <td><strong>Salida estándar (Output)</strong> — resultado del
-              comando</td>
-            <td><code>&gt; archivo.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>2</code></td>
-            <td><strong>Errores (Error)</strong> — mensajes de error</td>
-            <td><code>2&gt; errores.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>3</code></td>
-            <td><strong>Mensajes de advertencia (Warning)</strong></td>
-            <td><code>3&gt; advertencias.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>4</code></td>
-            <td><strong>Mensajes detallados (Verbose)</strong></td>
-            <td><code>4&gt; verbose.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>5</code></td>
-            <td><strong>Mensajes de depuración (Debug)</strong></td>
-            <td><code>5&gt; debug.txt</code></td>
-          </tr>
-          <tr>
-            <td><code>6</code></td>
-            <td><strong>Mensajes de información (Information)</strong></td>
-            <td><code>6&gt; info.txt</code></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Flujo", "Descripción", "Ejemplo de redirección"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>1</TablaUnica>
+      <TablaUnica><strong>Salida estándar (Output)</strong> — resultado del
+              comando</TablaUnica>
+      <TablaUnica>&gt; archivo.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>2</TablaUnica>
+      <TablaUnica><strong>Errores (Error)</strong> — mensajes de error</TablaUnica>
+      <TablaUnica>2&gt; errores.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>3</TablaUnica>
+      <TablaUnica><strong>Mensajes de advertencia (Warning)</strong></TablaUnica>
+      <TablaUnica>3&gt; advertencias.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>4</TablaUnica>
+      <TablaUnica><strong>Mensajes detallados (Verbose)</strong></TablaUnica>
+      <TablaUnica>4&gt; verbose.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>5</TablaUnica>
+      <TablaUnica><strong>Mensajes de depuración (Debug)</strong></TablaUnica>
+      <TablaUnica>5&gt; debug.txt</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>6</TablaUnica>
+      <TablaUnica><strong>Mensajes de información (Information)</strong></TablaUnica>
+      <TablaUnica>6&gt; info.txt</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="operadores-de-redirección">Operadores de redirección</Titulo>
-      <table>
-        <thead>
-          <tr>
-            <th>Operador</th>
-            <th>Descripción</th>
-            <th>Ejemplo</th>
-            <th>Resultado</th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>-and</code></td>
-            <td><strong>Y lógico</strong> — ambas condiciones deben ser
-              verdaderas</td>
-            <td><code>($x -gt 5) -and ($x -lt 10)</code></td>
-            <td>Verdadero si x está entre 6 y 9</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>-or</code></td>
-            <td><strong>O lógico</strong> — una de las condiciones debe ser
-              verdadera</td>
-            <td><code>($a -eq 10) -or ($b -eq 10)</code></td>
-            <td>Verdadero si alguno es 10</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>-not</code> o <code>!</code></td>
-            <td><strong>Negación</strong></td>
-            <td><code>-not ($x -eq 5)</code> o <code>!($x -eq 5)</code></td>
-            <td>Verdadero si x ≠ 5</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>&amp;&amp;</code></td>
-            <td><strong>Ejecuta el siguiente comando solo si el primero fue
-              exitoso</strong></td>
-            <td><code>Test-Path archivo.txt &amp;&amp; Write-Host "Existe"</code></td>
-            <td>Muestra “Existe” solo si el archivo existe</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>|                                                                 |</code></td>
-            <td><strong>Ejecuta el siguiente comando solo si el primero
-              falla</strong></td>
-            <td><code>Test-Path archivo.txt |   | Write-Host "No existe"</code></td>
-            <td>Muestra “No existe” solo si falla</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>;</code></td>
-            <td><strong>Separa comandos</strong> (ejecuta ambos, sin importar si
-              fallan)</td>
-            <td><code>dir; echo "Hecho"</code></td>
-            <td>Siempre ejecuta ambos</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+      <Tabla>
+  <TablaCabezera headers={["Operador", "Descripción", "Ejemplo", "Resultado", "", "", "", ""]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>-and</TablaUnica>
+      <TablaUnica><strong>Y lógico</strong> — ambas condiciones deben ser
+              verdaderas</TablaUnica>
+      <TablaUnica>($x -gt 5) -and ($x -lt 10)</TablaUnica>
+      <TablaUnica>Verdadero sí x está entre 6 y 9</TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>-or</TablaUnica>
+      <TablaUnica><strong>O lógico</strong> — una de las condiciones debe ser
+              verdadera</TablaUnica>
+      <TablaUnica>($a -eq 10) -or ($b -eq 10)</TablaUnica>
+      <TablaUnica>Verdadero sí alguno es 10</TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>-not o !</TablaUnica>
+      <TablaUnica><strong>Negación</strong></TablaUnica>
+      <TablaUnica>-not ($x -eq 5) o !($x -eq 5)</TablaUnica>
+      <TablaUnica>Verdadero sí x ≠ 5</TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>&amp;&amp;</TablaUnica>
+      <TablaUnica><strong>Ejecuta el siguiente comando solo sí el primero fue
+              exitoso</strong></TablaUnica>
+      <TablaUnica>Test-Path archivo.txt &amp;&amp; Write-Host "Existe"</TablaUnica>
+      <TablaUnica>Muestra “Existe” solo sí el archivo existe</TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>|                                                                 |</TablaUnica>
+      <TablaUnica><strong>Ejecuta el siguiente comando solo sí el primero
+              falla</strong></TablaUnica>
+      <TablaUnica>Test-Path archivo.txt |   | Write-Host "No existe"</TablaUnica>
+      <TablaUnica>Muestra “No existe” solo sí falla</TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>;</TablaUnica>
+      <TablaUnica><strong>Separa comandos</strong> (ejecuta ambos, sin importar sí
+              fallan)</TablaUnica>
+      <TablaUnica>dir; echo "Hecho"</TablaUnica>
+      <TablaUnica>Siempre ejecuta ambos</TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+      <TablaUnica></TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
       <Linea />
       <Titulo title="h2" id="ejemplos-combinados">Ejemplos combinados</Titulo>
-      <div className="sourceCode" id="cb1">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Guarda salida y errores en archivos diferentes</span></span>
-            <span id="cb1-2"><Enlace href="#cb1-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> C<span className="op">:</span>\ <span className="dv">1</span><span className="op">&gt;</span>salida<span className="op">.</span><span className="fu">txt</span> <span className="dv">2</span><span className="op">&gt;</span>errores<span className="op">.</span><span className="fu">txt</span></span>
-            <span id="cb1-3"><Enlace href="#cb1-3" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-4"><Enlace href="#cb1-4" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Guarda todo en un solo archivo</span></span>
-            <span id="cb1-5"><Enlace href="#cb1-5" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> C<span className="op">:</span>\ <span className="op">*&gt;</span> todo<span className="op">.</span><span className="fu">txt</span></span>
-            <span id="cb1-6"><Enlace href="#cb1-6" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-7"><Enlace href="#cb1-7" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Si un archivo existe, muestra un mensaje</span></span>
-            <span id="cb1-8"><Enlace href="#cb1-8" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Test-Path</span> <span className="st">&quot;C:\config.txt&quot;</span> <span className="op">&amp;&amp;</span> <span className="fu">Write-Host</span> <span className="st">&quot;Existe&quot;</span> <span className="op">||</span> <span className="fu">Write-Host</span> <span className="st">&quot;No existe&quot;</span></span>
-            <span id="cb1-9"><Enlace href="#cb1-9" aria-hidden="true" tabindex="-1"></Enlace ></span>
-            <span id="cb1-10"><Enlace href="#cb1-10" aria-hidden="true" tabindex="-1"></Enlace ><span className="co"># Redirigir salida a un archivo y también verla en pantalla</span></span>
-            <span id="cb1-11"><Enlace href="#cb1-11" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Process</span> <span className="op">|</span> <span className="fu">Tee-Object</span> <span className="op">-</span>FilePath procesos<span className="op">.</span><span className="fu">txt</span></span></code></pre>
-      </div>
+      <CodeBlock code={`# Guarda salida y errores en archivos diferentes
+Get-ChildItem C:\ 1>salida.txt 2>errores.txt
+
+# Guarda todo en un solo archivo
+Get-ChildItem C:\ *> todo.txt
+
+# Si un archivo existe, muestra un mensaje
+Test-Path "C:\config.txt" && Write-Host "Existe" || Write-Host "No existe"
+
+# Redirigir salida a un archivo y también verla en pantalla
+Get-Process | Tee-Object -FilePath procesos.txt`} language="bash" />
       <Linea />
       <Titulo title="h2" id="tip-extra-usar-redirecciones-dentro-de-scripts">Tip extra: usar
         redirecciones dentro de scripts</Titulo>
-      <Texto>En scripts (<code>.ps1</code>), puedes controlar redirecciones con
+      <Texto>En scripts (.ps1), puedes controlar redirecciones con
         más precisión:</Texto>
-      <div className="sourceCode" id="cb2">
-        <pre
-          className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="va">$ErrorActionPreference</span> <span className="op">=</span> <span className="st">&quot;SilentlyContinue&quot;</span>   <span className="co"># Ignora errores</span></span>
-            <span id="cb2-2"><Enlace href="#cb2-2" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-Item</span> <span className="st">&quot;C:\noexiste.txt&quot;</span> <span className="op">*&gt;</span> log<span className="op">.</span><span className="fu">txt</span>         <span className="co"># Redirige todo</span></span></code></pre>
-      </div>
+      <CodeBlock code={`$ErrorActionPreference = "SilentlyContinue"   # Ignora errores
+Get-Item "C:\noexiste.txt" *> log.txt         # Redirige todo`} language="bash" />
       <Linea />
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
         principal</Enlace ></Texto>

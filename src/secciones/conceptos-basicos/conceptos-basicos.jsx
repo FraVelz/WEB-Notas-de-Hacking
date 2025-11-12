@@ -1,9 +1,9 @@
-import Enlace from "./../../componentes/enlace";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura";
-import Linea from "./../../componentes/linea";
-import Lista from "./../../componentes/lista";
-import Texto from "./../../componentes/texto";
-import Titulo from "./../../componentes/titulo";
+import Enlace from "../../componentes/atomos/enlace";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura";
+import Linea from "../../componentes/atomos/linea";
+import Lista from "../../componentes/moleculas/lista";
+import Texto from "./../../componentes/atomos/texto";
+import Titulo from "../../componentes/moleculas/titulo";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -265,7 +265,7 @@ function Conceptos_Basicos({ }) {
           <li>
             <strong>Blue team:</strong> Defensivo (guardianes), son los que
             protegen de los ataques, los encargados de reforzar seguridad a la
-            empresa si los de <strong>red team</strong> encuentran alguna
+            empresa sí los de <strong>red team</strong> encuentran alguna
             falla.
           </li>
           <li>

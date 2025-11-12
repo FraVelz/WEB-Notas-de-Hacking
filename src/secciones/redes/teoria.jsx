@@ -1,9 +1,11 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -280,9 +282,9 @@ function nameabcd({ }) {
         <blockquote>
           <Texto>Ejemplo práctico: Cuando abres YouTube:</Texto>
           <Lista>
-            <li>Tu navegador (cliente) pide un video.</li>
+            <li>Tú navegador (cliente) pide un video.</li>
             <li>Los servidores de YouTube lo envían.</li>
-            <li>Tu navegador reproduce el video.</li>
+            <li>Tú navegador reproduce el video.</li>
           </Lista>
         </blockquote>
         <Titulo title="h3" id="ventajas"><strong>Ventajas:</strong></Titulo>
@@ -294,7 +296,7 @@ function nameabcd({ }) {
         </Lista>
         <Titulo title="h3" id="desventajas"><strong>Desventajas:</strong></Titulo>
         <Lista>
-          <li>Si el servidor falla, los clientes quedan sin servicio.</li>
+          <li>Sí el servidor falla, los clientes quedan sin servicio.</li>
           <li>Requiere buena infraestructura para manejar muchos clientes.</li>
         </Lista>
         <Linea />
@@ -353,52 +355,47 @@ function nameabcd({ }) {
         </Lista>
         <Titulo title="h3" id="ejemplos-de-protocolos-comunes"><strong>Ejemplos de protocolos
           comunes:</strong></Titulo>
-        <table>
-          <thead>
-            <tr>
-              <th>Protocolo</th>
-              <th>Función principal</th>
-              <th>Ejemplo de uso</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>TCP (Transmission Control Protocol)</strong></td>
-              <td>Asegura la entrega de datos sin errores y en orden</td>
-              <td>Navegación web, correos electrónicos</td>
-            </tr>
-            <tr>
-              <td><strong>IP (Internet Protocol)</strong></td>
-              <td>Direcciona los datos para que lleguen al dispositivo correcto</td>
-              <td>Internet, redes privadas</td>
-            </tr>
-            <tr>
-              <td><strong>HTTP / HTTPS</strong></td>
-              <td>Transfiere páginas web</td>
-              <td>Navegadores web, sitios web</td>
-            </tr>
-            <tr>
-              <td><strong>FTP (File Transfer Protocol)</strong></td>
-              <td>Transfiere archivos entre dispositivos</td>
-              <td>Subida y descarga de archivos</td>
-            </tr>
-            <tr>
-              <td><strong>SMTP / IMAP / POP3</strong></td>
-              <td>Envía y recibe correos electrónicos</td>
-              <td>Gmail, Outlook</td>
-            </tr>
-            <tr>
-              <td><strong>DNS (Domain Name System)</strong></td>
-              <td>Convierte nombres de dominio en direcciones IP</td>
-              <td>Acceder a “google.com” desde el navegador</td>
-            </tr>
-            <tr>
-              <td><strong>DHCP (Dynamic Host Configuration Protocol)</strong></td>
-              <td>Asigna direcciones IP automáticamente</td>
-              <td>Redes domésticas y corporativas</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["Protocolo", "Función principal", "Ejemplo de uso"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>TCP (Transmission Control Protocol)</strong></TablaUnica>
+      <TablaUnica>Asegura la entrega de datos sin errores y en orden</TablaUnica>
+      <TablaUnica>Navegación web, correos electrónicos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>IP (Internet Protocol)</strong></TablaUnica>
+      <TablaUnica>Direcciona los datos para que lleguen al dispositivo correcto</TablaUnica>
+      <TablaUnica>Internet, redes privadas</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>HTTP / HTTPS</strong></TablaUnica>
+      <TablaUnica>Transfiere páginas web</TablaUnica>
+      <TablaUnica>Navegadores web, sitios web</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>FTP (File Transfer Protocol)</strong></TablaUnica>
+      <TablaUnica>Transfiere archivos entre dispositivos</TablaUnica>
+      <TablaUnica>Subida y descarga de archivos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>SMTP / IMAP / POP3</strong></TablaUnica>
+      <TablaUnica>Envía y recibe correos electrónicos</TablaUnica>
+      <TablaUnica>Gmail, Outlook</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>DNS (Domain Name System)</strong></TablaUnica>
+      <TablaUnica>Convierte nombres de dominio en direcciones IP</TablaUnica>
+      <TablaUnica>Acceder a “google.com” desde el navegador</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>DHCP (Dynamic Host Configuration Protocol)</strong></TablaUnica>
+      <TablaUnica>Asigna direcciones IP automáticamente</TablaUnica>
+      <TablaUnica>Redes domésticas y corporativas</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <blockquote>
           <Texto>Nota: Muchos protocolos trabajan <strong>juntos en capas</strong>
             según el modelo OSI o TCP/IP.</Texto>
@@ -468,47 +465,42 @@ function nameabcd({ }) {
         </Lista>
         <Titulo title="h3" id="ejemplos-importantes"><strong>Ejemplos
           importantes:</strong></Titulo>
-        <table>
-          <thead>
-            <tr>
-              <th>Protocolo</th>
-              <th>Función</th>
-              <th>Ejemplo de uso</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>HTTP / HTTPS</strong></td>
-              <td>Transferencia de páginas web</td>
-              <td>Navegadores, sitios web</td>
-            </tr>
-            <tr>
-              <td><strong>FTP / SFTP</strong></td>
-              <td>Transferencia de archivos</td>
-              <td>Subida y descarga de archivos</td>
-            </tr>
-            <tr>
-              <td><strong>SMTP</strong></td>
-              <td>Envío de correo electrónico</td>
-              <td>Servidores de correo</td>
-            </tr>
-            <tr>
-              <td><strong>IMAP / POP3</strong></td>
-              <td>Recepción de correo</td>
-              <td>Clientes de correo como Outlook</td>
-            </tr>
-            <tr>
-              <td><strong>DNS</strong></td>
-              <td>Resolución de nombres de dominio</td>
-              <td>Convertir “google.com” en IP</td>
-            </tr>
-            <tr>
-              <td><strong>Telnet / SSH</strong></td>
-              <td>Acceso remoto a sistemas</td>
-              <td>Administración de servidores</td>
-            </tr>
-          </tbody>
-        </table>
+        <Tabla>
+  <TablaCabezera headers={["Protocolo", "Función", "Ejemplo de uso"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica><strong>HTTP / HTTPS</strong></TablaUnica>
+      <TablaUnica>Transferencia de páginas web</TablaUnica>
+      <TablaUnica>Navegadores, sitios web</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>FTP / SFTP</strong></TablaUnica>
+      <TablaUnica>Transferencia de archivos</TablaUnica>
+      <TablaUnica>Subida y descarga de archivos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>SMTP</strong></TablaUnica>
+      <TablaUnica>Envío de correo electrónico</TablaUnica>
+      <TablaUnica>Servidores de correo</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>IMAP / POP3</strong></TablaUnica>
+      <TablaUnica>Recepción de correo</TablaUnica>
+      <TablaUnica>Clientes de correo como Outlook</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>DNS</strong></TablaUnica>
+      <TablaUnica>Resolución de nombres de dominio</TablaUnica>
+      <TablaUnica>Convertir “google.com” en IP</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica><strong>Telnet / SSH</strong></TablaUnica>
+      <TablaUnica>Acceso remoto a sistemas</TablaUnica>
+      <TablaUnica>Administración de servidores</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
         <blockquote>
           <Texto>Nota: Cada protocolo de aplicación funciona <strong>encima de TCP o
             UDP</strong> para garantizar que los datos lleguen correctamente.</Texto>
@@ -526,15 +518,15 @@ function nameabcd({ }) {
           <li>
             <Texto><strong>IPv4:</strong></Texto>
             <Lista>
-              <li>Formato: <code>192.168.1.10</code> (números de 0 a 255).</li>
-              <li>Ejemplo: <code>172.16.0.5</code></li>
+              <li>Formato: 192.168.1.10 (números de 0 a 255).</li>
+              <li>Ejemplo: 172.16.0.5</li>
               <li>Tiene espacio limitado (~4.000 millones de direcciones).</li>
             </Lista>
           </li>
           <li>
             <Texto><strong>IPv6:</strong></Texto>
             <Lista>
-              <li>Formato: <code>2001:0db8:85a3:0000:0000:8a2e:0370:7334</code></li>
+              <li>Formato: 2001:0db8:85a3:0000:0000:8a2e:0370:7334</li>
               <li>Diseñada para soportar millones de dispositivos más.</li>
             </Lista>
           </li>
@@ -545,7 +537,7 @@ function nameabcd({ }) {
           <li><strong>Públicas:</strong> Únicas en Internet, accesibles desde
             cualquier lugar.</li>
           <li><strong>Privadas:</strong> Usadas en redes locales, no accesibles
-            directamente desde Internet. Ej: <code>192.168.0.0/16</code></li>
+            directamente desde Internet. Ej: 192.168.0.0/16</li>
         </Lista>
         <Titulo title="h3" id="funciones-de-la-ip"><strong>Funciones de la IP:</strong></Titulo>
         <Lista>

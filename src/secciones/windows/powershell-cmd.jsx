@@ -1,8 +1,11 @@
-import Enlace from "../../componentes/enlace.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+
 function nameabcd({ }) {
   return (
     <>
@@ -33,10 +36,10 @@ function nameabcd({ }) {
             básico, llamado <em>batch</em>.</li>    <li><strong>Funciones principales</strong>:</li>
         <Lista>
           <li>
-            Ejecutar comandos simples del sistema (<code>dir</code>,
-              <code>copy</code>, <code>del</code>, etc.).
+            Ejecutar comandos simples del sistema (dir,
+              copy, del, etc.).
           </li>        <li>Automatizar tareas básicas con archivos
-            <code>.bat</code>.
+            .bat.
           </li>     
           </Lista>
       <li><strong>Limitaciones</strong>:
@@ -58,13 +61,13 @@ function nameabcd({ }) {
           <Texto>No solo ejecuta comandos, sino que devuelve <strong>objetos
               completos</strong>, no solo texto.</Texto>
           <Lista>
-            <li>Ejemplo: <code>Get-Process</code> devuelve un objeto de proceso con
-              propiedades (<code>Id</code>, <code>CPU</code>, <code>Memory</code>,
+            <li>Ejemplo: Get-Process devuelve un objeto de proceso con
+              propiedades (Id, CPU, Memory,
               etc.) que se pueden filtrar o manipular.</li>
           </Lista>
         </li>
         <li>
-          Automatización avanzada: scripts <code>.ps1</code> pueden hacer
+          Automatización avanzada: scripts .ps1 pueden hacer
             casi cualquier cosa en Windows, desde tareas de administración hasta
             manipulación de servicios, registro, Active Directory, etc.</li>        <li>Combinación de cmdlets (comandos especializados de PowerShell)
             para tareas complejas.</li>      </Lista>
@@ -75,65 +78,54 @@ function nameabcd({ }) {
   <Linea />
   <Titulo title="h2" id="diferencias-clave-en-práctica">Diferencias clave en
     práctica</Titulo>
-  <table>
-    <thead>
-      <tr>
-        <th>Característica</th>
-        <th>CMD</th>
-        <th>PowerShell</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Lenguaje</td>
-        <td>Batch / texto</td>
-        <td>Basado en objetos / .NET</td>
-      </tr>
-      <tr>
-        <td>Salida de comandos</td>
-        <td>Texto plano</td>
-        <td>Objetos</td>
-      </tr>
-      <tr>
-        <td>Automatización</td>
-        <td>Básica</td>
-        <td>Avanzada</td>
-      </tr>
-      <tr>
-        <td>Scripts</td>
-        <td><code>.bat</code></td>
-        <td><code>.ps1</code></td>
-      </tr>
-      <tr>
-        <td>Administración de Windows</td>
-        <td>Limitada</td>
-        <td>Completa</td>
-      </tr>
-      <tr>
-        <td>Multiplataforma</td>
-        <td>Solo Windows</td>
-        <td>Windows, Linux, macOS</td>
-      </tr>
-    </tbody>
-  </table>
+  <Tabla>
+  <TablaCabezera headers={["Característica", "CMD", "PowerShell"]} />
+
+  <tbody>
+    <TablaFila>
+      <TablaUnica>Lenguaje</TablaUnica>
+      <TablaUnica>Batch / texto</TablaUnica>
+      <TablaUnica>Basado en objetos / .NET</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Salida de comandos</TablaUnica>
+      <TablaUnica>Texto plano</TablaUnica>
+      <TablaUnica>Objetos</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Automatización</TablaUnica>
+      <TablaUnica>Básica</TablaUnica>
+      <TablaUnica>Avanzada</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Scripts</TablaUnica>
+      <TablaUnica>.bat</TablaUnica>
+      <TablaUnica>.ps1</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Administración de Windows</TablaUnica>
+      <TablaUnica>Limitada</TablaUnica>
+      <TablaUnica>Completa</TablaUnica>
+    </TablaFila>
+    <TablaFila>
+      <TablaUnica>Multiplataforma</TablaUnica>
+      <TablaUnica>Solo Windows</TablaUnica>
+      <TablaUnica>Windows, Linux, macOS</TablaUnica>
+    </TablaFila>
+  </tbody>
+</Tabla>
   <Linea />
   <Titulo title="h2" id="ejemplo">Ejemplo</Titulo>
   <Lista>
     <li>CMD:</li>
   </Lista>
-  <div className="sourceCode" id="cb1">
-    <pre
-      className="sourceCode cmd"><code className="sourceCode dosbat"><span id="cb1-1"><Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="bu">dir</span> <span className="kw">|</span> <span className="kw">find</span> <span className="st">&quot;archivo.txt&quot;</span></span></code></pre>
-  </div>
+  <CodeBlock code={`dir | find "archivo.txt"`} language="bash" />
   <Lista>
     <li>PowerShell:</li>
   </Lista>
-  <div className="sourceCode" id="cb2">
-    <pre
-      className="sourceCode powershell"><code className="sourceCode powershell"><span id="cb2-1"><Enlace href="#cb2-1" aria-hidden="true" tabindex="-1"></Enlace ><span className="fu">Get-ChildItem</span> <span className="op">|</span> <span className="fu">Where-Object</span> <span className="op">{"{"}</span> <span className="va">$_</span><span className="op">.</span><span className="fu">Name</span> <span className="op">-eq</span> <span className="st">&quot;archivo.txt&quot;</span> <span className="op">{"}"}</span></span></code></pre>
-  </div>
+  <CodeBlock code={`Get-ChildItem | Where-Object { $_.Name -eq "archivo.txt" }`} language="bash" />
   <blockquote>
-    <Texto>En PowerShell trabajas con objetos (<code>$_.Name</code>) y no solo
+    <Texto>En PowerShell trabajas con objetos ($_.Name) y no solo
       con texto, lo que te da muchísima más flexibilidad.</Texto>
   </blockquote>
   <Linea />

@@ -1,9 +1,10 @@
-import Enlace from "./../../componentes/enlace.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "./../../componentes/estructura.jsx";
-import Linea from "./../../componentes/linea.jsx";
-import Lista from "./../../componentes/lista.jsx";
-import Texto from "./../../componentes/texto.jsx";
-import Titulo from "./../../componentes/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Linea from "../../componentes/atomos/linea.jsx";
+import Lista from "../../componentes/moleculas/lista.jsx";
+import Texto from "./../../componentes/atomos/texto.jsx";
+import Titulo from "../../componentes/moleculas/titulo.jsx";
+import CodeBlock from "../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -20,8 +21,8 @@ function Temario({ className = "" }) {
         <Enlace href="#nota">Nota</Enlace >
       </li>
       <li>
-        <Enlace href="#como-modificar-tu-user-agent">
-          Como modificar tu User-Agent
+        <Enlace href="#como-modificar-tú-user-agent">
+          Como modificar tú User-Agent
         </Enlace >
       </li>
       <li>
@@ -72,17 +73,9 @@ function User_Agent() {
         <Texto>
           <strong>Ejemplo de user agent real:</strong>
         </Texto>
-        <div className="sourceCode" id="cb1">
-          <pre className="sourceCode txt">
-            <code className="sourceCode default">
-              <span id="cb1-1">
-                <Enlace href="#cb1-1" aria-hidden="true" tabindex="-1"></Enlace >Mozilla/5.0
-                (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
-                Gecko) Chrome/117.0.0.0 Safari/537.36
-              </span>
-            </code>
-          </pre>
-        </div>
+        <CodeBlock code={`Mozilla/5.0
+(Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
+Gecko) Chrome/117.0.0.0 Safari/537.36`} language="bash" />
         <Texto>Esto indica:</Texto>
         <Lista>
           <li>Navegador: Chrome</li>
@@ -111,11 +104,11 @@ function User_Agent() {
             ejemplo, los desarrolladores o hackers lo cambian para simular otro
             navegador o dispositivo.
           </li>        <li>
-            No protege tu identidad por sí mismo; solo dice qué software estás
+            No protege tú identidad por sí mismo; solo dice qué software estás
             usando.
           </li>      </Lista>
         <Linea />
-        <Titulo title="h2" id="como-modificar-tu-user-agent">Como modificar tu User-Agent</Titulo>
+        <Titulo title="h2" id="como-modificar-tú-user-agent">Como modificar tú User-Agent</Titulo>
         <Texto>
           <em>Hay diferentes formas de modificar el user-agent,</em> pero la más
           fácil y simple de implementar es usando una extensión web,

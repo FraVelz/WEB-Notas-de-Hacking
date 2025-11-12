@@ -1,20 +1,10 @@
-import Readme from "./readme.jsx";
-
-import { Routes, Route, Link } from "react-router-dom";
-import { lazy, useState } from "react";
-
-import Enlace_R from "./componentes/enlaces_dinamicos.jsx";
-
-// * Componentes Reutilizables ********************************************** //
 // * Componentes ************************************************************ //
 
-import Titulo from "./componentes/titulo.jsx";
-import Lista from "./componentes/lista.jsx";
-import Enlace from "./componentes/enlace.jsx";
-import Imagen from "./componentes/imagen.jsx";
-import Texto from "./componentes/texto.jsx";
+import Enlace from "./componentes/atomos/enlace.jsx";
+import Imagen from "./componentes/atomos/imagen.jsx";
+import Texto from "./componentes/atomos/texto.jsx";
 
-import Rutas_Configuracion from "./rutas.jsx";
+import Rutas_Configuracion from "./rutas-main/rutas.jsx";
 
 // * Apricacion ************************************************************* //
 
@@ -90,7 +80,7 @@ function App() {
           </div>
         </div>
 
-        <Texto className="text-center mt-5" select="none"><b>Ultima Actualizacion:</b> Nov 11 del 2025</Texto>
+        <Texto className="text-center mt-5" select="none"><b>Ultima Actualizacion:</b> Nov 12 del 2025</Texto>
       </footer>
     </>
   )

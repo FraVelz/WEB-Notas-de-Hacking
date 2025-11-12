@@ -1,11 +1,12 @@
-import Readme from "./readme.jsx";
-import Mensaje from "./componentes/mensaje.jsx";
+import Enlace_R from "../componentes/atomos/enlaces_dinamicos.jsx";
+import Mensaje from "../componentes/organismos/mensaje.jsx";
 
-import Titulo from "./componentes/titulo.jsx";
-import Texto from "./componentes/texto.jsx";
-import Lista from "./componentes/lista.jsx";
+import Titulo from "../componentes/moleculas/titulo.jsx";
+import Texto from "./../componentes/atomos/texto.jsx";
+import Lista from "../componentes/moleculas/lista.jsx";
+
 import { Link } from "react-router-dom";
-import { lazy, useState } from "react";
+import { useState } from "react";
 
 function Desplegable({ titulo = "", masInfo = "", children }) {
   return (
@@ -53,10 +54,6 @@ function Boton_I({ texto = "", children, className = "" }) {
   );
 }
 
-
-import Enlace_R from "./componentes/enlaces_dinamicos.jsx";
-
-
 function Rutas_Dinamicas() {
     return (
         <aside id="secciones" className="
@@ -85,16 +82,16 @@ function Rutas_Dinamicas() {
                 <Lista className="">
                     {/* Conceptos Básicos */}
                     <Desplegable titulo="Conceptos Básicos"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2" id="1-conceptos-básicos">Conceptos Básicos</Titulo>
 
                             <Texto><strong>Duración aproximada:</strong> 25min de lectura.</Texto>
 
                             <Texto className="text-left">
-                                En esta seccion se encontrara, explicaciones de los términos
-                                fundamentales, y reglas importantes de la seguridad informática. Es
+                                En esta sección se encontrará explicaciones de los términos
+                                fundamentales y reglas importantes de la seguridad informática. Es
                                 importante entenderlos, ya que se usan constantemente en el campo de la
-                                ciberseguridad y hacking.
+                                ciberseguridad y el hacking.
                             </Texto>
                         </Boton_I>}
                     >
@@ -105,15 +102,15 @@ function Rutas_Dinamicas() {
 
                     {/* Virtualizacion */}
                     <Desplegable titulo="Virtualizacion"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2" id="2-virtualización">Virtualización</Titulo>
 
-                            <Texto><strong>Duración aproximada (2h diarias):</strong> 2 días con practica.</Texto>
+                            <Texto><strong>Duración aproximada (2h diarias):</strong> 2 días con práctica.</Texto>
 
                             <Texto className="text-left">
-                                En esta seccion se encontrara, una guia corta, y resumida
-                                acerca de la virtualizacion con material extra para aprender mas,
-                                y la explicacion del porque es importante, y mucho mas.
+                                En esta sección se encontrará una guía corta y resumida
+                                acerca de la virtualización con material extra para aprender más,
+                                y la explicación del porqué es importante, y mucho más.
                             </Texto>
                         </Boton_I>}
                     >
@@ -122,21 +119,20 @@ function Rutas_Dinamicas() {
 
                     {/* Linux y Bash Script */}
                     <Desplegable titulo="Linux y Bash Script"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Linux y Bash Script</Titulo>
 
-                            <Texto><strong>Duración aproximada (2h diarias):</strong> 2 mes con practica.</Texto>
+                            <Texto><strong>Duración aproximada (2h diarias):</strong> 2 meses con práctica.</Texto>
 
                             <Texto className="text-left">
-                                En esta seccion se encontrara, todos los temas que se nesesitan en Linux mas conocidos,
-                                para el hacking, tambien incluye cosas de bash script, para aprender a crear programas sencillos,
-                                automatizados para hacking en linux.
+                                En esta sección se encontrará todos los temas que se necesitan en Linux más conocidos
+                                para el hacking. También incluye cosas de bash script, para aprender a crear programas sencillos
+                                y automatizados para hacking en Linux.
                             </Texto>
                         </Boton_I>}
                     >
 
                         <Desplegable titulo="Linux Basico">
-                            <li><Enlace_R to="/fundamentos">Fundamentos Linux</Enlace_R></li>
                             <li><Enlace_R to="/comandos_linux">Comandos Básicos</Enlace_R></li>
                             <li><Enlace_R to="/atajos_de_teclado">Atajos de Teclado</Enlace_R></li>
                             <li><Enlace_R to="/permisos">Gestión de Permisos</Enlace_R></li>
@@ -158,6 +154,7 @@ function Rutas_Dinamicas() {
 
                         {/* Bash Script */}
                         <Desplegable titulo="Bash Script">
+                            <li><Enlace_R to="/fundamentos">Fundamentos Linux</Enlace_R></li>
                             <li><Enlace_R to="/arrays">Arrays</Enlace_R></li>
                             <li><Enlace_R to="/condiciones">Condiciones</Enlace_R></li>
                             <li><Enlace_R to="/entrada_y_salida">Entrada y Salida</Enlace_R></li>
@@ -170,7 +167,7 @@ function Rutas_Dinamicas() {
 
                     {/* Windows */}
                     <Desplegable titulo="Windows"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Windows</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> 1 mes con practica.</Texto>
@@ -198,15 +195,15 @@ function Rutas_Dinamicas() {
 
                     {/* Redes */}
                     <Desplegable titulo="Redes"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Redes</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> 1 semana.</Texto>
 
                             <Texto className="text-left">
-                                En esta seccion se encontrara, el conocimiento teorico nesesario en redes,
-                                que es fundamental, como conocimiento general en hacking y es
-                                muy nesesario en Hacking wifi, y Pentesting.
+                                En esta sección se encontrará el conocimiento teórico necesario en redes,
+                                que es fundamental como conocimiento general en hacking y es
+                                muy necesario en hacking Wi‑Fi y pentesting.
                             </Texto>
                         </Boton_I>}
                     >
@@ -218,15 +215,15 @@ function Rutas_Dinamicas() {
 
                     {/* Python */}
                     <Desplegable titulo="Python"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Python</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> 2 mes con practica.</Texto>
 
                             <Texto className="text-left">
-                                En esta seccion se encontrara, el conocimiento para utilizar python, desde el
-                                conocimiento basico, hasta crear tus propios scripts en python para hacking incluyendo
-                                interfaz.
+                                En esta sección se encontrará el conocimiento para utilizar Python, desde el
+                                nivel básico hasta crear tus propios scripts en Python para hacking, incluyendo
+                                interfaces.
                             </Texto>
                         </Boton_I>}
                     >
@@ -251,14 +248,14 @@ function Rutas_Dinamicas() {
 
                     {/* Pentesting */}
                     <Desplegable titulo="Pentesting"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Pentesting</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> 3 mes con practica.</Texto>
 
                             <Texto className="text-left">
                                 En esta seccion se encontrara, el uso de herramientas, y teoria ya enfocada, en pentesting,
-                                aprendiendo herramientas de consola linux e interfaces graficas como wireshark, y muchas cosas mas,
+                                aprendiendo herramientas de consola linux e interfaces graficas como wireshark, y muchas cosas más,
                                 en relacion, con el tema, e implementando ya al final laboratorio reales.
                             </Texto>
                         </Boton_I>}
@@ -269,7 +266,7 @@ function Rutas_Dinamicas() {
 
                     {/* OSINT */}
                     <Desplegable titulo="OSINT"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">OSINT</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> Indefinido.</Texto>
@@ -288,13 +285,13 @@ function Rutas_Dinamicas() {
 
                     {/* Privacidad y Anonimato */}
                     <Desplegable titulo="Privacidad y Anonimato"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Privacidad y Anonimato</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> Indefinido.</Texto>
 
                             <Texto className="text-left">
-                                Tener el control del rastro y tu informacion personal en internet.
+                                Tener el control del rastro y tu información personal en Internet.
                             </Texto>
                         </Boton_I>}
                     >
@@ -306,14 +303,14 @@ function Rutas_Dinamicas() {
 
                     {/* Otros */}
                     <Desplegable titulo="Otros"
-                        masInfo={<Boton_I texto="Mas Info.">
+                        masInfo={<Boton_I texto="Más Info.">
                             <Titulo title="h2">Otros</Titulo>
 
                             <Texto><strong>Duración aproximada (2h diarias):</strong> Indefinido.</Texto>
 
                             <Texto className="text-left">
-                                Otros temas de interes que no son indispensables en el hacking, pero conocerlos
-                                puede ambliar mayormente el conocimiento de estos temas relacionados.
+                                Otros temas de interés que no son indispensables en el hacking, pero conocerlos
+                                puede ampliar y consolidar el conocimiento sobre temas relacionados.
                             </Texto>
                         </Boton_I>}
                     >

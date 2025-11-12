@@ -1,115 +1,114 @@
-import Readme from "./readme.jsx";
+import Readme from "./../readme.jsx";
 
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Rutas_Dinamicas from "./rutas_dinamicas.jsx";
 
-
 function Rutas_Configuracion() {
 
     // ********** Anonimato
-    const Privacidad_Y_Anonimato = lazy(() => import("./secciones/anonimato/privacidad-anonimato.jsx"));
-    const Filtraciones = lazy(() => import("./secciones/anonimato/filtraciones.jsx"));
-    const Huella_Digital = lazy(() => import("./secciones/anonimato/huella-digital.jsx"));
-    const User_Agent = lazy(() => import("./secciones/anonimato/user-agent.jsx"));
+    const Privacidad_Y_Anonimato = lazy(() => import("../secciones/anonimato/privacidad-anonimato.jsx"));
+    const Filtraciones = lazy(() => import("../secciones/anonimato/filtraciones.jsx"));
+    const Huella_Digital = lazy(() => import("../secciones/anonimato/huella-digital.jsx"));
+    const User_Agent = lazy(() => import("../secciones/anonimato/user-agent.jsx"));
 
     // ********** Conceptos Básicos
-    const Conceptos_Basicos = lazy(() => import("./secciones/conceptos-basicos/conceptos-basicos.jsx"));
-    const Legalidad_Hacking = lazy(() => import("./secciones/conceptos-basicos/legalidad-hacking.jsx"));
-    const Mitos = lazy(() => import("./secciones/conceptos-basicos/mitos.jsx"));
+    const Conceptos_Basicos = lazy(() => import("../secciones/conceptos-basicos/conceptos-basicos.jsx"));
+    const Legalidad_Hacking = lazy(() => import("../secciones/conceptos-basicos/legalidad-hacking.jsx"));
+    const Mitos = lazy(() => import("../secciones/conceptos-basicos/mitos.jsx"));
 
     // ********** Conceptos Básicos
-    const Virtualizacion = lazy(() => import("./secciones/virtualizacion/virtualizacion.jsx"));
+    const Virtualizacion = lazy(() => import("../secciones/virtualizacion/virtualizacion.jsx"));
 
     // ********** Linux
-    const Bandit_Resolucion = lazy(() => import("./secciones/linux/bandit-resolucion.jsx"));
+    const Bandit_Resolucion = lazy(() => import("../secciones/linux/bandit-resolucion.jsx"));
 
     // ********** Linux/Basico
-    const Atajos_De_Teclado = lazy(() => import("./secciones/linux/basico/atajos-de-teclado.jsx"));
-    const Ayuda_Linux = lazy(() => import("./secciones/linux/basico/ayuda-linux.jsx"));
-    const Busqueda = lazy(() => import("./secciones/linux/basico/busqueda.jsx"));
-    const Comandos_Linux = lazy(() => import("./secciones/linux/basico/comandos-linux.jsx"));
-    const Fundaments = lazy(() => import("./secciones/linux/basico/fundamentos.jsx"));
-    const Gestion_De_Procesos = lazy(() => import("./secciones/linux/basico/gestion-de-procesos.jsx"));
-    const Grupos_Y_Usuarios = lazy(() => import("./secciones/linux/basico/grupos-y-usuarios.jsx"));
-    const Permisos = lazy(() => import("./secciones/linux/basico/permisos.jsx"));
+    const Atajos_De_Teclado = lazy(() => import("../secciones/linux/basico/atajos-de-teclado.jsx"));
+    const Ayuda_Linux = lazy(() => import("../secciones/linux/basico/ayuda-linux.jsx"));
+    const Busqueda = lazy(() => import("../secciones/linux/basico/busqueda.jsx"));
+    const Comandos_Linux = lazy(() => import("../secciones/linux/basico/comandos-linux.jsx"));
+    const Fundaments = lazy(() => import("../secciones/linux/bash-script/fundamentos.jsx"));
+    const Gestion_De_Procesos = lazy(() => import("../secciones/linux/basico/gestion-de-procesos.jsx"));
+    const Grupos_Y_Usuarios = lazy(() => import("../secciones/linux/basico/grupos-y-usuarios.jsx"));
+    const Permisos = lazy(() => import("../secciones/linux/basico/permisos.jsx"));
 
     // ********** Linux/Bash-Script
-    const Arrays = lazy(() => import("./secciones/linux/bash-script/arrays.jsx"));
-    const Condiciones = lazy(() => import("./secciones/linux/bash-script/condiciones.jsx"));
-    const Entrada_Y_Salida = lazy(() => import("./secciones/linux/bash-script/entrada-y-salida.jsx"));
-    const EstControl = lazy(() => import("./secciones/linux/bash-script/estControl.jsx"));
-    const Funciones_Externas = lazy(() => import("./secciones/linux/bash-script/funciones-externas.jsx"));
-    const Funciones = lazy(() => import("./secciones/linux/bash-script/funciones.jsx"));
-    const Manipulacion_De_Strings = lazy(() => import("./secciones/linux/bash-script/manipulacion-de-strings.jsx"));
+    const Arrays = lazy(() => import("../secciones/linux/bash-script/arrays.jsx"));
+    const Condiciones = lazy(() => import("../secciones/linux/bash-script/condiciones.jsx"));
+    const Entrada_Y_Salida = lazy(() => import("../secciones/linux/bash-script/entrada-y-salida.jsx"));
+    const EstControl = lazy(() => import("../secciones/linux/bash-script/estControl.jsx"));
+    const Funciones_Externas = lazy(() => import("../secciones/linux/bash-script/funciones-externas.jsx"));
+    const Funciones = lazy(() => import("../secciones/linux/bash-script/funciones.jsx"));
+    const Manipulacion_De_Strings = lazy(() => import("../secciones/linux/bash-script/manipulacion-de-strings.jsx"));
 
     // ********** Linux/Comandos
-    const Cifrado_Cesar_Tr = lazy(() => import("./secciones/linux/comandos/cifrado-cesar-tr.jsx"));
-    const Diff = lazy(() => import("./secciones/linux/comandos/diff.jsx"));
-    const Less = lazy(() => import("./secciones/linux/comandos/less.jsx"));
-    const Ncat = lazy(() => import("./secciones/linux/comandos/ncat.jsx"));
-    const Netcat = lazy(() => import("./secciones/linux/comandos/netcat.jsx"));
-    const Wc = lazy(() => import("./secciones/linux/comandos/wc.jsx"));
-    const Which = lazy(() => import("./secciones/linux/comandos/which.jsx"));
-    const Xxd = lazy(() => import("./secciones/linux/comandos/xxd.jsx"));
+    const Cifrado_Cesar_Tr = lazy(() => import("../secciones/linux/comandos/cifrado-cesar-tr.jsx"));
+    const Diff = lazy(() => import("../secciones/linux/comandos/diff.jsx"));
+    const Less = lazy(() => import("../secciones/linux/comandos/less.jsx"));
+    const Ncat = lazy(() => import("../secciones/linux/comandos/ncat.jsx"));
+    const Netcat = lazy(() => import("../secciones/linux/comandos/netcat.jsx"));
+    const Wc = lazy(() => import("../secciones/linux/comandos/wc.jsx"));
+    const Which = lazy(() => import("../secciones/linux/comandos/which.jsx"));
+    const Xxd = lazy(() => import("../secciones/linux/comandos/xxd.jsx"));
 
     // ********** OSINT
-    const Basic = lazy(() => import("./secciones/osint/basic.jsx"));
-    const GoogleDoorks = lazy(() => import("./secciones/osint/googleDoorks.jsx"));
-    const Terminologia = lazy(() => import("./secciones/osint/terminologia.jsx"));
+    const Basic = lazy(() => import("../secciones/osint/basic.jsx"));
+    const GoogleDoorks = lazy(() => import("../secciones/osint/googleDoorks.jsx"));
+    const Terminologia = lazy(() => import("../secciones/osint/terminologia.jsx"));
 
     // ********** Otros
-    const Concientizacion = lazy(() => import("./secciones/otros/concientizacion.jsx"));
-    const Distribuciones_Linux = lazy(() => import("./secciones/otros/distribuciones-linux.jsx"));
-    const Herramientas = lazy(() => import("./secciones/otros/herramientas.jsx"));
-    const Notas_Actualizacion = lazy(() => import("./secciones/otros/notas-actualizacion.jsx"));
-    const Ramas_Ciberseguridad = lazy(() => import("./secciones/otros/ramas-ciberseguridad.jsx"));
-    const Recursos = lazy(() => import("./secciones/otros/recursos.jsx"));
+    const Concientizacion = lazy(() => import("../secciones/otros/concientizacion.jsx"));
+    const Distribuciones_Linux = lazy(() => import("../secciones/otros/distribuciones-linux.jsx"));
+    const Herramientas = lazy(() => import("../secciones/otros/herramientas.jsx"));
+    const Notas_Actualizacion = lazy(() => import("../secciones/otros/notas-actualizacion.jsx"));
+    const Ramas_Ciberseguridad = lazy(() => import("../secciones/otros/ramas-ciberseguridad.jsx"));
+    const Recursos = lazy(() => import("../secciones/otros/recursos.jsx"));
 
     // ********** Pentesting
-    const Cajas = lazy(() => import("./secciones/pentesting/cajas.jsx"));
-    const Fases = lazy(() => import("./secciones/pentesting/fases.jsx"));
+    const Cajas = lazy(() => import("../secciones/pentesting/cajas.jsx"));
+    const Fases = lazy(() => import("../secciones/pentesting/fases.jsx"));
 
     // ********** Python
-    const Clases_Python = lazy(() => import("./secciones/python/clases-python.jsx"));
-    const Classmethod = lazy(() => import("./secciones/python/classmethod.jsx"));
-    const Getter_Setter = lazy(() => import("./secciones/python/getter-setter.jsx"));
-    const Property = lazy(() => import("./secciones/python/property.jsx"));
-    const Todo_Python = lazy(() => import("./secciones/python/todo-python.jsx"));
-    const Variables_Clases = lazy(() => import("./secciones/python/variables-clases.jsx"));
+    const Clases_Python = lazy(() => import("../secciones/python/clases-python.jsx"));
+    const Classmethod = lazy(() => import("../secciones/python/classmethod.jsx"));
+    const Getter_Setter = lazy(() => import("../secciones/python/getter-setter.jsx"));
+    const Property = lazy(() => import("../secciones/python/property.jsx"));
+    const Todo_Python = lazy(() => import("../secciones/python/todo-python.jsx"));
+    const Variables_Clases = lazy(() => import("../secciones/python/variables-clases.jsx"));
 
     // ********** Python/Módulos
-    const Multiprocessing = lazy(() => import("./secciones/python/modulos/multiprocessing.jsx"));
-    const Os = lazy(() => import("./secciones/python/modulos/os.jsx"));
-    const Re = lazy(() => import("./secciones/python/modulos/re.jsx"));
-    const Request = lazy(() => import("./secciones/python/modulos/request.jsx"));
-    const Sockets = lazy(() => import("./secciones/python/modulos/sockets.jsx"));
-    const Subprocess = lazy(() => import("./secciones/python/modulos/subprocess.jsx"));
-    const Sys = lazy(() => import("./secciones/python/modulos/sys.jsx"));
-    const Threading = lazy(() => import("./secciones/python/modulos/threading.jsx"));
-    const Tkinter = lazy(() => import("./secciones/python/modulos/tkinter.jsx"));
+    const Multiprocessing = lazy(() => import("../secciones/python/modulos/multiprocessing.jsx"));
+    const Os = lazy(() => import("../secciones/python/modulos/os.jsx"));
+    const Re = lazy(() => import("../secciones/python/modulos/re.jsx"));
+    const Request = lazy(() => import("../secciones/python/modulos/request.jsx"));
+    const Sockets = lazy(() => import("../secciones/python/modulos/sockets.jsx"));
+    const Subprocess = lazy(() => import("../secciones/python/modulos/subprocess.jsx"));
+    const Sys = lazy(() => import("../secciones/python/modulos/sys.jsx"));
+    const Threading = lazy(() => import("../secciones/python/modulos/threading.jsx"));
+    const Tkinter = lazy(() => import("../secciones/python/modulos/tkinter.jsx"));
 
     // ********** Redes
-    const Cidrs_Hosts = lazy(() => import("./secciones/redes/cidrs-hosts.jsx"));
-    const Herramientas_Redes = lazy(() => import("./secciones/redes/herramientas.jsx"));
-    const Subnetting = lazy(() => import("./secciones/redes/subnetting.jsx"));
-    const Teoria = lazy(() => import("./secciones/redes/teoria.jsx"));
+    const Cidrs_Hosts = lazy(() => import("../secciones/redes/cidrs-hosts.jsx"));
+    const Herramientas_Redes = lazy(() => import("../secciones/redes/herramientas.jsx"));
+    const Subnetting = lazy(() => import("../secciones/redes/subnetting.jsx"));
+    const Teoria = lazy(() => import("../secciones/redes/teoria.jsx"));
 
     // ********** Windows
-    const Alias_Powershell = lazy(() => import("./secciones/windows/alias-powershell.jsx"));
-    const Ayuda_Soporte = lazy(() => import("./secciones/windows/ayuda-soporte.jsx"));
-    const Comodines = lazy(() => import("./secciones/windows/comodines.jsx"));
-    const Directorios = lazy(() => import("./secciones/windows/directorios.jsx"));
-    const Gestion_Grupos = lazy(() => import("./secciones/windows/gestion-grupos.jsx"));
-    const Gestion_Permisos = lazy(() => import("./secciones/windows/gestion-permisos.jsx"));
-    const Gestion_Procesos = lazy(() => import("./secciones/windows/gestion-procesos.jsx"));
-    const Gestion_Red = lazy(() => import("./secciones/windows/gestion-red.jsx"));
-    const Gestion_Usuarios = lazy(() => import("./secciones/windows/gestion-usuarios.jsx"));
-    const Historia = lazy(() => import("./secciones/windows/historia.jsx"));
-    const Navegacion = lazy(() => import("./secciones/windows/navegacion.jsx"));
-    const Powershell_Cmd = lazy(() => import("./secciones/windows/powershell-cmd.jsx"));
-    const Redirecciones_Powershell = lazy(() => import("./secciones/windows/redirecciones-powershell.jsx"));
-    const Variables_Entorno = lazy(() => import("./secciones/windows/variables-entorno.jsx"));
+    const Alias_Powershell = lazy(() => import("../secciones/windows/alias-powershell.jsx"));
+    const Ayuda_Soporte = lazy(() => import("../secciones/windows/ayuda-soporte.jsx"));
+    const Comodines = lazy(() => import("../secciones/windows/comodines.jsx"));
+    const Directorios = lazy(() => import("../secciones/windows/directorios.jsx"));
+    const Gestion_Grupos = lazy(() => import("../secciones/windows/gestion-grupos.jsx"));
+    const Gestion_Permisos = lazy(() => import("../secciones/windows/gestion-permisos.jsx"));
+    const Gestion_Procesos = lazy(() => import("../secciones/windows/gestion-procesos.jsx"));
+    const Gestion_Red = lazy(() => import("../secciones/windows/gestion-red.jsx"));
+    const Gestion_Usuarios = lazy(() => import("../secciones/windows/gestion-usuarios.jsx"));
+    const Historia = lazy(() => import("../secciones/windows/historia.jsx"));
+    const Navegacion = lazy(() => import("../secciones/windows/navegacion.jsx"));
+    const Powershell_Cmd = lazy(() => import("../secciones/windows/powershell-cmd.jsx"));
+    const Redirecciones_Powershell = lazy(() => import("../secciones/windows/redirecciones-powershell.jsx"));
+    const Variables_Entorno = lazy(() => import("../secciones/windows/variables-entorno.jsx"));
 
     return (
         <div className="flex flex-col lg:flex-row flex-1 w-full h-fit gap-4 lg:gap-6">
