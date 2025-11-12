@@ -75,7 +75,7 @@ function nameabcd({ }) {
         <li><strong>Copiar todos los archivos que empiecen con
           “doc”</strong>:</li>
       </Lista>
-      <CodeBlock code={`copy doc*.* D:\Backup\`} language="bash" />
+      <CodeBlock code={`copy doc*.* D:\/Backup\/`} language="bash" />
       <Lista>
         <li><strong>Renombrar archivos específicos con patrón</strong>
           (PowerShell):</li>
