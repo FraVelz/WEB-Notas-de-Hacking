@@ -8,6 +8,7 @@ import Enlace from "./componentes/enlace.jsx";
 import Texto from "./componentes/texto.jsx";
 import Estructura from "./componentes/estructura.jsx";
 import Animacion from "./animacion.jsx";
+import Dividido from "./componentes/dividido.jsx";
 
 function Readme() {
     return (
@@ -28,44 +29,32 @@ function Readme() {
                 es esta área.
             </Texto>
 
-            <div className="
-            flex flex-col lg:flex-row
-            justify-center align-middle
-            ">
-                <div className="
-                bg-gray-900
-                rounded-2xl
-                hyphens-auto hyphens: auto;
-                wrap-break-word
-                p-4
-                ">
-                    <Texto>
-                        <b>Informacion:</b> Cada session tiene un boton de un resumen que dice mas informacion, y esta organizada en orden de temas.
-                    </Texto>
+            <Dividido secundario={<Animacion />}>
+                <Texto>
+                    <b>Información:</b> Cada sesión tiene un botón de resumen que dice "más información",
+                    y está organizada en orden de temas.
+                </Texto>
 
-                    <Texto>
-                        <b>Errores:</b> Por ahora, los apartados no se pueden ingresar directamente por medio de url, sino que 
-                        tienes que ingresar directamente a la pagina principal y luego aceder al apartado especifico, tambien hay secciones que
-                        no son legibles en pc, pero son mas o menos legibles en dispositivos moviles o dimensiones de pantalla similar a dispositivos moviles.
-                    </Texto>
+                <Texto>
+                    <b>Errores:</b> Por ahora, los apartados no se pueden ingresar directamente
+                    por medio de URL, sino que tienes que ingresar primero a la página principal
+                    y luego acceder al apartado específico. También hay secciones que no son legibles
+                    en PC, pero son más o menos legibles en dispositivos móviles o pantallas similares.
+                </Texto>
 
-                    <Texto>
-                        Secciones como las que contienen tablas que les falta un formateo y
-                        estilo, secciones que les hace falta estilos incompletos en pantallas de pc, secciones con informacion poco clara o desordenada o no olganizada correctamente y secciones con informacion incompleta.
-                    </Texto>
+                <Texto>
+                    Secciones como las que contienen tablas sin formateo o estilo,
+                    secciones con estilos incompletos en PC, información poco clara o desordenada,
+                    y secciones con información incompleta.
+                </Texto>
 
-                    <Texto>
-                        Todas las anteriores secciones :v, y mucho mas estaran en 
-                        construccion y mejoramiento continuo, NOS VEMOSS!!!
-                    </Texto>
+                <Texto>
+                    Todas las anteriores secciones —y muchas más— estarán en
+                    construcción y mejoramiento continuo. ¡NOS VEMOS!
+                </Texto>
 
-                    <Texto>....</Texto>
-                </div>
-
-                <div className="flex justify-center lg:w-96 lg:h-96">
-                    <Animacion />
-                </div>
-            </div>
+                <Texto>....</Texto>
+            </Dividido>
         </Estructura>
     );
 };
