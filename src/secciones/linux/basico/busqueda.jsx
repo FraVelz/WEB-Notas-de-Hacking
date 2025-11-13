@@ -4,7 +4,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -72,7 +72,7 @@ function nameabcd({ }) {
         directorios</Titulo>
       <Titulo title="h3" id="find">find</Titulo>
       <Texto>Busca archivos y carpetas según nombre, tipo, tamaño, fecha, etc.</Texto>
-      <CodeBlock
+      <Codigo 
         code={`# Buscar por nombre (en todo el sistema)
 find / -name "archivo.txt"
 
@@ -94,7 +94,7 @@ find /tmp -name "*.log" -exec rm {} \;`}
         archivos</Titulo>
       <Titulo title="h3" id="grep">grep</Titulo>
       <Texto>Busca texto dentro del contenido de archivos.</Texto>
-        <CodeBlock
+        <Codigo 
           code={`# Buscar una palabra en un archivo
 grep "error" archivo.log
 
@@ -125,7 +125,7 @@ grep -l "root" /etc/*`}
       <Texto>Usa una base de datos indexada (más rápido que
         find).
       </Texto>
-      <CodeBlock
+      <Codigo 
         code={`# Buscar archivos por nombre
 locate archivo.txt
 
@@ -143,7 +143,7 @@ sudo updatedb`}
         type
       </Titulo>
       <Texto>Sirven para ubicar programas instalados o saber cómo se ejecutan.</Texto>
-      <CodeBlock
+      <Codigo 
         code={`# Ver ruta del ejecutable de un comando
 which python3
 
@@ -158,17 +158,17 @@ type ls`}
       <Titulo title="h2" id="buscar-en-el-historial-o-procesos">5. Buscar en el historial o
         procesos</Titulo>
       <Titulo title="h3" id="buscar-en-historial">Buscar en historial</Titulo>
-      <CodeBlock
+      <Codigo 
         code={`# Buscar un comando usado anteriormente
 history | grep "ssh"`}
         language="bash"
       />
       <Titulo title="h3" id="buscar-procesos-en-ejecución">Buscar procesos en ejecución</Titulo>
-      <CodeBlock code={`ps aux | grep firefox`} language="bash" />
+      <Codigo code={`ps aux | grep firefox`} language="bash" />
       <Linea />
       <Titulo title="h2" id="buscar-dentro-de-archivos-comprimidos-o-binarios">6. Buscar
         dentro de archivos comprimidos o binarios</Titulo>
-      <CodeBlock
+      <Codigo 
         code={`# Buscar dentro de un .tar.gz
 tar -tzf archivo.tar.gz | grep "config"
 

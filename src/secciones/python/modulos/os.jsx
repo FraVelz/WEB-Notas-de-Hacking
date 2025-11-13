@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -78,18 +78,18 @@ function nameabcd({ }) {
         rutas, y más.
       </Texto>
       <Texto>Se importa así:</Texto>
-      <CodeBlock code={`import os`} language="python" />
+      <Codigo code={`import os`} language="python" />
       <Linea />
       <Titulo title="h2" id="manejo-de-directorios">1. Manejo de directorios</Titulo>
       <Titulo title="h3" id="ver-el-directorio-actual">Ver el directorio actual</Titulo>
-      <CodeBlock code={`print(os.getcwd())  # get current working directory`} language="python" />
+      <Codigo code={`print(os.getcwd())  # get current working directory`} language="python" />
       <Titulo title="h3" id="cambiar-de-directorio">Cambiar de directorio</Titulo>
-      <CodeBlock code={`os.chdir("/home/fravelz/Documentos")`} language="python" />
+      <Codigo code={`os.chdir("/home/fravelz/Documentos")`} language="python" />
       <Titulo title="h3" id="listar-archivos-y-carpetas">Listar archivos y carpetas</Titulo>
-      <CodeBlock code={`archivos = os.listdir(".")
+      <Codigo code={`archivos = os.listdir(".")
 print(archivos)`} language="python" />
       <Titulo title="h3" id="crear-y-eliminar-carpetas">Crear y eliminar carpetas</Titulo>
-      <CodeBlock code={`os.mkdir("nueva_carpeta")        # Crear una carpeta
+      <Codigo code={`os.mkdir("nueva_carpeta")        # Crear una carpeta
 os.makedirs("a/b/c", exist_ok=True)  # Crear carpetas anidadas
 
 os.rmdir("nueva_carpeta")        # Eliminar carpeta vacía
@@ -97,54 +97,54 @@ os.removedirs("a/b/c")           # Eliminar jerarquía vacía`} language="python
       <Linea />
       <Titulo title="h2" id="manejo-de-archivos">2. Manejo de archivos</Titulo>
       <Titulo title="h3" id="eliminar-archivos">Eliminar archivos</Titulo>
-      <CodeBlock code={`os.remove("archivo.txt")`} language="python" />
+      <Codigo code={`os.remove("archivo.txt")`} language="python" />
       <Titulo title="h3" id="renombrar-o-mover">Renombrar o mover</Titulo>
-      <CodeBlock code={`os.rename("viejo.txt", "nuevo.txt")`} language="python" />
+      <Codigo code={`os.rename("viejo.txt", "nuevo.txt")`} language="python" />
       <Linea />
       <Titulo title="h2" id="trabajar-con-rutas-os.path">3. Trabajar con rutas
         (os.path)</Titulo>
       <Titulo title="h3" id="unir-rutas-correctamente-independiente-del-sistema">Unir rutas
         correctamente (independiente del sistema)</Titulo>
-      <CodeBlock code={`ruta = os.path.join("/home/fravelz", "Documentos", "archivo.txt")
+      <Codigo code={`ruta = os.path.join("/home/fravelz", "Documentos", "archivo.txt")
 print(ruta)`} language="python" />
       <Titulo title="h3" id="obtener-el-nombre-o-carpeta-base">Obtener el nombre o carpeta
         base</Titulo>
-      <CodeBlock code={`print(os.path.basename("/home/fravelz/archivo.txt"))  # archivo.txt
+      <Codigo code={`print(os.path.basename("/home/fravelz/archivo.txt"))  # archivo.txt
 print(os.path.dirname("/home/fravelz/archivo.txt"))   # /home/fravelz`} language="python" />
       <Titulo title="h3" id="comprobar-existencia">Comprobar existencia</Titulo>
-      <CodeBlock code={`print(os.path.exists("archivo.txt"))  # True o False
+      <Codigo code={`print(os.path.exists("archivo.txt"))  # True o False
 print(os.path.isfile("archivo.txt"))  # True si es archivo
 print(os.path.isdir("carpeta"))       # True si es carpeta`} language="python" />
       <Linea />
       <Titulo title="h2" id="variables-de-entorno">4. Variables de entorno</Titulo>
       <Titulo title="h3" id="ver-todas-las-variables-del-sistema">Ver todas las variables del
         sistema</Titulo>
-      <CodeBlock code={`print(os.environ)`} language="python" />
+      <Codigo code={`print(os.environ)`} language="python" />
       <Titulo title="h3" id="obtener-una-variable-específica">Obtener una variable
         específica</Titulo>
-      <CodeBlock code={`usuario = os.getenv("USER")  # En Linux/Mac
+      <Codigo code={`usuario = os.getenv("USER")  # En Linux/Mac
 print(usuario)`} language="python" />
       <Titulo title="h3" id="crear-o-modificar-una-variable-de-entorno">Crear o modificar una
         variable de entorno</Titulo>
-      <CodeBlock code={`os.environ["MI_VARIABLE"] = "1234"`} language="python" />
+      <Codigo code={`os.environ["MI_VARIABLE"] = "1234"`} language="python" />
       <Linea />
       <Titulo title="h2" id="ejecutar-comandos-del-sistema">5. Ejecutar comandos del
         sistema</Titulo>
-      <CodeBlock code={`os.system("ls")     # Linux/Mac
+      <Codigo code={`os.system("ls")     # Linux/Mac
 os.system("dir")    # Windows`} language="python" />
       <Texto>Ejemplo útil:</Texto>
-      <CodeBlock code={`os.system("ping google.com -c 2")`} language="python" />
+      <Codigo code={`os.system("ping google.com -c 2")`} language="python" />
       <Texto>👉 Sí quieres más control (por ejemplo, capturar la salida del
         comando), es mejor usar el módulo subprocess.</Texto>
       <Linea />
       <Titulo title="h2" id="permisos-y-propiedades">6. Permisos y propiedades</Titulo>
-      <CodeBlock code={`os.chmod("archivo.txt", 0o777)  # Dar todos los permisos
+      <Codigo code={`os.chmod("archivo.txt", 0o777)  # Dar todos los permisos
 print(os.stat("archivo.txt"))   # Ver información (tamaño, permisos, etc.)`} language="python" />
       <Linea />
       <Titulo title="h2" id="ejemplo-práctico">7. Ejemplo práctico</Titulo>
       <Texto>Este script organiza los archivos de una carpeta en subcarpetas por
         tipo:</Texto>
-      <CodeBlock code={`import os
+      <Codigo code={`import os
 import shutil
 
 ruta = "/home/fravelz/Descargas"
@@ -173,7 +173,7 @@ shutil.move(ruta_completa, os.path.join(carpeta, archivo))`} language="python" /
       <Linea />
       <Titulo title="h2" id="ejemplo-crear-un-script-portable">9. Ejemplo: crear un script
         portable</Titulo>
-      <CodeBlock code={`import os
+      <Codigo code={`import os
 import platform
 
 def limpiar_pantalla():

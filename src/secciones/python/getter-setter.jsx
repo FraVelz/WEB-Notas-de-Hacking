@@ -4,7 +4,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -46,7 +46,7 @@ function nameabcd({ }) {
         una clase, especialmente cuando son “protegidos” o “privados”.</Texto>
       <Linea />
       <Titulo title="h2" id="ejemplo-básico">Ejemplo básico</Titulo>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self.__nombre = nombre  # atributo privado
 
@@ -61,7 +61,7 @@ self.__nombre = nuevo_nombre
 else:
 print("❌ El nombre no puede estar vacío.")`} language="python" />
       <Texto>Uso:</Texto>
-      <CodeBlock code={`p = Persona("Ana")
+      <Codigo code={`p = Persona("Ana")
 print(p.get_nombre())  # ✅ Ana
 
 p.set_nombre("Luis")
@@ -76,7 +76,7 @@ p.set_nombre("")  # ❌ El nombre no puede estar vacío.`} language="python" />
       <Texto>Python permite crear <em>getters</em> y <em>setters</em> de manera
         más limpia y natural usando <strong>decoradores</strong>.</Texto>
       <Titulo title="h3" id="ejemplo-con-property">Ejemplo con @property</Titulo>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self.__nombre = nombre
 
@@ -91,7 +91,7 @@ self.__nombre = nuevo_nombre
 else:
 print("❌ El nombre no puede estar vacío.")`} language="python" />
       <Texto>Ahora se usa como sí fuera un <strong>atributo normal</strong>:</Texto>
-      <CodeBlock code={`p = Persona("Carlos")
+      <Codigo code={`p = Persona("Carlos")
 
 print(p.nombre)   # ✅ Llama automáticamente al getter
 p.nombre = "Andrés"  # ✅ Llama automáticamente al setter

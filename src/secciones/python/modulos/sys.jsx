@@ -3,7 +3,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 function nameabcd({ }) {
   return (
     <>
@@ -73,12 +73,12 @@ function nameabcd({ }) {
         (argumentos de línea de comandos, rutas, streams estándar, información
         de la plataforma, manejo de errores, configuración del intérprete,
         etc.). Se importa con:</Texto>
-      <CodeBlock code={`import sys`} language="python" />
+      <Codigo code={`import sys`} language="python" />
       <Titulo title="h2" id="uso-básico-y-más-común">Uso básico y más común</Titulo>
       <Titulo title="h3" id="sys.argv">sys.argv</Titulo>
       <Texto>Lista de argumentos pasados al script (el elemento 0 es el nombre del
         script).</Texto>
-      <CodeBlock code={`# ejemplo.py
+      <Codigo code={`# ejemplo.py
 import sys
 print(sys.argv)
 # Ejecuta: python ejemplo.py a b -> ['ejemplo.py', 'a', 'b']`} language="python" />
@@ -87,23 +87,23 @@ print(sys.argv)
         code=0 indica éxito; cualquier int distinto a 0 indica
         error. También puedes pasar un string (se imprime).
       </Texto>
-      <CodeBlock code={`if len(sys.argv) < 2:
+      <Codigo code={`if len(sys.argv) < 2:
 sys.exit("falta argumento")`} language="python" />
       <Titulo title="h3" id="sys.path">sys.path</Titulo>
       <Texto>Lista de rutas donde Python busca módulos. Puedes modificarla en
         tiempo de ejecución (útil para scripts).</Texto>
-      <CodeBlock code={`import sys
+      <Codigo code={`import sys
 sys.path.append("/mi/carpeta/lib")`} language="python" />
       <Titulo title="h3" id="sys.modules">sys.modules</Titulo>
       <Texto>Diccionario de módulos cargados en memoria
         (name -&gt; module). Útil para inspección o recarga.</Texto>
-      <CodeBlock code={`import importlib
+      <Codigo code={`import importlib
 import mi_modulo
 importlib.reload(sys.modules['mi_modulo'])`} language="python" />
       <Titulo title="h3" id="sys.stdout-sys.stderr-sys.stdin">sys.stdout, sys.stderr,
         sys.stdin</Titulo>
       <Texto>Streams estándar. Permiten redirigir o manipular entrada/salida.</Texto>
-      <CodeBlock code={`sys.stdout.write("hola\n")
+      <Codigo code={`sys.stdout.write("hola\n")
 sys.stderr.write("error!\n")
 data = sys.stdin.read()`} language="python" />
       <Texto>También puedes usar sys.stdout.buffer para I/O
@@ -111,7 +111,7 @@ data = sys.stdin.read()`} language="python" />
       <Titulo title="h3" id="sys.version-y-sys.version_info">sys.version y
         sys.version_info</Titulo>
       <Texto>Información de la versión de Python.</Texto>
-      <CodeBlock code={`print(sys.version)          # string completa
+      <Codigo code={`print(sys.version)          # string completa
 print(sys.version_info)     # tupla nombrada (major, minor, micro, ...)
 if sys.version_info < (3,10):
 print("actualiza python")`} language="python" />
@@ -119,21 +119,21 @@ print("actualiza python")`} language="python" />
       <Texto>Cadena que indica la plataforma (e.g., 'linux',
         'darwin', 'win32').
       </Texto>
-      <CodeBlock code={`if sys.platform.startswith("win"):
+      <Codigo code={`if sys.platform.startswith("win"):
 print("Windows")`} language="python" />
       <Titulo title="h3" id="sys.maxsize">sys.maxsize</Titulo>
       <Texto>Entero que normalmente indica el tamaño máximo práctico de
         estructuras (32/64-bit).</Texto>
-      <CodeBlock code={`print(sys.maxsize)`} language="python" />
+      <Codigo code={`print(sys.maxsize)`} language="python" />
       <Titulo title="h3" id="sys.getsizeofobj-default">sys.getsizeof(obj[, default])</Titulo>
       <Texto>Devuelve el tamaño en bytes del objeto (solo tamaño del objeto, no
         profundidad).</Texto>
-      <CodeBlock code={`x = [1,2,3]
+      <Codigo code={`x = [1,2,3]
 print(sys.getsizeof(x))  # tamaño del objeto lista en memoria (superficial)`} language="python" />
       <Titulo title="h3" id="sys.getrecursionlimit-sys.setrecursionlimitn">sys.getrecursionlimit()
         / sys.setrecursionlimit(n)</Titulo>
       <Texto>Leer y ajustar el límite de recursión del intérprete.</Texto>
-      <CodeBlock code={`print(sys.getrecursionlimit())
+      <Codigo code={`print(sys.getrecursionlimit())
 sys.setrecursionlimit(2000)`} language="python" />
       <Texto>Usar con cuidado: un límite demasiado alto puede provocar
         segfault.</Texto>
@@ -141,35 +141,35 @@ sys.setrecursionlimit(2000)`} language="python" />
       <Texto>Información sobre la excepción actual:
         (exc_type, exc_value, traceback).
       </Texto>
-      <CodeBlock code={`try:
+      <Codigo code={`try:
 1/0
 except:
 print(sys.exc_info())`} language="python" />
       <Titulo title="h3" id="sys.excepthook">sys.excepthook</Titulo>
       <Texto>Función que maneja excepciones no capturadas. Puedes reemplazarla
         para logging personalizado.</Texto>
-      <CodeBlock code={`def mi_handler(exc_type, exc, tb):
+      <Codigo code={`def mi_handler(exc_type, exc, tb):
 print("Excepción no manejada:", exc_type, exc)
 sys.excepthook = mi_handler`} language="python" />
       <Titulo title="h3" id="sys.getdefaultencoding-y-sys.getfilesystemencoding">sys.getdefaultencoding()
         y sys.getfilesystemencoding()</Titulo>
       <Texto>Codificaciones por defecto (útil para I/O y compatibilidad entre
         plataformas).</Texto>
-      <CodeBlock code={`print(sys.getdefaultencoding(), sys.getfilesystemencoding())`} language="python" />
+      <Codigo code={`print(sys.getdefaultencoding(), sys.getfilesystemencoding())`} language="python" />
       <Titulo title="h3" id="sys.byteorder">sys.byteorder</Titulo>
       <Texto>Orden de bytes de la máquina: 'little' o
         'big'.
       </Texto>
-      <CodeBlock code={`print(sys.byteorder)`} language="python" />
+      <Codigo code={`print(sys.byteorder)`} language="python" />
       <Titulo title="h3" id="sys.implementation">sys.implementation</Titulo>
       <Texto>Información sobre la implementación de Python (CPython, PyPy,
         etc.)</Texto>
-      <CodeBlock code={`print(sys.implementation)`} language="python" />
+      <Codigo code={`print(sys.implementation)`} language="python" />
       <Titulo title="h3" id="sys.flags">sys.flags</Titulo>
       <Texto>Namespace con banderas con las que arrancó el intérprete
         (optimize, debug, interactive,
         etc.).</Texto>
-      <CodeBlock code={`print(sys.flags)`} language="python" />
+      <Codigo code={`print(sys.flags)`} language="python" />
       <Titulo title="h3" id="sys.getwindowsversion-solo-windows">sys.getwindowsversion()
         (solo Windows)</Titulo>
       <Texto>Disponible solo en Windows; usar
@@ -183,7 +183,7 @@ sys.excepthook = mi_handler`} language="python" />
       <Titulo title="h2" id="ejemplos-prácticos">Ejemplos prácticos</Titulo>
       <Titulo title="h3" id="script-que-procesa-cli-simple">1) Script que procesa CLI
         simple</Titulo>
-      <CodeBlock code={`# procesador.py
+      <Codigo code={`# procesador.py
 import sys
 
 def main():
@@ -198,7 +198,7 @@ if __name__ == "__main__":
 main()`} language="python" />
       <Titulo title="h3" id="redirigir-salida-a-un-archivo">2) Redirigir salida a un
         archivo</Titulo>
-      <CodeBlock code={`import sys
+      <Codigo code={`import sys
 with open("salida.log", "w", encoding="utf-8") as log:
 old_stdout = sys.stdout
 sys.stdout = log
@@ -206,7 +206,7 @@ print("esto va al archivo")
 sys.stdout = old_stdout`} language="python" />
       <Titulo title="h3" id="manejo-global-de-excepciones-logging">3) Manejo global de
         excepciones (logging)</Titulo>
-      <CodeBlock code={`import sys, traceback, logging
+      <Codigo code={`import sys, traceback, logging
 logging.basicConfig(filename="errores.log", level=logging.ERROR)
 
 def mi_excepthook(exc_type, exc_value, exc_tb):
@@ -216,7 +216,7 @@ sys.excepthook = mi_excepthook
 # cualquier excepción no capturada irá a errores.log`} language="python" />
       <Titulo title="h3" id="comprobar-versión-de-python-antes-de-correr">4) Comprobar
         versión de Python antes de correr</Titulo>
-      <CodeBlock code={`import sys
+      <Codigo code={`import sys
 if sys.version_info < (3,8):
 sys.exit("Este script requiere Python 3.8+")`} language="python" />
       <Titulo title="h2" id="buenas-prácticas-y-advertencias">Buenas prácticas y

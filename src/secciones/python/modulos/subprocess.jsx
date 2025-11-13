@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -57,7 +57,7 @@ function nameabcd({ }) {
           operativo</strong> desde Python.
       </Texto>
       <Texto>🔹 Ejemplo:</Texto>
-      <CodeBlock code={`import subprocess
+      <Codigo code={`import subprocess
 
 subprocess.run(["ls"])`} language="python" />
       <Texto>👉 Ejecuta el comando ls (en Linux/Mac) igual que sí lo
@@ -92,20 +92,20 @@ subprocess.run(["ls"])`} language="python" />
 </Tabla>
       <Linea />
       <Titulo title="h2" id="ejecutar-comandos-básicos">2. Ejecutar comandos básicos</Titulo>
-      <CodeBlock code={`import subprocess
+      <Codigo code={`import subprocess
 
 # Forma segura (lista de argumentos)
 subprocess.run(["echo", "Hola desde Python!"])`} language="python" />
       <Texto>También puedes pasar shell=True (aunque menos
         seguro):</Texto>
-      <CodeBlock code={`subprocess.run("echo Hola desde Python!", shell=True)`} language="python" />
+      <Codigo code={`subprocess.run("echo Hola desde Python!", shell=True)`} language="python" />
       <Linea />
       <Titulo title="h2" id="capturar-la-salida-del-comando">3. Capturar la salida del
         comando</Titulo>
       <Texto>Para <strong>guardar el texto que produce el comando</strong>, usa
         capture_output=True:
       </Texto>
-      <CodeBlock code={`resultado = subprocess.run(["ls"], capture_output=True, text=True)
+      <Codigo code={`resultado = subprocess.run(["ls"], capture_output=True, text=True)
 print("Salida:", resultado.stdout)`} language="python" />
       <Titulo title="h3" id="atributos-útiles">Atributos útiles</Titulo>
       <Lista>
@@ -119,7 +119,7 @@ print("Salida:", resultado.stdout)`} language="python" />
       <Titulo title="h2" id="manejar-errores">4. Manejar errores</Titulo>
       <Texto>Sí quieres que el programa <strong>lance una excepción</strong>
         cuando el comando falle:</Texto>
-      <CodeBlock code={`try:
+      <Codigo code={`try:
 subprocess.run(["ls", "/carpeta_que_no_existe"], check=True)
 except subprocess.CalledProcessError as e:
 print("Error al ejecutar el comando:", e)`} language="python" />
@@ -127,7 +127,7 @@ print("Error al ejecutar el comando:", e)`} language="python" />
       <Titulo title="h2" id="capturar-y-procesar-salida-directamente">5. Capturar y procesar
         salida directamente</Titulo>
       <Texto>Sí solo necesitas la salida (más cómodo que .run()):</Texto>
-      <CodeBlock code={`salida = subprocess.check_output(["whoami"], text=True)
+      <Codigo code={`salida = subprocess.check_output(["whoami"], text=True)
 print("Usuario actual:", salida.strip())`} language="python" />
       <Texto>👉 Esto ejecuta el comando y <strong>devuelve la salida como
         string</strong>.</Texto>
@@ -136,7 +136,7 @@ print("Usuario actual:", salida.strip())`} language="python" />
       <Texto>Puedes <strong>enviar datos</strong> al proceso con
         input=:
       </Texto>
-      <CodeBlock code={`resultado = subprocess.run(
+      <Codigo code={`resultado = subprocess.run(
 ["grep", "hola"],
 input="hola mundo\nadiós mundo\n",
 text=True,
@@ -144,13 +144,13 @@ capture_output=True
 )
 print(resultado.stdout)`} language="python" />
       <Texto>🔹 Resultado:</Texto>
-      <CodeBlock code={`hola mundo`} language="bash" />
+      <Codigo code={`hola mundo`} language="bash" />
       <Linea />
       <Titulo title="h2" id="ejecutar-múltiples-procesos-encadenados">7. Ejecutar múltiples
         procesos (encadenados)</Titulo>
       <Texto>Puedes <strong>conectar la salida de un comando a otro</strong> como
         en una tubería (| en la terminal):</Texto>
-      <CodeBlock code={`p1 = subprocess.Popen(["ls"], stdout=subprocess.PIPE)
+      <Codigo code={`p1 = subprocess.Popen(["ls"], stdout=subprocess.PIPE)
 p2 = subprocess.Popen(["grep", "py"], stdin=p1.stdout, stdout=subprocess.PIPE, text=True)
 
 salida, _ = p2.communicate()
@@ -167,7 +167,7 @@ print("Archivos .py:\n", salida)`} language="python" />
       <Texto>Popen es la clase base de subprocess, te da
         <strong>control total</strong> sobre el proceso.
       </Texto>
-      <CodeBlock code={`from subprocess import Popen, PIPE
+      <Codigo code={`from subprocess import Popen, PIPE
 
 p = Popen(["ping", "-c", "2", "google.com"], stdout=PIPE, stderr=PIPE, text=True)
 salida, error = p.communicate()
@@ -178,21 +178,21 @@ print("Código de salida:", p.returncode)`} language="python" />
       <Linea />
       <Titulo title="h2" id="ejecutar-en-segundo-plano">9. Ejecutar en segundo plano</Titulo>
       <Texto>Sí no quieres que el programa espere:</Texto>
-      <CodeBlock code={`subprocess.Popen(["vlc", "video.mp4"])`} language="python" />
+      <Codigo code={`subprocess.Popen(["vlc", "video.mp4"])`} language="python" />
       <Texto>Esto abrirá VLC <strong>sin bloquear</strong> el resto de tú
         script.</Texto>
       <Linea />
       <Titulo title="h2" id="consejos-de-seguridad">10. Consejos de seguridad</Titulo>
       <Texto>✅ <strong>Haz esto:</strong></Texto>
-      <CodeBlock code={`subprocess.run(["ls", "/home"])`} language="python" />
+      <Codigo code={`subprocess.run(["ls", "/home"])`} language="python" />
       <Texto>🚫 <strong>Evita esto (riesgo de inyección):</strong></Texto>
-      <CodeBlock code={`subprocess.run("ls /home && rm -rf /", shell=True)`} language="python" />
+      <Codigo code={`subprocess.run("ls /home && rm -rf /", shell=True)`} language="python" />
       <Texto>Usar shell=True puede ejecutar código malicioso sí la
         entrada del usuario no está validada.</Texto>
       <Linea />
       <Titulo title="h2" id="ejemplo-práctico-medir-tiempo-de-ejecución">11. Ejemplo
         práctico: medir tiempo de ejecución</Titulo>
-      <CodeBlock code={`import subprocess
+      <Codigo code={`import subprocess
 import time
 
 inicio = time.time()
@@ -203,7 +203,7 @@ print(f"Tiempo de ejecución: {fin - inicio:.2f} segundos")`} language="python" 
       <Linea />
       <Titulo title="h2" id="ejemplo-completo-automatizador-de-sistema">12. Ejemplo completo:
         automatizador de sistema</Titulo>
-      <CodeBlock code={`import subprocess
+      <Codigo code={`import subprocess
 
 comandos = [
 ["sudo", "apt", "update"],

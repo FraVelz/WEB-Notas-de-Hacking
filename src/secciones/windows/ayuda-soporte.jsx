@@ -4,7 +4,22 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+      <li><Enlace href="#qué-es-un-alias">Qué es un alias</Enlace ></li>
+      <li><Enlace href="#alias-comunes-en-powershell">Alias comunes en
+        PowerShell</Enlace ></li>
+      <li><Enlace href="#cmdlets-relacionados-con-alias">Cmdlets relacionados con
+        alias</Enlace ></li>
+      <li><Enlace href="#ejemplos-prácticos">Ejemplos prácticos</Enlace ></li>
+      <li><Enlace href="#alias-persistentes">Alias persistentes</Enlace ></li>
+      <li><Enlace href="#nota-importante">Nota importante</Enlace ></li>
+    </Lista>
+  );
+}
 
 function nameabcd({ }) {
   return (
@@ -246,7 +261,7 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="sugerencia-práctica">Sugerencia práctica</Titulo>
       <Texto>Para explorar PowerShell como un pro:</Texto>
-      <CodeBlock code={`Get-Command | Out-GridView`} language="bash" />
+      <Codigo code={`Get-Command | Out-GridView`} language="bash" />
       <Texto>Te abre una ventana interactiva donde puedes <strong>buscar, filtrar
         y explorar</strong> todos los cmdlets disponibles.</Texto>
       <Linea />

@@ -5,11 +5,11 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
-    <Lista className={className}>
+    <Lista className={`flex-1 ${className}`}>
       <li><Enlace href="#información">Información</Enlace ></li>
       <li><Enlace href="#bandit0">Bandit0</Enlace ></li>
       <li><Enlace href="#bandit1">Bandit1</Enlace ></li>
@@ -70,20 +70,20 @@ function nameabcd({ }) {
         <Texto>Página Web: https://overthewire.org/wargames/bandit/</Texto>
         <Texto>SSH Información</Texto>
         <Texto>Host:</Texto>
-        <CodeBlock code={`bandit.labs.overthewire.org`} language="bash" />
-        <CodeBlock code={`Port: 2220`} language="bash" />
+        <Codigo code={`bandit.labs.overthewire.org`} language="bash" />
+        <Codigo code={`Port: 2220`} language="bash" />
         <Texto>Comando para cambiar de terminal y habilitar el comando clear:</Texto>
-        <CodeBlock code={`export TERM=xterm`} language="bash" />
+        <Codigo code={`export TERM=xterm`} language="bash" />
         <details>
           <summary>
             Comando ssh para conectarse a bandit
           </summary>
           <Texto>Para conectarse a bandit0 se puede hacer con el siguiente
             comando:</Texto>
-          <CodeBlock code={`ssh bandit0@bandit.labs.overthewire.org -p 2220`} language="bash" />
+          <Codigo code={`ssh bandit0@bandit.labs.overthewire.org -p 2220`} language="bash" />
           <Texto>Después de conectarte al servicio, bandit te pedirá una contraseña,
             en este caso la contraseña es</Texto>
-          <CodeBlock code={`bandit0`} language="bash" />
+          <Codigo code={`bandit0`} language="bash" />
           En vez de colocar bandit0 colocas bandit1 para el siguiente nivel, en
           cada nivel debes obtener una contraseña, que se dará las instrucciones
           en la página web (<Enlace href="https://overthewire.org/wargames/bandit/">Ir
@@ -139,7 +139,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat readme.md`} language="bash" />
+          <Codigo code={`cat readme.md`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit1">Bandit1</Titulo>
@@ -148,7 +148,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat ./-`} language="bash" />
+          <Codigo code={`cat ./-`} language="bash" />
           <Texto>Se indica que en el directorio actual existe un archivo que se llama
             - y lo muestra.
           </Texto>
@@ -161,7 +161,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat "./--spaces in this filename--"`} language="bash" />
+          <Codigo code={`cat "./--spaces in this filename--"`} language="bash" />
           <Texto>Indica que con ", que en el repositorio actual existe un
             archivo con espacios de línea y - guiones, y lo
             muestra.</Texto>
@@ -174,7 +174,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat "inhere/...Hiding-From-You"`} language="bash" />
+          <Codigo code={`cat "inhere/...Hiding-From-You"`} language="bash" />
           <Texto>Indica con " el texto como tal aparece, es la ruta y
             nombre del archivo, en el repositorio, y lo muestra.</Texto>
         </details>
@@ -186,7 +186,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`find ./inhere/ -type f | xargs file`} language="bash" />
+          <Codigo code={`find ./inhere/ -type f | xargs file`} language="bash" />
           <Texto>Busca en la carpeta inhere, busca los archivos
             -type f, y muestra el tipo de datos que contenga
             xargs file cada archivo.
@@ -206,7 +206,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`find ./inhere/ -type f -size 1033c`} language="bash" />
+          <Codigo code={`find ./inhere/ -type f -size 1033c`} language="bash" />
           <Texto>Busca en inhere un archivo -type f que
             contenga un tamaño de 1033 bytes -size 1033c.</Texto>
           <Texto>Dará la ruta del archivo que cumpla con los requisitos de tamaño sí
@@ -225,7 +225,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`} language="bash" />
+          <Codigo code={`find / -user bandit7 -group bandit6 -size 33c 2>/dev/null`} language="bash" />
           <Texto>Busca desde / archivo o carpeta que contenga, como
             permisos de usuario bandit7 -user bandit7, como grupo
             -group bandit6, y que contenga un tamaño de 33 bytes
@@ -239,7 +239,7 @@ function nameabcd({ }) {
           <summary>
             Clave para el siguiente
           </summary>
-          <CodeBlock code={`morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj`} language="bash" />
+          <Codigo code={`morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit7">Bandit7</Titulo>
@@ -249,7 +249,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat data.txt | grep millionth`} language="bash" />
+          <Codigo code={`cat data.txt | grep millionth`} language="bash" />
           <Texto>Muestra el archivo cat data.txt y filtra todo el texto
             para solo mostrar la línea que contenga millionth,
             grep millionth.
@@ -264,7 +264,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat data.txt | sort | uniq -u`} language="bash" />
+          <Codigo code={`cat data.txt | sort | uniq -u`} language="bash" />
           <Texto>Organizar las líneas del archivo, para que hagan líneas consecutivas
             repetidas sort, luego con uniq -u, elimina
             todas las líneas consecutivas repetidas y solo muestra las que no tiene
@@ -279,7 +279,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat data.txt | grep -a === | awk 'NF{print $NF}'`} language="bash" />
+          <Codigo code={`cat data.txt | grep -a === | awk 'NF{print $NF}'`} language="bash" />
           <Texto>Filtra por líneas que contengan ===. Como el archivo contiene
             caracteres binarios, indicamos al filtrado que procese todo como texto
             con <strong>grep -a</strong>, y luego extraemos únicamente la última
@@ -296,7 +296,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`base64 -d data.txt`} language="bash" />
+          <Codigo code={`base64 -d data.txt`} language="bash" />
           <Texto>Utilizamos el comando base64 -d para decodificar el
             archivo data.txt.</Texto>
         </details>
@@ -304,7 +304,7 @@ function nameabcd({ }) {
           <summary>
             Clave para el siguiente
           </summary>
-          <CodeBlock code={`dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`} language="bash" />
+          <Codigo code={`dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit11-contiene-clave-para-el-siguiente">Bandit11 (contiene
@@ -316,7 +316,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
+          <Codigo code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
           <Texto>La información de data.txt con tr remplaza los
             caracteres de mayúscula y minúscula, a los mismos caracteres pero
             rotados 13 veces, como un cifrado cesar, para descifrar en este
@@ -326,7 +326,7 @@ function nameabcd({ }) {
           <summary>
             Clave para el siguiente
           </summary>
-          <CodeBlock code={`7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4`} language="bash" />
+          <Codigo code={`7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit12">Bandit12</Titulo>
@@ -337,7 +337,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`cat data.txt | xxd -r > data_new`} language="bash" />
+          <Codigo code={`cat data.txt | xxd -r > data_new`} language="bash" />
           <Texto>El contenido del archivo data.txt lo redirige al comando
             xxd -r que convierte datos binarios, a un texto decimal
             legible, y el resultado lo redirige a un nuevo archivo llamado
@@ -346,7 +346,7 @@ function nameabcd({ }) {
           <Texto>Luego te salen puros archivos comprimidos, para descomprimirlos en
             general sin utilizar la herramienta específica para descomprimir un
             archivo de cada tipo puedes utilizar:</Texto>
-          <CodeBlock code={`7z x data_new`} language="bash" />
+          <Codigo code={`7z x data_new`} language="bash" />
           <Texto>Te sale un nuevo archivo comprimido, y vuelves a repetir el anterior
             comando para descomprimir, así sucesivamente hasta que te salga el
             archivo de texto con la clave.</Texto>
@@ -364,7 +364,7 @@ function nameabcd({ }) {
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`chmod 600 bandit14.key
+          <Codigo code={`chmod 600 bandit14.key
 ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bash" />
           <Texto>Se dan los permisos correspondientes, donde la clave solo pueda ser
             leída, y manipulada por el usuario, y luego se utiliza el comando ssh
@@ -382,7 +382,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           </summary>
           <Texto>Primero buscas la clave, del usuario actual donde se mencionó
             anteriormente, y la copias:</Texto>
-          <CodeBlock code={`nc localhost 30000`} language="bash" />
+          <Codigo code={`nc localhost 30000`} language="bash" />
           <Texto>Conectando a <strong>localhost</strong> y puerto 30000; luego
             pega la clave y te pasará la contraseña del siguiente nivel.
           </Texto>
@@ -397,7 +397,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`ncat --ssl 127.0.0.1 30001`} language="bash" />
+          <Codigo code={`ncat --ssl 127.0.0.1 30001`} language="bash" />
           <Texto>Y pegas la clave del usuario actual, te dará la clave para el
             siguiente.</Texto>
           <Texto>…</Texto>
@@ -406,7 +406,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Clave para el siguiente
           </summary>
-          <CodeBlock code={`kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx`} language="bash" />
+          <Codigo code={`kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit16">Bandit16</Titulo>
@@ -421,13 +421,13 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`nmap --open -T5 -v -n -p31000-32000 127.0.0.1`} language="bash" />
+          <Codigo code={`nmap --open -T5 -v -n -p31000-32000 127.0.0.1`} language="bash" />
           <Texto>Escanea por puertos TCP abiertos (<code>--open</code>), ajusta
             la velocidad con <code>-T5</code> y usa <code>-v</code> para ver salida
             en tiempo real. <code>-n</code> evita resolución DNS; <code>-p</code>
             indica el rango de puertos. <code>127.0.0.1</code> es la dirección
             (host) local donde realizar el escaneo.</Texto>
-          <CodeBlock code={`ncat --ssl 127.0.0.1`} language="bash" />
+          <Codigo code={`ncat --ssl 127.0.0.1`} language="bash" />
           <Texto>Para conectarse con cifrado a dicho puertos, pegando la clave, y
             alguno de ellos dará la clave para el siguiente nivel.</Texto>
         </details>
@@ -444,7 +444,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`diff passwords.old passwords.new`} language="bash" />
+          <Codigo code={`diff passwords.old passwords.new`} language="bash" />
           <Texto>Muestra las diferencias entre los dos archivos.</Texto>
         </details>
         <Linea />
@@ -457,7 +457,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`entrar al con ssh pero agregando al final bash para ejecutar la terminal bash`} language="bash" />
+          <Codigo code={`entrar al con ssh pero agregando al final bash para ejecutar la terminal bash`} language="bash" />
           <Texto>Esto es como una especie de inyección de código antes que se ejecute
             el .bashrc</Texto>
         </details>
@@ -473,7 +473,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Posible solucion
           </summary>
-          <CodeBlock code={`entrar al con ssh pero agregando al final bash para ejecutar la terminal bash`} language="bash" />
+          <Codigo code={`entrar al con ssh pero agregando al final bash para ejecutar la terminal bash`} language="bash" />
           <Texto>Esto es como una especie de inyección de código antes que se ejecute
             el .bashrc, y leer el readme.</Texto>
         </details>
@@ -481,7 +481,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Clave para el siguiente
           </summary>
-          <CodeBlock code={`0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO`} language="bash" />
+          <Codigo code={`0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit20">Bandit20</Titulo>
@@ -497,11 +497,11 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
             Posible solucion
           </summary>
           <Texto>Abres 2 terminales.</Texto>
-          <CodeBlock code={`./archivo`} language="bash" />
+          <Codigo code={`./archivo`} language="bash" />
           <Texto>En una ejecutas el archivo y en la otra ejecutas el comando para
             abrir un puerto con el comando nc y envías la clave anterior en este
             comando.</Texto>
-          <CodeBlock code={`nc -nlvp 1234`} language="bash" />
+          <Codigo code={`nc -nlvp 1234`} language="bash" />
           <Texto>Te debería devolver el archivo donde ejecutaste esta clave.</Texto>
         </details>
         <Linea />
@@ -561,7 +561,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Clave para el siguiente
           </summary>
-          <CodeBlock code={`gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`} language="bash" />
+          <Codigo code={`gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit24">Bandit24</Titulo>
@@ -623,7 +623,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
         </Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <CodeBlock code={`ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo`} language="bash" />
+        <Codigo code={`ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
@@ -638,7 +638,7 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           <summary>
             Clave Propia
           </summary>
-          <CodeBlock code={`upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB`} language="bash" />
+          <Codigo code={`upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB`} language="bash" />
         </details>
         <Linea />
         <Titulo title="h2" id="bandit28">Bandit28</Titulo>
@@ -648,14 +648,14 @@ ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220`} language="bas
           misma que la del usuario bandit28.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <CodeBlock code={`ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo`} language="bash" />
+        <Codigo code={`ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
           </summary>
           <Texto>Clonar repo, colocar la clave, y revisar commits pasados.</Texto>
           <Texto>Comandos importantes:</Texto>
-          <CodeBlock code={`git log
+          <Codigo code={`git log
 git show`} language="bash" />
         </details>
         <Linea />
@@ -666,7 +666,7 @@ git show`} language="bash" />
           misma que la del usuario bandit29.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <CodeBlock code={`ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo`} language="bash" />
+        <Codigo code={`ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
@@ -674,7 +674,7 @@ git show`} language="bash" />
           <Texto>Buscar ramas, y mirar ramas según el enunciado, viendo el archivo
             readme.</Texto>
           <Texto>Comandos importantes:</Texto>
-          <CodeBlock code={`git branch
+          <Codigo code={`git branch
 git switch`} language="bash" />
         </details>
         <Linea />
@@ -685,13 +685,13 @@ git switch`} language="bash" />
           misma que la del usuario bandit30.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <CodeBlock code={`ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo`} language="bash" />
+        <Codigo code={`ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
           </summary>
           <Texto>Comandos importantes:</Texto>
-          <CodeBlock code={`git tag
+          <Codigo code={`git tag
 git show`} language="bash" />
         </details>
         <Linea />
@@ -702,7 +702,7 @@ git show`} language="bash" />
           bandit31-git es la misma que para el usuario bandit31.</Texto>
         <Texto>Clona el repositorio y busca la contraseña para el siguiente
           nivel.</Texto>
-        <CodeBlock code={`ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo`} language="bash" />
+        <Codigo code={`ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
@@ -713,7 +713,7 @@ git show`} language="bash" />
         <Titulo title="h2" id="bandit32">Bandit32</Titulo>
         <Texto><strong>Pista:</strong> Después de todo este rollo de Git, es hora de
           otra escapada. ¡Buena suerte!</Texto>
-        <CodeBlock code={`ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo`} language="bash" />
+        <Codigo code={`ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo`} language="bash" />
         <details>
           <summary>
             Posible solucion
@@ -723,12 +723,6 @@ git show`} language="bash" />
           </Texto>
           <Texto>Fin de los niveles actualmente.</Texto>
         </details>
-        <Linea />
-        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</Enlace ></Texto>
-        <blockquote>
-          <Texto><strong>Autor:</strong> Fravelz</Texto>
-        </blockquote>
       </Estructura>
 
       <TemarioAsideCompleto temario={Temario} />

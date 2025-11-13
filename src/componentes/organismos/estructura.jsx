@@ -14,37 +14,33 @@ function Estructura({ children }) {
   );
 }
 
-function TemarioAside({ children }) {
-  return (
-    <>
-      <aside className="
-        hidden 2xl:block
-        sticky top-5 self-start
-        w-4/5
-        min-w-72 max-w-fit
-        ">
-        <Titulo title="h2" className="select-none">Temario</Titulo>
-
-        {children}
-      </aside>
-    </>
-  );
-}
-
 function TemarioAsideCompleto({ children, temario: Temario }) {
   return (
-    <TemarioAside>
+    <aside className="
+        hidden 2xl:block
+        sticky top-5 self-start
+
+        w-4/5 min-w-72
+        ">
+      <Titulo title="h2" className="select-none">Temario</Titulo>
+
       <Temario
         className={`
-          bg-gray-900
-          rounded-md
-          p-4 mb-4
-          list-decimal
+        bg-gray-900
+        rounded-md
+        p-4 mb-4
+        list-decimal
+
+        h-fit
+        max-h-[80vh]     /* altura máxima del 80% del viewport */
+        overflow-y-auto  /* scroll vertical */
         `}
       >
         {children}
       </Temario>
-    </TemarioAside>
+
+      {children}
+    </aside>
   );
 }
 
@@ -65,4 +61,4 @@ function TemarioCompleto({ temario: Temario }) {
 }
 
 export default Estructura;
-export { TemarioAside, TemarioAsideCompleto, TemarioCompleto };
+export { TemarioAsideCompleto, TemarioCompleto };

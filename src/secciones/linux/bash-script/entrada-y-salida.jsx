@@ -5,7 +5,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -48,9 +48,6 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-          principal</Enlace ></Texto>
-        <Linea />
         <Titulo title="h2" id="descriptores-de-archivos">Descriptores de archivos</Titulo>
         <Texto>En Bash hay <strong>3 descriptores de archivos
           principales</strong>:</Texto>
@@ -83,18 +80,18 @@ function nameabcd({ }) {
         </Texto>
         <Titulo title="h3" id="entrada-redirigir-desde-un-archivo">1 Entrada: redirigir desde
           un archivo &lt;</Titulo>
-        <CodeBlock code={`cat < ./4.estControl.sh`} language="bash" />
+        <Codigo code={`cat < ./4.estControl.sh`} language="bash" />
         <Titulo title="h3" id="salida-redirigir-la-salida-normal-y">2 Salida: redirigir la
           salida normal &gt; y &gt;&gt;</Titulo>
-        <CodeBlock code={`echo "hola," > ./salida.txt    # Sobrescribe el archivo
+        <Codigo code={`echo "hola," > ./salida.txt    # Sobrescribe el archivo
 echo "mundo!" >> ./salida.txt  # Agrega al final`} language="bash" />
         <Titulo title="h3" id="errores-redirigir-errores-2">3 Errores: redirigir errores
           2&gt;
         </Titulo>
-        <CodeBlock code={`ls noExiste 2> errores.txt`} language="bash" />
+        <Codigo code={`ls noExiste 2> errores.txt`} language="bash" />
         <Linea />
         <Titulo title="h2" id="juntar-salida-y-errores">Juntar salida y errores</Titulo>
-        <CodeBlock code={`comando > todo.txt 2>&1`} language="bash" />
+        <Codigo code={`comando > todo.txt 2>&1`} language="bash" />
         <Texto>Esto significa:</Texto>
         <Lista>
           <li>El descriptor <strong>1 (salida estándar)</strong> se envía al
@@ -125,24 +122,24 @@ echo "mundo!" >> ./salida.txt  # Agrega al final`} language="bash" />
 </Tabla>
         <Linea />
         <Titulo title="h2" id="pipes">Pipes (|)</Titulo>
-        <CodeBlock code={`ls | grep .txt`} language="bash" />
+        <Codigo code={`ls | grep .txt`} language="bash" />
         <Texto>Envía la salida de ls al comando grep, que
           muestra solo los archivos .txt.</Texto>
         <Linea />
         <Titulo title="h2" id="redirección-combinada">Redirección combinada
           &amp;&gt;
         </Titulo>
-        <CodeBlock code={`ls carpeta_inexistente &> salida.txt`} language="bash" />
+        <Codigo code={`ls carpeta_inexistente &> salida.txt`} language="bash" />
         <Texto>Equivale a:</Texto>
-        <CodeBlock code={`ls carpeta_inexistente > salida.txt 2>&1`} language="bash" />
+        <Codigo code={`ls carpeta_inexistente > salida.txt 2>&1`} language="bash" />
         <Linea />
         <Titulo title="h2" id="comando-cat-concatenate">Comando cat
           (concatenate)</Titulo>
-        <CodeBlock code={`cat ./1.comandosBash/5.EntradaYSalida.sh    # Mostrar un archivo
+        <Codigo code={`cat ./1.comandosBash/5.EntradaYSalida.sh    # Mostrar un archivo
 cat a.txt b.txt > c.txt                     # Unir archivos
 cat a.txt >> b.txt                          # Añadir uno al final del otro`} language="bash" />
         <Texto>También puedes crear un archivo nuevo escribiendo directamente:</Texto>
-        <CodeBlock code={`cat > nuevo.txt
+        <Codigo code={`cat > nuevo.txt
 Hola
 Mundo
 # (Presiona CTRL+D para terminar)`} language="bash" />
@@ -150,7 +147,7 @@ Mundo
         <Titulo title="h2" id="comando-tee">Comando tee</Titulo>
         <Texto>El comando tee <strong>guarda la salida en archivos y
           también la muestra en pantalla</strong>.</Texto>
-        <CodeBlock code={`echo "Hola mundo" | tee salida.txt          # Guardar y mostrar
+        <Codigo code={`echo "Hola mundo" | tee salida.txt          # Guardar y mostrar
 ls | tee -a lista.txt                       # Modo append
 ls | tee archivo1.txt archivo2.txt          # Guardar en varios archivos`} language="bash" />
         <Linea />

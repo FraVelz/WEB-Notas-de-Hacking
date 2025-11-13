@@ -30,7 +30,7 @@ function nameabcd({ }) {
         <Titulo title="h2" id="video-youtube-temario-completo">Video YouTube - Temario - Gratis</Titulo>
 
         <Dividido linea={true} secundario={
-          <div className="flex items-center justify-center h-screen">
+          <div className="flex items-center justify-center p-4">
             <Imagen
               src={`https://img.youtube.com/vi/fUs1LM2b3JA/mqdefault.jpg`}
               width={`400px`}
@@ -72,7 +72,7 @@ function nameabcd({ }) {
         </Texto>
 
         <Dividido linea={true} secundario={
-          <div className="flex items-center justify-center h-screen">
+          <div className="flex items-center justify-center p-4">
             <Imagen
               src={`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBiHVMdKP1939J-rWxQUP7QZTwXNVptFuw2Q&s`}
               width={`400px`}
@@ -111,11 +111,10 @@ function nameabcd({ }) {
 
 
         <Dividido linea={true} secundario={
-          <div className="flex items-center justify-center h-screen">
+          <div className="flex items-center justify-center p-4">
             <Imagen
               src={`https://img.youtube.com/vi/uJicLSw1Ifo/default.jpg`}
               width={`400px`}
-              height={`300px`}
               className="
               max-w-[90vw] max-h-[90vh] w-auto h-auto
               rounded-2xl

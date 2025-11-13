@@ -3,7 +3,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 function nameabcd({ }) {
   return (
     <>
@@ -84,7 +84,7 @@ function nameabcd({ }) {
         ideal para operaciones <strong>I/O-bound</strong> (espera de red, disco,
         etc.). Importarlo:
       </Texto>
-      <CodeBlock code={`import threading`} language="python" />
+      <Codigo code={`import threading`} language="python" />
       <Linea />
       <Titulo title="h2" id="conceptos-clave">2) Conceptos clave</Titulo>
       <Lista>
@@ -103,7 +103,7 @@ function nameabcd({ }) {
       <Titulo title="h2" id="crear-y-usar-hilos-ejemplos-básicos">3) Crear y usar hilos —
         ejemplos básicos</Titulo>
       <Titulo title="h3" id="a-usando-thread-con-target">a) Usando Thread con target</Titulo>
-      <CodeBlock code={`import threading
+      <Codigo code={`import threading
 import time
 
 def worker(n):
@@ -122,7 +122,7 @@ t.join()  # esperar que termine cada hilo
 
 print("Todos terminados")`} language="python" />
       <Titulo title="h3" id="b-subclassing-lhread">b) Subclassing lhread</Titulo>
-      <CodeBlock code={`import threading, time
+      <Codigo code={`import threading, time
 
 class MiHilo(threading.Thread):
 def __init__(self, n):
@@ -140,7 +140,7 @@ h.join()`} language="python" />
       <Linea />
       <Titulo title="h2" id="daemon-threads-y-uso-correcto">4) Daemon threads y uso
         correcto</Titulo>
-      <CodeBlock code={`t = threading.Thread(target=worker, args=(1,), daemon=True)
+      <Codigo code={`t = threading.Thread(target=worker, args=(1,), daemon=True)
 t.start()
 # Si el main thread termina, el hilo daemon se termina abruptamente.`} language="python" />
       <Texto>Usa daemon para tareas de fondo opcionales (logs en tiempo real,
@@ -150,16 +150,16 @@ t.start()
       <Titulo title="h2" id="sincronización-primitivas-importantes">5) Sincronización —
         primitivas importantes</Titulo>
       <Titulo title="h3" id="lock-mutual-exclusion">Lock (mutual exclusion)</Titulo>
-      <CodeBlock code={`lock = threading.Lock()
+      <Codigo code={`lock = threading.Lock()
 with lock:
 # región crítica
 pass`} language="python" />
       <Titulo title="h3" id="rlock-reentrant-lock-permite-re-entradas-desde-mismo-hilo">RLock
         (reentrant lock) — permite re-entradas desde mismo hilo</Titulo>
-      <CodeBlock code={`rlock = threading.RLock()`} language="python" />
+      <Codigo code={`rlock = threading.RLock()`} language="python" />
       <Titulo title="h3" id="event-señalización-simple-flag">Event — señalización simple
         (flag)</Titulo>
-      <CodeBlock code={`event = threading.Event()
+      <Codigo code={`event = threading.Event()
 
 # hilo espera:
 event.wait()  # bloquea hasta que event.set()
@@ -167,26 +167,26 @@ event.wait()  # bloquea hasta que event.set()
 event.set()`} language="python" />
       <Titulo title="h3" id="condition-esperas-con-notificación">Condition — esperas con
         notificación</Titulo>
-      <CodeBlock code={`cond = threading.Condition()
+      <Codigo code={`cond = threading.Condition()
 with cond:
 cond.wait()  # espera notificación
 # otro hilo:
 cond.notify()`} language="python" />
       <Titulo title="h3" id="semaphore-contador">Semaphore — contador</Titulo>
-      <CodeBlock code={`sem = threading.Semaphore(3)  # máximo 3 entradas simultáneas
+      <Codigo code={`sem = threading.Semaphore(3)  # máximo 3 entradas simultáneas
 with sem:
 # acceso limitado
 pass`} language="python" />
       <Titulo title="h3" id="barrier-sincronizar-n-hilos-en-un-punto">Barrier — sincronizar N
         hilos en un punto</Titulo>
-      <CodeBlock code={`bar = threading.Barrier(3)
+      <Codigo code={`bar = threading.Barrier(3)
 bar.wait()  # todos los hilos esperan aquí hasta que lleguen los 3`} language="python" />
       <Linea />
       <Titulo title="h2" id="comunicación-segura-entre-hilos-queue.queue">6) Comunicación
         segura entre hilos: queue.Queue</Titulo>
       <Texto>queue.Queue es <strong>thread-safe</strong> y la forma
         recomendada para pasar datos entre hilos (producer-consumer).</Texto>
-      <CodeBlock code={`import threading, queue, time
+      <Codigo code={`import threading, queue, time
 
 q = queue.Queue()
 
@@ -221,7 +221,7 @@ t1.join(); q.join()`} language="python" />
         <li>Capturar y guardar excepciones en el propio hilo y consultarlas
           después. Ejemplo con ThreadPoolExecutor:</li>
       </Lista>
-      <CodeBlock code={`from concurrent.futures import ThreadPoolExecutor
+      <Codigo code={`from concurrent.futures import ThreadPoolExecutor
 
 def trabajo(x):
 if x == 3:
@@ -239,7 +239,7 @@ print("error en hilo:", e)`} language="python" />
       <Titulo title="h2" id="threadpoolexecutor-alta-abstracción">8) ThreadPoolExecutor (alta
         abstracción)</Titulo>
       <Texto>Más cómodo que crear hilos manualmente.</Texto>
-      <CodeBlock code={`from concurrent.futures import ThreadPoolExecutor, as_completed
+      <Codigo code={`from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def tarea(n):
 return n*n
@@ -272,7 +272,7 @@ print(f.result())`} language="python" />
         </li>
         <li>Ejemplo inseguro (race):</li>
       </Lista>
-      <CodeBlock code={`# NO usar sin lock
+      <Codigo code={`# NO usar sin lock
 counter = 0
 def incr():
 global counter
@@ -286,7 +286,7 @@ counter += 1  # no es atómico: leer-modificar-escribir`} language="python" />
       <Lista>
         <li>Usar threading.Event() como bandera de parada:</li>
       </Lista>
-      <CodeBlock code={`stop_event = threading.Event()
+      <Codigo code={`stop_event = threading.Event()
 
 def worker():
 while not stop_event.is_set():
@@ -301,7 +301,7 @@ stop_event.set()`} language="python" />
       <Linea />
       <Titulo title="h2" id="thread-local-storage">12) Thread-local storage</Titulo>
       <Texto>Datos separados por hilo:</Texto>
-      <CodeBlock code={`import threading
+      <Codigo code={`import threading
 local = threading.local()
 def worker(val):
 local.x = val
@@ -326,7 +326,7 @@ t1.start(); t2.start()`} language="python" />
         </li>
       </Lista>
       <Texto>Ejemplo de logging:</Texto>
-      <CodeBlock code={`import logging, threading, time
+      <Codigo code={`import logging, threading, time
 logging.basicConfig(level=logging.INFO, format="%(threadName)s: %(message)s")
 def worker():
 logging.info("start")
@@ -363,7 +363,7 @@ t.start(); t.join()`} language="python" />
         para comunicación.</Texto>
       <Titulo title="h3" id="b-pool-de-threads-simple-con-thread-y-queue">b) Pool de threads
         simple con Thread y Queue</Titulo>
-      <CodeBlock code={`import threading, queue, time
+      <Codigo code={`import threading, queue, time
 
 def worker(q):
 while True:
@@ -394,7 +394,7 @@ for t in threads:
 t.join()`} language="python" />
       <Titulo title="h3" id="c-uso-real-con-requests-io-bound">c) Uso real con requests
         (I/O-bound)</Titulo>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 from concurrent.futures import ThreadPoolExecutor
 
 urls = ["https://example.com"]*10

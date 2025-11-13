@@ -1,10 +1,12 @@
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
+
 import Enlace from "../../../componentes/atomos/enlace.jsx";
-import { TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -41,114 +43,112 @@ function Temario({ className = "" }) {
 function nameabcd({ }) {
   return (
     <>
-      <Titulo title="h1" id="manipulación-de-strings-en-bash-script">Manipulación de strings
-        en bash script</Titulo>
+      <Estructura>
+        <Titulo title="h1" id="manipulación-de-strings-en-bash-script">Manipulación de strings
+          en bash script</Titulo>
 
-      <Linea />
+        <Linea />
 
-      <TemarioCompleto temario={Temario} />
+        <TemarioCompleto temario={Temario} />
 
-      <Titulo title="h2" id="definir-strings">1. Definir strings</Titulo>
-      <CodeBlock code={`cadena="Hola Mundo"`} language="bash" />
-      <Lista>
-        <li>Siempre usar <strong>comillas</strong> sí hay espacios.</li>
-        <li>No existen tipos como en otros lenguajes, todo es texto.</li>
-      </Lista>
-      <Linea />
-      <Titulo title="h2" id="longitud-de-un-string">2. Longitud de un string</Titulo>
-      <CodeBlock code={`echo "$(#cadena)"   ## 10`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="substrings">3. Substrings</Titulo>
-      <CodeBlock code={`echo "$\{cadena:0:4\}"   ## Hola (desde índice 0, tomar 4)
+        <Titulo title="h2" id="definir-strings">1. Definir strings</Titulo>
+        <Codigo code={`cadena="Hola Mundo"`} language="bash" />
+        <Lista>
+          <li>Siempre usar <strong>comillas</strong> sí hay espacios.</li>
+          <li>No existen tipos como en otros lenguajes, todo es texto.</li>
+        </Lista>
+        <Linea />
+        <Titulo title="h2" id="longitud-de-un-string">2. Longitud de un string</Titulo>
+        <Codigo code={`echo "$(#cadena)"   ## 10`} language="bash" />
+        <Linea />
+        <Titulo title="h2" id="substrings">3. Substrings</Titulo>
+        <Codigo code={`echo "$\{cadena:0:4\}"   ## Hola (desde índice 0, tomar 4)
 echo "$\{cadena:5\}"     ## Mundo (desde índice 5 hasta el final)`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="reemplazos-dentro-de-un-string">4. Reemplazos dentro de un
-        string</Titulo>
-      <CodeBlock code={`texto="banana"
+        <Linea />
+        <Titulo title="h2" id="reemplazos-dentro-de-un-string">4. Reemplazos dentro de un
+          string</Titulo>
+        <Codigo code={`texto="banana"
 
 echo "\${texto/na/NA}"    ## baNAna (primer reemplazo)
 echo "\${texto//na/NA}"   ## baNANA (todos los reemplazos)
 
 echo "\${texto/na/}"      ## baana   (borra primer "na")
 echo "\${texto//na/}"     ## baa     (borra todos "na")`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="eliminar-prefijos-y-sufijos">5. Eliminar prefijos y sufijos</Titulo>
-      <CodeBlock code={`archivo="documento.txt"
+        <Linea />
+        <Titulo title="h2" id="eliminar-prefijos-y-sufijos">5. Eliminar prefijos y sufijos</Titulo>
+        <Codigo code={`archivo="documento.txt"
 
 echo "\${archivo%.txt}"   ## documento  (quita sufijo .txt)
 echo "\${archivo#doc}"    ## umento.txt (quita prefijo doc) # Con doble signo borra lo más largo ruta="/home/user/docs/file.txt" echo "{"\${ruta##*/}"}"       # file.txt  (quita todo hasta el último /) echo "{"\${ruta %%/*}"}"       # vacío     (quita todo desde el primer /)`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="concatenar-strings">6. Concatenar strings</Titulo>
-      <CodeBlock code={`nombre="Francisco"
+        <Linea />
+        <Titulo title="h2" id="concatenar-strings">6. Concatenar strings</Titulo>
+        <Codigo code={`nombre="Francisco"
 saludo="Hola, $nombre"
 echo "$saludo"`} language="bash" />
-      <Texto>También:</Texto>
-      <CodeBlock code={`full="Hola"
+        <Texto>También:</Texto>
+        <Codigo code={`full="Hola"
 full+=" Mundo"
 echo "$full"   ## Hola Mundo`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="convertir-mayúsculas-minúsculas-bash-4">7. Convertir mayúsculas
-        / minúsculas (Bash 4+)</Titulo>
-      <CodeBlock code={`texto="hola mundo"
+        <Linea />
+        <Titulo title="h2" id="convertir-mayúsculas-minúsculas-bash-4">7. Convertir mayúsculas
+          / minúsculas (Bash 4+)</Titulo>
+        <Codigo code={`texto="hola mundo"
 
 echo "\${texto^^}"   ## HOLA MUNDO
 echo "\${texto,,}"   ## hola mundo`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="buscar-dentro-de-un-string">8. Buscar dentro de un string</Titulo>
-      <CodeBlock code={`cadena="programacion"
+        <Linea />
+        <Titulo title="h2" id="buscar-dentro-de-un-string">8. Buscar dentro de un string</Titulo>
+        <Codigo code={`cadena="programacion"
 if [[ "$cadena" == *"grama"- ]]; then
 echo "Contiene 'grama'"
 fi`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="dividir-un-string-split">9. Dividir un string (split)</Titulo>
-      <Texto>Con IFS (Internal Field Separator):</Texto>
-      <CodeBlock code={`frase="uno dos tres"
+        <Linea />
+        <Titulo title="h2" id="dividir-un-string-split">9. Dividir un string (split)</Titulo>
+        <Texto>Con IFS (Internal Field Separator):</Texto>
+        <Codigo code={`frase="uno dos tres"
 IFS=" " read -r -a palabras <<< "$frase"
 
 echo "\${palabras[0]}"  ## uno
 echo "\${palabras[1]}"  ## dos
 echo "\${palabras[2]}"  ## tres`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="juntar-un-array-en-string">10. Juntar un array en string</Titulo>
-      <CodeBlock code={`lista=("a" "b" "c")
+        <Linea />
+        <Titulo title="h2" id="juntar-un-array-en-string">10. Juntar un array en string</Titulo>
+        <Codigo code={`lista=("a" "b" "c")
 echo "\${lista[*]}"   ## a b c
 echo "\${lista[@]}"   ## a b c`} language="bash" />
-      <Texto>Con separador personalizado:</Texto>
-      <CodeBlock code={`IFS=","; echo "\${lista[*]}"   ## a,b,c`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="expresiones-regulares-en-strings">11. Expresiones regulares en
-        strings</Titulo>
-      <CodeBlock code={`cadena="abc123"
+        <Texto>Con separador personalizado:</Texto>
+        <Codigo code={`IFS=","; echo "\${lista[*]}"   ## a,b,c`} language="bash" />
+        <Linea />
+        <Titulo title="h2" id="expresiones-regulares-en-strings">11. Expresiones regulares en
+          strings</Titulo>
+        <Codigo code={`cadena="abc123"
 if [[ "$cadena" =~ ^[a-z]+[0-9]+$ ]]; then
 echo "Coincide con letras seguidas de números"
 fi`} language="bash" />
-      <Linea />
-      <Titulo title="h2" id="lectura-carácter-por-carácter">12. Lectura carácter por
-        carácter</Titulo>
-      <CodeBlock code={`texto="Hola"
+        <Linea />
+        <Titulo title="h2" id="lectura-carácter-por-carácter">12. Lectura carácter por
+          carácter</Titulo>
+        <Codigo code={`texto="Hola"
 for (( i=0; i<\${#texto}; i++ )); do
 echo "\${texto:$i:1}"
 done`} language="bash" />
-      <Texto>Imprime cada letra en una línea.</Texto>
-      <Linea />
-      <Texto><strong>En resumen</strong>:</Texto>
-      <Lista>
-        <li>${`{#str}`} → longitud</li>
-        <li>${`{str:pos:len}`} → substring</li>
-        <li>${`{str/patrón/reemplazo}`} → reemplazo</li>
-        <li>${`{str%patrón}`} / ${`{str#patrón}`} → quitar
-          prefijo/sufijo</li>
-        <li>${`{str^^}`} / ${`{str,,}`} →
-          mayúsculas/minúsculas</li>
-        <li>IFS + read -a → split</li>
-      </Lista>
-      <Linea />
-      <Texto><Enlace href="./../readme.md#2-linux-y-bash-script">Regresar a la guía
-        principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+        <Texto>Imprime cada letra en una línea.</Texto>
+        <Linea />
+        <Texto><strong>En resumen</strong>:</Texto>
+        <Lista>
+          <li>${`{#str}`} → longitud</li>
+          <li>${`{str:pos:len}`} → substring</li>
+          <li>${`{str/patrón/reemplazo}`} → reemplazo</li>
+          <li>${`{str%patrón}`} / ${`{str#patrón}`} → quitar
+            prefijo/sufijo</li>
+          <li>${`{str^^}`} / ${`{str,,}`} →
+            mayúsculas/minúsculas</li>
+          <li>IFS + read -a → split</li>
+        </Lista>
+      </Estructura>
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }
+
 export default nameabcd;

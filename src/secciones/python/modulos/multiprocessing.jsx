@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -62,7 +62,7 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="conceptos-básicos">Conceptos básicos</Titulo>
       <Titulo title="h3" id="crear-un-proceso">Crear un proceso</Titulo>
-      <CodeBlock code={`from multiprocessing import Process
+      <Codigo code={`from multiprocessing import Process
 
 def tarea():
 print("Ejecutando en otro proceso")
@@ -81,7 +81,7 @@ print("Proceso finalizado")`} language="python" />
       <Linea />
       <Titulo title="h2" id="enviar-datos-entre-procesos">Enviar datos entre procesos</Titulo>
       <Titulo title="h3" id="con-queue">Con Queue</Titulo>
-      <CodeBlock code={`from multiprocessing import Process, Queue
+      <Codigo code={`from multiprocessing import Process, Queue
 
 def productor(q):
 for i in range(3):
@@ -99,7 +99,7 @@ p1.start(); p1.join()
 p2.start(); p2.join()`} language="python" />
       <Linea />
       <Titulo title="h3" id="con-pipe">Con Pipe</Titulo>
-      <CodeBlock code={`from multiprocessing import Process, Pipe
+      <Codigo code={`from multiprocessing import Process, Pipe
 
 def enviar(conexion):
 conexion.send("Hola desde otro proceso")
@@ -115,7 +115,7 @@ p.join()`} language="python" />
       <Titulo title="h2" id="uso-de-pool-grupo-de-procesos">Uso de Pool (grupo de
         procesos)</Titulo>
       <Texto>Permite ejecutar una función muchas veces en paralelo fácilmente.</Texto>
-      <CodeBlock code={`from multiprocessing import Pool
+      <Codigo code={`from multiprocessing import Pool
 
 def cuadrado(x):
 return x * x
@@ -129,7 +129,7 @@ print(resultados)`} language="python" />
       <Titulo title="h2" id="variables-compartidas">Variables compartidas</Titulo>
       <Texto>Para compartir datos entre procesos de forma segura:</Texto>
       <Titulo title="h3" id="value-y-array">Value y Array</Titulo>
-      <CodeBlock code={`from multiprocessing import Process, Value, Array
+      <Codigo code={`from multiprocessing import Process, Value, Array
 
 def modificar(v, a):
 v.value += 10
@@ -149,7 +149,7 @@ print(v.value, a[:])`} language="python" />
         Semaphore, etc., para evitar conflictos.
       </Texto>
       <Titulo title="h3" id="ejemplo-con-lock">Ejemplo con Lock</Titulo>
-      <CodeBlock code={`from multiprocessing import Process, Lock
+      <Codigo code={`from multiprocessing import Process, Lock
 
 def imprimir(lock, texto):
 with lock:
@@ -161,7 +161,7 @@ for i in range(3):
 Process(target=imprimir, args=(lock, f"Proceso {i}")).start()`} language="python" />
       <Linea />
       <Titulo title="h2" id="ejemplo-completo">Ejemplo completo</Titulo>
-      <CodeBlock code={`from multiprocessing import Process, Queue, current_process
+      <Codigo code={`from multiprocessing import Process, Queue, current_process
 import time
 
 def trabajo(q):

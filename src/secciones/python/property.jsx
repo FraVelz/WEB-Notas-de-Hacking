@@ -4,7 +4,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -55,20 +55,20 @@ function nameabcd({ }) {
       <Titulo title="h2" id="ejemplo-básico-sin-property">Ejemplo básico sin
         @property
       </Titulo>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self.__nombre = nombre  # atributo privado
 
 def get_nombre(self):
 return self.__nombre`} language="python" />
       <Texto>Uso:</Texto>
-      <CodeBlock code={`p = Persona("Ana")
+      <Codigo code={`p = Persona("Ana")
 print(p.get_nombre())  # ✅ Funciona`} language="python" />
       <Texto>Pero se ve <em>feo</em> tener que escribir .get_nombre()
         cada vez. Ahí entra @property.</Texto>
       <Linea />
       <Titulo title="h2" id="con-property">Con @property</Titulo>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self.__nombre = nombre
 
@@ -76,7 +76,7 @@ self.__nombre = nombre
 def nombre(self):
 return self.__nombre`} language="python" />
       <Texto>Uso:</Texto>
-      <CodeBlock code={`p = Persona("Luis")
+      <Codigo code={`p = Persona("Luis")
 print(p.nombre)  # ✅ Sin paréntesis, parece un atributo`} language="python" />
       <Lista>
         <li>Python llama automáticamente al método nombre()
@@ -86,7 +86,7 @@ print(p.nombre)  # ✅ Sin paréntesis, parece un atributo`} language="python" /
       <Titulo title="h2" id="agregando-un-setter-para-modificar-el-valor">Agregando un
         <strong>setter</strong> para modificar el valor
       </Titulo>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self.__nombre = nombre
 
@@ -101,7 +101,7 @@ self.__nombre = nuevo_nombre
 else:
 print("❌ El nombre no puede estar vacío.")`} language="python" />
       <Texto>Uso:</Texto>
-      <CodeBlock code={`p = Persona("Carlos")
+      <Codigo code={`p = Persona("Carlos")
 print(p.nombre)   # ✅ Getter
 p.nombre = "Andrés"  # ✅ Setter
 print(p.nombre)   # Andrés
@@ -109,7 +109,7 @@ p.nombre = ""     # ❌ El nombre no puede estar vacío.`} language="python" />
       <Linea />
       <Titulo title="h2" id="también-existe-el-deleter-opcional">También existe el deleter
         (opcional)</Titulo>
-      <CodeBlock code={`@nombre.deleter
+      <Codigo code={`@nombre.deleter
 def nombre(self):
 print("Eliminando el nombre...")
 del self.__nombre`} language="python" />

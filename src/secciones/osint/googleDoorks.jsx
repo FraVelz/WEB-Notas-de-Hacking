@@ -3,7 +3,7 @@ import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../compone
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -28,21 +28,21 @@ function nameabcd({ }) {
         <Texto>Nota el asterisco (*) dice que cualquier palabra puede pasar el
           filtro, normalmente se utiliza para cuando se necesita filtrar más
           resultados.</Texto>
-        <CodeBlock code={`site:reddit.*`} language="bash" />
+        <Codigo code={`site:reddit.*`} language="bash" />
         <Texto>Esto apunta a todas las páginas que empiezan por reddit sin importar
           como termine, pueden terminal por ejemplo reddit.us, reddit.arg,
           reddit.paypal, o reddit.store, etc…</Texto>
         <Texto>También otra consideración es que puedes utilizar no solo palabra en
           clave, sino también, frases claves para buscar y se hace con ““, de la
           siguiente manera.</Texto>
-        <CodeBlock code={`intitle:"Tomar un Mate"`} language="bash" />
+        <Codigo code={`intitle:"Tomar un Mate"`} language="bash" />
         <Texto>Es importante tener en cuenta que todos estos operadores están
           escritos de la manera:</Texto>
-        <CodeBlock code={`clave:valor`} language="bash" />
+        <Codigo code={`clave:valor`} language="bash" />
         <Texto>Sin espacios a menos que se usen comillas dobles, pero todo lo que
           esta afuera eso lo reconoce Google como palabras de una búsqueda
           normal.</Texto>
-        <CodeBlock code={`intitle:"Uala prestamos" prestamos sin intereses`} language="bash" />
+        <Codigo code={`intitle:"Uala prestamos" prestamos sin intereses`} language="bash" />
         <Texto>En este caso buscara <strong>préstamos sin intereses</strong>, y
           luego filtrara por títulos que contengan <strong>Uala
             préstamos</strong>.</Texto>
@@ -51,26 +51,26 @@ function nameabcd({ }) {
             (:) dos puntos, y un dominio, buscara todos los resultados que contengan
             ese dominio.</li>
         </ol>
-        <CodeBlock code={`site:reddit.com`} language="bash" />
+        <Codigo code={`site:reddit.com`} language="bash" />
         <ol start="2" type="1">
           <li>inurl, busca en la URL de Google, todos los que contengan la palabra
             clave, en la URL.</li>
         </ol>
-        <CodeBlock code={`inurl:palabraclave`} language="bash" />
+        <Codigo code={`inurl:palabraclave`} language="bash" />
         <ol start="3" type="1">
           <li>intitle, busca utilizando la palabra, y filtrando por títulos de la
             web, los que no contengan ese título o esa palabra clave no son
             mostrados por el buscador.</li>
         </ol>
-        <CodeBlock code={`intitle:tomarmate`} language="bash" />
+        <Codigo code={`intitle:tomarmate`} language="bash" />
         <ol start="4" type="1">
           <li>ext y filetype, estos comandos nos permite buscar por extensiones,
             son muy similares, pero su diferencia radica en que filetype reconoce
             archivos que Google reconocen, pero ext muestra archivos con la
             extensión sin importar sí el formato lo reconoce o no Google.</li>
         </ol>
-        <CodeBlock code={`ext:log Errores de reddit`} language="bash" />
-        <CodeBlock code={`filetype:pdfs Cuent`} language="bash" />
+        <Codigo code={`ext:log Errores de reddit`} language="bash" />
+        <Codigo code={`filetype:pdfs Cuent`} language="bash" />
         <Texto>Con lo anterior se puede hacer búsquedas en Google con filtros, y
           encontrar información pública que a veces los creadores de webs creen
           que no son públicas de sus webs, y otras cosas, es importante tener en

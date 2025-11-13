@@ -4,7 +4,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -41,7 +41,7 @@ function nameabcd({ }) {
       <Texto>Python <strong>no bloquea</strong> su acceso; es solo una
         <strong>advertencia entre programadores</strong>.
       </Texto>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self._nombre = nombre  # protegido
 
@@ -57,7 +57,7 @@ print(p._nombre)  # 😅 Funciona, pero no deberías accederlo así`} language="
         atributo</strong> para evitar que se sobrescriba o se acceda fácilmente
         desde fuera de la clase.</Texto>
       <Texto>Por ejemplo:</Texto>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 def __init__(self, nombre):
 self.__nombre = nombre  # privado (name mangling)
 
@@ -65,7 +65,7 @@ p = Persona("Luis")
 
 print(p.__nombre)  # ❌ Error: AttributeError`} language="python" />
       <Texto>Pero internamente Python lo guarda así</Texto>
-      <CodeBlock code={`print(p._Persona__nombre)  # ✅ Luis`} language="python" />
+      <Codigo code={`print(p._Persona__nombre)  # ✅ Luis`} language="python" />
       <Texto>En otras palabras:</Texto>
       <Lista>
         <li>No lo vuelve <em>totalmente privado</em>, pero

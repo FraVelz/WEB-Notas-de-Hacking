@@ -5,7 +5,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -48,7 +48,7 @@ function nameabcd({ }) {
           forma compacta.</Texto>
         <Linea />
         <Titulo title="h3" id="ejemplo">Ejemplo</Titulo>
-        <CodeBlock code={`192.168.1.0/24`} language="bash" />
+        <Codigo code={`192.168.1.0/24`} language="bash" />
         <Lista>
           <li>192.168.1.0 → Dirección de red</li>
           <li>/24 → Indica <strong>cuántos bits</strong> de la
@@ -121,7 +121,7 @@ function nameabcd({ }) {
         <Texto>👉 Sí la máscara de red es 255.255.255.0 entonces la
           <strong>máscara de host</strong> es:
         </Texto>
-        <CodeBlock code={`0.0.0.255`} language="bash" />
+        <Codigo code={`0.0.0.255`} language="bash" />
         <Texto>Porque:</Texto>
         <Lista>
           <li>Los bits 1 (255) indican red</li>
@@ -165,7 +165,7 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h2" id="ejemplo-práctico">4. Ejemplo práctico</Titulo>
         <Texto>Supón que tienes:</Texto>
-        <CodeBlock code={`Red: 10.0.0.0/24`} language="bash" />
+        <Codigo code={`Red: 10.0.0.0/24`} language="bash" />
         <Texto>Entonces:</Texto>
         <Lista>
           <li>Máscara de red: 255.255.255.0</li>

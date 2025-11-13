@@ -4,6 +4,7 @@ import Linea from "./../../../componentes/atomos/linea.jsx";
 import Lista from "./../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "./../../../componentes/moleculas/titulo.jsx";
+import Codigo  from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -32,38 +33,6 @@ function Arrays() {
   return (
     <>
       <Estructura>
-
-            <Linea />
-
-           <Texto>O si prefieres video de YouTube:</Texto>
-
-            <Lista className="
-            p1 list-disc my-2
-            ">
-                <li>
-                    <Enlace href="https:/www.youtube.com/watch?v=RUorAzaDftg">Ir a curso de bash script desde cero - El pinguino de mario (30m)</Enlace>
-                </li>
-                <li>
-                    <Enlace href="https:/www.youtube.com/watch?v=H4ayPYcZEfI">Ir a curso de bash script desde cero - Fazt
-                        (2h 23m)</Enlace>
-                </li>
-                <li>
-                    <Enlace href="https:/www.youtube.com/results?search_query=curso+de+bash+script+desde+cero">Buscar curso
-                        de bash script desde cero</Enlace>
-                </li>
-            </Lista>
-
-            <Texto>Practica general</Texto>
-
-            <Lista className="
-            p1 list-disc my-2
-            ">
-                <li>
-                    <Enlace href="./linux/bandit-resolucion.md">Ir a Practicar con bandit</Enlace>
-                </li>
-            </Lista>
-
- 
         <Titulo title="h1" id="arrays-en-bash-script">
           Arrays en bash script
         </Titulo>
@@ -76,86 +45,86 @@ function Arrays() {
 
         <Titulo title="h2" id="definir-arrays">1. Definir arrays</Titulo>
 
-        <pre className="sourceCode bash">
-          {`# Array con valores
+        <Codigo language="bash"
+        code={`# Array con valores
 nombres=("Ana" "Luis" "Pedro")
 
 # Otra forma (asignando por índice)
 numeros[0]=10
 numeros[1]=20
 numeros[2]=30`}
-        </pre>
+        />
 
         <Linea />
         <Titulo title="h2" id="acceder-a-elementos">2. Acceder a elementos</Titulo>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"echo \"${nombres[0]}\"   # Ana\necho \"${nombres[2]}\"   # Pedro"}
-        </pre>
+        />
 
         <Texto>Si usas un índice que no existe:</Texto>
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"echo \"${nombres[5]}\"   # vacío"}
-        </pre>
+        />
 
         <Linea />
         <Titulo title="h2" id="mostrar-todos-los-elementos">3. Mostrar todos los elementos</Titulo>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"echo \"${nombres[@]}\"   # Ana Luis Pedro\necho \"${numeros[*]}\"   # 10 20 30"}
-        </pre>
+        />
 
         <Linea />
         <Titulo title="h2" id="tamaño-del-array">4. Tamaño del array</Titulo>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"echo \"${#nombres[@]}\"  # 3"}
-        </pre>
+        />
 
         <Linea />
         <Titulo title="h2" id="recorrer-arrays">5. Recorrer arrays</Titulo>
         <Titulo title="h3" id="con-for">Con for</Titulo>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"for nombre in \"${nombres[@]}\"; do\necho \"Hola $nombre\"\ndone"}
-        </pre>
+        />
 
         <Texto>Salida:</Texto>
-        <pre className="sourceCode txt">
+        <Codigo language="bash" code=
           {`Hola Ana
 Hola Luis
 Hola Pedro`}
-        </pre>
+        />
 
         <Titulo title="h3" id="con-indices">Con índices</Titulo>
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"for i in \"${!nombres[@]}\"; do\n  echo \"Índice: $i → Valor: ${nombres[$i]}\"\ndone"}
-        </pre>
+        />
 
         <Linea />
 
         <Titulo title="h2" id="anadir-y-modificar-elementos">6. Añadir y modificar elementos</Titulo>
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {`nombres+=("Carla")      # Agregar al final
 nombres[1]="Lucía"       # Modificar el índice 1`}
-        </pre>
+        />
 
         <Linea />
 
         <Titulo title="h2" id="eliminar-elementos">7. Eliminar elementos</Titulo>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {`unset nombres[1]       # Elimina solo el índice 1
 unset nombres           # Borra todo el array`}
-        </pre>
+        />
 
         <Linea />
 
         <Titulo title="h2" id="subarrays-rebanadas">8. Subarrays (rebanadas)</Titulo>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"echo \"${nombres[@]:1:2}\"   # desde índice 1, tomar 2 elementos"}
-        </pre>
+        />
 
         <Linea />
 
@@ -163,16 +132,16 @@ unset nombres           # Borra todo el array`}
 
         <Texto>Disponibles en <strong>Bash 4+</strong>.</Texto>
 
-        <pre className="sourceCode bash">
+        <Codigo language="bash" code=
           {"declare -A capitales\ncapitales[Colombia]=\"Bogotá\"\ncapitales[México]=\"CDMX\"\ncapitales[España]=\"Madrid\"\n\necho \"${capitales[Colombia]}\"   # Bogotá\n\n# Recorrer claves y valores\nfor pais in \"${!capitales[@]}\"; do\n  echo \"$pais → ${capitales[$pais]}\"\ndone"}
-        </pre>
+        />
 
         <Texto>Salida:</Texto>
-        <pre className="sourceCode txt">
+        <Codigo language="bash" code=
           {`México → CDMX
 España → Madrid
 Colombia → Bogotá`}
-        </pre>
+        />
 
         <Linea />
 
@@ -180,16 +149,16 @@ Colombia → Bogotá`}
 
         <Lista>
           <li>
-            <Texto><strong>Índice del último elemento</strong>:</Texto>
-            <pre className="sourceCode bash">
+            <strong>Índice del último elemento</strong>:
+            <Codigo language="bash" code=
               {"echo \"${!nombres[@]}\"  # muestra todos los índices"}
-            </pre>
+            />
           </li>
           <li>
-            <Texto><strong>Ordenar un array</strong>:</Texto>
-            <pre className="sourceCode bash">
+            <strong>Ordenar un array</strong>:
+            <Codigo language="bash" code=
               {"numeros=(3 8 1)\nsorted=($(printf \"%s\n\" \"${numeros[@]}\" | sort -n))\necho \"${sorted[@]}\"   # 1 3 8"}
-            </pre>
+            />
           </li>
         </Lista>
 

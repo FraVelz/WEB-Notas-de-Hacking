@@ -5,7 +5,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -112,9 +112,9 @@ function nameabcd({ }) {
 </Tabla>
         <Linea />
         <Titulo title="h2" id="ver-permisos">2. Ver permisos</Titulo>
-        <CodeBlock code={`ls -l`} language="bash" />
+        <Codigo code={`ls -l`} language="bash" />
         <Texto>Ejemplo:</Texto>
-        <CodeBlock code={`-rwxr-xr--  1 francisco users 1234 oct 21  script.sh`} language="bash" />
+        <Codigo code={`-rwxr-xr--  1 francisco users 1234 oct 21  script.sh`} language="bash" />
         <Texto>Significado:</Texto>
         <Lista>
           <li>rwx → usuario</li>
@@ -127,12 +127,12 @@ function nameabcd({ }) {
         <Titulo title="h2" id="cambiar-permisos-chmod">3. Cambiar permisos
           (chmod)</Titulo>
         <Titulo title="h3" id="a-modo-simbólico">a) Modo simbólico</Titulo>
-        <CodeBlock code={`chmod u+x script.sh     # añadir ejecución al usuario
+        <Codigo code={`chmod u+x script.sh     # añadir ejecución al usuario
 chmod g-w script.sh     # quitar escritura al grupo
 chmod o=r file.txt      # solo lectura para otros
 chmod a+r file.txt      # todos pueden leer`} language="bash" />
         <Titulo title="h3" id="b-modo-numérico">b) Modo numérico</Titulo>
-        <CodeBlock code={`chmod 755 script.sh`} language="bash" />
+        <Codigo code={`chmod 755 script.sh`} language="bash" />
         <Tabla>
   <TablaCabezera headers={["Valor", "Permiso", "Descripción"]} />
 
@@ -167,11 +167,11 @@ chmod a+r file.txt      # todos pueden leer`} language="bash" />
         <Linea />
         <Titulo title="h2" id="cambiar-dueño-o-grupo-chown-chgrp">4. Cambiar dueño o grupo
           (chown, chgrp)</Titulo>
-        <CodeBlock code={`chown usuario archivo
+        <Codigo code={`chown usuario archivo
 chgrp grupo archivo
 chown usuario:grupo archivo`} language="bash" />
         <Texto>Ejemplo:</Texto>
-        <CodeBlock code={`sudo chown francisco:users script.sh`} language="bash" />
+        <Codigo code={`sudo chown francisco:users script.sh`} language="bash" />
         <Linea />
         <Titulo title="h2" id="permisos-especiales">5. Permisos especiales</Titulo>
         <Texto>Existen tres permisos especiales en Linux:</Texto>
@@ -202,11 +202,11 @@ chown usuario:grupo archivo`} language="bash" />
         <Titulo title="h3" id="sticky-bit">Sticky Bit</Titulo>
         <Texto>El <strong>sticky bit</strong> se usa en directorios <strong>para
           evitar que otros borren archivos ajenos</strong>.</Texto>
-        <CodeBlock code={`chmod +t /tmp/publico
+        <Codigo code={`chmod +t /tmp/publico
 # o modo numérico
 chmod 1777 /tmp/publico`} language="bash" />
         <Texto>Ver resultado:</Texto>
-        <CodeBlock code={`ls -ld /tmp/publico
+        <Codigo code={`ls -ld /tmp/publico
 drwxrwxrwt  9 root root 4096 oct 21 09:00 /tmp/publico`} language="bash" />
         <Texto>drwxrwxrw**t** → el “t” final indica el sticky bit
           activo.</Texto>
@@ -215,7 +215,7 @@ drwxrwxrwt  9 root root 4096 oct 21 09:00 /tmp/publico`} language="bash" />
         <Titulo title="h3" id="suid-y-sgid">SUID y SGID</Titulo>
         <h4 id="suid">SUID</h4>
         <Texto>Ejemplo:</Texto>
-        <CodeBlock code={`ls -l /usr/bin/passwd
+        <Codigo code={`ls -l /usr/bin/passwd
 -rwsr-xr-x 1 root root 54256 oct 21 /usr/bin/passwd`} language="bash" />
         <Lista>
           <li>La s en lugar de la x del usuario indica
@@ -225,13 +225,13 @@ drwxrwxrwt  9 root root 4096 oct 21 09:00 /tmp/publico`} language="bash" />
             (en este caso, root).</li>
         </Lista>
         <Texto>Activar o desactivar manualmente:</Texto>
-        <CodeBlock code={`chmod u+s archivo   # activar
+        <Codigo code={`chmod u+s archivo   # activar
 chmod u-s archivo   # desactivar`} language="bash" />
         <h4 id="sgid">SGID</h4>
         <Texto>En ejecutables:</Texto>
-        <CodeBlock code={`chmod g+s archivo`} language="bash" />
+        <Codigo code={`chmod g+s archivo`} language="bash" />
         <Texto>En directorios:</Texto>
-        <CodeBlock code={`chmod g+s carpeta/`} language="bash" />
+        <Codigo code={`chmod g+s carpeta/`} language="bash" />
         <Texto>Efecto:</Texto>
         <blockquote>
           <Texto>Los nuevos archivos heredan el grupo del directorio, útil para
@@ -243,17 +243,17 @@ chmod u-s archivo   # desactivar`} language="bash" />
         <Texto>Los <strong>atributos</strong> controlan <em>cómo</em> se comporta un
           archivo, más allá de los permisos.</Texto>
         <Titulo title="h3" id="ver-atributos">Ver atributos</Titulo>
-        <CodeBlock code={`lsattr archivo`} language="bash" />
+        <Codigo code={`lsattr archivo`} language="bash" />
         <Texto>Ejemplo:</Texto>
-        <CodeBlock code={`----i--------e-----  documento.txt`} language="bash" />
+        <Codigo code={`----i--------e-----  documento.txt`} language="bash" />
         <Titulo title="h3" id="cambiar-atributos-chattr">Cambiar atributos
           (chattr)</Titulo>
         <Texto>Hacer un archivo <strong>inmutable</strong>:</Texto>
-        <CodeBlock code={`sudo chattr +i archivo.txt`} language="bash" />
+        <Codigo code={`sudo chattr +i archivo.txt`} language="bash" />
         <Texto>Solo <strong>root</strong> puede revertirlo:</Texto>
-        <CodeBlock code={`sudo chattr -i archivo.txt`} language="bash" />
+        <Codigo code={`sudo chattr -i archivo.txt`} language="bash" />
         <Texto>Modo <strong>append-only</strong> (solo añadir contenido):</Texto>
-        <CodeBlock code={`sudo chattr +a log.txt`} language="bash" />
+        <Codigo code={`sudo chattr +a log.txt`} language="bash" />
         <Titulo title="h3" id="atributos-comunes">Atributos comunes</Titulo>
         <Tabla>
   <TablaCabezera headers={["Letra", "Descripción", "Uso"]} />
@@ -298,7 +298,7 @@ chmod u-s archivo   # desactivar`} language="bash" />
 </Tabla>
         <Titulo title="h3" id="ejemplo-práctico-en-script-bash">Ejemplo práctico en script
           Bash</Titulo>
-        <CodeBlock code={`#!/bin/bash
+        <Codigo code={`#!/bin/bash
 # Proteger archivos del sistema
 
 ARCHIVOS=("/etc/passwd" "/etc/shadow" "/etc/fstab")

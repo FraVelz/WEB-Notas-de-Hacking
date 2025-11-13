@@ -1,6 +1,7 @@
 export const Tabla = ({ children, className = "" }) => {
   return (
     <div className="
+    m-4
     h-fit
     overflow-x-auto
     rounded-xl border border-gray-400

@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -56,7 +56,7 @@ function nameabcd({ }) {
         <li>Ideal para chats, transferencias, HTTP, etc.</li>
       </Lista>
       <Titulo title="h3" id="servidor-tcp">Servidor TCP</Titulo>
-      <CodeBlock code={`# servidor_tcp.py
+      <Codigo code={`# servidor_tcp.py
 import socket
 
 HOST = '127.0.0.1'   # Dirección local
@@ -76,7 +76,7 @@ break
 print("Cliente dice:", data.decode())
 conn.sendall(b"Mensaje recibido")`} language="python" />
       <Titulo title="h3" id="cliente-tcp">Cliente TCP</Titulo>
-      <CodeBlock code={`# cliente_tcp.py
+      <Codigo code={`# cliente_tcp.py
 import socket
 
 HOST = '127.0.0.1'
@@ -95,7 +95,7 @@ print("Servidor responde:", data.decode())`} language="python" />
         <li>Ideal para streaming, juegos, mensajes cortos.</li>
       </Lista>
       <Titulo title="h3" id="servidor-udp">Servidor UDP</Titulo>
-      <CodeBlock code={`# servidor_udp.py
+      <Codigo code={`# servidor_udp.py
 import socket
 
 HOST = '127.0.0.1'
@@ -109,7 +109,7 @@ data, addr = s.recvfrom(1024)
 print("Mensaje de", addr, ":", data.decode())
 s.sendto(b"Mensaje recibido", addr)`} language="python" />
       <Titulo title="h3" id="cliente-udp">Cliente UDP</Titulo>
-      <CodeBlock code={`# cliente_udp.py
+      <Codigo code={`# cliente_udp.py
 import socket
 
 HOST = '127.0.0.1'

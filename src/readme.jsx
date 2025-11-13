@@ -24,7 +24,9 @@ function Readme() {
             <Texto>
                 <b>Ruta:</b> con enfoque principal pentesting, normalmente es
                 lo que ayuda a conseguir unas buenas bases en ciberseguridad y trabajo
-                es esta área.
+                es esta área. (no olvidar que simplemente son notas, gastar dinero en aprender es una inversion,
+                y esto no remplaza ninguna ruta de aprendizaje, de cursos de pago, o de plataformas especializadas
+                como -hack the box- o -try hack me-).
             </Texto>
 
             <Dividido secundario={<Animacion />}>

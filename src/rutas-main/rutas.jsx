@@ -21,19 +21,19 @@ function Rutas_Configuracion() {
     const Virtualizacion = lazy(() => import("../secciones/virtualizacion/virtualizacion.jsx"));
 
     // ********** Linux
-    const Bandit_Resolucion = lazy(() => import("../secciones/linux/bandit-resolucion.jsx"));
+    const Bandit = lazy(() => import("../secciones/linux/bandit-resolucion.jsx"));
 
     // ********** Linux/Basico
     const Atajos_De_Teclado = lazy(() => import("../secciones/linux/basico/atajos-de-teclado.jsx"));
     const Ayuda_Linux = lazy(() => import("../secciones/linux/basico/ayuda-linux.jsx"));
     const Busqueda = lazy(() => import("../secciones/linux/basico/busqueda.jsx"));
     const Comandos_Linux = lazy(() => import("../secciones/linux/basico/comandos-linux.jsx"));
-    const Fundaments = lazy(() => import("../secciones/linux/bash-script/fundamentos.jsx"));
     const Gestion_De_Procesos = lazy(() => import("../secciones/linux/basico/gestion-de-procesos.jsx"));
     const Grupos_Y_Usuarios = lazy(() => import("../secciones/linux/basico/grupos-y-usuarios.jsx"));
     const Permisos = lazy(() => import("../secciones/linux/basico/permisos.jsx"));
 
     // ********** Linux/Bash-Script
+    const Fundamentos = lazy(() => import("../secciones/linux/bash-script/fundamentos.jsx"));
     const Arrays = lazy(() => import("../secciones/linux/bash-script/arrays.jsx"));
     const Condiciones = lazy(() => import("../secciones/linux/bash-script/condiciones.jsx"));
     const Entrada_Y_Salida = lazy(() => import("../secciones/linux/bash-script/entrada-y-salida.jsx"));
@@ -136,7 +136,6 @@ function Rutas_Configuracion() {
                     <Route path='/arrays' element={<Arrays />} />
                     <Route path='/atajos_de_teclado' element={<Atajos_De_Teclado />} />
                     <Route path='/ayuda_linux' element={<Ayuda_Linux />} />
-                    <Route path='/bandit_resolucion' element={<Bandit_Resolucion />} />
                     <Route path='/busqueda' element={<Busqueda />} />
                     <Route path='/comandos_linux' element={<Comandos_Linux />} />
                     <Route path='/condiciones' element={<Condiciones />} />
@@ -144,11 +143,13 @@ function Rutas_Configuracion() {
                     <Route path='/estructuras_control' element={<EstControl />} />
                     <Route path='/funciones_externas' element={<Funciones_Externas />} />
                     <Route path='/funciones' element={<Funciones />} />
-                    <Route path='/fundamentos' element={<Fundaments />} />
+                    <Route path='/fundamentos' element={<Fundamentos />} />
                     <Route path='/gestion_de_procesos' element={<Gestion_De_Procesos />} />
                     <Route path='/grupos_y_usuarios' element={<Grupos_Y_Usuarios />} />
                     <Route path='/manipulacion_de_strings' element={<Manipulacion_De_Strings />} />
                     <Route path='/permisos' element={<Permisos />} />
+
+                    <Route path='/bandit' element={<Bandit />} />
 
                     {/* ********** Linux/Comandos ********** */}
                     <Route path='/cifrado_cesar' element={<Cifrado_Cesar_Tr />} />

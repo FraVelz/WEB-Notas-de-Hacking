@@ -3,7 +3,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 
 function Temario({ className = "" }) {
@@ -39,7 +39,7 @@ function nameabcd({ }) {
           longitud de la línea más larga.
         </Texto>
         <Titulo title="h3" id="sintaxis-básica">Sintaxis básica</Titulo>
-        <CodeBlock code={`wc [opciones] [archivo...]`} language="bash" />
+        <Codigo code={`wc [opciones] [archivo...]`} language="bash" />
         <Texto>Sí no le pasas archivo lee desde la entrada estándar (útil con
           pipes).</Texto>
         <Titulo title="h3" id="opciones-útiles">Opciones útiles</Titulo>
@@ -53,7 +53,7 @@ function nameabcd({ }) {
             larga</strong>.</li>
         </Lista>
         <Titulo title="h3" id="ejemplos">Ejemplos</Titulo>
-        <CodeBlock code={`wc archivo.txt
+        <Codigo code={`wc archivo.txt
 # salida:   10  45  320 archivo.txt
 # significa: 10 líneas, 45 palabras, 320 bytes
 

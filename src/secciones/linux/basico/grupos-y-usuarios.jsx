@@ -5,7 +5,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -170,7 +170,7 @@ function nameabcd({ }) {
             avanzada</strong>.</li>
         </Lista>
         <Texto><strong>Ejemplo:</strong></Texto>
-        <CodeBlock code={`sudo useradd francisco`} language="bash" />
+        <Codigo code={`sudo useradd francisco`} language="bash" />
         <Texto>Esto <strong>solo</strong> crea la entrada en
           /etc/passwd, pero:
         </Texto>
@@ -181,7 +181,7 @@ function nameabcd({ }) {
           <li>No asigna contraseña</li>
         </Lista>
         <Texto>Tendrías que hacer todo manualmente:</Texto>
-        <CodeBlock code={`sudo mkdir /home/francisco
+        <Codigo code={`sudo mkdir /home/francisco
 sudo cp -r /etc/skel/. /home/francisco
 sudo chown -R francisco:francisco /home/francisco
 sudo passwd francisco`} language="bash" />
@@ -211,7 +211,7 @@ sudo passwd francisco`} language="bash" />
         </Lista>
 
         <Texto><strong>Ejemplo:</strong></Texto>
-        <CodeBlock code={`sudo adduser francisco`} language="bash" />
+        <Codigo code={`sudo adduser francisco`} language="bash" />
         <Texto>Esto:</Texto>
         <Lista>
           <li>Crea /home/francisco</li>
@@ -320,21 +320,21 @@ sudo passwd francisco`} language="bash" />
           operativo.</Texto>
         <Titulo title="h3" id="ejemplo-simple">Ejemplo simple</Titulo>
         <Texto>Imagina que tienes tres usuarios:</Texto>
-        <CodeBlock code={`juan
+        <Codigo code={`juan
 maria
 pedro`} language="bash" />
         <Texto>Y quieres que <strong>solo juan y maria puedan entrar</strong> a una
           carpeta llamada /proyecto.</Texto>
         <Texto>En lugar de dar permisos a cada uno individualmente, puedes crear un
           grupo:</Texto>
-        <CodeBlock code={`sudo groupadd proyecto`} language="bash" />
+        <Codigo code={`sudo groupadd proyecto`} language="bash" />
         <Texto>Luego agregas a los usuarios al grupo:</Texto>
-        <CodeBlock code={`sudo usermod -aG proyecto juan
+        <Codigo code={`sudo usermod -aG proyecto juan
 sudo usermod -aG proyecto maria`} language="bash" />
         <Texto>Después haces que la carpeta pertenezca a ese grupo:</Texto>
-        <CodeBlock code={`sudo chown :proyecto /proyecto`} language="bash" />
+        <Codigo code={`sudo chown :proyecto /proyecto`} language="bash" />
         <Texto>Y le das permisos solo al grupo:</Texto>
-        <CodeBlock code={`sudo chmod 770 /proyecto`} language="bash" />
+        <Codigo code={`sudo chmod 770 /proyecto`} language="bash" />
         <Texto>Ahora:</Texto>
         <Lista>
           <li>Juan ✅ puede entrar.</li>
@@ -350,7 +350,7 @@ sudo usermod -aG proyecto maria`} language="bash" />
           </li>    <li>
             <Texto><strong>Grupos secundarios (suplementarios):</strong> Son grupos
               extra a los que puede pertenecer. Ejemplo:</Texto>
-            <CodeBlock code={`sudo usermod -aG sudo,video,audio francisco`} language="bash" />
+            <Codigo code={`sudo usermod -aG sudo,video,audio francisco`} language="bash" />
             <Texto>Aquí el usuario pertenece a los grupos:</Texto>
             <Lista>
               <li>sudo → puede usar comandos como administrador</li>
@@ -360,16 +360,16 @@ sudo usermod -aG proyecto maria`} language="bash" />
           </li>
         </ol>
         <Titulo title="h3" id="ver-los-grupos-de-un-usuario">Ver los grupos de un usuario</Titulo>
-        <CodeBlock code={`groups francisco`} language="bash" />
+        <Codigo code={`groups francisco`} language="bash" />
         <Texto>Salida posible:</Texto>
-        <CodeBlock code={`francisco : francisco sudo video audio`} language="bash" />
+        <Codigo code={`francisco : francisco sudo video audio`} language="bash" />
         <Titulo title="h3" id="archivos-donde-se-guardan-los-grupos">Archivos donde se guardan
           los grupos</Titulo>
         <Lista>
           <li>
             <Texto>/etc/group → lista todos los grupos del sistema.
               Ejemplo de líneas:</Texto>
-            <CodeBlock code={`root:x:0:
+            <Codigo code={`root:x:0:
 sudo:x:27:francisco
 proyecto:x:1002:juan,maria`} language="bash" />
           </li>
@@ -430,20 +430,20 @@ proyecto:x:1002:juan,maria`} language="bash" />
           <li>
             <Texto><strong>Crear un usuario con carpeta personal y shell
               bash:</strong></Texto>
-            <CodeBlock code={`sudo useradd -m -s /bin/bash francisco`} language="bash" />
+            <Codigo code={`sudo useradd -m -s /bin/bash francisco`} language="bash" />
           </li>
           <li>
             <Texto><strong>Cambiar nombre de usuario:</strong></Texto>
-            <CodeBlock code={`sudo usermod -l nuevo_nombre francisco`} language="bash" />
+            <Codigo code={`sudo usermod -l nuevo_nombre francisco`} language="bash" />
           </li>
           <li>
             <Texto><strong>Bloquear/desbloquear usuario:</strong></Texto>
-            <CodeBlock code={`sudo usermod -L francisco    # Bloquear
+            <Codigo code={`sudo usermod -L francisco    # Bloquear
 sudo usermod -U francisco    # Desbloquear`} language="bash" />
           </li>
           <li>
             <Texto><strong>Ver todos los usuarios del sistema:</strong></Texto>
-            <CodeBlock code={`cut -d: -f1 /etc/passwd`} language="bash" />
+            <Codigo code={`cut -d: -f1 /etc/passwd`} language="bash" />
           </li>
         </Lista>
         <Linea />
@@ -489,7 +489,7 @@ sudo usermod -U francisco    # Desbloquear`} language="bash" />
         <Texto>Linux trata <strong>cada servicio como sí fuera un usuario
           separado</strong> para aislarlos.</Texto>
         <Texto>Por ejemplo:</Texto>
-        <CodeBlock code={`root       → superusuario
+        <Codigo code={`root       → superusuario
 mysql      → usuario del servicio MySQL
 www-data   → usuario del servidor web Apache o Nginx
 nobody     → usuario “vacío” usado por procesos sin privilegios`} language="bash" />
@@ -575,7 +575,7 @@ nobody     → usuario “vacío” usado por procesos sin privilegios`} languag
             para evitar errores o accesos indebidos.</li>
         </Lista>
         <Texto>Ejemplo real:</Texto>
-        <CodeBlock code={`sudo useradd -r -s /bin/false servidor_web`} language="bash" />
+        <Codigo code={`sudo useradd -r -s /bin/false servidor_web`} language="bash" />
         <Texto>Esto crea un usuario “de sistema” sin acceso a terminal, usado solo
           para ejecutar un servicio.</Texto>
         <h4 id="en-resumen-otros">En resumen (otros)</h4>

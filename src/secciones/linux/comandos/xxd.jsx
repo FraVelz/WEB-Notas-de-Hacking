@@ -5,7 +5,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -52,14 +52,14 @@ function nameabcd({ }) {
         </Texto>
         <Linea />
         <Titulo title="h2" id="sintaxis-básica">Sintaxis básica</Titulo>
-        <CodeBlock code={`xxd [opciones] [archivo]`} language="bash" />
+        <Codigo code={`xxd [opciones] [archivo]`} language="bash" />
         <Linea />
         <Titulo title="h2" id="ejemplos-comunes">Ejemplos comunes</Titulo>
         <Titulo title="h3" id="ver-un-archivo-en-formato-hexadecimal">1. Ver un archivo en
           formato hexadecimal</Titulo>
-        <CodeBlock code={`xxd archivo.bin`} language="bash" />
-        <Texto>➡️ Muestra el contenido de archivo.bin así:</Texto>
-        <CodeBlock code={`00000000: 486f 6c61 206d 756e 646f          Hola mundo`} language="bash" />
+        <Codigo code={`xxd archivo.bin`} language="bash" />
+        <Texto> Muestra el contenido de archivo.bin así:</Texto>
+        <Codigo code={`00000000: 486f 6c61 206d 756e 646f          Hola mundo`} language="bash" />
         <Lista>
           <li>La primera columna (00000000) es el desplazamiento
             (offset) en hexadecimal.</li>    <li>Luego vienen los bytes en formato hex.</li>    <li>A la derecha aparece la interpretación ASCII (sí los bytes son
@@ -67,13 +67,13 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h3" id="convertir-de-binario-a-texto-hexadecimal">2. Convertir de
           binario a texto hexadecimal</Titulo>
-        <CodeBlock code={`cat archivo | xxd`} language="bash" />
-        <Texto>➡️ Convierte los bytes de la entrada estándar en texto
+        <Codigo code={`cat archivo | xxd`} language="bash" />
+        <Texto> Convierte los bytes de la entrada estándar en texto
           hexadecimal.</Texto>
         <Linea />
         <Titulo title="h3" id="convertir-de-texto-hexadecimal-a-binario">3. Convertir de texto
           hexadecimal a binario</Titulo>
-        <CodeBlock code={`cat archivo_hex.txt | xxd -r > archivo_original`} language="bash" />
+        <Codigo code={`cat archivo_hex.txt | xxd -r > archivo_original`} language="bash" />
         <Lista>
           <li>-r significa <strong>reverse</strong> (revertir).</li>
           <li>Esto toma una representación en hex (por ejemplo, hecha por
@@ -83,14 +83,14 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h3" id="mostrar-solo-los-bytes-sin-dirección-ni-texto-ascii">4. Mostrar
           solo los bytes (sin dirección ni texto ASCII)</Titulo>
-        <CodeBlock code={`xxd -p archivo.bin`} language="bash" />
+        <Codigo code={`xxd -p archivo.bin`} language="bash" />
         <Texto>Salida “plana” (plain):</Texto>
-        <CodeBlock code={`486f6c61206d756e646f`} language="bash" />
+        <Codigo code={`486f6c61206d756e646f`} language="bash" />
         <Texto>Perfecta para copiar y pegar en scripts o codificaciones.</Texto>
         <Linea />
         <Titulo title="h3" id="ver-solo-los-primeros-bytes">5. Ver solo los primeros bytes</Titulo>
-        <CodeBlock code={`xxd -l 16 archivo.bin`} language="bash" />
-        <Texto>➡️ Muestra solo los primeros 16 bytes.</Texto>
+        <Codigo code={`xxd -l 16 archivo.bin`} language="bash" />
+        <Texto> Muestra solo los primeros 16 bytes.</Texto>
         <Linea />
         <Titulo title="h2" id="en-resumen">En resumen</Titulo>
         <Tabla>

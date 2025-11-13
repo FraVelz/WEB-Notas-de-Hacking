@@ -4,17 +4,11 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
 
-function nameabcd({ }) {
+function Temario({ className = "" }) {
   return (
-    <>
-      <Titulo title="h1" id="comandos-de-navegación">Comandos de Navegación</Titulo>
-      <Linea />
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><Enlace href="#comandos-de-navegación">Comandos de Navegación</Enlace >
-          <Lista>
-            <li><Enlace href="#temario">Temario</Enlace ></li>
+    <Lista className={className}>
             <li><Enlace href="#1-windows-cmd-command-prompt">1. Windows CMD (Command
               Prompt)</Enlace >
               <Lista>
@@ -34,12 +28,19 @@ function nameabcd({ }) {
                   (cmdlets)</Enlace ></li>
               </Lista>
             </li>
-          </Lista>
-        </li>
-      </Lista>
-      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
-        principal</Enlace ></Texto>
+    </Lista>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+    <Estructura>
+      <Titulo title="h1" id="comandos-de-navegación">Comandos de Navegación</Titulo>
       <Linea />
+
+      <TemarioCompleto temario={Temario} />
+      
       <Titulo title="h2" id="windows-cmd-command-prompt">1. Windows CMD (Command Prompt)</Titulo>
       <Titulo title="h3" id="navegación-por-directorios">Navegación por directorios</Titulo>
       <Tabla>
@@ -197,12 +198,9 @@ function nameabcd({ }) {
         <li>-Directory → solo carpetas</li>
         <li>-Filter "*.txt" → filtrar por extensión</li>
       </Lista>
-      <Linea />
-      <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
-        principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+</Estructura>
+
+<TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

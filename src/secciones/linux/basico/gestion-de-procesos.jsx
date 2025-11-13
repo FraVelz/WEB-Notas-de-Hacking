@@ -1,11 +1,13 @@
-import Enlace from "../../../componentes/atomos/enlace.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
+
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
+import Enlace from "../../../componentes/atomos/enlace.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Imagen from "../../../componentes/atomos/imagen.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -55,54 +57,46 @@ function Gestion_Procesos() {
         </Lista>
 
         <Linea />
+
         <Titulo title="h2" id="comandos-para-ver-procesos">Comandos para ver procesos</Titulo>
+
         <Lista>
           <li>
-            <Texto>
-              <strong>ps</strong>: Lista los procesos activos.
-            </Texto>
-            <CodeBlock code={`ps aux                # Para monitorear recursos
+            <strong>ps</strong>: Lista los procesos activos.
+            <Codigo code={`ps aux                # Para monitorear recursos
 ps -ef                # Para ver jerarquía y relaciones entre los procesos`} language="bash" />
           </li>
           <li>
-            <Texto>
-              <strong>top / htop</strong>: Monitor interactivo de procesos.
-            </Texto>
-            <Texto>
-              htop es más visual, permite matar o renicear procesos fácilmente.
-            </Texto>
+            <strong>top / htop</strong>: Monitor interactivo de procesos.
+            htop es más visual, permite matar o renicear procesos fácilmente.
           </li>
           <li>
-            <Texto>
-              <strong>pgrep</strong>: Busca procesos por nombre.
-            </Texto>
-            <CodeBlock code={`pgrep firefox`} language="bash" />
+            <strong>pgrep</strong>: Busca procesos por nombre.
+            <Codigo code={`pgrep firefox`} language="bash" />
           </li>
           <li>
-            <Texto>
-              <strong>pstree</strong>: Muestra los procesos en forma jerárquica (padre-hijo).
-            </Texto>
-            <CodeBlock code={`pstree -p   # incluye los PIDs`} language="bash" />
+            <strong>pstree</strong>: Muestra los procesos en forma jerárquica (padre-hijo).
+            <Codigo code={`pstree -p   # incluye los PIDs`} language="bash" />
           </li>
           <li>
-            <Texto>
-              <strong>pidof</strong>: Muestra el PID de un programa activo.
-            </Texto>
-            <CodeBlock code={`pidof bash`} language="bash" />
+            <strong>pidof</strong>: Muestra el PID de un programa activo.
+            <Codigo code={`pidof bash`} language="bash" />
           </li>
         </Lista>
 
         <Linea />
+
         <Titulo title="h2" id="ejecución-de-procesos">Ejecución de procesos</Titulo>
+
         <Lista>
           <li>
-            <Texto><strong>Primer plano (foreground)</strong>:</Texto>
-            <CodeBlock code={`./programa`} language="bash" />
+            <strong>Primer plano (foreground)</strong>:
+            <Codigo code={`./programa`} language="bash" />
             <Texto>El terminal queda ocupado hasta que el proceso termine.</Texto>
           </li>
           <li>
-            <Texto><strong>Segundo plano (background)</strong>:</Texto>
-            <CodeBlock code={`./programa &`} language="bash" />
+            <strong>Segundo plano (background)</strong>:
+            <Codigo code={`./programa &`} language="bash" />
             <Texto>
               El shell sigue disponible mientras el proceso corre. Tener en cuenta que normalmente
               al cerrar la shell el proceso se termina, pero se puede utilizar el comando disown
@@ -110,38 +104,38 @@ ps -ef                # Para ver jerarquía y relaciones entre los procesos`} la
             </Texto>
           </li>
           <li>
-            <Texto><strong>Ejemplo práctico:</strong></Texto>
-            <CodeBlock code={`long_task.sh &
+            <strong>Ejemplo práctico:</strong>
+            <Codigo code={`long_task.sh &
 echo "Sigo usando la terminal"`} language="bash" />
           </li>
         </Lista>
 
         <Linea />
+
         <Titulo title="h2" id="control-de-trabajos">Control de trabajos</Titulo>
+
         <Texto>
           Bash permite gestionar procesos iniciados desde la misma sesión
           (misma terminal en el que se ejecutó el proceso).
         </Texto>
-        <CodeBlock code={`jobs          # lista los procesos de fondo en la sesión actual
+
+        <Codigo code={`jobs          # lista los procesos de fondo en la sesión actual
 fg %1         # lleva el job 1 al primer plano
 bg %2         # reanuda el job 2 en segundo plano
 Ctrl + Z      # pausa el proceso actual`} language="bash" />
 
         <Texto><strong>Ejemplo:</strong> Creamos un proceso en la terminal:</Texto>
-        <CodeBlock code={`sleep 1d && echo "Ya paso 1 dia"`} language="bash" />
+        <Codigo code={`sleep 1d && echo "Ya paso 1 dia"`} language="bash" />
 
         <Texto>
           Luego das Ctrl+Z se pausa el proceso (importante no equivocarse con
           Ctrl+C porque este terminaría el proceso en vez de pausarlo), cuando escribas:
         </Texto>
 
-        <CodeBlock code={`jobs`} language="bash" />
+        <Codigo code={`jobs`} language="bash" />
 
         <Texto>Podrás visualizar el proceso, todo se vería algo así:</Texto>
-        <figure>
-          <img src="./../images/procesos.png" alt="Ir a Procesos" />
-          <figcaption>Ir a Procesos</figcaption>
-        </figure>
+        <Imagen width={500} src="./procesos.png" alt="Ir a Procesos" />
 
         <Texto>
           Con el comando fg %1 o bg %1 puedes des pausar el proceso,
@@ -149,18 +143,20 @@ Ctrl + Z      # pausa el proceso actual`} language="bash" />
         </Texto>
 
         <Linea />
+
         <Titulo title="h2" id="señales-a-procesos">Señales a procesos</Titulo>
+
         <Lista>
           <li>
-            <Texto><strong>Enviar señales manualmente:</strong></Texto>
-            <CodeBlock code={`kill -9 1234    # SIGKILL (fuerza el cierre)
+            <strong>Enviar señales manualmente:</strong>
+            <Codigo code={`kill -9 1234    # SIGKILL (fuerza el cierre)
 kill -15 1234   # SIGTERM (solicita terminación limpia)
 kill -STOP 1234 # pausa proceso
 kill -CONT 1234 # reanuda proceso detenido`} language="bash" />
           </li>
           <li>
-            <Texto><strong>Por nombre:</strong></Texto>
-            <CodeBlock code={`pkill firefox
+            <strong>Por nombre:</strong>
+            <Codigo code={`pkill firefox
 killall nano`} language="bash" />
           </li>
         </Lista>
@@ -215,31 +211,27 @@ killall nano`} language="bash" />
         </Lista>
 
         <Texto><strong>Cambiar prioridad al iniciar:</strong></Texto>
-        <CodeBlock code={`nice -n 10 ./programa`} language="bash" />
+        <Codigo code={`nice -n 10 ./programa`} language="bash" />
 
         <Texto><strong>Modificar proceso existente:</strong></Texto>
-        <CodeBlock code={`renice -n 5 -p 1234`} language="bash" />
+        <Codigo code={`renice -n 5 -p 1234`} language="bash" />
 
         <Texto><strong>Ver prioridades actuales:</strong></Texto>
-        <CodeBlock code={`ps -eo pid,ni,comm`} language="bash" />
+        <Codigo code={`ps -eo pid,ni,comm`} language="bash" />
 
         <Linea />
         <Titulo title="h2" id="procesos-huérfanos-y-zombis">Procesos huérfanos y zombis</Titulo>
         <Lista>
           <li>
-            <Texto>
               <strong>Huérfano</strong>: cuando el proceso padre termina antes que su hijo.
               El proceso hijo pasa a ser adoptado por el <strong>init</strong> o <strong>systemd</strong>.
               No es dañino, pero indica una gestión no controlada de procesos.
-            </Texto>
           </li>
           <li>
-            <Texto>
               <strong>Zombi</strong>: proceso que terminó, pero su entrada en la tabla de procesos
               aún existe porque su padre no leyó su estado de salida (wait() no fue llamado).
               Se muestran con estado Z.
-            </Texto>
-            <CodeBlock code={`ps aux | grep 'Z'`} language="bash" />
+            <Codigo code={`ps aux | grep 'Z'`} language="bash" />
             <Texto>Para eliminarlos, normalmente basta con terminar el proceso padre.</Texto>
           </li>
         </Lista>

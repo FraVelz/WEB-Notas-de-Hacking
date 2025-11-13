@@ -4,7 +4,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -49,7 +49,7 @@ function nameabcd({ }) {
         <TemarioCompleto temario={Temario} />
 
         <Titulo title="h2" id="primer-comando">Primer comando</Titulo>
-        <CodeBlock code={`fravelz@htb[/htb]$ ls
+        <Codigo code={`fravelz@htb[/htb]$ ls
 cacert.der  Documents  Music     Public     Videos
 Desktop     Downloads  Pictures  Templates`} language="bash" />
         <Texto>El comando ls en sistemas Linux y Unix se utiliza para
@@ -64,13 +64,13 @@ Desktop     Downloads  Pictures  Templates`} language="bash" />
           manual de los comandos y proporciona información detallada sobre su
           uso.</Texto>
         <Texto><strong>Sintaxis:</strong></Texto>
-        <CodeBlock code={`fravelz@htb[/htb]$ man`} language="bash" />
+        <Codigo code={`fravelz@htb[/htb]$ man`} language="bash" />
         <Texto>Veamos un ejemplo y obtengamos ayuda para el comando
           ls:
         </Texto>
         <Texto><strong>Ejemplo:</strong></Texto>
-        <CodeBlock code={`fravelz@htb[/htb]$ man ls`} language="bash" />
-        <CodeBlock code={`LS(1)                            User Commands                           LS(1)
+        <Codigo code={`fravelz@htb[/htb]$ man ls`} language="bash" />
+        <Codigo code={`LS(1)                            User Commands                           LS(1)
 
 NAME
 ls - list directory contents
@@ -102,12 +102,12 @@ Manual page ls(1) line 1 (press h for help or q to quit)`} language="bash" />
           -h)
         </Titulo>
         <Texto><strong>Sintaxis:</strong></Texto>
-        <CodeBlock code={`# Obtener ayuda
+        <Codigo code={`# Obtener ayuda
 fravelz@htb[/htb]$  --help`} language="bash" />
         <Texto><strong>Ejemplo:</strong></Texto>
-        <CodeBlock code={`# Obtener ayuda
+        <Codigo code={`# Obtener ayuda
 fravelz@htb[/htb]$ ls --help`} language="bash" />
-        <CodeBlock code={`Usage: ls [OPTION]... [FILE]...
+        <Codigo code={`Usage: ls [OPTION]... [FILE]...
 List information about the FILEs (the current directory by default).
 Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
 
@@ -130,11 +130,11 @@ otherwise: sort by ctime, newest first
           -h en lugar de --help:
         </Texto>
         <Texto><strong>Sintaxis:</strong></Texto>
-        <CodeBlock code={`# Obtener ayuda
+        <Codigo code={`# Obtener ayuda
 fravelz@htb[/htb]$  -h`} language="bash" />
         <Texto><strong>Ejemplo:</strong></Texto>
-        <CodeBlock code={`fravelz@htb[/htb]$ curl -h`} language="bash" />
-        <CodeBlock code={`Usage: curl [options...]
+        <Codigo code={`fravelz@htb[/htb]$ curl -h`} language="bash" />
+        <Codigo code={`Usage: curl [options...]
 --abstract-unix-socket  Connect via abstract Unix domain socket
 --anyauth       Pick any authentication method
 -a, --append        Append to target file when uploading
@@ -154,12 +154,12 @@ fravelz@htb[/htb]$  -h`} language="bash" />
           página del manual incluye una breve descripción. Esta herramienta busca
           en las descripciones instancias de una palabra clave determinada.</Texto>
         <Texto><strong>Sintaxis:</strong></Texto>
-        <CodeBlock code={`# Obtener ayuda
+        <Codigo code={`# Obtener ayuda
 fravelz@htb[/htb]$ apropos`} language="bash" />
         <Texto><strong>Ejemplo:</strong></Texto>
-        <CodeBlock code={`# Obtener ayuda
+        <Codigo code={`# Obtener ayuda
 fravelz@htb[/htb]$ apropos sudo`} language="bash" />
-        <CodeBlock code={`sudo (8)             - execute a command as another user
+        <Codigo code={`sudo (8)             - execute a command as another user
 sudo.conf (5)        - configuration for sudo front end
 sudo_plugin (8)      - Sudo Plugin API
 sudo_root (8)        - How to run administrative commands

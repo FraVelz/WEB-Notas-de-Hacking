@@ -4,7 +4,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -32,7 +32,7 @@ function nameabcd({ }) {
         Principal</Enlace ></Texto>
       <Linea />
       <Titulo title="h2" id="ejemplo">Ejemplo</Titulo>
-      <CodeBlock code={`class Persona:
+      <Codigo code={`class Persona:
 poblacion = 0  # Atributo de clase
 
 def __init__(self, nombre):

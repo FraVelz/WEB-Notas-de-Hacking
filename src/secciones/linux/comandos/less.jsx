@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 
 function Temario({ className = "" }) {
@@ -31,7 +31,7 @@ function nameabcd({ }) {
           no todo de golpe. Esto es muy útil cuando el archivo es largo (como
           logs, código, o configuraciones grandes).</Texto>
         <Texto>Ejemplo:</Texto>
-        <CodeBlock code={`less archivo.txt`} language="bash" />
+        <Codigo code={`less archivo.txt`} language="bash" />
         <Linea />
         <Titulo title="h3" id="controles-básicos-dentro-de-less">Controles básicos dentro de
           less
@@ -78,14 +78,14 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h3" id="ejemplos-útiles">Ejemplos útiles</Titulo>
         <Texto>Ver varios archivos:</Texto>
-        <CodeBlock code={`less *.txt`} language="bash" />
+        <Codigo code={`less *.txt`} language="bash" />
         <Texto>(Mueve con :n para siguiente archivo y :p
           para anterior)</Texto>
         <Texto>Ver salida de un comando largo (por ejemplo, un ls con
           muchos resultados):</Texto>
-        <CodeBlock code={`ls -l | less`} language="bash" />
+        <Codigo code={`ls -l | less`} language="bash" />
         <Texto>Buscar dentro de un log:</Texto>
-        <CodeBlock code={`less /var/log/syslog
+        <Codigo code={`less /var/log/syslog
 # Luego escribe /error para buscar la palabra "error"`} language="bash" />
         <Linea />
         <Titulo title="h3" id="en-resumen">En resumen</Titulo>

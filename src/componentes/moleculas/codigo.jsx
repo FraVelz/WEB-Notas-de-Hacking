@@ -4,7 +4,7 @@ import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-bash";
 import "prismjs/themes/prism-twilight.css"; // puedes cambiar el tema
 
-export default function Codigo({ code, language = "javascript" }) {
+export default function Codigo ({ code, language = "javascript" }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {

@@ -4,7 +4,7 @@ import Linea from "../../componentes/atomos/linea.jsx";
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
 
 function nameabcd({ }) {
@@ -79,11 +79,11 @@ function nameabcd({ }) {
             data science, automatización, etc.).</li>
         </Lista>
         <Texto>Ejemplo básico:</Texto>
-        <CodeBlock code={`print("Hola, mundo!")`} language="python" />
+        <Codigo code={`print("Hola, mundo!")`} language="python" />
         <Linea />
         <Titulo title="h2" id="sintaxis-básica">2. Sintaxis básica</Titulo>
         <Titulo title="h3" id="variables-y-tipos-de-datos">Variables y tipos de datos</Titulo>
-        <CodeBlock code={`nombre = "Francisco"
+        <Codigo code={`nombre = "Francisco"
 edad = 17
 altura = 1.75
 es_estudiante = True`} language="python" />
@@ -95,7 +95,7 @@ es_estudiante = True`} language="python" />
           <li>bool: verdadero/falso</li>
         </Lista>
         <Titulo title="h3" id="operadores">Operadores</Titulo>
-        <CodeBlock code={`a = 5
+        <Codigo code={`a = 5
 b = 2
 print(a + b)  # Suma
 print(a ** b) # Potencia
@@ -103,14 +103,14 @@ print(a // b) # División entera`} language="python" />
         <Linea />
         <Titulo title="h2" id="control-de-flujo">3. Control de flujo</Titulo>
         <Titulo title="h3" id="condicionales">Condicionales</Titulo>
-        <CodeBlock code={`if edad >= 18:
+        <Codigo code={`if edad >= 18:
 print("Eres adulto")
 elif edad >= 13:
 print("Eres adolescente")
 else:
 print("Eres niño")`} language="python" />
         <Titulo title="h3" id="bucles">Bucles</Titulo>
-        <CodeBlock code={`for i in range(5):
+        <Codigo code={`for i in range(5):
 print(i)  # Imprime 0 a 4
 
 while edad < 18:
@@ -118,20 +118,20 @@ edad += 1`} language="python" />
         <Linea />
         <Titulo title="h2" id="estructuras-de-datos">4. Estructuras de datos</Titulo>
         <Titulo title="h3" id="listas">Listas</Titulo>
-        <CodeBlock code={`nombres = ["Ana", "Luis", "Carlos"]
+        <Codigo code={`nombres = ["Ana", "Luis", "Carlos"]
 nombres.append("Sofía")
 print(nombres[0])  # "Ana"`} language="python" />
         <Titulo title="h3" id="tuplas">Tuplas</Titulo>
-        <CodeBlock code={`coordenadas = (10, 20)`} language="python" />
+        <Codigo code={`coordenadas = (10, 20)`} language="python" />
         <Titulo title="h3" id="conjuntos">Conjuntos</Titulo>
-        <CodeBlock code={`numeros = {"{1, 2, 3, 3}"}
+        <Codigo code={`numeros = {"{1, 2, 3, 3}"}
 print(numeros)  # {"{1, 2, 3}"} (no repite)`} language="python" />
         <Titulo title="h3" id="diccionarios">Diccionarios</Titulo>
-        <CodeBlock code={`persona = {"nombre": "Francisco", "edad": 17I}
+        <Codigo code={`persona = {"nombre": "Francisco", "edad": 17I}
 print(persona["nombre"])`} language="python" />
         <Linea />
         <Titulo title="h2" id="funciones">5. Funciones</Titulo>
-        <CodeBlock code={`def saludar(nombre):
+        <Codigo code={`def saludar(nombre):
 return f"Hola, {"{nombre}"}"
 
 print(saludar("Francisco"))`} language="python" />
@@ -139,7 +139,7 @@ print(saludar("Francisco"))`} language="python" />
             <Linea />
             <Titulo title="h2" id="programación-orientada-a-objetos-poo">6. Programación orientada
               a objetos (POO)</Titulo>
-            <CodeBlock code={`class Persona:
+            <Codigo code={`class Persona:
 def __init__(self, nombre, edad):
 self.nombre = nombre
 self.edad = edad
@@ -151,14 +151,14 @@ p1 = Persona("Francisco", 17)
 p1.saludar()`} language="python" />
             <Linea />
             <Titulo title="h2" id="módulos-y-paquetes">7. Módulos y paquetes</Titulo>
-            <CodeBlock code={`import math
+            <Codigo code={`import math
 print(math.sqrt(16))  # 4.0`} language="python" />
             <Texto>También puedes crear tus propios módulos (mimodulo.py) y
               luego:</Texto>
-            <CodeBlock code={`import mimodulo`} language="python" />
+            <Codigo code={`import mimodulo`} language="python" />
             <Linea />
             <Titulo title="h2" id="archivos">8. Archivos</Titulo>
-            <CodeBlock code={`with open("datos.txt", "w") as archivo:
+            <Codigo code={`with open("datos.txt", "w") as archivo:
 archivo.write("Hola mundo")
 
 with open("datos.txt", "r") as archivo:
@@ -209,11 +209,11 @@ print(archivo.read())`} language="python" />
             <Titulo title="h2" id="conceptos-avanzados">10. Conceptos avanzados</Titulo>
             <Lista>
               <li><strong>List comprehensions:</strong>
-                <CodeBlock code={`cuadrados = [x**2 for x in range(5)]`} language="python" />
+                <Codigo code={`cuadrados = [x**2 for x in range(5)]`} language="python" />
               </li>
               <li>
                 <Texto><strong>Funciones lambda:</strong></Texto>
-                <CodeBlock code={`doble = lambda x: x*2`} language="python" />
+                <Codigo code={`doble = lambda x: x*2`} language="python" />
               </li>
               <li>
                 <strong>Decoradores</strong></li>    <li><strong>Generadores (yield)</strong></li>    <li><strong>Manejo de errores
@@ -227,7 +227,7 @@ print(archivo.read())`} language="python" />
                 pip install nombre_paquete
               </li>    <li>
                 <Texto><strong>Entornos virtuales:</strong></Texto>
-                <CodeBlock code={`python -m venv entorno
+                <Codigo code={`python -m venv entorno
 source entorno/bin/activate  # Linux
 entorno\Scripts\activate     # Windows`} language="bash" />
               </li>

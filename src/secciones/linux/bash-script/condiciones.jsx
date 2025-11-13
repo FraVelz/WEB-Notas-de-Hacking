@@ -5,7 +5,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -42,7 +42,7 @@ function nameabcd({ }) {
         <Texto>En Bash <strong>no existen valores booleanos nativos</strong>, pero
           sí existen <strong>comandos que devuelven verdadero o
             falso</strong>:</Texto>
-        <CodeBlock code={`true   # Devuelve 0 (verdadero)
+        <Codigo code={`true   # Devuelve 0 (verdadero)
 false  # Devuelve 1 (falso)`} language="bash" />
         <blockquote>
           <Texto>En Bash, un <strong>0 significa verdadero</strong> y un
@@ -114,7 +114,7 @@ false  # Devuelve 1 (falso)`} language="bash" />
           if - elif - else
         </Titulo>
         <Texto>Ejemplo de uso básico:</Texto>
-        <CodeBlock code={`if [ 3 -gt 4 ]; then
+        <Codigo code={`if [ 3 -gt 4 ]; then
 echo "Mayor que 4"
 
 elif false; then
@@ -140,12 +140,12 @@ fi`} language="bash" />
         <Titulo title="h2" id="condiciones-compuestas">Condiciones compuestas
           (&amp;&amp;, ||)</Titulo>
         <Texto>Puedes combinar condiciones con operadores lógicos.</Texto>
-        <CodeBlock code={`if [ 10 -lt 14 ] && [ 10 -gt 12 ]; then
+        <Codigo code={`if [ 10 -lt 14 ] && [ 10 -gt 12 ]; then
 echo "verdadero"
 fi`} language="bash" />
         <Texto>También puedes usar [[ ... ]] para condiciones más
           seguras (recomendado):</Texto>
-        <CodeBlock code={`if [[ 10 -lt 14  &&  10 -gt 12 ]]; then
+        <Codigo code={`if [[ 10 -lt 14  &&  10 -gt 12 ]]; then
 echo "verdadero"
 fi`} language="bash" />
         <blockquote>
@@ -158,11 +158,11 @@ fi`} language="bash" />
         <Titulo title="h2" id="formas-de-escribir-condiciones">Formas de escribir
           condiciones</Titulo>
         <Texto>Las tres siguientes formas son equivalentes:</Texto>
-        <CodeBlock code={`test condition
+        <Codigo code={`test condition
 [ condition ]
 [[ condition || condition ]]`} language="bash" />
         <Texto>Ejemplo real:</Texto>
-        <CodeBlock code={`if test 10 -eq 10; then
+        <Codigo code={`if test 10 -eq 10; then
 echo "10 es igual a 10"
 fi`} language="bash" />
       </Estructura>

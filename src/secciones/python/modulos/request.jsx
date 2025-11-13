@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -69,9 +69,9 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="instalación-y-configuración-básica">2) Instalación y
         configuración básica</Titulo>
-      <CodeBlock code={`pip install requests`} language="bash" />
+      <Codigo code={`pip install requests`} language="bash" />
       <Texto>Luego en tú script:</Texto>
-      <CodeBlock code={`import requests`} language="python" />
+      <Codigo code={`import requests`} language="python" />
       <Texto>Asegúrate de que la versión de Python sea compatible (por ejemplo
         Python 3.8+ según su documentación).</Texto>
       <Texto><em>Tip:</em> Usa un entorno virtual (venv) para
@@ -79,7 +79,7 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="uso-básico-peticiones-http">3) Uso básico — Peticiones HTTP</Titulo>
       <Titulo title="h3" id="get">GET</Titulo>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 response = requests.get("https://api.example.com/data")
 print(response.status_code)        # código de estado HTTP
@@ -87,10 +87,10 @@ print(response.text)               # contenido como texto
 print(response.json())             # si es JSON, lo transforma en dict/list`} language="python" />
       <Titulo title="h3" id="post">POST</Titulo>
       <Texto>Enviar datos:</Texto>
-      <CodeBlock code={`payload = {"username": "usuario", "password": "secreto"}
+      <Codigo code={`payload = {"username": "usuario", "password": "secreto"}
 response = requests.post("https://api.example.com/login", data=payload)`} language="python" />
       <Texto>Enviar JSON:</Texto>
-      <CodeBlock code={`response = requests.post("https://api.example.com/login", json=payload)`} language="python" />
+      <Codigo code={`response = requests.post("https://api.example.com/login", json=payload)`} language="python" />
       <Titulo title="h3" id="otros-métodos">Otros métodos</Titulo>
       <Texto>También puedes usar requests.put(),
         requests.delete(), requests.head(),
@@ -179,7 +179,7 @@ response = requests.post("https://api.example.com/login", data=payload)`} langua
         cabeceras comunes, autenticación) entre múltiples peticiones. Mejora el
         rendimiento al reutilizar conexiones. Ejemplo:
       </Texto>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 s = requests.Session()
 s.headers.update({"User-Agent": "MiApp/1.0"})
@@ -203,7 +203,7 @@ response2 = s.get("https://api.example.com/resource2")`} language="python" />
         excepciones</Titulo>
       <Texto>Es importante manejar posibles fallos (timeout, conexión rechazada,
         etc.). Ejemplo:</Texto>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 try:
 response = requests.get("https://api.example.com", timeout=5)
@@ -221,7 +221,7 @@ print("Otro error:", err)`} language="python" />
       <Titulo title="h2" id="ejemplos-completos">9) Ejemplos completos</Titulo>
       <Titulo title="h3" id="a-petición-get-con-parámetros">a) Petición GET con
         parámetros</Titulo>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 url = "https://httpbin.org/get"
 params = {"q": "python", "page": 1}
@@ -230,7 +230,7 @@ print(response.url)       # muestra la URL final con query string
 print(response.status_code)
 print(response.json())`} language="python" />
       <Titulo title="h3" id="b-petición-post-con-json">b) Petición POST con JSON</Titulo>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 url = "https://httpbin.org/post"
 payload = {"username": "user", "password": "pass"}
@@ -238,7 +238,7 @@ response = requests.post(url, json=payload)
 print(response.status_code)
 print(response.json())`} language="python" />
       <Titulo title="h3" id="c-uso-de-sesión-con-cookies">c) Uso de sesión con cookies</Titulo>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 s = requests.Session()
 s.get("https://httpbin.org/cookies/set/sessioncookie/12345")
@@ -246,7 +246,7 @@ response = s.get("https://httpbin.org/cookies")
 print(response.text)  # Verás que la cookie se mantiene`} language="python" />
       <Titulo title="h3" id="d-descarga-de-archivo-por-streaming">d) Descarga de archivo por
         streaming</Titulo>
-      <CodeBlock code={`import requests
+      <Codigo code={`import requests
 
 url = "https://example.com/largefile.zip"
 with requests.get(url, stream=True) as r:

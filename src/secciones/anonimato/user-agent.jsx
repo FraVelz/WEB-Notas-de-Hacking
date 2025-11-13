@@ -4,7 +4,7 @@ import Linea from "../../componentes/atomos/linea.jsx";
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
@@ -73,7 +73,7 @@ function User_Agent() {
         <Texto>
           <strong>Ejemplo de user agent real:</strong>
         </Texto>
-        <CodeBlock code={`Mozilla/5.0
+        <Codigo code={`Mozilla/5.0
 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
 Gecko) Chrome/117.0.0.0 Safari/537.36`} language="bash" />
         <Texto>Esto indica:</Texto>

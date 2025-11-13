@@ -4,7 +4,7 @@ import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function nameabcd({ }) {
   return (
@@ -60,7 +60,7 @@ function nameabcd({ }) {
       <Linea />
       <Titulo title="h2" id="primer-ejemplo-ventana-básica">Primer ejemplo: ventana
         básica</Titulo>
-      <CodeBlock code={`import tkinter as tk
+      <Codigo code={`import tkinter as tk
 
 ventana = tk.Tk()                # Crea la ventana principal
 ventana.title("Mi primera GUI")  # Título
@@ -124,7 +124,7 @@ ventana.mainloop()               # Inicia el bucle principal`} language="python"
 </Tabla>
       <Linea />
       <Titulo title="h3" id="ejemplo-con-varios-widgets">Ejemplo con varios widgets</Titulo>
-      <CodeBlock code={`import tkinter as tk
+      <Codigo code={`import tkinter as tk
 
 def saludar():
 etiqueta.config(text=f"Hola, {entrada.get()}!")
@@ -164,18 +164,18 @@ ventana.mainloop()`} language="python" />
   </tbody>
 </Tabla>
       <Titulo title="h3" id="ejemplo">Ejemplo</Titulo>
-      <CodeBlock code={`etiqueta1.grid(row=0, column=0)
+      <Codigo code={`etiqueta1.grid(row=0, column=0)
 entrada1.grid(row=0, column=1)
 boton.grid(row=1, column=0, columnspan=2)`} language="python" />
       <Linea />
       <Titulo title="h2" id="eventos-y-comandos">Eventos y comandos</Titulo>
       <Texto>Puedes ejecutar funciones al hacer clic o escribir algo.</Texto>
-      <CodeBlock code={`def al_hacer_click():
+      <Codigo code={`def al_hacer_click():
 print("¡Botón presionado!")
 
 boton = tk.Button(ventana, text="Haz clic", command=al_hacer_click)`} language="python" />
       <Texto>También puedes manejar eventos con .bind():</Texto>
-      <CodeBlock code={`def tecla_presionada(evento):
+      <Codigo code={`def tecla_presionada(evento):
 print("Tecla:", evento.char)
 
 ventana.bind("", tecla_presionada)`} language="python" />
@@ -183,7 +183,7 @@ ventana.bind("", tecla_presionada)`} language="python" />
       <Titulo title="h2" id="frames-y-organización">Frames y organización</Titulo>
       <Texto>Los <strong>Frames</strong> permiten dividir la interfaz en
         secciones.</Texto>
-      <CodeBlock code={`frame_superior = tk.Frame(ventana)
+      <Codigo code={`frame_superior = tk.Frame(ventana)
 frame_superior.pack()
 
 tk.Label(frame_superior, text="Arriba").pack()
@@ -191,31 +191,31 @@ tk.Label(ventana, text="Abajo").pack()`} language="python" />
       <Linea />
       <Titulo title="h2" id="widgets-más-avanzados">Widgets más avanzados</Titulo>
       <Titulo title="h3" id="checkbutton">Checkbutton</Titulo>
-      <CodeBlock code={`var = tk.BooleanVar()
+      <Codigo code={`var = tk.BooleanVar()
 tk.Checkbutton(ventana, text="Acepto términos", variable=var).pack()`} language="python" />
       <Titulo title="h3" id="radiobutton">Radiobutton</Titulo>
-      <CodeBlock code={`opcion = tk.StringVar(value="A")
+      <Codigo code={`opcion = tk.StringVar(value="A")
 tk.Radiobutton(ventana, text="Opción A", variable=opcion, value="A").pack()
 tk.Radiobutton(ventana, text="Opción B", variable=opcion, value="B").pack()`} language="python" />
       <Titulo title="h3" id="listbox">Listbox</Titulo>
-      <CodeBlock code={`lista = tk.Listbox(ventana)
+      <Codigo code={`lista = tk.Listbox(ventana)
 for i in ["Python", "C++", "Java"]:
 lista.insert(tk.END, i)
 lista.pack()`} language="python" />
       <Linea />
       <Titulo title="h2" id="colores-y-fuentes">Colores y fuentes</Titulo>
-      <CodeBlock code={`tk.Label(ventana, text="Texto colorido", fg="white", bg="blue", font=("Arial", 14, "bold")).pack()`} language="python" />
+      <Codigo code={`tk.Label(ventana, text="Texto colorido", fg="white", bg="blue", font=("Arial", 14, "bold")).pack()`} language="python" />
       <Linea />
       <Titulo title="h2" id="imágenes">Imágenes</Titulo>
       <Texto>Tkinter soporta imágenes con PhotoImage (formato
         .png, .gif).
       </Texto>
-      <CodeBlock code={`img = tk.PhotoImage(file="imagen.png")
+      <Codigo code={`img = tk.PhotoImage(file="imagen.png")
 tk.Label(ventana, image=img).pack()
 ventana.mainloop()`} language="python" />
       <Linea />
       <Titulo title="h2" id="menús">Menús</Titulo>
-      <CodeBlock code={`menu = tk.Menu(ventana)
+      <Codigo code={`menu = tk.Menu(ventana)
 ventana.config(menu=menu)
 
 submenu = tk.Menu(menu, tearoff=0)
@@ -224,11 +224,11 @@ submenu.add_command(label="Nuevo")
 submenu.add_command(label="Salir", command=ventana.quit)`} language="python" />
       <Linea />
       <Titulo title="h2" id="ventanas-emergentes">Ventanas emergentes</Titulo>
-      <CodeBlock code={`from tkinter import messagebox
+      <Codigo code={`from tkinter import messagebox
 messagebox.showinfo("Título", "Hola desde una ventana emergente")`} language="python" />
       <Linea />
       <Titulo title="h2" id="ejemplo-completo">Ejemplo completo</Titulo>
-      <CodeBlock code={`import tkinter as tk
+      <Codigo code={`import tkinter as tk
 from tkinter import messagebox
 
 def saludar():

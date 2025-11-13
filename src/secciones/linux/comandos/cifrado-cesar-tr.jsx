@@ -3,7 +3,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Imagen from "../../../componentes/atomos/imagen.jsx";
 
@@ -42,22 +42,22 @@ function Cifrado_Cesar_Tr({ }) {
 
         <Texto>El comando que vamos a revisar y analizar que hace cifrado cesar de
           13 caracteres hacia delante:</Texto>
-        <CodeBlock code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
+        <Codigo code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
         <Linea />
         <Titulo title="h3" id="parte-1">Parte 1</Titulo>
-        <CodeBlock code={`cat data.txt`} language="bash" />
+        <Codigo code={`cat data.txt`} language="bash" />
         <Texto>Muestra el contenido del archivo data.txt (lo envía al
           <em>stdout</em>).
         </Texto>
         <Linea />
         <Titulo title="h3" id="parte-2">Parte 2</Titulo>
-        <CodeBlock code={`| tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
+        <Codigo code={`| tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
         <Texto>El <strong>pipe (|)</strong> pasa ese texto al comando
           <strong>tr</strong>, que significa <em>translate</em>
           (traducir o sustituir caracteres).
         </Texto>
         <Texto>La sintaxis:</Texto>
-        <CodeBlock code={`tr 'caracteres_originales' 'caracteres_nuevos'`} language="bash" />
+        <Codigo code={`tr 'caracteres_originales' 'caracteres_nuevos'`} language="bash" />
         <Texto>sustituye cada carácter del primer conjunto por el correspondiente
           del segundo.</Texto>
         <Linea />
@@ -81,11 +81,11 @@ function Cifrado_Cesar_Tr({ }) {
         <Linea />
         <Titulo title="h3" id="ejemplo-práctico">Ejemplo práctico</Titulo>
         <Texto>Sí data.txt contiene:</Texto>
-        <CodeBlock code={`Hola Mundo`} language="bash" />
+        <Codigo code={`Hola Mundo`} language="bash" />
         <Texto>El comando:</Texto>
-        <CodeBlock code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
+        <Codigo code={`cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'`} language="bash" />
         <Texto>producirá:</Texto>
-        <CodeBlock code={`Uby nZhaqb`} language="bash" />
+        <Codigo code={`Uby nZhaqb`} language="bash" />
         <Texto>Y sí vuelves a aplicarlo una segunda vez, vuelve al texto original
           (porque ROT13 es su propio inverso).</Texto>
         <Linea />

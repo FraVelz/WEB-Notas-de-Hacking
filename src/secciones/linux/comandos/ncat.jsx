@@ -3,7 +3,7 @@ import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import CodeBlock from "../../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../../componentes/moleculas/codigo.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 
 function Temario({ className = "" }) {
@@ -98,35 +98,35 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h2" id="ejemplos-prácticos">Ejemplos prácticos</Titulo>
         <Titulo title="h3" id="cliente-simple-tcp">Cliente simple (TCP)</Titulo>
-        <CodeBlock code={`ncat 192.168.1.10 8080`} language="bash" />
+        <Codigo code={`ncat 192.168.1.10 8080`} language="bash" />
         <Titulo title="h3" id="servidor-que-acepta-una-conexión">Servidor que acepta una
           conexión</Titulo>
-        <CodeBlock code={`ncat -l -p 8080`} language="bash" />
+        <Codigo code={`ncat -l -p 8080`} language="bash" />
         <Titulo title="h3" id="servidor-que-acepta-múltiples-conexiones-keep-open">Servidor que
           acepta múltiples conexiones (keep-open)</Titulo>
-        <CodeBlock code={`ncat -l -k -p 8080`} language="bash" />
+        <Codigo code={`ncat -l -k -p 8080`} language="bash" />
         <Titulo title="h3" id="udp-cliente-y-servidor">UDP (cliente y servidor)</Titulo>
         <Texto>Servidor UDP:</Texto>
-        <CodeBlock code={`ncat -u -l -p 6000`} language="bash" />
+        <Codigo code={`ncat -u -l -p 6000`} language="bash" />
         <Texto>Cliente UDP:</Texto>
-        <CodeBlock code={`ncat -u 192.168.1.10 6000`} language="bash" />
+        <Codigo code={`ncat -u 192.168.1.10 6000`} language="bash" />
         <Titulo title="h3" id="transferir-archivo-cliente---servidor">Transferir archivo
           (cliente -&gt; servidor)</Titulo>
         <Texto>Servidor (recibe):</Texto>
-        <CodeBlock code={`ncat -l -p 9000 > recibido.bin`} language="bash" />
+        <Codigo code={`ncat -l -p 9000 > recibido.bin`} language="bash" />
         <Texto>Cliente (envía):</Texto>
-        <CodeBlock code={`ncat 192.168.1.20 9000 < archivo.bin`} language="bash" />
+        <Codigo code={`ncat 192.168.1.20 9000 < archivo.bin`} language="bash" />
         <Titulo title="h3" id="conexión-cifrada-ssltls-cliente">Conexión cifrada SSL/TLS
           (cliente)</Titulo>
-        <CodeBlock code={`ncat --ssl ejemplo.com 443`} language="bash" />
+        <Codigo code={`ncat --ssl ejemplo.com 443`} language="bash" />
         <Titulo title="h3" id="usar-proxy-socks5">Usar proxy SOCKS5</Titulo>
-        <CodeBlock code={`ncat --proxy 10.0.0.1:1080 --proxy-type socks5 ejemplo.com 80`} language="bash" />
+        <Codigo code={`ncat --proxy 10.0.0.1:1080 --proxy-type socks5 ejemplo.com 80`} language="bash" />
         <Titulo title="h3" id="ejecutar-comando-remota-solo-en-entornos-controlados">Ejecutar
           comando remota (solo en entornos controlados)</Titulo>
         <Texto>Servidor (escucha y ejecuta /bin/bash cuando alguien conecta):</Texto>
-        <CodeBlock code={`ncat -l -p 4444 --exec "/bin/bash" -k`} language="bash" />
+        <Codigo code={`ncat -l -p 4444 --exec "/bin/bash" -k`} language="bash" />
         <Texto>Cliente (conecta y obtiene shell):</Texto>
-        <CodeBlock code={`ncat 192.168.1.20 4444`} language="bash" />
+        <Codigo code={`ncat 192.168.1.20 4444`} language="bash" />
         <Texto><strong>Nunca</strong> hagas esto en máquinas expuestas sin
           autorización.</Texto>
         <Linea />

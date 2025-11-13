@@ -5,7 +5,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
-import CodeBlock from "../../componentes/moleculas/codigo.jsx";
+import Codigo from "../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -75,7 +75,7 @@ function nameabcd({ }) {
         <Linea />
         <Titulo title="h2" id="ejemplo-básico">Ejemplo básico</Titulo>
         <Texto>Supongamos que tienes la red:</Texto>
-        <CodeBlock code={`192.168.1.0 /24`} language="bash" />
+        <Codigo code={`192.168.1.0 /24`} language="bash" />
         <Texto>Esto significa:</Texto>
         <Lista>
           <li><strong>Rango total:</strong> 192.168.1.0 – 192.168.1.255</li>
