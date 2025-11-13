@@ -80,7 +80,7 @@ function App() {
           </div>
         </div>
 
-        <Texto className="text-center mt-5" select="none"><b>Ultima Actualizacion:</b> Nov 12 del 2025</Texto>
+        <Texto className="text-center mt-5" select="none"><b>Ultima Actualizacion:</b> Nov 13 del 2025</Texto>
       </footer>
     </>
   )
