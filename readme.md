@@ -6,6 +6,6 @@ Página web: [Ir a Página Web](https://fravelz.github.io/WEB-Notas-de-Hacking/)
 
 Te agradecería mucho, que dieras una **estrella (like)** al Repositorio, no te cuesta nada y así apoyas al creador, del Repositorio estaría muy agradecido.
 
-**Actualización:** 0.0.5
+**Actualización:** 0.0.7
 
 **Autor:** Fravelz
