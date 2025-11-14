@@ -62,7 +62,7 @@ function Rutas_Dinamicas() {
         border-b-2 lg:border-b-0 lg:border-r-2
         lg:sticky lg:top-5
 
-        lg:w-4/5 lg:min-w-72
+        lg:w-4/5 lg:min-w-72 lg:max-w-fit
 
         h-fit
         lg:max-h-[80vh]     /* altura máxima del 80% del viewport */

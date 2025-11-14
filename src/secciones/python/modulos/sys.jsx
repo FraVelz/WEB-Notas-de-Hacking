@@ -1,19 +1,16 @@
 import Enlace from "../../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
-function nameabcd({ }) {
+
+function Temario({ className = "" }) {
   return (
-    <>
-      <Titulo title="h1" id="sys-en-python">Sys en Python</Titulo>
-      <Linea />
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><Enlace href="#sys-en-python">Sys en Python</Enlace >
-          <Lista>
-            <li><Enlace href="#temario">Temario</Enlace ></li>
+    <Lista className={className}>
+      <li><Enlace href="#sys-en-python">Sys en Python</Enlace >
+        <Lista>
             <li><Enlace href="#qué-es-sys">¿Qué es sys?</Enlace ></li>
             <li><Enlace href="#uso-básico-y-más-común">Uso básico y más común</Enlace >
               <Lista>
@@ -64,10 +61,19 @@ function nameabcd({ }) {
           </Lista>
         </li>
       </Lista>
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <Linea />
-      <Titulo title="h2" id="qué-es-sys">¿Qué es sys?</Titulo>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+      <Estructura>
+        <Titulo title="h1" id="sys-en-python">Sys en Python</Titulo>
+        <Linea />
+
+        <TemarioCompleto temario={Temario} />
+
+        <Titulo title="h2" id="qué-es-sys">¿Qué es sys?</Titulo>
       <Texto>sys es un módulo integrado que ofrece <strong>interfaz
         con el intérprete de Python</strong> y el entorno donde corre
         (argumentos de línea de comandos, rutas, streams estándar, información
@@ -250,12 +256,9 @@ sys.exit("Este script requiere Python 3.8+")`} language="python" />
             comportamiento alterno para versiones antiguas.</li>    <li>Logger global usando sys.excepthook para capturar
               excepciones no manejadas.</li>    <li>Herramienta que inspeccione sys.modules para listar
                 módulos cargados y su ruta (module.__file__).</li>  </ol>
-      <Linea />
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

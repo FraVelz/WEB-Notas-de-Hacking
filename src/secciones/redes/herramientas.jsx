@@ -40,7 +40,7 @@ function nameabcd({ }) {
           en la práctica, qué puedes aprender con cada una y recomendaciones de
           uso seguro/ético.</Texto>
         <Linea />
-        <Titulo title="h2" id="wireshark-analizador-de-paquetes-deep-packet-inspection">Wireshark —
+        <Titulo title="h2" id="wireshark--analizador-de-paquetes-deep-packet-inspection">Wireshark —
           analizador de paquetes (deep packet inspection)</Titulo>
         <Texto><strong>Qué es / para qué sirve:</strong></Texto>
         <Texto>Wireshark es un analizador de protocolos de red que captura y muestra
@@ -69,7 +69,7 @@ function nameabcd({ }) {
           paquetes (handshakes TCP, flags, reintentos). Wireshark es excelente
           para entender protocolos desde la base.</Texto>
         <Linea />
-        <Titulo title="h2" id="nmap-descubrimiento-y-escaneo-de-redes">Nmap — descubrimiento y
+        <Titulo title="h2" id="nmap--descubrimiento-y-escaneo-de-redes">Nmap — descubrimiento y
           escaneo de redes</Titulo>
         <Texto><strong>Qué es / para qué sirve:</strong></Texto>
         <Texto>Nmap (Network Mapper) es una utilidad para descubrir hosts en red y
@@ -94,7 +94,7 @@ function nameabcd({ }) {
           Es la herramienta que muchas veces se usa como “primer vistazo” antes de
           cualquier otra prueba.</Texto>
         <Linea />
-        <Titulo title="h2" id="metasploit-plataforma-modular-para-pruebas-de-penetración">Metasploit
+        <Titulo title="h2" id="metasploit--plataforma-modular-para-pruebas-de-penetración">Metasploit
           — plataforma modular para pruebas de penetración</Titulo>
         <Texto><strong>Qué es / para qué sirve:</strong></Texto>
         <Texto>Metasploit es un framework modular orientado a pruebas de penetración

@@ -36,8 +36,7 @@ function Comandos_Linux({ }) {
   return (
     <>
       <Estructura>
-        <Titulo title="h1" id="introducción-a-linux-para-ciberseguridad">Introducción a Linux
-          para Ciberseguridad</Titulo>
+        <Titulo title="h1">Introducción a Linux para Ciberseguridad</Titulo>
 
         <Texto>Linux es un <strong>sistema operativo (SO)</strong>, al igual que
           Windows, macOS, iOS o Android. Un SO gestiona los recursos de hardware
@@ -57,7 +56,7 @@ function Comandos_Linux({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="historia">1. Historia</Titulo>
+        <Titulo title="h2" id="1-historia">1. Historia</Titulo>
 
         <Lista>
           <li><strong>1970</strong>: Ken Thompson y Dennis Ritchie (trabajaban
@@ -83,7 +82,7 @@ function Comandos_Linux({ }) {
 
         <Linea />
 
-        <Titulo title="h2" id="filosofía-de-linux">2. Filosofía de Linux</Titulo>
+        <Titulo title="h2" id="2-filosofía-de-linux">2. Filosofía de Linux</Titulo>
 
         <Texto>Linux se basa en la <strong>simplicidad, modularidad y
           apertura</strong>. Su enfoque es crear herramientas pequeñas que
@@ -123,7 +122,7 @@ function Comandos_Linux({ }) {
 
         <Linea />
 
-        <Titulo title="h2" id="componentes-de-linux">3. Componentes de Linux</Titulo>
+        <Titulo title="h2" id="3-componentes-de-linux">3. Componentes de Linux</Titulo>
 
         <Tabla>
           <TablaCabezera headers={["Componente", "Descripción"]} />
@@ -163,7 +162,7 @@ function Comandos_Linux({ }) {
 
         <Linea />
 
-        <Titulo title="h2" id="arquitectura-de-linux">4. Arquitectura de Linux</Titulo>
+        <Titulo title="h2" id="4-arquitectura-de-linux">4. Arquitectura de Linux</Titulo>
 
         <Texto>Linux se organiza en capas:</Texto>
 
@@ -178,7 +177,7 @@ function Comandos_Linux({ }) {
 
         <Linea />
 
-        <Titulo title="h2" id="jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema
+        <Titulo title="h2" id="5-jerarquía-del-sistema-de-archivos-fhs">5. Jerarquía del Sistema
           de Archivos (FHS)</Titulo>
 
         <Texto>Linux organiza los archivos en una <strong>estructura en forma de
@@ -261,11 +260,11 @@ function Comandos_Linux({ }) {
             simplicidad, eficiencia y cooperación.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="qué-es-comando">6. Qué es comando?</Titulo>
+        <Titulo title="h2" id="6-qué-es-comando">6. Qué es comando?</Titulo>
         <Texto>Es un nombre que se coloca en la terminal, que ejecuta varias líneas
           de código.</Texto>
         <Linea />
-        <Titulo title="h2" id="variables-de-entorno">7. Variables de entorno</Titulo>
+        <Titulo title="h2" id="7-variables-de-entorno">7. Variables de entorno</Titulo>
         <Texto>son variables de datos por defecto en la terminal, puedes ver cuáles
           son con el comando “env”.</Texto>
         <Texto>“export name=data”: Crear una variable de entorno con nombre “name” y
@@ -275,7 +274,7 @@ function Comandos_Linux({ }) {
           “name = $name:text” quedaría el texto de la variable name como
           “data:text”</Texto>
         <Linea />
-        <Titulo title="h2" id="comandos-de-linux">8. Comandos de Linux</Titulo>
+        <Titulo title="h2" id="8-comandos-de-linux">8. Comandos de Linux</Titulo>
 
         <Tabla>
           <TablaCabezera headers={["Categoría", "Comando", "Descripción", "Ejemplo"]} />
@@ -411,7 +410,7 @@ function Comandos_Linux({ }) {
         </Tabla>
         <Texto>Y muchos más comandos, y variaciones de los mismos…</Texto>
         <Linea />
-        <Titulo title="h2" id="permisos-y-usuarios">9. Permisos y usuarios</Titulo>
+        <Titulo title="h2" id="9-permisos-y-usuarios">9. Permisos y usuarios</Titulo>
         <Texto>En Linux, <strong>los permisos controlan quién puede leer, escribir o
           ejecutar un archivo</strong>. Cada archivo tiene permisos para:</Texto>
         <Lista>
@@ -448,7 +447,9 @@ chmod g-w archivo.txt # Quitar permiso de escritura al grupo`} language="bash" /
         <Titulo title="h3" id="cambiar-propietario">Cambiar propietario</Titulo>
         <Codigo code="chown usuario:grupo archivo.txt" language="bash" />
         <Linea />
-        <Titulo title="h2" id="sudo">10. Sudo</Titulo>
+
+        <Titulo title="h2" id="10-sudo">10. Sudo</Titulo>
+
         <Texto>El comando sudo en Linux y sistemas tipo Unix significa
           <strong>“superuser do”</strong> (hacer como superusuario). Básicamente,
           permite ejecutar comandos con <strong>privilegios de

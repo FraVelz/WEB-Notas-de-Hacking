@@ -1,19 +1,16 @@
 import Enlace from "../../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
-function nameabcd({ }) {
+
+function Temario({ className = "" }) {
   return (
-    <>
-      <Titulo title="h1" id="threading-en-python">Threading en Python</Titulo>
-      <Linea />
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><Enlace href="#threading-en-python">Threading en Python</Enlace >
-          <Lista>
-            <li><Enlace href="#temario">Temario</Enlace ></li>
+    <Lista className={className}>
+      <li><Enlace href="#threading-en-python">Threading en Python</Enlace >
+        <Lista>
             <li><Enlace href="#1-qué-es-threading">1) ¿Qué es threading?</Enlace ></li>
             <li><Enlace href="#2-conceptos-clave">2) Conceptos clave</Enlace ></li>
             <li><Enlace href="#3-crear-y-usar-hilos--ejemplos-básicos">3) Crear y usar
@@ -74,10 +71,19 @@ function nameabcd({ }) {
           </Lista>
         </li>
       </Lista>
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <Linea />
-      <Titulo title="h2" id="qué-es-threading">1) ¿Qué es threading?</Titulo>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+      <Estructura>
+        <Titulo title="h1" id="threading-en-python">Threading en Python</Titulo>
+        <Linea />
+
+        <TemarioCompleto temario={Temario} />
+
+        <Titulo title="h2" id="qué-es-threading">1) ¿Qué es threading?</Titulo>
       <Texto>threading es el módulo estándar de Python para
         <strong>concurrencia mediante hilos</strong> (threads). Permite ejecutar
         varias tareas aparentemente al mismo tiempo dentro del mismo proceso. Es
@@ -435,12 +441,9 @@ print(results)`} language="python" />
           multiprocessing.
         </li>
       </Lista>
-      <Linea />
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

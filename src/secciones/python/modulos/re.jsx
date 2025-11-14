@@ -1,4 +1,5 @@
 import Enlace from "../../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
@@ -6,18 +7,12 @@ import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
-function nameabcd({ }) {
+function Temario({ className = "" }) {
   return (
-    <>
-      <Titulo title="h1" id="re-en-python-expreciones-regulares">Re en Python (expreciones
-        regulares)</Titulo>
-      <Linea />
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><Enlace href="#re-en-python-expreciones-regulares">Re en Python
-          (expreciones regulares)</Enlace >
-          <Lista>
-            <li><Enlace href="#temario">Temario</Enlace ></li>
+    <Lista className={className}>
+      <li><Enlace href="#re-en-python-expreciones-regulares">Re en Python
+        (expreciones regulares)</Enlace >
+        <Lista>
             <li><Enlace href="#qué-es-re">¿Qué es re?</Enlace ></li>
             <li><Enlace href="#funciones-principales">FUNCIONES PRINCIPALES</Enlace >
               <Lista>
@@ -57,10 +52,20 @@ function nameabcd({ }) {
           </Lista>
         </li>
       </Lista>
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <Linea />
-      <Titulo title="h2" id="qué-es-re">¿Qué es re?</Titulo>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+      <Estructura>
+        <Titulo title="h1" id="re-en-python-expreciones-regulares">Re en Python (expreciones
+          regulares)</Titulo>
+        <Linea />
+
+        <TemarioCompleto temario={Temario} />
+
+        <Titulo title="h2" id="qué-es-re">¿Qué es re?</Titulo>
       <Texto>El módulo <strong>re</strong> (de <em>regular
         expressions</em>, expresiones regulares) permite <strong>buscar,
           reemplazar y analizar texto mediante patrones</strong>.</Texto>
@@ -305,12 +310,9 @@ print(nuevo)  # Hola mundo hermoso`} language="python" />
       <Codigo code={`import re
 texto = "Correos: ana@mail.com, juan123@dominio.org"
 print(re.findall(r"(\w+)@", texto))  # ['ana', 'juan123']`} language="python" />
-      <Linea />
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

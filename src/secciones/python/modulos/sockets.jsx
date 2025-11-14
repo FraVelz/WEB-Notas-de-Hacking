@@ -1,4 +1,5 @@
 import Enlace from "../../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "./../../../componentes/atomos/texto.jsx";
@@ -6,16 +7,11 @@ import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
-function nameabcd({ }) {
+function Temario({ className = "" }) {
   return (
-    <>
-      <Titulo title="h1" id="python">Python</Titulo>
-      <Linea />
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><Enlace href="#python">Python</Enlace >
-          <Lista>
-            <li><Enlace href="#temario">Temario</Enlace ></li>
+    <Lista className={className}>
+      <li><Enlace href="#python">Python</Enlace >
+        <Lista>
             <li><Enlace href="#resumen">Resumen</Enlace ></li>
             <li><Enlace href="#️tcp-transmission-control-protocol">️TCP (Transmission
               Control Protocol)</Enlace >
@@ -35,10 +31,19 @@ function nameabcd({ }) {
           </Lista>
         </li>
       </Lista>
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <Linea />
-      <Titulo title="h2" id="resumen">Resumen</Titulo>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+      <Estructura>
+        <Titulo title="h1" id="python">Python</Titulo>
+        <Linea />
+
+        <TemarioCompleto temario={Temario} />
+
+        <Titulo title="h2" id="resumen">Resumen</Titulo>
       <Texto>Los <strong>sockets</strong> permiten la <strong>comunicación entre
         computadoras o procesos</strong> a través de una red (como Internet o
         una LAN).</Texto>
@@ -141,12 +146,9 @@ print("Servidor responde:", data.decode())`} language="python" />
     </TablaFila>
   </tbody>
 </Tabla>
-      <Linea />
-      <Texto><Enlace href="./../../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

@@ -101,7 +101,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="base-fundamentos">1. base (fundamentos)</Titulo>
+        <Titulo title="h2" id="1-base-fundamentos">1. base (fundamentos)</Titulo>
         <Texto><strong>¿Qué son las redes?</strong></Texto>
         <Lista>
           <li>Una <strong>red</strong> es un conjunto de dispositivos
@@ -142,7 +142,7 @@ function nameabcd({ }) {
 
         <Linea />
 
-        <Titulo title="h2" id="historia-de-las-redes">2. Historia de las redes</Titulo>
+        <Titulo title="h2" id="2-historia-de-las-redes">2. Historia de las redes</Titulo>
 
         <Lista>
           <li><strong>Década de 1960 – Orígenes</strong>
@@ -197,7 +197,7 @@ function nameabcd({ }) {
           </Lista>
         </li>
         <Linea />
-        <Titulo title="h2" id="modelos-de-redes">3. Modelos de redes</Titulo>
+        <Titulo title="h2" id="3-modelos-de-redes">3. Modelos de redes</Titulo>
         <Texto>Los modelos ayudan a entender cómo funciona la comunicación entre
           dispositivos:</Texto>
         <Titulo title="h3" id="modelo-osi-open-systems-interconnection"><strong>Modelo OSI
@@ -240,7 +240,7 @@ function nameabcd({ }) {
         </Lista >
 
         <Linea />
-        <Titulo title="h2" id="tipos-de-redes-según-su-alcance">4. Tipos de redes según su
+        <Titulo title="h2" id="4-tipos-de-redes-según-su-alcance">4. Tipos de redes según su
           alcance</Titulo>
         <Lista>
           <li><strong>LAN (Local Area Network)</strong>: red local, p. ej., en una
@@ -253,7 +253,7 @@ function nameabcd({ }) {
             p. ej., Bluetooth.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="arquitectura-cliente-servidor">5. Arquitectura
+        <Titulo title="h2" id="5-arquitectura-cliente-servidor">5. Arquitectura
           Cliente-Servidor</Titulo>
         <Texto>La <strong>arquitectura cliente-servidor</strong> es un modelo de
           diseño de sistemas en el que las tareas se distribuyen entre dos tipos
@@ -300,7 +300,7 @@ function nameabcd({ }) {
           <li>Requiere buena infraestructura para manejar muchos clientes.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="arquitectura-de-red">6. Arquitectura de Red</Titulo>
+        <Titulo title="h2" id="6-arquitectura-de-red">6. Arquitectura de Red</Titulo>
         <Texto>La <strong>arquitectura de red</strong> describe cómo los
           <strong>dispositivos y servicios están organizados y conectados</strong>
           para comunicarse. La arquitectura cliente-servidor es un tipo de
@@ -341,7 +341,7 @@ function nameabcd({ }) {
           </li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="protocolos-de-red">7. Protocolos de red</Titulo>
+        <Titulo title="h2" id="7-protocolos-de-red">7. Protocolos de red</Titulo>
         <Texto>Un <strong>protocolo de red</strong> es un conjunto de <strong>reglas
           y estándares</strong> que permiten que los dispositivos se comuniquen
           correctamente a través de una red.</Texto>
@@ -401,7 +401,7 @@ function nameabcd({ }) {
             según el modelo OSI o TCP/IP.</Texto>
         </blockquote>
         <Linea />
-        <Titulo title="h2" id="comunicaciones-en-redes">8. Comunicaciones en Redes</Titulo>
+        <Titulo title="h2" id="8-comunicaciones-en-redes">8. Comunicaciones en Redes</Titulo>
         <Texto>La <strong>comunicación en redes</strong> es el proceso mediante el
           cual los <strong>dispositivos intercambian información</strong>
           siguiendo protocolos.</Texto>
@@ -449,7 +449,7 @@ function nameabcd({ }) {
           <li><strong>Entrega</strong> al dispositivo o aplicación correcta.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="protocolos-de-aplicación">9. Protocolos de Aplicación</Titulo>
+        <Titulo title="h2" id="9-protocolos-de-aplicación">9. Protocolos de Aplicación</Titulo>
         <Texto>Los <strong>protocolos de aplicación</strong> son reglas que permiten
           a los <strong>programas o aplicaciones</strong> comunicarse a través de
           la red. Trabajan en la <strong>capa más alta</strong> de los modelos de
@@ -506,7 +506,7 @@ function nameabcd({ }) {
             UDP</strong> para garantizar que los datos lleguen correctamente.</Texto>
         </blockquote>
         <Linea />
-        <Titulo title="h2" id="direcciones-ip">10. Direcciones IP</Titulo>
+        <Titulo title="h2" id="10-direcciones-ip">10. Direcciones IP</Titulo>
         <Texto>Una <strong>dirección IP (Internet Protocol)</strong> es un
           <strong>identificador único</strong> que permite que un dispositivo se
           comunique en una red. Funciona como una <strong>dirección

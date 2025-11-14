@@ -1,8 +1,11 @@
-import Enlace from "../../componentes/atomos/enlace";
 import Estructura from "../../componentes/organismos/estructura";
+
+import Enlace from "../../componentes/atomos/enlace";
 import Lista from "../../componentes/moleculas/lista";
 import Texto from "./../../componentes/atomos/texto";
 import Titulo from "../../componentes/moleculas/titulo";
+import Imagen from "../../componentes/atomos/imagen";
+
 function Virtualizacion() {
     return (
         <Estructura>
@@ -74,8 +77,8 @@ function Virtualizacion() {
 
             <Texto>Todo lo deberías tener más o menos así en VirtualBox:</Texto>
 
-            <img src="./image-virtualbox.png" alt="Imagen de VirtualBox" className="
-            py-4
+            <Imagen src="./image-virtualbox.png" alt="Imagen de VirtualBox" className="
+            py-4 w-full
             " />
         </Estructura>
     );

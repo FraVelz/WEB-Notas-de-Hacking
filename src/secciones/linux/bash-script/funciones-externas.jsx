@@ -33,7 +33,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="manejo-de-texto">1. <strong>Manejo de texto</strong></Titulo>
+        <Titulo title="h2" id="1-manejo-de-texto">1. <strong>Manejo de texto</strong></Titulo>
 
         <Lista>
           <li><strong>cat</strong>: Muestra el contenido de
@@ -65,7 +65,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
 
         <Linea />
 
-        <Titulo title="h2" id="búsqueda-y-filtrado">2. <strong>Búsqueda y filtrado</strong></Titulo>
+        <Titulo title="h2" id="2-búsqueda-y-filtrado">2. <strong>Búsqueda y filtrado</strong></Titulo>
 
         <Lista>
           <li>
@@ -86,7 +86,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
 
         <Linea />
 
-        <Titulo title="h2" id="transformación-de-texto">3. <strong>Transformación de texto</strong></Titulo>
+        <Titulo title="h2" id="3-transformación-de-texto">3. <strong>Transformación de texto</strong></Titulo>
 
         <Lista>
           <li><strong>cut</strong>: Extrae columnas de texto.
@@ -120,7 +120,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
 
         <Linea />
 
-        <Titulo title="h2" id="procesos-y-sistema">4. <strong>Procesos y sistema</strong></Titulo>
+        <Titulo title="h2" id="4-procesos-y-sistema">4. <strong>Procesos y sistema</strong></Titulo>
 
         <Lista>
           <li>
@@ -142,7 +142,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
         </Lista>
         <Linea />
 
-        <Titulo title="h2" id="archivos-y-directorios">5. <strong>Archivos y
+        <Titulo title="h2" id="5-archivos-y-directorios">5. <strong>Archivos y
           directorios</strong></Titulo>
 
         <Lista>
@@ -154,7 +154,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
             <strong>stat</strong>: Muestra metadatos del
             archivo.</li>  </Lista>
         <Linea />
-        <Titulo title="h2" id="compresión-y-empaquetado">6. <strong>Compresión y
+        <Titulo title="h2" id="6-compresión-y-empaquetado">6. <strong>Compresión y
           empaquetado</strong></Titulo>
         <Lista>
           <li><strong>tar</strong>: Empaqueta múltiples
@@ -166,7 +166,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
             Comprime y descomprime.</li>    <li><strong>zip / unzip</strong>: Comprime
               y descomprime en formato ZIP.</li>  </Lista >
         <Linea />
-        <Titulo title="h2" id="red-y-comunicación">7. <strong>Red y comunicación</strong></Titulo>
+        <Titulo title="h2" id="7-red-y-comunicación">7. <strong>Red y comunicación</strong></Titulo>
         <Lista>
           <li><strong>ping</strong>: Verifica
             conectividad.</li>    <li><strong>curl</strong>: Descarga o envía datos por
@@ -181,7 +181,7 @@ wc -w archivo.txt   # número de palabras`} language="bash" />
 
         <Linea />
 
-        <Titulo title="h2" id="otros-útiles">8. <strong>Otros útiles</strong></Titulo>
+        <Titulo title="h2" id="8-otros-útiles">8. <strong>Otros útiles</strong></Titulo>
 
         <Lista>
           <li><strong>date</strong>: Fecha y hora.</li>    <li>

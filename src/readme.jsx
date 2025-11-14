@@ -22,11 +22,11 @@ function Readme() {
             <Titulo title="h2">Bienvenida y Cosas previas a tener en cuenta dentro de cada seccion</Titulo>
 
             <Texto>
-                <b>Ruta:</b> con enfoque principal pentesting, normalmente es
+                <b>Ruta:</b> con enfoque principal <b>pentesting</b>, normalmente es
                 lo que ayuda a conseguir unas buenas bases en ciberseguridad y trabajo
-                es esta área. (no olvidar que simplemente son notas, gastar dinero en aprender es una inversion,
+                es esta área. <b>(no olvidar que simplemente son notas, gastar dinero en aprender es una inversion,
                 y esto no remplaza ninguna ruta de aprendizaje, de cursos de pago, o de plataformas especializadas
-                como -hack the box- o -try hack me-).
+                como -hack the box- o -try hack me-).</b>
             </Texto>
 
             <Dividido secundario={<Animacion />}>

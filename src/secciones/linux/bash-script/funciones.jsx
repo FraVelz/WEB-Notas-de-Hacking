@@ -48,7 +48,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="definición-de-funciones">1. Definición de funciones</Titulo>
+        <Titulo title="h2" id="1-definición-de-funciones">1. Definición de funciones</Titulo>
         <Texto>En Bash, una función agrupa comandos que puedes reutilizar. Existen
           dos formas equivalentes:</Texto>
         <Codigo code={`# Forma 1 (más común)
@@ -63,7 +63,7 @@ echo "Hola desde la función 2"
         <Texto><strong>Llamar una función:</strong></Texto>
         <Codigo code={`mi_funcion`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="parámetros-en-funciones">2. Parámetros en funciones</Titulo>
+        <Titulo title="h2" id="2-parámetros-en-funciones">2. Parámetros en funciones</Titulo>
         <Texto>Los argumentos se manejan igual que en un script:</Texto>
         <Tabla>
           <TablaCabezera headers={["Variable", "Significado"]} />
@@ -95,7 +95,7 @@ echo "Hola $1 $2"
 saludar "Francisco" "Vélez"
 # → Hola Francisco Vélez`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="devolver-valores">3. Devolver valores</Titulo>
+        <Titulo title="h2" id="3-devolver-valores">3. Devolver valores</Titulo>
         <Texto>En Bash, return solo devuelve <strong>códigos de salida
           (= éxito, ≠0 = error)</strong>. Para devolver datos reales se usa
           echo y <strong>captura de comandos</strong>:
@@ -108,7 +108,7 @@ resultado=$(sumar 5 7)
 echo "La suma es: $resultado"
 # → La suma es: 12`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="variables-globales-y-locales">4. Variables Globales y
+        <Titulo title="h2" id="4-variables-globales-y-locales">4. Variables Globales y
           Locales</Titulo>
         <Texto>Por defecto, todas las variables son <strong>globales</strong>. Para
           que existan solo dentro de la función, usa local.</Texto>
@@ -142,7 +142,7 @@ echo "Después: $mensaje"`} language="bash" />
         <Texto>Usa <strong>local</strong> para evitar modificar
           variables globales sin querer.</Texto>
         <Linea />
-        <Titulo title="h2" id="argumentos-en-scripts">5. Argumentos en scripts</Titulo>
+        <Titulo title="h2" id="5-argumentos-en-scripts">5. Argumentos en scripts</Titulo>
         <Texto>Cuando ejecutas un script, puedes pasarle argumentos:</Texto>
         <Codigo code={`#!/bin/bash
 echo "Hola $1"`} language="bash" />
@@ -177,7 +177,7 @@ echo "Hola $1"`} language="bash" />
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="validaciones-útiles">6. Validaciones útiles</Titulo>
+        <Titulo title="h2" id="6-validaciones-útiles">6. Validaciones útiles</Titulo>
         <Texto><strong>Validar número de argumentos:</strong></Texto>
         <Codigo code={`if [ $# -ne 2 ]; then
 echo "Uso: $0 num1 num2"
@@ -194,7 +194,7 @@ echo "Error: $1 no es un número"
 exit 1
 fi`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="recorrer-argumentos">7. Recorrer argumentos</Titulo>
+        <Titulo title="h2" id="7-recorrer-argumentos">7. Recorrer argumentos</Titulo>
         <Titulo title="h3" id="con-for">Con for</Titulo>
         <Codigo code={`for arg in "$@"; do
 echo "Argumento: $arg"
@@ -209,7 +209,7 @@ done`} language="bash" />
         <Texto>shift 2 eliminaría los dos primeros argumentos de
           golpe.</Texto>
         <Linea />
-        <Titulo title="h2" id="ejemplo-práctico-mini-calculadora">8. Ejemplo práctico: mini
+        <Titulo title="h2" id="8-ejemplo-práctico-mini-calculadora">8. Ejemplo práctico: mini
           calculadora</Titulo>
         <Codigo code={`#!/bin/bash
 

@@ -1,14 +1,30 @@
-import Estructura from "../../componentes/organismos/estructura.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
 import Linea from "../../componentes/atomos/linea.jsx";
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
+import Enlace from "../../componentes/atomos/enlace.jsx";
+
+function Temario({ className = "" }) {
+  return (
+    <Lista className={className}>
+      <li><Enlace href="#para-qué-se-utiliza">¿Para qué se utiliza?</Enlace ></li>
+      <li><Enlace href="#herramientas-necesarias">Herramientas Necesarias</Enlace ></li>
+      <li><Enlace href="#socmint-social-media-intelligent">Socmint (Social Media Intelligent)</Enlace ></li>
+    </Lista>
+  );
+}
+
 function nameabcd({ }) {
   return (
-    <Estructura>
-      <Titulo title="h1" className="text-center">OSINT</Titulo>
+    <>
+      <Estructura>
+        <Titulo title="h1" className="text-center">OSINT</Titulo>
+        <Linea />
 
-      <Texto>Open Source Intelligence Network (OSINT) Inteligencia de fuentes
+        <TemarioCompleto temario={Temario} />
+
+        <Texto>Open Source Intelligence Network (OSINT) Inteligencia de fuentes
         abiertas, es el proceso de recopilar, analizar y utilizar, información
         publica accesible legalmente para obtener inteligencia útil, esta
         información puede estar, disponible en internet, en redes sociales,
@@ -48,7 +64,10 @@ function nameabcd({ }) {
       <Lista>
         <li>Monitoreo de actividades y publicaciones.</li>    <li>Análisis de sentimientos y tendencias.</li>
       </Lista>
-    </Estructura>
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
+    </>
   );
 }
 

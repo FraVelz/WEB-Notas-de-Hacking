@@ -39,7 +39,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="comandos-de-gestión-de-usuarios-en-cmd">1. Comandos de gestión
+        <Titulo title="h2" id="1-comandos-de-gestión-de-usuarios-en-cmd">1. Comandos de gestión
           de usuarios en CMD</Titulo>
         <blockquote>
           <Texto>Estos comandos funcionan directamente desde <strong>Símbolo del
@@ -137,7 +137,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="cmdlets-de-gestión-de-usuarios-en-powershell">2. Cmdlets de
+        <Titulo title="h2" id="2-cmdlets-de-gestión-de-usuarios-en-powershell">2. Cmdlets de
           gestión de usuarios en PowerShell</Titulo>
         <blockquote>
           <Texto>Estos cmdlets forman parte de los módulos
@@ -283,7 +283,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="comandos-útiles-para-entornos-mixtos-cmd-powershell">3. Comandos
+        <Titulo title="h2" id="3-comandos-útiles-para-entornos-mixtos-cmd--powershell">3. Comandos
           útiles para entornos mixtos (CMD + PowerShell)</Titulo>
         <Tabla>
           <TablaCabezera headers={["Tarea", "CMD", "PowerShell"]} />

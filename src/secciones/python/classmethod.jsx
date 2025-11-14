@@ -1,4 +1,5 @@
 import Enlace from "../../componentes/atomos/enlace.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
 import Linea from "../../componentes/atomos/linea.jsx";
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
@@ -6,21 +7,12 @@ import Titulo from "../../componentes/moleculas/titulo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
 import Codigo from "../../componentes/moleculas/codigo.jsx";
 
-function nameabcd({ }) {
+function Temario({ className = "" }) {
   return (
-    <>
-      <Titulo title="h1" id="decorador-classmethod">Decorador <span className="citation" data-cites="classmethod">@classmethod</span></Titulo>
-      <Texto>@classmethod permite crear funciones que pueden
-        <strong>acceder o modificar el estado de la clase</strong>, sin
-        necesidad de crear un objeto.
-      </Texto>
-      <Linea />
-      <Titulo title="h2" id="temario">Temario</Titulo>
-      <Lista>
-        <li><Enlace href="#decorador-classmethod">Decorador <span className="citation"
-          data-cites="classmethod">@classmethod</span></Enlace >
-          <Lista>
-            <li><Enlace href="#temario">Temario</Enlace ></li>
+    <Lista className={className}>
+      <li><Enlace href="#decorador-classmethod">Decorador <span className="citation"
+        data-cites="classmethod">@classmethod</span></Enlace >
+        <Lista>
             <li><Enlace href="#ejemplo">Ejemplo</Enlace ></li>
             <li><Enlace href="#diferencias-entre-tipos-de-métodos">Diferencias entre
               tipos de métodos</Enlace ></li>
@@ -28,10 +20,23 @@ function nameabcd({ }) {
           </Lista>
         </li>
       </Lista>
-      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <Linea />
-      <Titulo title="h2" id="ejemplo">Ejemplo</Titulo>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+      <Estructura>
+        <Titulo title="h1" id="decorador-classmethod">Decorador <span className="citation" data-cites="classmethod">@classmethod</span></Titulo>
+        <Texto>@classmethod permite crear funciones que pueden
+          <strong>acceder o modificar el estado de la clase</strong>, sin
+          necesidad de crear un objeto.
+        </Texto>
+        <Linea />
+
+        <TemarioCompleto temario={Temario} />
+
+        <Titulo title="h2" id="ejemplo">Ejemplo</Titulo>
       <Codigo code={`class Persona:
 poblacion = 0  # Atributo de clase
 
@@ -91,12 +96,9 @@ print(Persona.cuantos_hay())  # Hay 2 personas registradas.`} language="python" 
         </li>    <li>@classmethod: método <strong>ligado a la
           clase</strong>, puede <strong>usar o modificar atributos de la
             clase</strong> y se puede llamar sin crear una instancia.</li>  </Lista>
-      <Linea />
-      <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
-        Principal</Enlace ></Texto>
-      <blockquote>
-        <Texto><strong>Autor:</strong> Fravelz</Texto>
-      </blockquote>
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

@@ -36,7 +36,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="comandos-de-gestión-de-procesos-en-cmd">1. Comandos de gestión
+        <Titulo title="h2" id="1-comandos-de-gestión-de-procesos-en-cmd">1. Comandos de gestión
           de procesos en CMD</Titulo>
         <blockquote>
           <Texto>Todos estos se ejecutan en <strong>Símbolo del sistema
@@ -117,7 +117,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="cmdlets-de-gestión-de-procesos-en-powershell">2. Cmdlets de
+        <Titulo title="h2" id="2-cmdlets-de-gestión-de-procesos-en-powershell">2. Cmdlets de
           gestión de procesos en PowerShell</Titulo>
         <blockquote>
           <Texto>PowerShell ofrece control total sobre los procesos, con más detalle y
@@ -202,7 +202,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="comparativa-rápida-cmd-vs-powershell">3. Comparativa rápida CMD
+        <Titulo title="h2" id="3-comparativa-rápida-cmd-vs-powershell">3. Comparativa rápida CMD
           vs PowerShell</Titulo>
         <Tabla>
           <TablaCabezera headers={["Tarea", "CMD", "PowerShell"]} />
@@ -251,7 +251,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="comandos-gráficos-y-herramientas-integradas">4. Comandos
+        <Titulo title="h2" id="4-comandos-gráficos-y-herramientas-integradas">4. Comandos
           gráficos y herramientas integradas</Titulo>
         <Tabla>
           <TablaCabezera headers={["Comando", "Descripción"]} />

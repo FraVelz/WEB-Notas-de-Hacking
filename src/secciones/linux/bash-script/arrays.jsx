@@ -43,7 +43,7 @@ function Arrays() {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="definir-arrays">1. Definir arrays</Titulo>
+        <Titulo title="h2" id="1-definir-arrays">1. Definir arrays</Titulo>
 
         <Codigo language="bash"
         code={`# Array con valores
@@ -56,7 +56,7 @@ numeros[2]=30`}
         />
 
         <Linea />
-        <Titulo title="h2" id="acceder-a-elementos">2. Acceder a elementos</Titulo>
+        <Titulo title="h2" id="2-acceder-a-elementos">2. Acceder a elementos</Titulo>
 
         <Codigo language="bash" code=
           {"echo \"${nombres[0]}\"   # Ana\necho \"${nombres[2]}\"   # Pedro"}
@@ -68,21 +68,21 @@ numeros[2]=30`}
         />
 
         <Linea />
-        <Titulo title="h2" id="mostrar-todos-los-elementos">3. Mostrar todos los elementos</Titulo>
+        <Titulo title="h2" id="3-mostrar-todos-los-elementos">3. Mostrar todos los elementos</Titulo>
 
         <Codigo language="bash" code=
           {"echo \"${nombres[@]}\"   # Ana Luis Pedro\necho \"${numeros[*]}\"   # 10 20 30"}
         />
 
         <Linea />
-        <Titulo title="h2" id="tamaño-del-array">4. Tamaño del array</Titulo>
+        <Titulo title="h2" id="4-tamaño-del-array">4. Tamaño del array</Titulo>
 
         <Codigo language="bash" code=
           {"echo \"${#nombres[@]}\"  # 3"}
         />
 
         <Linea />
-        <Titulo title="h2" id="recorrer-arrays">5. Recorrer arrays</Titulo>
+        <Titulo title="h2" id="5-recorrer-arrays">5. Recorrer arrays</Titulo>
         <Titulo title="h3" id="con-for">Con for</Titulo>
 
         <Codigo language="bash" code=
@@ -103,7 +103,7 @@ Hola Pedro`}
 
         <Linea />
 
-        <Titulo title="h2" id="anadir-y-modificar-elementos">6. Añadir y modificar elementos</Titulo>
+        <Titulo title="h2" id="6-anadir-y-modificar-elementos">6. Añadir y modificar elementos</Titulo>
         <Codigo language="bash" code=
           {`nombres+=("Carla")      # Agregar al final
 nombres[1]="Lucía"       # Modificar el índice 1`}
@@ -111,7 +111,7 @@ nombres[1]="Lucía"       # Modificar el índice 1`}
 
         <Linea />
 
-        <Titulo title="h2" id="eliminar-elementos">7. Eliminar elementos</Titulo>
+        <Titulo title="h2" id="7-eliminar-elementos">7. Eliminar elementos</Titulo>
 
         <Codigo language="bash" code=
           {`unset nombres[1]       # Elimina solo el índice 1
@@ -120,7 +120,7 @@ unset nombres           # Borra todo el array`}
 
         <Linea />
 
-        <Titulo title="h2" id="subarrays-rebanadas">8. Subarrays (rebanadas)</Titulo>
+        <Titulo title="h2" id="8-subarrays-rebanadas">8. Subarrays (rebanadas)</Titulo>
 
         <Codigo language="bash" code=
           {"echo \"${nombres[@]:1:2}\"   # desde índice 1, tomar 2 elementos"}
@@ -128,7 +128,7 @@ unset nombres           # Borra todo el array`}
 
         <Linea />
 
-        <Titulo title="h2" id="arrays-asociativos-tipo-diccionario">9. Arrays asociativos (tipo diccionario)</Titulo>
+        <Titulo title="h2" id="9-arrays-asociativos-tipo-diccionario">9. Arrays asociativos (tipo diccionario)</Titulo>
 
         <Texto>Disponibles en <strong>Bash 4+</strong>.</Texto>
 
@@ -145,7 +145,7 @@ Colombia → Bogotá`}
 
         <Linea />
 
-        <Titulo title="h2" id="cosas-utiles">10. Cosas útiles</Titulo>
+        <Titulo title="h2" id="10-cosas-utiles">10. Cosas útiles</Titulo>
 
         <Lista>
           <li>

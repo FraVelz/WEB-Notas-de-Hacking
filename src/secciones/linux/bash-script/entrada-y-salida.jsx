@@ -78,14 +78,14 @@ function nameabcd({ }) {
           <strong>1</strong>, el número puede omitirse (&gt; equivale
           a 1&gt;).
         </Texto>
-        <Titulo title="h3" id="entrada-redirigir-desde-un-archivo">1 Entrada: redirigir desde
+        <Titulo title="h3" id="1-entrada-redirigir-desde-un-archivo-">1 Entrada: redirigir desde
           un archivo &lt;</Titulo>
         <Codigo code={`cat < ./4.estControl.sh`} language="bash" />
-        <Titulo title="h3" id="salida-redirigir-la-salida-normal-y">2 Salida: redirigir la
+        <Titulo title="h3" id="2-salida-redirigir-la-salida-normal--y-">2 Salida: redirigir la
           salida normal &gt; y &gt;&gt;</Titulo>
         <Codigo code={`echo "hola," > ./salida.txt    # Sobrescribe el archivo
 echo "mundo!" >> ./salida.txt  # Agrega al final`} language="bash" />
-        <Titulo title="h3" id="errores-redirigir-errores-2">3 Errores: redirigir errores
+        <Titulo title="h3" id="3-errores-redirigir-errores-2">3 Errores: redirigir errores
           2&gt;
         </Titulo>
         <Codigo code={`ls noExiste 2> errores.txt`} language="bash" />

@@ -55,7 +55,7 @@ function nameabcd({ }) {
         <Codigo code={`xxd [opciones] [archivo]`} language="bash" />
         <Linea />
         <Titulo title="h2" id="ejemplos-comunes">Ejemplos comunes</Titulo>
-        <Titulo title="h3" id="ver-un-archivo-en-formato-hexadecimal">1. Ver un archivo en
+        <Titulo title="h3" id="1-ver-un-archivo-en-formato-hexadecimal">1. Ver un archivo en
           formato hexadecimal</Titulo>
         <Codigo code={`xxd archivo.bin`} language="bash" />
         <Texto> Muestra el contenido de archivo.bin así:</Texto>
@@ -65,13 +65,13 @@ function nameabcd({ }) {
             (offset) en hexadecimal.</li>    <li>Luego vienen los bytes en formato hex.</li>    <li>A la derecha aparece la interpretación ASCII (sí los bytes son
               imprimibles).</li>  </Lista>
         <Linea />
-        <Titulo title="h3" id="convertir-de-binario-a-texto-hexadecimal">2. Convertir de
+        <Titulo title="h3" id="2-convertir-de-binario-a-texto-hexadecimal">2. Convertir de
           binario a texto hexadecimal</Titulo>
         <Codigo code={`cat archivo | xxd`} language="bash" />
         <Texto> Convierte los bytes de la entrada estándar en texto
           hexadecimal.</Texto>
         <Linea />
-        <Titulo title="h3" id="convertir-de-texto-hexadecimal-a-binario">3. Convertir de texto
+        <Titulo title="h3" id="3-convertir-de-texto-hexadecimal-a-binario">3. Convertir de texto
           hexadecimal a binario</Titulo>
         <Codigo code={`cat archivo_hex.txt | xxd -r > archivo_original`} language="bash" />
         <Lista>
@@ -81,14 +81,14 @@ function nameabcd({ }) {
           </li>
         </Lista>
         <Linea />
-        <Titulo title="h3" id="mostrar-solo-los-bytes-sin-dirección-ni-texto-ascii">4. Mostrar
+        <Titulo title="h3" id="4-mostrar-solo-los-bytes-sin-dirección-ni-texto-ascii">4. Mostrar
           solo los bytes (sin dirección ni texto ASCII)</Titulo>
         <Codigo code={`xxd -p archivo.bin`} language="bash" />
         <Texto>Salida “plana” (plain):</Texto>
         <Codigo code={`486f6c61206d756e646f`} language="bash" />
         <Texto>Perfecta para copiar y pegar en scripts o codificaciones.</Texto>
         <Linea />
-        <Titulo title="h3" id="ver-solo-los-primeros-bytes">5. Ver solo los primeros bytes</Titulo>
+        <Titulo title="h3" id="5-ver-solo-los-primeros-bytes">5. Ver solo los primeros bytes</Titulo>
         <Codigo code={`xxd -l 16 archivo.bin`} language="bash" />
         <Texto> Muestra solo los primeros 16 bytes.</Texto>
         <Linea />

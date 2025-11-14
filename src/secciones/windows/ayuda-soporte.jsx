@@ -46,7 +46,7 @@ function nameabcd({ }) {
       <Texto><Enlace href="./../readme.md#3-windows">Regresar a la guía
         principal</Enlace ></Texto>
       <Linea />
-      <Titulo title="h2" id="comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda y
+      <Titulo title="h2" id="1-comandos-de-ayuda-y-soporte-en-cmd">1. Comandos de ayuda y
         soporte en CMD</Titulo>
       <Tabla>
   <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
@@ -147,7 +147,7 @@ function nameabcd({ }) {
   </tbody>
 </Tabla>
       <Linea />
-      <Titulo title="h2" id="cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de ayuda y
+      <Titulo title="h2" id="2-cmdlets-de-ayuda-y-soporte-en-powershell">2. Cmdlets de ayuda y
         soporte en PowerShell</Titulo>
       <Tabla>
   <TablaCabezera headers={["Cmdlet", "Descripción", "Ejemplo"]} />
@@ -236,7 +236,7 @@ function nameabcd({ }) {
   </tbody>
 </Tabla>
       <Linea />
-      <Titulo title="h2" id="ayuda-interactiva-y-documentación">3. Ayuda interactiva y
+      <Titulo title="h2" id="3-ayuda-interactiva-y-documentación">3. Ayuda interactiva y
         documentación</Titulo>
       <Lista>
         <li>

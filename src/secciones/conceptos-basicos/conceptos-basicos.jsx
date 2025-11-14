@@ -86,8 +86,8 @@ function Conceptos_Basicos({ }) {
         <Titulo title="h2" id="3-terminologías">3. Terminologías</Titulo>
 
         <Titulo title="h3" id="exploit">Exploit</Titulo>
-        <Texto>Es un <strong>programa, código o técnica</strong> que
-          <strong>aprovecha una vulnerabilidad</strong> (un error o debilidad en
+        <Texto>Es un <strong>programa, código o técnica</strong> que <strong>
+          aprovecha una vulnerabilidad</strong> (un error o debilidad en
           un sistema, software o aplicación) para <strong>ejecutar acciones no
             autorizadas</strong>.
         </Texto>
@@ -118,7 +118,7 @@ function Conceptos_Basicos({ }) {
         </Lista>
         <Texto>En herramientas como <strong>Metasploit</strong>, esto se ve muy
           claro: eliges un exploit y luego le asocias un payload.</Texto>
-        <Titulo title="h3" id="day-zero-day">0-day (Zero-Day)</Titulo>
+        <Titulo title="h3" id="0-day-zero-day">0-day (Zero-Day)</Titulo>
         <Texto>(se pronuncia <em>zero day</em>) es una <strong>vulnerabilidad
           desconocida por el fabricante o por el público</strong> —y por tanto
           <strong>no tiene parche ni defensa aún</strong>.
@@ -132,19 +132,67 @@ function Conceptos_Basicos({ }) {
           que aprovecha esa vulnerabilidad secreta. Es el tipo de ataque más
           peligroso y valioso, porque <strong>ni antivirus ni firewalls lo
             detectan</strong> (ya que nadie sabía que existía).</Texto>
+
         <Titulo title="h3" id="malware-y-tipos-de-malware">Malware y tipos de Malware</Titulo>
+
         <Texto>(Malicious Software) Cualquier tipo de código malicioso que busca
           aprovecharse de una vulnerabilidad y casuar daño.</Texto>
-        <Texto>Tipos:</Texto>
+
+        <Texto>Los tipos mas conocidos son:</Texto>
+
         <Lista>
-          <li>Troyanos</li>
-          <li>Virus</li>
-          <li>Gusanos</li>
-          <li>Rogue</li>
-          <li>Adware</li>
-          <li>Spyware</li>
-          <li>Ransomware</li>
+          <li><b>1. Virus:</b> Programa que se adjunta a archivos o programas legítimos y se activa al ejecutarlos. Se replica infectando otros archivos.
+          </li>
+
+          <li><b>2. Gusano (Worm):</b> Malware que se autorreplica sin intervención del usuario, generalmente explotando vulnerabilidades de red. Se propaga muy rápido.
+          </li>
+
+          <li><b>3. Troyano:</b> Se hace pasar por software legítimo para engañar al usuario. Abre puertas traseras, roba datos o instala otros malware.
+          </li>
+
+          <li><b>4. Ransomware:</b> Cifra archivos o bloquea el sistema y exige un pago para devolver el acceso. Uno de los más peligrosos hoy en día.
+          </li>
+
+          <li><b>5. Spyware:</b> Espía la actividad del usuario: teclas, contraseñas, navegación, cámaras, etc. Roba información sin que el usuario lo note.
+          </li>
+
+          <li><b>6. Adware:</b> Muestra publicidad invasiva sin permiso. Puede rastrear actividad y ralentizar el sistema.
+          </li>
+
+          <li><b>7. Rootkit:</b> Oculta procesos, archivos o accesos maliciosos para que el malware pase desapercibido. Muy difícil de detectar.
+          </li>
+
+          <li><b>8. Botnet (Bot):</b> Computadoras infectadas que quedan bajo control de un atacante para hacer ataques DDoS, spam, minería, etc.
+          </li>
+
+          <li><b>9. Keylogger:</b> Registra todo lo que el usuario escribe en el teclado: contraseñas, mensajes, tarjetas, etc.
+          </li>
+
+          <li><b>10. Backdoor (Puerta trasera):</b> Permite acceso remoto oculto al equipo o servidor, saltándose la autenticación normal.
+          </li>
+
+          <li><b>11. Stealer:</b> Roban información rápida y silenciosamente: contraseñas guardadas, cookies, wallet de criptos, sesión de Discord, etc.
+          </li>
+
+          <li><b>12. Banker / Malware Bancario:</b> Especializado en robar credenciales y datos financieros, interceptar transacciones y suplantar bancos.
+          </li>
+
+          <li><b>13. Cryptominer / Cryptojacking:</b> Usa el CPU o GPU del usuario para minar criptomonedas sin permiso.
+          </li>
+
+          <li><b>14. Fileless Malware:</b> No se instala como archivo. Vive en la memoria RAM y usa herramientas legítimas del sistema (como PowerShell). Muy difícil de detectar.
+          </li>
+
+          <li><b>15. RAT (Remote Access Trojan):</b> Da control total del dispositivo al atacante: cámara, teclado, archivos, pantalla.
+          </li>
+
+          <li><b>16. Scareware:</b> Asusta al usuario con mensajes falsos (“tienes 32 virus”) para que compre un software fraudulento.
+          </li>
+
+          <li><b>17. Bootkit:</b> Infecta el sector de arranque (MBR/UEFI) para ejecutarse antes que el sistema operativo.
+          </li>
         </Lista>
+
         <Titulo title="h3" id="vulnerabilidad">Vulnerabilidad</Titulo>
         <Texto>Fallo de configuración, de diseño o de implementación que pone en
           riesgo la seguridad del entorno o sistema.</Texto>
@@ -249,7 +297,7 @@ function Conceptos_Basicos({ }) {
         </Lista>
 
         <Texto>Normalmente a los “hackers de sombrero, negro o gris” se les da el
-         nombre de ciberdelincuentes.</Texto>
+          nombre de ciberdelincuentes.</Texto>
 
         <Linea />
 

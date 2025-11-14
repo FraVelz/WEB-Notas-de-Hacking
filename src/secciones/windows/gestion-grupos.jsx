@@ -38,7 +38,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="comandos-de-gestión-de-grupos-en-cmd">1. Comandos de gestión de
+        <Titulo title="h2" id="1-comandos-de-gestión-de-grupos-en-cmd">1. Comandos de gestión de
 
           grupos en CMD</Titulo>
         <blockquote>
@@ -112,7 +112,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="cmdlets-de-gestión-de-grupos-en-powershell">2. Cmdlets de
+        <Titulo title="h2" id="2-cmdlets-de-gestión-de-grupos-en-powershell">2. Cmdlets de
           gestión de grupos en PowerShell</Titulo>
         <blockquote>
           <Texto>Estos cmdlets pertenecen al módulo
@@ -211,7 +211,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="comparativa-cmd-vs-powershell">3. Comparativa CMD vs
+        <Titulo title="h2" id="3-comparativa-cmd-vs-powershell">3. Comparativa CMD vs
           PowerShell</Titulo>
         <Tabla>
           <TablaCabezera headers={["Tarea", "CMD", "PowerShell"]} />
@@ -261,7 +261,7 @@ function nameabcd({ }) {
         </Tabla>
 
         <Linea />
-        <Titulo title="h2" id="atajos-y-comandos-gráficos">4. Atajos y comandos gráficos</Titulo>
+        <Titulo title="h2" id="4-atajos-y-comandos-gráficos">4. Atajos y comandos gráficos</Titulo>
         <Tabla>
           <TablaCabezera headers={["Comando", "Descripción"]} />
 

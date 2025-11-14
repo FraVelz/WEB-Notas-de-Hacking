@@ -1,8 +1,10 @@
-import Enlace from "../../componentes/atomos/enlace";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura";
+
+import Enlace from "../../componentes/atomos/enlace";
 import Linea from "../../componentes/atomos/linea";
 import Lista from "../../componentes/moleculas/lista";
 import Titulo from "../../componentes/moleculas/titulo";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>

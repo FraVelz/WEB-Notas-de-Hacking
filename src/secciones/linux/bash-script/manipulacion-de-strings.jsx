@@ -51,21 +51,21 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="definir-strings">1. Definir strings</Titulo>
+        <Titulo title="h2" id="1-definir-strings">1. Definir strings</Titulo>
         <Codigo code={`cadena="Hola Mundo"`} language="bash" />
         <Lista>
           <li>Siempre usar <strong>comillas</strong> sí hay espacios.</li>
           <li>No existen tipos como en otros lenguajes, todo es texto.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="longitud-de-un-string">2. Longitud de un string</Titulo>
+        <Titulo title="h2" id="2-longitud-de-un-string">2. Longitud de un string</Titulo>
         <Codigo code={`echo "$(#cadena)"   ## 10`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="substrings">3. Substrings</Titulo>
+        <Titulo title="h2" id="3-substrings">3. Substrings</Titulo>
         <Codigo code={`echo "$\{cadena:0:4\}"   ## Hola (desde índice 0, tomar 4)
 echo "$\{cadena:5\}"     ## Mundo (desde índice 5 hasta el final)`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="reemplazos-dentro-de-un-string">4. Reemplazos dentro de un
+        <Titulo title="h2" id="4-reemplazos-dentro-de-un-string">4. Reemplazos dentro de un
           string</Titulo>
         <Codigo code={`texto="banana"
 
@@ -75,13 +75,13 @@ echo "\${texto//na/NA}"   ## baNANA (todos los reemplazos)
 echo "\${texto/na/}"      ## baana   (borra primer "na")
 echo "\${texto//na/}"     ## baa     (borra todos "na")`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="eliminar-prefijos-y-sufijos">5. Eliminar prefijos y sufijos</Titulo>
+        <Titulo title="h2" id="5-eliminar-prefijos-y-sufijos">5. Eliminar prefijos y sufijos</Titulo>
         <Codigo code={`archivo="documento.txt"
 
 echo "\${archivo%.txt}"   ## documento  (quita sufijo .txt)
 echo "\${archivo#doc}"    ## umento.txt (quita prefijo doc) # Con doble signo borra lo más largo ruta="/home/user/docs/file.txt" echo "{"\${ruta##*/}"}"       # file.txt  (quita todo hasta el último /) echo "{"\${ruta %%/*}"}"       # vacío     (quita todo desde el primer /)`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="concatenar-strings">6. Concatenar strings</Titulo>
+        <Titulo title="h2" id="6-concatenar-strings">6. Concatenar strings</Titulo>
         <Codigo code={`nombre="Francisco"
 saludo="Hola, $nombre"
 echo "$saludo"`} language="bash" />
@@ -90,20 +90,20 @@ echo "$saludo"`} language="bash" />
 full+=" Mundo"
 echo "$full"   ## Hola Mundo`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="convertir-mayúsculas-minúsculas-bash-4">7. Convertir mayúsculas
+        <Titulo title="h2" id="7-convertir-mayúsculas-minúsculas-bash-4">7. Convertir mayúsculas
           / minúsculas (Bash 4+)</Titulo>
         <Codigo code={`texto="hola mundo"
 
 echo "\${texto^^}"   ## HOLA MUNDO
 echo "\${texto,,}"   ## hola mundo`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="buscar-dentro-de-un-string">8. Buscar dentro de un string</Titulo>
+        <Titulo title="h2" id="8-buscar-dentro-de-un-string">8. Buscar dentro de un string</Titulo>
         <Codigo code={`cadena="programacion"
 if [[ "$cadena" == *"grama"- ]]; then
 echo "Contiene 'grama'"
 fi`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="dividir-un-string-split">9. Dividir un string (split)</Titulo>
+        <Titulo title="h2" id="9-dividir-un-string-split">9. Dividir un string (split)</Titulo>
         <Texto>Con IFS (Internal Field Separator):</Texto>
         <Codigo code={`frase="uno dos tres"
 IFS=" " read -r -a palabras <<< "$frase"
@@ -112,21 +112,21 @@ echo "\${palabras[0]}"  ## uno
 echo "\${palabras[1]}"  ## dos
 echo "\${palabras[2]}"  ## tres`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="juntar-un-array-en-string">10. Juntar un array en string</Titulo>
+        <Titulo title="h2" id="10-juntar-un-array-en-string">10. Juntar un array en string</Titulo>
         <Codigo code={`lista=("a" "b" "c")
 echo "\${lista[*]}"   ## a b c
 echo "\${lista[@]}"   ## a b c`} language="bash" />
         <Texto>Con separador personalizado:</Texto>
         <Codigo code={`IFS=","; echo "\${lista[*]}"   ## a,b,c`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="expresiones-regulares-en-strings">11. Expresiones regulares en
+        <Titulo title="h2" id="11-expresiones-regulares-en-strings">11. Expresiones regulares en
           strings</Titulo>
         <Codigo code={`cadena="abc123"
 if [[ "$cadena" =~ ^[a-z]+[0-9]+$ ]]; then
 echo "Coincide con letras seguidas de números"
 fi`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="lectura-carácter-por-carácter">12. Lectura carácter por
+        <Titulo title="h2" id="12-lectura-carácter-por-carácter">12. Lectura carácter por
           carácter</Titulo>
         <Codigo code={`texto="Hola"
 for (( i=0; i<\${#texto}; i++ )); do

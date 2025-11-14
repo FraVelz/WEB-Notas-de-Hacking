@@ -1,5 +1,5 @@
 import Enlace from "../../componentes/atomos/enlace.jsx";
-import Estructura from "../../componentes/organismos/estructura.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
 import Linea from "../../componentes/atomos/linea.jsx";
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
@@ -7,29 +7,11 @@ import Titulo from "../../componentes/moleculas/titulo.jsx";
 import Codigo from "../../componentes/moleculas/codigo.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../componentes/moleculas/tabla.jsx";
 
-function nameabcd({ }) {
+function Temario({ className = "" }) {
   return (
-    <>
-      <Estructura>
-        <Titulo title="h1" id="python">Python</Titulo>
-        <Texto>Video de YouTube - python desde cero:</Texto>
-
+    <Lista className={className}>
+      <li><Enlace href="#python">Python</Enlace >
         <Lista>
-          <li>
-            <Enlace href="https://www.youtube.com/watch?v=nKPbfIU442g">Ir a curso de Python Básico Completo - YoSoyDalto
-              (8h)</Enlace>
-          </li>
-        </Lista>
-
-        <Linea />
-
-
-        <Linea />
-        <Titulo title="h2" id="temario">Temario</Titulo>
-        <Lista>
-          <li><Enlace href="#python">Python</Enlace >
-            <Lista>
-              <li><Enlace href="#temario">Temario</Enlace ></li>
               <li><Enlace href="#1-qué-es-python">1. ¿Qué es Python?</Enlace ></li>
               <li><Enlace href="#2-sintaxis-básica">2. Sintaxis básica</Enlace >
                 <Lista>
@@ -65,9 +47,27 @@ function nameabcd({ }) {
             </Lista>
           </li>
         </Lista>
-        <Texto><Enlace href="./../readme.md#5-python">Regresar a la Guía
-          Principal</Enlace ></Texto>
+  );
+}
+
+function nameabcd({ }) {
+  return (
+    <>
+      <Estructura>
+        <Titulo title="h1" id="python">Python</Titulo>
+        <Texto><b>Recurso extra:</b> Video de YouTube - python desde cero:</Texto>
+
+        <Lista>
+          <li>
+            <Enlace href="https://www.youtube.com/watch?v=nKPbfIU442g">Ir a curso de Python Básico Completo - YoSoyDalto
+              (8h)</Enlace>
+          </li>
+        </Lista>
+
         <Linea />
+
+        <TemarioCompleto temario={Temario} />
+
         <Titulo title="h2" id="qué-es-python">1. ¿Qué es Python?</Titulo>
         <Texto><strong>Python</strong> es un lenguaje de programación:</Texto>
         <Lista>
@@ -212,7 +212,7 @@ print(archivo.read())`} language="python" />
                 <Codigo code={`cuadrados = [x**2 for x in range(5)]`} language="python" />
               </li>
               <li>
-                <Texto><strong>Funciones lambda:</strong></Texto>
+                <strong>Funciones lambda:</strong>
                 <Codigo code={`doble = lambda x: x*2`} language="python" />
               </li>
               <li>
@@ -226,14 +226,16 @@ print(archivo.read())`} language="python" />
               </li>    <li><strong>Gestor de paquetes:</strong>
                 pip install nombre_paquete
               </li>    <li>
-                <Texto><strong>Entornos virtuales:</strong></Texto>
+                <strong>Entornos virtuales:</strong>
                 <Codigo code={`python -m venv entorno
 source entorno/bin/activate  # Linux
 entorno\Scripts\activate     # Windows`} language="bash" />
               </li>
             </Lista>
-          </Estructura>
-        </>
-        );
+      </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
+    </>
+  );
 }
-        export default nameabcd;
+export default nameabcd;

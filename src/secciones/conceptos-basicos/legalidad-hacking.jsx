@@ -76,8 +76,7 @@ function Legalidad_Hacking({ }) {
           <li>Suplantación de identidad o fraude digital.</li>
         </Lista>
         <Titulo title="h3" id="en-colombia-por-ejemplo">En Colombia (por ejemplo)</Titulo>
-        <Texto>El <strong>Código Penal Colombiano (Ley 1273 de 2009)</strong>
-          protege la “información y los datos” en el ciberespacio. Algunos delitos
+        <Texto>El <strong>Código Penal Colombiano (Ley 1273 de 2009)</strong> protege la “información y los datos” en el ciberespacio. Algunos delitos
           contemplados son:</Texto>
 
         <Tabla>
@@ -129,19 +128,32 @@ function Legalidad_Hacking({ }) {
 
         <Titulo title="h3" id="principios-éticos-básicos">Principios éticos básicos</Titulo>
 
-        <ol type="1">
+        <Lista type="ol">
           <li><strong>Actuar siempre con autorización.</strong> Nunca realizar
             pruebas o ataques sin permiso explícito del propietario del
-            sistema.</li>        <li><strong>No causar daño.</strong> No alterar, borrar o exponer
-              datos de los sistemas que se prueban.</li>        <li><strong>Respetar la privacidad.</strong> Sí se accede a
-                información sensible, mantenerla confidencial.</li>        <li><strong>Reportar las vulnerabilidades de forma
-                  responsable.</strong> Informar al dueño del sistema, no publicarlas sin
-            su consentimiento.</li>        <li><strong>No aprovecharse del conocimiento.</strong> El
-              conocimiento de seguridad se usa para proteger, no para obtener
-              beneficios ilegales o personales.</li>        <li><strong>Ser transparente y profesional.</strong> Mantener una
-                relación honesta con los clientes o empresas y seguir las normas del
-                contrato.</li>      </ol>
+            sistema.</li>
+
+          <li><strong>No causar daño.</strong> No alterar, borrar o exponer
+            datos de los sistemas que se prueban.</li>
+
+          <li><strong>Respetar la privacidad.</strong> Sí se accede a
+            información sensible, mantenerla confidencial.</li>
+
+          <li><strong>Reportar las vulnerabilidades de forma
+            responsable.</strong> Informar al dueño del sistema, no publicarlas sin
+            su consentimiento.</li>
+
+          <li><strong>No aprovecharse del conocimiento.</strong> El
+            conocimiento de seguridad se usa para proteger, no para obtener
+            beneficios ilegales o personales.</li>
+
+          <li><strong>Ser transparente y profesional.</strong> Mantener una
+            relación honesta con los clientes o empresas y seguir las normas del
+            contrato.</li>
+        </Lista>
+
         <Linea />
+
         <Titulo title="h2" id="4-ejemplos-prácticos">4. Ejemplos prácticos</Titulo>
 
         <Tabla>

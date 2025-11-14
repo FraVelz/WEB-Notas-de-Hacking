@@ -27,7 +27,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="comodines-básicos">1. Comodines básicos</Titulo>
+        <Titulo title="h2" id="1-comodines-básicos">1. Comodines básicos</Titulo>
         <Tabla>
           <TablaCabezera headers={["Comodín", "Significado", "Ejemplo CMD / PowerShell", "Explicación"]} />
 
@@ -61,7 +61,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="ejemplos-prácticos">2. Ejemplos prácticos</Titulo>
+        <Titulo title="h2" id="2-ejemplos-prácticos">2. Ejemplos prácticos</Titulo>
         <Lista>
           <li><strong>Listar todos los archivos de un tipo</strong>:</li>
         </Lista>

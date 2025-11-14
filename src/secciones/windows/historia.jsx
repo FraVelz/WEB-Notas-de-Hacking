@@ -38,7 +38,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h3" id="orígenes-windows-1.0-a-3.x-1985-1994">1. Orígenes: Windows 1.0 a
+        <Titulo title="h3" id="1-orígenes-windows-10-a-3x-1985-1994">1. Orígenes: Windows 1.0 a
           3.x (1985-1994)</Titulo>
         <Lista>
           <li><strong>Windows 1.0 (1985):</strong> Primer intento de Microsoft
@@ -51,7 +51,7 @@ function nameabcd({ }) {
                 para aplicaciones como Word y Excel. Comenzó a desplazar a MS-DOS como
                 plataforma principal de PC.</li>  </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-95-a-98-1995-2000">2. Windows 95 a 98 (1995-2000)</Titulo>
+        <Titulo title="h3" id="2-windows-95-a-98-1995-2000">2. Windows 95 a 98 (1995-2000)</Titulo>
         <Lista>
           <li><strong>Windows 95:</strong> Revolucionó la interfaz con el
             <strong>menú Inicio</strong>, la barra de tareas y el “explorador de
@@ -62,7 +62,7 @@ function nameabcd({ }) {
             para Internet Explorer. Introdujo más funciones de hardware y
             multimedia.</li>  </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-me-y-windows-2000-2000-2001">3. Windows ME y Windows
+        <Titulo title="h3" id="3-windows-me-y-windows-2000-2000-2001">3. Windows ME y Windows
           2000 (2000-2001)</Titulo>
         <Lista>
           <li><strong>Windows 2000:</strong> Orientado a empresas, más estable
@@ -71,20 +71,20 @@ function nameabcd({ }) {
               la experiencia multimedia de usuarios domésticos, pero fue criticado por
               inestabilidad.</li>  </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-xp-2001-2007">4. Windows XP (2001-2007)</Titulo>
+        <Titulo title="h3" id="4-windows-xp-2001-2007">4. Windows XP (2001-2007)</Titulo>
         <Lista>
           <li>Uno de los sistemas más populares de Microsoft.</li>    <li>Basado en <strong>Windows NT</strong>, combinaba estabilidad de
             2000 con facilidad de uso de ME.</li>    <li>Introdujo interfaz <strong>Luna</strong>, soporte de redes
               mejorado y mayor compatibilidad de software.</li>    <li>Duró muchos años en uso debido a su estabilidad y
                 compatibilidad.</li>  </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-vista-2007-2009">5. Windows Vista (2007-2009)</Titulo>
+        <Titulo title="h3" id="5-windows-vista-2007-2009">5. Windows Vista (2007-2009)</Titulo>
         <Lista>
           <li>Mejoras en seguridad (UAC), gráficos (Aero) y búsqueda
             rápida.</li>    <li>Fue criticado por <strong>requerimientos altos de
               hardware</strong> y lentitud en PCs antiguos.</li>  </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-7-2009-2015">6. Windows 7 (2009-2015)</Titulo>
+        <Titulo title="h3" id="6-windows-7-2009-2015">6. Windows 7 (2009-2015)</Titulo>
         <Lista>
           <li>Mejor desempeño y estabilidad que Vista.</li>
           <li>Interfaz refinada, más ligera y popular.</li>
@@ -92,7 +92,7 @@ function nameabcd({ }) {
             de uso y rendimiento.</li>
         </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-8-y-8.1-2012-2015">7. Windows 8 y 8.1 (2012-2015)</Titulo>
+        <Titulo title="h3" id="7-windows-8-y-81-2012-2015">7. Windows 8 y 8.1 (2012-2015)</Titulo>
         <Lista>
           <li>Enfocado en <strong>pantallas táctiles</strong> y dispositivos
             híbridos.</li>
@@ -102,7 +102,7 @@ function nameabcd({ }) {
             interfaz.</li>
         </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-10-2015-2025">8. Windows 10 (2015-2025)</Titulo>
+        <Titulo title="h3" id="8-windows-10-2015-2025">8. Windows 10 (2015-2025)</Titulo>
         <Lista>
           <li>Microsoft volvió al enfoque de escritorio tradicional.</li>
           <li>Introdujo <strong>actualizaciones continuas</strong>, Cortana
@@ -111,7 +111,7 @@ function nameabcd({ }) {
             rendimiento.</li>
         </Lista>
         <Linea />
-        <Titulo title="h3" id="windows-11-2021-presente">9. Windows 11 (2021-presente)</Titulo>
+        <Titulo title="h3" id="9-windows-11-2021-presente">9. Windows 11 (2021-presente)</Titulo>
         <Lista>
           <li>Nuevo diseño <strong>más moderno y minimalista</strong>: esquinas
             redondeadas, menú Inicio centrado.</li>    <li>Mejor integración con <strong>trabajo remoto</strong>, juegos

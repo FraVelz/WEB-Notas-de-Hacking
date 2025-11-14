@@ -28,7 +28,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="cmd-comandos-de-red">CMD — Comandos de Red</Titulo>
+        <Titulo title="h2" id="cmd--comandos-de-red">CMD — Comandos de Red</Titulo>
         <Tabla>
           <TablaCabezera headers={["Comando", "Descripción"]} />
 
@@ -114,7 +114,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="powershell-cmdlets-de-red">PowerShell — Cmdlets de Red</Titulo>
+        <Titulo title="h2" id="powershell--cmdlets-de-red">PowerShell — Cmdlets de Red</Titulo>
         <Tabla>
           <TablaCabezera headers={["Cmdlet", "Descripción"]} />
 

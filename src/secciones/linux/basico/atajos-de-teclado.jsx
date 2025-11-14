@@ -1,11 +1,19 @@
-import Estructura from "../../../componentes/organismos/estructura.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
-
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 
+function Temario({ className = "" }) {
+  return (
+    <div className={className}>
+      {/* Este archivo no tiene enlaces de temario específicos */}
+    </div>
+  );
+}
+
 function nameabcd({ }) {
   return (
+    <>
     <Estructura>
         <Titulo title="h1" id="atajos-de-teclado-en-linux">Atajos de Teclado en linux</Titulo>
 
@@ -89,6 +97,9 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
       </Estructura>
+
+      <TemarioAsideCompleto temario={Temario} />
+    </>
   );
 }
 

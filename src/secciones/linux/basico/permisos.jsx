@@ -111,7 +111,7 @@ function nameabcd({ }) {
   </tbody>
 </Tabla>
         <Linea />
-        <Titulo title="h2" id="ver-permisos">2. Ver permisos</Titulo>
+        <Titulo title="h2" id="2-ver-permisos">2. Ver permisos</Titulo>
         <Codigo code={`ls -l`} language="bash" />
         <Texto>Ejemplo:</Texto>
         <Codigo code={`-rwxr-xr--  1 francisco users 1234 oct 21  script.sh`} language="bash" />
@@ -124,7 +124,7 @@ function nameabcd({ }) {
           <li>users → grupo</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="cambiar-permisos-chmod">3. Cambiar permisos
+        <Titulo title="h2" id="3-cambiar-permisos-chmod">3. Cambiar permisos
           (chmod)</Titulo>
         <Titulo title="h3" id="a-modo-simbólico">a) Modo simbólico</Titulo>
         <Codigo code={`chmod u+x script.sh     # añadir ejecución al usuario
@@ -165,7 +165,7 @@ chmod a+r file.txt      # todos pueden leer`} language="bash" />
   </tbody>
 </Tabla>
         <Linea />
-        <Titulo title="h2" id="cambiar-dueño-o-grupo-chown-chgrp">4. Cambiar dueño o grupo
+        <Titulo title="h2" id="4-cambiar-dueño-o-grupo-chown-chgrp">4. Cambiar dueño o grupo
           (chown, chgrp)</Titulo>
         <Codigo code={`chown usuario archivo
 chgrp grupo archivo
@@ -173,7 +173,7 @@ chown usuario:grupo archivo`} language="bash" />
         <Texto>Ejemplo:</Texto>
         <Codigo code={`sudo chown francisco:users script.sh`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="permisos-especiales">5. Permisos especiales</Titulo>
+        <Titulo title="h2" id="5-permisos-especiales">5. Permisos especiales</Titulo>
         <Texto>Existen tres permisos especiales en Linux:</Texto>
         <Tabla>
   <TablaCabezera headers={["Bit", "Valor", "Se aplica a", "Efecto"]} />
@@ -238,7 +238,7 @@ chmod u-s archivo   # desactivar`} language="bash" />
             carpetas compartidas.</Texto>
         </blockquote>
         <Linea />
-        <Titulo title="h2" id="atributos-de-archivos-chattr-lsattr">6. Atributos de archivos
+        <Titulo title="h2" id="6-atributos-de-archivos-chattr-lsattr">6. Atributos de archivos
           (chattr, lsattr)</Titulo>
         <Texto>Los <strong>atributos</strong> controlan <em>cómo</em> se comporta un
           archivo, más allá de los permisos.</Texto>
@@ -312,7 +312,7 @@ done
 
 lsattr "$(ARCHIVOS[@])"`} language="bash" />
         <Linea />
-        <Titulo title="h2" id="resumen-visual">7. Resumen visual</Titulo>
+        <Titulo title="h2" id="7-resumen-visual">7. Resumen visual</Titulo>
         <Tabla>
   <TablaCabezera headers={["Permiso", "Valor", "Aplica a", "Efecto"]} />
 

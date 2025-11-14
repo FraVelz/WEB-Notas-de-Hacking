@@ -35,7 +35,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="cmd-comandos-de-gestión-de-permisos">CMD — Comandos de Gestión
+        <Titulo title="h2" id="cmd--comandos-de-gestión-de-permisos">CMD — Comandos de Gestión
           de Permisos</Titulo>
         <Tabla>
           <TablaCabezera headers={["Comando", "Descripción"]} />
@@ -93,7 +93,7 @@ function nameabcd({ }) {
           </tbody>
         </Tabla>
         <Linea />
-        <Titulo title="h2" id="powershell-cmdlets-de-gestión-de-permisos">PowerShell — Cmdlets
+        <Titulo title="h2" id="powershell--cmdlets-de-gestión-de-permisos">PowerShell — Cmdlets
           de Gestión de Permisos</Titulo>
         <Tabla>
           <TablaCabezera headers={["Cmdlet", "Descripción"]} />

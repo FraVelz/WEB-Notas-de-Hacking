@@ -6,7 +6,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import Codigo from "../../componentes/moleculas/codigo.jsx";
-import Estructura, { TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
 
 function Temario({ className = "" }) {
   return (
@@ -280,7 +280,7 @@ print(cuenta.saldo)`} language="python" />
         </Tabla>
       </Estructura>
 
-      <TemarioCompleto temario={Temario} />
+      <TemarioAsideCompleto temario={Temario} />
     </>
   );
 }

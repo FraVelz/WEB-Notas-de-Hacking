@@ -39,7 +39,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="qué-es-cidr">1. Qué es CIDR</Titulo>
+        <Titulo title="h2" id="1-qué-es-cidr">1. Qué es CIDR</Titulo>
         
         <Texto><strong>CIDR</strong> significa <strong>Classless Inter-Domain
           Routing</strong>, o en español, <strong>Enrutamiento entre dominios sin
@@ -95,7 +95,7 @@ function nameabcd({ }) {
             broadcast)</Texto>
         </blockquote>
         <Linea />
-        <Titulo title="h2" id="qué-es-una-máscara-de-red-o-de-host">2. Qué es una máscara de
+        <Titulo title="h2" id="2-qué-es-una-máscara-de-red-o-de-host">2. Qué es una máscara de
           red (o de host)</Titulo>
         <Texto>Una <strong>máscara de subred</strong> (subnet mask) indica
           <strong>qué parte de la IP identifica la red</strong> y <strong>qué
@@ -130,7 +130,7 @@ function nameabcd({ }) {
         <Texto>Es decir, la máscara de host muestra <strong>qué bits pueden
           variar</strong> para asignar direcciones a los dispositivos.</Texto>
         <Linea />
-        <Titulo title="h2" id="relación-entre-cidr-y-máscaras">3. Relación entre CIDR y
+        <Titulo title="h2" id="3-relación-entre-cidr-y-máscaras">3. Relación entre CIDR y
           máscaras</Titulo>
         <Tabla>
   <TablaCabezera headers={["CIDR", "Máscara de red", "Máscara de host", "# Hosts válidos"]} />
@@ -163,7 +163,7 @@ function nameabcd({ }) {
   </tbody>
 </Tabla>
         <Linea />
-        <Titulo title="h2" id="ejemplo-práctico">4. Ejemplo práctico</Titulo>
+        <Titulo title="h2" id="4-ejemplo-práctico">4. Ejemplo práctico</Titulo>
         <Texto>Supón que tienes:</Texto>
         <Codigo code={`Red: 10.0.0.0/24`} language="bash" />
         <Texto>Entonces:</Texto>

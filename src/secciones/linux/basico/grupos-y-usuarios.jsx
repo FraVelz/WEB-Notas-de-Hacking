@@ -58,10 +58,8 @@ function Temario({ className = "" }) {
                 procesos del sistema</Enlace ></li>
               <li><Enlace href="#c-control-de-dispositivos-y-permisos-especiales">c)
                 Control de dispositivos y permisos especiales</Enlace >
-                <Lista>
-                  <li><Enlace href="#en-resumen-utilidad-de-grupos-y-usuarios">En resumen
-                    (utilidad de grupos y usuarios)</Enlace ></li>
-                </Lista>
+                <li><Enlace href="#en-resumen-utilidad-de-grupos-y-usuarios">En resumen
+                  (utilidad de grupos y usuarios)</Enlace ></li>
               </li>
             </Lista>
           </li>
@@ -92,70 +90,70 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="gestión-de-usuarios">1. Gestión de usuarios</Titulo>
+        <Titulo title="h2" id="1-gestión-de-usuarios">1. Gestión de usuarios</Titulo>
         <Tabla>
-  <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
+          <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica>useradd</TablaUnica>
-      <TablaUnica>Crea un nuevo usuario.</TablaUnica>
-      <TablaUnica>sudo useradd francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>adduser</TablaUnica>
-      <TablaUnica>Variante más amigable de useradd (usa asistentes).</TablaUnica>
-      <TablaUnica>sudo adduser francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>passwd</TablaUnica>
-      <TablaUnica>Asigna o cambia la contraseña de un usuario.</TablaUnica>
-      <TablaUnica>sudo passwd francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>usermod</TablaUnica>
-      <TablaUnica>Modifica las propiedades de un usuario existente.</TablaUnica>
-      <TablaUnica>sudo usermod -aG sudo francisco (añadir a grupo
+          <tbody>
+            <TablaFila>
+              <TablaUnica>useradd</TablaUnica>
+              <TablaUnica>Crea un nuevo usuario.</TablaUnica>
+              <TablaUnica>sudo useradd francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>adduser</TablaUnica>
+              <TablaUnica>Variante más amigable de useradd (usa asistentes).</TablaUnica>
+              <TablaUnica>sudo adduser francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>passwd</TablaUnica>
+              <TablaUnica>Asigna o cambia la contraseña de un usuario.</TablaUnica>
+              <TablaUnica>sudo passwd francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>usermod</TablaUnica>
+              <TablaUnica>Modifica las propiedades de un usuario existente.</TablaUnica>
+              <TablaUnica>sudo usermod -aG sudo francisco (añadir a grupo
                 sudo)</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>userdel</TablaUnica>
-      <TablaUnica>Elimina un usuario (sin borrar su carpeta personal).</TablaUnica>
-      <TablaUnica>sudo userdel francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>sudo userdel -r</TablaUnica>
-      <TablaUnica>Elimina un usuario y <strong>su directorio home</strong>.</TablaUnica>
-      <TablaUnica>sudo userdel -r francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>id</TablaUnica>
-      <TablaUnica>Muestra el ID del usuario y sus grupos.</TablaUnica>
-      <TablaUnica>id francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>whoami</TablaUnica>
-      <TablaUnica>Muestra el nombre del usuario actual.</TablaUnica>
-      <TablaUnica>whoami</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>su</TablaUnica>
-      <TablaUnica>Cambia de usuario (abre una sesión de otro usuario).</TablaUnica>
-      <TablaUnica>su francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>sudo</TablaUnica>
-      <TablaUnica>Ejecuta un comando como superusuario o con privilegios
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>userdel</TablaUnica>
+              <TablaUnica>Elimina un usuario (sin borrar su carpeta personal).</TablaUnica>
+              <TablaUnica>sudo userdel francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>sudo userdel -r</TablaUnica>
+              <TablaUnica>Elimina un usuario y <strong>su directorio home</strong>.</TablaUnica>
+              <TablaUnica>sudo userdel -r francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>id</TablaUnica>
+              <TablaUnica>Muestra el ID del usuario y sus grupos.</TablaUnica>
+              <TablaUnica>id francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>whoami</TablaUnica>
+              <TablaUnica>Muestra el nombre del usuario actual.</TablaUnica>
+              <TablaUnica>whoami</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>su</TablaUnica>
+              <TablaUnica>Cambia de usuario (abre una sesión de otro usuario).</TablaUnica>
+              <TablaUnica>su francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>sudo</TablaUnica>
+              <TablaUnica>Ejecuta un comando como superusuario o con privilegios
                 elevados.</TablaUnica>
-      <TablaUnica>sudo apt update</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
+              <TablaUnica>sudo apt update</TablaUnica>
+            </TablaFila>
+          </tbody>
+        </Tabla>
         <Titulo title="h3" id="useradd-vs-adduser">useradd vs
           adduser
         </Titulo>
-        <h4 id="useradd-programa-básico-del-sistema">1. useradd
-          (programa básico del sistema)</h4>
+        <Titulo title="h3" id="1-useradd-programa-básico-del-sistema">1. useradd
+          (programa básico del sistema)</Titulo>
         <Lista>
           <li>Es el <strong>comando original</strong> de bajo nivel de Linux para
             crear usuarios.</li>
@@ -185,8 +183,8 @@ function nameabcd({ }) {
 sudo cp -r /etc/skel/. /home/francisco
 sudo chown -R francisco:francisco /home/francisco
 sudo passwd francisco`} language="bash" />
-        <h4 id="adduser-script-de-alto-nivel">2. adduser (script de
-          alto nivel)</h4>
+        <Titulo title="h3" id="2-adduser-script-de-alto-nivel">2. adduser (script de
+          alto nivel)</Titulo>
 
         <Lista>
           <li>Es un <strong>script en Perl</strong> que usa internamente
@@ -204,9 +202,8 @@ sudo passwd francisco`} language="bash" />
             <li>Pide la contraseña y otros datos de forma interactiva</li>
           </Lista>
           <li>
-            <Texto>Está pensado para <strong>uso cotidiano y comodidad del
+            Está pensado para <strong>uso cotidiano y comodidad del
               administrador</strong>
-            </Texto>
           </li>
         </Lista>
 
@@ -220,50 +217,50 @@ sudo passwd francisco`} language="bash" />
           <li>Asigna contraseña (te la pide)</li>
           <li>Te deja todo listo en un paso</li>
         </Lista>
-        <h4 id="comparación-directa">Comparación directa</h4>
+        <Titulo title="h3" id="comparación-directa">Comparación directa</Titulo>
         <Tabla>
-  <TablaCabezera headers={["Característica", "useradd", "adduser"]} />
+          <TablaCabezera headers={["Característica", "useradd", "adduser"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica>Tipo de programa</TablaUnica>
-      <TablaUnica>Binario del sistema</TablaUnica>
-      <TablaUnica>Script en Perl</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Nivel</TablaUnica>
-      <TablaUnica>Bajo nivel (más técnico)</TablaUnica>
-      <TablaUnica>Alto nivel (más amigable)</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Interactivo</TablaUnica>
-      <TablaUnica>❌ No</TablaUnica>
-      <TablaUnica>✅ Sí</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Crea carpeta /home automáticamente</TablaUnica>
-      <TablaUnica>❌ No (debes usar -m)</TablaUnica>
-      <TablaUnica>✅ Sí</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Crea grupo automáticamente</TablaUnica>
-      <TablaUnica>❌ No (debes usar -g)</TablaUnica>
-      <TablaUnica>✅ Sí</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Solicita contraseña</TablaUnica>
-      <TablaUnica>❌ No</TablaUnica>
-      <TablaUnica>✅ Sí</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Ideal para</TablaUnica>
-      <TablaUnica>Scripts, automatización, distros minimalistas</TablaUnica>
-      <TablaUnica>Uso diario, administración sencilla</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
-        <h4 id="en-resumen-gestión-de-usuarios">En resumen (gestión de
-          usuarios)</h4>
+          <tbody>
+            <TablaFila>
+              <TablaUnica>Tipo de programa</TablaUnica>
+              <TablaUnica>Binario del sistema</TablaUnica>
+              <TablaUnica>Script en Perl</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Nivel</TablaUnica>
+              <TablaUnica>Bajo nivel (más técnico)</TablaUnica>
+              <TablaUnica>Alto nivel (más amigable)</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Interactivo</TablaUnica>
+              <TablaUnica>❌ No</TablaUnica>
+              <TablaUnica>✅ Sí</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Crea carpeta /home automáticamente</TablaUnica>
+              <TablaUnica>❌ No (debes usar -m)</TablaUnica>
+              <TablaUnica>✅ Sí</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Crea grupo automáticamente</TablaUnica>
+              <TablaUnica>❌ No (debes usar -g)</TablaUnica>
+              <TablaUnica>✅ Sí</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Solicita contraseña</TablaUnica>
+              <TablaUnica>❌ No</TablaUnica>
+              <TablaUnica>✅ Sí</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Ideal para</TablaUnica>
+              <TablaUnica>Scripts, automatización, distros minimalistas</TablaUnica>
+              <TablaUnica>Uso diario, administración sencilla</TablaUnica>
+            </TablaFila>
+          </tbody>
+        </Tabla>
+        <Titulo title="h3" id="en-resumen-gestión-de-usuarios">En resumen (gestión de
+          usuarios)</Titulo>
         <Lista>
           <li>Usa <strong>adduser</strong> cuando creas usuarios
             manualmente (más seguro y rápido).</li>
@@ -272,44 +269,44 @@ sudo passwd francisco`} language="bash" />
             detalle.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="grupos">2. Grupos</Titulo>
+        <Titulo title="h2" id="2-grupos">2. Grupos</Titulo>
         <Titulo title="h3" id="gestión-de-grupos">Gestión de grupos</Titulo>
         <Tabla>
-  <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
+          <TablaCabezera headers={["Comando", "Descripción", "Ejemplo"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica>groupadd</TablaUnica>
-      <TablaUnica>Crea un nuevo grupo.</TablaUnica>
-      <TablaUnica>sudo groupadd desarrolladores</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>groupdel</TablaUnica>
-      <TablaUnica>Elimina un grupo.</TablaUnica>
-      <TablaUnica>sudo groupdel desarrolladores</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>usermod -aG</TablaUnica>
-      <TablaUnica>Añade un usuario a un grupo.</TablaUnica>
-      <TablaUnica>sudo usermod -aG desarrolladores francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>gpasswd -d</TablaUnica>
-      <TablaUnica>Elimina un usuario de un grupo.</TablaUnica>
-      <TablaUnica>sudo gpasswd -d francisco desarrolladores</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>groups</TablaUnica>
-      <TablaUnica>Muestra los grupos a los que pertenece un usuario.</TablaUnica>
-      <TablaUnica>groups francisco</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>newgrp</TablaUnica>
-      <TablaUnica>Cambia temporalmente el grupo activo en la sesión.</TablaUnica>
-      <TablaUnica>newgrp desarrolladores</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
+          <tbody>
+            <TablaFila>
+              <TablaUnica>groupadd</TablaUnica>
+              <TablaUnica>Crea un nuevo grupo.</TablaUnica>
+              <TablaUnica>sudo groupadd desarrolladores</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>groupdel</TablaUnica>
+              <TablaUnica>Elimina un grupo.</TablaUnica>
+              <TablaUnica>sudo groupdel desarrolladores</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>usermod -aG</TablaUnica>
+              <TablaUnica>Añade un usuario a un grupo.</TablaUnica>
+              <TablaUnica>sudo usermod -aG desarrolladores francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>gpasswd -d</TablaUnica>
+              <TablaUnica>Elimina un usuario de un grupo.</TablaUnica>
+              <TablaUnica>sudo gpasswd -d francisco desarrolladores</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>groups</TablaUnica>
+              <TablaUnica>Muestra los grupos a los que pertenece un usuario.</TablaUnica>
+              <TablaUnica>groups francisco</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>newgrp</TablaUnica>
+              <TablaUnica>Cambia temporalmente el grupo activo en la sesión.</TablaUnica>
+              <TablaUnica>newgrp desarrolladores</TablaUnica>
+            </TablaFila>
+          </tbody>
+        </Tabla>
         <Titulo title="h3" id="qué-es-un-grupo-en-linux">¿Qué es un grupo en Linux?</Titulo>
         <Texto>Un <strong>grupo</strong> es un conjunto de usuarios que
           <strong>comparten ciertos permisos</strong>. Sirve para
@@ -367,8 +364,8 @@ sudo usermod -aG proyecto maria`} language="bash" />
           los grupos</Titulo>
         <Lista>
           <li>
-            <Texto>/etc/group → lista todos los grupos del sistema.
-              Ejemplo de líneas:</Texto>
+            /etc/group → lista todos los grupos del sistema.
+            Ejemplo de líneas:
             <Codigo code={`root:x:0:
 sudo:x:27:francisco
 proyecto:x:1002:juan,maria`} language="bash" />
@@ -377,79 +374,79 @@ proyecto:x:1002:juan,maria`} language="bash" />
         <Titulo title="h3" id="en-resumen-gestión-de-grupos">En resumen (gestión de
           grupos)</Titulo>
         <Tabla>
-  <TablaCabezera headers={["Concepto", "Significado"]} />
+          <TablaCabezera headers={["Concepto", "Significado"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica><strong>Grupo</strong></TablaUnica>
-      <TablaUnica>Conjunto de usuarios que comparten permisos.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica><strong>Grupo primario</strong></TablaUnica>
-      <TablaUnica>Grupo principal que tiene cada usuario por defecto.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica><strong>Grupos secundarios</strong></TablaUnica>
-      <TablaUnica>Otros grupos a los que el usuario pertenece.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica><strong>Ventaja</strong></TablaUnica>
-      <TablaUnica>Facilita administrar permisos a varios usuarios a la vez.</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
+          <tbody>
+            <TablaFila>
+              <TablaUnica><strong>Grupo</strong></TablaUnica>
+              <TablaUnica>Conjunto de usuarios que comparten permisos.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Grupo primario</strong></TablaUnica>
+              <TablaUnica>Grupo principal que tiene cada usuario por defecto.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Grupos secundarios</strong></TablaUnica>
+              <TablaUnica>Otros grupos a los que el usuario pertenece.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Ventaja</strong></TablaUnica>
+              <TablaUnica>Facilita administrar permisos a varios usuarios a la vez.</TablaUnica>
+            </TablaFila>
+          </tbody>
+        </Tabla>
         <Linea />
-        <Titulo title="h2" id="archivos-importantes-del-sistema">3. Archivos importantes del
+        <Titulo title="h2" id="3-archivos-importantes-del-sistema">3. Archivos importantes del
           sistema</Titulo>
         <Tabla>
-  <TablaCabezera headers={["Archivo", "Contiene"]} />
+          <TablaCabezera headers={["Archivo", "Contiene"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica>/etc/passwd</TablaUnica>
-      <TablaUnica>Información básica de todos los usuarios.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>/etc/shadow</TablaUnica>
-      <TablaUnica>Contraseñas cifradas de los usuarios.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>/etc/group</TablaUnica>
-      <TablaUnica>Información sobre los grupos del sistema.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>/etc/sudoers</TablaUnica>
-      <TablaUnica>Usuarios que tienen permisos de superusuario (editado con
+          <tbody>
+            <TablaFila>
+              <TablaUnica>/etc/passwd</TablaUnica>
+              <TablaUnica>Información básica de todos los usuarios.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/etc/shadow</TablaUnica>
+              <TablaUnica>Contraseñas cifradas de los usuarios.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/etc/group</TablaUnica>
+              <TablaUnica>Información sobre los grupos del sistema.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>/etc/sudoers</TablaUnica>
+              <TablaUnica>Usuarios que tienen permisos de superusuario (editado con
                 visudo).</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
+            </TablaFila>
+          </tbody>
+        </Tabla>
         <Linea />
-        <Titulo title="h2" id="ejemplos-prácticos-comunes">4. Ejemplos prácticos comunes</Titulo>
+        <Titulo title="h2" id="4-ejemplos-prácticos-comunes">4. Ejemplos prácticos comunes</Titulo>
         <Lista>
           <li>
-            <Texto><strong>Crear un usuario con carpeta personal y shell
-              bash:</strong></Texto>
+            <strong>Crear un usuario con carpeta personal y shell
+              bash:</strong>
             <Codigo code={`sudo useradd -m -s /bin/bash francisco`} language="bash" />
           </li>
           <li>
-            <Texto><strong>Cambiar nombre de usuario:</strong></Texto>
+            <strong>Cambiar nombre de usuario:</strong>
             <Codigo code={`sudo usermod -l nuevo_nombre francisco`} language="bash" />
           </li>
           <li>
-            <Texto><strong>Bloquear/desbloquear usuario:</strong></Texto>
+            <strong>Bloquear/desbloquear usuario:</strong>
             <Codigo code={`sudo usermod -L francisco    # Bloquear
 sudo usermod -U francisco    # Desbloquear`} language="bash" />
           </li>
           <li>
-            <Texto><strong>Ver todos los usuarios del sistema:</strong></Texto>
+            <strong>Ver todos los usuarios del sistema:</strong>
             <Codigo code={`cut -d: -f1 /etc/passwd`} language="bash" />
           </li>
         </Lista>
         <Linea />
         <Titulo title="h2" id="utilidad-de-grupos-y-usuarios">Utilidad de grupos y
           usuarios</Titulo>
-        <Titulo title="h3" id="cuando-hay-varios-usuarios">1. Cuando hay varios usuarios</Titulo>
+        <Titulo title="h3" id="1-cuando-hay-varios-usuarios">1. Cuando hay varios usuarios</Titulo>
         <Texto>Ahí es donde <strong>más se nota su función</strong>.</Texto>
         <Texto>Ejemplo: En un servidor o una universidad, hay muchos usuarios
           distintos:</Texto>
@@ -466,11 +463,11 @@ sudo usermod -U francisco    # Desbloquear`} language="bash" />
         <Texto>Así, Linux mantiene la <strong>seguridad y el orden</strong> entre
           todos los usuarios.</Texto>
         <Linea />
-        <Titulo title="h3" id="cuando-eres-el-único-usuario">2. Cuando eres el único
+        <Titulo title="h3" id="2-cuando-eres-el-único-usuario">2. Cuando eres el único
           usuario</Titulo>
         <Texto>Incluso así, <strong>sigue siendo muy útil</strong> por estas
           razones:</Texto>
-        <h4 id="a-seguridad-interna">a) Seguridad interna</h4>
+        <Titulo title="h3" id="a-seguridad-interna">a) Seguridad interna</Titulo>
         <Lista>
           <li>El sistema separa procesos y permisos por usuario.</li>
           <li>Ejemplo: sí un programa malicioso se ejecuta como “usuario normal”,
@@ -484,8 +481,8 @@ sudo usermod -U francisco    # Desbloquear`} language="bash" />
           sudo.
         </Texto>
         <Linea />
-        <h4 id="b-servicios-y-procesos-del-sistema">b) Servicios y procesos del
-          sistema</h4>
+        <Titulo title="h3" id="b-servicios-y-procesos-del-sistema">b) Servicios y procesos del
+          sistema</Titulo>
         <Texto>Linux trata <strong>cada servicio como sí fuera un usuario
           separado</strong> para aislarlos.</Texto>
         <Texto>Por ejemplo:</Texto>
@@ -498,8 +495,8 @@ nobody     → usuario “vacío” usado por procesos sin privilegios`} languag
           limitado.
         </Texto>
         <Linea />
-        <h4 id="c-control-de-dispositivos-y-permisos-especiales">c) Control de
-          dispositivos y permisos especiales</h4>
+        <Titulo title="h3" id="c-control-de-dispositivos-y-permisos-especiales">c) Control de
+          dispositivos y permisos especiales</Titulo>
         <Texto>Los grupos también controlan <strong>qué puede hacer tú usuario con
           el hardware</strong>, incluso sí eres el único:</Texto>
         <Lista>
@@ -515,23 +512,23 @@ nobody     → usuario “vacío” usado por procesos sin privilegios`} languag
         <h5 id="en-resumen-utilidad-de-grupos-y-usuarios">En resumen (utilidad
           de grupos y usuarios)</h5>
         <Tabla>
-  <TablaCabezera headers={["Situación", "¿Por qué sirven usuarios y grupos?"]} />
+          <TablaCabezera headers={["Situación", "¿Por qué sirven usuarios y grupos?"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica>Varios usuarios en un PC</TablaUnica>
-      <TablaUnica>Controlan el acceso y los permisos entre personas distintas.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica>Solo un usuario en el PC</TablaUnica>
-      <TablaUnica>Protegen el sistema, los servicios y los recursos del hardware.</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
+          <tbody>
+            <TablaFila>
+              <TablaUnica>Varios usuarios en un PC</TablaUnica>
+              <TablaUnica>Controlan el acceso y los permisos entre personas distintas.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica>Solo un usuario en el PC</TablaUnica>
+              <TablaUnica>Protegen el sistema, los servicios y los recursos del hardware.</TablaUnica>
+            </TablaFila>
+          </tbody>
+        </Tabla>
         <Linea />
-        <Titulo title="h3" id="otros">3. Otros</Titulo>
-        <h4 id="cuando-creas-o-manejas-máquinas-virtuales-o-reales">1. Cuando
-          creas o manejas máquinas (virtuales o reales)</h4>
+        <Titulo title="h3" id="3-otros">3. Otros</Titulo>
+        <Titulo title="h3" id="1-cuando-creas-o-manejas-máquinas-virtuales-o-reales">1. Cuando
+          creas o manejas máquinas (virtuales o reales)</Titulo>
         <Texto>Cada máquina (por ejemplo, una que instalas con VirtualBox, KVM o
           Docker) tiene su propio <strong>sistema Linux</strong>, y dentro de él
           <strong>todo funciona con usuarios y grupos</strong>.
@@ -547,8 +544,8 @@ nobody     → usuario “vacío” usado por procesos sin privilegios`} languag
         </Lista>
         <Texto>En máquinas virtuales o servidores, <em>la seguridad y estabilidad
           dependen directamente de esos permisos.</em></Texto>
-        <h4 id="en-ciberseguridad-o-administración">2. En ciberseguridad o
-          administración</h4>
+        <Titulo title="h3" id="2-en-ciberseguridad-o-administración">2. En ciberseguridad o
+          administración</Titulo>
         <Texto>Sí quieres aprender hacking ético, pentesting o proteger sistemas,
           necesitas dominar esto porque:</Texto>
         <Lista>
@@ -563,8 +560,8 @@ nobody     → usuario “vacío” usado por procesos sin privilegios`} languag
           no debería poder leer /etc/shadow (donde están las
           contraseñas). Ese aislamiento lo logran los <strong>usuarios y
             grupos</strong>.</Texto>
-        <h4 id="en-desarrollo-o-automatización">3. En desarrollo o
-          automatización</h4>
+        <Titulo title="h3" id="3-en-desarrollo-o-automatización">3. En desarrollo o
+          automatización</Titulo>
         <Texto>Cuando haces tus propias máquinas, scripts o aplicaciones:</Texto>
         <Lista>
           <li>Puedes crear <strong>usuarios específicos para cada proceso</strong>
@@ -578,29 +575,29 @@ nobody     → usuario “vacío” usado por procesos sin privilegios`} languag
         <Codigo code={`sudo useradd -r -s /bin/false servidor_web`} language="bash" />
         <Texto>Esto crea un usuario “de sistema” sin acceso a terminal, usado solo
           para ejecutar un servicio.</Texto>
-        <h4 id="en-resumen-otros">En resumen (otros)</h4>
+        <Titulo title="h3" id="en-resumen-otros">En resumen (otros)</Titulo>
         <Tabla>
-  <TablaCabezera headers={["Área", "¿Por qué es importante manejar usuarios y grupos?"]} />
+          <TablaCabezera headers={["Área", "¿Por qué es importante manejar usuarios y grupos?"]} />
 
-  <tbody>
-    <TablaFila>
-      <TablaUnica><strong>Ciberseguridad</strong></TablaUnica>
-      <TablaUnica>Aísla procesos, evita escaladas de privilegios.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica><strong>Sistemas / servidores</strong></TablaUnica>
-      <TablaUnica>Controla accesos, protege servicios.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica><strong>Programación / DevOps</strong></TablaUnica>
-      <TablaUnica>Permite ejecutar procesos con seguridad.</TablaUnica>
-    </TablaFila>
-    <TablaFila>
-      <TablaUnica><strong>Máquinas virtuales / contenedores</strong></TablaUnica>
-      <TablaUnica>Cada entorno tiene sus propios usuarios y permisos.</TablaUnica>
-    </TablaFila>
-  </tbody>
-</Tabla>
+          <tbody>
+            <TablaFila>
+              <TablaUnica><strong>Ciberseguridad</strong></TablaUnica>
+              <TablaUnica>Aísla procesos, evita escaladas de privilegios.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Sistemas / servidores</strong></TablaUnica>
+              <TablaUnica>Controla accesos, protege servicios.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Programación / DevOps</strong></TablaUnica>
+              <TablaUnica>Permite ejecutar procesos con seguridad.</TablaUnica>
+            </TablaFila>
+            <TablaFila>
+              <TablaUnica><strong>Máquinas virtuales / contenedores</strong></TablaUnica>
+              <TablaUnica>Cada entorno tiene sus propios usuarios y permisos.</TablaUnica>
+            </TablaFila>
+          </tbody>
+        </Tabla>
         <Texto>En palabras simples:</Texto>
         <blockquote>
           <Texto>Sí no entiendes cómo Linux maneja usuarios, grupos y permisos, nunca

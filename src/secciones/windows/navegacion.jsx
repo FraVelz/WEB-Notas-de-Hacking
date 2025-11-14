@@ -41,7 +41,7 @@ function nameabcd({ }) {
 
       <TemarioCompleto temario={Temario} />
       
-      <Titulo title="h2" id="windows-cmd-command-prompt">1. Windows CMD (Command Prompt)</Titulo>
+      <Titulo title="h2" id="1-windows-cmd-command-prompt">1. Windows CMD (Command Prompt)</Titulo>
       <Titulo title="h3" id="navegación-por-directorios">Navegación por directorios</Titulo>
       <Tabla>
   <TablaCabezera headers={["Comando", "Función"]} />
@@ -119,7 +119,7 @@ function nameabcd({ }) {
   </tbody>
 </Tabla>
       <Linea />
-      <Titulo title="h2" id="powershell-cmdlets">2. PowerShell (cmdlets)</Titulo>
+      <Titulo title="h2" id="2-powershell-cmdlets">2. PowerShell (cmdlets)</Titulo>
       <Texto>PowerShell tiene cmdlets más potentes y consistentes. Se escriben en
         formato <strong>Verbo-Sustantivo</strong>.</Texto>
       <Titulo title="h3" id="navegación-por-directorios-cmdlets">Navegación por directorios
