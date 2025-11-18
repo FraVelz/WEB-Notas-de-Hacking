@@ -10,32 +10,26 @@ import Codigo from "../../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#manipulación-de-strings-en-bash-script">Manipulación de
-        strings en bash script</Enlace >
-        <Lista>
-          <li><Enlace href="#temario">Temario</Enlace ></li>
-          <li><Enlace href="#1-definir-strings">1. Definir strings</Enlace ></li>
-          <li><Enlace href="#2-longitud-de-un-string">2. Longitud de un string</Enlace ></li>
-          <li><Enlace href="#3-substrings">3. Substrings</Enlace ></li>
-          <li><Enlace href="#4-reemplazos-dentro-de-un-string">4. Reemplazos dentro de
-            un string</Enlace ></li>
-          <li><Enlace href="#5-eliminar-prefijos-y-sufijos">5. Eliminar prefijos y
-            sufijos</Enlace ></li>
-          <li><Enlace href="#6-concatenar-strings">6. Concatenar strings</Enlace ></li>
-          <li><Enlace href="#7-convertir-mayúsculas--minúsculas-bash-4">7. Convertir
-            mayúsculas / minúsculas (Bash 4+)</Enlace ></li>
-          <li><Enlace href="#8-buscar-dentro-de-un-string">8. Buscar dentro de un
-            string</Enlace ></li>
-          <li><Enlace href="#9-dividir-un-string-split">9. Dividir un string
-            (split)</Enlace ></li>
-          <li><Enlace href="#10-juntar-un-array-en-string">10. Juntar un array en
-            string</Enlace ></li>
-          <li><Enlace href="#11-expresiones-regulares-en-strings">11. Expresiones
-            regulares en strings</Enlace ></li>
-          <li><Enlace href="#12-lectura-carácter-por-carácter">12. Lectura carácter por
-            carácter</Enlace ></li>
-        </Lista>
-      </li>
+      <li><Enlace href="#1-definir-strings">1. Definir strings</Enlace ></li>
+      <li><Enlace href="#2-longitud-de-un-string">2. Longitud de un string</Enlace ></li>
+      <li><Enlace href="#3-substrings">3. Substrings</Enlace ></li>
+      <li><Enlace href="#4-reemplazos-dentro-de-un-string">4. Reemplazos dentro de
+        un string</Enlace ></li>
+      <li><Enlace href="#5-eliminar-prefijos-y-sufijos">5. Eliminar prefijos y
+        sufijos</Enlace ></li>
+      <li><Enlace href="#6-concatenar-strings">6. Concatenar strings</Enlace ></li>
+      <li><Enlace href="#7-convertir-mayúsculas-minúsculas-bash-4">7. Convertir
+        mayúsculas / minúsculas (Bash 4+)</Enlace ></li>
+      <li><Enlace href="#8-buscar-dentro-de-un-string">8. Buscar dentro de un
+        string</Enlace ></li>
+      <li><Enlace href="#9-dividir-un-string-split">9. Dividir un string
+        (split)</Enlace ></li>
+      <li><Enlace href="#10-juntar-un-array-en-string">10. Juntar un array en
+        string</Enlace ></li>
+      <li><Enlace href="#11-expresiones-regulares-en-strings">11. Expresiones
+        regulares en strings</Enlace ></li>
+      <li><Enlace href="#12-lectura-carácter-por-carácter">12. Lectura carácter por
+        carácter</Enlace ></li>
     </Lista>
   );
 }

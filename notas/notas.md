@@ -585,3 +585,162 @@ No eliminé nada: solo ordené, agrupé y mejoré la redacción.
 * Ciberdelincuentes y su metodología
 * Técnicas comunes
 * Ejemplos reales
+
+
+
+
+
+
+
+
+
+
+
+
+privacidad total en dispositivos android:
+google pixel - grapheneOS
+
+
+Enlaces a las bolsas Faraday recomendadas.
+Faraday Bags
+BEST SELLER FARADAY BAGS
+Faraday Bags for Military 
+
+mejor criptomonedas horientadas a la privacidad: Monero.
+pagar en cripto anonimamente sin kyc
+trustwallet
+buscar elodir y buscar intermediarios para ser inrastreable las monedas criptos y el dinero fisico
+fixedfloat
+houdini
+
+pvadeals - comprar numeros de forma anonima
+
+tutanota - proton mail para correos electronicos 
+
+reenviadores de email
+dackdack go email - correos aleatorios que los servicios y mensajes que se envian a este se redirecionan al correo principal 
+Clientes de correo privados:
+
+Proton
+
+Tutanota
+
+Reenviadores:
+
+Duck
+
+Simplelogin (Proton)
+
+Firefox Relay (Firefox)
+
+Annonady (autoalojado)
+
+eliminar datos de internet que se recopilan como cokies etc.
+
+Optery
+
+Incogni
+
+OneRep
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sí, puede parecer exageradamente paranoico; sin embargo, esta configuración es usada por personas que requieren este nivel de protección, evalúa tu contexto y adáptalo a tus necesidades. Te dejo un resumen.
+Configuraciones generales
+
+    Uso de dos dispositivos Pixel con GrapheneOS instalado.
+    Ambos deben tener autenticación física en el arranque y estar verificados y compilados de forma reproducible.
+    Solo usar eSIM anónima, pagada con criptomonedas, con IP rotativa y proveedor con políticas claras de no retención de logs.
+    Enrutar todo el tráfico a través de una VPN multisalto (preferiblemente con sede en Suiza).
+    Reinicio periódico de los dispositivos para limpiar memoria RAM y caché.
+    No instalar aplicaciones populares ni de mensajería centralizada.
+    Cuando no se usen, guardar los dispositivos en una bolsa Faraday.
+    Mantener disciplina de uso rigurosa para evitar ataques de ingeniería social.
+    Laptop recomendada: una ThinkPad modificada que ejecute Qubes OS.
+
+Dispositivo 1 (Privado / No público)
+
+Propósito:
+Gestión de carteras activas de criptomonedas, comunicaciones privadas y navegación general.
+
+Modificaciones a hacerle:
+
+    Eliminar todos los módulos de telemetría y sensores sensibles DE MANERA FÍSICA, incluyendo:
+        Micrófono, cámara, GPS, lector de huellas, sensor de proximidad, giroscopio y acelerómetros.
+    No usar mensajerías tradicionales ni centralizadas (WhatsApp, Telegram, Signal).
+    Utilizar protocolos descentralizados con cliente y servidor autoalojados o, si la situación lo permite, mensajerías como Sessions.
+    Evitar cualquier hardware o software que pueda transmitir información sin consentimiento.
+
+Dispositivo 2 (Público / Identidad expuesta)
+
+Propósito:
+Uso en gestiones bancarias, trámites con identidad verificada y servicios que requieren exposición regulada.
+
+Modificaciones a hacerle:
+
+    Mantener los módulos activos (GPS, Wi-Fi, Bluetooth, NFC) pero con interruptores físicos para desconectarlos cuando no se necesiten.
+    Desactivar o quitar el micrófono, sustituyéndolo por uno cableado y desconectable.
+    Cubrir la cámara cuando no se use (ya que puede ser necesaria para autenticación).
+    Usar un navegador aislado para acceder a redes sociales o servicios de riesgo.
+
+Dispositivo 3 (Laptop)
+
+Propósito:
+Tareas de trabajo y uso general con máxima seguridad.
+
+Modificaciones a hacerle:
+
+    Usar una ThinkPad modificada ejecutando Qubes OS, en sí esto ya hará todo el trabajo técnico, solo asegúrate de no ser idiota y caer en maniobras de ingeniería social.
+    Mantener estricta separación entre entornos y no mezclar actividades personales con las críticas.
+
+Además, es importante reiniciarlos a menudo para así borrar datos en caché, logs y memoría RAM.
+
+Te recomiendo copiar y pegar esta configuración en un lugar seguro para que la tengas presente por si llega el día que seriamente tengas que usarla.
+
+Cursor IA1
+1. Tema Tokio Night
+2. Material Icon
+3. Indent Rainbow
+4. VS ode Animations
+
+
+dockers
+
+enumeracion de servicios comunes y gestores de contenido
+
+escalada de privilegios
+
+owasp top10 vulnebabilidades webs
+
+buffer overflow
+
+resolucion de maquinas
+
+metasploit
+
+sqlmap 
+
+introducion a pivoting
+
+sql inyection en clausulas where
+
+nmap
+
+burp suite
+
+nessus

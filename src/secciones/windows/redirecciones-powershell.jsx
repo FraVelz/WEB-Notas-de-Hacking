@@ -14,7 +14,6 @@ function Temario({ className = "" }) {
         PowerShell</Enlace ></li>
       <li><Enlace href="#operadores-de-redirección">Operadores de
         redirección</Enlace ></li>
-      <li><Enlace href="#operadores-lógicos">Operadores lógicos</Enlace ></li>
       <li><Enlace href="#ejemplos-combinados">Ejemplos combinados</Enlace ></li>
       <li><Enlace href="#tip-extra-usar-redirecciones-dentro-de-scripts">Tip extra:
         usar redirecciones dentro de scripts</Enlace ></li>

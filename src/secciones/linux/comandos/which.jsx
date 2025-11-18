@@ -1,29 +1,23 @@
-import Enlace from "../../../componentes/atomos/enlace.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
+
+import Enlace from "../../../componentes/atomos/enlace.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#which-en-linux">Which en Linux</Enlace >
-        <Lista>
-          <li><Enlace href="#temario">Temario</Enlace ></li>
-          <li><Enlace href="#que-es-el-comando-which">¿Que es el comando which?</Enlace >
-            <Lista>
-              <li><Enlace href="#ejemplo-básico">Ejemplo básico</Enlace ></li>
-              <li><Enlace href="#otro-ejemplo">Otro ejemplo</Enlace ></li>
-              <li><Enlace href="#sí-el-comando-no-existe">Sí el comando no existe</Enlace ></li>
-              <li><Enlace href="#ver-qué-versión-se-usa-sí-hay-varias-instaladas">Ver qué
-                versión se usa sí hay varias instaladas</Enlace ></li>
-              <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
-            </Lista>
-          </li>
-        </Lista>
+      <li><Enlace href="#que-es-el-comando-which">¿Que es el comando which?</Enlace >
+        <li><Enlace href="#ejemplo-básico">Ejemplo básico</Enlace ></li>
+        <li><Enlace href="#otro-ejemplo">Otro ejemplo</Enlace ></li>
+        <li><Enlace href="#sí-el-comando-no-existe">Sí el comando no existe</Enlace ></li>
+        <li><Enlace href="#ver-qué-versión-se-usa-sí-hay-varias-instaladas">Ver qué
+          versión se usa sí hay varias instaladas</Enlace ></li>
+        <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
       </li>
     </Lista>
   );

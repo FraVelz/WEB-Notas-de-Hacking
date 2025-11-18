@@ -1,31 +1,24 @@
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
+
 import Enlace from "../../../componentes/atomos/enlace.jsx";
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
-import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
 import Imagen from "../../../componentes/atomos/imagen.jsx";
 
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#cifrado-cesar-con-tr-en-linux">Cifrado Cesar con tr en
-        Linux</Enlace >
-        <Lista>
-          <li><Enlace href="#temario">Temario</Enlace >
-            <Lista>
-              <li><Enlace href="#parte-1">Parte 1</Enlace ></li>
-              <li><Enlace href="#parte-2">Parte 2</Enlace ></li>
-              <li><Enlace href="#3-qué-hace-exactamente-este-caso">3. Qué hace exactamente
-                este caso</Enlace ></li>
-              <li><Enlace href="#ejemplo-práctico">Ejemplo práctico</Enlace ></li>
-              <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
-            </Lista>
-          </li>
-        </Lista>
-      </li>
-
+      <Lista>
+        <li><Enlace href="#parte-1">Parte 1</Enlace ></li>
+        <li><Enlace href="#parte-2">Parte 2</Enlace ></li>
+        <li><Enlace href="#qué-hace-exactamente-este-caso">Qué hace exactamente
+          este caso</Enlace ></li>
+        <li><Enlace href="#ejemplo-práctico">Ejemplo práctico</Enlace ></li>
+        <li><Enlace href="#en-resumen">En resumen</Enlace ></li>
+      </Lista>
     </Lista>
   );
 }

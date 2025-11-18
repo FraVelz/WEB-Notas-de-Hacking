@@ -1,13 +1,14 @@
+import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../componentes/organismos/estructura.jsx";
+
 import Enlace from "../../componentes/atomos/enlace.jsx";
-import Estructura, { TemarioAsideCompleto } from "../../componentes/organismos/estructura.jsx";
 import Linea from "../../componentes/atomos/linea.jsx";
 import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#temario">Temario</Enlace ></li>
       <li><Enlace href="#qué-es-la-concientización-en-ciberseguridad">¿Qué es la
         concientización en ciberseguridad?</Enlace ></li>
       <li><Enlace href="#1-redes-wi-fi-públicas-o-desconocidas">1. Redes Wi-Fi
@@ -54,10 +55,11 @@ function nameabcd({ }) {
           sino en errores humanos, por ejemplo, dar clic en un enlace malicioso,
           usar una red pública sin protección o compartir información sensible sin
           pensarlo.</Texto>
+
+        <TemarioCompleto temario={Temario} />
+
         <Linea />
-        <Titulo title="h2" id="temario">Temario</Titulo>
-        <Texto><Enlace href="./../readme.md#temario">Regresar a la guía principal</Enlace ></Texto>
-        <Linea />
+
         <Titulo title="h2" id="qué-es-la-concientización-en-ciberseguridad">¿Qué es la
           concientización en ciberseguridad?</Titulo>
         <Texto>Es el conjunto de conocimientos, hábitos y comportamientos que te
@@ -67,7 +69,7 @@ function nameabcd({ }) {
           dinero.</Texto>
         <Texto>A continuación los riesgos más comunes y cómo prevenirlos…</Texto>
         <Linea />
-        <Titulo title="h2" id="redes-wi-fi-públicas-o-desconocidas">1. Redes Wi-Fi públicas o
+        <Titulo title="h2" id="1-redes-wi-fi-públicas-o-desconocidas">1. Redes Wi-Fi públicas o
           desconocidas</Titulo>
         <Texto><strong>Ejemplo:</strong> Conectarte al Wi-Fi gratis de un café,
           aeropuerto o centro comercial.</Texto>
@@ -86,7 +88,7 @@ function nameabcd({ }) {
           <li>Desactiva la conexión automática a redes Wi-Fi.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="phishing-suplantación-para-robar-datos">2. Phishing
+        <Titulo title="h2" id="2-phishing-suplantación-para-robar-datos">2. Phishing
           (suplantación para robar datos)</Titulo>
         <Texto><strong>Ejemplo:</strong> Te llega un correo o mensaje diciendo que
           tú cuenta será suspendida, con un botón para “verificar”.</Texto>
@@ -106,7 +108,7 @@ function nameabcd({ }) {
           <li>Activa la verificación en dos pasos (2FA) en tus cuentas.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="enlaces-y-urls-maliciosas">3. Enlaces y URLs maliciosas</Titulo>
+        <Titulo title="h2" id="3-enlaces-y-urls-maliciosas">3. Enlaces y URLs maliciosas</Titulo>
         <Texto><strong>Ejemplo:</strong> Un amigo te manda un enlace “gracioso” o de
           una “oferta increíble”.</Texto>
         <Texto><strong>Riesgo:</strong> Puede ser una web que descarga malware o
@@ -121,7 +123,7 @@ function nameabcd({ }) {
           <li>Sí dudas, analiza el enlace con <Enlace href="https://www.virustotal.com">VirusTotal.com</Enlace >.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="códigos-qr-maliciosos">4. Códigos QR maliciosos</Titulo>
+        <Titulo title="h2" id="4-códigos-qr-maliciosos">4. Códigos QR maliciosos</Titulo>
         <Texto><strong>Ejemplo:</strong> Ves un QR pegado en una pared o en una mesa
           de restaurante.</Texto>
         <Texto><strong>Riesgo:</strong> Puede redirigirte a una web fraudulenta o
@@ -134,7 +136,7 @@ function nameabcd({ }) {
           <li>Usa apps que muestren la URL antes de abrirla.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="contraseñas-débiles-o-reutilizadas">5. Contraseñas débiles o
+        <Titulo title="h2" id="5-contraseñas-débiles-o-reutilizadas">5. Contraseñas débiles o
           reutilizadas</Titulo>
         <Texto><strong>Riesgo:</strong> Sí un sitio donde usaste tú contraseña se
           filtra, los atacantes pueden acceder a todas tus otras cuentas.</Texto>
@@ -148,7 +150,7 @@ function nameabcd({ }) {
             posible.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="software-y-actualizaciones">6. Software y actualizaciones</Titulo>
+        <Titulo title="h2" id="6-software-y-actualizaciones">6. Software y actualizaciones</Titulo>
         <Texto><strong>Riesgo:</strong> Usar sistemas o apps desactualizadas te deja
           vulnerable a exploits conocidos.</Texto>
         <Texto><strong>Consejos:</strong></Texto>
@@ -159,7 +161,7 @@ function nameabcd({ }) {
             spyware.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="ingeniería-social">7. Ingeniería social</Titulo>
+        <Titulo title="h2" id="7-ingeniería-social">7. Ingeniería social</Titulo>
         <Texto><strong>Ejemplo:</strong> Un atacante se hace pasar por técnico de
           soporte o amigo para obtener tus datos.</Texto>
         <Texto><strong>Qué hacer:</strong></Texto>
@@ -170,21 +172,28 @@ function nameabcd({ }) {
           <li>Nunca compartas códigos de verificación o contraseñas, ni siquiera
             “por ayuda”.</li>
         </Lista>
+
         <Linea />
-        <Titulo title="h2" id="dispositivos-físicos">8. Dispositivos físicos</Titulo>
+
+        <Titulo title="h2" id="8-dispositivos-físicos">8. Dispositivos físicos</Titulo>
+
         <Texto><strong>Ejemplo:</strong> Conectas una memoria USB que
           encontraste.</Texto>
         <Texto><strong>Riesgo:</strong> Puede tener malware que infecte tú
           computadora.</Texto>
         <Texto><strong>Prevención:</strong></Texto>
+
         <Lista>
           <li>No conectes USBs desconocidas.</li>
           <li>Desactiva la ejecución automática.</li>
           <li>Escanea los dispositivos externos con un antivirus.</li>
         </Lista>
+
         <Linea />
+
         <Titulo title="h2" id="hábitos-esenciales-de-ciberseguridad-personal">Hábitos
           esenciales de ciberseguridad personal</Titulo>
+
         <Lista>
           <li>Usa contraseñas únicas y seguras.</li>
           <li>Activa el 2FA.</li>
@@ -195,7 +204,9 @@ function nameabcd({ }) {
             dinero.</li>
           <li>Haz copias de seguridad de tus archivos importantes.</li>
         </Lista>
+
         <Linea />
+
         <Titulo title="h2" id="en-resumen">En resumen</Titulo>
         <blockquote>
           <Texto>La mejor defensa contra los ciberataques no es la tecnología, sino la

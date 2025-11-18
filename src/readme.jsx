@@ -36,18 +36,13 @@ function Readme() {
                 </Texto>
 
                 <Texto>
-                    <b>Errores:</b> Por ahora, falta información, y También hay secciones que no son legibles
-                    en PC, pero son más o menos legibles en dispositivos móviles o pantallas similares.
+                    <b>Errores:</b> Por ahora, falta información, y ahora ya que se arreglaron los anteriores, 
+                    errores mensionados en las actualizaciones pasadas, ahora falta organizar mejor la información, 
+                    y despues previamente se estara agregando mas informacion, todo esto de a poco a poco...
                 </Texto>
 
                 <Texto>
-                    Secciones como las que contienen tablas sin formateo o estilo,
-                    secciones con estilos incompletos en PC, información poco clara o desordenada,
-                    y secciones con información incompleta.
-                </Texto>
-
-                <Texto>
-                    Todas las anteriores secciones —y muchas más— estarán en
+                    Todas las anteriores —y muchas más— estarán en
                     construcción y mejoramiento continuo. ¡NOS VEMOS!
                 </Texto>
 

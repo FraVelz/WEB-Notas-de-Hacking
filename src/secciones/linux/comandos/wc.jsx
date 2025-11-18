@@ -9,14 +9,12 @@ import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../comp
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#wc--word-count-resumen-rápido">wc — word count (resumen
+      <li><Enlace href="#wc-word-count-resumen-rápido">wc — word count (resumen
         rápido)</Enlace >
-        <Lista>
           <li><Enlace href="#sintaxis-básica">Sintaxis básica</Enlace ></li>
           <li><Enlace href="#opciones-útiles">Opciones útiles</Enlace ></li>
           <li><Enlace href="#ejemplos">Ejemplos</Enlace ></li>
           <li><Enlace href="#notas-importantes">Notas importantes</Enlace ></li>
-        </Lista>
       </li>
     </Lista>
   );
@@ -38,11 +36,11 @@ function nameabcd({ }) {
           <strong>líneas, palabras, bytes o caracteres</strong>, y también la
           longitud de la línea más larga.
         </Texto>
-        <Titulo title="h3" id="sintaxis-básica">Sintaxis básica</Titulo>
+        <Titulo title="h2" id="sintaxis-básica">Sintaxis básica</Titulo>
         <Codigo code={`wc [opciones] [archivo...]`} language="bash" />
         <Texto>Sí no le pasas archivo lee desde la entrada estándar (útil con
           pipes).</Texto>
-        <Titulo title="h3" id="opciones-útiles">Opciones útiles</Titulo>
+        <Titulo title="h2" id="opciones-útiles">Opciones útiles</Titulo>
         <Lista>
           <li>-l → cuenta <strong>líneas</strong>.</li>
           <li>-w → cuenta <strong>palabras</strong>.</li>
@@ -52,7 +50,7 @@ function nameabcd({ }) {
           <li>-L → muestra la longitud de la <strong>línea más
             larga</strong>.</li>
         </Lista>
-        <Titulo title="h3" id="ejemplos">Ejemplos</Titulo>
+        <Titulo title="h2" id="ejemplos">Ejemplos</Titulo>
         <Codigo code={`wc archivo.txt
 # salida:   10  45  320 archivo.txt
 # significa: 10 líneas, 45 palabras, 320 bytes
@@ -65,7 +63,7 @@ cat archivo.txt | wc -w
 
 grep -R "TODO" src/ | wc -l
 # cuenta cuántas líneas contienen "TODO" en todo el árbol src/`} language="bash" />
-        <Titulo title="h3" id="notas-importantes">Notas importantes</Titulo>
+        <Titulo title="h2" id="notas-importantes">Notas importantes</Titulo>
         <Lista>
           <li>-c cuenta <strong>bytes</strong>, no caracteres — en
             archivos UTF-8 algunos caracteres ocupan varios bytes. Usa

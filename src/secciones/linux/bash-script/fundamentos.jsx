@@ -11,32 +11,26 @@ import Codigo from "../../../componentes/moleculas/codigo.jsx";
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#fundamentos-de-bash-script">Fundamentos de Bash Script</Enlace >
+      <li><Enlace href="#cabecera-del-script">Cabecera del Script</Enlace ></li>
+      <li><Enlace href="#imprimir-texto-y-comentarios">Imprimir texto y
+        comentarios</Enlace ></li>
+      <li><Enlace href="#variables-en-bash">Variables en Bash</Enlace >
         <Lista>
-          <li><Enlace href="#temario">Temario</Enlace ></li>
-          <li><Enlace href="#cabecera-del-script">Cabecera del Script</Enlace ></li>
-          <li><Enlace href="#imprimir-texto-y-comentarios">Imprimir texto y
-            comentarios</Enlace ></li>
-          <li><Enlace href="#variables-en-bash">Variables en Bash</Enlace >
-            <Lista>
-              <li><Enlace href="#variables-especiales">Variables especiales</Enlace ></li>
-            </Lista>
-          </li>
-          <li><Enlace href="#strings">Strings</Enlace ></li>
-          <li><Enlace href="#valores-constantes">Valores constantes</Enlace ></li>
-          <li><Enlace href="#operaciones-matemáticas">Operaciones matemáticas</Enlace >
-            <Lista>
-              <li><Enlace href="#símbolos-matemáticos">Símbolos matemáticos</Enlace ></li>
-            </Lista>
-          </li>
-          <li><Enlace href="#leer-entrada-del-usuario">Leer entrada del usuario</Enlace >
-            <Lista>
-              <li><Enlace href="#parámetros-útiles">Parámetros útiles</Enlace ></li>
-            </Lista>
-          </li>
+          <li><Enlace href="#variables-especiales">Variables especiales</Enlace ></li>
         </Lista>
       </li>
-
+      <li><Enlace href="#strings">Strings</Enlace ></li>
+      <li><Enlace href="#valores-constantes">Valores constantes</Enlace ></li>
+      <li><Enlace href="#operaciones-matemáticas">Operaciones matemáticas</Enlace >
+        <Lista>
+          <li><Enlace href="#símbolos-matemáticos">Símbolos matemáticos</Enlace ></li>
+        </Lista>
+      </li>
+      <li><Enlace href="#leer-entrada-del-usuario">Leer entrada del usuario</Enlace >
+        <Lista>
+          <li><Enlace href="#parámetros-útiles">Parámetros útiles</Enlace ></li>
+        </Lista>
+      </li>
     </Lista>
   );
 }

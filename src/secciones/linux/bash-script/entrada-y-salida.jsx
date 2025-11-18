@@ -22,8 +22,8 @@ function Temario({ className = "" }) {
         </Lista>
       </li>
       <li><Enlace href="#juntar-salida-y-errores">Juntar salida y errores</Enlace ></li>
-      <li><Enlace href="#pipes-">Pipes (|)</Enlace ></li>
-      <li><Enlace href="#redirección-combinada-">Redirección combinada
+      <li><Enlace href="#pipes">Pipes (|)</Enlace ></li>
+      <li><Enlace href="#redirección-combinada">Redirección combinada
         &amp;&gt;</Enlace ></li>
       <li><Enlace href="#comando-cat-concatenate">Comando cat
         (concatenate)</Enlace ></li>

@@ -48,10 +48,12 @@ function nameabcd({ }) {
                         a archivos y carpetas.</li>  </Lista>
         <Linea />
         <Titulo title="h2" id="colabores-más-importantes">Colabores más importantes</Titulo>
-        <ol type="1">
+        <Lista>
           <li>Student Ethical <strong>(<span className="citation" data-cites="studentethical">@studentethical</span>)</strong>
           </li>
-        </ol>
+          <li>Tvrs8<strong> (<span className="citation" data-cites="studentethical">@tvrs8</span>)</strong>
+          </li>
+        </Lista>
         <Texto>…</Texto>
         <Linea />
         <Titulo title="h2" id="actualización-existentes">Actualización Existentes</Titulo>
@@ -78,6 +80,11 @@ function nameabcd({ }) {
             <TablaFila>
               <TablaUnica>Update 0.0.4</TablaUnica>
               <TablaUnica>Sep 23, 2025</TablaUnica>
+            </TablaFila>
+
+            <TablaFila>
+              <TablaUnica>...</TablaUnica>
+              <TablaUnica>La información completa esta en los commits de github...</TablaUnica>
             </TablaFila>
           </tbody>
         </Tabla>
@@ -166,7 +173,13 @@ function nameabcd({ }) {
           </li>    <li>Se organizó mejor el readme.md archivo principal,
             para que los temas que se muestren en este mismo, sean los más
             importantes y fundamentales.</li>  </Lista>
-        <Texto>…</Texto>
+
+        <Linea />
+        <Titulo title="h2">Actualizaciones +0.2.0v</Titulo>
+        <Texto>Estas versiones en adelante, son de la creación de esta pagina web, 
+          y como hay muchos cambios e informacion no registrare en adelante mas, 
+          los cambios aqui pero si te interesa podrias ver las ramas, y los commits, 
+          en el repositorio de esta pagina web en github…</Texto>
       </Estructura>
 
       <TemarioAsideCompleto temario={Temario} />

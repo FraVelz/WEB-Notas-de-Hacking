@@ -1,16 +1,16 @@
-import Enlace from "../../../componentes/atomos/enlace.jsx";
 import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../componentes/organismos/estructura.jsx";
+import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
+
 import Linea from "../../../componentes/atomos/linea.jsx";
 import Lista from "../../../componentes/moleculas/lista.jsx";
 import Texto from "../../../componentes/atomos/texto.jsx";
 import Titulo from "../../../componentes/moleculas/titulo.jsx";
-import { Tabla, TablaCabezera, TablaFila, TablaUnica } from "../../../componentes/moleculas/tabla.jsx";
+import Enlace from "../../../componentes/atomos/enlace.jsx";
 import Codigo from "../../../componentes/moleculas/codigo.jsx";
 
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#temario">Temario</Enlace ></li>
       <li><Enlace href="#que-es-el-comando-xxd">Que es el comando xxd</Enlace ></li>
       <li><Enlace href="#sintaxis-básica">Sintaxis básica</Enlace ></li>
       <li><Enlace href="#ejemplos-comunes">Ejemplos comunes</Enlace >

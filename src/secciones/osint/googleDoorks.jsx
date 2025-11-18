@@ -4,6 +4,7 @@ import Lista from "../../componentes/moleculas/lista.jsx";
 import Texto from "./../../componentes/atomos/texto.jsx";
 import Titulo from "../../componentes/moleculas/titulo.jsx";
 import Codigo from "../../componentes/moleculas/codigo.jsx";
+
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>

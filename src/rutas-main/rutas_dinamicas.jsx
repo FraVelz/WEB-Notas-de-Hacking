@@ -178,19 +178,24 @@ function Rutas_Dinamicas() {
                         </Texto>
                     </Boton_I>}
                 >
-                    <li><Enlace_R to="/historia_windows">Historia de Windows</Enlace_R></li>
-                    <li><Enlace_R to="/navegacion_windows">Navegación</Enlace_R></li>
-                    <li><Enlace_R to="/directorios_windows">Directorios</Enlace_R></li>
-                    <li><Enlace_R to="/powershell_cmd">PowerShell y CMD</Enlace_R></li>
-                    <li><Enlace_R to="/alias_powershell">Alias PowerShell</Enlace_R></li>
-                    <li><Enlace_R to="/comodines">Comodines</Enlace_R></li>
-                    <li><Enlace_R to="/gestion_usuarios_windows">Gestión de Usuarios</Enlace_R></li>
-                    <li><Enlace_R to="/gestion_grupos_windows">Gestión de Grupos</Enlace_R></li>
-                    <li><Enlace_R to="/gestion_permisos_windows">Gestión de Permisos</Enlace_R></li>
-                    <li><Enlace_R to="/gestion_procesos_windows">Gestión de Procesos</Enlace_R></li>
-                    <li><Enlace_R to="/gestion_red_windows">Gestión de Red</Enlace_R></li>
-                    <li><Enlace_R to="/variables_entorno_windows">Variables de Entorno</Enlace_R></li>
-                    <li><Enlace_R to="/redirecciones_powershell">Redirecciones PowerShell</Enlace_R></li>
+                    <Desplegable titulo="Parte 1">
+                        <li><Enlace_R to="/historia_windows">Historia de Windows</Enlace_R></li>
+                        <li><Enlace_R to="/navegacion_windows">Navegación</Enlace_R></li>
+                        <li><Enlace_R to="/directorios_windows">Directorios</Enlace_R></li>
+                        <li><Enlace_R to="/powershell_cmd">PowerShell y CMD</Enlace_R></li>
+                        <li><Enlace_R to="/alias_powershell">Alias PowerShell</Enlace_R></li>
+                        <li><Enlace_R to="/comodines">Comodines</Enlace_R></li>
+                    </Desplegable>
+
+                    <Desplegable titulo="Parte 2">
+                        <li><Enlace_R to="/gestion_usuarios_windows">Gestión de Usuarios</Enlace_R></li>
+                        <li><Enlace_R to="/gestion_grupos_windows">Gestión de Grupos</Enlace_R></li>
+                        <li><Enlace_R to="/gestion_permisos_windows">Gestión de Permisos</Enlace_R></li>
+                        <li><Enlace_R to="/gestion_procesos_windows">Gestión de Procesos</Enlace_R></li>
+                        <li><Enlace_R to="/gestion_red_windows">Gestión de Red</Enlace_R></li>
+                        <li><Enlace_R to="/variables_entorno_windows">Variables de Entorno</Enlace_R></li>
+                        <li><Enlace_R to="/redirecciones_powershell">Redirecciones PowerShell</Enlace_R></li>
+                    </Desplegable>
                 </Desplegable>
 
                 {/* Redes */}
@@ -318,12 +323,12 @@ function Rutas_Dinamicas() {
                         </Texto>
                     </Boton_I>}
                 >
+                    <li><Enlace_R to="/ramas_ciberseguridad">Ramas de Ciberseguridad</Enlace_R></li>
                     <li><Enlace_R to="/concientizacion">Concientización</Enlace_R></li>
                     <li><Enlace_R to="/distribuciones_linux">Distribuciones Linux</Enlace_R></li>
                     <li><Enlace_R to="/herramientas">Herramientas</Enlace_R></li>
                     <li><Enlace_R to="/notas_actualizacion">Notas de Actualización</Enlace_R></li>
-                    <li><Enlace_R to="/ramas_ciberseguridad">Ramas de Ciberseguridad</Enlace_R></li>
-                    <li><Enlace_R to="/recursos">Recursos</Enlace_R></li>
+                    <li><Enlace_R to="/recursos">Recursos / Creditos</Enlace_R></li>
                 </Desplegable>
             </Lista>
         </aside>

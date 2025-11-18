@@ -42,7 +42,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="seguridad-ofensiva-ethical-hacking-o-red-team">1. Seguridad
+        <Titulo title="h2" id="1-seguridad-ofensiva-ethical-hacking-o-red-team">1. Seguridad
           Ofensiva (Ethical Hacking o Red Team)</Titulo>
         <Texto>Su objetivo es <strong>atacar para proteger</strong>. Los expertos en
           esta área piensan como los hackers para encontrar vulnerabilidades antes
@@ -58,7 +58,7 @@ function nameabcd({ }) {
         <Texto><em>Herramientas comunes:</em> Metasploit, Burp Suite, Nmap,
           Wireshark, Hydra, Aircrack-ng.</Texto>
         <Linea />
-        <Titulo title="h2" id="seguridad-defensiva-blue-team">2. Seguridad Defensiva (Blue
+        <Titulo title="h2" id="2-seguridad-defensiva-blue-team">2. Seguridad Defensiva (Blue
           Team)</Titulo>
         <Texto>Su función es <strong>detectar, detener y responder</strong> ante los
           ataques.</Texto>
@@ -73,7 +73,7 @@ function nameabcd({ }) {
         <Texto><em>Herramientas comunes:</em> Splunk, SIEM, Suricata, OSSEC, ELK
           Stack, Wireshark.</Texto>
         <Linea />
-        <Titulo title="h2" id="ciberinteligencia-cyber-threat-intelligence">3.
+        <Titulo title="h2" id="3-ciberinteligencia-cyber-threat-intelligence">3.
           Ciberinteligencia (Cyber Threat Intelligence)</Titulo>
         <Texto>Se centra en <strong>recolectar, analizar y anticipar
           amenazas</strong> cibernéticas.</Texto>
@@ -87,7 +87,7 @@ function nameabcd({ }) {
         <Texto><em>Herramientas comunes:</em> Maltego, Shodan, TheHarvester, MISP,
           VirusTotal.</Texto>
         <Linea />
-        <Titulo title="h2" id="criptografía-y-seguridad-de-la-información">4. Criptografía y
+        <Titulo title="h2" id="4-criptografía-y-seguridad-de-la-información">4. Criptografía y
           Seguridad de la Información</Titulo>
         <Texto>Protege los <strong>datos</strong> mediante matemáticas, algoritmos y
           protocolos seguros.</Texto>
@@ -101,7 +101,7 @@ function nameabcd({ }) {
         </Lista>
         <Texto><em>Herramientas comunes:</em> OpenSSL, GPG, Hashcat, VeraCrypt.</Texto>
         <Linea />
-        <Titulo title="h2" id="seguridad-en-redes">5. Seguridad en Redes</Titulo>
+        <Titulo title="h2" id="5-seguridad-en-redes">5. Seguridad en Redes</Titulo>
         <Texto>Asegura la <strong>infraestructura</strong> que conecta dispositivos
           y servidores.</Texto>
         <Texto><strong>Subramas:</strong></Texto>
@@ -114,7 +114,7 @@ function nameabcd({ }) {
         <Texto><em>Herramientas comunes:</em> pfSense, Cisco Security, Snort,
           Wireshark, Aircrack-ng.</Texto>
         <Linea />
-        <Titulo title="h2" id="seguridad-en-la-nube-cloud-security">6. Seguridad en la Nube
+        <Titulo title="h2" id="6-seguridad-en-la-nube-cloud-security">6. Seguridad en la Nube
           (Cloud Security)</Titulo>
         <Texto>Protege los servicios y datos alojados en plataformas como AWS, Azure
           o Google Cloud.</Texto>
@@ -128,7 +128,7 @@ function nameabcd({ }) {
         <Texto><em>Herramientas comunes:</em> Prisma Cloud, AWS Security Hub, Azure
           Defender.</Texto>
         <Linea />
-        <Titulo title="h2" id="seguridad-en-aplicaciones">7. Seguridad en Aplicaciones</Titulo>
+        <Titulo title="h2" id="7-seguridad-en-aplicaciones">7. Seguridad en Aplicaciones</Titulo>
         <Texto>Se enfoca en asegurar el <strong>software</strong> desde su
           desarrollo.</Texto>
         <Texto><strong>Subramas:</strong></Texto>
@@ -143,7 +143,7 @@ function nameabcd({ }) {
         <Texto><em>Herramientas comunes:</em> OWASP ZAP, SonarQube, Burp Suite,
           Checkmarx.</Texto>
         <Linea />
-        <Titulo title="h2" id="gobernanza-riesgo-y-cumplimiento-grc">8. Gobernanza, Riesgo y
+        <Titulo title="h2" id="8-gobernanza-riesgo-y-cumplimiento-grc">8. Gobernanza, Riesgo y
           Cumplimiento (GRC)</Titulo>
         <Texto>Enfocada en la <strong>gestión estratégica de la seguridad</strong>,
           políticas, normas y auditorías.</Texto>
@@ -157,7 +157,7 @@ function nameabcd({ }) {
             ciberseguridad.</strong></li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="seguridad-industrial-y-de-infraestructuras-críticas">9.
+        <Titulo title="h2" id="9-seguridad-industrial-y-de-infraestructuras-críticas">9.
           Seguridad Industrial y de Infraestructuras Críticas</Titulo>
         <Texto>Protege sistemas industriales y servicios esenciales (energía,
           transporte, agua, etc.).</Texto>
@@ -168,7 +168,7 @@ function nameabcd({ }) {
           <li><strong>Ciberseguridad en IoT (Internet of Things).</strong></li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="ciberseguridad-en-ia-y-datos">10. Ciberseguridad en IA y
+        <Titulo title="h2" id="10-ciberseguridad-en-ia-y-datos">10. Ciberseguridad en IA y
           Datos</Titulo>
         <Texto>Campo nuevo y en crecimiento.</Texto>
         <Texto><strong>Subramas:</strong></Texto>

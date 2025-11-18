@@ -1,5 +1,8 @@
 // * Componentes ************************************************************ //
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
 import Enlace from "./componentes/atomos/enlace.jsx";
 import Imagen from "./componentes/atomos/imagen.jsx";
 import Texto from "./componentes/atomos/texto.jsx";
@@ -53,9 +56,10 @@ function App() {
       </main>
 
       <footer className="
-      text-gray-400
-      bg-gray-900
+      bg-gray-900 text-gray-400
       border-t-2 border-gray-700
+
+      flex flex-col align-middle
       p-5 gap-3
       ">
         <div className="
@@ -65,22 +69,25 @@ function App() {
           <div className="">
             <Texto select="none"><b>Autor:</b> Fravelz</Texto>
 
-            <Texto select="none"><b>Contacto: </b><span className="select-all">fravelz_@hotmail.com</span></Texto>
+            <Texto select="none"><b>Contacto: </b><span className="select-all">fravelz@proton.me</span></Texto>
           </div>
 
           <div className="flex gap-6">
-            <Enlace target="_blank" href="https://github.com/FraVelz">
-              <Imagen width={50} src="./github.png" alt="imagen github" />
+            <Enlace href="https://github.com/FraVelz" target="_blank">
+              <FontAwesomeIcon size="3x" icon={faGithub} className="text-blue-100 hover:text-blue-300" />
             </Enlace>
 
-
-            <Enlace target="_blank" href="https://www.youtube.com/@fravelz">
-              <Imagen width={50} src="./youtube.png" alt="imagen youtube" />
+            <Enlace href="https://www.youtube.com/@fravelz" target="_blank">
+              <FontAwesomeIcon size="3x" icon={faYoutube} className="text-blue-100 hover:text-blue-300" />
             </Enlace>
           </div>
         </div>
 
-        <Texto className="text-center mt-5" select="none"><b>Ultima Actualizacion:</b> Nov 14 del 2025</Texto>
+        <Texto className="text-center" select="none">
+          <Enlace className="text-center" target="_blank"
+            href="https://fravelz.github.io/WEB-Fravelz/"
+          >Pagina Web Personal</Enlace> - <b>Ultima Actualizacion:</b> Nov 17 del 2025
+        </Texto>
       </footer>
     </>
   )

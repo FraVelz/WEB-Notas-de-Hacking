@@ -9,7 +9,7 @@ import Estructura, { TemarioAsideCompleto, TemarioCompleto } from "../../../comp
 function Temario({ className = "" }) {
   return (
     <Lista className={className}>
-      <li><Enlace href="#qué-hace-ecat">¿Qué hace ecat?</Enlace ></li>
+      <li><Enlace href="#qué-hace-ncat">¿Qué hace ncat?</Enlace ></li>
       <li><Enlace href="#usos-típicos">Usos típicos</Enlace ></li>
       <li><Enlace href="#opciones-comunes-útiles-y-seguras">Opciones comunes
         (útiles y seguras)</Enlace ></li>
@@ -45,7 +45,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="qué-hace-ncat">¿Qué hace ecat?</Titulo>
+        <Titulo title="h2" id="qué-hace-ncat">¿Qué hace ncat?</Titulo>
         <Texto>ncat (o <strong>Ncat</strong>) es la versión moderna de
           <strong>netcat</strong> incluida con <strong>Nmap</strong>. Es una
           herramienta de línea de comandos para leer/escribir datos a través de

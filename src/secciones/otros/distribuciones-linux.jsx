@@ -14,9 +14,9 @@ function Temario({ className = "" }) {
       <li><Enlace href="#2-por-qué-elegir-linux">2. ¿Por qué elegir Linux?</Enlace ></li>
       <li><Enlace href="#3-linux-en-ciberseguridad">3. Linux en
         ciberseguridad</Enlace ></li>
-      <li><Enlace href="#5-principales-diferencias-entre-distribuciones">5.
+      <li><Enlace href="#4-principales-diferencias-entre-distribuciones">5.
         Principales diferencias entre distribuciones</Enlace ></li>
-      <li><Enlace href="#6-debian">6. Debian</Enlace >
+      <li><Enlace href="#5-debian">6. Debian</Enlace >
         <Lista>
           <li><Enlace href="#sistema-de-gestión-de-paquetes">Sistema de gestión de
             paquetes</Enlace ></li>
@@ -26,7 +26,7 @@ function Temario({ className = "" }) {
           <li><Enlace href="#seguridad-y-privacidad">Seguridad y privacidad</Enlace ></li>
         </Lista>
       </li>
-      <li><Enlace href="#7-conclusión">7. Conclusión</Enlace ></li>
+      <li><Enlace href="#6-conclusión">6. Conclusión</Enlace ></li>
     </Lista>
   );
 }
@@ -57,7 +57,7 @@ function nameabcd({ }) {
 
         <TemarioCompleto temario={Temario} />
 
-        <Titulo title="h2" id="distribuciones-populares-en-ciberseguridad">1. Distribuciones
+        <Titulo title="h2" id="1-distribuciones-populares-en-ciberseguridad">1. Distribuciones
           populares en ciberseguridad</Titulo>
         <Lista>
           <li><strong>ParrotOS</strong></li>
@@ -70,7 +70,7 @@ function nameabcd({ }) {
           <li><strong>Pentoo</strong></li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="por-qué-elegir-linux">2. ¿Por qué elegir Linux?</Titulo>
+        <Titulo title="h2" id="2-por-qué-elegir-linux">2. ¿Por qué elegir Linux?</Titulo>
         <Texto>Muchos usuarios eligen Linux para sus ordenadores de escritorio por
           su:</Texto>
         <Lista>
@@ -90,7 +90,7 @@ function nameabcd({ }) {
         <Texto>Además, ofrece <strong>actualizaciones frecuentes y
           regulares</strong>.</Texto>
         <Linea />
-        <Titulo title="h2" id="linux-en-ciberseguridad">3. Linux en ciberseguridad</Titulo>
+        <Titulo title="h2" id="3-linux-en-ciberseguridad">3. Linux en ciberseguridad</Titulo>
         <Texto>Como especialistas en <strong>ciberseguridad</strong>, preferimos
           Linux porque su <strong>código fuente está disponible</strong> para
           análisis y personalización.<br />
@@ -105,7 +105,7 @@ function nameabcd({ }) {
           <li>Computación de escritorio</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="principales-diferencias-entre-distribuciones">5. Principales
+        <Titulo title="h2" id="4-principales-diferencias-entre-distribuciones">4. Principales
           diferencias entre distribuciones</Titulo>
         <Texto>Las diferencias entre las distintas distribuciones de Linux radican
           en:</Texto>
@@ -128,7 +128,7 @@ function nameabcd({ }) {
             → populares en entornos empresariales.</li>
         </Lista>
         <Linea />
-        <Titulo title="h2" id="debian">6. Debian</Titulo>
+        <Titulo title="h2" id="5-debian">5. Debian</Titulo>
         <Texto><strong>Debian</strong> es una distribución de Linux ampliamente
           utilizada y respetada, conocida por su <strong>estabilidad</strong> y
           <strong>fiabilidad</strong>.<br />
@@ -179,7 +179,7 @@ function nameabcd({ }) {
           la <strong>privacidad</strong>, y cuenta con un historial muy sólido en
           estos aspectos.</Texto>
         <Linea />
-        <Titulo title="h2" id="conclusión">7. Conclusión</Titulo>
+        <Titulo title="h2" id="6-conclusión">6. Conclusión</Titulo>
         <Texto><strong>Debian</strong> es una distribución de Linux <strong>versátil
           y confiable</strong>, ampliamente utilizada en múltiples entornos.<br />
           Su estabilidad, fiabilidad y compromiso con la seguridad la convierten
