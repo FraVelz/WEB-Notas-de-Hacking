@@ -1,0 +1,304 @@
+---
+// Componente para mostrar el índice de contenidos (TOC)
+---
+
+<aside
+  id="table-of-contents"
+  class="hidden xl:flex flex-col
+    w-64 min-w-[16rem]
+    bg-gray-900 border-l border-gray-700
+    fixed right-0 bottom-0
+    overflow-y-auto
+    transition-all duration-300
+    z-40"
+  style="top: var(--header-height, 73px);"
+>
+  <div class="p-4 border-b border-gray-700">
+    <h2 class="text-lg font-bold text-blue-400">Índice</h2>
+  </div>
+
+  <nav class="flex-1 p-4" id="toc-nav">
+    <!-- El contenido se generará dinámicamente con JavaScript -->
+    <div class="text-sm text-gray-400 text-center py-4">
+      Cargando índice...
+    </div>
+  </nav>
+</aside>
+
+<script>
+  (function() {
+    // Esperar a que el contenido se cargue
+    function initTableOfContents() {
+      const tocNav = document.getElementById('toc-nav');
+      const contentArea = document.querySelector('.markdown-content') || document.querySelector('article');
+      
+      if (!contentArea || !tocNav) {
+        return;
+      }
+      
+      // Extraer todos los headers (h1, h2, h3, h4, h5, h6)
+      const headers = Array.from(contentArea.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+      
+      if (headers.length === 0) {
+        tocNav.innerHTML = '<div class="text-sm text-gray-400 text-center py-4">No hay secciones disponibles</div>';
+        return;
+      }
+      
+      // Crear IDs únicos para cada header si no los tienen
+      const usedIds = new Set();
+      headers.forEach((header, index) => {
+        if (!header.id) {
+          // Generar ID basado en el texto del header
+          const text = header.textContent || '';
+          let id = text
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '') // Remover acentos
+            .replace(/[^a-z0-9]+/g, '-') // Reemplazar caracteres especiales con guiones
+            .replace(/^-+|-+$/g, '') // Remover guiones al inicio y final
+            || `section-${index}`;
+          
+          // Asegurar que el ID sea único
+          let uniqueId = id;
+          let counter = 1;
+          while (usedIds.has(uniqueId)) {
+            uniqueId = `${id}-${counter}`;
+            counter++;
+          }
+          
+          usedIds.add(uniqueId);
+          header.id = uniqueId;
+        } else {
+          usedIds.add(header.id);
+        }
+      });
+      
+      // Construir el árbol de navegación simplificado (sin anidamiento complejo)
+      let tocHTML = '<ul class="space-y-1">';
+      
+      headers.forEach((header) => {
+        const level = parseInt(header.tagName.charAt(1)); // h1 -> 1, h2 -> 2, etc.
+        const text = header.textContent || '';
+        const id = header.id;
+        
+        // Calcular indentación basada en el nivel
+        const indent = Math.min((level - 1) * 16, 64); // Máximo 64px de indentación
+        
+        // Determinar clase de estilo según el nivel
+        let levelClass = 'text-gray-400';
+        let fontWeight = 'font-normal';
+        
+        if (level === 1) {
+          fontWeight = 'font-bold';
+          levelClass = 'text-gray-300';
+        } else if (level === 2) {
+          fontWeight = 'font-semibold';
+          levelClass = 'text-gray-400';
+        } else {
+          fontWeight = 'font-normal';
+          levelClass = 'text-gray-500';
+        }
+        
+        // Crear elemento de lista
+        tocHTML += `
+          <li>
+            <a
+              href="#${id}"
+              class="toc-link block px-3 py-2 rounded-md text-sm transition-colors
+                ${levelClass} hover:bg-gray-800 hover:text-white
+                ${fontWeight} toc-level-${level}"
+              data-header-id="${id}"
+              style="padding-left: ${indent + 12}px;"
+            >
+              ${escapeHtml(text)}
+            </a>
+          </li>
+        `;
+      });
+      
+      tocHTML += '</ul>';
+      tocNav.innerHTML = tocHTML;
+      
+      // Agregar event listeners a los enlaces
+      document.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetHeader = document.getElementById(targetId);
+          
+          if (targetHeader) {
+            // Remover resaltado anterior
+            document.querySelectorAll('.toc-link').forEach(l => {
+              l.classList.remove('bg-blue-600', 'text-white', 'font-semibold');
+              l.classList.add('text-gray-400');
+            });
+            
+            // Resaltar el enlace clickeado
+            link.classList.remove('text-gray-400');
+            link.classList.add('bg-blue-600', 'text-white', 'font-semibold');
+            
+            // Scroll suave al header
+            setTimeout(() => {
+              targetHeader.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'nearest'
+              });
+              
+              // Agregar offset para el header sticky
+              const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+              window.scrollBy(0, -headerHeight - 20);
+            }, 100);
+          }
+        });
+      });
+      
+      // Detectar qué header está visible y resaltarlo
+      function updateActiveHeader() {
+        const headers = Array.from(contentArea.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+        if (headers.length === 0) return;
+        
+        const headerHeight = document.querySelector('header')?.offsetHeight || 0;
+        const scrollPosition = window.scrollY + headerHeight + 150; // Offset para activación
+        
+        let activeHeader = null;
+        let minDistance = Infinity;
+        
+        // Encontrar el header más cercano al viewport
+        headers.forEach(header => {
+          const rect = header.getBoundingClientRect();
+          const headerTop = rect.top + window.scrollY;
+          const distance = Math.abs(headerTop - scrollPosition);
+          
+          // Si el header está cerca del viewport (dentro de 200px)
+          if (rect.top <= headerHeight + 200 && rect.top >= headerHeight - 100) {
+            if (distance < minDistance) {
+              minDistance = distance;
+              activeHeader = header;
+            }
+          }
+        });
+        
+        // Si no hay header visible, usar el más cercano antes del scroll position
+        if (!activeHeader) {
+          for (let i = headers.length - 1; i >= 0; i--) {
+            const header = headers[i];
+            const rect = header.getBoundingClientRect();
+            
+            if (rect.top <= headerHeight + 200) {
+              activeHeader = header;
+              break;
+            }
+          }
+        }
+        
+        // Si aún no hay header, usar el primero
+        if (!activeHeader && headers.length > 0) {
+          activeHeader = headers[0];
+        }
+        
+        // Actualizar resaltado
+        document.querySelectorAll('.toc-link').forEach(link => {
+          const headerId = link.getAttribute('data-header-id');
+          const linkLevel = link.classList.contains('toc-level-1') ? 1 :
+                           link.classList.contains('toc-level-2') ? 2 :
+                           link.classList.contains('toc-level-3') ? 3 : 4;
+          
+          if (activeHeader && activeHeader.id === headerId) {
+            // Remover todas las clases de estado
+            link.classList.remove('text-gray-400', 'text-gray-500', 'text-gray-300');
+            link.classList.add('bg-blue-600', 'text-white', 'font-semibold');
+            
+            // Scroll del TOC para mantener el elemento visible
+            const tocContainer = document.getElementById('table-of-contents');
+            const linkRect = link.getBoundingClientRect();
+            const tocRect = tocContainer?.getBoundingClientRect();
+            
+            if (tocRect && (linkRect.top < tocRect.top + 20 || linkRect.bottom > tocRect.bottom - 20)) {
+              link.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'nearest'
+              });
+            }
+          } else {
+            // Restaurar clases según el nivel
+            link.classList.remove('bg-blue-600', 'text-white', 'font-semibold');
+            
+            if (linkLevel === 1) {
+              link.classList.add('text-gray-300');
+            } else if (linkLevel === 2) {
+              link.classList.add('text-gray-400');
+            } else {
+              link.classList.add('text-gray-500');
+            }
+          }
+        });
+      }
+      
+      // Actualizar al hacer scroll
+      let scrollTimeout;
+      window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(updateActiveHeader, 50);
+      }, { passive: true });
+      
+      // Actualizar inicialmente
+      updateActiveHeader();
+      
+      // Actualizar cuando cambia el tamaño de la ventana
+      window.addEventListener('resize', updateActiveHeader);
+    }
+    
+    // Función auxiliar para escapar HTML
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    // Inicializar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTableOfContents);
+    } else {
+      setTimeout(initTableOfContents, 100);
+    }
+  })();
+</script>
+
+<style>
+  .toc-link {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .toc-link.toc-level-1 {
+    font-weight: 600;
+  }
+  
+  .toc-link.toc-level-2 {
+    font-weight: 500;
+  }
+  
+  .toc-link.toc-level-3 {
+    font-weight: 400;
+    font-size: 0.875rem;
+  }
+  
+  #table-of-contents {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(55 65 81) rgb(17 24 39);
+  }
+  
+  #table-of-contents::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #table-of-contents::-webkit-scrollbar-track {
+    background: rgb(17 24 39);
+  }
+  
+  #table-of-contents::-webkit-scrollbar-thumb {
+    background-color: rgb(55 65 81);
+    border-radius: 3px;
+  }
+</style>

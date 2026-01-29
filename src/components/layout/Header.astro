@@ -1,0 +1,491 @@
+---
+// Header convertido de React/TypeScript a Astro
+import iconoLogo from '@/images/logos/icono.svg';
+import { getCollection } from 'astro:content';
+
+// Función para limpiar y extraer texto del markdown
+function extractTextFromMarkdown(body: string): string {
+  if (!body) return '';
+  
+  // Remover bloques de código
+  let text = body.replace(/```[\s\S]*?```/g, '');
+  text = text.replace(/`[^`]+`/g, '');
+  
+  // Remover enlaces pero mantener el texto
+  text = text.replace(/\[([^\]]+)\]\([^\)]+\)/g, '$1');
+  
+  // Remover imágenes
+  text = text.replace(/!\[([^\]]*)\]\([^\)]+\)/g, '');
+  
+  // Remover headers (#)
+  text = text.replace(/^#{1,6}\s+/gm, '');
+  
+  // Remover listas (-, *, +)
+  text = text.replace(/^[\s]*[-*+]\s+/gm, '');
+  text = text.replace(/^\d+\.\s+/gm, '');
+  
+  // Remover HTML tags
+  text = text.replace(/<[^>]+>/g, '');
+  
+  // Remover múltiples espacios y saltos de línea
+  text = text.replace(/\n+/g, ' ');
+  text = text.replace(/\s+/g, ' ');
+  
+  return text.trim();
+}
+
+// Obtener todas las secciones para la búsqueda
+const allSections = await getCollection('secciones');
+
+// Preparar datos de búsqueda con contenido completo
+const searchData = await Promise.all(
+  allSections.map(async (section) => {
+    const body = section.body || '';
+    const content = extractTextFromMarkdown(body);
+    
+    return {
+      title: section.data.title,
+      slug: section.slug,
+      category: section.slug.split('/')[0],
+      content: content.substring(0, 5000), // Limitar tamaño para evitar payloads muy grandes
+    };
+  })
+);
+
+// Serializar para el cliente
+const searchDataJson = JSON.stringify(searchData);
+---
+
+<header
+  id="main-header"
+  class="flex flex-wrap items-center gap-4 p-4
+  bg-gray-900
+  text-gray-200
+  border-b-2 border-gray-700
+  shadow-lg shadow-black/20
+  
+  fixed top-0 left-0 right-0 z-50"
+>
+  <div class="w-fit lg:w-[365px]
+    flex items-center gap-3
+    select-none">
+    <!-- Logo de fravelz -->
+    <img
+      src={iconoLogo.src}
+      alt="Logo de fravelz"
+      class="size-10
+        object-cover
+        transition-transform duration-200
+        hover:scale-110"
+    />
+
+    <!-- Título de la página -->
+    <h1
+      class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+    >
+      Notas de Hacking
+    </h1>
+  </div>
+
+  <div class="flex-1 min-w-[200px]">
+    <!-- Búsqueda -->
+    <div class="relative flex items-center">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Buscar en notas..."
+        autocomplete="off"
+        class="bg-gray-800 text-gray-200 placeholder-gray-500
+          border border-gray-600 rounded-md
+          px-4 py-2 pl-10 pr-10
+          focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20
+          w-64 text-sm
+          transition-all"
+      />
+      <!-- Icono de búsqueda SVG -->
+      <svg
+        class="absolute left-3 text-gray-400 pointer-events-none w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+      
+      <!-- Dropdown de resultados -->
+      <div
+        id="search-results"
+        class="hidden absolute top-full left-0 mt-2 w-[500px] max-h-[600px] overflow-y-auto
+          bg-gray-800 border border-gray-600 rounded-md shadow-xl
+          z-50"
+      >
+        <div id="search-results-list" class="p-2">
+          <!-- Los resultados se insertarán aquí -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gap-4 flex items-center">
+    <div class="text-right">
+      <h2 class="text-xl font-semibold text-gray-300">Fravelz</h2>
+    </div>
+  </div>
+</header>
+
+<script define:vars={{ searchDataJson }}>
+  // Datos de búsqueda disponibles globalmente
+  const searchData = JSON.parse(searchDataJson);
+  const basePath = '/WEB-Notas-de-Hacking';
+  
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const searchResultsList = document.getElementById('search-results-list');
+  
+  let selectedIndex = -1;
+  let currentResults = [];
+  
+  // Función para encontrar todas las posiciones de coincidencia
+  function findAllMatches(text, query) {
+    const textLower = text.toLowerCase();
+    const queryLower = query.toLowerCase();
+    const words = queryLower.split(/\s+/).filter(w => w.length > 0);
+    const firstWord = words[0];
+    
+    const matches = [];
+    let searchIndex = 0;
+    
+    // Buscar todas las ocurrencias de la primera palabra
+    while (true) {
+      const index = textLower.indexOf(firstWord, searchIndex);
+      if (index === -1) break;
+      
+      // Verificar si todas las palabras están cerca (en un rango de 200 caracteres)
+      let allWordsNearby = true;
+      if (words.length > 1) {
+        const contextStart = Math.max(0, index - 100);
+        const contextEnd = Math.min(text.length, index + firstWord.length + 100);
+        const context = textLower.substring(contextStart, contextEnd);
+        
+        allWordsNearby = words.every(word => context.includes(word));
+      }
+      
+      if (allWordsNearby) {
+        matches.push(index);
+      }
+      
+      searchIndex = index + 1;
+    }
+    
+    return matches;
+  }
+  
+  // Función para encontrar fragmento de texto alrededor de una posición específica
+  function findMatchSnippet(text, position, query, maxLength = 150) {
+    if (position === -1) {
+      // Si no hay posición específica, devolver inicio del texto
+      return text.substring(0, maxLength).trim() + (text.length > maxLength ? '...' : '');
+    }
+    
+    // Calcular inicio y fin del fragmento
+    const start = Math.max(0, position - Math.floor(maxLength / 2));
+    const end = Math.min(text.length, position + query.length + Math.floor(maxLength / 2));
+    
+    let snippet = text.substring(start, end).trim();
+    
+    // Agregar elipsis si es necesario
+    if (start > 0) snippet = '...' + snippet;
+    if (end < text.length) snippet = snippet + '...';
+    
+    return snippet;
+  }
+  
+  // Función de búsqueda
+  function performSearch(query) {
+    if (!query || query.trim().length < 2) {
+      searchResults.classList.add('hidden');
+      return;
+    }
+    
+    const queryLower = query.toLowerCase().trim();
+    const words = queryLower.split(/\s+/).filter(w => w.length > 0);
+    const allMatches = [];
+    
+    // Buscar en títulos, categorías y contenido
+    searchData.forEach(section => {
+      const titleLower = section.title.toLowerCase();
+      const categoryLower = section.category.toLowerCase();
+      const slugLower = section.slug.toLowerCase();
+      const contentLower = (section.content || '').toLowerCase();
+      const content = section.content || '';
+      
+      // Verificar coincidencias en título
+      const titleMatch = words.some(word => titleLower.includes(word));
+      
+      // Verificar coincidencias en contenido
+      const contentMatchPositions = findAllMatches(content, query);
+      
+      // Calcular puntuación base
+      let baseScore = 0;
+      let titleMatches = 0;
+      
+      words.forEach(word => {
+        if (titleLower.includes(word)) {
+          baseScore += 20;
+          titleMatches++;
+        }
+        if (categoryLower.includes(word)) {
+          baseScore += 5;
+        }
+        if (slugLower.includes(word)) {
+          baseScore += 2;
+        }
+      });
+      
+      // Bonus si todas las palabras coinciden en título
+      const allWordsInTitle = words.every(word => titleLower.includes(word));
+      if (allWordsInTitle) {
+        baseScore += 10;
+      }
+      
+      // Si hay coincidencias en el título, agregar un resultado especial
+      if (titleMatch) {
+        allMatches.push({
+          ...section,
+          score: baseScore + 100, // Prioridad alta para coincidencias en título
+          matchCount: titleMatches,
+          titleMatches: titleMatches,
+          contentMatches: 0,
+          snippet: null,
+          matchIndex: -1, // -1 indica coincidencia en título
+          isTitleMatch: true,
+        });
+      }
+      
+      // Agregar un resultado por cada coincidencia en el contenido
+      contentMatchPositions.forEach((position, index) => {
+        const snippet = findMatchSnippet(content, position, query);
+        const score = baseScore + Math.max(0, 10 - index); // Disminuir score para coincidencias posteriores
+        
+        allMatches.push({
+          ...section,
+          score: score,
+          matchCount: words.length,
+          titleMatches: titleMatches,
+          contentMatches: 1,
+          snippet: snippet,
+          matchIndex: position,
+          isTitleMatch: false,
+        });
+      });
+    });
+    
+    // Ordenar por puntuación descendente
+    const sortedMatches = allMatches
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        // Si tienen la misma puntuación, priorizar coincidencias en título
+        if (b.titleMatches !== a.titleMatches) return b.titleMatches - a.titleMatches;
+        // Si tienen la misma puntuación, ordenar por título
+        return a.title.localeCompare(b.title);
+      })
+      .slice(0, 20); // Aumentar límite a 20 resultados para mostrar más coincidencias
+    
+    currentResults = sortedMatches;
+    displayResults(sortedMatches, query);
+  }
+  
+  // Mostrar resultados
+  function displayResults(results, query) {
+    if (results.length === 0) {
+      searchResultsList.innerHTML = `
+        <div class="p-4 text-center text-gray-400 text-sm">
+          No se encontraron resultados para "${query}"
+        </div>
+      `;
+      searchResults.classList.remove('hidden');
+      return;
+    }
+    
+    // Agrupar resultados por archivo para mostrar contador
+    const resultsByFile = {};
+    results.forEach((result, index) => {
+      if (!resultsByFile[result.slug]) {
+        resultsByFile[result.slug] = [];
+      }
+      resultsByFile[result.slug].push({ ...result, displayIndex: index });
+    });
+    
+    searchResultsList.innerHTML = results
+      .map((result, index) => {
+        const titleHighlighted = highlightText(result.title, query);
+        const categoryFormatted = result.category
+          .split('-')
+          .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(' ');
+        
+        // Resaltar texto en el snippet si existe
+        const snippetHighlighted = result.snippet 
+          ? highlightText(result.snippet, query)
+          : null;
+        
+        // Contar cuántas coincidencias hay en este archivo
+        const fileMatches = resultsByFile[result.slug].length;
+        const matchCounter = fileMatches > 1 ? `<span class="text-xs text-gray-500 ml-2">(${fileMatches} coincidencias)</span>` : '';
+        
+        // Determinar si es la primera coincidencia del archivo
+        const isFirstMatch = resultsByFile[result.slug][0].displayIndex === index;
+        const fileSeparator = isFirstMatch && fileMatches > 1 ? '<div class="border-t border-gray-700 my-2"></div>' : '';
+        
+        return `
+          ${fileSeparator}
+          <a
+            href="${basePath}/${result.slug}?search=${encodeURIComponent(query)}${result.matchIndex >= 0 ? `&pos=${result.matchIndex}` : ''}"
+            class="search-result-item block p-3 rounded-md hover:bg-gray-700 transition-colors ${
+              index === selectedIndex ? 'bg-gray-700' : ''
+            }"
+            data-index="${index}"
+          >
+            <div class="font-semibold text-blue-400 mb-1 flex items-center">
+              ${titleHighlighted}
+              ${matchCounter}
+            </div>
+            <div class="text-xs text-gray-500 mb-1">
+              ${categoryFormatted}
+            </div>
+            ${snippetHighlighted ? `
+              <div class="text-xs text-gray-400 mt-2 line-clamp-2">
+                ${snippetHighlighted}
+              </div>
+            ` : result.isTitleMatch ? `
+              <div class="text-xs text-gray-400 mt-2 italic">
+                Coincidencia en título
+              </div>
+            ` : ''}
+          </a>
+        `;
+      })
+      .join('');
+    
+    searchResults.classList.remove('hidden');
+    
+    // Agregar event listeners a los resultados
+    document.querySelectorAll('.search-result-item').forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const index = parseInt(item.getAttribute('data-index'));
+        navigateToResult(currentResults[index], query);
+      });
+    });
+  }
+  
+  // Resaltar texto en los resultados
+  function highlightText(text, query) {
+    const words = query.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+    let highlighted = text;
+    
+    words.forEach(word => {
+      const regex = new RegExp(`(${escapeRegExp(word)})`, 'gi');
+      highlighted = highlighted.replace(
+        regex,
+        '<mark class="bg-yellow-400 text-gray-900 px-1 rounded font-semibold">$1</mark>'
+      );
+    });
+    
+    return highlighted;
+  }
+  
+  // Escapar caracteres especiales para regex
+  function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+  
+  // Navegar a un resultado con término de búsqueda
+  function navigateToResult(result, query) {
+    const searchParam = encodeURIComponent(query.trim());
+    window.location.href = `${basePath}/${result.slug}?search=${searchParam}`;
+  }
+  
+  // Event listeners
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value;
+    selectedIndex = -1;
+    performSearch(query);
+  });
+  
+  searchInput.addEventListener('keydown', (e) => {
+    if (!searchResults.classList.contains('hidden') && currentResults.length > 0) {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        selectedIndex = Math.min(selectedIndex + 1, currentResults.length - 1);
+        updateSelection();
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        selectedIndex = Math.max(selectedIndex - 1, -1);
+        updateSelection();
+      } else if (e.key === 'Enter' && selectedIndex >= 0) {
+        e.preventDefault();
+        navigateToResult(currentResults[selectedIndex], searchInput.value);
+      } else if (e.key === 'Escape') {
+        searchResults.classList.add('hidden');
+        searchInput.blur();
+      }
+    }
+  });
+  
+  // Actualizar selección visual
+  function updateSelection() {
+    document.querySelectorAll('.search-result-item').forEach((item, index) => {
+      if (index === selectedIndex) {
+        item.classList.add('bg-gray-700');
+      } else {
+        item.classList.remove('bg-gray-700');
+      }
+    });
+  }
+  
+  // Cerrar resultados al hacer click fuera
+  document.addEventListener('click', (e) => {
+    if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+      searchResults.classList.add('hidden');
+    }
+  });
+  
+  // Mantener el foco en el input cuando se hace click en los resultados
+  searchResults.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+  });
+</script>
+
+<style>
+  #search-results {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(55 65 81) rgb(31 41 55);
+  }
+  
+  #search-results::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #search-results::-webkit-scrollbar-track {
+    background: rgb(31 41 55);
+  }
+  
+  #search-results::-webkit-scrollbar-thumb {
+    background-color: rgb(55 65 81);
+    border-radius: 3px;
+  }
+  
+  .search-result-item mark {
+    background-color: rgb(250 204 21);
+    color: rgb(17 24 39);
+    padding: 0 2px;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import SeccionLayout from '@/layouts/SeccionLayout.astro';
+
+// Función requerida para rutas dinámicas estáticas
+export async function getStaticPaths() {
+  const allEntries = await getCollection('secciones');
+  
+  return allEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+// Props ahora viene de getStaticPaths
+const { entry } = Astro.props;
+
+// Renderizar el contenido Markdown
+const { Content } = await entry.render();
+const title = entry.data.title || (typeof entry.slug === 'string' ? entry.slug.split('/WEB-Notas-de-Hacking/').pop() : 'Página') || 'Página';
+---
+
+<SeccionLayout title={title}>
+  <div class="prose prose-invert max-w-none markdown-content">
+    <Content />
+  </div>
+</SeccionLayout>
+
+<style>
+  .markdown-content {
+    @apply text-gray-200;
+  }
+  
+  .markdown-content :global(h1) {
+    @apply text-4xl font-bold mb-4 text-gray-100 text-center;
+  }
+  
+  .markdown-content :global(h2) {
+    @apply text-3xl font-semibold mb-3 mt-6 text-gray-200 border-b border-gray-700 pb-2;
+  }
+  
+  .markdown-content :global(h3) {
+    @apply text-2xl font-medium mb-2 mt-5 text-gray-300;
+  }
+  
+  .markdown-content :global(p) {
+    @apply text-base leading-relaxed py-2 text-gray-200;
+  }
+  
+  .markdown-content :global(ul), .markdown-content :global(ol) {
+    @apply text-gray-400 space-y-2 ml-6 mb-4;
+  }
+  
+  .markdown-content :global(li) {
+    @apply text-gray-300;
+  }
+  
+  .markdown-content :global(code) {
+    @apply bg-gray-900 text-gray-200 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .markdown-content :global(pre) {
+    @apply bg-gray-950 border border-gray-800 rounded-lg p-4 overflow-x-auto my-4;
+  }
+  
+  .markdown-content :global(pre code) {
+    @apply bg-transparent p-0;
+  }
+  
+  .markdown-content :global(a) {
+    @apply text-blue-400 hover:text-blue-300 underline underline-offset-2 transition-colors duration-200;
+  }
+  
+  .markdown-content :global(hr) {
+    @apply border-gray-700 my-8;
+  }
+  
+  .markdown-content :global(strong) {
+    @apply font-bold text-gray-100;
+  }
+</style>

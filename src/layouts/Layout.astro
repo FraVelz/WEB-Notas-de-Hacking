@@ -1,0 +1,59 @@
+---
+import Header from "@/components/layout/Header.astro";
+import Footer from "@/components/layout/Footer.astro";
+import Sidebar from "@/components/layout/Sidebar.astro";
+import iconoLogo from "@/images/logos/icono.svg";
+import "@/styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  showHeader?: boolean;
+  showFooter?: boolean;
+  showSidebar?: boolean;
+}
+
+const {
+  title = "Notas de Hacking",
+  description = "Notas de hacking, guía para aprender o repasar al empezar en el hacking.",
+  showHeader = true,
+  showFooter = false,
+  showSidebar = true,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href={iconoLogo.src} />
+    <title>{title} - Notas de Hacking</title>
+    <script>
+      // Calcular altura del header y establecerla como variable CSS
+      document.addEventListener('DOMContentLoaded', () => {
+        const header = document.getElementById('main-header');
+        if (header) {
+          const headerHeight = header.offsetHeight;
+          document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+        }
+      });
+    </script>
+  </head>
+ <body class="bg-gray-950 text-gray-200 h-screen overflow-hidden flex flex-col">
+    {showHeader && <Header />}
+
+    <div class="flex flex-1 overflow-hidden relative">
+      {showSidebar && <Sidebar />}
+
+      <main class="flex-1 overflow-hidden h-full" style="margin-top: var(--header-height, 73px);">
+        <div class="h-full overflow-y-auto lg:ml-[256px]">
+          <slot />
+        </div>
+      </main>
+    </div>
+
+    {showFooter && <Footer />}
+  </body>
+</html>

@@ -1,0 +1,214 @@
+---
+import Layout from "./Layout.astro";
+import TableOfContents from "@/components/layout/TableOfContents.astro";
+
+interface Props {
+  title: string;
+  route?: string;
+}
+
+const { title, route } = Astro.props;
+---
+
+<Layout title={title} showSidebar={true}>
+  <div class="flex flex-1 overflow-hidden h-full">
+    <div class="flex-1 overflow-y-auto h-full">
+      <div class="container mx-auto px-4 py-8 max-w-6xl lg:max-w-4xl xl:mr-[256px]">
+        <article class="prose prose-invert max-w-none markdown-content">
+          <slot />
+        </article>
+      </div>
+    </div>
+    <TableOfContents />
+  </div>
+</Layout>
+
+<script>
+  // Funcionalidad para buscar y resaltar texto desde query parameter
+  (function () {
+    // Obtener término de búsqueda de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchTerm = urlParams.get("search");
+    const targetPosition = urlParams.get("pos"); // Posición específica si viene de múltiples coincidencias
+
+    if (!searchTerm || searchTerm.trim().length < 2) {
+      return; // No hay término de búsqueda
+    }
+
+    const query = searchTerm.trim();
+    const words = query
+      .toLowerCase()
+      .split(/\s+/)
+      .filter((w) => w.length > 0);
+
+    // Limpiar resaltados anteriores
+    function clearHighlights() {
+      document.querySelectorAll(".search-highlight").forEach((el) => {
+        const parent = el.parentNode;
+        if (parent) {
+          const textNode = document.createTextNode(el.textContent);
+          parent.replaceChild(textNode, el);
+          parent.normalize();
+        }
+      });
+    }
+
+    // Escapar caracteres especiales para regex
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    // Resaltar texto en la página
+    function highlightTextInPage() {
+      clearHighlights();
+
+      // Ignorar palabras muy cortas (menos de 2 caracteres)
+      const searchWords = words.filter((w) => w.length >= 2);
+      if (searchWords.length === 0) return;
+
+      // Crear TreeWalker para recorrer solo nodos de texto
+      const walker = document.createTreeWalker(
+        document.querySelector(".markdown-content") || document.body,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode: (node) => {
+            // Ignorar scripts, estilos y código
+            const parent = node.parentElement;
+            if (!parent) return NodeFilter.FILTER_REJECT;
+
+            const tagName = parent.tagName.toLowerCase();
+            const className = parent.className || "";
+
+            // Ignorar código y preformateado
+            if (
+              tagName === "script" ||
+              tagName === "style" ||
+              tagName === "code" ||
+              tagName === "pre" ||
+              className.includes("language-") ||
+              parent.closest("pre") ||
+              parent.closest("code")
+            ) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
+            return NodeFilter.FILTER_ACCEPT;
+          },
+        },
+      );
+
+      const textNodes = [];
+      let node;
+      while ((node = walker.nextNode())) {
+        textNodes.push(node);
+      }
+
+      // Resaltar coincidencias
+      textNodes.forEach((textNode) => {
+        const text = textNode.textContent;
+        let hasMatch = false;
+        let highlightedText = text;
+
+        searchWords.forEach((word) => {
+          const regex = new RegExp(`(${escapeRegExp(word)})`, "gi");
+          if (regex.test(highlightedText)) {
+            hasMatch = true;
+            highlightedText = highlightedText.replace(
+              regex,
+              '<mark class="search-highlight bg-yellow-400 text-gray-900 px-1 rounded font-semibold">$1</mark>',
+            );
+          }
+        });
+
+        if (hasMatch) {
+          const wrapper = document.createElement("span");
+          wrapper.innerHTML = highlightedText;
+          textNode.parentNode.replaceChild(wrapper, textNode);
+        }
+      });
+
+      // Hacer scroll hasta la coincidencia apropiada
+      let targetHighlight = null;
+
+      if (targetPosition !== null) {
+        // Si hay una posición específica, intentar encontrar el highlight más cercano
+        const highlights = Array.from(
+          document.querySelectorAll(".search-highlight"),
+        );
+        if (highlights.length > 0) {
+          // Si hay posición específica, usar el highlight más cercano a esa posición
+          // (esto es una aproximación, ya que la posición es del texto original)
+          const position = parseInt(targetPosition);
+          let closestHighlight = highlights[0];
+          let closestDistance = Infinity;
+
+          highlights.forEach((highlight) => {
+            const rect = highlight.getBoundingClientRect();
+            const elementPosition = rect.top + window.scrollY;
+            const distance = Math.abs(elementPosition - position);
+
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestHighlight = highlight;
+            }
+          });
+
+          targetHighlight = closestHighlight;
+        }
+      } else {
+        // Si no hay posición específica, usar la primera coincidencia
+        targetHighlight = document.querySelector(".search-highlight");
+      }
+
+      if (targetHighlight) {
+        setTimeout(() => {
+          targetHighlight.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest",
+          });
+
+          // Agregar efecto visual adicional
+          targetHighlight.style.transition = "all 0.3s";
+          targetHighlight.style.transform = "scale(1.1)";
+          targetHighlight.style.boxShadow = "0 0 10px rgba(250, 204, 21, 0.5)";
+          setTimeout(() => {
+            targetHighlight.style.transform = "scale(1)";
+            targetHighlight.style.boxShadow = "none";
+          }, 500);
+        }, 100);
+      }
+
+      // Remover resaltados después de 10 segundos (opcional)
+      // setTimeout(() => {
+      //   clearHighlights();
+      // }, 10000);
+    }
+
+    // Esperar a que el contenido se cargue completamente
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", highlightTextInPage);
+    } else {
+      // El DOM ya está cargado
+      setTimeout(highlightTextInPage, 100);
+    }
+
+    // Limpiar resaltados cuando se hace click fuera o se cambia de página
+    window.addEventListener("beforeunload", clearHighlights);
+  })();
+</script>
+
+<style>
+  .search-highlight {
+    background-color: rgb(250 204 21) !important;
+    color: rgb(17 24 39) !important;
+    padding: 2px 4px !important;
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .search-highlight:hover {
+    background-color: rgb(234 179 8) !important;
+  }
+</style>

@@ -1,0 +1,281 @@
+---
+import { getCollection } from 'astro:content';
+
+// Obtener todas las secciones
+const allSections = await getCollection('secciones');
+
+// Estructura jerárquica de secciones
+interface SectionNode {
+  title: string;
+  slug: string | null;
+  children: Map<string, SectionNode>;
+}
+
+// Construir árbol jerárquico correctamente
+const sectionTree = new Map<string, SectionNode>();
+
+// Función auxiliar para formatear títulos
+function formatTitle(slug: string): string {
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+allSections.forEach((section) => {
+  const parts = section.slug.split('/');
+  let currentLevel = sectionTree;
+  
+  // Construir el árbol nivel por nivel
+  parts.forEach((part, index) => {
+    const isLastPart = index === parts.length - 1;
+    
+    if (!currentLevel.has(part)) {
+      // Si es el último, es un archivo, si no es una carpeta
+      currentLevel.set(part, {
+        title: isLastPart ? section.data.title : formatTitle(part),
+        slug: isLastPart ? section.slug : null,
+        children: new Map(),
+      });
+    } else {
+      // Si ya existe pero ahora tenemos un slug (archivo), actualizarlo
+      const existingNode = currentLevel.get(part)!;
+      if (isLastPart && !existingNode.slug) {
+        existingNode.slug = section.slug;
+        existingNode.title = section.data.title;
+      }
+    }
+    
+    // Avanzar al siguiente nivel si no es el último
+    if (!isLastPart) {
+      currentLevel = currentLevel.get(part)!.children;
+    }
+  });
+});
+
+// Convertir Map a Array ordenado
+function mapToSortedArray(map: Map<string, SectionNode>): Array<[string, SectionNode]> {
+  return Array.from(map.entries()).sort(([a], [b]) => a.localeCompare(b));
+}
+
+// Obtener slug actual desde la URL
+const currentPath = Astro.url.pathname.replace('/WEB-Notas-de-Hacking', '').replace(/\/$/, '') || '/';
+const currentSlug = currentPath === '/' ? '/' : currentPath.split('/').filter(Boolean).join('/');
+
+// Función para verificar si una sección está activa
+function isActive(slug: string | null): boolean {
+  if (!slug) return false;
+  if (currentSlug === '/' && slug === 'index') return true;
+  return currentSlug === slug || currentSlug.startsWith(slug + '/');
+}
+
+// Función para verificar si un nodo tiene hijos activos
+function hasActiveChild(node: SectionNode): boolean {
+  if (node.slug && isActive(node.slug)) return true;
+  for (const [, child] of node.children) {
+    if (hasActiveChild(child)) return true;
+  }
+  return false;
+}
+
+// Construir clases CSS
+function getButtonClass(isActive: boolean, hasActiveChildren: boolean): string {
+  const base = 'sidebar-toggle w-full flex items-center justify-between px-3 py-2 rounded-md text-sm transition-colors';
+  if (isActive || hasActiveChildren) {
+    return `${base} bg-gray-800 text-blue-400 font-semibold`;
+  }
+  return `${base} text-gray-300 hover:bg-gray-800 hover:text-white`;
+}
+
+function getLinkClass(isActive: boolean): string {
+  const base = 'block px-3 py-2 rounded-md text-sm transition-colors';
+  if (isActive) {
+    return `${base} bg-blue-600 text-white font-semibold`;
+  }
+  return `${base} text-gray-300 hover:bg-gray-800 hover:text-white`;
+}
+
+function getContentClass(hasActiveChildren: boolean): string {
+  const base = 'sidebar-content ml-4 mt-1 space-y-1';
+  return hasActiveChildren ? base : `${base} hidden`;
+}
+
+const inicioClass = currentSlug === '/' 
+  ? 'block px-3 py-2 rounded-md text-sm transition-colors bg-blue-600 text-white font-semibold'
+  : 'block px-3 py-2 rounded-md text-sm transition-colors text-gray-300 hover:bg-gray-800 hover:text-white';
+---
+
+<aside
+  id="sidebar"
+  class="hidden lg:flex flex-col
+    w-64 min-w-[16rem]
+    bg-gray-900 border-r border-gray-700
+    fixed left-0 bottom-0
+    overflow-y-auto
+    transition-all duration-300
+    z-40"
+  style="top: var(--header-height, 73px);"
+>
+  <nav class="flex-1 p-4 space-y-1" id="sidebar-nav">
+    <!-- Enlace a inicio -->
+    <a href="/WEB-Notas-de-Hacking/" class={inicioClass}>
+      Inicio
+    </a>
+
+    <!-- Renderizar nivel 1 (categorías principales) -->
+    {mapToSortedArray(sectionTree).map(([key, node]) => {
+      const hasChildren = node.children.size > 0;
+      const isNodeActive = node.slug ? isActive(node.slug) : false;
+      const hasActiveChildren = hasActiveChild(node);
+      const nodeId = `node-${key}`;
+      
+      if (hasChildren) {
+        return (
+          <div class="sidebar-group" data-group-id={nodeId}>
+            <button
+              type="button"
+              class={getButtonClass(isNodeActive, hasActiveChildren)}
+              data-target={nodeId}
+              aria-expanded={hasActiveChildren ? 'true' : 'false'}
+            >
+              <span class="flex items-center gap-2">
+                <span class="sidebar-icon">{hasActiveChildren ? '▼' : '▶'}</span>
+                <span>{node.title}</span>
+              </span>
+            </button>
+            <div
+              class={getContentClass(hasActiveChildren)}
+              data-content={nodeId}
+            >
+              {/* Renderizar nivel 2 */}
+              {mapToSortedArray(node.children).map(([childKey, childNode]) => {
+                const hasGrandChildren = childNode.children.size > 0;
+                const isChildActive = childNode.slug ? isActive(childNode.slug) : false;
+                const hasActiveGrandChildren = hasActiveChild(childNode);
+                const childId = `${nodeId}-${childKey}`;
+                
+                if (hasGrandChildren) {
+                  return (
+                    <div class="sidebar-group" data-group-id={childId}>
+                      <button
+                        type="button"
+                        class={getButtonClass(isChildActive, hasActiveGrandChildren)}
+                        data-target={childId}
+                        aria-expanded={hasActiveGrandChildren ? 'true' : 'false'}
+                      >
+                        <span class="flex items-center gap-2">
+                          <span class="sidebar-icon">{hasActiveGrandChildren ? '▼' : '▶'}</span>
+                          <span>{childNode.title}</span>
+                        </span>
+                      </button>
+                      <div
+                        class={getContentClass(hasActiveGrandChildren)}
+                        data-content={childId}
+                      >
+                        {/* Renderizar nivel 3 (archivos finales) */}
+                        {mapToSortedArray(childNode.children).map(([grandChildKey, grandChildNode]) => {
+                          const isGrandChildActive = grandChildNode.slug ? isActive(grandChildNode.slug) : false;
+                          return (
+                            <a
+                              href={`/WEB-Notas-de-Hacking/${grandChildNode.slug}`}
+                              class={getLinkClass(isGrandChildActive)}
+                            >
+                              {grandChildNode.title}
+                            </a>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                } else if (childNode.slug) {
+                  return (
+                    <a
+                      href={`/WEB-Notas-de-Hacking/${childNode.slug}`}
+                      class={getLinkClass(isChildActive)}
+                    >
+                      {childNode.title}
+                    </a>
+                  );
+                }
+                return null;
+              })}
+            </div>
+          </div>
+        );
+      } else if (node.slug) {
+        return (
+          <a
+            href={`/WEB-Notas-de-Hacking/${node.slug}`}
+            class={getLinkClass(isNodeActive)}
+          >
+            {node.title}
+          </a>
+        );
+      }
+      return null;
+    })}
+  </nav>
+</aside>
+
+<script>
+  // Funcionalidad para los desplegables
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.sidebar-toggle');
+    
+    toggles.forEach((toggle) => {
+      toggle.addEventListener('click', () => {
+        const targetId = toggle.getAttribute('data-target');
+        const content = document.querySelector(`[data-content="${targetId}"]`);
+        const icon = toggle.querySelector('.sidebar-icon');
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        
+        if (content) {
+          if (isExpanded) {
+            content.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+            if (icon) icon.textContent = '▶';
+            toggle.classList.remove('bg-gray-800', 'text-blue-400', 'font-semibold');
+            toggle.classList.add('text-gray-300');
+          } else {
+            content.classList.remove('hidden');
+            toggle.setAttribute('aria-expanded', 'true');
+            if (icon) icon.textContent = '▼';
+            toggle.classList.add('bg-gray-800', 'text-blue-400', 'font-semibold');
+            toggle.classList.remove('text-gray-300');
+          }
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .sidebar-icon {
+    transition: transform 0.2s;
+    font-size: 0.75rem;
+    display: inline-block;
+    width: 0.75rem;
+  }
+  
+  .sidebar-content {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  #sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(55 65 81) rgb(17 24 39);
+  }
+  
+  #sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #sidebar::-webkit-scrollbar-track {
+    background: rgb(17 24 39);
+  }
+  
+  #sidebar::-webkit-scrollbar-thumb {
+    background-color: rgb(55 65 81);
+    border-radius: 3px;
+  }
+</style>

@@ -1,0 +1,178 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+
+// Obtener todas las secciones para mostrar en el índice
+const allSections = await getCollection("secciones");
+
+// Organizar secciones por categoría
+const sectionsByCategory: Record<string, typeof allSections> = {};
+
+allSections.forEach((section) => {
+  const category = section.slug.split("/")[0];
+  if (!sectionsByCategory[category]) {
+    sectionsByCategory[category] = [];
+  }
+  sectionsByCategory[category].push(section);
+});
+
+// Estadísticas
+const totalSections = allSections.length;
+const categories = Object.keys(sectionsByCategory).length;
+
+// Contar por categoría
+const categoryCounts = Object.entries(sectionsByCategory).map(
+  ([cat, sections]) => ({
+    name: cat,
+    count: sections.length,
+    sections: sections,
+  }),
+);
+
+// Ordenar categorías por nombre
+categoryCounts.sort((a, b) => a.name.localeCompare(b.name));
+---
+
+<Layout
+  title="Notas de Hacking - Inicio"
+  description="Notas de hacking, guía para aprender o repasar al empezar en el hacking."
+  showHeader={true}
+  showFooter={true}
+>
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <!-- Hero Section -->
+    <section class="text-center mb-12">
+      <h1
+        class="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
+      >
+        Notas de Hacking
+      </h1>
+      <p class="text-xl text-gray-300 mb-6">
+        Guía completa para aprender o repasar ciberseguridad desde cero
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+        <span class="px-4 py-2 bg-gray-800 rounded-lg">
+          {totalSections} Notas
+        </span>
+        <span class="px-4 py-2 bg-gray-800 rounded-lg">
+          {categories} Categorías
+        </span>
+        <span class="px-4 py-2 bg-gray-800 rounded-lg">
+          Enfoque: Pentesting
+        </span>
+      </div>
+    </section>
+
+    <hr class="my-8 border-gray-700" />
+
+    <!-- Introducción -->
+    <section class="mb-12">
+      <h2
+        class="text-3xl font-semibold mb-4 text-gray-200 border-b border-gray-700 pb-2"
+      >
+        Bienvenida y Cosas Previas
+      </h2>
+
+      <div class="space-y-4 text-gray-300">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-200">
+            Ruta de Aprendizaje
+          </h3>
+          <p>
+            Con enfoque principal en <strong class="text-blue-400"
+              >pentesting</strong
+            >, normalmente es lo que ayuda a conseguir unas buenas bases en
+            ciberseguridad y trabajo en esta área.
+            <strong class="text-yellow-400">
+              (No olvidar que simplemente son notas, gastar dinero en aprender
+              es una inversión, y esto no remplaza ninguna ruta de aprendizaje,
+              de cursos de pago, o de plataformas especializadas como Hack The
+              Box o Try Hack Me).
+            </strong>
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-200">
+            Información
+          </h3>
+          <p>
+            Cada sección está organizada en orden de temas y contiene
+            información estructurada para facilitar el aprendizaje.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-2 text-gray-200">
+             Estado del Proyecto
+          </h3>
+          <p>
+            Por ahora, falta información en algunas áreas, y se está trabajando
+            en organizar mejor la información. Después se estará agregando más
+            información, todo esto de a poco a poco...
+          </p>
+        </div>
+
+        <div class="bg-blue-900/20 border border-blue-700 rounded-lg p-4 mt-6">
+          <p class="text-gray-200">
+            <strong>Nota:</strong> Todas las secciones —y muchas más— estarán en construcción
+            y mejoramiento continuo. ¡NOS VEMOS!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-8 border-gray-700" />
+
+    <!-- Estadísticas -->
+    <section class="mb-12">
+      <h2
+        class="text-3xl font-semibold mb-6 text-gray-200 border-b border-gray-700 pb-2"
+      >
+        Estadísticas
+      </h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div
+          class="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center"
+        >
+          <div class="text-3xl font-bold text-blue-400">{totalSections}</div>
+          <div class="text-sm text-gray-400 mt-1">Total Notas</div>
+        </div>
+        <div
+          class="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center"
+        >
+          <div class="text-3xl font-bold text-blue-400">{categories}</div>
+          <div class="text-sm text-gray-400 mt-1">Categorías</div>
+        </div>
+        <div
+          class="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center"
+        >
+          <div class="text-3xl font-bold text-blue-400">76+</div>
+          <div class="text-sm text-gray-400 mt-1">Archivos MD</div>
+        </div>
+        <div
+          class="bg-gray-800/50 rounded-lg p-4 border border-gray-700 text-center"
+        >
+          <div class="text-3xl font-bold text-blue-400">100%</div>
+          <div class="text-sm text-gray-400 mt-1">Open Source</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  /* Estilos adicionales para la página de inicio */
+  code {
+    @apply bg-gray-900 text-gray-200 px-1.5 py-0.5 rounded text-sm font-mono;
+  }
+
+  pre {
+    @apply bg-gray-950 border border-gray-800 rounded-lg p-4 overflow-x-auto my-4;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+  }
+</style>
