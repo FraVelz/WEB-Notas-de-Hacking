@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 import Sidebar from "@/components/layout/Sidebar.astro";
 import iconoLogo from "@/images/logos/icono.svg";
+
 import "@/styles/global.css";
 
 interface Props {
@@ -29,25 +30,81 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href={iconoLogo.src} />
+
+    <!-- SEO Básico -->
+    <meta http-equiv="Content-Language" content="es" />
+    <meta
+      name="description"
+      content={description}
+    />
+    <meta
+      name="keywords"
+      content="ciberseguridad, hacking ético, pentesting, Linux, Python, redes, OSINT, anonimato"
+    />
+    <meta name="author" content="Fravelz" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://fravelz.github.io/WEB-Notas-de-Hacking/" />
+
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fravelz.github.io/WEB-Notas-de-Hacking/" />
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta property="og:image" content="https://github.com/FraVelz/WEB-Notas-de-Hacking/blob/main/screenshot.png?raw=true" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://fravelz.github.io/WEB-Notas-de-Hacking/" />
+    <meta
+      name="twitter:title"
+      content={title}
+    />
+    <meta
+      name="twitter:description"
+      content={description}
+    />
+    <meta
+      name="twitter:image"
+      content="https://github.com/FraVelz/WEB-Notas-de-Hacking/blob/main/screenshot.png?raw=true"
+    />
+
     <title>{title} - Notas de Hacking</title>
+
     <script>
       // Calcular altura del header y establecerla como variable CSS
-      document.addEventListener('DOMContentLoaded', () => {
-        const header = document.getElementById('main-header');
+      document.addEventListener("DOMContentLoaded", () => {
+        const header = document.getElementById("main-header");
         if (header) {
           const headerHeight = header.offsetHeight;
-          document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+          document.documentElement.style.setProperty(
+            "--header-height",
+            `${headerHeight}px`,
+          );
         }
       });
     </script>
   </head>
- <body class="bg-gray-950 text-gray-200 h-screen overflow-hidden flex flex-col">
+  <body
+    class="bg-gray-950 text-gray-200 h-screen overflow-hidden flex flex-col"
+  >
     {showHeader && <Header />}
 
     <div class="flex flex-1 overflow-hidden relative">
       {showSidebar && <Sidebar />}
 
-      <main class="flex-1 overflow-hidden h-full" style="margin-top: var(--header-height, 73px);">
+      <main
+        class="flex-1 overflow-hidden h-full"
+        style="margin-top: var(--header-height, 73px);"
+      >
         <div class="h-full overflow-y-auto lg:ml-[256px]">
           <slot />
         </div>
