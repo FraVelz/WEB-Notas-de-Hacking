@@ -1,4 +1,8 @@
-# 📚 Notas de Hacking
+# Notas de Hacking
+
+[English Version](./README.EN.md)
+
+![Captura de pantalla](./screenshot.png)
 
 Guía completa para aprender o repasar ciberseguridad desde cero. Un sitio web estático construido con Astro que contiene notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.
 
@@ -20,40 +24,7 @@ Guía completa para aprender o repasar ciberseguridad desde cero. Un sitio web e
 - **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático
 - **[Content Collections](https://docs.astro.build/en/guides/content-collections/)** - Gestión de contenido
 
-## 🚀 Instalación
-
-1. Clona el repositorio:
-
-```bash
-git clone https://github.com/fravelz/WEB-Notas-de-Hacking.git
-cd WEB-Notas-de-Hacking
-```
-
-2. Instala las dependencias:
-
-```bash
-pnpm install
-# o
-npm install
-```
-
-3. Inicia el servidor de desarrollo:
-
-```bash
-pnpm dev
-# o
-npm run dev
-```
-
-4. Abre [http://localhost:4321](http://localhost:4321) en tu navegador
-
-## 📜 Scripts Disponibles
-
-- `pnpm dev` - Inicia el servidor de desarrollo
-- `pnpm build` - Construye el sitio para producción
-- `pnpm preview` - Previsualiza la build de producción localmente
-
-## 📁 Estructura del Proyecto
+## �📁 Estructura del Proyecto
 
 (Aproximación...).
 
@@ -85,15 +56,9 @@ npm run dev
 - **Anonimato** - Privacidad y anonimato
 - **Otros** - Recursos y herramientas adicionales
 
-## 🌐 Despliegue
+## 📝 Información
 
-El sitio está configurado para desplegarse en GitHub Pages. La build genera archivos estáticos en la carpeta `dist/` que pueden ser servidos desde cualquier hosting estático.
-
-## 📝 Licencia
-
-Este proyecto es de código abierto y está disponible para uso educativo.
-
-## 👤 Autor
+**Licencia:** Apache Licence 2.0
 
 **Fravelz**
 
