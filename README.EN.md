@@ -2,7 +2,7 @@
 
 [Version en Español](./README.md)
 
-![Screenshot](./screenshot.png)
+![Screenshot](./public/screenshot.png)
 
 A complete guide to learning or refreshing your cybersecurity knowledge from scratch. A static website built with Astro containing organized notes on ethical hacking, penetration testing, Linux, Python, networking, and more.
 
