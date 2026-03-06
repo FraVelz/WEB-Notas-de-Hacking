@@ -1,0 +1,80 @@
+/**
+ * Paleta de colores — Notas de Hacking
+ * Referencia: GitHub Dark / Terminal
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   MODO OSCURO
+   ═══════════════════════════════════════════════════════════════ */
+:root,
+::backdrop {
+  /* Fondos */
+  --sl-color-black: #0d1117;        /* Fondo principal */
+  --sl-color-gray-6: #161b22;       /* Fondo secundario */
+  --sl-color-gray-5: #21262d;       /* Bordes, inline code bg */
+  --sl-color-gray-4: #30363d;       /* Hairlines */
+  --sl-color-gray-3: #8b949e;       /* Texto secundario */
+  --sl-color-gray-2: #c9d1d9;       /* Texto principal */
+  --sl-color-gray-1: #e6edf3;       /* Texto destacado */
+  --sl-color-white: #f0f6fc;        /* Blanco / máximo contraste */
+
+  /* Enlaces y acentos */
+  --sl-color-accent-low: #1f6feb;   /* Azul oscuro (hover bg) */
+  --sl-color-accent: #58a6ff;       /* Enlaces / acentos */
+  --sl-color-accent-high: #79c0ff;  /* Azul claro (texto sobre acento) */
+
+  /* Colores semánticos adicionales */
+  --sl-color-green: #3fb950;        /* Verde terminal */
+  --sl-color-green-low: #238636;
+  --sl-color-green-high: #56d364;
+  --sl-color-orange: #d29922;       /* Advertencias */
+  --sl-color-orange-low: #9e6a03;
+  --sl-color-orange-high: #e3b341;
+  --sl-color-red: #f85149;          /* Error / acento rojo */
+  --sl-color-red-low: #da3633;
+  --sl-color-red-high: #ff7b72;
+
+  /* Semánticos Starlight */
+  --sl-color-text: var(--sl-color-gray-2);
+  --sl-color-text-accent: var(--sl-color-accent-high);
+  --sl-color-text-invert: var(--sl-color-accent-low);
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-gray-6);
+  --sl-color-bg-inline-code: var(--sl-color-gray-5);
+  --sl-color-bg-accent: var(--sl-color-accent-high);
+  --sl-color-hairline-light: var(--sl-color-gray-5);
+  --sl-color-hairline: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-black);
+  --sl-color-backdrop-overlay: rgba(1, 4, 9, 0.8);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODO CLARO — Complementario a la paleta oscura
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+  --sl-color-white: #0d1117;
+  --sl-color-gray-1: #161b22;
+  --sl-color-gray-2: #21262d;
+  --sl-color-gray-3: #30363d;
+  --sl-color-gray-4: #484f58;
+  --sl-color-gray-5: #8b949e;
+  --sl-color-gray-6: #c9d1d9;
+  --sl-color-gray-7: #e6edf3;
+  --sl-color-black: #f6f8fa;
+
+  --sl-color-accent-high: #1f6feb;
+  --sl-color-accent: #0969da;
+  --sl-color-accent-low: #ddf4ff;
+
+  --sl-color-text-accent: var(--sl-color-accent);
+  --sl-color-text-invert: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-gray-7);
+  --sl-color-bg-sidebar: var(--sl-color-bg);
+  --sl-color-bg-inline-code: var(--sl-color-gray-6);
+  --sl-color-bg-accent: var(--sl-color-accent);
+  --sl-color-hairline-light: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-gray-6);
+  --sl-color-backdrop-overlay: rgba(31, 35, 40, 0.6);
+}
