@@ -103,18 +103,17 @@ function getContentClass(hasActiveChildren: boolean): string {
 const inicioClass = currentSlug === '/' 
   ? 'block px-3 py-2 rounded-md text-sm transition-colors bg-blue-600 text-white font-semibold'
   : 'block px-3 py-2 rounded-md text-sm transition-colors text-gray-300 hover:bg-gray-800 hover:text-white';
+
+interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
 ---
 
 <aside
   id="sidebar"
-  class="hidden lg:flex flex-col
-    w-64 min-w-[16rem]
-    bg-gray-900 border-r border-gray-700
-    fixed left-0 bottom-0
-    overflow-y-auto
-    transition-all duration-300
-    z-40"
-  style="top: var(--header-height, 73px);"
+  class={className}
 >
   <nav class="flex-1 p-4 space-y-1" id="sidebar-nav">
     <!-- Enlace a inicio -->
