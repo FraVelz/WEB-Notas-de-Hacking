@@ -37,14 +37,21 @@ function extractTextFromMarkdown(body: string): string {
 // Obtener todas las secciones para la búsqueda
 const allSections = await getCollection('secciones');
 
+interface Section {
+  body?: string;
+  slug: string;
+  data?: {
+    title?: string;
+  };
+}
+
 // Preparar datos de búsqueda con contenido completo
 const searchData = await Promise.all(
-  allSections.map(async (section) => {
-    const body = section.body || '';
-    const content = extractTextFromMarkdown(body);
+  allSections.map(async (section: Section) => {
+    const content = extractTextFromMarkdown(section.body || '');
     
     return {
-      title: section.data.title,
+      title: section.data?.title || "Sin titulo",
       slug: section.slug,
       category: section.slug.split('/')[0],
       content: content.substring(0, 5000), // Limitar tamaño para evitar payloads muy grandes
@@ -54,17 +61,17 @@ const searchData = await Promise.all(
 
 // Serializar para el cliente
 const searchDataJson = JSON.stringify(searchData);
+
+interface Props {
+  className: string;
+}
+
+const { className } = Astro.props;
 ---
 
 <header
   id="main-header"
-  class="flex flex-wrap items-center gap-4 p-4
-  bg-gray-900
-  text-gray-200
-  border-b-2 border-gray-700
-  shadow-lg shadow-black/20
-  
-  fixed top-0 left-0 right-0 z-50"
+  class={className}
 >
   <div class="w-fit lg:w-[365px]
     flex items-center gap-3

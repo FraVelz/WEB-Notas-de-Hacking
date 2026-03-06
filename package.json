@@ -13,9 +13,10 @@
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
+    "@astrojs/starlight": "^0.37.6",
     "@astrojs/tailwind": "^6.0.2",
     "@lottiefiles/dotlottie-react": "^0.17.13",
-    "astro": "^5.16.16",
+    "astro": "^5.18.0",
     "marked": "^14.1.0",
     "prismjs": "^1.30.0",
     "react": "^19.1.1",
