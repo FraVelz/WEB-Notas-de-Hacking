@@ -9,17 +9,13 @@ import "@/styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  showHeader?: boolean;
   showFooter?: boolean;
-  showSidebar?: boolean;
 }
 
 const {
   title = "Notas de Hacking",
   description = "Notas de hacking, guía para aprender o repasar al empezar en el hacking.",
-  showHeader = true,
   showFooter = false,
-  showSidebar = true,
 } = Astro.props;
 ---
 
@@ -33,45 +29,42 @@ const {
 
     <!-- SEO Básico -->
     <meta http-equiv="Content-Language" content="es" />
-    <meta
-      name="description"
-      content={description}
-    />
+    <meta name="description" content={description} />
     <meta
       name="keywords"
       content="ciberseguridad, hacking ético, pentesting, Linux, Python, redes, OSINT, anonimato"
     />
     <meta name="author" content="Fravelz" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://fravelz.github.io/WEB-Notas-de-Hacking/" />
+    <link
+      rel="canonical"
+      href="https://fravelz.github.io/WEB-Notas-de-Hacking/"
+    />
 
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fravelz.github.io/WEB-Notas-de-Hacking/" />
     <meta
-      property="og:title"
-      content={title}
+      property="og:url"
+      content="https://fravelz.github.io/WEB-Notas-de-Hacking/"
     />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <meta
-      property="og:description"
-      content={description}
+      property="og:image"
+      content="https://github.com/FraVelz/WEB-Notas-de-Hacking/blob/main/screenshot.png?raw=true"
     />
-    <meta property="og:image" content="https://github.com/FraVelz/WEB-Notas-de-Hacking/blob/main/screenshot.png?raw=true" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://fravelz.github.io/WEB-Notas-de-Hacking/" />
     <meta
-      name="twitter:title"
-      content={title}
+      name="twitter:url"
+      content="https://fravelz.github.io/WEB-Notas-de-Hacking/"
     />
-    <meta
-      name="twitter:description"
-      content={description}
-    />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
       content="https://github.com/FraVelz/WEB-Notas-de-Hacking/blob/main/screenshot.png?raw=true"
@@ -93,24 +86,48 @@ const {
       });
     </script>
   </head>
+
   <body
-    class="bg-gray-950 text-gray-200 h-screen overflow-hidden flex flex-col"
+    class="bg-gray-950 text-gray-200 h-screen overflow-hidden grid grid-cols-[auto_auto] grid-rows-[auto_auto]"
   >
-    {showHeader && <Header />}
+    <Header
+      className=`h-fit flex flex-wrap items-center gap-4 p-4
+      bg-gray-900
+      text-gray-200
+      border-b-2 border-gray-700
+      shadow-lg shadow-black/20
+      
+      col-span-2`
+    />
 
-    <div class="flex flex-1 overflow-hidden relative">
-      {showSidebar && <Sidebar />}
+    <Sidebar
+      className=`
+    hidden lg:flex flex-col
+    w-64 min-w-[16rem]
+    bg-gray-900 border-r border-gray-700
+    overflow-y-auto
+    transition-all duration-300
+    z-40
+    `
+    />
 
-      <main
-        class="flex-1 overflow-hidden h-full"
-        style="margin-top: var(--header-height, 73px);"
-      >
-        <div class="h-full overflow-y-auto lg:ml-[256px]">
-          <slot />
-        </div>
+    <div class="overflow-y-scroll flex flex-col">
+      <main class="h-full w-full">
+        <slot />
       </main>
-    </div>
 
-    {showFooter && <Footer />}
+      {
+        showFooter && (
+          <Footer
+            className={`
+            bg-gray-900 text-gray-400
+            border-t-2 border-gray-700
+            flex flex-col align-middle
+            p-5 gap-3
+          `}
+          />
+        )
+      }
+    </div>
   </body>
 </html>

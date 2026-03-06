@@ -10,7 +10,7 @@ interface Props {
 const { title, route } = Astro.props;
 ---
 
-<Layout title={title} showSidebar={true}>
+<Layout title={title}>
   <div class="flex flex-1 overflow-hidden h-full">
     <div class="flex-1 overflow-y-auto h-full">
       <div class="container mx-auto px-4 py-8 max-w-6xl lg:max-w-4xl xl:mr-[256px]">
@@ -54,7 +54,7 @@ const { title, route } = Astro.props;
     }
 
     // Escapar caracteres especiales para regex
-    function escapeRegExp(string) {
+    function escapeRegExp(string: string) {
       return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     }
 
@@ -105,7 +105,7 @@ const { title, route } = Astro.props;
 
       // Resaltar coincidencias
       textNodes.forEach((textNode) => {
-        const text = textNode.textContent;
+        const text = textNode.textContent || "";
         let hasMatch = false;
         let highlightedText = text;
 
@@ -123,7 +123,7 @@ const { title, route } = Astro.props;
         if (hasMatch) {
           const wrapper = document.createElement("span");
           wrapper.innerHTML = highlightedText;
-          textNode.parentNode.replaceChild(wrapper, textNode);
+          textNode.parentNode?.replaceChild(wrapper, textNode);
         }
       });
 
@@ -133,7 +133,7 @@ const { title, route } = Astro.props;
       if (targetPosition !== null) {
         // Si hay una posición específica, intentar encontrar el highlight más cercano
         const highlights = Array.from(
-          document.querySelectorAll(".search-highlight"),
+          document.querySelectorAll(".search-highlight") as NodeListOf<HTMLElement>,
         );
         if (highlights.length > 0) {
           // Si hay posición específica, usar el highlight más cercano a esa posición
@@ -157,7 +157,7 @@ const { title, route } = Astro.props;
         }
       } else {
         // Si no hay posición específica, usar la primera coincidencia
-        targetHighlight = document.querySelector(".search-highlight");
+        targetHighlight = document.querySelector(".search-highlight") as HTMLElement;
       }
 
       if (targetHighlight) {
