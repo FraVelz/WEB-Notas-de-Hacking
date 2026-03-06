@@ -1,4 +1,6 @@
 # Logs
+.pnpm-store/
+
 logs
 *.log
 npm-debug.log*

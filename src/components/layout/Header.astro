@@ -20,7 +20,8 @@ function extractTextFromMarkdown(body: string): string {
   // Remover headers (#)
   text = text.replace(/^#{1,6}\s+/gm, '');
   
-  // Remover listas (-, *, +)
+  // Remover listas (-, 
+  // *, +)
   text = text.replace(/^[\s]*[-*+]\s+/gm, '');
   text = text.replace(/^\d+\.\s+/gm, '');
   

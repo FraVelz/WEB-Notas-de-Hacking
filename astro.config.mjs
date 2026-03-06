@@ -29,12 +29,8 @@ export default defineConfig({
     // mantenemos el orden recomendado: primero Starlight, luego el resto.
     starlight({
       title: 'Notas de Hacking',
-      sidebar: [
-        {
-          label: 'Introducción',
-          items: [{ label: 'Inicio', link: '/docs/' }],
-        },
-      ],
+      disable404Route: true,
+      customCss: ['./src/styles/theme.css'],
       social: [
         {
           icon: 'github',
