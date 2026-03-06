@@ -7,23 +7,19 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "convert": "node convert-to-md.js"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
     "@astrojs/react": "4.4.2",
+    "@astrojs/starlight": "^0.37.6",
     "@astrojs/tailwind": "^6.0.2",
-    "@lottiefiles/dotlottie-react": "^0.17.13",
-    "astro": "^5.16.16",
-    "marked": "^14.1.0",
+    "astro": "^5.18.0",
     "prismjs": "^1.30.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router-dom": "^6.30.3"
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "@types/prismjs": "^1.26.3",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.20",

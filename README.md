@@ -2,7 +2,7 @@
 
 [English Version](./README.EN.md)
 
-![Captura de pantalla](./screenshot.png)
+![Captura de pantalla](./public/screenshot.png)
 
 Guía completa para aprender o repasar ciberseguridad desde cero. Un sitio web estático construido con Astro que contiene notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.
 
