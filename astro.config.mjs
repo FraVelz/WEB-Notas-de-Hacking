@@ -29,6 +29,7 @@ export default defineConfig({
     // mantenemos el orden recomendado: primero Starlight, luego el resto.
     starlight({
       title: 'Notas de Hacking',
+      description: 'Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.',
       disable404Route: true,
       customCss: ['./src/styles/theme.css'],
       social: [
@@ -37,6 +38,18 @@ export default defineConfig({
           label: 'GitHub',
           href: 'https://github.com/FraVelz/WEB-Notas-de-Hacking',
         },
+      ],
+      head: [
+        { tag: 'meta', attrs: { name: 'author', content: 'Fravelz' } },
+        { tag: 'meta', attrs: { name: 'robots', content: 'index, follow' } },
+        { tag: 'meta', attrs: { name: 'keywords', content: 'ciberseguridad, hacking ético, pentesting, Linux, Python, redes, OSINT, anonimato' } },
+        { tag: 'meta', attrs: { 'http-equiv': 'Content-Language', content: 'es' } },
+        { tag: 'meta', attrs: { property: 'og:image', content: 'https://fravelz.github.io/WEB-Notas-de-Hacking/screenshot.png' } },
+        { tag: 'meta', attrs: { property: 'og:image:width', content: '1200' } },
+        { tag: 'meta', attrs: { property: 'og:image:height', content: '630' } },
+        { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+        { tag: 'meta', attrs: { name: 'twitter:image', content: 'https://fravelz.github.io/WEB-Notas-de-Hacking/screenshot.png' } },
+        { tag: 'meta', attrs: { name: 'twitter:image:alt', content: 'Notas de Hacking - Guía de ciberseguridad' } },
       ],
     }),
     react(),
