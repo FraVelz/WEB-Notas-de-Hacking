@@ -1,0 +1,73 @@
+/**
+ * Paleta de colores — Notas de Hacking
+ * Diseño: Verde vivo con mezclas de negro
+ * Hue base: 148 (verde vibrante)
+ */
+
+/* ═══════════════════════════════════════════════════════════════
+   MODO OSCURO — Negro profundo + verde vivo
+   ═══════════════════════════════════════════════════════════════ */
+:root,
+::backdrop {
+  /* Escala de grises: negro con sutiles tintes verdes para cohesión */
+  --sl-color-white: hsl(148, 8%, 96%);
+  --sl-color-gray-1: hsl(148, 6%, 88%);
+  --sl-color-gray-2: hsl(148, 5%, 72%);
+  --sl-color-gray-3: hsl(148, 4%, 52%);
+  --sl-color-gray-4: hsl(148, 5%, 36%);
+  --sl-color-gray-5: hsl(148, 6%, 18%);
+  --sl-color-gray-6: hsl(148, 8%, 11%);
+  --sl-color-black: hsl(148, 10%, 5%);
+
+  /* Acento: verde vivo — saturado, luminoso */
+  --sl-color-accent-low: hsl(148, 55%, 14%);
+  --sl-color-accent: hsl(148, 92%, 50%);
+  --sl-color-accent-high: hsl(148, 82%, 78%);
+
+  /* Semánticos */
+  --sl-color-text: var(--sl-color-gray-2);
+  --sl-color-text-accent: var(--sl-color-accent-high);
+  --sl-color-text-invert: var(--sl-color-accent-low);
+  --sl-color-bg: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-black);
+  --sl-color-bg-sidebar: var(--sl-color-gray-6);
+  --sl-color-bg-inline-code: var(--sl-color-gray-5);
+  --sl-color-bg-accent: var(--sl-color-accent-high);
+  --sl-color-hairline-light: hsl(148, 6%, 20%);
+  --sl-color-hairline: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-black);
+  --sl-color-backdrop-overlay: hsla(148, 12%, 4%, 0.82);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MODO CLARO — Misma tonalidad, contraste optimizado
+   ═══════════════════════════════════════════════════════════════ */
+:root[data-theme='light'],
+[data-theme='light'] ::backdrop {
+  /* Claros con tinte verde sutil — armonía visual */
+  --sl-color-white: hsl(148, 12%, 6%);
+  --sl-color-gray-1: hsl(148, 8%, 18%);
+  --sl-color-gray-2: hsl(148, 6%, 28%);
+  --sl-color-gray-3: hsl(148, 5%, 42%);
+  --sl-color-gray-4: hsl(148, 5%, 58%);
+  --sl-color-gray-5: hsl(148, 8%, 82%);
+  --sl-color-gray-6: hsl(148, 15%, 93%);
+  --sl-color-gray-7: hsl(148, 20%, 97%);
+  --sl-color-black: hsl(148, 25%, 99%);
+
+  /* Verde vivo adaptado para fondo claro — rico, legible */
+  --sl-color-accent-high: hsl(148, 75%, 28%);
+  --sl-color-accent: hsl(148, 72%, 38%);
+  --sl-color-accent-low: hsl(148, 50%, 94%);
+
+  /* Semánticos */
+  --sl-color-text-accent: var(--sl-color-accent);
+  --sl-color-text-invert: var(--sl-color-black);
+  --sl-color-bg-nav: var(--sl-color-gray-7);
+  --sl-color-bg-sidebar: var(--sl-color-bg);
+  --sl-color-bg-inline-code: var(--sl-color-gray-6);
+  --sl-color-bg-accent: var(--sl-color-accent);
+  --sl-color-hairline-light: var(--sl-color-gray-6);
+  --sl-color-hairline-shade: var(--sl-color-gray-6);
+  --sl-color-backdrop-overlay: hsla(148, 8%, 35%, 0.7);
+}
