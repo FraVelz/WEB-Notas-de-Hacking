@@ -12,7 +12,7 @@ Aunque todas comparten los mismos **componentes (empleados dedicados)**, la mism
 
 ---
 
-## 1. Distribuciones populares en ciberseguridad {#1-distribuciones-populares-en-ciberseguridad}
+## 1. Distribuciones populares en ciberseguridad
 - **ParrotOS**
 - **Ubuntu**
 - **Debian**
@@ -24,7 +24,7 @@ Aunque todas comparten los mismos **componentes (empleados dedicados)**, la mism
 
 ---
 
-## 2. ¿Por qué elegir Linux? {#2-por-qué-elegir-linux}
+## 2. ¿Por qué elegir Linux?
 Muchos usuarios eligen Linux para sus ordenadores de escritorio por su:
 
 - **Gratuidad**
@@ -43,7 +43,7 @@ Además, ofrece **actualizaciones frecuentes y regulares**.
 
 ---
 
-## 3. Linux en ciberseguridad {#3-linux-en-ciberseguridad}
+## 3. Linux en ciberseguridad
 Como especialistas en **ciberseguridad**, preferimos Linux porque su **código fuente está disponible** para análisis y personalización.<br /> Gracias a esto, podemos **optimizar y configurar nuestras distribuciones** según nuestras necesidades específicas.
 
 Podemos usar estas distribuciones en muchos entornos:
@@ -56,7 +56,7 @@ Podemos usar estas distribuciones en muchos entornos:
 
 ---
 
-## 4. Principales diferencias entre distribuciones {#4-principales-diferencias-entre-distribuciones}
+## 4. Principales diferencias entre distribuciones
 Las diferencias entre las distintas distribuciones de Linux radican en:
 
 - Los **paquetes incluidos**
@@ -71,13 +71,13 @@ Las diferencias entre las distintas distribuciones de Linux radican en:
 
 ---
 
-## 5. Debian {#5-debian}
+## 5. Debian
 **Debian** es una distribución de Linux ampliamente utilizada y respetada, conocida por su **estabilidad** y **fiabilidad**.<br /> Se utiliza en diversos entornos: ordenadores de escritorio, servidores y sistemas embebidos.
 
-### Sistema de gestión de paquetes {#sistema-de-gestión-de-paquetes}
+### Sistema de gestión de paquetes
 Debian utiliza el sistema **APT (Advanced Package Tool)** para gestionar actualizaciones y parches de seguridad.<br /> Este sistema permite mantener el sistema actualizado mediante la **descarga e instalación automática de actualizaciones de seguridad**, tanto de forma **manual** como **automática**.
 
-### Aprendizaje y personalización {#aprendizaje-y-personalización}
+### Aprendizaje y personalización
 Debian puede tener una **curva de aprendizaje más pronunciada** que otras distribuciones, pero se considera una de las más **flexibles y personalizables**.
 
 Aunque su configuración puede ser compleja, ofrece un **excelente control del sistema**, lo cual es muy valorado por usuarios avanzados.
@@ -88,19 +88,19 @@ Cuanto más control tengamos sobre un sistema Linux, más complejo puede parecer
 </blockquote>
 Sin un aprendizaje profundo, podríamos dedicar mucho más tiempo a configurar tareas simples que a aprender unos pocos comandos con profundidad.
 
-### Estabilidad y soporte {#estabilidad-y-soporte}
+### Estabilidad y soporte
 La **estabilidad y la fiabilidad** son los principales puntos fuertes de Debian.<br /> Esta distribución ofrece **versiones con soporte a largo plazo (LTS)** que proporcionan actualizaciones y parches de seguridad por hasta **cinco años**.
 
 Esto es esencial para **servidores** y sistemas que deben funcionar **24/7**.
 
 Aunque en ocasiones ha presentado vulnerabilidades, la comunidad de Debian responde rápidamente con **parches y actualizaciones de seguridad**.
 
-### Seguridad y privacidad {#seguridad-y-privacidad}
+### Seguridad y privacidad
 Debian tiene un fuerte compromiso con la **seguridad** y la **privacidad**, y cuenta con un historial muy sólido en estos aspectos.
 
 ---
 
-## 6. Conclusión {#6-conclusión}
+## 6. Conclusión
 **Debian** es una distribución de Linux **versátil y confiable**, ampliamente utilizada en múltiples entornos.<br /> Su estabilidad, fiabilidad y compromiso con la seguridad la convierten en una opción muy atractiva, especialmente para el ámbito de la **ciberseguridad**, como también su **gran comunidad**.
 
 ---

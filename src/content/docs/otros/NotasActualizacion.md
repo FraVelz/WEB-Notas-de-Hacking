@@ -10,7 +10,7 @@ Información general y amplia, de herramientas, colaboradores, actualizaciones, 
 
 ---
 
-## Herramientas utilizadas {#herramientas-utilizadas}
+## Herramientas utilizadas
 - **VS Code,** para variedad de herramientas para largas jornadas de documentación y escritura.
 - **Extensión de VS Code:** markdownlint, para documentar archivos en markdown con formato estándar.
 - **Extensión de VS Code:** ltex, para la revisión de la ortografía en español.
@@ -21,7 +21,7 @@ Información general y amplia, de herramientas, colaboradores, actualizaciones, 
 
 ---
 
-## Colabores más importantes {#colabores-más-importantes}
+## Colabores más importantes
 - Student Ethical <strong>(<span className="citation" data-cites="studentethical">@studentethical</span>)</strong>
 - Tvrs8<strong> (<span className="citation" data-cites="studentethical">@tvrs8</span>)</strong>
 
@@ -29,7 +29,7 @@ Información general y amplia, de herramientas, colaboradores, actualizaciones, 
 
 ---
 
-## Actualización Existentes {#actualización-existentes}
+## Actualización Existentes
 Para rangos de fechas -, para fechas específicas ;.
 
 **Fase 1:**
@@ -42,7 +42,7 @@ Para rangos de fechas -, para fechas específicas ;.
 
 ---
 
-## Actualización (0.0v - 0.1.0v) {#actualización-0.0v---0.1.0v}
+## Actualización (0.0v - 0.1.0v)
 **actualizaciones diarias desde:** 2025-09-20
 
 **cosas implementadas:**
@@ -69,7 +69,7 @@ Mejor organización de directorios y archivos. (dentro de cada directorio ya con
 
 ---
 
-## Actualización (1.0v - 0.2.0v) {#actualización-1.0v---0.2.0v}
+## Actualización (1.0v - 0.2.0v)
 **cosas implementadas:**
 
 - **Se organizó mejor el temario** y **los títulos** de la parte del readme para que fuesen más claros.

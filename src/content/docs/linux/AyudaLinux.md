@@ -10,7 +10,7 @@ Siempre nos encontraremos con herramientas cuyos parámetros opcionales desconoc
 
 ---
 
-## Primer comando {#primer-comando}
+## Primer comando
 ```bash
 fravelz@htb[/htb]$ ls
 cacert.der  Documents  Music     Public     Videos
@@ -61,7 +61,7 @@ Tras ver algunos ejemplos, también podemos consultar rápidamente los parámetr
 
 ---
 
-## Ayuda rápida (--help y -h) {#ayuda-rápida---help-y--h}
+## Ayuda rápida (--help y -h)
 **Sintaxis:**
 ```bash
 # Obtener ayuda
@@ -122,7 +122,7 @@ Como podemos ver, los resultados no difieren mucho en este ejemplo: man ofrece l
 
 ---
 
-## Buscar comandos y documentación relacionada (apropos) {#buscar-comandos-y-documentación-relacionada-apropos}
+## Buscar comandos y documentación relacionada (apropos)
 Otra herramienta útil al principio es apropos. Cada página del manual incluye una breve descripción. Esta herramienta busca en las descripciones instancias de una palabra clave determinada.
 
 **Sintaxis:**
@@ -151,7 +151,7 @@ Otro recurso útil cuando tenemos problemas para entender un comando largo es: [
 
 ---
 
-## Conclusión {#conclusión}
+## Conclusión
 A continuación cubriremos una gran cantidad de comandos, muchos de los cuales pueden ser nuevos para usted. Sin embargo, ahora sabe cómo buscar ayuda con cualquier comando que no conozca o con el que no esté seguro de sus opciones. Además, le animamos a explorar su curiosidad y a dedicar el tiempo que necesite para experimentar con las herramientas presentadas. Siempre será tiempo bien invertido.
 
 [Regresar al inicio](/)

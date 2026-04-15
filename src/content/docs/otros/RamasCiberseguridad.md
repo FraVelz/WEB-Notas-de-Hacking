@@ -6,7 +6,7 @@ description: Ramas Ciberseguridad - Notas de hacking y ciberseguridad.
 # Ramas y Especializaciones de ciberseguridad
 ---
 
-## 1. Seguridad Ofensiva (Ethical Hacking o Red Team) {#1-seguridad-ofensiva-ethical-hacking-o-red-team}
+## 1. Seguridad Ofensiva (Ethical Hacking o Red Team)
 Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como los hackers para encontrar vulnerabilidades antes de que lo hagan los delincuentes.
 
 **Subramas:**
@@ -21,7 +21,7 @@ Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como
 
 ---
 
-## 2. Seguridad Defensiva (Blue Team) {#2-seguridad-defensiva-blue-team}
+## 2. Seguridad Defensiva (Blue Team)
 Su función es **detectar, detener y responder** ante los ataques.
 
 **Subramas:**
@@ -36,7 +36,7 @@ Su función es **detectar, detener y responder** ante los ataques.
 
 ---
 
-## 3. Ciberinteligencia (Cyber Threat Intelligence) {#3-ciberinteligencia-cyber-threat-intelligence}
+## 3. Ciberinteligencia (Cyber Threat Intelligence)
 Se centra en **recolectar, analizar y anticipar amenazas** cibernéticas.
 
 **Subramas:**
@@ -50,7 +50,7 @@ Se centra en **recolectar, analizar y anticipar amenazas** cibernéticas.
 
 ---
 
-## 4. Criptografía y Seguridad de la Información {#4-criptografía-y-seguridad-de-la-información}
+## 4. Criptografía y Seguridad de la Información
 Protege los **datos** mediante matemáticas, algoritmos y protocolos seguros.
 
 **Subramas:**
@@ -64,7 +64,7 @@ Protege los **datos** mediante matemáticas, algoritmos y protocolos seguros.
 
 ---
 
-## 5. Seguridad en Redes {#5-seguridad-en-redes}
+## 5. Seguridad en Redes
 Asegura la **infraestructura** que conecta dispositivos y servidores.
 
 **Subramas:**
@@ -78,7 +78,7 @@ Asegura la **infraestructura** que conecta dispositivos y servidores.
 
 ---
 
-## 6. Seguridad en la Nube (Cloud Security) {#6-seguridad-en-la-nube-cloud-security}
+## 6. Seguridad en la Nube (Cloud Security)
 Protege los servicios y datos alojados en plataformas como AWS, Azure o Google Cloud.
 
 **Subramas:**
@@ -92,7 +92,7 @@ Protege los servicios y datos alojados en plataformas como AWS, Azure o Google C
 
 ---
 
-## 7. Seguridad en Aplicaciones {#7-seguridad-en-aplicaciones}
+## 7. Seguridad en Aplicaciones
 Se enfoca en asegurar el **software** desde su desarrollo.
 
 **Subramas:**
@@ -106,7 +106,7 @@ Se enfoca en asegurar el **software** desde su desarrollo.
 
 ---
 
-## 8. Gobernanza, Riesgo y Cumplimiento (GRC) {#8-gobernanza-riesgo-y-cumplimiento-grc}
+## 8. Gobernanza, Riesgo y Cumplimiento (GRC)
 Enfocada en la **gestión estratégica de la seguridad**, políticas, normas y auditorías.
 
 **Subramas:**
@@ -118,7 +118,7 @@ Enfocada en la **gestión estratégica de la seguridad**, políticas, normas y a
 
 ---
 
-## 9. Seguridad Industrial y de Infraestructuras Críticas {#9-seguridad-industrial-y-de-infraestructuras-críticas}
+## 9. Seguridad Industrial y de Infraestructuras Críticas
 Protege sistemas industriales y servicios esenciales (energía, transporte, agua, etc.).
 
 **Subramas:**
@@ -129,7 +129,7 @@ Protege sistemas industriales y servicios esenciales (energía, transporte, agua
 
 ---
 
-## 10. Ciberseguridad en IA y Datos {#10-ciberseguridad-en-ia-y-datos}
+## 10. Ciberseguridad en IA y Datos
 Campo nuevo y en crecimiento.
 
 **Subramas:**

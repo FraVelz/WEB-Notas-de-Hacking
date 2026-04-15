@@ -8,7 +8,7 @@ description: Classmethod - Notas de hacking y ciberseguridad.
 
 ---
 
-## Ejemplo {#ejemplo}
+## Ejemplo
 ```python
 class Persona:
 poblacion = 0  # Atributo de clase
@@ -34,11 +34,11 @@ print(Persona.cuantos_hay())  # Hay 2 personas registradas.
 
 ---
 
-## Diferencias entre tipos de métodos {#diferencias-entre-tipos-de-métodos}
+## Diferencias entre tipos de métodos
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## En resumen {#en-resumen}
+## En resumen
 - @staticmethod: método **independiente**, solo usa los parámetros que se le pasen.
 - @classmethod: método **ligado a la clase**, puede **usar o modificar atributos de la clase** y se puede llamar sin crear una instancia.

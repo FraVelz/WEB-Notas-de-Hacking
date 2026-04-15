@@ -10,7 +10,7 @@ Definiciones y diferencias entre privacidad y anonimato.
 
 ---
 
-## ¿Qué es la huella digital? {#qué-es-la-huella-digital}
+## ¿Qué es la huella digital?
 Es{" "} ** el rastro que dejamos cada vez que usamos internet o dispositivos digitales ** . Incluye todo lo que generamos, compartimos o registramos en línea.
 
 - **Ejemplo:** <Lista> Publicar fotos o comentarios en redes sociales
@@ -24,7 +24,7 @@ Cada acción deja{" "} ** información que puede ser almacenada, analizada o usa
 
 ---
 
-## Tipos de huella digital {#tipos-de-huella-digital}
+## Tipos de huella digital
 <ol type="1">
 <li>
 **Activa:**
@@ -43,14 +43,14 @@ Cada acción deja{" "} ** información que puede ser almacenada, analizada o usa
 </ol>
 ---
 
-## Por qué es importante {#por-qué-es-importante}
+## Por qué es importante
 - Puede afectar tú **privacidad** y seguridad.
 - Las empresas y gobiernos pueden usar tú huella digital para **publicidad, análisis de comportamiento o vigilancia** .
 - También puede afectar tú **reputación**, profesional o personal, sí algo que publicaste se hace público o se interpreta mal.
 
 ---
 
-## Cómo protegerla {#cómo-protegerla}
+## Cómo protegerla
 - Configura **privacidad** en redes sociales y apps.
 - Borra cookies y rastros de navegación periódicamente.
 - Usa herramientas de **anonimato** (VPN, Tor, navegadores privados).
@@ -58,7 +58,7 @@ Cada acción deja{" "} ** información que puede ser almacenada, analizada o usa
 
 ---
 
-## Visualizar tú huella digital al navegar {#visualizar-tú-huella-digital-al-navegar}
+## Visualizar tú huella digital al navegar
 En la página *“Cover your tracks”*,{" "} **puedes ver toda la información actual que tú navegador**{" "} puede dar a las páginas webs, cuando tú navegas, te dan incluso algunos consejos para ciertos casos.
 
 [Ir a Cover your tracks](https://coveryourtracks.eff.org/)

@@ -8,7 +8,7 @@ Este documento explica como usar **funciones**, **variables globales y locales**
 
 ---
 
-## 1. Definición de funciones {#1-definición-de-funciones}
+## 1. Definición de funciones
 En Bash, una función agrupa comandos que puedes reutilizar. Existen dos formas equivalentes:
 ```bash
 # Forma 1 (más común)
@@ -28,7 +28,7 @@ mi_funcion
 
 ---
 
-## 2. Parámetros en funciones {#2-parámetros-en-funciones}
+## 2. Parámetros en funciones
 Los argumentos se manejan igual que en un script:
 
 <!-- Tabla convertida manualmente -->
@@ -44,7 +44,7 @@ saludar "Francisco" "Vélez"
 
 ---
 
-## 3. Devolver valores {#3-devolver-valores}
+## 3. Devolver valores
 En Bash, return solo devuelve **códigos de salida (= éxito, ≠0 = error)**. Para devolver datos reales se usa echo y **captura de comandos**:
 ```bash
 sumar() {
@@ -57,7 +57,7 @@ echo "La suma es: $resultado"
 
 ---
 
-## 4. Variables Globales y Locales {#4-variables-globales-y-locales}
+## 4. Variables Globales y Locales
 Por defecto, todas las variables son **globales**. Para que existan solo dentro de la función, usa local.
 ```bash
 mensaje="Hola mundo"
@@ -79,7 +79,7 @@ Usa **local** para evitar modificar variables globales sin querer.
 
 ---
 
-## 5. Argumentos en scripts {#5-argumentos-en-scripts}
+## 5. Argumentos en scripts
 Cuando ejecutas un script, puedes pasarle argumentos:
 ```bash
 #!/bin/bash
@@ -98,7 +98,7 @@ Variables especiales:
 
 ---
 
-## 6. Validaciones útiles {#6-validaciones-útiles}
+## 6. Validaciones útiles
 **Validar número de argumentos:**
 ```bash
 if [ $# -ne 2 ]; then
@@ -125,15 +125,15 @@ fi
 
 ---
 
-## 7. Recorrer argumentos {#7-recorrer-argumentos}
-### Con for {#con-for}
+## 7. Recorrer argumentos
+### Con for
 ```bash
 for arg in "$@"; do
 echo "Argumento: $arg"
 done
 ```
 
-### Con shift {#con-shift}
+### Con shift
 shift elimina el primer argumento ($1) y mueve los demás a la izquierda.
 ```bash
 while [ $# -gt 0 ]; do
@@ -146,7 +146,7 @@ shift 2 eliminaría los dos primeros argumentos de golpe.
 
 ---
 
-## 8. Ejemplo práctico: mini calculadora {#8-ejemplo-práctico-mini-calculadora}
+## 8. Ejemplo práctico: mini calculadora
 ```bash
 #!/bin/bash
 
@@ -170,5 +170,5 @@ esac
 
 ---
 
-## En resumen {#en-resumen}
+## En resumen
 <!-- Tabla convertida manualmente -->

@@ -6,12 +6,12 @@ description: Which - Notas de hacking y ciberseguridad.
 # Which en Linux
 ---
 
-## ¿Que es el comando which? {#que-es-el-comando-which}
+## ¿Que es el comando which?
 El comando which en Linux (y otros sistemas Unix) sirve para **mostrar la ruta completa del ejecutable** que se ejecutará cuando llamas a un comando.
 
 **En pocas palabras:** Te dice **dónde está ubicado** el programa que se ejecutará cuando escribes algo como python, ls, gcc, etc.
 
-### Ejemplo básico {#ejemplo-básico}
+### Ejemplo básico
 ```bash
 which python
 ```
@@ -25,7 +25,7 @@ Significa que cuando escribes python en la terminal, se ejecuta el archivo /usr/
 
 ---
 
-### Otro ejemplo {#otro-ejemplo}
+### Otro ejemplo
 ```bash
 which ls
 ```
@@ -39,7 +39,7 @@ ls está en la carpeta /bin.
 
 ---
 
-### Sí el comando no existe {#sí-el-comando-no-existe}
+### Sí el comando no existe
 ```bash
 which pepe
 ```
@@ -51,7 +51,7 @@ pepe not found
 
 ---
 
-### Ver qué versión se usa sí hay varias instaladas {#ver-qué-versión-se-usa-sí-hay-varias-instaladas}
+### Ver qué versión se usa sí hay varias instaladas
 ```bash
 which -a python
 ```
@@ -66,5 +66,5 @@ Te muestra **todas** las ubicaciones posibles que coinciden, en orden de priorid
 
 ---
 
-### En resumen {#en-resumen}
+### En resumen
 <!-- Tabla convertida manualmente -->

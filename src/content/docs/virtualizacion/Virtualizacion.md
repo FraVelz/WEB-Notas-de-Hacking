@@ -3,7 +3,7 @@ title: Virtualizacion
 description: Virtualizacion - Notas de hacking y ciberseguridad.
 ---
 
-## Virtualización {#2-virtualización}
+## Virtualización
 La virtualización es la creación de una versión simulada o virtual de un recurso físico, como un servidor, un dispositivo de almacenamiento, una red o un sistema operativo. Utiliza software, llamado hipervisor, para dividir un único sistema físico en múltiples entornos virtuales independientes, llamados máquinas virtuales (VM). Esto permite que varias máquinas virtuales funcionen en un solo hardware, cada una con su propio sistema operativo y aplicaciones, compartiendo eficientemente los recursos subyacentes
 
 Tipos de Maquinas virtuales para virtualizar:

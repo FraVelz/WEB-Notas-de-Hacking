@@ -8,7 +8,7 @@ Este documento explica cómo usar **bucles**, **estructuras de control** y el co
 
 ---
 
-## Bucle for {#bucle-for}
+## Bucle for
 El bucle for permite ejecutar una serie de comandos repetidamente para una lista de valores o rangos numéricos.
 
 **Ejemplo 1: Lista de elementos:**
@@ -49,7 +49,7 @@ for (( inicialización; condición; incremento ))
 </blockquote>
 ---
 
-## Bucle while {#bucle-while}
+## Bucle while
 Ejecuta un bloque de código **mientras una condición sea verdadera**.
 ```bash
 i=0
@@ -79,7 +79,7 @@ Esto imprimirá cada línea del archivo precedida por un guion.
 </blockquote>
 ---
 
-## Bucle until {#bucle-until}
+## Bucle until
 El bucle until funciona igual que while, pero **se ejecuta mientras la condición sea falsa**.
 ```bash
 contador=1
@@ -97,7 +97,7 @@ En este ejemplo, el bucle incrementa i desde 1 hasta 5.
 </blockquote>
 ---
 
-## Comandos continue y break {#comandos-continue-y-break}
+## Comandos continue y break
 Los comandos continue y break sirven para **controlar el flujo dentro de los bucles**.
 ```bash
 contador=0
@@ -127,7 +127,7 @@ break n rompe n niveles de bucles anidados.<br /> continue salta directamente a 
 </blockquote>
 ---
 
-## Estructura case {#estructura-case}
+## Estructura case
 La estructura case permite comparar una variable con múltiples patrones, similar al switch en otros lenguajes.
 ```bash
 num=10

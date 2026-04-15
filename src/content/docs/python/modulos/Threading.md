@@ -6,7 +6,7 @@ description: Threading - Notas de hacking y ciberseguridad.
 # Threading en Python
 ---
 
-## 1) ¿Qué es threading? {#qué-es-threading}
+## 1) ¿Qué es threading?
 threading es el módulo estándar de Python para **concurrencia mediante hilos** (threads). Permite ejecutar varias tareas aparentemente al mismo tiempo dentro del mismo proceso. Es ideal para operaciones **I/O-bound** (espera de red, disco, etc.). Importarlo:
 ```python
 import threading
@@ -14,7 +14,7 @@ import threading
 
 ---
 
-## 2) Conceptos clave {#conceptos-clave}
+## 2) Conceptos clave
 - **Thread (hilo):** unidad de ejecución.
 - **Daemon thread:** hilo que no impide que el proceso termine; se mata cuando el programa principal acaba.
 - **GIL (Global Interpreter Lock):** en CPython, impide que varios hilos ejecuten bytecode Python al mismo tiempo — eso limita el paralelismo real para tareas CPU-bound.
@@ -23,8 +23,8 @@ import threading
 
 ---
 
-## 3) Crear y usar hilos — ejemplos básicos {#crear-y-usar-hilos-ejemplos-básicos}
-### a) Usando Thread con target {#a-usando-thread-con-target}
+## 3) Crear y usar hilos — ejemplos básicos
+### a) Usando Thread con target
 ```python
 import threading
 
@@ -45,7 +45,7 @@ t.join()  # esperar que termine cada hilo
 print("Todos terminados")
 ```
 
-### b) Subclassing lhread {#b-subclassing-lhread}
+### b) Subclassing lhread
 ```python
 import threading, time
 
@@ -66,7 +66,7 @@ h.join()
 
 ---
 
-## 4) Daemon threads y uso correcto {#daemon-threads-y-uso-correcto}
+## 4) Daemon threads y uso correcto
 ```python
 t = threading.Thread(target=worker, args=(1,), daemon=True)
 t.start()
@@ -77,20 +77,20 @@ Usa daemon para tareas de fondo opcionales (logs en tiempo real, watchers). Para
 
 ---
 
-## 5) Sincronización — primitivas importantes {#sincronización-primitivas-importantes}
-### Lock (mutual exclusion) {#lock-mutual-exclusion}
+## 5) Sincronización — primitivas importantes
+### Lock (mutual exclusion)
 ```python
 lock = threading.Lock()
 with lock:
 # región crítica pass
 ```
 
-### RLock (reentrant lock) — permite re-entradas desde mismo hilo {#rlock-reentrant-lock-permite-re-entradas-desde-mismo-hilo}
+### RLock (reentrant lock) — permite re-entradas desde mismo hilo
 ```python
 rlock = threading.RLock()
 ```
 
-### Event — señalización simple (flag) {#event-señalización-simple-flag}
+### Event — señalización simple (flag)
 ```python
 event = threading.Event()
 
@@ -100,7 +100,7 @@ event.wait()  # bloquea hasta que event.set()
 event.set()
 ```
 
-### Condition — esperas con notificación {#condition-esperas-con-notificación}
+### Condition — esperas con notificación
 ```python
 cond = threading.Condition()
 with cond:
@@ -109,14 +109,14 @@ cond.wait()  # espera notificación
 cond.notify()
 ```
 
-### Semaphore — contador {#semaphore-contador}
+### Semaphore — contador
 ```python
 sem = threading.Semaphore(3)  # máximo 3 entradas simultáneas
 with sem:
 # acceso limitado pass
 ```
 
-### Barrier — sincronizar N hilos en un punto {#barrier-sincronizar-n-hilos-en-un-punto}
+### Barrier — sincronizar N hilos en un punto
 ```python
 bar = threading.Barrier(3)
 bar.wait()  # todos los hilos esperan aquí hasta que lleguen los 3
@@ -124,7 +124,7 @@ bar.wait()  # todos los hilos esperan aquí hasta que lleguen los 3
 
 ---
 
-## 6) Comunicación segura entre hilos: queue.Queue {#comunicación-segura-entre-hilos-queue.queue}
+## 6) Comunicación segura entre hilos: queue.Queue
 queue.Queue es **thread-safe** y la forma recomendada para pasar datos entre hilos (producer-consumer).
 ```python
 import threading, queue, time
@@ -154,7 +154,7 @@ t1.join(); q.join()
 
 ---
 
-## 7) Manejo de excepciones en hilos {#manejo-de-excepciones-en-hilos}
+## 7) Manejo de excepciones en hilos
 Las excepciones en Thread no se propagan al hilo principal. Opciones:
 
 - Usar concurrent.futures.ThreadPoolExecutor para obtener Future y atrapar excepciones.
@@ -178,7 +178,7 @@ print("error en hilo:", e)
 
 ---
 
-## 8) ThreadPoolExecutor (alta abstracción) {#threadpoolexecutor-alta-abstracción}
+## 8) ThreadPoolExecutor (alta abstracción)
 Más cómodo que crear hilos manualmente.
 ```python
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -194,13 +194,13 @@ print(f.result())
 
 ---
 
-## 9) GIL — cuándo usar threading vs multiprocessing {#gil-cuándo-usar-threading-vs-multiprocessing}
+## 9) GIL — cuándo usar threading vs multiprocessing
 - **I/O-bound:** usa threading (o asyncio) — hilos dan mejoras reales (espera de I/O libera GIL).
 - **CPU-bound:** threading no escala por GIL; usa multiprocessing (procesos) o extensiones nativas (numpy, C) que sueltan GIL. Explicación corta: el GIL permite que solo un hilo ejecute bytecode Python simultáneamente; por eso multiples hilos no aceleran cálculos puros en CPython.
 
 ---
 
-## 10) Operaciones atómicas y seguridad {#operaciones-atómicas-y-seguridad}
+## 10) Operaciones atómicas y seguridad
 - Algunos objetos y operaciones son atómicas en CPython (por ejemplo, asignación simple de variable, operaciones sobre tipos integrales?) — **no confíes en ello**.
 - Ejemplo inseguro (race):
 ```python
@@ -216,7 +216,7 @@ Siempre protege con Lock sí hay acceso concurrente.
 
 ---
 
-## 11) Cancelación y parada de hilos {#cancelación-y-parada-de-hilos}
+## 11) Cancelación y parada de hilos
 No existe Thread.kill() seguro. Patrones para parar:
 
 - Usar threading.Event() como bandera de parada:
@@ -234,7 +234,7 @@ stop_event.set()
 
 ---
 
-## 12) Thread-local storage {#thread-local-storage}
+## 12) Thread-local storage
 Datos separados por hilo:
 ```python
 import threading
@@ -252,7 +252,7 @@ Cada hilo ve su propio local.x.
 
 ---
 
-## 13) Debugging y utilidades {#debugging-y-utilidades}
+## 13) Debugging y utilidades
 - threading.enumerate() → lista hilos activos.
 - threading.active_count() → cuenta.
 - threading.current_thread().name → nombre actual.
@@ -274,7 +274,7 @@ t.start(); t.join()
 
 ---
 
-## 14) Buenas prácticas {#buenas-prácticas}
+## 14) Buenas prácticas
 - Para I/O concurrency, prefiere ThreadPoolExecutor o asyncio según el caso.
 - Evita variables globales mutables; usa queue.Queue y Locks.
 - No uses daemon=True para tareas que deben terminar correctamente.
@@ -284,11 +284,11 @@ t.start(); t.join()
 
 ---
 
-## 15) Ejemplos prácticos (útiles) {#ejemplos-prácticos-útiles}
-### a) Producer-consumer con Queue (resumen) {#a-producer-consumer-con-queue-resumen}
+## 15) Ejemplos prácticos (útiles)
+### a) Producer-consumer con Queue (resumen)
 Ya mostrado en la sección de Queue. Es el patrón más útil y seguro para comunicación.
 
-### b) Pool de threads simple con Thread y Queue {#b-pool-de-threads-simple-con-thread-y-queue}
+### b) Pool de threads simple con Thread y Queue
 ```python
 import threading, queue, time
 
@@ -321,7 +321,7 @@ for t in threads:
 t.join()
 ```
 
-### c) Uso real con requests (I/O-bound) {#c-uso-real-con-requests-io-bound}
+### c) Uso real con requests (I/O-bound)
 ```python
 import requests
 from concurrent.futures import ThreadPoolExecutor
@@ -339,7 +339,7 @@ print(results)
 
 ---
 
-## 16) Limitaciones y alternativas {#limitaciones-y-alternativas}
+## 16) Limitaciones y alternativas
 - threading no es la mejor opción para CPU-bound por el GIL.
 - Alternativas:
 - multiprocessing — procesos (paralelismo real).
@@ -349,7 +349,7 @@ print(results)
 </Lista>
 ---
 
-## 17) Resumen {#resumen}
+## 17) Resumen
 - Usa threading para **I/O-bound**.
 - Protege recursos compartidos con Lock, RLock, o usa Queue.
 - Para excepciones y manejo fácil, usa ThreadPoolExecutor.

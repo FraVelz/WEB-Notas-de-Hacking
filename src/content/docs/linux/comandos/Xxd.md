@@ -6,20 +6,20 @@ description: Xxd - Notas de hacking y ciberseguridad.
 # Xxd en Linux
 ---
 
-## Que es el comando xxd {#que-es-el-comando-xxd}
+## Que es el comando xxd
 El comando xxd en Linux (y otros sistemas Unix) **convierte datos binarios en una representación hexadecimal** y también puede hacer lo contrario (convertir de hexadecimal a binario). Es muy útil para inspeccionar o editar archivos binarios, ver bytes en formato legible o reconstruir archivos desde texto hexadecimal.
 
 ---
 
-## Sintaxis básica {#sintaxis-básica}
+## Sintaxis básica
 ```bash
 xxd [opciones] [archivo]
 ```
 
 ---
 
-## Ejemplos comunes {#ejemplos-comunes}
-### 1. Ver un archivo en formato hexadecimal {#1-ver-un-archivo-en-formato-hexadecimal}
+## Ejemplos comunes
+### 1. Ver un archivo en formato hexadecimal
 ```bash
 xxd archivo.bin
 ```
@@ -35,7 +35,7 @@ Muestra el contenido de archivo.bin así:
 
 ---
 
-### 2. Convertir de binario a texto hexadecimal {#2-convertir-de-binario-a-texto-hexadecimal}
+### 2. Convertir de binario a texto hexadecimal
 ```bash
 cat archivo | xxd
 ```
@@ -44,7 +44,7 @@ Convierte los bytes de la entrada estándar en texto hexadecimal.
 
 ---
 
-### 3. Convertir de texto hexadecimal a binario {#3-convertir-de-texto-hexadecimal-a-binario}
+### 3. Convertir de texto hexadecimal a binario
 ```bash
 cat archivo_hex.txt | xxd -r > archivo_original
 ```
@@ -54,7 +54,7 @@ cat archivo_hex.txt | xxd -r > archivo_original
 
 ---
 
-### 4. Mostrar solo los bytes (sin dirección ni texto ASCII) {#4-mostrar-solo-los-bytes-sin-dirección-ni-texto-ascii}
+### 4. Mostrar solo los bytes (sin dirección ni texto ASCII)
 ```bash
 xxd -p archivo.bin
 ```
@@ -68,7 +68,7 @@ Perfecta para copiar y pegar en scripts o codificaciones.
 
 ---
 
-### 5. Ver solo los primeros bytes {#5-ver-solo-los-primeros-bytes}
+### 5. Ver solo los primeros bytes
 ```bash
 xxd -l 16 archivo.bin
 ```
@@ -77,5 +77,5 @@ Muestra solo los primeros 16 bytes.
 
 ---
 
-## En resumen {#en-resumen}
+## En resumen
 <!-- Tabla convertida manualmente -->

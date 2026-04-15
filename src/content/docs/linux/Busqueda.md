@@ -10,8 +10,8 @@ description: Busqueda - Notas de hacking y ciberseguridad.
 
 ---
 
-## 1. Buscar archivos y directorios {#1-buscar-archivos-y-directorios}
-### find {#find}
+## 1. Buscar archivos y directorios
+### find
 Busca archivos y carpetas según nombre, tipo, tamaño, fecha, etc.
 ```bash
 # Buscar por nombre (en todo el sistema)
@@ -32,8 +32,8 @@ find /tmp -name "*.log" -exec rm {} \;
 
 ---
 
-## 2. Buscar texto dentro de archivos {#2-buscar-texto-dentro-de-archivos}
-### grep {#grep}
+## 2. Buscar texto dentro de archivos
+### grep
 Busca texto dentro del contenido de archivos.
 ```bash
 # Buscar una palabra en un archivo
@@ -61,8 +61,8 @@ Tip: Usa grep -rni "palabra" . para buscar en todo el directorio actual con núm
 </blockquote>
 ---
 
-## 3. Buscar archivos rápidamente {#3-buscar-archivos-rápidamente}
-### locate {#locate}
+## 3. Buscar archivos rápidamente
+### locate
 Usa una base de datos indexada (más rápido que find).
 ```bash
 # Buscar archivos por nombre
@@ -74,8 +74,8 @@ locate archivo.txt
 
 ---
 
-## 4. Buscar comandos o ejecutables {#4-buscar-comandos-o-ejecutables}
-### which, whereis, type {#which-whereis-type}
+## 4. Buscar comandos o ejecutables
+### which, whereis, type
 Sirven para ubicar programas instalados o saber cómo se ejecutan.
 ```bash
 # Ver ruta del ejecutable de un comando
@@ -87,20 +87,20 @@ which python3
 
 ---
 
-## 5. Buscar en el historial o procesos {#5-buscar-en-el-historial-o-procesos}
-### Buscar en historial {#buscar-en-historial}
+## 5. Buscar en el historial o procesos
+### Buscar en historial
 ```bash
 # Buscar un comando usado anteriormente history | grep "ssh"
 ```
 
-### Buscar procesos en ejecución {#buscar-procesos-en-ejecución}
+### Buscar procesos en ejecución
 ```bash
 ps aux | grep firefox
 ```
 
 ---
 
-## 6. Buscar dentro de archivos comprimidos o binarios {#6-buscar-dentro-de-archivos-comprimidos-o-binarios}
+## 6. Buscar dentro de archivos comprimidos o binarios
 ```bash
 # Buscar dentro de un .tar.gz
 tar -tzf archivo.tar.gz | grep "config"

@@ -12,14 +12,14 @@ La concientización en ciberseguridad es uno de los pilares más importantes par
 
 ---
 
-## ¿Qué es la concientización en ciberseguridad? {#qué-es-la-concientización-en-ciberseguridad}
+## ¿Qué es la concientización en ciberseguridad?
 Es el conjunto de conocimientos, hábitos y comportamientos que te ayudan a reconocer, evitar y responder correctamente ante amenazas digitales. Su objetivo es que tú seas la primera línea de defensa, evitando caer en trampas que los hackers usan para robar información o dinero.
 
 A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 1. Redes Wi-Fi públicas o desconocidas {#1-redes-wi-fi-públicas-o-desconocidas}
+## 1. Redes Wi-Fi públicas o desconocidas
 **Ejemplo:** Conectarte al Wi-Fi gratis de un café, aeropuerto o centro comercial.
 
 **Riesgo:** Los atacantes pueden:
@@ -37,7 +37,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 2. Phishing (suplantación para robar datos) {#2-phishing-suplantación-para-robar-datos}
+## 2. Phishing (suplantación para robar datos)
 **Ejemplo:** Te llega un correo o mensaje diciendo que tú cuenta será suspendida, con un botón para “verificar”.
 
 **Riesgo:** El enlace te lleva a una página falsa (muy parecida a la real) que roba tus credenciales.
@@ -56,7 +56,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 3. Enlaces y URLs maliciosas {#3-enlaces-y-urls-maliciosas}
+## 3. Enlaces y URLs maliciosas
 **Ejemplo:** Un amigo te manda un enlace “gracioso” o de una “oferta increíble”.
 
 **Riesgo:** Puede ser una web que descarga malware o roba tú sesión.
@@ -69,7 +69,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 4. Códigos QR maliciosos {#4-códigos-qr-maliciosos}
+## 4. Códigos QR maliciosos
 **Ejemplo:** Ves un QR pegado en una pared o en una mesa de restaurante.
 
 **Riesgo:** Puede redirigirte a una web fraudulenta o descargar una app maliciosa.
@@ -82,7 +82,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 5. Contraseñas débiles o reutilizadas {#5-contraseñas-débiles-o-reutilizadas}
+## 5. Contraseñas débiles o reutilizadas
 **Riesgo:** Sí un sitio donde usaste tú contraseña se filtra, los atacantes pueden acceder a todas tus otras cuentas.
 
 **Buenas prácticas:**
@@ -93,7 +93,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 6. Software y actualizaciones {#6-software-y-actualizaciones}
+## 6. Software y actualizaciones
 **Riesgo:** Usar sistemas o apps desactualizadas te deja vulnerable a exploits conocidos.
 
 **Consejos:**
@@ -104,7 +104,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 7. Ingeniería social {#7-ingeniería-social}
+## 7. Ingeniería social
 **Ejemplo:** Un atacante se hace pasar por técnico de soporte o amigo para obtener tus datos.
 
 **Qué hacer:**
@@ -115,7 +115,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## 8. Dispositivos físicos {#8-dispositivos-físicos}
+## 8. Dispositivos físicos
 **Ejemplo:** Conectas una memoria USB que encontraste.
 
 **Riesgo:** Puede tener malware que infecte tú computadora.
@@ -128,7 +128,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## Hábitos esenciales de ciberseguridad personal {#hábitos-esenciales-de-ciberseguridad-personal}
+## Hábitos esenciales de ciberseguridad personal
 - Usa contraseñas únicas y seguras.
 - Activa el 2FA.
 - Elimina apps o archivos que no uses.
@@ -139,7 +139,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 
 ---
 
-## En resumen {#en-resumen}
+## En resumen
 <blockquote>
 La mejor defensa contra los ciberataques no es la tecnología, sino la educación del usuario.
 

@@ -6,24 +6,24 @@ description: Gestion Permisos - Notas de hacking y ciberseguridad.
 # Comandos y cmdlets de gestión de permisos
 ---
 
-## CMD — Comandos de Gestión de Permisos {#cmd--comandos-de-gestión-de-permisos}
+## CMD — Comandos de Gestión de Permisos
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## PowerShell — Cmdlets de Gestión de Permisos {#powershell--cmdlets-de-gestión-de-permisos}
+## PowerShell — Cmdlets de Gestión de Permisos
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## Ejemplos prácticos {#ejemplos-prácticos}
-### CMD {#cmd}
+## Ejemplos prácticos
+### CMD
 ```bash
 icacls "C:\Proyecto" /grant Juan:(R,W)
 takeown /f "C:\Proyecto\archivo.txt"
 ```
 
-### PowerShell {#powershell}
+### PowerShell
 ```bash
 $acl = Get-Acl "C:\Proyecto"
 $rule = New-Object System.Security.AccessControl.FileSystemAccessRule("Juan","Modify","Allow")

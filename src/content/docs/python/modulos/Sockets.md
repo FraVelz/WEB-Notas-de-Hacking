@@ -6,19 +6,19 @@ description: Sockets - Notas de hacking y ciberseguridad.
 # Python
 ---
 
-## Resumen {#resumen}
+## Resumen
 Los **sockets** permiten la **comunicación entre computadoras o procesos** a través de una red (como Internet o una LAN).
 
 Python ofrece el módulo socket para manejar conexiones **TCP** (orientadas a conexión) y **UDP** (sin conexión).
 
 ---
 
-## ️TCP (Transmission Control Protocol) {#tcp-transmission-control-protocol}
+## ️TCP (Transmission Control Protocol)
 - Conexión establecida entre cliente y servidor (3-way handshake).
 - Garantiza entrega, orden y fiabilidad.
 - Ideal para chats, transferencias, HTTP, etc.
 
-### Servidor TCP {#servidor-tcp}
+### Servidor TCP
 ```python
 # servidor_tcp.py
 HOST = '127.0.0.1'   # Dirección local
@@ -39,7 +39,7 @@ print("Cliente dice:", data.decode())
 conn.sendall(b"Mensaje recibido")
 ```
 
-### Cliente TCP {#cliente-tcp}
+### Cliente TCP
 ```python
 # cliente_tcp.py
 HOST = '127.0.0.1'
@@ -54,12 +54,12 @@ print("Servidor responde:", data.decode())
 
 ---
 
-## UDP (User Datagram Protocol) {#udp-user-datagram-protocol}
+## UDP (User Datagram Protocol)
 - No hay conexión, se envían “paquetes” sin confirmar recepción.
 - Más rápido pero menos confiable.
 - Ideal para streaming, juegos, mensajes cortos.
 
-### Servidor UDP {#servidor-udp}
+### Servidor UDP
 ```python
 # servidor_udp.py
 HOST = '127.0.0.1'
@@ -74,7 +74,7 @@ print("Mensaje de", addr, ":", data.decode())
 s.sendto(b"Mensaje recibido", addr)
 ```
 
-### Cliente UDP {#cliente-udp}
+### Cliente UDP
 ```python
 # cliente_udp.py
 HOST = '127.0.0.1'
@@ -88,5 +88,5 @@ print("Servidor responde:", data.decode())
 
 ---
 
-## Diferencias rápidas {#diferencias-rápidas}
+## Diferencias rápidas
 <!-- Tabla convertida manualmente -->

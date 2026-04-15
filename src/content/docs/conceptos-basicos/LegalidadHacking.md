@@ -8,7 +8,7 @@ Entender los **aspectos legales y éticos del hacking** es **fundamental** antes
 
 ---
 
-## 1. ¿Qué es el hacking ético? {#1-qué-es-el-hacking-ético}
+## 1. ¿Qué es el hacking ético?
 El **hacking ético** es el uso de las **mismas técnicas que los hackers maliciosos**, pero **con permiso y con el objetivo de mejorar la seguridad** de sistemas informáticos.
 
 Un **hacker ético (white hat)** busca vulnerabilidades para **reportarlas y ayudar a corregirlas**, no para aprovecharse de ellas.
@@ -21,7 +21,7 @@ Un **hacker ético (white hat)** busca vulnerabilidades para **reportarlas y ayu
 </blockquote>
 ---
 
-## 2. Aspectos legales del hacking {#2-aspectos-legales-del-hacking}
+## 2. Aspectos legales del hacking
 Las leyes varían según el país, pero en general **acceder o manipular sistemas sin autorización es un delito**. En casi todos los países existen leyes que penalizan:
 
 - Acceso no autorizado a sistemas informáticos.
@@ -30,7 +30,7 @@ Las leyes varían según el país, pero en general **acceder o manipular sistema
 - Propagación de malware.
 - Suplantación de identidad o fraude digital.
 
-### En Colombia (por ejemplo) {#en-colombia-por-ejemplo}
+### En Colombia (por ejemplo)
 El **Código Penal Colombiano (Ley 1273 de 2009)** protege la “información y los datos” en el ciberespacio. Algunos delitos contemplados son:
 
 <!-- Tabla convertida manualmente -->
@@ -39,10 +39,10 @@ El **Código Penal Colombiano (Ley 1273 de 2009)** protege la “información y 
 
 ---
 
-## 3. Aspectos éticos del hacking {#3-aspectos-éticos-del-hacking}
+## 3. Aspectos éticos del hacking
 Un hacker ético debe seguir un conjunto de **principios morales y profesionales**, llamados **“código ético del hacker”** o **“ética del pentester”**.
 
-### Principios éticos básicos {#principios-éticos-básicos}
+### Principios éticos básicos
 - **Actuar siempre con autorización.** Nunca realizar pruebas o ataques sin permiso explícito del propietario del sistema.
 - **No causar daño.** No alterar, borrar o exponer datos de los sistemas que se prueban.
 - **Respetar la privacidad.** Sí se accede a información sensible, mantenerla confidencial.
@@ -52,17 +52,17 @@ Un hacker ético debe seguir un conjunto de **principios morales y profesionales
 
 ---
 
-## 4. Ejemplos prácticos {#4-ejemplos-prácticos}
+## 4. Ejemplos prácticos
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 5. Tipos de hackers según la ética {#5-tipos-de-hackers-según-la-ética}
+## 5. Tipos de hackers según la ética
 Bueno esto lo vimos en el otro archivo en el de conceptos básicos, pero no esta de más, repasarlo.
 
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 6. En resumen {#6-en-resumen}
+## 6. En resumen
 <!-- Tabla convertida manualmente -->

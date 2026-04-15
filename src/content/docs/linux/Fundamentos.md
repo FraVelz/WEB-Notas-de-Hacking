@@ -14,7 +14,7 @@ description: Fundamentos - Notas de hacking y ciberseguridad.
 
 ---
 
-## Cabecera del Script {#cabecera-del-script}
+## Cabecera del Script
 La **cabecera** o *shebang* indica qué intérprete ejecutará el script.
 ```bash
 #!/bin/bash
@@ -22,7 +22,7 @@ La **cabecera** o *shebang* indica qué intérprete ejecutará el script.
 
 ---
 
-## Imprimir texto y comentarios {#imprimir-texto-y-comentarios}
+## Imprimir texto y comentarios
 Puedes imprimir texto con echo y escribir comentarios de varias formas.
 ```bash
 # Imprimir texto
@@ -48,7 +48,7 @@ EOF
 
 ---
 
-## Variables en Bash {#variables-en-bash}
+## Variables en Bash
 En Bash solo existe un tipo de dato: **string** (cadena de texto). Se puede escribir **sin comillas**, o con **comillas simples** o **dobles**.
 
 Ejemplo:
@@ -64,7 +64,7 @@ Importante: No deben colocarse espacios al declarar una variable. Bash es sensib
 </blockquote>
 Para usar una variable se coloca $ antes de su nombre: $variable
 
-### Variables especiales {#variables-especiales}
+### Variables especiales
 <!-- Tabla convertida manualmente -->
 
 Para imprimir valores (evitando errores con espacios), se recomienda:
@@ -74,7 +74,7 @@ echo "$variable"
 
 ---
 
-## Strings {#strings}
+## Strings
 ```bash
 name=Fravelz
 today="10 09 2025"
@@ -98,7 +98,7 @@ echo $text
 
 ---
 
-## Valores constantes {#valores-constantes}
+## Valores constantes
 Usa readonly para declarar constantes:
 ```bash
 readonly PI=3.1416
@@ -106,7 +106,7 @@ readonly PI=3.1416
 
 ---
 
-## Operaciones matemáticas {#operaciones-matemáticas}
+## Operaciones matemáticas
 Bash permite realizar operaciones aritméticas en las siguientes formas:
 ```bash
 a=1
@@ -116,15 +116,15 @@ echo $((a + b))
 echo $(expr $a + $b)
 ```
 
-### Símbolos matemáticos {#símbolos-matemáticos}
+### Símbolos matemáticos
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## Leer entrada del usuario {#leer-entrada-del-usuario}
+## Leer entrada del usuario
 El comando read se usa para leer datos del usuario.
 
-### Parámetros útiles {#parámetros-útiles}
+### Parámetros útiles
 <!-- Tabla convertida manualmente -->
 
 Ejemplo:

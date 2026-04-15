@@ -6,7 +6,7 @@ description: Os - Notas de hacking y ciberseguridad.
 # Os en Python
 ---
 
-## ¿Qué es os en Python? {#qué-es-os-en-python}
+## ¿Qué es os en Python?
 El módulo **os** (Operating System) permite **interactuar directamente con el sistema operativo**: manejar archivos, carpetas, variables de entorno, procesos, permisos, rutas, y más.
 
 Se importa así:
@@ -16,24 +16,24 @@ import os
 
 ---
 
-## 1. Manejo de directorios {#manejo-de-directorios}
-### Ver el directorio actual {#ver-el-directorio-actual}
+## 1. Manejo de directorios
+### Ver el directorio actual
 ```python
 print(os.getcwd())  # get current working directory
 ```
 
-### Cambiar de directorio {#cambiar-de-directorio}
+### Cambiar de directorio
 ```python
 os.chdir("/home/fravelz/Documentos")
 ```
 
-### Listar archivos y carpetas {#listar-archivos-y-carpetas}
+### Listar archivos y carpetas
 ```python
 archivos = os.listdir(".")
 print(archivos)
 ```
 
-### Crear y eliminar carpetas {#crear-y-eliminar-carpetas}
+### Crear y eliminar carpetas
 ```python
 os.mkdir("nueva_carpeta")        # Crear una carpeta
 os.makedirs("a/b/c", exist_ok=True)  # Crear carpetas anidadas
@@ -44,33 +44,33 @@ os.removedirs("a/b/c")           # Eliminar jerarquía vacía
 
 ---
 
-## 2. Manejo de archivos {#manejo-de-archivos}
-### Eliminar archivos {#eliminar-archivos}
+## 2. Manejo de archivos
+### Eliminar archivos
 ```python
 os.remove("archivo.txt")
 ```
 
-### Renombrar o mover {#renombrar-o-mover}
+### Renombrar o mover
 ```python
 os.rename("viejo.txt", "nuevo.txt")
 ```
 
 ---
 
-## 3. Trabajar con rutas (os.path) {#trabajar-con-rutas-os.path}
-### Unir rutas correctamente (independiente del sistema) {#unir-rutas-correctamente-independiente-del-sistema}
+## 3. Trabajar con rutas (os.path)
+### Unir rutas correctamente (independiente del sistema)
 ```python
 ruta = os.path.join("/home/fravelz", "Documentos", "archivo.txt")
 print(ruta)
 ```
 
-### Obtener el nombre o carpeta base {#obtener-el-nombre-o-carpeta-base}
+### Obtener el nombre o carpeta base
 ```python
 print(os.path.basename("/home/fravelz/archivo.txt"))  # archivo.txt
 print(os.path.dirname("/home/fravelz/archivo.txt"))   # /home/fravelz
 ```
 
-### Comprobar existencia {#comprobar-existencia}
+### Comprobar existencia
 ```python
 print(os.path.exists("archivo.txt"))  # True o False
 print(os.path.isfile("archivo.txt"))  # True si es archivo
@@ -79,26 +79,26 @@ print(os.path.isdir("carpeta"))       # True si es carpeta
 
 ---
 
-## 4. Variables de entorno {#variables-de-entorno}
-### Ver todas las variables del sistema {#ver-todas-las-variables-del-sistema}
+## 4. Variables de entorno
+### Ver todas las variables del sistema
 ```python
 print(os.environ)
 ```
 
-### Obtener una variable específica {#obtener-una-variable-específica}
+### Obtener una variable específica
 ```python
 usuario = os.getenv("USER")  # En Linux/Mac
 print(usuario)
 ```
 
-### Crear o modificar una variable de entorno {#crear-o-modificar-una-variable-de-entorno}
+### Crear o modificar una variable de entorno
 ```python
 os.environ["MI_VARIABLE"] = "1234"
 ```
 
 ---
 
-## 5. Ejecutar comandos del sistema {#ejecutar-comandos-del-sistema}
+## 5. Ejecutar comandos del sistema
 ```python
 os.system("ls")     # Linux/Mac
 os.system("dir")    # Windows
@@ -113,7 +113,7 @@ os.system("ping google.com -c 2")
 
 ---
 
-## 6. Permisos y propiedades {#permisos-y-propiedades}
+## 6. Permisos y propiedades
 ```python
 os.chmod("archivo.txt", 0o777)  # Dar todos los permisos
 print(os.stat("archivo.txt"))   # Ver información (tamaño, permisos, etc.)
@@ -121,7 +121,7 @@ print(os.stat("archivo.txt"))   # Ver información (tamaño, permisos, etc.)
 
 ---
 
-## 7. Ejemplo práctico {#ejemplo-práctico}
+## 7. Ejemplo práctico
 Este script organiza los archivos de una carpeta en subcarpetas por tipo:
 ```python
 import os
@@ -142,14 +142,14 @@ shutil.move(ruta_completa, os.path.join(carpeta, archivo))
 
 ---
 
-## 8. Combinación con otros módulos {#combinación-con-otros-módulos}
+## 8. Combinación con otros módulos
 - os + shutil → mover/copiar archivos.
 - os + sys → detectar sistema operativo (sys.platform).
 - os + subprocess → ejecutar comandos con control total.
 
 ---
 
-## 9. Ejemplo: crear un script portable {#ejemplo-crear-un-script-portable}
+## 9. Ejemplo: crear un script portable
 ```python
 import os
 
@@ -163,5 +163,5 @@ print("Pantalla limpia 😎")
 
 ---
 
-## 10. Resumen de funciones más útiles {#resumen-de-funciones-más-útiles}
+## 10. Resumen de funciones más útiles
 <!-- Tabla convertida manualmente -->

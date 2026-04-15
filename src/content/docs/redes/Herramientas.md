@@ -6,12 +6,12 @@ description: Herramientas - Notas de hacking y ciberseguridad.
 # Parte Práctica (Herramientas)
 ---
 
-## Resumen rápido {#resumen-rápido}
+## Resumen rápido
 Te explico de forma clara qué hace cada herramienta, para qué se usa en la práctica, qué puedes aprender con cada una y recomendaciones de uso seguro/ético.
 
 ---
 
-## Wireshark — analizador de paquetes (deep packet inspection) {#wireshark--analizador-de-paquetes-deep-packet-inspection}
+## Wireshark — analizador de paquetes (deep packet inspection)
 **Qué es / para qué sirve:**
 
 Wireshark es un analizador de protocolos de red que captura y muestra los paquetes que circulan por una interfaz de red, permitiendo inspeccionar cada capa (Ethernet, IP, TCP/UDP, HTTP, etc.). Es la “lupa” para ver exactamente qué se está enviando y recibiendo en la red.
@@ -31,7 +31,7 @@ Wireshark es un analizador de protocolos de red que captura y muestra los paquet
 
 ---
 
-## Nmap — descubrimiento y escaneo de redes {#nmap--descubrimiento-y-escaneo-de-redes}
+## Nmap — descubrimiento y escaneo de redes
 **Qué es / para qué sirve:**
 
 Nmap (Network Mapper) es una utilidad para descubrir hosts en red y auditar servicios/puertos. Sirve para mapear qué equipos están “vivos”, qué puertos y servicios exponen y para obtener información inicial de seguridad.
@@ -52,7 +52,7 @@ Nmap (Network Mapper) es una utilidad para descubrir hosts en red y auditar serv
 
 ---
 
-## Metasploit — plataforma modular para pruebas de penetración {#metasploit--plataforma-modular-para-pruebas-de-penetración}
+## Metasploit — plataforma modular para pruebas de penetración
 **Qué es / para qué sirve:**
 
 Metasploit es un framework modular orientado a pruebas de penetración y desarrollo/ejecución de exploits. Permite combinar módulos (exploits, payloads, auxiliares) para probar sí una vulnerabilidad real puede ser explotada. Es una suite más orientada a la fase *explotación/post-explotación* de una evaluación de seguridad.
@@ -70,28 +70,28 @@ Metasploit es un framework modular orientado a pruebas de penetración y desarro
 
 ---
 
-## Diferencias clave entre las tres {#diferencias-clave-entre-las-tres}
+## Diferencias clave entre las tres
 - **Wireshark** = inspección detallada del tráfico (qué pasa en cada paquete). Ideal para diagnóstico y análisis de protocolos.
 - **Nmap** = reconocimiento y mapeo (quién está en la red y qué servicios/puertos ofrece). Excelente para obtener el panorama inicial.
 - **Metasploit** = probar/explotar vulnerabilidades (validación de riesgos en entornos controlados). Se usa después de identificar objetivos y vulnerabilidades.
 
 ---
 
-## Flujo típico en una evaluación ética (resumen) {#flujo-típico-en-una-evaluación-ética-resumen}
+## Flujo típico en una evaluación ética (resumen)
 <ol type="1">
 <li><strong>Descubrir</strong> hosts y servicios con Nmap.</li> <li><strong>Analizar</strong> tráfico y problemas concretos con
 Wireshark (sí hace falta inspección de paquetes).</li> <li><strong>Validar</strong> vulnerabilidades (con autorización)
 usando Metasploit u otras herramientas especializadas.</li> </ol>
 ---
 
-## Recursos oficiales y seguridad {#recursos-oficiales-y-seguridad}
+## Recursos oficiales y seguridad
 - Wireshark: sitio oficial y manual (para filtros y conceptos).
 - Nmap: sitio oficial y el libro *Nmap Network Scanning- (excelente para aprender desde cero).
 - Metasploit / Rapid7: documentación oficial y guías; recuerda que es una herramienta potente que requiere uso ético.
 
 ---
 
-## Recomendación de aprendizaje (práctico) {#recomendación-de-aprendizaje-práctico}
+## Recomendación de aprendizaje (práctico)
 - Empieza por **Wireshark** para entender cómo funciona el tráfico (te hará mejor en redes y debugging).
 - Luego aprende **Nmap** para mapear redes y practicar reconocimiento.
 - Finalmente, estudia **Metasploit** y explotación, pero sólo en laboratorios (máquinas virtuales, entornos como Metasploitable, TryHackMe, Hack The Box) y siempre con permiso.

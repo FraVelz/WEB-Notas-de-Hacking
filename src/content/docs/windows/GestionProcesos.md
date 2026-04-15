@@ -6,7 +6,7 @@ description: Gestion Procesos - Notas de hacking y ciberseguridad.
 # Comandos y cmdlets de gestión de procesos
 ---
 
-## 1. Comandos de gestión de procesos en CMD {#1-comandos-de-gestión-de-procesos-en-cmd}
+## 1. Comandos de gestión de procesos en CMD
 <blockquote>
 Todos estos se ejecutan en **Símbolo del sistema (cmd)**, preferiblemente con permisos de administrador.
 
@@ -16,7 +16,7 @@ Todos estos se ejecutan en **Símbolo del sistema (cmd)**, preferiblemente con p
 
 ---
 
-## 2. Cmdlets de gestión de procesos en PowerShell {#2-cmdlets-de-gestión-de-procesos-en-powershell}
+## 2. Cmdlets de gestión de procesos en PowerShell
 <blockquote>
 PowerShell ofrece control total sobre los procesos, con más detalle y opciones que CMD.
 
@@ -26,17 +26,17 @@ PowerShell ofrece control total sobre los procesos, con más detalle y opciones 
 
 ---
 
-## 3. Comparativa rápida CMD vs PowerShell {#3-comparativa-rápida-cmd-vs-powershell}
+## 3. Comparativa rápida CMD vs PowerShell
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 4. Comandos gráficos y herramientas integradas {#4-comandos-gráficos-y-herramientas-integradas}
+## 4. Comandos gráficos y herramientas integradas
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## Ejemplos útiles de PowerShell {#ejemplos-útiles-de-powershell}
+## Ejemplos útiles de PowerShell
 ```bash
 # Ver los 5 procesos que más consumen CPU
 Get-Process | Sort-Object CPU -Descending | Select-Object -First 5

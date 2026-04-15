@@ -12,12 +12,12 @@ Es importante destacar que la táctica se utiliza para personas expuestas en bas
 
 ---
 
-## ¿Para qué se utiliza? {#para-qué-se-utiliza}
+## ¿Para qué se utiliza?
 Para investigar, y buscar filtraciones, o evitar suplantaciones y mejorar la privacidad, accesibles en fuentes públicas.
 
 ---
 
-## Herramientas Necesarias {#herramientas-necesarias}
+## Herramientas Necesarias
 Esenciales:
 
 - Navegador Web con extensiones útiles: Wappalyzer (para identificar tecnologías webs), o buidw.
@@ -44,7 +44,7 @@ Opcionales:
 
 ---
 
-## Socmint (Social Media Intelligent) {#socmint-social-media-intelligent}
+## Socmint (Social Media Intelligent)
 Es una rama del osint, que se encarga de recopilar y analizar datos provenientes de redes sociales, foros y comunidades en línea.
 
 - Monitoreo de actividades y publicaciones.

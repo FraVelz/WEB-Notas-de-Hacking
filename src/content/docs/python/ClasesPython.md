@@ -6,14 +6,14 @@ description: Clases Python - Notas de hacking y ciberseguridad.
 # Clases en Python
 ---
 
-## ¿Qué es una clase en Python? {#qué-es-una-clase-en-python}
+## ¿Qué es una clase en Python?
 Una **clase** es una **plantilla o molde** para crear **objetos** (instancias) que agrupan **datos (atributos)** y **funciones (métodos)** relacionados.
 
 Los **objetos** son las copias o instancias creadas a partir de esa clase.
 
 ---
 
-## Sintaxis básica {#sintaxis-básica}
+## Sintaxis básica
 ```python
 class Persona:
 def __init__(self, nombre, edad):  # Constructor
@@ -28,7 +28,7 @@ p1 = Persona("Francisco", 17)
 p1.saludar()
 ```
 
-### Explicación {#explicación}
+### Explicación
 - class Persona: → define la clase.
 - __init__ → **constructor**, se ejecuta al crear el objeto.
 - self → referencia al **objeto actual** (similar a this en otros lenguajes).
@@ -36,8 +36,8 @@ p1.saludar()
 
 ---
 
-## Atributos {#atributos}
-### 1. De instancia {#de-instancia}
+## Atributos
+### 1. De instancia
 Son únicos para cada objeto:
 ```python
 class Coche:
@@ -45,7 +45,7 @@ def __init__(self, marca):
 self.marca = marca
 ```
 
-### 2. De clase {#de-clase}
+### 2. De clase
 Son **compartidos por todas las instancias**:
 ```python
 class Coche:
@@ -61,15 +61,15 @@ print(a.ruedas, b.ruedas)  # ambos tienen 4
 
 ---
 
-## Métodos {#métodos}
-### Método de instancia {#método-de-instancia}
+## Métodos
+### Método de instancia
 Opera sobre el objeto (self).
 ```python
 def mostrar(self):
 print(self.nombre)
 ```
 
-### Método de clase {#método-de-clase}
+### Método de clase
 Opera sobre la clase, no sobre un objeto.
 ```python
 @classmethod
@@ -77,7 +77,7 @@ def crear_desde_edad(cls, edad):
 return cls("Desconocido", edad)
 ```
 
-### Método estático {#método-estático}
+### Método estático
 No usa self ni cls. Funciona como una función normal dentro de la clase.
 ```python
 @staticmethod
@@ -87,7 +87,7 @@ return edad >= 18
 
 ---
 
-## Herencia {#herencia}
+## Herencia
 Permite crear una clase nueva basada en otra (reutiliza código).
 ```python
 class Animal:
@@ -106,7 +106,7 @@ p.hablar()
 
 ---
 
-## Polimorfismo {#polimorfismo}
+## Polimorfismo
 Diferentes clases pueden usar el mismo método con comportamientos distintos:
 ```python
 class Gato:
@@ -121,7 +121,7 @@ animal.hablar()
 
 ---
 
-## Encapsulación {#encapsulación}
+## Encapsulación
 Controla la visibilidad de los atributos/métodos.
 
 <!-- Tabla convertida manualmente -->
@@ -137,7 +137,7 @@ print(self.__nombre)
 
 ---
 
-## Propiedades (<span className="citation" data-cites="property">@property</span>) {#propiedades-property}
+## Propiedades (<span className="citation" data-cites="property">@property</span>)
 Permiten acceder a métodos como sí fueran atributos.
 ```python
 class Rectangulo:
@@ -155,7 +155,7 @@ print(r.area)  # No se usa paréntesis
 
 ---
 
-## Composición {#composición}
+## Composición
 Una clase contiene objetos de otras clases:
 ```python
 class Motor:
@@ -172,7 +172,7 @@ c.motor.arrancar()
 
 ---
 
-## Ejemplo completo {#ejemplo-completo}
+## Ejemplo completo
 ```python
 class CuentaBancaria:
 tasa_interes = 0.05  # atributo de clase
@@ -203,5 +203,5 @@ print(cuenta.saldo)
 
 ---
 
-## Resumen rápido {#resumen-rápido}
+## Resumen rápido
 <!-- Tabla convertida manualmente -->

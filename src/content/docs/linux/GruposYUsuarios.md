@@ -6,11 +6,11 @@ description: Grupos YUsuarios - Notas de hacking y ciberseguridad.
 # Grupos y Usuarios
 ---
 
-## 1. Gestión de usuarios {#1-gestión-de-usuarios}
+## 1. Gestión de usuarios
 <!-- Tabla convertida manualmente -->
 
-### useradd vs adduser {#useradd-vs-adduser}
-### 1. useradd (programa básico del sistema) {#1-useradd-programa-básico-del-sistema}
+### useradd vs adduser
+### 1. useradd (programa básico del sistema)
 - Es el **comando original** de bajo nivel de Linux para crear usuarios.
 - Pertenece al paquete **passwd** o **shadow** (dependiendo de la distro).
 - No crea automáticamente todo lo necesario (por ejemplo, la carpeta personal).
@@ -36,7 +36,7 @@ sudo chown -R francisco:francisco /home/francisco
 sudo passwd francisco
 ```
 
-### 2. adduser (script de alto nivel) {#2-adduser-script-de-alto-nivel}
+### 2. adduser (script de alto nivel)
 - Es un **script en Perl** que usa internamente useradd, pero con **asistentes interactivos**.
 - **Crea automáticamente:**
 - Carpeta personal (/home/usuario)
@@ -64,25 +64,25 @@ Esto:
 - Asigna contraseña (te la pide)
 - Te deja todo listo en un paso
 
-### Comparación directa {#comparación-directa}
+### Comparación directa
 <!-- Tabla convertida manualmente -->
 
-### En resumen (gestión de usuarios) {#en-resumen-gestión-de-usuarios}
+### En resumen (gestión de usuarios)
 - Usa **adduser** cuando creas usuarios manualmente (más seguro y rápido).
 - Usa **useradd** en **scripts o configuraciones personalizadas**, donde controlas cada detalle.
 
 ---
 
-## 2. Grupos {#2-grupos}
-### Gestión de grupos {#gestión-de-grupos}
+## 2. Grupos
+### Gestión de grupos
 <!-- Tabla convertida manualmente -->
 
-### ¿Qué es un grupo en Linux? {#qué-es-un-grupo-en-linux}
+### ¿Qué es un grupo en Linux?
 Un **grupo** es un conjunto de usuarios que **comparten ciertos permisos**. Sirve para **organizar quién puede hacer qué** con los archivos, carpetas o procesos del sistema.
 
 Piensa que un grupo es como un “equipo” dentro del sistema operativo.
 
-### Ejemplo simple {#ejemplo-simple}
+### Ejemplo simple
 Imagina que tienes tres usuarios:
 ```bash
 juan
@@ -119,7 +119,7 @@ Ahora:
 - María ✅ puede entrar.
 - Pedro ❌ no puede.
 
-### Cada usuario tiene {#cada-usuario-tiene}
+### Cada usuario tiene
 <ol type="1">
 <li><strong>Un grupo principal (primario):</strong> Se crea
 automáticamente con el mismo nombre que el usuario. Ejemplo: el usuario
@@ -139,7 +139,7 @@ Aquí el usuario pertenece a los grupos:
 
 </li>
 </ol>
-### Ver los grupos de un usuario {#ver-los-grupos-de-un-usuario}
+### Ver los grupos de un usuario
 ```bash
 groups francisco
 ```
@@ -149,26 +149,26 @@ Salida posible:
 francisco : francisco sudo video audio
 ```
 
-### Archivos donde se guardan los grupos {#archivos-donde-se-guardan-los-grupos}
+### Archivos donde se guardan los grupos
 - /etc/group → lista todos los grupos del sistema. Ejemplo de líneas: ```bash
 root:x:0: sudo:x:27:francisco proyecto:x:1002:juan,maria
 ```
 
-      ### En resumen (gestión de grupos) {#en-resumen-gestión-de-grupos}
+      ### En resumen (gestión de grupos)
 
       
 <!-- Tabla convertida manualmente -->
 
       ---
 
-      ## 3. Archivos importantes del sistema {#3-archivos-importantes-del-sistema}
+      ## 3. Archivos importantes del sistema
 
       
 <!-- Tabla convertida manualmente -->
 
       ---
 
-      ## 4. Ejemplos prácticos comunes {#4-ejemplos-prácticos-comunes}
+      ## 4. Ejemplos prácticos comunes
 
       - **Crear un usuario con carpeta personal y shell bash:** ```bash
 sudo useradd -m -s /bin/bash francisco
@@ -188,9 +188,9 @@ cut -d: -f1 /etc/passwd
 
       ---
 
-      ## Utilidad de grupos y usuarios {#utilidad-de-grupos-y-usuarios}
+      ## Utilidad de grupos y usuarios
 
-      ### 1. Cuando hay varios usuarios {#1-cuando-hay-varios-usuarios}
+      ### 1. Cuando hay varios usuarios
 
       Ahí es donde **más se nota su función**.
 
@@ -205,11 +205,11 @@ cut -d: -f1 /etc/passwd
 
       ---
 
-      ### 2. Cuando eres el único usuario {#2-cuando-eres-el-único-usuario}
+      ### 2. Cuando eres el único usuario
 
       Incluso así, **sigue siendo muy útil** por estas razones:
 
-      ### a) Seguridad interna {#a-seguridad-interna}
+      ### a) Seguridad interna
 
       - El sistema separa procesos y permisos por usuario.
 - Ejemplo: sí un programa malicioso se ejecuta como “usuario normal”, **no puede dañar el sistema**, porque no tiene permisos de administrador.
@@ -218,7 +218,7 @@ cut -d: -f1 /etc/passwd
 
       ---
 
-      ### b) Servicios y procesos del sistema {#b-servicios-y-procesos-del-sistema}
+      ### b) Servicios y procesos del sistema
 
       Linux trata **cada servicio como sí fuera un usuario separado** para aislarlos.
 
@@ -234,7 +234,7 @@ nobody → usuario “vacío” usado por procesos sin privilegios
 
       ---
 
-      ### c) Control de dispositivos y permisos especiales {#c-control-de-dispositivos-y-permisos-especiales}
+      ### c) Control de dispositivos y permisos especiales
 
       Los grupos también controlan **qué puede hacer tú usuario con el hardware**, incluso sí eres el único:
 
@@ -254,9 +254,9 @@ nobody → usuario “vacío” usado por procesos sin privilegios
 
       ---
 
-      ### 3. Otros {#3-otros}
+      ### 3. Otros
 
-      ### 1. Cuando creas o manejas máquinas (virtuales o reales) {#1-cuando-creas-o-manejas-máquinas-virtuales-o-reales}
+      ### 1. Cuando creas o manejas máquinas (virtuales o reales)
 
       Cada máquina (por ejemplo, una que instalas con VirtualBox, KVM o Docker) tiene su propio **sistema Linux**, y dentro de él **todo funciona con usuarios y grupos**.
 
@@ -268,7 +268,7 @@ nobody → usuario “vacío” usado por procesos sin privilegios
 
       En máquinas virtuales o servidores, *la seguridad y estabilidad dependen directamente de esos permisos.*
 
-      ### 2. En ciberseguridad o administración {#2-en-ciberseguridad-o-administración}
+      ### 2. En ciberseguridad o administración
 
       Sí quieres aprender hacking ético, pentesting o proteger sistemas, necesitas dominar esto porque:
 
@@ -277,7 +277,7 @@ nobody → usuario “vacío” usado por procesos sin privilegios
 
       Ejemplo: Sí un servicio web corre como usuario www-data, no debería poder leer /etc/shadow (donde están las contraseñas). Ese aislamiento lo logran los **usuarios y grupos**.
 
-      ### 3. En desarrollo o automatización {#3-en-desarrollo-o-automatización}
+      ### 3. En desarrollo o automatización
 
       Cuando haces tus propias máquinas, scripts o aplicaciones:
 
@@ -292,7 +292,7 @@ sudo useradd -r -s /bin/false servidor_web
 
       Esto crea un usuario “de sistema” sin acceso a terminal, usado solo para ejecutar un servicio.
 
-      ### En resumen (otros) {#en-resumen-otros}
+      ### En resumen (otros)
 
       
 <!-- Tabla convertida manualmente -->

@@ -7,7 +7,7 @@ description: Diff - Notas de hacking y ciberseguridad.
 ---
 
 ## Temario
-### En resumen {#en-resumen}
+### En resumen
 El comando diff en Linux/Unix se usa para **comparar dos archivos (o carpetas)** línea por línea y mostrar **las diferencias entre ellos**.
 ```bash
 diff archivo1 archivo2
@@ -17,7 +17,7 @@ Muestra qué líneas **cambian, se agregan o eliminan** de un archivo respecto a
 
 ---
 
-### Ejemplo básico {#ejemplo-básico}
+### Ejemplo básico
 Supongamos que tienes dos archivos:
 
 **archivo1.txt:**
@@ -54,12 +54,12 @@ Significa:
 
 ---
 
-### Símbolos principales {#símbolos-principales}
+### Símbolos principales
 <!-- Tabla convertida manualmente -->
 
 ---
 
-### Opciones útiles {#opciones-útiles}
+### Opciones útiles
 <!-- Tabla convertida manualmente -->
 
 Ejemplo:
@@ -80,7 +80,7 @@ como estas
 
 ---
 
-### Usos comunes {#usos-comunes}
+### Usos comunes
 - Ver qué cambió entre dos versiones de un archivo.
 - Comparar archivos de configuración.
 - Analizar diferencias en código fuente.

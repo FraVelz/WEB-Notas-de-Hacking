@@ -6,7 +6,7 @@ description: Gestion De Procesos - Notas de hacking y ciberseguridad.
 # Gestión de procesos
 ---
 
-## Terminologías {#terminologías}
+## Terminologías
 - **Proceso**: Programa en ejecución administrado por el kernel.
 - **PID (Process ID)**: Identificador único asignado por el sistema a cada proceso.
 - **PPID (Parent PID)**: Identificador del proceso padre (quien lo creó).
@@ -24,7 +24,7 @@ description: Gestion De Procesos - Notas de hacking y ciberseguridad.
 
 ---
 
-## Comandos para ver procesos {#comandos-para-ver-procesos}
+## Comandos para ver procesos
 - **ps**: Lista los procesos activos. ```bash
 ps aux # Para monitorear recursos ps -ef # Para ver jerarquía y relaciones entre los procesos
 ```
@@ -44,7 +44,7 @@ pidof bash
 
 ---
 
-## Ejecución de procesos {#ejecución-de-procesos}
+## Ejecución de procesos
 - **Primer plano (foreground)**: ```bash
 ./programa
 ```
@@ -61,7 +61,7 @@ long_task.sh & echo "Sigo usando la terminal"
 
       ---
 
-      ## Control de trabajos {#control-de-trabajos}
+      ## Control de trabajos
 
       Bash permite gestionar procesos iniciados desde la misma sesión (misma terminal en el que se ejecutó el proceso).
 ```bash
@@ -89,7 +89,7 @@ jobs
 
       ---
 
-      ## Señales a procesos {#señales-a-procesos}
+      ## Señales a procesos
 
       - **Enviar señales manualmente:** ```bash
 kill -9 1234 # SIGKILL (fuerza el cierre) kill -15 1234 # SIGTERM (solicita terminación limpia) kill -STOP 1234 # pausa proceso kill -CONT 1234 # reanuda proceso detenido
@@ -106,7 +106,7 @@ pkill firefox killall nano
 
       ---
 
-      ## Prioridades de procesos {#prioridades-de-procesos}
+      ## Prioridades de procesos
 
       Cada proceso tiene un **"valor bueno"**, que define su prioridad de CPU.
 
@@ -131,7 +131,7 @@ ps -eo pid,ni,comm
 
       ---
 
-      ## Procesos huérfanos y zombis {#procesos-huérfanos-y-zombis}
+      ## Procesos huérfanos y zombis
 
       - **Huérfano**: cuando el proceso padre termina antes que su hijo. El proceso hijo pasa a ser adoptado por el **init** o **systemd**. No es dañino, pero indica una gestión no controlada de procesos.
 - **Zombi**: proceso que terminó, pero su entrada en la tabla de procesos aún existe porque su padre no leyó su estado de salida (wait() no fue llamado). Se muestran con estado Z. ```bash
@@ -142,5 +142,5 @@ Para eliminarlos, normalmente basta con terminar el proceso padre.
 
 ---
 
-## Resumen visual {#resumen-visual}
+## Resumen visual
 <!-- Tabla convertida manualmente -->

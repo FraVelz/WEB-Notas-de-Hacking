@@ -11,7 +11,7 @@ Cursos videos de YouTube:
 
 ---
 
-## 1. base (fundamentos) {#1-base-fundamentos}
+## 1. base (fundamentos)
 **¿Qué son las redes?**
 
 - Una **red** es un conjunto de dispositivos conectados entre sí que comparten información y recursos.
@@ -41,7 +41,7 @@ Cursos videos de YouTube:
 
 ---
 
-## 2. Historia de las redes {#2-historia-de-las-redes}
+## 2. Historia de las redes
 - **Década de 1960 – Orígenes** <Lista> Se crean las primeras ideas de redes para compartir información entre computadoras.
 - **ARPANET (1969)**: La primera red a gran escala, financiada por el Departamento de Defensa de EE. UU., conectaba universidades y laboratorios.
 - Objetivo: comunicación eficiente y compartir recursos informáticos.
@@ -80,10 +80,10 @@ Cursos videos de YouTube:
 </li>
 ---
 
-## 3. Modelos de redes {#3-modelos-de-redes}
+## 3. Modelos de redes
 Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos:
 
-### <strong>Modelo OSI (Open Systems Interconnection)</strong> {#modelo-osi-open-systems-interconnection}
+### <strong>Modelo OSI (Open Systems Interconnection)</strong>
 - Divide la comunicación en **7 capas**: <Lista> **Física**: cables, señales eléctricas o de luz.
 - **Enlace de datos**: control de errores y transmisión entre nodos.
 - **Red**: direccionamiento y rutas (ej. IP).
@@ -94,7 +94,7 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
 
 </li>
 </Lista>
-### <strong>Modelo TCP/IP</strong> {#modelo-tcpip}
+### <strong>Modelo TCP/IP</strong>
 - Más práctico y usado en Internet.
 - Tiene **4 capas**:
 - **Acceso a red**: transmisión física de datos.
@@ -106,7 +106,7 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
 
 ---
 
-## 4. Tipos de redes según su alcance {#4-tipos-de-redes-según-su-alcance}
+## 4. Tipos de redes según su alcance
 - **LAN (Local Area Network)**: red local, p. ej., en una casa o escuela.
 - **WAN (Wide Area Network)**: red de largo alcance, p. ej., Internet.
 - **MAN (Metropolitan Area Network)**: cubre una ciudad.
@@ -114,15 +114,15 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
 
 ---
 
-## 5. Arquitectura Cliente-Servidor {#5-arquitectura-cliente-servidor}
+## 5. Arquitectura Cliente-Servidor
 La **arquitectura cliente-servidor** es un modelo de diseño de sistemas en el que las tareas se distribuyen entre dos tipos de entidades: **clientes** y **servidores**.
 
-### <strong>Componentes principales:</strong> {#componentes-principales}
+### <strong>Componentes principales:</strong>
 - **Servidor:** Es un equipo o programa que **ofrece servicios** o recursos a otros dispositivos. Ejemplo: un servidor web que envía páginas HTML.
 - **Cliente:** Es un equipo o programa que **solicita servicios** al servidor. Ejemplo: un navegador web que solicita páginas a un servidor.
 - **Red:** Medio que permite la comunicación entre cliente y servidor. Puede ser cableada (Ethernet) o inalámbrica (Wi-Fi).
 
-### <strong>Funcionamiento:</strong> {#funcionamiento}
+### <strong>Funcionamiento:</strong>
 - El cliente envía una **solicitud** al servidor.
 - El servidor procesa la solicitud.
 - El servidor envía una **respuesta** al cliente.
@@ -135,21 +135,21 @@ Ejemplo práctico: Cuando abres YouTube:
 - Tú navegador reproduce el video.
 
 </blockquote>
-### <strong>Ventajas:</strong> {#ventajas}
+### <strong>Ventajas:</strong>
 - Centralización de datos y control.
 - Facilita la administración y seguridad.
 - Escalabilidad: se pueden añadir más clientes sin cambiar el servidor.
 
-### <strong>Desventajas:</strong> {#desventajas}
+### <strong>Desventajas:</strong>
 - Sí el servidor falla, los clientes quedan sin servicio.
 - Requiere buena infraestructura para manejar muchos clientes.
 
 ---
 
-## 6. Arquitectura de Red {#6-arquitectura-de-red}
+## 6. Arquitectura de Red
 La **arquitectura de red** describe cómo los **dispositivos y servicios están organizados y conectados** para comunicarse. La arquitectura cliente-servidor es un tipo de arquitectura de red, pero existen otros modelos, como **peer-to-peer (P2P)**.
 
-### <strong>Tipos comunes de arquitectura de red:</strong> {#tipos-comunes-de-arquitectura-de-red}
+### <strong>Tipos comunes de arquitectura de red:</strong>
 - **Cliente-Servidor (como vimos):** <Lista> Un servidor central da servicios a múltiples clientes.
 
 </li>
@@ -177,15 +177,15 @@ La **arquitectura de red** describe cómo los **dispositivos y servicios están 
 </Lista>
 ---
 
-## 7. Protocolos de red {#7-protocolos-de-red}
+## 7. Protocolos de red
 Un **protocolo de red** es un conjunto de **reglas y estándares** que permiten que los dispositivos se comuniquen correctamente a través de una red.
 
-### <strong>Funciones principales de los protocolos:</strong> {#funciones-principales-de-los-protocolos}
+### <strong>Funciones principales de los protocolos:</strong>
 - Determinan **cómo se envían los datos**.
 - Definen **cómo se reciben y verifican**.
 - Aseguran que **dispositivos distintos puedan entenderse**.
 
-### <strong>Ejemplos de protocolos comunes:</strong> {#ejemplos-de-protocolos-comunes}
+### <strong>Ejemplos de protocolos comunes:</strong>
 <!-- Tabla convertida manualmente -->
 
 <blockquote>
@@ -194,10 +194,10 @@ Nota: Muchos protocolos trabajan **juntos en capas** según el modelo OSI o TCP/
 </blockquote>
 ---
 
-## 8. Comunicaciones en Redes {#8-comunicaciones-en-redes}
+## 8. Comunicaciones en Redes
 La **comunicación en redes** es el proceso mediante el cual los **dispositivos intercambian información** siguiendo protocolos.
 
-### <strong>Tipos de comunicación:</strong> {#tipos-de-comunicación}
+### <strong>Tipos de comunicación:</strong>
 - **Unicast:** <Lista> Comunicación de un dispositivo a otro específico.
 - Ejemplo: enviar un mensaje privado.
 
@@ -217,11 +217,11 @@ La **comunicación en redes** es el proceso mediante el cual los **dispositivos 
 
 </li>
 </Lista>
-### <strong>Medios de transmisión:</strong> {#medios-de-transmisión}
+### <strong>Medios de transmisión:</strong>
 - **Alámbricos:** Cable Ethernet, fibra óptica.
 - **Inalámbricos:** Wi-Fi, Bluetooth, redes móviles (4G/5G).
 
-### <strong>Procesos clave en la comunicación:</strong> {#procesos-clave-en-la-comunicación}
+### <strong>Procesos clave en la comunicación:</strong>
 - **Codificación y empaquetado de datos** (se forman los paquetes de información).
 - **Transmisión** por el medio (cable o aire).
 - **Recepción y verificación** de errores.
@@ -229,15 +229,15 @@ La **comunicación en redes** es el proceso mediante el cual los **dispositivos 
 
 ---
 
-## 9. Protocolos de Aplicación {#9-protocolos-de-aplicación}
+## 9. Protocolos de Aplicación
 Los **protocolos de aplicación** son reglas que permiten a los **programas o aplicaciones** comunicarse a través de la red. Trabajan en la **capa más alta** de los modelos de red (OSI o TCP/IP).
 
-### <strong>Funciones principales:</strong> {#funciones-principales}
+### <strong>Funciones principales:</strong>
 - Definen cómo las aplicaciones intercambian datos.
 - Permiten que diferentes programas se entiendan aunque sean de fabricantes distintos.
 - Usan protocolos de transporte como **TCP o UDP** para enviar los datos.
 
-### <strong>Ejemplos importantes:</strong> {#ejemplos-importantes}
+### <strong>Ejemplos importantes:</strong>
 <!-- Tabla convertida manualmente -->
 
 <blockquote>
@@ -246,10 +246,10 @@ Nota: Cada protocolo de aplicación funciona **encima de TCP o UDP** para garant
 </blockquote>
 ---
 
-## 10. Direcciones IP {#10-direcciones-ip}
+## 10. Direcciones IP
 Una **dirección IP (Internet Protocol)** es un **identificador único** que permite que un dispositivo se comunique en una red. Funciona como una **dirección postal** para enviar información.
 
-### <strong>Tipos de direcciones IP:</strong> {#tipos-de-direcciones-ip}
+### <strong>Tipos de direcciones IP:</strong>
 - **IPv4:** <Lista> Formato: 192.168.1.10 (números de 0 a 255).
 - Ejemplo: 172.16.0.5
 - Tiene espacio limitado (~4.000 millones de direcciones).
@@ -263,15 +263,15 @@ Una **dirección IP (Internet Protocol)** es un **identificador único** que per
 
 </li>
 </Lista>
-### <strong>Clases de direcciones IP (IPv4):</strong> {#clases-de-direcciones-ip-ipv4}
+### <strong>Clases de direcciones IP (IPv4):</strong>
 - **Públicas:** Únicas en Internet, accesibles desde cualquier lugar.
 - **Privadas:** Usadas en redes locales, no accesibles directamente desde Internet. Ej: 192.168.0.0/16
 
-### <strong>Funciones de la IP:</strong> {#funciones-de-la-ip}
+### <strong>Funciones de la IP:</strong>
 - Identificar dispositivos en la red.
 - Dirigir los paquetes de datos hacia el destino correcto.
 
-### <strong>Relación con los protocolos de aplicación:</strong> {#relación-con-los-protocolos-de-aplicación}
+### <strong>Relación con los protocolos de aplicación:</strong>
 - Los **protocolos de aplicación** usan la **IP** para localizar a los dispositivos y el **puerto** para identificar la aplicación dentro de ese dispositivo.
 
 <blockquote>

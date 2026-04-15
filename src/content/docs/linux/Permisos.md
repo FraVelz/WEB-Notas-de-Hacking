@@ -4,21 +4,21 @@ description: Permisos - Notas de hacking y ciberseguridad.
 ---
 
 # Permisos en Linux
-## Temario {#temario}
+## Temario
 ---
 
-## 1. Concepto básico de permisos {#concepto-básico-de-permisos}
+## 1. Concepto básico de permisos
 Cada archivo o carpeta tiene **3 tipos de permisos** y **3 categorías de usuarios**:
 
-### Tipos de permisos {#tipos-de-permisos}
+### Tipos de permisos
 <!-- Tabla convertida manualmente -->
 
-### Categorías {#categorías}
+### Categorías
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 2. Ver permisos {#2-ver-permisos}
+## 2. Ver permisos
 ```bash
 ls -l
 ```
@@ -38,8 +38,8 @@ Significado:
 
 ---
 
-## 3. Cambiar permisos (chmod) {#3-cambiar-permisos-chmod}
-### a) Modo simbólico {#a-modo-simbólico}
+## 3. Cambiar permisos (chmod)
+### a) Modo simbólico
 ```bash
 chmod u+x script.sh     # añadir ejecución al usuario
 chmod g-w script.sh     # quitar escritura al grupo
@@ -47,7 +47,7 @@ chmod o=r file.txt      # solo lectura para otros
 chmod a+r file.txt      # todos pueden leer
 ```
 
-### b) Modo numérico {#b-modo-numérico}
+### b) Modo numérico
 ```bash
 chmod 755 script.sh
 ```
@@ -56,7 +56,7 @@ chmod 755 script.sh
 
 ---
 
-## 4. Cambiar dueño o grupo (chown, chgrp) {#4-cambiar-dueño-o-grupo-chown-chgrp}
+## 4. Cambiar dueño o grupo (chown, chgrp)
 ```bash
 chown usuario archivo
 chgrp grupo archivo
@@ -70,12 +70,12 @@ sudo chown francisco:users script.sh
 
 ---
 
-## 5. Permisos especiales {#5-permisos-especiales}
+## 5. Permisos especiales
 Existen tres permisos especiales en Linux:
 
 <!-- Tabla convertida manualmente -->
 
-### Sticky Bit {#sticky-bit}
+### Sticky Bit
 El **sticky bit** se usa en directorios **para evitar que otros borren archivos ajenos**.
 ```bash
 chmod +t /tmp/publico
@@ -93,7 +93,7 @@ drwxrwxrw**t** → el “t” final indica el sticky bit activo.
 
 Ejemplo típico: El directorio /tmp **siempre lo tiene activado**.
 
-### SUID y SGID {#suid-y-sgid}
+### SUID y SGID
 <h4 id="suid">SUID</h4>
 Ejemplo:
 ```bash
@@ -129,10 +129,10 @@ Los nuevos archivos heredan el grupo del directorio, útil para carpetas compart
 </blockquote>
 ---
 
-## 6. Atributos de archivos (chattr, lsattr) {#6-atributos-de-archivos-chattr-lsattr}
+## 6. Atributos de archivos (chattr, lsattr)
 Los **atributos** controlan *cómo* se comporta un archivo, más allá de los permisos.
 
-### Ver atributos {#ver-atributos}
+### Ver atributos
 ```bash
 lsattr archivo
 ```
@@ -142,7 +142,7 @@ Ejemplo:
 ----i--------e-----  documento.txt
 ```
 
-### Cambiar atributos (chattr) {#cambiar-atributos-chattr}
+### Cambiar atributos (chattr)
 Hacer un archivo **inmutable**:
 ```bash
 sudo chattr +i archivo.txt
@@ -158,10 +158,10 @@ Modo **append-only** (solo añadir contenido):
 sudo chattr +a log.txt
 ```
 
-### Atributos comunes {#atributos-comunes}
+### Atributos comunes
 <!-- Tabla convertida manualmente -->
 
-### Ejemplo práctico en script Bash {#ejemplo-práctico-en-script-bash}
+### Ejemplo práctico en script Bash
 ```bash
 #!/bin/bash
 # Proteger archivos del sistema
@@ -179,5 +179,5 @@ lsattr "$(ARCHIVOS[@])"
 
 ---
 
-## 7. Resumen visual {#7-resumen-visual}
+## 7. Resumen visual
 <!-- Tabla convertida manualmente -->
