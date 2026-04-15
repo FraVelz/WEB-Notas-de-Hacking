@@ -1,12 +1,10 @@
 ---
-title: Bandit Resolucion
-description: Bandit Resolucion - Notas de hacking y ciberseguridad.
----
-
-# Resolución problemas básicos de Bandit
+title: Resolución problemas básicos de Bandit
+description: Niveles de Bandit (OverTheWire). Pistas y soluciones en español.
 ---
 
 ## Información
+
 Página para practicar, comandos linux, desde la terminal.
 
 Página Web: https://overthewire.org/wargames/bandit/
@@ -31,20 +29,17 @@ export TERM=xterm
 Comando ssh para conectarse a bandit
 </summary>
 Para conectarse a bandit0 se puede hacer con el siguiente comando:
-```bash
-ssh bandit0@bandit.labs.overthewire.org -p 2220
-```
+<pre><code class="language-bash">ssh bandit0@bandit.labs.overthewire.org -p 2220</code></pre>
 
 Después de conectarte al servicio, bandit te pedirá una contraseña, en este caso la contraseña es
-```bash
-bandit0
-```
+<pre><code class="language-bash">bandit0</code></pre>
 
 En vez de colocar bandit0 colocas bandit1 para el siguiente nivel, en
 cada nivel debes obtener una contraseña, que se dará las instrucciones
 en la página web ([Ir a página web (overthewire, bandit)](https://overthewire.org/wargames/bandit/)), para completar cada nivel y
 obtener dicha contraseña del siguiente nivel.
 </details>
+
 El propósito de este archivo, es dar pistas sencillas en español de los niveles, y además tener a mano la solución en dado, caso de querer saltar algún nivel, para luego estudiarlo.
 
 Aunque, en la página oficial, ya hay material, para aprender, y pistas de como resolver los ejercicios (todo en ingles).
@@ -58,13 +53,16 @@ Página web:
 <figcaption aria-hidden="true">Imagen de página web de
 bandit</figcaption>
 </figure>
+
 Terminal:
 
 <figure>
 <img src="/WEB-Notas-de-Hacking/imagenes/terminal-overthewire.png" alt="Imagen de terminal de bandit" />
 <figcaption aria-hidden="true">Imagen de terminal de bandit</figcaption>
 </figure>
----
+
+
+<hr />
 
 ## Bandit0
 **Pista:** Solo hay que leer.
@@ -73,12 +71,11 @@ Terminal:
 <summary>
 Posible solucion
 </summary>
-```bash
-cat readme.md
-```
+<pre><code class="language-bash">cat readme.md</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit1
 **Pista:** solo hay que leer de otra forma.
@@ -87,14 +84,13 @@ cat readme.md
 <summary>
 Posible solucion
 </summary>
-```bash
-cat ./-
-```
+<pre><code class="language-bash">cat ./-</code></pre>
 
 Se indica que en el directorio actual existe un archivo que se llama - y lo muestra.
 
 </details>
----
+
+<hr />
 
 ## Bandit2
 **Pista:** solo hay que leer igual que el anterior pero con unas cosas extras.
@@ -103,14 +99,13 @@ Se indica que en el directorio actual existe un archivo que se llama - y lo mues
 <summary>
 Posible solucion
 </summary>
-```bash
-cat "./--spaces in this filename--"
-```
+<pre><code class="language-bash">cat "./--spaces in this filename--"</code></pre>
 
 Indica que con ", que en el repositorio actual existe un archivo con espacios de línea y - guiones, y lo muestra.
 
 </details>
----
+
+<hr />
 
 ## Bandit3
 **Pista:** Igual que la anterior, pero solo hay un directorio con un archivo oculto.
@@ -119,14 +114,13 @@ Indica que con ", que en el repositorio actual existe un archivo con espacios de
 <summary>
 Posible solucion
 </summary>
-```bash
-cat "inhere/...Hiding-From-You"
-```
+<pre><code class="language-bash">cat "inhere/...Hiding-From-You"</code></pre>
 
 Indica con " el texto como tal aparece, es la ruta y nombre del archivo, en el repositorio, y lo muestra.
 
 </details>
----
+
+<hr />
 
 ## Bandit4
 **Pista:** el archivo que sea tipo texto es el que tendrá la clave.
@@ -135,16 +129,15 @@ Indica con " el texto como tal aparece, es la ruta y nombre del archivo, en el r
 <summary>
 Posible solucion
 </summary>
-```bash
-find ./inhere/ -type f | xargs file
-```
+<pre><code class="language-bash">find ./inhere/ -type f | xargs file</code></pre>
 
 Busca en la carpeta inhere, busca los archivos -type f, y muestra el tipo de datos que contenga xargs file cada archivo.
 
 El archivo que sea ascii text, es el que contendrá la clave para el siguiente nivel.
 
 </details>
----
+
+<hr />
 
 ## Bandit5
 **Pista:**
@@ -157,16 +150,15 @@ El archivo que sea ascii text, es el que contendrá la clave para el siguiente n
 <summary>
 Posible solucion
 </summary>
-```bash
-find ./inhere/ -type f -size 1033c
-```
+<pre><code class="language-bash">find ./inhere/ -type f -size 1033c</code></pre>
 
 Busca en inhere un archivo -type f que contenga un tamaño de 1033 bytes -size 1033c.
 
 Dará la ruta del archivo que cumpla con los requisitos de tamaño sí hay solo 1, ese tendrá la clave.
 
 </details>
----
+
+<hr />
 
 ## Bandit6 (contiene clave siguiente)
 **Pista:**
@@ -179,9 +171,7 @@ Dará la ruta del archivo que cumpla con los requisitos de tamaño sí hay solo 
 <summary>
 Posible solucion
 </summary>
-```bash
-find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
-```
+<pre><code class="language-bash">find / -user bandit7 -group bandit6 -size 33c 2&gt;/dev/null</code></pre>
 
 Busca desde / archivo o carpeta que contenga, como permisos de usuario bandit7 -user bandit7, como grupo -group bandit6, y que contenga un tamaño de 33 bytes -size 33c, habrán archivos que cumplan los requerimientos, pero no serán accesibles y darán error, entonces esos archivos no lo mostramos en la terminal con 2&gt;/dev/null.
 
@@ -192,12 +182,11 @@ Mostrará la dirección del archivo que tendrá la clave.
 <summary>
 Clave para el siguiente
 </summary>
-```bash
-morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
-```
+<pre><code class="language-bash">morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit7
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt junto a la palabra “millionth”.
@@ -206,14 +195,13 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 <summary>
 Posible solucion
 </summary>
-```bash
-cat data.txt | grep millionth
-```
+<pre><code class="language-bash">cat data.txt | grep millionth</code></pre>
 
 Muestra el archivo cat data.txt y filtra todo el texto para solo mostrar la línea que contenga millionth, grep millionth.
 
 </details>
----
+
+<hr />
 
 ## Bandit8
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt y es la única línea de texto que aparece solo una vez.
@@ -222,14 +210,13 @@ Muestra el archivo cat data.txt y filtra todo el texto para solo mostrar la lín
 <summary>
 Posible solucion
 </summary>
-```bash
-cat data.txt | sort | uniq -u
-```
+<pre><code class="language-bash">cat data.txt | sort | uniq -u</code></pre>
 
 Organizar las líneas del archivo, para que hagan líneas consecutivas repetidas sort, luego con uniq -u, elimina todas las líneas consecutivas repetidas y solo muestra las que no tiene repeticiones.
 
 </details>
----
+
+<hr />
 
 ## Bandit9
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt en una de las pocas cadenas legibles por humanos, precedida por varios caracteres ‘=’.
@@ -238,14 +225,13 @@ Organizar las líneas del archivo, para que hagan líneas consecutivas repetidas
 <summary>
 Posible solucion
 </summary>
-```bash
-cat data.txt | grep -a === | awk 'NF{print $NF}'
-```
+<pre><code class="language-bash">cat data.txt | grep -a === | awk 'NF{print $NF}'</code></pre>
 
 Filtra por líneas que contengan ===. Como el archivo contiene caracteres binarios, indicamos al filtrado que procese todo como texto con **grep -a**, y luego extraemos únicamente la última palabra de cada línea usando <code>{`awk 'NF{print $NF}'`}</code>.
 
 </details>
----
+
+<hr />
 
 ## Bandit10 (contiene clave para el siguiente)
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt, que contiene datos codificados en base64.
@@ -254,9 +240,7 @@ Filtra por líneas que contengan ===. Como el archivo contiene caracteres binari
 <summary>
 Posible solucion
 </summary>
-```bash
-base64 -d data.txt
-```
+<pre><code class="language-bash">base64 -d data.txt</code></pre>
 
 Utilizamos el comando base64 -d para decodificar el archivo data.txt.
 
@@ -265,12 +249,11 @@ Utilizamos el comando base64 -d para decodificar el archivo data.txt.
 <summary>
 Clave para el siguiente
 </summary>
-```bash
-dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
-```
+<pre><code class="language-bash">dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit11 (contiene clave para el siguiente)
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt, donde todas las letras minúsculas (a-z) y mayúsculas (A-Z) se han rotado 13 posiciones.
@@ -279,9 +262,7 @@ dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 <summary>
 Posible solucion
 </summary>
-```bash
-cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
-```
+<pre><code class="language-bash">cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'</code></pre>
 
 La información de data.txt con tr remplaza los caracteres de mayúscula y minúscula, a los mismos caracteres pero rotados 13 veces, como un cifrado cesar, para descifrar en este caso.
 
@@ -290,12 +271,11 @@ La información de data.txt con tr remplaza los caracteres de mayúscula y minú
 <summary>
 Clave para el siguiente
 </summary>
-```bash
-7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
-```
+<pre><code class="language-bash">7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit12
 **Pista:** La contraseña para el siguiente nivel está en el archivo data.txt, que es un volcado hexadecimal de un archivo comprimido repetidamente.
@@ -304,23 +284,20 @@ Clave para el siguiente
 <summary>
 Posible solucion
 </summary>
-```bash
-cat data.txt | xxd -r > data_new
-```
+<pre><code class="language-bash">cat data.txt | xxd -r &gt; data_new</code></pre>
 
 El contenido del archivo data.txt lo redirige al comando xxd -r que convierte datos binarios, a un texto decimal legible, y el resultado lo redirige a un nuevo archivo llamado data_new.
 
 Luego te salen puros archivos comprimidos, para descomprimirlos en general sin utilizar la herramienta específica para descomprimir un archivo de cada tipo puedes utilizar:
-```bash
-7z x data_new
-```
+<pre><code class="language-bash">7z x data_new</code></pre>
 
 Te sale un nuevo archivo comprimido, y vuelves a repetir el anterior comando para descomprimir, así sucesivamente hasta que te salga el archivo de texto con la clave.
 
 O Utilizar bash script con un bucle…
 
 </details>
----
+
+<hr />
 
 ## Bandit13
 **Pista:** La contraseña para el siguiente nivel se almacena en /etc/bandit_pass/bandit14 y solo puede ser leída por el usuario bandit14. Para este nivel, no se obtiene la siguiente contraseña, sino una clave SSH privada que permite iniciar sesión en el siguiente nivel. Nota: localhost es un nombre de host que se refiere a la máquina en la que se está trabajando.
@@ -329,17 +306,16 @@ O Utilizar bash script con un bucle…
 <summary>
 Posible solucion
 </summary>
-```bash
-chmod 600 bandit14.key
-ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220
-```
+<pre><code class="language-bash">chmod 600 bandit14.key
+ssh -i bandit14.key bandit14@bandit.labs.overthewire.org -p 2220</code></pre>
 
 Se dan los permisos correspondientes, donde la clave solo pueda ser leída, y manipulada por el usuario, y luego se utiliza el comando ssh todo igual, pero agregando la línea -i nombre_clave.
 
 Ya estarías en el nivel bandit14.
 
 </details>
----
+
+<hr />
 
 ## Bandit14
 **Pista:** La contraseña para el siguiente nivel se puede recuperar enviando la contraseña del nivel actual al puerto 30000 en localhost.
@@ -349,14 +325,13 @@ Ya estarías en el nivel bandit14.
 Posible solucion
 </summary>
 Primero buscas la clave, del usuario actual donde se mencionó anteriormente, y la copias:
-```bash
-nc localhost 30000
-```
+<pre><code class="language-bash">nc localhost 30000</code></pre>
 
 Conectando a **localhost** y puerto 30000; luego pega la clave y te pasará la contraseña del siguiente nivel.
 
 </details>
----
+
+<hr />
 
 ## Bandit15 (contiene clave para el siguiente)
 **Pista:** La contraseña del siguiente nivel se puede recuperar enviando la contraseña del nivel actual al puerto 30001 del host local mediante cifrado SSL/TLS.
@@ -365,9 +340,7 @@ Conectando a **localhost** y puerto 30000; luego pega la clave y te pasará la c
 <summary>
 Posible solucion
 </summary>
-```bash
-ncat --ssl 127.0.0.1 30001
-```
+<pre><code class="language-bash">ncat --ssl 127.0.0.1 30001</code></pre>
 
 Y pegas la clave del usuario actual, te dará la clave para el siguiente.
 
@@ -378,12 +351,11 @@ Y pegas la clave del usuario actual, te dará la clave para el siguiente.
 <summary>
 Clave para el siguiente
 </summary>
-```bash
-kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
-```
+<pre><code class="language-bash">kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit16
 **Pista:** Las credenciales para el siguiente nivel se pueden recuperar presentando la contraseña del nivel actual a un puerto en localhost en el rango 31000–32000. Primero averigua cuál de estos puertos tiene un servidor escuchando. A continuación, determina cuáles de ellos hablan SSL/TLS y cuáles no. Solo hay un servidor que devolverá la contraseña del siguiente nivel; los demás simplemente reenviarán lo que les envíes.
@@ -392,19 +364,16 @@ kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 <summary>
 Posible solucion
 </summary>
-```bash
-nmap --open -T5 -v -n -p31000-32000 127.0.0.1
-```
+<pre><code class="language-bash">nmap --open -T5 -v -n -p31000-32000 127.0.0.1</code></pre>
 
 Escanea por puertos TCP abiertos (<code>--open</code>), ajusta la velocidad con <code>-T5</code> y usa <code>-v</code> para ver salida en tiempo real. <code>-n</code> evita resolución DNS; <code>-p</code> indica el rango de puertos. <code>127.0.0.1</code> es la dirección (host) local donde realizar el escaneo.
-```bash
-ncat --ssl 127.0.0.1
-```
+<pre><code class="language-bash">ncat --ssl 127.0.0.1</code></pre>
 
 Para conectarse con cifrado a dicho puertos, pegando la clave, y alguno de ellos dará la clave para el siguiente nivel.
 
 </details>
----
+
+<hr />
 
 ## Bandit17
 **Pista:** En el directorio principal hay dos archivos: passwords.old y passwords.new. La contraseña para el siguiente nivel se encuentra en passwords.new y es la única línea que ha cambiado entre passwords.old y passwords.new.
@@ -415,14 +384,13 @@ Para conectarse con cifrado a dicho puertos, pegando la clave, y alguno de ellos
 <summary>
 Posible solucion
 </summary>
-```bash
-diff passwords.old passwords.new
-```
+<pre><code class="language-bash">diff passwords.old passwords.new</code></pre>
 
 Muestra las diferencias entre los dos archivos.
 
 </details>
----
+
+<hr />
 
 ## Bandit18
 **Pista:** La contraseña para el siguiente nivel se almacena en un archivo “readme” en el directorio personal. Lamentablemente, alguien modificó .bashrc para cerrar sesión al iniciar sesión con SSH.
@@ -431,14 +399,13 @@ Muestra las diferencias entre los dos archivos.
 <summary>
 Posible solucion
 </summary>
-```bash
-entrar al con ssh pero agregando al final bash para ejecutar la terminal bash
-```
+<pre><code class="language-bash">entrar al con ssh pero agregando al final bash para ejecutar la terminal bash</code></pre>
 
 Esto es como una especie de inyección de código antes que se ejecute el .bashrc
 
 </details>
----
+
+<hr />
 
 ## Bandit19 (contiene clave para el siguiente)
 **Pista:** Para acceder al siguiente nivel, debes usar el binario setuid en tu directorio personal. Ejecútalo sin argumentos para ver cómo usarlo. La contraseña para este nivel se encuentra en la ubicación habitual (/etc/bandit_pass), después de haber usado el binario setuid.
@@ -447,9 +414,7 @@ Esto es como una especie de inyección de código antes que se ejecute el .bashr
 <summary>
 Posible solucion
 </summary>
-```bash
-entrar al con ssh pero agregando al final bash para ejecutar la terminal bash
-```
+<pre><code class="language-bash">entrar al con ssh pero agregando al final bash para ejecutar la terminal bash</code></pre>
 
 Esto es como una especie de inyección de código antes que se ejecute el .bashrc, y leer el readme.
 
@@ -458,12 +423,11 @@ Esto es como una especie de inyección de código antes que se ejecute el .bashr
 <summary>
 Clave para el siguiente
 </summary>
-```bash
-0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
-```
+<pre><code class="language-bash">0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit20
 **Pista:** En el directorio personal hay un binario setuid que se conecta a localhost en el puerto que especifiques como argumento. Luego lee una línea de texto de la conexión y la compara con la contraseña del nivel anterior (bandit20). Si la contraseña es correcta, transmite la contraseña del siguiente nivel (bandit21).
@@ -475,19 +439,16 @@ Clave para el siguiente
 Posible solucion
 </summary>
 Abres 2 terminales.
-```bash
-./archivo
-```
+<pre><code class="language-bash">./archivo</code></pre>
 
 En una ejecutas el archivo y en la otra ejecutas el comando para abrir un puerto con el comando nc y envías la clave anterior en este comando.
-```bash
-nc -nlvp 1234
-```
+<pre><code class="language-bash">nc -nlvp 1234</code></pre>
 
 Te debería devolver el archivo donde ejecutaste esta clave.
 
 </details>
----
+
+<hr />
 
 ## Bandit21
 **Pista:** Un programa se ejecuta automáticamente a intervalos regulares mediante cron, el programador de tareas basado en tiempo. Consulte el archivo /etc/cron.d/ para ver la configuración y comprobar qué comando se está ejecutando.
@@ -499,7 +460,8 @@ Posible solucion
 Entrar al directorio, ver el código de los archivos y ver el archivo relacionado con el siguiente nivel, dentro de ese archivo hay un script, ver el script y verás que ese script copia la clave de un archivo que no tienes permisos para leer a otro que sí.
 
 </details>
----
+
+<hr />
 
 ## Bandit22
 **Pista:** Un programa se ejecuta automáticamente a intervalos regulares mediante cron, el programador de tareas basado en tiempo. Consulte el archivo /etc/cron.d/ para ver la configuración y el comando que se está ejecutando.
@@ -513,7 +475,8 @@ Posible solucion
 Lo mismo que el anterior nivel, pero jugar un poco con bash, y donde
 esta la variable del usuario colocar el usuario futuro que es bandit23.
 </details>
----
+
+<hr />
 
 ## Bandit23 (contiene clave para el siguiente)
 **Pista:** Un programa se ejecuta automáticamente a intervalos regulares mediante cron, el programador de tareas basado en tiempo. Consulta el archivo /etc/cron.d/ para ver la configuración y el comando que se está ejecutando.
@@ -533,12 +496,11 @@ Analizar el script del usuario, y crear un archivo en una ruta temporal mktemp -
 <summary>
 Clave para el siguiente
 </summary>
-```bash
-gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
-```
+<pre><code class="language-bash">gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit24
 **Pista:** Un demonio está escuchando en el puerto 30002 y te proporcionará la contraseña de bandit25 sí le das la contraseña de bandit24 y un código PIN secreto de 4 dígitos. No hay forma de obtener el código PIN excepto probando las 10 000 combinaciones posibles, un método conocido como fuerza bruta.
@@ -554,7 +516,8 @@ crear un bucle para hacer todas las combinaciones posibles y redirigirlas a un a
 </details>
 [Web para practicar expresiones tareas Cron](https://www.site24x7.com/es/tools/crontab/cron-generator.html)
 
----
+
+<hr />
 
 ## Bandit25
 **Pista:** Iniciar sesión en bandit26 desde bandit25 debería ser bastante sencillo… El shell del usuario bandit26 no es /bin/bash, sino otro. Averigua cuál es, cómo funciona y cómo salir de él.
@@ -568,7 +531,8 @@ Posible solucion
 Entrar en el modo visual del archivo more, que se ejecuta y con :set shell=/bin/bash y :shell obtener la shell.
 
 </details>
----
+
+<hr />
 
 ## Bandit26
 **Pista:** ¡Buen trabajo consiguiendo una shell! ¡Ahora date prisa y consigue la contraseña para bandit27!
@@ -580,7 +544,8 @@ Posible solucion
 el nivel es similar a uno en el pasado, pero ahora busca utilizar cat directamente.
 
 </details>
----
+
+<hr />
 
 ## Bandit27 (contiene clave propia)
 **Pista:** Existe un repositorio Git en ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo a través del puerto 2220. La contraseña del usuario bandit27-git es la misma que la del usuario bandit27.
@@ -601,12 +566,11 @@ Puede que la conexión no funcione desde la terminal de bandit en el formato pro
 <summary>
 Clave Propia
 </summary>
-```bash
-upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
-```
+<pre><code class="language-bash">upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit28
 **Pista:** Existe un repositorio Git en ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo a través del puerto 2220. La contraseña del usuario bandit28-git es la misma que la del usuario bandit28.
@@ -623,13 +587,12 @@ Posible solucion
 Clonar repo, colocar la clave, y revisar commits pasados.
 
 Comandos importantes:
-```bash
-git log
-git show
-```
+<pre><code class="language-bash">git log
+git show</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit29
 **Pista:** Existe un repositorio Git en ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo a través del puerto 2220. La contraseña del usuario bandit29-git es la misma que la del usuario bandit29.
@@ -646,13 +609,12 @@ Posible solucion
 Buscar ramas, y mirar ramas según el enunciado, viendo el archivo readme.
 
 Comandos importantes:
-```bash
-git branch
-git switch
-```
+<pre><code class="language-bash">git branch
+git switch</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit30
 **Pista:** Existe un repositorio Git en ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo a través del puerto 2220. La contraseña del usuario bandit30-git es la misma que la del usuario bandit30.
@@ -667,13 +629,12 @@ ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo
 Posible solucion
 </summary>
 Comandos importantes:
-```bash
-git tag
-git show
-```
+<pre><code class="language-bash">git tag
+git show</code></pre>
 
 </details>
----
+
+<hr />
 
 ## Bandit31
 **Pista:** Hay un repositorio Git en ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo a través del puerto 2220. La contraseña para el usuario bandit31-git es la misma que para el usuario bandit31.
@@ -690,7 +651,8 @@ Posible solucion
 Seguir los pasos dados en el archivo del repositorio.
 
 </details>
----
+
+<hr />
 
 ## Bandit32
 **Pista:** Después de todo este rollo de Git, es hora de otra escapada. ¡Buena suerte!
