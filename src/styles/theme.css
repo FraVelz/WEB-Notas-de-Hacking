@@ -47,6 +47,10 @@
   --sl-color-hairline: var(--sl-color-gray-5);
   --sl-color-hairline-shade: var(--sl-color-black);
   --sl-color-backdrop-overlay: rgba(2, 6, 14, 0.88);
+
+  /* Selección: mismo acento que enlaces, sobre superficie tipo código */
+  --sl-selection-bg: color-mix(in srgb, var(--sl-color-accent) 38%, var(--sl-color-gray-5));
+  --sl-selection-color: var(--sl-color-gray-1);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -77,6 +81,9 @@
   --sl-color-hairline-light: #c5ced9;
   --sl-color-hairline-shade: #b8c2cf;
   --sl-color-backdrop-overlay: rgba(15, 20, 28, 0.65);
+
+  --sl-selection-bg: color-mix(in srgb, var(--sl-color-accent) 22%, var(--sl-color-accent-low));
+  --sl-selection-color: var(--sl-color-gray-1);
 }
 
 /* Contraste extra: tablas, código en línea y foco */
@@ -97,4 +104,11 @@ summary:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--sl-color-accent);
   outline-offset: 2px;
+}
+
+/* Selección global (usa --sl-selection-* del tema claro/oscuro) */
+::selection,
+::-moz-selection {
+  background: var(--sl-selection-bg);
+  color: var(--sl-selection-color);
 }
