@@ -6,7 +6,7 @@ description: Less - Notas de hacking y ciberseguridad.
 # Less en Linux
 ---
 
-### ¿Qué hace exactamente? {#qué-hace-exactamente}
+### ¿Qué hace exactamente?
 less muestra el contenido **por páginas**, no todo de golpe. Esto es muy útil cuando el archivo es largo (como logs, código, o configuraciones grandes).
 
 Ejemplo:
@@ -16,14 +16,14 @@ less archivo.txt
 
 ---
 
-### Controles básicos dentro de less {#controles-básicos-dentro-de-less}
+### Controles básicos dentro de less
 Una vez abierto el archivo:
 
 <!-- Tabla convertida manualmente -->
 
 ---
 
-### Ejemplos útiles {#ejemplos-útiles}
+### Ejemplos útiles
 Ver varios archivos:
 ```bash
 less *.txt
@@ -44,7 +44,7 @@ less /var/log/syslog
 
 ---
 
-### En resumen {#en-resumen}
+### En resumen
 less:
 
 - **No edita archivos**, solo los muestra.

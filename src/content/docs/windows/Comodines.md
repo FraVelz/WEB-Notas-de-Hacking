@@ -6,12 +6,12 @@ description: Comodines - Notas de hacking y ciberseguridad.
 # Comodines
 ---
 
-## 1. Comodines básicos {#1-comodines-básicos}
+## 1. Comodines básicos
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 2. Ejemplos prácticos {#2-ejemplos-prácticos}
+## 2. Ejemplos prácticos
 - **Listar todos los archivos de un tipo**:
 ```bash
 dir *.jpg

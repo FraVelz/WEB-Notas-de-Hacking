@@ -6,7 +6,7 @@ description: Variables Clases - Notas de hacking y ciberseguridad.
 # Variables protegidas y privadas en clases
 ---
 
-## 1. self._variable (un guion bajo) {#self._variable-un-guion-bajo}
+## 1. self._variable (un guion bajo)
 Por **convención**, el **guion bajo simple _** indica que el atributo es **“protegido” (protected)**, o sea:
 
 <blockquote>
@@ -25,7 +25,7 @@ print(p._nombre)  # 😅 Funciona, pero no deberías accederlo así
 
 ---
 
-## 2. self.__variable (doble guion bajo) {#self.__variable-doble-guion-bajo}
+## 2. self.__variable (doble guion bajo)
 El **doble guion bajo __** activa el mecanismo de **name mangling** o “ofuscación de nombre”.
 
 Eso significa que Python **cambia internamente el nombre del atributo** para evitar que se sobrescriba o se acceda fácilmente desde fuera de la clase.
@@ -53,5 +53,5 @@ En otras palabras:
 
 ---
 
-## En resumen {#en-resumen}
+## En resumen
 <!-- Tabla convertida manualmente -->

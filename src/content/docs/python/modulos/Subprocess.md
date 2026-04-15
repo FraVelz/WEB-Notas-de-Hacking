@@ -6,7 +6,7 @@ description: Subprocess - Notas de hacking y ciberseguridad.
 # Subprocess en Python
 ---
 
-## ¿Qué es subprocess? {#qué-es-subprocess}
+## ¿Qué es subprocess?
 subprocess (sub-proceso) permite ejecutar **programas externos** o **comandos del sistema operativo** desde Python.
 
 🔹 Ejemplo:
@@ -20,12 +20,12 @@ subprocess.run(["ls"])
 
 ---
 
-## 1. Diferencias con os.system() {#diferencias-con-os.system}
+## 1. Diferencias con os.system()
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 2. Ejecutar comandos básicos {#ejecutar-comandos-básicos}
+## 2. Ejecutar comandos básicos
 ```python
 import subprocess
 
@@ -40,21 +40,21 @@ subprocess.run("echo Hola desde Python!", shell=True)
 
 ---
 
-## 3. Capturar la salida del comando {#capturar-la-salida-del-comando}
+## 3. Capturar la salida del comando
 Para **guardar el texto que produce el comando**, usa capture_output=True:
 ```python
 resultado = subprocess.run(["ls"], capture_output=True, text=True)
 print("Salida:", resultado.stdout)
 ```
 
-### Atributos útiles {#atributos-útiles}
+### Atributos útiles
 - resultado.stdout → salida estándar (lo que imprime el comando)
 - resultado.stderr → errores (sí los hay)
 - resultado.returncode → código de salida (0 = correcto)
 
 ---
 
-## 4. Manejar errores {#manejar-errores}
+## 4. Manejar errores
 Sí quieres que el programa **lance una excepción** cuando el comando falle:
 ```python
 try:
@@ -65,7 +65,7 @@ print("Error al ejecutar el comando:", e)
 
 ---
 
-## 5. Capturar y procesar salida directamente {#capturar-y-procesar-salida-directamente}
+## 5. Capturar y procesar salida directamente
 Sí solo necesitas la salida (más cómodo que .run()):
 ```python
 salida = subprocess.check_output(["whoami"], text=True)
@@ -76,7 +76,7 @@ print("Usuario actual:", salida.strip())
 
 ---
 
-## 6. Enviar entrada al proceso {#enviar-entrada-al-proceso}
+## 6. Enviar entrada al proceso
 Puedes **enviar datos** al proceso con input=:
 ```python
 resultado = subprocess.run(
@@ -95,7 +95,7 @@ hola mundo
 
 ---
 
-## 7. Ejecutar múltiples procesos (encadenados) {#ejecutar-múltiples-procesos-encadenados}
+## 7. Ejecutar múltiples procesos (encadenados)
 Puedes **conectar la salida de un comando a otro** como en una tubería (| en la terminal):
 ```python
 p1 = subprocess.Popen(["ls"], stdout=subprocess.PIPE)
@@ -113,7 +113,7 @@ print("Archivos .py:\n", salida)
 
 ---
 
-## 8. Popen explicado (modo avanzado) {#popen-explicado-modo-avanzado}
+## 8. Popen explicado (modo avanzado)
 Popen es la clase base de subprocess, te da **control total** sobre el proceso.
 ```python
 from subprocess import Popen, PIPE
@@ -128,7 +128,7 @@ print("Código de salida:", p.returncode)
 
 ---
 
-## 9. Ejecutar en segundo plano {#ejecutar-en-segundo-plano}
+## 9. Ejecutar en segundo plano
 Sí no quieres que el programa espere:
 ```python
 subprocess.Popen(["vlc", "video.mp4"])
@@ -138,7 +138,7 @@ Esto abrirá VLC **sin bloquear** el resto de tú script.
 
 ---
 
-## 10. Consejos de seguridad {#consejos-de-seguridad}
+## 10. Consejos de seguridad
 ✅ **Haz esto:**
 ```python
 subprocess.run(["ls", "/home"])
@@ -153,7 +153,7 @@ Usar shell=True puede ejecutar código malicioso sí la entrada del usuario no e
 
 ---
 
-## 11. Ejemplo práctico: medir tiempo de ejecución {#ejemplo-práctico-medir-tiempo-de-ejecución}
+## 11. Ejemplo práctico: medir tiempo de ejecución
 ```python
 import subprocess
 
@@ -166,7 +166,7 @@ print(f"Tiempo de ejecución: {fin - inicio:.2f} segundos")
 
 ---
 
-## 12. Ejemplo completo: automatizador de sistema {#ejemplo-completo-automatizador-de-sistema}
+## 12. Ejemplo completo: automatizador de sistema
 ```python
 import subprocess
 
@@ -186,5 +186,5 @@ print(resultado.stdout)
 
 ---
 
-## 13. Resumen general {#resumen-general}
+## 13. Resumen general
 <!-- Tabla convertida manualmente -->

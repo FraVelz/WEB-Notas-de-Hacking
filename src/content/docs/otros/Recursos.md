@@ -9,7 +9,7 @@ import Imagen from '@/components/atomos/Imagen.jsx';
 # Recursos para Aprender Ciberseguridad
 ---
 
-## Video YouTube - Temario - Gratis {#video-youtube-temario-completo}
+## Video YouTube - Temario - Gratis
 <Dividido linea={true} secundario={
 <div className="flex items-center justify-center p-4">
 <Imagen
@@ -37,7 +37,7 @@ Este video ofrece una guía completa para comenzar en ciberseguridad desde cero.
 
 ---
 
-## Academia S4vitar {#academia-s4vitar}
+## Academia S4vitar
 La **Academia S4vitar (Hack4U)** es una de las más reconocidas en el mundo hispano. Ofrece formación completa en **pentesting y hacking ético**, con un enfoque práctico y progresivo.
 
 <Dividido linea={true} secundario={
@@ -70,7 +70,7 @@ Algunos temas de Linux y Python presentes en este repositorio provienen de conce
 </blockquote>
 ---
 
-## Academia Hixec {#academia-hixec}
+## Academia Hixec
 <Dividido linea={true} secundario={
 <div className="flex items-center justify-center p-4">
 <Imagen

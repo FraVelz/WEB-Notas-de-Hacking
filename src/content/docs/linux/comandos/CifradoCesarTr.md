@@ -13,7 +13,7 @@ cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 
 ---
 
-### Parte 1 {#parte-1}
+### Parte 1
 ```bash
 cat data.txt
 ```
@@ -22,7 +22,7 @@ Muestra el contenido del archivo data.txt (lo envía al *stdout*).
 
 ---
 
-### Parte 2 {#parte-2}
+### Parte 2
 ```bash
 | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 ```
@@ -38,7 +38,7 @@ sustituye cada carácter del primer conjunto por el correspondiente del segundo.
 
 ---
 
-### 3. Qué hace exactamente este caso {#qué-hace-exactamente-este-caso}
+### 3. Qué hace exactamente este caso
 [A-Za-z] → todas las letras del alfabeto (mayúsculas y minúsculas).
 
 [N-ZA-Mn-za-m] → es el mismo alfabeto, pero **rotado 13 posiciones**.
@@ -53,7 +53,7 @@ Es decir de la N-Z es 13 posiciones, de la A-M, de la n-z y de la a-m, todas son
 
 ---
 
-### Ejemplo práctico {#ejemplo-práctico}
+### Ejemplo práctico
 Sí data.txt contiene:
 ```bash
 Hola Mundo
@@ -73,5 +73,5 @@ Y sí vuelves a aplicarlo una segunda vez, vuelve al texto original (porque ROT1
 
 ---
 
-### En resumen {#en-resumen}
+### En resumen
 Este comando aplica el **cifrado ROT13** al texto del archivo data.txt, sustituyendo cada letra por la que está 13 posiciones más adelante en el alfabeto (y viceversa sí se aplica de nuevo).

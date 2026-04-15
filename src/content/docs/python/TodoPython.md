@@ -10,7 +10,7 @@ description: Todo Python - Notas de hacking y ciberseguridad.
 
 ---
 
-## 1. ¿Qué es Python? {#qué-es-python}
+## 1. ¿Qué es Python?
 **Python** es un lenguaje de programación:
 
 - **Interpretado** (no necesitas compilar).
@@ -25,8 +25,8 @@ print("Hola, mundo!")
 
 ---
 
-## 2. Sintaxis básica {#sintaxis-básica}
-### Variables y tipos de datos {#variables-y-tipos-de-datos}
+## 2. Sintaxis básica
+### Variables y tipos de datos
 ```python
 nombre = "Francisco"
 edad = 17
@@ -41,7 +41,7 @@ Tipos básicos:
 - str: texto
 - bool: verdadero/falso
 
-### Operadores {#operadores}
+### Operadores
 ```python
 a = 5
 b = 2
@@ -52,8 +52,8 @@ print(a // b) # División entera
 
 ---
 
-## 3. Control de flujo {#control-de-flujo}
-### Condicionales {#condicionales}
+## 3. Control de flujo
+### Condicionales
 ```python
 if edad >= 18:
 print("Eres adulto")
@@ -63,7 +63,7 @@ else:
 print("Eres niño")
 ```
 
-### Bucles {#bucles}
+### Bucles
 ```python
 for i in range(5):
 print(i)  # Imprime 0 a 4
@@ -74,26 +74,26 @@ edad += 1
 
 ---
 
-## 4. Estructuras de datos {#estructuras-de-datos}
-### Listas {#listas}
+## 4. Estructuras de datos
+### Listas
 ```python
 nombres = ["Ana", "Luis", "Carlos"]
 nombres.append("Sofía")
 print(nombres[0])  # "Ana"
 ```
 
-### Tuplas {#tuplas}
+### Tuplas
 ```python
 coordenadas = (10, 20)
 ```
 
-### Conjuntos {#conjuntos}
+### Conjuntos
 ```python
 numeros = {"{1, 2, 3, 3}"}
 print(numeros)  # {"{1, 2, 3}"} (no repite)
 ```
 
-### Diccionarios {#diccionarios}
+### Diccionarios
 ```python
 persona = {"nombre": "Francisco", "edad": 17I}
 print(persona["nombre"])
@@ -101,7 +101,7 @@ print(persona["nombre"])
 
 ---
 
-## 5. Funciones {#funciones}
+## 5. Funciones
 ```python
 def saludar(nombre):
 return f"Hola, {"{nombre}"}"
@@ -111,7 +111,7 @@ print(saludar("Francisco"))
 
 ---
 
-## 6. Programación orientada a objetos (POO) {#programación-orientada-a-objetos-poo}
+## 6. Programación orientada a objetos (POO)
 ```python
 class Persona:
 def __init__(self, nombre, edad):
@@ -127,7 +127,7 @@ p1.saludar()
 
 ---
 
-## 7. Módulos y paquetes {#módulos-y-paquetes}
+## 7. Módulos y paquetes
 ```python
 import math
 print(math.sqrt(16))  # 4.0
@@ -140,7 +140,7 @@ import mimodulo
 
 ---
 
-## 8. Archivos {#archivos}
+## 8. Archivos
 ```python
 with open("datos.txt", "w") as archivo:
 archivo.write("Hola mundo")
@@ -151,12 +151,12 @@ print(archivo.read())
 
 ---
 
-## 9. Librerías populares (por áreas) {#librerías-populares-por-áreas}
+## 9. Librerías populares (por áreas)
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 10. Conceptos avanzados {#conceptos-avanzados}
+## 10. Conceptos avanzados
 - **List comprehensions:** ```python
 cuadrados = [x**2 for x in range(5)]
 ```

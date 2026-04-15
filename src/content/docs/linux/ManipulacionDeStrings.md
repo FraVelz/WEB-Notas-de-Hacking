@@ -6,7 +6,7 @@ description: Manipulacion De Strings - Notas de hacking y ciberseguridad.
 # Manipulación de strings en bash script
 ---
 
-## 1. Definir strings {#1-definir-strings}
+## 1. Definir strings
 ```bash
 cadena="Hola Mundo"
 ```
@@ -16,14 +16,14 @@ cadena="Hola Mundo"
 
 ---
 
-## 2. Longitud de un string {#2-longitud-de-un-string}
+## 2. Longitud de un string
 ```bash
 echo "$(#cadena)"   ## 10
 ```
 
 ---
 
-## 3. Substrings {#3-substrings}
+## 3. Substrings
 ```bash
 echo "$\{cadena:0:4\}"   ## Hola (desde índice 0, tomar 4)
 echo "$\{cadena:5\}"     ## Mundo (desde índice 5 hasta el final)
@@ -31,7 +31,7 @@ echo "$\{cadena:5\}"     ## Mundo (desde índice 5 hasta el final)
 
 ---
 
-## 4. Reemplazos dentro de un string {#4-reemplazos-dentro-de-un-string}
+## 4. Reemplazos dentro de un string
 ```bash
 texto="banana"
 
@@ -44,7 +44,7 @@ echo "\${texto//na/}"     ## baa     (borra todos "na")
 
 ---
 
-## 5. Eliminar prefijos y sufijos {#5-eliminar-prefijos-y-sufijos}
+## 5. Eliminar prefijos y sufijos
 ```bash
 archivo="documento.txt"
 
@@ -54,7 +54,7 @@ echo "\${archivo#doc}"    ## umento.txt (quita prefijo doc) # Con doble signo bo
 
 ---
 
-## 6. Concatenar strings {#6-concatenar-strings}
+## 6. Concatenar strings
 ```bash
 nombre="Francisco"
 saludo="Hola, $nombre"
@@ -70,7 +70,7 @@ echo "$full"   ## Hola Mundo
 
 ---
 
-## 7. Convertir mayúsculas / minúsculas (Bash 4+) {#7-convertir-mayúsculas-minúsculas-bash-4}
+## 7. Convertir mayúsculas / minúsculas (Bash 4+)
 ```bash
 texto="hola mundo"
 
@@ -80,7 +80,7 @@ echo "\${texto,,}"   ## hola mundo
 
 ---
 
-## 8. Buscar dentro de un string {#8-buscar-dentro-de-un-string}
+## 8. Buscar dentro de un string
 ```bash
 cadena="programacion"
 if [[ "$cadena" == *"grama"- ]]; then
@@ -90,7 +90,7 @@ fi
 
 ---
 
-## 9. Dividir un string (split) {#9-dividir-un-string-split}
+## 9. Dividir un string (split)
 Con IFS (Internal Field Separator):
 ```bash
 frase="uno dos tres"
@@ -103,7 +103,7 @@ echo "\${palabras[2]}"  ## tres
 
 ---
 
-## 10. Juntar un array en string {#10-juntar-un-array-en-string}
+## 10. Juntar un array en string
 ```bash
 lista=("a" "b" "c")
 echo "\${lista[*]}"   ## a b c
@@ -117,7 +117,7 @@ IFS=","; echo "\${lista[*]}"   ## a,b,c
 
 ---
 
-## 11. Expresiones regulares en strings {#11-expresiones-regulares-en-strings}
+## 11. Expresiones regulares en strings
 ```bash
 cadena="abc123"
 if [[ "$cadena" =~ ^[a-z]+[0-9]+$ ]]; then
@@ -127,10 +127,10 @@ fi
 
 ---
 
-## 12. Lectura carácter por carácter {#12-lectura-carácter-por-carácter}
+## 12. Lectura carácter por carácter
 ```bash
 texto="Hola"
-for (( i=0; i<\${#texto}; i++ )); do
+for (( i=0; i<\$; i++ )); do
 echo "\${texto:$i:1}"
 done
 ```
@@ -141,7 +141,7 @@ Imprime cada letra en una línea.
 
 **En resumen**:
 
-- ${`{#str}`} → longitud
+- ${``} → longitud
 - ${`{str:pos:len}`} → substring
 - ${`{str/patrón/reemplazo}`} → reemplazo
 - ${`{str%patrón}`} / ${`{str#patrón}`} → quitar prefijo/sufijo

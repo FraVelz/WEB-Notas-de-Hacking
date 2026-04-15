@@ -9,7 +9,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 ---
 
-## 1. <strong>Manejo de texto</strong> {#1-manejo-de-texto}
+## 1. <strong>Manejo de texto</strong>
 - **cat**: Muestra el contenido de archivos. ```bash
 cat archivo.txt
 ```
@@ -32,7 +32,7 @@ wc -l archivo.txt # número de líneas wc -w archivo.txt # número de palabras
 
       ---
 
-      ## 2. <strong>Búsqueda y filtrado</strong> {#2-búsqueda-y-filtrado}
+      ## 2. <strong>Búsqueda y filtrado</strong>
 
       - **grep**: Busca patrones de texto. ```bash
 grep "error" log.txt
@@ -48,7 +48,7 @@ find /home -name "*.txt"
 
       ---
 
-      ## 3. <strong>Transformación de texto</strong> {#3-transformación-de-texto}
+      ## 3. <strong>Transformación de texto</strong>
 
       - **cut**: Extrae columnas de texto. ```bash
 cut -d',' -f1 nombres.csv
@@ -84,7 +84,7 @@ ps aux | grep firefox
 
 ---
 
-## 5. <strong>Archivos y directorios</strong> {#5-archivos-y-directorios}
+## 5. <strong>Archivos y directorios</strong>
 - **ls**: Lista archivos.
 - **cp**: Copia.
 - **mv**: Mueve/renombra.
@@ -97,7 +97,7 @@ file imagen.png
 
       ---
 
-      ## 6. <strong>Compresión y empaquetado</strong> {#6-compresión-y-empaquetado}
+      ## 6. <strong>Compresión y empaquetado</strong>
 
       - **tar**: Empaqueta múltiples archivos. ```bash
 tar -cvf backup.tar directorio/

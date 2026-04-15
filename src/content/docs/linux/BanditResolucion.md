@@ -6,7 +6,7 @@ description: Bandit Resolucion - Notas de hacking y ciberseguridad.
 # Resolución problemas básicos de Bandit
 ---
 
-## Información {#información}
+## Información
 Página para practicar, comandos linux, desde la terminal.
 
 Página Web: https://overthewire.org/wargames/bandit/
@@ -66,7 +66,7 @@ Terminal:
 </figure>
 ---
 
-## Bandit0 {#bandit0}
+## Bandit0
 **Pista:** Solo hay que leer.
 
 <details>
@@ -80,7 +80,7 @@ cat readme.md
 </details>
 ---
 
-## Bandit1 {#bandit1}
+## Bandit1
 **Pista:** solo hay que leer de otra forma.
 
 <details>
@@ -96,7 +96,7 @@ Se indica que en el directorio actual existe un archivo que se llama - y lo mues
 </details>
 ---
 
-## Bandit2 {#bandit2}
+## Bandit2
 **Pista:** solo hay que leer igual que el anterior pero con unas cosas extras.
 
 <details>
@@ -112,7 +112,7 @@ Indica que con ", que en el repositorio actual existe un archivo con espacios de
 </details>
 ---
 
-## Bandit3 {#bandit3}
+## Bandit3
 **Pista:** Igual que la anterior, pero solo hay un directorio con un archivo oculto.
 
 <details>
@@ -128,7 +128,7 @@ Indica con " el texto como tal aparece, es la ruta y nombre del archivo, en el r
 </details>
 ---
 
-## Bandit4 {#bandit4}
+## Bandit4
 **Pista:** el archivo que sea tipo texto es el que tendrá la clave.
 
 <details>
@@ -146,7 +146,7 @@ El archivo que sea ascii text, es el que contendrá la clave para el siguiente n
 </details>
 ---
 
-## Bandit5 {#bandit5}
+## Bandit5
 **Pista:**
 
 - legible para humanos
@@ -168,7 +168,7 @@ Dará la ruta del archivo que cumpla con los requisitos de tamaño sí hay solo 
 </details>
 ---
 
-## Bandit6 (contiene clave siguiente) {#bandit6-contiene-clave-siguiente}
+## Bandit6 (contiene clave siguiente)
 **Pista:**
 
 - Propiedad del usuario bandit7
@@ -199,7 +199,7 @@ morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 </details>
 ---
 
-## Bandit7 {#bandit7}
+## Bandit7
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt junto a la palabra “millionth”.
 
 <details>
@@ -215,7 +215,7 @@ Muestra el archivo cat data.txt y filtra todo el texto para solo mostrar la lín
 </details>
 ---
 
-## Bandit8 {#bandit8}
+## Bandit8
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt y es la única línea de texto que aparece solo una vez.
 
 <details>
@@ -231,7 +231,7 @@ Organizar las líneas del archivo, para que hagan líneas consecutivas repetidas
 </details>
 ---
 
-## Bandit9 {#bandit9}
+## Bandit9
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt en una de las pocas cadenas legibles por humanos, precedida por varios caracteres ‘=’.
 
 <details>
@@ -247,7 +247,7 @@ Filtra por líneas que contengan ===. Como el archivo contiene caracteres binari
 </details>
 ---
 
-## Bandit10 (contiene clave para el siguiente) {#bandit10-contiene-clave-para-el-siguiente}
+## Bandit10 (contiene clave para el siguiente)
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt, que contiene datos codificados en base64.
 
 <details>
@@ -272,7 +272,7 @@ dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 </details>
 ---
 
-## Bandit11 (contiene clave para el siguiente) {#bandit11-contiene-clave-para-el-siguiente}
+## Bandit11 (contiene clave para el siguiente)
 **Pista:** La contraseña para el siguiente nivel se almacena en el archivo data.txt, donde todas las letras minúsculas (a-z) y mayúsculas (A-Z) se han rotado 13 posiciones.
 
 <details>
@@ -297,7 +297,7 @@ Clave para el siguiente
 </details>
 ---
 
-## Bandit12 {#bandit12}
+## Bandit12
 **Pista:** La contraseña para el siguiente nivel está en el archivo data.txt, que es un volcado hexadecimal de un archivo comprimido repetidamente.
 
 <details>
@@ -322,7 +322,7 @@ O Utilizar bash script con un bucle…
 </details>
 ---
 
-## Bandit13 {#bandit13}
+## Bandit13
 **Pista:** La contraseña para el siguiente nivel se almacena en /etc/bandit_pass/bandit14 y solo puede ser leída por el usuario bandit14. Para este nivel, no se obtiene la siguiente contraseña, sino una clave SSH privada que permite iniciar sesión en el siguiente nivel. Nota: localhost es un nombre de host que se refiere a la máquina en la que se está trabajando.
 
 <details>
@@ -341,7 +341,7 @@ Ya estarías en el nivel bandit14.
 </details>
 ---
 
-## Bandit14 {#bandit14}
+## Bandit14
 **Pista:** La contraseña para el siguiente nivel se puede recuperar enviando la contraseña del nivel actual al puerto 30000 en localhost.
 
 <details>
@@ -358,7 +358,7 @@ Conectando a **localhost** y puerto 30000; luego pega la clave y te pasará la c
 </details>
 ---
 
-## Bandit15 (contiene clave para el siguiente) {#bandit15-contiene-clave-para-el-siguiente}
+## Bandit15 (contiene clave para el siguiente)
 **Pista:** La contraseña del siguiente nivel se puede recuperar enviando la contraseña del nivel actual al puerto 30001 del host local mediante cifrado SSL/TLS.
 
 <details>
@@ -385,7 +385,7 @@ kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 </details>
 ---
 
-## Bandit16 {#bandit16}
+## Bandit16
 **Pista:** Las credenciales para el siguiente nivel se pueden recuperar presentando la contraseña del nivel actual a un puerto en localhost en el rango 31000–32000. Primero averigua cuál de estos puertos tiene un servidor escuchando. A continuación, determina cuáles de ellos hablan SSL/TLS y cuáles no. Solo hay un servidor que devolverá la contraseña del siguiente nivel; los demás simplemente reenviarán lo que les envíes.
 
 <details>
@@ -406,7 +406,7 @@ Para conectarse con cifrado a dicho puertos, pegando la clave, y alguno de ellos
 </details>
 ---
 
-## Bandit17 {#bandit17}
+## Bandit17
 **Pista:** En el directorio principal hay dos archivos: passwords.old y passwords.new. La contraseña para el siguiente nivel se encuentra en passwords.new y es la única línea que ha cambiado entre passwords.old y passwords.new.
 
 **NOTA:** Si has resuelto este nivel y ves «¡Adiós!» al intentar iniciar sesión en bandit18, esto se debe al siguiente nivel, bandit19.
@@ -424,7 +424,7 @@ Muestra las diferencias entre los dos archivos.
 </details>
 ---
 
-## Bandit18 {#bandit18}
+## Bandit18
 **Pista:** La contraseña para el siguiente nivel se almacena en un archivo “readme” en el directorio personal. Lamentablemente, alguien modificó .bashrc para cerrar sesión al iniciar sesión con SSH.
 
 <details>
@@ -440,7 +440,7 @@ Esto es como una especie de inyección de código antes que se ejecute el .bashr
 </details>
 ---
 
-## Bandit19 (contiene clave para el siguiente) {#bandit19-contiene-clave-para-el-siguiente}
+## Bandit19 (contiene clave para el siguiente)
 **Pista:** Para acceder al siguiente nivel, debes usar el binario setuid en tu directorio personal. Ejecútalo sin argumentos para ver cómo usarlo. La contraseña para este nivel se encuentra en la ubicación habitual (/etc/bandit_pass), después de haber usado el binario setuid.
 
 <details>
@@ -465,7 +465,7 @@ Clave para el siguiente
 </details>
 ---
 
-## Bandit20 {#bandit20}
+## Bandit20
 **Pista:** En el directorio personal hay un binario setuid que se conecta a localhost en el puerto que especifiques como argumento. Luego lee una línea de texto de la conexión y la compara con la contraseña del nivel anterior (bandit20). Si la contraseña es correcta, transmite la contraseña del siguiente nivel (bandit21).
 
 **NOTA:** Intenta conectarte a tu propio demonio de red para comprobar si funciona como esperas.
@@ -489,7 +489,7 @@ Te debería devolver el archivo donde ejecutaste esta clave.
 </details>
 ---
 
-## Bandit21 {#bandit21}
+## Bandit21
 **Pista:** Un programa se ejecuta automáticamente a intervalos regulares mediante cron, el programador de tareas basado en tiempo. Consulte el archivo /etc/cron.d/ para ver la configuración y comprobar qué comando se está ejecutando.
 
 <details>
@@ -501,7 +501,7 @@ Entrar al directorio, ver el código de los archivos y ver el archivo relacionad
 </details>
 ---
 
-## Bandit22 {#bandit22}
+## Bandit22
 **Pista:** Un programa se ejecuta automáticamente a intervalos regulares mediante cron, el programador de tareas basado en tiempo. Consulte el archivo /etc/cron.d/ para ver la configuración y el comando que se está ejecutando.
 
 **NOTA:** Analizar scripts de shell escritos por otros es una habilidad muy útil. El script de este nivel está diseñado para ser fácil de leer. Sí tiene problemas para comprender su funcionamiento, intente ejecutarlo para ver la información de depuración que muestra.
@@ -515,7 +515,7 @@ esta la variable del usuario colocar el usuario futuro que es bandit23.
 </details>
 ---
 
-## Bandit23 (contiene clave para el siguiente) {#bandit23-contiene-clave-para-el-siguiente}
+## Bandit23 (contiene clave para el siguiente)
 **Pista:** Un programa se ejecuta automáticamente a intervalos regulares mediante cron, el programador de tareas basado en tiempo. Consulta el archivo /etc/cron.d/ para ver la configuración y el comando que se está ejecutando.
 
 **NOTA:** Este nivel requiere que crees tú primer script de shell. ¡Es un gran paso y deberías sentirte orgulloso/a cuando lo logres!
@@ -540,7 +540,7 @@ gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 </details>
 ---
 
-## Bandit24 {#bandit24}
+## Bandit24
 **Pista:** Un demonio está escuchando en el puerto 30002 y te proporcionará la contraseña de bandit25 sí le das la contraseña de bandit24 y un código PIN secreto de 4 dígitos. No hay forma de obtener el código PIN excepto probando las 10 000 combinaciones posibles, un método conocido como fuerza bruta.
 
 No necesitas crear nuevas conexiones cada vez.
@@ -556,7 +556,7 @@ crear un bucle para hacer todas las combinaciones posibles y redirigirlas a un a
 
 ---
 
-## Bandit25 {#bandit25}
+## Bandit25
 **Pista:** Iniciar sesión en bandit26 desde bandit25 debería ser bastante sencillo… El shell del usuario bandit26 no es /bin/bash, sino otro. Averigua cuál es, cómo funciona y cómo salir de él.
 
 NOTA: Sí eres usuario de Windows y normalmente usas PowerShell para conectarte por SSH a bandit, ten en cuenta que PowerShell suele causar problemas con la solución propuesta para este nivel. Deberías usar la línea de comandos.
@@ -570,7 +570,7 @@ Entrar en el modo visual del archivo more, que se ejecuta y con :set shell=/bin/
 </details>
 ---
 
-## Bandit26 {#bandit26}
+## Bandit26
 **Pista:** ¡Buen trabajo consiguiendo una shell! ¡Ahora date prisa y consigue la contraseña para bandit27!
 
 <details>
@@ -582,7 +582,7 @@ el nivel es similar a uno en el pasado, pero ahora busca utilizar cat directamen
 </details>
 ---
 
-## Bandit27 (contiene clave propia) {#bandit27-contiene-clave-propia}
+## Bandit27 (contiene clave propia)
 **Pista:** Existe un repositorio Git en ssh://bandit27-git@bandit.labs.overthewire.org/home/bandit27-git/repo a través del puerto 2220. La contraseña del usuario bandit27-git es la misma que la del usuario bandit27.
 
 Clona el repositorio y busca la contraseña para el siguiente nivel.
@@ -608,7 +608,7 @@ upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
 </details>
 ---
 
-## Bandit28 {#bandit28}
+## Bandit28
 **Pista:** Existe un repositorio Git en ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo a través del puerto 2220. La contraseña del usuario bandit28-git es la misma que la del usuario bandit28.
 
 Clona el repositorio y busca la contraseña para el siguiente nivel.
@@ -631,7 +631,7 @@ git show
 </details>
 ---
 
-## Bandit29 {#bandit29}
+## Bandit29
 **Pista:** Existe un repositorio Git en ssh://bandit29-git@bandit.labs.overthewire.org/home/bandit29-git/repo a través del puerto 2220. La contraseña del usuario bandit29-git es la misma que la del usuario bandit29.
 
 Clona el repositorio y busca la contraseña para el siguiente nivel.
@@ -654,7 +654,7 @@ git switch
 </details>
 ---
 
-## Bandit30 {#bandit30}
+## Bandit30
 **Pista:** Existe un repositorio Git en ssh://bandit30-git@bandit.labs.overthewire.org/home/bandit30-git/repo a través del puerto 2220. La contraseña del usuario bandit30-git es la misma que la del usuario bandit30.
 
 Clona el repositorio y busca la contraseña para el siguiente nivel.
@@ -675,7 +675,7 @@ git show
 </details>
 ---
 
-## Bandit31 {#bandit31}
+## Bandit31
 **Pista:** Hay un repositorio Git en ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo a través del puerto 2220. La contraseña para el usuario bandit31-git es la misma que para el usuario bandit31.
 
 Clona el repositorio y busca la contraseña para el siguiente nivel.
@@ -692,7 +692,7 @@ Seguir los pasos dados en el archivo del repositorio.
 </details>
 ---
 
-## Bandit32 {#bandit32}
+## Bandit32
 **Pista:** Después de todo este rollo de Git, es hora de otra escapada. ¡Buena suerte!
 ```bash
 ssh://bandit31-git@bandit.labs.overthewire.org/home/bandit31-git/repo

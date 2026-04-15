@@ -6,12 +6,12 @@ description: Ncat - Notas de hacking y ciberseguridad.
 # Ncat en Linux
 ---
 
-## ¿Qué hace ncat? {#qué-hace-ncat}
+## ¿Qué hace ncat?
 ncat (o **Ncat**) es la versión moderna de **netcat** incluida con **Nmap**. Es una herramienta de línea de comandos para leer/escribir datos a través de conexiones **TCP** o **UDP**, con muchas mejoras: soporte SSL/TLS, proxys, ejecución remota de comandos, modo servidor/cliente, reconexiones, y más. Es el “cuchillo suizo” de redes pero con opciones extra de seguridad y flexibilidad.
 
 ---
 
-## Usos típicos {#usos-típicos}
+## Usos típicos
 - Conectar a un puerto remoto (cliente).
 - Poner un puerto en escucha (servidor).
 - Transferir archivos entre máquinas.
@@ -21,7 +21,7 @@ ncat (o **Ncat**) es la versión moderna de **netcat** incluida con **Nmap**. Es
 
 ---
 
-## Opciones comunes (útiles y seguras) {#opciones-comunes-útiles-y-seguras}
+## Opciones comunes (útiles y seguras)
 - -l : escuchar (modo server).
 - -p &lt;puerto&gt; : especificar puerto local.
 - -u : usar UDP en lugar de TCP.
@@ -42,23 +42,23 @@ Nota: Ncat tiene muchas más opciones (certificados TLS, límites de tasa, timeo
 </blockquote>
 ---
 
-## Ejemplos prácticos {#ejemplos-prácticos}
-### Cliente simple (TCP) {#cliente-simple-tcp}
+## Ejemplos prácticos
+### Cliente simple (TCP)
 ```bash
 ncat 192.168.1.10 8080
 ```
 
-### Servidor que acepta una conexión {#servidor-que-acepta-una-conexión}
+### Servidor que acepta una conexión
 ```bash
 ncat -l -p 8080
 ```
 
-### Servidor que acepta múltiples conexiones (keep-open) {#servidor-que-acepta-múltiples-conexiones-keep-open}
+### Servidor que acepta múltiples conexiones (keep-open)
 ```bash
 ncat -l -k -p 8080
 ```
 
-### UDP (cliente y servidor) {#udp-cliente-y-servidor}
+### UDP (cliente y servidor)
 Servidor UDP:
 ```bash
 ncat -u -l -p 6000
@@ -69,7 +69,7 @@ Cliente UDP:
 ncat -u 192.168.1.10 6000
 ```
 
-### Transferir archivo (cliente -&gt; servidor) {#transferir-archivo-cliente---servidor}
+### Transferir archivo (cliente -&gt; servidor)
 Servidor (recibe):
 ```bash
 ncat -l -p 9000 > recibido.bin
@@ -80,17 +80,17 @@ Cliente (envía):
 ncat 192.168.1.20 9000 < archivo.bin
 ```
 
-### Conexión cifrada SSL/TLS (cliente) {#conexión-cifrada-ssltls-cliente}
+### Conexión cifrada SSL/TLS (cliente)
 ```bash
 ncat --ssl ejemplo.com 443
 ```
 
-### Usar proxy SOCKS5 {#usar-proxy-socks5}
+### Usar proxy SOCKS5
 ```bash
 ncat --proxy 10.0.0.1:1080 --proxy-type socks5 ejemplo.com 80
 ```
 
-### Ejecutar comando remota (solo en entornos controlados) {#ejecutar-comando-remota-solo-en-entornos-controlados}
+### Ejecutar comando remota (solo en entornos controlados)
 Servidor (escucha y ejecuta /bin/bash cuando alguien conecta):
 ```bash
 ncat -l -p 4444 --exec "/bin/bash" -k
@@ -105,7 +105,7 @@ ncat 192.168.1.20 4444
 
 ---
 
-## Seguridad y buenas prácticas {#seguridad-y-buenas-prácticas}
+## Seguridad y buenas prácticas
 - --exec / -e y reverse shells son poderosas pero **peligrosas**: úsalas solo en entornos de laboratorio o con permiso explícito.
 - Sí necesitas acceso remoto legítimo, prefiere SSH o túneles TLS con autenticación.
 - Sí usas --ssl, verifica certificados cuando sea necesario (no deshabilites comprobaciones sin entender riesgos).
