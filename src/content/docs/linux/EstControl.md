@@ -12,140 +12,127 @@ Este documento explica cómo usar **bucles**, **estructuras de control** y el co
 El bucle for permite ejecutar una serie de comandos repetidamente para una lista de valores o rangos numéricos.
 
 **Ejemplo 1: Lista de elementos:**
+
 ```bash
 for fruta in manzana mango pera; do
-echo "Me gusta la $fruta"
+  echo "Me gusta la $fruta"
 done
 ```
 
-<blockquote>
-Recorre una lista de palabras (en este caso, frutas) y ejecuta el bloque do ... done para cada elemento.
+> Recorre una lista de palabras (en este caso, frutas) y ejecuta el bloque `do ... done` para cada elemento.
 
-</blockquote>
 **Ejemplo 2: Rango de números:**
+
 ```bash
 for i in {1..3}; do
-echo "Contando: $i"
+  echo "Contando: $i"
 done
 ```
 
-<blockquote>
-{"{1..3}"} genera una secuencia del 1 al 3.
+> Esa forma usa *brace expansion*: la secuencia numérica del 1 al 3 sale de la expresión entre llaves en la línea del `for` (véase el bloque de código).
 
-</blockquote>
 **Ejemplo 3: Sintaxis estilo C**
+
 ```bash
-for (( j=10; j>=5; j-- )) do
-echo "Cuenta regresiva: $j"
+for (( j=10; j>=5; j-- )); do
+  echo "Cuenta regresiva: $j"
 done
 ```
 
-<blockquote>
-Esta forma usa la sintaxis tradicional tipo C:
-```bash
-for (( inicialización; condición; incremento ))
-```
+> Esta forma usa la sintaxis tradicional tipo C: `for (( inicialización; condición; incremento )); do … done`.
 
-</blockquote>
 ---
 
 ## Bucle while
 Ejecuta un bloque de código **mientras una condición sea verdadera**.
+
 ```bash
 i=0
 
-while [[ $i -lt 3 ]] do
-echo "i = $i"
-((i++))
+while [[ $i -lt 3 ]]; do
+  echo "i = $i"
+  ((i++))
 done
 ```
 
-<blockquote>
-En este ejemplo, el bucle incrementa i desde 0 hasta que ya no sea menor que 3.
+> En este ejemplo, el bucle incrementa `i` desde 0 hasta que ya no sea menor que 3.
 
-</blockquote>
 **Leer líneas desde un archivo:**
 
 Puedes usar while junto con read para leer archivos línea por línea.
+
 ```bash
 while read line; do
-echo "- $line"
+  echo "- $line"
 done < archivo.txt
 ```
 
-<blockquote>
-Esto imprimirá cada línea del archivo precedida por un guion.
+> Esto imprimirá cada línea del archivo precedida de un guion.
 
-</blockquote>
 ---
 
 ## Bucle until
 El bucle until funciona igual que while, pero **se ejecuta mientras la condición sea falsa**.
+
 ```bash
 contador=1
 
 until [[ $contador -gt 5 ]]; do
-echo "Contando: $contador"
-((contador++))
+  echo "Contando: $contador"
+  ((contador++))
 done
-'
 ```
 
-<blockquote>
-En este ejemplo, el bucle incrementa i desde 1 hasta 5.
+> En este ejemplo, el bucle incrementa el contador desde 1 hasta 5.
 
-</blockquote>
 ---
 
 ## Comandos continue y break
 Los comandos continue y break sirven para **controlar el flujo dentro de los bucles**.
+
 ```bash
 contador=0
 
 while true; do
-((contador++))
+  ((contador++))
 
-# Si el contador es 3, saltar esta vuelta
-if [[ $contador -eq 3 ]]; then
-echo "Saltando el número 3..."
-continue
-fi
+  # Si el contador es 3, saltar esta vuelta
+  if [[ $contador -eq 3 ]]; then
+    echo "Saltando el número 3..."
+    continue
+  fi
 
-echo "Número: $contador"
+  echo "Número: $contador"
 
-# Si el contador llega a 5, terminar el bucle
-if [[ $contador -eq 5 ]]; then
-echo "Se alcanzó el 5. Saliendo..."
-break
-fi
+  # Si el contador llega a 5, terminar el bucle
+  if [[ $contador -eq 5 ]]; then
+    echo "Se alcanzó el 5. Saliendo..."
+    break
+  fi
 done
 ```
 
-<blockquote>
-break n rompe n niveles de bucles anidados.<br /> continue salta directamente a la siguiente iteración.
+> `break n` rompe `n` niveles de bucles anidados.<br /> `continue` salta directamente a la siguiente iteración.
 
-</blockquote>
 ---
 
 ## Estructura case
 La estructura case permite comparar una variable con múltiples patrones, similar al switch en otros lenguajes.
+
 ```bash
 num=10
 
 case $num in
-1)
-echo "Elegiste uno"
-
-2)
-echo "Elegiste dos"
-
-*)
-echo "Numero desconocido :v"
-
+  1)
+    echo "Elegiste uno"
+    ;;
+  2)
+    echo "Elegiste dos"
+    ;;
+  *)
+    echo "Numero desconocido :v"
+    ;;
 esac
 ```
 
-<blockquote>
-Cada bloque se cierra con ;; y el comodín * actúa como **caso por defecto**.
-
-</blockquote>
+> Cada bloque se cierra con `;;` y el comodín `*` actúa como **caso por defecto**.

@@ -157,13 +157,17 @@ print(archivo.read())
 ---
 
 ## 10. Conceptos avanzados
-- **List comprehensions:** ```python
-cuadrados = [x**2 for x in range(5)]
-```
+- **List comprehensions:**
 
-- **Funciones lambda:** ```python
-doble = lambda x: x*2
-```
+  ```python
+  cuadrados = [x**2 for x in range(5)]
+  ```
+
+- **Funciones lambda:**
+
+  ```python
+  doble = lambda x: x*2
+  ```
 
 - **Decoradores**
 - **Generadores (yield)**
@@ -172,6 +176,8 @@ doble = lambda x: x*2
 - **Expresiones regulares (re)**
 - **Ejecutar:** python archivo.py
 - **Gestor de paquetes:** pip install nombre_paquete
-- **Entornos virtuales:** ```bash
-python -m venv entorno source entorno/bin/activate # Linux entorno\Scripts\activate # Windows
-```
+- **Entornos virtuales:**
+
+  ```bash
+  python -m venv entorno source entorno/bin/activate # Linux entorno\Scripts\activate # Windows
+  ```

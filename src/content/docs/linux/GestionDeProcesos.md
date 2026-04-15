@@ -25,39 +25,53 @@ description: Gestion De Procesos - Notas de hacking y ciberseguridad.
 ---
 
 ## Comandos para ver procesos
-- **ps**: Lista los procesos activos. ```bash
-ps aux # Para monitorear recursos ps -ef # Para ver jerarquía y relaciones entre los procesos
-```
+- **ps**: Lista los procesos activos.
+
+  ```bash
+  ps aux # Para monitorear recursos ps -ef # Para ver jerarquía y relaciones entre los procesos
+  ```
 
 - **top / htop**: Monitor interactivo de procesos. htop es más visual, permite matar o renicear procesos fácilmente.
-- **pgrep**: Busca procesos por nombre. ```bash
-pgrep firefox
-```
+- **pgrep**: Busca procesos por nombre.
 
-- **pstree**: Muestra los procesos en forma jerárquica (padre-hijo). ```bash
-pstree -p # incluye los PIDs
-```
+  ```bash
+  pgrep firefox
+  ```
 
-- **pidof**: Muestra el PID de un programa activo. ```bash
-pidof bash
-```
+- **pstree**: Muestra los procesos en forma jerárquica (padre-hijo).
+
+  ```bash
+  pstree -p # incluye los PIDs
+  ```
+
+- **pidof**: Muestra el PID de un programa activo.
+
+  ```bash
+  pidof bash
+  ```
 
 ---
 
 ## Ejecución de procesos
-- **Primer plano (foreground)**: ```bash
-./programa
-```
+- **Primer plano (foreground)**:
+
+  ```bash
+  ./programa
+  ```
 
  El terminal queda ocupado hasta que el proceso termine.
-- **Segundo plano (background)**: ```bash
-./programa &
-```
+- **Segundo plano (background)**:
+
+  ```bash
+  ./programa &
+  ```
 
 El shell sigue disponible mientras el proceso corre. Tener en cuenta que normalmente al cerrar la shell el proceso se termina, pero se puede utilizar el comando disown en la shell para que el proceso no dependa de la shell.
-- **Ejemplo práctico:** ```bash
-long_task.sh & echo "Sigo usando la terminal"
-```
+- **Ejemplo práctico:**
+
+  ```bash
+  long_task.sh & echo "Sigo usando la terminal"
+  ```
 
       ---
 
@@ -91,13 +105,17 @@ jobs
 
       ## Señales a procesos
 
-      - **Enviar señales manualmente:** ```bash
-kill -9 1234 # SIGKILL (fuerza el cierre) kill -15 1234 # SIGTERM (solicita terminación limpia) kill -STOP 1234 # pausa proceso kill -CONT 1234 # reanuda proceso detenido
-```
+      - **Enviar señales manualmente:**
 
-- **Por nombre:** ```bash
-pkill firefox killall nano
-```
+        ```bash
+        kill -9 1234 # SIGKILL (fuerza el cierre) kill -15 1234 # SIGTERM (solicita terminación limpia) kill -STOP 1234 # pausa proceso kill -CONT 1234 # reanuda proceso detenido
+        ```
+
+- **Por nombre:**
+
+  ```bash
+  pkill firefox killall nano
+  ```
 
       Algunos nombres comunes:
 
@@ -134,9 +152,11 @@ ps -eo pid,ni,comm
       ## Procesos huérfanos y zombis
 
       - **Huérfano**: cuando el proceso padre termina antes que su hijo. El proceso hijo pasa a ser adoptado por el **init** o **systemd**. No es dañino, pero indica una gestión no controlada de procesos.
-- **Zombi**: proceso que terminó, pero su entrada en la tabla de procesos aún existe porque su padre no leyó su estado de salida (wait() no fue llamado). Se muestran con estado Z. ```bash
-ps aux | grep 'Z'
-```
+- **Zombi**: proceso que terminó, pero su entrada en la tabla de procesos aún existe porque su padre no leyó su estado de salida (wait() no fue llamado). Se muestran con estado Z.
+
+  ```bash
+  ps aux | grep 'Z'
+  ```
 
 Para eliminarlos, normalmente basta con terminar el proceso padre.
 

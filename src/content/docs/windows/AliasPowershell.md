@@ -66,6 +66,8 @@ Guarda el archivo y la próxima vez que abras PowerShell, estarán disponibles.
 ---
 
 ## Nota importante
-- Los alias **no aceptan parámetros por defecto**. Por ejemplo, Set-Alias buscar "Get-ChildItem -Recurse" no funcionará. En ese caso, usa una **función**: ```bash
-function buscar { Get-ChildItem -Recurse @args } Set-Alias buscar buscar
-```
+- Los alias **no aceptan parámetros por defecto**. Por ejemplo, Set-Alias buscar "Get-ChildItem -Recurse" no funcionará. En ese caso, usa una **función**:
+
+  ```bash
+  function buscar { Get-ChildItem -Recurse @args } Set-Alias buscar buscar
+  ```

@@ -10,73 +10,101 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 ---
 
 ## 1. <strong>Manejo de texto</strong>
-- **cat**: Muestra el contenido de archivos. ```bash
-cat archivo.txt
-```
+- **cat**: Muestra el contenido de archivos.
 
-- **less / more**: Permiten ver un archivo por páginas. ```bash
-less archivo.txt
-```
+  ```bash
+  cat archivo.txt
+  ```
 
-- **head**: Muestra las primeras N líneas. ```bash
-head -n 5 archivo.txt
-```
+- **less / more**: Permiten ver un archivo por páginas.
 
-- **tail**: Muestra las últimas N líneas, o sigue cambios en tiempo real. ```bash
-tail -f log.txt
-```
+  ```bash
+  less archivo.txt
+  ```
 
-- **wc**: Cuenta líneas, palabras y caracteres. ```bash
-wc -l archivo.txt # número de líneas wc -w archivo.txt # número de palabras
-```
+- **head**: Muestra las primeras N líneas.
 
-      ---
+  ```bash
+  head -n 5 archivo.txt
+  ```
 
-      ## 2. <strong>Búsqueda y filtrado</strong>
+- **tail**: Muestra las últimas N líneas, o sigue cambios en tiempo real.
 
-      - **grep**: Busca patrones de texto. ```bash
-grep "error" log.txt
-```
+  ```bash
+  tail -f log.txt
+  ```
+
+- **wc**: Cuenta líneas, palabras y caracteres.
+
+  ```bash
+  wc -l archivo.txt # número de líneas wc -w archivo.txt # número de palabras
+  ```
+
+---
+
+## 2. <strong>Búsqueda y filtrado</strong>
+
+- **grep**: Busca patrones de texto.
+
+  ```bash
+  grep "error" log.txt
+  ```
 
 - **egrep**: Igual que grep pero con expresiones regulares extendidas.
 - **fgrep**: Busca texto literal, sin interpretar regex.
-- **find**: Busca archivos en el sistema. ```bash
-find /home -name "*.txt"
-```
+- **find**: Busca archivos en el sistema.
+
+  ```bash
+  find /home -name "*.txt"
+  ```
 
 - **locate**: Búsqueda rápida en una base de datos actualizada con updatedb.
 
-      ---
+---
 
-      ## 3. <strong>Transformación de texto</strong>
+## 3. <strong>Transformación de texto</strong>
 
-      - **cut**: Extrae columnas de texto. ```bash
-cut -d',' -f1 nombres.csv
-```
+- **cut**: Extrae columnas de texto.
 
-- **sort**: Ordena líneas. ```bash
-sort lista.txt
-```
+  ```bash
+  cut -d',' -f1 nombres.csv
+  ```
 
-- **uniq**: Elimina duplicados (requiere que el archivo esté ordenado). ```bash
-sort lista.txt | uniq
-```
+- **sort**: Ordena líneas.
 
-- **tr**: Reemplaza o elimina caracteres. ```bash
-echo "hola" | tr a-z A-Z # convierte a mayúsculas
-```
+  ```bash
+  sort lista.txt
+  ```
 
-- **sed**: Editor de texto en flujo (reemplazo, borrado, inserción). ```bash
-sed 's/error/ERROR/g' log.txt
-```
+- **uniq**: Elimina duplicados (requiere que el archivo esté ordenado).
 
-- **awk**: Procesador de texto por columnas, muy útil en reportes. ```bash
-awk '{"{print $1,$3}"}' archivo.txt
-```
+  ```bash
+  sort lista.txt | uniq
+  ```
 
-- **ps**: Lista procesos. ```bash
-ps aux | grep firefox
-```
+- **tr**: Reemplaza o elimina caracteres.
+
+  ```bash
+  echo "hola" | tr a-z A-Z # convierte a mayúsculas
+  ```
+
+- **sed**: Editor de texto en flujo (reemplazo, borrado, inserción).
+
+  ```bash
+  sed 's/error/ERROR/g' log.txt
+  ```
+
+- **awk**: Procesador de texto por columnas, muy útil en reportes.
+
+  ```bash
+  awk '{print $1,$3}' archivo.txt
+  ```
+
+- **ps**: Lista procesos.
+
+  ```bash
+  ps aux | grep firefox
+  ```
 
 - **top / htop**: Monitor de procesos en tiempo real.
 - **kill**: Termina un proceso.
@@ -89,45 +117,56 @@ ps aux | grep firefox
 - **cp**: Copia.
 - **mv**: Mueve/renombra.
 - **rm**: Elimina.
-- **file**: Muestra el tipo de un archivo. ```bash
-file imagen.png
-```
+- **file**: Muestra el tipo de un archivo.
+
+  ```bash
+  file imagen.png
+  ```
 
 - **stat**: Muestra metadatos del archivo.
 
-      ---
+---
 
-      ## 6. <strong>Compresión y empaquetado</strong>
+## 6. <strong>Compresión y empaquetado</strong>
 
-      - **tar**: Empaqueta múltiples archivos. ```bash
-tar -cvf backup.tar directorio/
-```
+- **tar**: Empaqueta múltiples archivos.
+
+  ```bash
+  tar -cvf backup.tar directorio/
+  ```
 
 - **gzip / gunzip**: Comprime y descomprime.
 - **zip / unzip**: Comprime y descomprime en formato ZIP.
 - **ping**: Verifica conectividad.
-- **curl**: Descarga o envía datos por HTTP. ```bash
-curl https://ejemplo.com
-```
+- **curl**: Descarga o envía datos por HTTP.
+
+  ```bash
+  curl https://ejemplo.com
+  ```
 
 - **wget**: Descarga archivos.
 - **ssh**: Conexión remota segura.
 - **scp**: Copiar archivos entre equipos vía SSH.
 - **netstat / ss**: Información de puertos y conexiones.
 - **date**: Fecha y hora.
-- **bc**: Calculadora de precisión arbitraria. ```bash
-echo "2+3*5" | bc
-```
+- **bc**: Calculadora de precisión arbitraria.
 
-- **xargs**: Construye comandos a partir de entradas. ```bash
-cat lista.txt | xargs rm
-```
+  ```bash
+  echo "2+3*5" | bc
+  ```
 
-      ---
+- **xargs**: Construye comandos a partir de entradas.
 
-      **Idea clave**:
+  ```bash
+  cat lista.txt | xargs rm
+  ```
 
-      Bash es más poderoso **cuando combinas estas herramientas** usando **pipes (|)** y redirecciones (&gt;, &lt;, &gt;&gt;). Ejemplo: buscar errores en un log, contarlos y guardarlos:
+---
+
+**Idea clave**:
+
+Bash es más poderoso **cuando combinas estas herramientas** usando **pipes (|)** y redirecciones (&gt;, &lt;, &gt;&gt;). Ejemplo: buscar errores en un log, contarlos y guardarlos:
+
 ```bash
 grep "ERROR" log.txt | wc -l > total_errores.txt
 ```
