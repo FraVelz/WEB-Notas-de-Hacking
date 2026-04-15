@@ -6,7 +6,7 @@ description: Ayuda Soporte - Notas de hacking y ciberseguridad.
 # Comandos y cmdlets de ayuda y soporte
 ---
 
-## Temario {#temario}
+## Temario
 - [Comandos y cmdlets de ayuda y soporte](#comandos-y-cmdlets-de-ayuda-y-soporte) <Lista> [Temario](#temario)
 - [1. Comandos de ayuda y soporte en CMD](#1-comandos-de-ayuda-y-soporte-en-cmd)
 - [2. Cmdlets de ayuda y soporte en PowerShell](#2-cmdlets-de-ayuda-y-soporte-en-powershell)
@@ -19,17 +19,17 @@ description: Ayuda Soporte - Notas de hacking y ciberseguridad.
 
 ---
 
-## 1. Comandos de ayuda y soporte en CMD {#1-comandos-de-ayuda-y-soporte-en-cmd}
+## 1. Comandos de ayuda y soporte en CMD
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 2. Cmdlets de ayuda y soporte en PowerShell {#2-cmdlets-de-ayuda-y-soporte-en-powershell}
+## 2. Cmdlets de ayuda y soporte en PowerShell
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 3. Ayuda interactiva y documentación {#3-ayuda-interactiva-y-documentación}
+## 3. Ayuda interactiva y documentación
 - En **CMD**: <Lista> help → lista básica.
 - &lt;comando&gt; /? → manual rápido.
 
@@ -45,7 +45,7 @@ En **PowerShell**:
 </Lista>
 ---
 
-## Sugerencia práctica {#sugerencia-práctica}
+## Sugerencia práctica
 Para explorar PowerShell como un pro:
 ```bash
 Get-Command | Out-GridView

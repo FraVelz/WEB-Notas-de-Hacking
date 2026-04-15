@@ -6,7 +6,7 @@ description: Powershell Cmd - Notas de hacking y ciberseguridad.
 # Diferencias entre Powershell y CMD
 ---
 
-## CMD (Command Prompt) {#cmd-command-prompt}
+## CMD (Command Prompt)
 - **Origen**: Basado en MS-DOS, presente en Windows desde versiones muy antiguas.
 - **Lenguaje**: Usa un lenguaje de comandos muy básico, llamado *batch*.
 - **Funciones principales**:
@@ -22,7 +22,7 @@ description: Powershell Cmd - Notas de hacking y ciberseguridad.
 </Lista >
 ---
 
-## PowerShell {#powershell}
+## PowerShell
 - **Origen**: Introducido en 2006 como una herramienta moderna de administración de Windows.
 - **Lenguaje**: Basado en .NET, orientado a objetos.
 - **Funciones principales**: <Lista> No solo ejecuta comandos, sino que devuelve **objetos completos**, no solo texto. <Lista> Ejemplo: Get-Process devuelve un objeto de proceso con propiedades (Id, CPU, Memory, etc.) que se pueden filtrar o manipular.
@@ -39,12 +39,12 @@ comandos de CMD, y mucho más.</li> <li><strong>Multiplataforma</strong>: PowerS
 Windows, Linux y macOS.</li> </Lista >
 ---
 
-## Diferencias clave en práctica {#diferencias-clave-en-práctica}
+## Diferencias clave en práctica
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## Ejemplo {#ejemplo}
+## Ejemplo
 - CMD:
 ```bash
 dir | find "archivo.txt"

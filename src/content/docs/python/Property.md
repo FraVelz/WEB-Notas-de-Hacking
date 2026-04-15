@@ -8,7 +8,7 @@ description: Property - Notas de hacking y ciberseguridad.
 
 ---
 
-## ¿Qué hace @property en Python? {#qué-hace-property-en-python}
+## ¿Qué hace @property en Python?
 El decorador **@property** convierte un **método de una clase** en un **atributo “solo de lectura”** (al menos inicialmente).
 
 Sirve para **controlar cómo se accede a un atributo**, pero permitiendo que el código **parezca estar accediendo directamente a una variable**.
@@ -21,7 +21,7 @@ Permite usar *métodos* como sí fueran *atributos*, **sin cambiar la sintaxis d
 </blockquote>
 ---
 
-## Ejemplo básico sin @property {#ejemplo-básico-sin-property}
+## Ejemplo básico sin @property
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -41,7 +41,7 @@ Pero se ve *feo* tener que escribir .get_nombre() cada vez. Ahí entra @property
 
 ---
 
-## Con @property {#con-property}
+## Con @property
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -63,7 +63,7 @@ print(p.nombre)  # ✅ Sin paréntesis, parece un atributo
 
 ---
 
-## Agregando un <strong>setter</strong> para modificar el valor {#agregando-un-setter-para-modificar-el-valor}
+## Agregando un <strong>setter</strong> para modificar el valor
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -92,7 +92,7 @@ p.nombre = ""     # ❌ El nombre no puede estar vacío.
 
 ---
 
-## También existe el deleter (opcional) {#también-existe-el-deleter-opcional}
+## También existe el deleter (opcional)
 ```python
 @nombre.deleter
 def nombre(self):
@@ -102,5 +102,5 @@ del self.__nombre
 
 ---
 
-## En resumen {#en-resumen}
+## En resumen
 <!-- Tabla convertida manualmente -->

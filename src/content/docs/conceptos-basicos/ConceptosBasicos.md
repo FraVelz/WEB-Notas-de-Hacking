@@ -6,7 +6,7 @@ description: Conceptos Basicos - Notas de hacking y ciberseguridad.
 # Conceptos Basicos
 ---
 
-## 0. Seguridad de la información Vs Seguridad informática Vs Ciberseguridad {#0}
+## 0. Seguridad de la información Vs Seguridad informática Vs Ciberseguridad
 **Seguridad de la información**: Procedimientos de medidas para asegurar los datos independientemente en que formato estén.
 
 **Seguridad informática**: Solo proteger los datos en formato informático tanto físico como virtual.
@@ -15,27 +15,27 @@ description: Conceptos Basicos - Notas de hacking y ciberseguridad.
 
 ---
 
-## 1. ¿Qué es? {#1-qué-es}
+## 1. ¿Qué es?
 Es la práctica de proteger sistemas, redes, datos y programas frente a ataques, o accesos no autorizados.
 
 ---
 
-## 2. Objetivos {#2-objetivos}
+## 2. Objetivos
 - **Confidencialidad:** Solo las personas autorizadas acceden a la información.
 - **Integridad:** La información no puede ser alterada sin permiso.
 - **Disponibilidad:** Los sistemas y datos deben estar accesibles cuando se necesiten.
 
 ---
 
-## 3. Terminologías {#3-terminologías}
-### Exploit {#exploit}
+## 3. Terminologías
+### Exploit
 Es un **programa, código o técnica** que ** aprovecha una vulnerabilidad** (un error o debilidad en un sistema, software o aplicación) para **ejecutar acciones no autorizadas**.
 
 <blockquote>
 El exploit es *el método o herramienta que “explota” la falla.*
 
 </blockquote>
-### Payload {#payload}
+### Payload
 (en español, *carga útil*) es **lo que el exploit ejecuta una vez que logra entrar**.
 
 Piensa así:
@@ -52,7 +52,7 @@ Algunos tipos de payloads:
 
 En herramientas como **Metasploit**, esto se ve muy claro: eliges un exploit y luego le asocias un payload.
 
-### 0-day (Zero-Day) {#0-day-zero-day}
+### 0-day (Zero-Day)
 (se pronuncia *zero day*) es una **vulnerabilidad desconocida por el fabricante o por el público** —y por tanto **no tiene parche ni defensa aún**.
 
 <blockquote>
@@ -61,7 +61,7 @@ En herramientas como **Metasploit**, esto se ve muy claro: eliges un exploit y l
 </blockquote>
 Un **0-day exploit** es cuando alguien crea un exploit que aprovecha esa vulnerabilidad secreta. Es el tipo de ataque más peligroso y valioso, porque **ni antivirus ni firewalls lo detectan** (ya que nadie sabía que existía).
 
-### Malware y tipos de Malware {#malware-y-tipos-de-malware}
+### Malware y tipos de Malware
 (Malicious Software) Cualquier tipo de código malicioso que busca aprovecharse de una vulnerabilidad y casuar daño.
 
 Los tipos mas conocidos son:
@@ -84,18 +84,18 @@ Los tipos mas conocidos son:
 - **16. Scareware:** Asusta al usuario con mensajes falsos (“tienes 32 virus”) para que compre un software fraudulento.
 - **17. Bootkit:** Infecta el sector de arranque (MBR/UEFI) para ejecutarse antes que el sistema operativo.
 
-### Vulnerabilidad {#vulnerabilidad}
+### Vulnerabilidad
 Fallo de configuración, de diseño o de implementación que pone en riesgo la seguridad del entorno o sistema.
 
-### Amenaza {#amenaza}
+### Amenaza
 Cualquier tipo de circunstancia posible que se pueda manifestar donde se pueda a través de una vulnerabilidad poner en peligro el sistema.
 
-### Riesgo {#riesgo}
+### Riesgo
 Probabilidad o posibilidad que una amenaza se materialice y afecte al sistema en cuestión, aprovechándose de una vulnerabilidad.
 
 ---
 
-## 4. Amenazas comunes {#4-amenazas-comunes}
+## 4. Amenazas comunes
 - **Malware:** Software malicioso (virus, troyanos, gusanos, ransomware, spyware).
 - **Phishing:** Engaños (emails o mensajes falsos) para robar credenciales.
 - **Ingeniería Social:** Manipular personas para obtener información.
@@ -104,7 +104,7 @@ Probabilidad o posibilidad que una amenaza se materialice y afecte al sistema en
 
 ---
 
-## 5. Vectores de ataque {#5-vectores-de-ataque}
+## 5. Vectores de ataque
 Son los caminos que usan los atacantes:
 
 - Correos electrónicos.
@@ -115,7 +115,7 @@ Son los caminos que usan los atacantes:
 
 ---
 
-## 6. Buenas prácticas de seguridad {#6-buenas-prácticas-de-seguridad}
+## 6. Buenas prácticas de seguridad
 - Usar contraseñas seguras (y diferentes en cada cuenta).
 - Activar la autenticación en dos pasos (2FA).
 - Mantener software y sistemas actualizados.
@@ -125,7 +125,7 @@ Son los caminos que usan los atacantes:
 
 ---
 
-## 7. Áreas de ciberseguridad {#7-áreas-de-ciberseguridad}
+## 7. Áreas de ciberseguridad
 - **Seguridad de Redes:** Proteger tráfico de datos.
 - **Seguridad de la Información:** Proteger datos en depósito y en tránsito.
 - **Seguridad en la Nube:** Protección en servicios iCloud.
@@ -135,7 +135,7 @@ Son los caminos que usan los atacantes:
 
 ---
 
-## 8. Tipos de hackers (por su actuar) {#8-tipos-de-hackers-por-su-actuar}
+## 8. Tipos de hackers (por su actuar)
 - **White hat:** Éticos, ayudan a mejorar la seguridad.
 - **Black hat:** Atacantes maliciosos.
 - **Grey hat:** A veces actúan éticamente, otras veces no.
@@ -144,7 +144,7 @@ Normalmente a los “hackers de sombrero, negro o gris” se les da el nombre de
 
 ---
 
-## 9. Tipos de hackers (por su rol) {#9-tipos-de-hackers-por-su-rol}
+## 9. Tipos de hackers (por su rol)
 - **Red team:** Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u organización.
 - **Blue team:** Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la empresa sí los de **red team** encuentran alguna falla.
 - **Purple team:** híbrido (colaboración), es una mezcla de ambos mundos de red team, y blue team.
@@ -153,7 +153,7 @@ Existen más tipos de hackers por su rol, pero son muy desconocidos normalmente 
 
 ---
 
-## 10. Herramientas básicas en ciberseguridad {#10-herramientas-básicas-en-ciberseguridad}
+## 10. Herramientas básicas en ciberseguridad
 - **Wireshark:** Análisis de tráfico de red.
 - **Nmap:** Escaneo de puertos y redes.
 - **Metasploit:** Pruebas de penetración.

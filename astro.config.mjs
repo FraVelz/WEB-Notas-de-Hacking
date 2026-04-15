@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 import starlight from '@astrojs/starlight';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { starlightSidebar } from './starlight-sidebar.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -30,6 +31,7 @@ export default defineConfig({
     starlight({
       title: 'Notas de Hacking',
       description: 'Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.',
+      sidebar: starlightSidebar,
       disable404Route: true,
       customCss: ['./src/styles/theme.css'],
       social: [

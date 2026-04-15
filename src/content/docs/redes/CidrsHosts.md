@@ -6,14 +6,14 @@ description: Cidrs Hosts - Notas de hacking y ciberseguridad.
 # Cidrs y Host
 ---
 
-## 1. Qué es CIDR {#1-qué-es-cidr}
+## 1. Qué es CIDR
 **CIDR** significa **Classless Inter-Domain Routing**, o en español, **Enrutamiento entre dominios sin clases**.
 
 Se usa para **representar redes IP y su tamaño** de forma compacta.
 
 ---
 
-### Ejemplo {#ejemplo}
+### Ejemplo
 ```bash
 192.168.1.0/24
 ```
@@ -28,7 +28,7 @@ Se usa para **representar redes IP y su tamaño** de forma compacta.
 
 ---
 
-### Cómo se interpreta {#cómo-se-interpreta}
+### Cómo se interpreta
 Cada número después de la barra / indica cuántos bits de la IP pertenecen a la red:
 
 <!-- Tabla convertida manualmente -->
@@ -39,7 +39,7 @@ Cada número después de la barra / indica cuántos bits de la IP pertenecen a l
 </blockquote>
 ---
 
-## 2. Qué es una máscara de red (o de host) {#2-qué-es-una-máscara-de-red-o-de-host}
+## 2. Qué es una máscara de red (o de host)
 Una **máscara de subred** (subnet mask) indica **qué parte de la IP identifica la red** y **qué parte identifica al host**.
 
 Por ejemplo:
@@ -48,7 +48,7 @@ Por ejemplo:
 
 ---
 
-### Máscara de host {#máscara-de-host}
+### Máscara de host
 A veces se habla de “máscara de host”, que simplemente es **el complemento** de la máscara de red.
 
 👉 Sí la máscara de red es 255.255.255.0 entonces la **máscara de host** es:
@@ -65,12 +65,12 @@ Es decir, la máscara de host muestra **qué bits pueden variar** para asignar d
 
 ---
 
-## 3. Relación entre CIDR y máscaras {#3-relación-entre-cidr-y-máscaras}
+## 3. Relación entre CIDR y máscaras
 <!-- Tabla convertida manualmente -->
 
 ---
 
-## 4. Ejemplo práctico {#4-ejemplo-práctico}
+## 4. Ejemplo práctico
 Supón que tienes:
 ```bash
 Red: 10.0.0.0/24

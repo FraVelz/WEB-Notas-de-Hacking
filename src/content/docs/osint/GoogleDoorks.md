@@ -6,7 +6,7 @@ description: Google Doorks - Notas de hacking y ciberseguridad.
 # Google Doorks
 Es una técnica de búsqueda avanzada en Google, para poder conocer información concreta a base de poder ir aplicando filtros en los resultados, operadores conocidos como dorks.
 
-## Operadores dorks {#operadores-dorks}
+## Operadores dorks
 Nota el asterisco (*) dice que cualquier palabra puede pasar el filtro, normalmente se utiliza para cuando se necesita filtrar más resultados.
 ```bash
 site:reddit.*
