@@ -112,3 +112,10 @@ button:focus-visible {
   background: var(--sl-selection-bg);
   color: var(--sl-selection-color);
 }
+
+/* Enlaces a #anclas: scroll suave (Starlight ya pone scroll-padding en el <html> para el header) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
