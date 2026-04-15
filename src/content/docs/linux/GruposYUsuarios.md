@@ -150,9 +150,11 @@ francisco : francisco sudo video audio
 ```
 
 ### Archivos donde se guardan los grupos
-- /etc/group → lista todos los grupos del sistema. Ejemplo de líneas: ```bash
-root:x:0: sudo:x:27:francisco proyecto:x:1002:juan,maria
-```
+- /etc/group → lista todos los grupos del sistema. Ejemplo de líneas:
+
+  ```bash
+  root:x:0: sudo:x:27:francisco proyecto:x:1002:juan,maria
+  ```
 
       ### En resumen (gestión de grupos)
 
@@ -170,21 +172,29 @@ root:x:0: sudo:x:27:francisco proyecto:x:1002:juan,maria
 
       ## 4. Ejemplos prácticos comunes
 
-      - **Crear un usuario con carpeta personal y shell bash:** ```bash
-sudo useradd -m -s /bin/bash francisco
-```
+      - **Crear un usuario con carpeta personal y shell bash:**
 
-- **Cambiar nombre de usuario:** ```bash
-sudo usermod -l nuevo_nombre francisco
-```
+        ```bash
+        sudo useradd -m -s /bin/bash francisco
+        ```
 
-- **Bloquear/desbloquear usuario:** ```bash
-sudo usermod -L francisco # Bloquear sudo usermod -U francisco # Desbloquear
-```
+- **Cambiar nombre de usuario:**
 
-- **Ver todos los usuarios del sistema:** ```bash
-cut -d: -f1 /etc/passwd
-```
+  ```bash
+  sudo usermod -l nuevo_nombre francisco
+  ```
+
+- **Bloquear/desbloquear usuario:**
+
+  ```bash
+  sudo usermod -L francisco # Bloquear sudo usermod -U francisco # Desbloquear
+  ```
+
+- **Ver todos los usuarios del sistema:**
+
+  ```bash
+  cut -d: -f1 /etc/passwd
+  ```
 
       ---
 

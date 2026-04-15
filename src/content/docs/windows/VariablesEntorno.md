@@ -33,18 +33,22 @@ usuarios del equipo. Por ejemplo:
 **Usando CMD**:
 
 - set → muestra todas las variables de usuario y del sistema.
-- echo %VARIABLE% → muestra el valor de una variable específica. Ejemplo: ```bash
-echo %PATH% echo %USERPROFILE%
-```
+- echo %VARIABLE% → muestra el valor de una variable específica. Ejemplo:
+
+  ```bash
+  echo %PATH% echo %USERPROFILE%
+  ```
 
       </li >
       <li>
       **Usando PowerShell**:
 
       - Get-ChildItem Env: → lista todas las variables.
-- $Env:VARIABLE → muestra el valor de una variable específica. Ejemplo: ```bash
-$Env:PATH $Env:USERNAME
-```
+- $Env:VARIABLE → muestra el valor de una variable específica. Ejemplo:
+
+  ```bash
+  $Env:PATH $Env:USERNAME
+  ```
 
 </li>
 <li>
