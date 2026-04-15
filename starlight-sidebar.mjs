@@ -1,6 +1,7 @@
 /**
- * Orden de la barra lateral alineado con `Notas-de-Hacking/readme.md` (temario).
+ * Orden de la barra lateral alineado con `src/content/docs/index.md` (lista de bienvenida).
  * Los `slug` corresponden a las rutas de Starlight (colección docs).
+ * Virtualización no aparece en esa lista pero existe en el repo; va al final para no perder la página.
  */
 export const starlightSidebar = [
   { label: 'Inicio', link: '/' },
@@ -14,15 +15,13 @@ export const starlightSidebar = [
       'conceptos-basicos/legalidadhacking',
     ],
   },
-
   {
     label: 'Virtualización',
     collapsed: false,
     items: ['virtualizacion/virtualizacion'],
   },
-
   {
-    label: 'Linux y Bash',
+    label: 'Linux',
     collapsed: false,
     items: [
       {
@@ -71,33 +70,6 @@ export const starlightSidebar = [
   },
 
   {
-    label: 'Windows',
-    collapsed: false,
-    items: [
-      'windows/historia',
-      'windows/powershellcmd',
-      'windows/directorios',
-      'windows/comodines',
-      'windows/navegacion',
-      'windows/variablesentorno',
-      'windows/ayudasoporte',
-      'windows/gestionusuarios',
-      'windows/gestiongrupos',
-      'windows/gestionred',
-      'windows/gestionpermisos',
-      'windows/gestionprocesos',
-      'windows/redireccionespowershell',
-      'windows/aliaspowershell',
-    ],
-  },
-
-  {
-    label: 'Redes',
-    collapsed: false,
-    items: ['redes/teoria', 'redes/herramientas', 'redes/subnetting', 'redes/cidrshosts'],
-  },
-
-  {
     label: 'Python',
     collapsed: false,
     items: [
@@ -126,6 +98,33 @@ export const starlightSidebar = [
   },
 
   {
+    label: 'Redes',
+    collapsed: false,
+    items: ['redes/teoria', 'redes/herramientas', 'redes/subnetting', 'redes/cidrshosts'],
+  },
+
+  {
+    label: 'Windows',
+    collapsed: false,
+    items: [
+      'windows/historia',
+      'windows/powershellcmd',
+      'windows/directorios',
+      'windows/comodines',
+      'windows/navegacion',
+      'windows/variablesentorno',
+      'windows/ayudasoporte',
+      'windows/gestionusuarios',
+      'windows/gestiongrupos',
+      'windows/gestionred',
+      'windows/gestionpermisos',
+      'windows/gestionprocesos',
+      'windows/redireccionespowershell',
+      'windows/aliaspowershell',
+    ],
+  },
+
+  {
     label: 'Pentesting',
     collapsed: false,
     items: ['pentesting/fases', 'pentesting/cajas'],
@@ -138,7 +137,7 @@ export const starlightSidebar = [
   },
 
   {
-    label: 'Privacidad y anonimato',
+    label: 'Anonimato',
     collapsed: false,
     items: [
       'anonimato/privacidadanonimato',
