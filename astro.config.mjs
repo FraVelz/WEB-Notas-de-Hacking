@@ -31,6 +31,7 @@ export default defineConfig({
     starlight({
       title: 'Notas de Hacking',
       description: 'Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.',
+      favicon: '/favicon.png',
       sidebar: starlightSidebar,
       disable404Route: true,
       customCss: ['./src/styles/theme.css'],
