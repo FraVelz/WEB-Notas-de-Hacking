@@ -15,14 +15,19 @@ hero:
 
 # Bienvenido
 
-Notas organizadas por categorías para facilitar el aprendizaje en ciberseguridad.
+Notas organizadas por categorías para **aprender o repasar** ciberseguridad con enfoque en **pentesting** y fundamentos técnicos. No sustituyen cursos de pago ni plataformas prácticas (Hack The Box, TryHackMe, etc.): son material de apoyo para ordenar conceptos y comandos.
 
-- **Conceptos Básicos** — Fundamentos de ciberseguridad y hacking ético
-- **Linux** — Comandos, scripts y administración del sistema
-- **Python** — Programación y módulos útiles para hacking
-- **Redes** — Teoría, subnetting y herramientas
-- **Windows** — PowerShell y administración
-- **Pentesting** — Fases y metodologías
-- **OSINT** — Inteligencia de fuentes abiertas
+Usa el menú lateral para navegar por tema. Las páginas combinan explicación breve, ejemplos y enlaces a documentación oficial cuando aplica.
+
+## Mapa rápido
+
+- **Conceptos básicos** — Fundamentos, mitos y **marco legal** del hacking ético
+- **Virtualización** — Bases para montar laboratorios
+- **Linux** — Comandos, Bash y permisos
+- **Python** — Sintaxis y módulos útiles en seguridad
+- **Redes** — Teoría, subnetting, CIDR y herramientas (Nmap, Wireshark…)
+- **Windows** — CMD, PowerShell y administración
+- **Pentesting** — Fases y tipos de caja (black/grey/white)
+- **OSINT** — Metodología, dorks y terminología
 - **Anonimato** — Privacidad y huella digital
-- **Otros** — Recursos y herramientas adicionales
+- **Otros** — Concientización, herramientas web, recursos y créditos
