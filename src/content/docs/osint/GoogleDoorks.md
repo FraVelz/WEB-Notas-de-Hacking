@@ -1,75 +1,94 @@
 ---
-title: Google Doorks
-description: Google Doorks - Notas de hacking y ciberseguridad.
+title: Google Dorks
+description: Operadores de búsqueda avanzada, tabla de referencia y uso responsable.
 ---
 
-# Google Doorks
-Es una técnica de búsqueda avanzada en Google, para poder conocer información concreta a base de poder ir aplicando filtros en los resultados, operadores conocidos como dorks.
+# Google Dorks
 
-## Operadores dorks
-Nota el asterisco (*) dice que cualquier palabra puede pasar el filtro, normalmente se utiliza para cuando se necesita filtrar más resultados.
+Los **dorks** son **operadores de búsqueda avanzada** (en Google u otros buscadores compatibles) para acotar resultados: por sitio, texto en URL, título, tipo de archivo, etc. Son útiles en investigación pasiva y en auditorías **autorizadas**.
+
+## Uso responsable
+
+Encontrar una URL en el índice **no** te da derecho a explotar el sistema, descargar datos privados sin permiso ni eludir controles de acceso. Para el marco legal y ético: [Legalidad del hacking](/conceptos-basicos/legalidadhacking/). En **bug bounty**, respeta siempre el alcance publicado.
+
+No abras enlaces dudosos ni introduzcas credenciales en sitios no oficiales; los resultados pueden incluir páginas HTTP antiguas o trampas.
+
+## Tabla de operadores frecuentes
+
+| Operador | Ejemplo | Idea |
+|----------|---------|------|
+| `site:` | `site:ejemplo.com` | Limitar a un dominio o host. |
+| `inurl:` | `inurl:admin` | La URL contiene el fragmento. |
+| `intitle:` | `intitle:"índice de"` | Coincidencia en el título HTML. |
+| `filetype:` / `ext:` | `filetype:pdf informe` | Archivos por tipo o extensión indexada. |
+| `cache:` | `cache:ejemplo.com` | Versión en caché (si el buscador la muestra). |
+| `"frase exacta"` | `"contrato confidencial"` | Búsqueda literal. |
+| `-` | `jaguar -coche` | Excluir un término. |
+
+Documentación oficial (Google): [Operadores de búsqueda](https://support.google.com/websearch/answer/2466433).
+
+## Ejemplos de sintaxis
+
+El asterisco (`*`) puede actuar como comodín en algunas consultas:
+
 ```bash
 site:reddit.*
 ```
 
-Esto apunta a todas las páginas que empiezan por reddit sin importar como termine, pueden terminal por ejemplo reddit.us, reddit.arg, reddit.paypal, o reddit.store, etc…
+Frases entre comillas:
 
-También otra consideración es que puedes utilizar no solo palabra en clave, sino también, frases claves para buscar y se hace con ““, de la siguiente manera.
 ```bash
 intitle:"Tomar un Mate"
 ```
 
-Es importante tener en cuenta que todos estos operadores están escritos de la manera:
+Formato general `operador:valor` **sin espacio** después de los dos puntos:
+
 ```bash
 clave:valor
 ```
 
-Sin espacios a menos que se usen comillas dobles, pero todo lo que esta afuera eso lo reconoce Google como palabras de una búsqueda normal.
+Todo lo que va fuera de los operadores suele interpretarse como palabras normales:
+
 ```bash
 intitle:"Uala prestamos" prestamos sin intereses
 ```
 
-En este caso buscara **préstamos sin intereses**, y luego filtrara por títulos que contengan **Uala préstamos**.
+Aquí también se buscan **préstamos sin intereses** y se filtra el título con **Uala préstamos**.
 
-<ol type="1">
-<li>El primer operador dork básico es site, sí usas este operador luego
-(:) dos puntos, y un dominio, buscara todos los resultados que contengan
-ese dominio.</li>
-</ol>
+### Lista numerada de operadores básicos
+
+1. **`site:`** — Restringe al dominio indicado.
+
 ```bash
 site:reddit.com
 ```
 
-<ol start="2" type="1">
-<li>inurl, busca en la URL de Google, todos los que contengan la palabra
-clave, en la URL.</li>
-</ol>
+2. **`inurl:`** — La URL debe contener el fragmento.
+
 ```bash
 inurl:palabraclave
 ```
 
-<ol start="3" type="1">
-<li>intitle, busca utilizando la palabra, y filtrando por títulos de la
-web, los que no contengan ese título o esa palabra clave no son
-mostrados por el buscador.</li>
-</ol>
+3. **`intitle:`** — Filtra por título visible en resultados.
+
 ```bash
 intitle:tomarmate
 ```
 
-<ol start="4" type="1">
-<li>ext y filetype, estos comandos nos permite buscar por extensiones,
-son muy similares, pero su diferencia radica en que filetype reconoce
-archivos que Google reconocen, pero ext muestra archivos con la
-extensión sin importar sí el formato lo reconoce o no Google.</li>
-</ol>
+4. **`ext:`** y **`filetype:`** — Por extensión o tipo reconocido por el indexador.
+
 ```bash
 ext:log Errores de reddit
 ```
+
 ```bash
-filetype:pdfs Cuent
+filetype:pdf Cuent
 ```
 
-Con lo anterior se puede hacer búsquedas en Google con filtros, y encontrar información pública que a veces los creadores de webs creen que no son públicas de sus webs, y otras cosas, es importante tener en cuenta que deberías buscar palabras claves o frases claves según lo que quieras buscar, aunque hay que tener cuidado porque se pueden indexar sitios http: que no son seguros y que el dueño de la página sí quiere te puede doxear o hackear porque la web no tiene el protocolo https.
+## GHDB y recursos
 
-En la página web de Google hacking data base, puedes encontrar operadores dorks especializados para búsquedas que se llegan, a tener o usar, para la ciberseguridad.
+En la **Google Hacking Database** hay consultas de ejemplo usadas en seguridad (para entornos legales y laboratorios):
+
+- [Google Hacking Database (Exploit-DB)](https://www.exploit-db.com/google-hacking-database)
+
+Contexto más amplio: [OSINT básico](/osint/basic/) y [Terminología](/osint/terminologia/).

@@ -1,51 +1,77 @@
 ---
-title: Basic
-description: Basic - Notas de hacking y ciberseguridad.
+title: OSINT básico
+description: Metodología, ética, herramientas por categoría y enlaces oficiales para inteligencia de fuentes abiertas.
 ---
 
-# OSINT
----
+# OSINT básico
 
-Open Source Intelligence Network (OSINT) Inteligencia de fuentes abiertas, es el proceso de recopilar, analizar y utilizar, información publica accesible legalmente para obtener inteligencia útil, esta información puede estar, disponible en internet, en redes sociales, foros, y mucho más.
+**OSINT** (*Open Source Intelligence*) es recopilar, contrastar y usar información de **fuentes públicas y legales** (web, registros, redes, fugas ya agregadas de forma responsable, etc.). No sustituye a un mandato legal ni a un contrato de pentesting: el marco general está en [Legalidad del hacking](/conceptos-basicos/legalidadhacking/).
 
-Es importante destacar que la táctica se utiliza para personas expuestas en bases públicas, y con mucha huella pública.
+## Ética y límites
 
----
+- **Proporcionalidad:** recopila solo lo necesario para un fin legítimo (empleo, investigación autorizada, reducir tu propia huella).
+- **No acoso:** seguir, publicar datos para intimidar o contactar de forma obsesiva no es OSINT profesional.
+- **Datos personales:** respeta la normativa local (RGPD y equivalentes) y las políticas del cliente.
+- **Filtraciones:** comprobar si un correo apareció en brechas puede ser válido para conciencia de riesgo; **descargar o comercializar** bases filtradas suele ser ilegal.
 
-## ¿Para qué se utiliza?
-Para investigar, y buscar filtraciones, o evitar suplantaciones y mejorar la privacidad, accesibles en fuentes públicas.
+## Metodología básica
 
----
+1. **Definir objetivo y alcance** (dominio, persona pública, infra propia).
+2. **Elegir fuentes** (DNS/WHOIS, buscadores, redes, índices de servicios expuestos).
+3. **Documentar:** URL, fecha y herramienta (y captura si el informe lo requiere).
+4. **Verificar:** cruza fuentes; los homónimos y perfiles falsos son frecuentes.
 
-## Herramientas Necesarias
-Esenciales:
+Glosario: [Terminología OSINT](/osint/terminologia/). Búsqueda avanzada: [Google Dorks](/osint/googledoorks/).
 
-- Navegador Web con extensiones útiles: Wappalyzer (para identificar tecnologías webs), o buidw.
-- Google doorks y operadores de búsqueda avanzada.
-- Wayback Machine para ver versiones antiguas de páginas webs.(extensión).
-- Exif tool para extraer metadatos de archivos, sobre todo imágenes y videos.(terminal).
-- The Harvester para recolectar correos, subdominios y datos públicos desde buscadores y servicios.
-- Maigret Sherlock para buscar perfiles de usuario para buscar perfiles de usuarios en múltiples redes sociales, usando un nombre de usuario.
-- Have i been pwned? Para comprobar sí un correo electrónico a estado involucrado en filtraciones de datos.
-- Showdan para encontrar dispositivos, conectados a internet y expuestos públicamente.
-- Buscadores de imágenes como google lens, yandex o TI.
-- OSINT Framework.com
+## Navegador y tecnologías web
 
-Opcionales:
+- **[Wappalyzer](https://www.wappalyzer.com/)** — Identifica tecnologías del sitio (CMS, analytics, frameworks).
+- **[BuiltWith](https://builtwith.com/)** — Perfil tecnológico del dominio (histórico y relacionados).
 
-- Maltego para colocar relaciones entre entidades.
-- Spiderfoot muchas funciones osint en una sola herramienta.
-- foca para analizar metadatos en un documento.
-- creepy ayuda a identificar geolocalizacion.
-- datasploit conjunto de herramientas para la recolección de datos públicos.
-- Epieos para buscar datos asociados a teléfonos o números telefónicos.
-- Whatismyname web, para verificar la disponibilidad o existencia de nombres de usuario en distintas plataformas.
-- fotoforensics para análisis más profundo de imágenes y videos, útil en geolocalización o verificación de contenido.
+## Búsqueda y archivo web
 
----
+- Operadores de búsqueda: [Google Dorks](/osint/googledoorks/).
+- **[Internet Archive (Wayback Machine)](https://web.archive.org/)** — Versiones antiguas de páginas.
 
-## Socmint (Social Media Intelligent)
-Es una rama del osint, que se encarga de recopilar y analizar datos provenientes de redes sociales, foros y comunidades en línea.
+## Dominio, DNS y subdominios
 
-- Monitoreo de actividades y publicaciones.
-- Análisis de sentimientos y tendencias.
+Recolección **pasiva:** registros públicos, transparencia de certificados, agregadores. Herramienta típica:
+
+- **[theHarvester](https://github.com/laramies/theHarvester)** — Correos, hosts y subdominios desde fuentes públicas.
+
+## Correo, usuarios e identidad
+
+- **[Have I Been Pwned](https://haveibeenpwned.com/)** — Comprobar correo en filtraciones conocidas.
+- **[WhatsMyName](https://whatsmyname.app/)** — Comprobar un nombre de usuario en muchas plataformas.
+- **[Sherlock](https://github.com/sherlock-project/sherlock)** y **[Maigret](https://github.com/soxoj/maigret)** — Búsqueda de perfiles por *handle* (uso ético imprescindible).
+- **[Epieos](https://epieos.com/)** — Varios pivotes OSINT en torno a correo/teléfono (respeta TOS y leyes).
+
+## Archivos y metadatos
+
+- **[ExifTool](https://exiftool.org/)** — Metadatos en imágenes, PDF y más.
+- **[FotoForensics](https://fotoforensics.com/)** — Indicios de manipulación (p. ej. ELA).
+- Búsqueda inversa: [Google Lens](https://lens.google/), Yandex, Bing Images.
+
+## Infraestructura expuesta
+
+Motores que **indexan** servicios visibles en Internet (no sustituyen autorización para probar sistemas ajenos):
+
+- **[Shodan](https://www.shodan.io/)**
+- **[Censys](https://search.censys.io/)**
+
+## Marcos y automatización
+
+- **[OSINT Framework](https://osintframework.com/)** — Mapa de enlaces por categoría.
+- **[Maltego](https://www.maltego.com/)** — Grafos de relaciones entre entidades (producto comercial).
+- **[SpiderFoot](https://www.spiderfoot.net/)** — Automatización modular (autohospedable).
+- **[DataSploit](https://github.com/datasploit/datasploit)** — Conjunto de scripts; revisa mantenimiento antes de depender de ello.
+
+Herramientas antiguas como **creepy** suelen estar desactualizadas; prioriza proyectos con soporte activo.
+
+## SocMINT (redes sociales)
+
+Rama del OSINT centrada en **redes sociales y foros**: publicaciones públicas, hashtags, eventos. Sirve para verificación o investigaciones con mandato claro. Cruza con [Huella digital](/anonimato/huelladigital/) y [Concientización](/otros/concientizacion/) para el lado defensivo.
+
+## Herramientas generales del día a día
+
+Enlaces rápidos en [Herramientas](/otros/herramientas/) (VirusTotal, reputación de dominios, contraseñas).
