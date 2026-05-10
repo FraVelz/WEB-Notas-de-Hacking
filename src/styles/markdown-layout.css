@@ -1,0 +1,49 @@
+/**
+ * Estilos del contenido principal Starlight (.sl-markdown-content),
+ * accesibilidad (foco visible) y selección de texto.
+ *
+ * Se carga después de theme.css (ver customCss en astro.config.mjs) para usar
+ * las variables (--sl-color-*, --sl-selection-*, etc.) ya definidas.
+ */
+
+/* ── Tablas en Markdown ── Bordes alineados con la paleta (mejor contraste) */
+.sl-markdown-content table {
+  border-color: var(--sl-color-gray-4);
+}
+
+/* ── Listas (ul / ol) dentro del artículo ── Separación vertical e indentación */
+.sl-markdown-content ul,
+.sl-markdown-content ol {
+  margin: 0.5rem 0 1rem;
+  padding-left: 1.5rem;
+}
+
+/* ── Ítems de lista ── Espacio entre un <li> y el siguiente */
+.sl-markdown-content li + li {
+  margin-top: 0.35rem;
+}
+
+/* ── Código en línea (no dentro de <pre>) ── Borde sutil oscuro por defecto */
+.sl-markdown-content :not(pre) > code {
+  border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 75%, transparent);
+}
+
+/* ── Código en línea en tema claro ── Borde un poco más suave sobre fondo claro */
+:root[data-theme='light'] .sl-markdown-content :not(pre) > code {
+  border-color: color-mix(in srgb, var(--sl-color-gray-4) 55%, transparent);
+}
+
+/* ── Foco visible (accesibilidad) ── Enlaces y controles interactuables globales */
+a:focus-visible,
+summary:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+
+/* ── Selección de texto global ── Usa --sl-selection-* definidos en theme.css */
+::selection,
+::-moz-selection {
+  background: var(--sl-selection-bg);
+  color: var(--sl-selection-color);
+}

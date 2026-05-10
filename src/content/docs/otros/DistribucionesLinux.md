@@ -10,7 +10,7 @@ Podemos pensar en las distribuciones de Linux como **diferentes sucursales o fra
 
 Aunque todas comparten los mismos **componentes (empleados dedicados)**, la misma **arquitectura (estructura organizativa)** y la misma **filosofía (cultura corporativa)**, cada una ofrece sus propios productos y servicios —es decir, **paquetes de software y configuraciones personalizadas**—, todo bajo la marca y los valores unificados de **Linux**.
 
----
+***
 
 ## 1. Distribuciones populares en ciberseguridad
 - **ParrotOS**
@@ -22,7 +22,7 @@ Aunque todas comparten los mismos **componentes (empleados dedicados)**, la mism
 - **BlackArch**
 - **Pentoo**
 
----
+***
 
 ## 2. ¿Por qué elegir Linux?
 Muchos usuarios eligen Linux para sus ordenadores de escritorio por su:
@@ -41,7 +41,7 @@ Linux también es ampliamente usado como **sistema operativo de servidor** por s
 
 Además, ofrece **actualizaciones frecuentes y regulares**.
 
----
+***
 
 ## 3. Linux en ciberseguridad
 Como especialistas en **ciberseguridad**, preferimos Linux porque su **código fuente está disponible** para análisis y personalización.<br /> Gracias a esto, podemos **optimizar y configurar nuestras distribuciones** según nuestras necesidades específicas.
@@ -54,7 +54,7 @@ Podemos usar estas distribuciones en muchos entornos:
 - Computación en la nube
 - Computación de escritorio
 
----
+***
 
 ## 4. Principales diferencias entre distribuciones
 Las diferencias entre las distintas distribuciones de Linux radican en:
@@ -69,7 +69,7 @@ Las diferencias entre las distintas distribuciones de Linux radican en:
 - **Debian** → ideal para servidores y sistemas embebidos.<br />
 - **Red Hat Enterprise Linux** y **CentOS** → populares en entornos empresariales.
 
----
+***
 
 ## 5. Debian
 **Debian** es una distribución de Linux ampliamente utilizada y respetada, conocida por su **estabilidad** y **fiabilidad**.<br /> Se utiliza en diversos entornos: ordenadores de escritorio, servidores y sistemas embebidos.
@@ -98,11 +98,11 @@ Aunque en ocasiones ha presentado vulnerabilidades, la comunidad de Debian respo
 ### Seguridad y privacidad
 Debian tiene un fuerte compromiso con la **seguridad** y la **privacidad**, y cuenta con un historial muy sólido en estos aspectos.
 
----
+***
 
 ## 6. Conclusión
 **Debian** es una distribución de Linux **versátil y confiable**, ampliamente utilizada en múltiples entornos.<br /> Su estabilidad, fiabilidad y compromiso con la seguridad la convierten en una opción muy atractiva, especialmente para el ámbito de la **ciberseguridad**, como también su **gran comunidad**.
 
----
+***
 
-**Autor:** Fravelz<br /> **Colaborador:** <span className="citation" data-cites="studentethical">@studentethical</span> (Student Ethical)
+**Autor:** Fravelz<br /> **Colaborador:** <span class="citation" data-cites="studentethical">@studentethical</span> (Student Ethical)

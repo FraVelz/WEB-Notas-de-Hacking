@@ -10,7 +10,7 @@ A diferencia de otros sistemas operativos, Linux es **libre, de código abierto*
 
 En ciberseguridad, Linux es un pilar por su **robustez, flexibilidad y seguridad**, siendo ampliamente usado en servidores, dispositivos embebidos, mainframes y sistemas móviles como Android.
 
----
+***
 
 ## 1. Historia
 - **1970**: Ken Thompson y Dennis Ritchie (trabajaban en AT&amp;T). ellos crean **Unix**.
@@ -21,7 +21,7 @@ En ciberseguridad, Linux es un pilar por su **robustez, flexibilidad y seguridad
 
 Ejemplos de distros populares: Ubuntu, Debian, Fedora, OpenSUSE, Manjaro, Gentoo, Red Hat, Linux Mint, Elementary y Parrot OS (enfocada en ciberseguridad).
 
----
+***
 
 ## 2. Filosofía de Linux
 Linux se basa en la **simplicidad, modularidad y apertura**. Su enfoque es crear herramientas pequeñas que realizan una tarea bien definida y que pueden combinarse.
@@ -30,12 +30,12 @@ Linux se basa en la **simplicidad, modularidad y apertura**. Su enfoque es crear
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 3. Componentes de Linux
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 4. Arquitectura de Linux
 Linux se organiza en capas:
@@ -45,14 +45,14 @@ Linux se organiza en capas:
 - **Shell:** Intérprete de comandos (CLI).
 - **System Utilities:** Herramientas y aplicaciones que interactúan con el sistema.
 
----
+***
 
 ## 5. Jerarquía del Sistema de Archivos (FHS)
 Linux organiza los archivos en una **estructura en forma de árbol**, con / como raíz.
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 **Analogía**, imagina Linux como una empresa:
 
@@ -61,12 +61,12 @@ Linux organiza los archivos en una **estructura en forma de árbol**, con / como
 - El **shell** es la recepción, donde das órdenes.
 - La **filosofía** es la cultura de trabajo: simplicidad, eficiencia y cooperación.
 
----
+***
 
 ## 6. Qué es comando?
 Es un nombre que se coloca en la terminal, que ejecuta varias líneas de código.
 
----
+***
 
 ## 7. Variables de entorno
 son variables de datos por defecto en la terminal, puedes ver cuáles son con el comando “env”.
@@ -75,14 +75,14 @@ son variables de datos por defecto en la terminal, puedes ver cuáles son con el
 
 para visualizar puedes usar “echo $name”. También puedes concatenar “name = $name:text” quedaría el texto de la variable name como “data:text”
 
----
+***
 
 ## 8. Comandos de Linux
 <!-- Tabla convertida manualmente -->
 
 Y muchos más comandos, y variaciones de los mismos…
 
----
+***
 
 ## 9. Permisos y usuarios
 En Linux, **los permisos controlan quién puede leer, escribir o ejecutar un archivo**. Cada archivo tiene permisos para:
@@ -92,10 +92,16 @@ En Linux, **los permisos controlan quién puede leer, escribir o ejecutar un arc
 - **Otros (o)** – todos los demás usuarios
 
 ### Ver permisos
-<Codigo code="ls -l" language="bash" />
+
+```bash
+ls -l
+```
+
 Salida típica:
 
-<Codigo code="-rwxr-xr--" language="bash" />
+```bash
+-rwxr-xr--
+```
 Interpretación:
 
 - r → leer (read)
@@ -109,7 +115,10 @@ Interpretación:
 - Otros: **r–** (solo leer)
 
 ### Cambiar permisos
-<Codigo code="chmod 755 archivo.sh" language="bash" />
+
+```bash
+chmod 755 archivo.sh
+```
 - 7 → rwx
 - 5 → r-x (Esto da permisos completos al dueño, y solo lectura/ejecución al resto.)
 
@@ -120,8 +129,11 @@ chmod g-w archivo.txt # Quitar permiso de escritura al grupo
 ```
 
 ### Cambiar propietario
-<Codigo code="chown usuario:grupo archivo.txt" language="bash" />
----
+
+```bash
+chown usuario:grupo archivo.txt
+```
+***
 
 ## 10. Sudo
 El comando sudo en Linux y sistemas tipo Unix significa **“superuser do”** (hacer como superusuario). Básicamente, permite ejecutar comandos con **privilegios de administrador**, incluso sí tú usuario normal no los tiene. Esto es útil porque algunas acciones (como instalar programas, modificar archivos del sistema o cambiar configuraciones importantes) requieren permisos elevados para proteger el sistema de cambios accidentales. Así funciona paso a paso:
@@ -129,7 +141,10 @@ El comando sudo en Linux y sistemas tipo Unix significa **“superuser do”** (
 ### 1. <strong>Ejecutar un comando como administrador</strong>
 Cuando escribes:
 
-<Codigo code="sudo comando" language="bash" />
+```bash
+sudo comando
+```
+
 Linux hace lo siguiente:
 
 - Te pregunta la contraseña de tú usuario (no la del root) sí no la has usado sudo recientemente.
@@ -137,7 +152,10 @@ Linux hace lo siguiente:
 - Sí está permitido, ejecuta el comando con **permisos de root**, es decir, como sí fueras el administrador del sistema.
 
 ### 2. <strong>Ejemplo práctico</strong>
-<Codigo code="sudo apt update" language="bash" />
+
+```bash
+sudo apt update
+```
 - apt update actualiza la lista de paquetes en sistemas basados en Debian (Ubuntu, Mint, etc.).
 - Normalmente un usuario normal no puede cambiar la base de datos de paquetes.
 - sudo permite hacerlo porque ejecuta el comando con permisos de root.
@@ -145,11 +163,15 @@ Linux hace lo siguiente:
 ### 3. <strong>Comando interactivo</strong>
 Sí escribes:
 
-<Codigo code="sudo -i" language="bash" />
+```bash
+sudo -i
+```
 
 o
 
-<Codigo code="sudo su" language="bash" />
+```bash
+sudo su
+```
 
 - Obtienes un **shell de root**, es decir, todos los comandos que escribas después se ejecutan con permisos de administrador.
 - Esto es más riesgoso porque cualquier error puede afectar gravemente el sistema.
@@ -158,9 +180,9 @@ o
 - sudo recuerda tú contraseña durante unos minutos (por defecto 5) para que no tengas que escribirla cada vez.
 - Sí tú usuario no está en sudoers, no podrás usarlo.
 
----
+***
 
 <blockquote>
-**Autor:** Fravelz<br /> **Colaborador:** <span className="citation" data-cites="studentethical">@studentethical</span> (Student Ethical)
+**Autor:** Fravelz<br /> **Colaborador:** <span class="citation" data-cites="studentethical">@studentethical</span> (Student Ethical)
 
 </blockquote>

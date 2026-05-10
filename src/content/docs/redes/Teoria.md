@@ -9,7 +9,7 @@ Cursos videos de YouTube:
 - [Ir curso de YouTube Contando bits - Redes Informáticas](https://www.youtube.com/watch?v=OLSKCWjI778)
 - [Ir curso de YouTube Hixec - Redes para ciberseguridad](https://www.youtube.com/watch?v=7ejIdyu8hug)
 
----
+***
 
 ## 1. base (fundamentos)
 **¿Qué son las redes?**
@@ -39,72 +39,54 @@ Cursos videos de YouTube:
 - Comunicación.
 - Almacenamiento de datos.
 
----
+***
 
 ## 2. Historia de las redes
-- **Década de 1960 – Orígenes** <Lista> Se crean las primeras ideas de redes para compartir información entre computadoras.
-- **ARPANET (1969)**: La primera red a gran escala, financiada por el Departamento de Defensa de EE. UU., conectaba universidades y laboratorios.
-- Objetivo: comunicación eficiente y compartir recursos informáticos.
 
-</li>
-</Lista>
-<li>
-**Década de 1970 – Protocolos y estandarización**
+- **Década de 1960 – Orígenes**: se crean las primeras ideas de redes para compartir información entre computadoras.
+- **ARPANET (1969)**: la primera red a gran escala, financiada por el Departamento de Defensa de EE. UU., conectaba universidades y laboratorios.
+- **Objetivo**: comunicación eficiente y compartir recursos informáticos.
+- **Década de 1970 – Protocolos y estandarización**
+  - Se desarrolla **TCP/IP**: protocolo que permite que diferentes redes se comuniquen.
+  - Se crean redes locales (**LANs**) para conectar computadoras dentro de una misma institución.
+- **Década de 1980 – Expansión**
+  - Aparición de **Ethernet**: tecnología que facilita la comunicación en redes locales.
+  - Nace **Internet como red de redes**, conectando múltiples LANs y WANs (redes de área amplia).
+- **Década de 1990 – Internet comercial**
+  - La red se abre a fines comerciales y al público general.
+  - Surge la **World Wide Web (WWW)** con navegadores web.
+  - Popularización del correo electrónico y servicios de mensajería.
+- **Años 2000 en adelante – Redes modernas**
+  - Expansión de **Wi-Fi** y **redes móviles (3G, 4G, 5G)**.
+  - Redes sociales, streaming y servicios en la nube transforman la forma de comunicarse.
+  - Mayor enfoque en seguridad y privacidad.
 
-- Se desarrolla **TCP/IP**: protocolo que permite que diferentes redes se comuniquen.
-- Se crean redes locales (**LANs**) para conectar computadoras dentro de una misma institución.
-
-</li>
-<li>
-**Década de 1980 – Expansión**
-
-- Aparición de **Ethernet**: tecnología que facilita la comunicación en redes locales.
-- Nace **Internet como red de redes**, conectando múltiples LANs y WANs (redes de área amplia).
-
-</li>
-<li>
-**Década de 1990 – Internet comercial**
-
-- La red se abre a fines comerciales y al público general.
-- Surge la **World Wide Web (WWW)** con navegadores web.
-- Popularización del correo electrónico y servicios de mensajería.
-
-</li>
-<li>
-**Años 2000 en adelante – Redes modernas**
-
-- Expansión de **Wi-Fi** y **redes móviles (3G, 4G, 5G)**.
-- Redes sociales, streaming y servicios en la nube transforman la forma de comunicarse.
-- Mayor enfoque en seguridad y privacidad.
-
-</li>
----
+***
 
 ## 3. Modelos de redes
 Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos:
 
 ### <strong>Modelo OSI (Open Systems Interconnection)</strong>
-- Divide la comunicación en **7 capas**: <Lista> **Física**: cables, señales eléctricas o de luz.
-- **Enlace de datos**: control de errores y transmisión entre nodos.
-- **Red**: direccionamiento y rutas (ej. IP).
-- **Transporte**: garantiza entrega correcta de datos (ej. TCP).
-- **Sesión**: mantiene la conexión entre aplicaciones.
-- **Presentación**: traduce datos (ej. cifrado, formato).
-- **Aplicación**: programas que usan la red (ej. navegador, correo).
 
-</li>
-</Lista>
+- Divide la comunicación en **7 capas**:
+  - **Física**: cables, señales eléctricas o de luz.
+  - **Enlace de datos**: control de errores y transmisión entre nodos.
+  - **Red**: direccionamiento y rutas (ej. IP).
+  - **Transporte**: garantiza entrega correcta de datos (ej. TCP).
+  - **Sesión**: mantiene la conexión entre aplicaciones.
+  - **Presentación**: traduce datos (ej. cifrado, formato).
+  - **Aplicación**: programas que usan la red (ej. navegador, correo).
+
 ### <strong>Modelo TCP/IP</strong>
+
 - Más práctico y usado en Internet.
 - Tiene **4 capas**:
-- **Acceso a red**: transmisión física de datos.
-- **Internet**: direccionamiento y enrutamiento (IP).
-- **Transporte**: comunicación confiable (TCP) o rápida (UDP).
-- **Aplicación**: servicios de red como HTTP, FTP, SMTP.
+  - **Acceso a red**: transmisión física de datos.
+  - **Internet**: direccionamiento y enrutamiento (IP).
+  - **Transporte**: comunicación confiable (TCP) o rápida (UDP).
+  - **Aplicación**: servicios de red como HTTP, FTP, SMTP.
 
-</Lista >
-
----
+***
 
 ## 4. Tipos de redes según su alcance
 - **LAN (Local Area Network)**: red local, p. ej., en una casa o escuela.
@@ -112,7 +94,7 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
 - **MAN (Metropolitan Area Network)**: cubre una ciudad.
 - **PAN (Personal Area Network)**: dispositivos cercanos, p. ej., Bluetooth.
 
----
+***
 
 ## 5. Arquitectura Cliente-Servidor
 La **arquitectura cliente-servidor** es un modelo de diseño de sistemas en el que las tareas se distribuyen entre dos tipos de entidades: **clientes** y **servidores**.
@@ -144,38 +126,25 @@ Ejemplo práctico: Cuando abres YouTube:
 - Sí el servidor falla, los clientes quedan sin servicio.
 - Requiere buena infraestructura para manejar muchos clientes.
 
----
+***
 
 ## 6. Arquitectura de Red
 La **arquitectura de red** describe cómo los **dispositivos y servicios están organizados y conectados** para comunicarse. La arquitectura cliente-servidor es un tipo de arquitectura de red, pero existen otros modelos, como **peer-to-peer (P2P)**.
 
 ### <strong>Tipos comunes de arquitectura de red:</strong>
-- **Cliente-Servidor (como vimos):** <Lista> Un servidor central da servicios a múltiples clientes.
 
-</li>
-<li>
-**Peer-to-Peer (P2P):**
+- **Cliente-Servidor (como vimos):** un servidor central da servicios a múltiples clientes.
+- **Peer-to-Peer (P2P):**
+  - Todos los dispositivos son iguales, pueden **servir y pedir recursos**.
+  - Ejemplo: aplicaciones de torrents.
+- **Red en estrella:**
+  - Todos los dispositivos están conectados a un **hub o switch central**.
+  - Muy usado en redes locales (LAN).
+- **Red en malla:**
+  - Cada dispositivo está conectado a varios otros dispositivos.
+  - Alta confiabilidad y redundancia.
 
-- Todos los dispositivos son iguales, pueden **servir y pedir recursos**.
-- Ejemplo: aplicaciones de torrents.
-
-</li>
-<li>
-**Red en estrella:**
-
-- Todos los dispositivos están conectados a un **hub o switch central**.
-- Muy usado en redes locales (LAN).
-
-</li>
-<li>
-**Red en malla:**
-
-- Cada dispositivo está conectado a varios otros dispositivos.
-- Alta confiabilidad y redundancia.
-
-</li>
-</Lista>
----
+***
 
 ## 7. Protocolos de red
 Un **protocolo de red** es un conjunto de **reglas y estándares** que permiten que los dispositivos se comuniquen correctamente a través de una red.
@@ -192,31 +161,22 @@ Un **protocolo de red** es un conjunto de **reglas y estándares** que permiten 
 Nota: Muchos protocolos trabajan **juntos en capas** según el modelo OSI o TCP/IP.
 
 </blockquote>
----
+***
 
 ## 8. Comunicaciones en Redes
 La **comunicación en redes** es el proceso mediante el cual los **dispositivos intercambian información** siguiendo protocolos.
 
 ### <strong>Tipos de comunicación:</strong>
-- **Unicast:** <Lista> Comunicación de un dispositivo a otro específico.
-- Ejemplo: enviar un mensaje privado.
 
-</li>
-<li>
-**Broadcast:**
+- **Unicast:** comunicación de un dispositivo a otro específico.
+  - Ejemplo: enviar un mensaje privado.
+- **Broadcast:**
+  - Comunicación de un dispositivo a **todos** los dispositivos de la red.
+  - Ejemplo: anuncios dentro de una red local.
+- **Multicast:**
+  - Comunicación a un **grupo específico** de dispositivos.
+  - Ejemplo: transmisión de video en vivo a varios usuarios.
 
-- Comunicación de un dispositivo a **todos** los dispositivos de la red.
-- Ejemplo: anuncios dentro de una red local.
-
-</li>
-<li>
-**Multicast:**
-
-- Comunicación a un **grupo específico** de dispositivos.
-- Ejemplo: transmisión de video en vivo a varios usuarios.
-
-</li>
-</Lista>
 ### <strong>Medios de transmisión:</strong>
 - **Alámbricos:** Cable Ethernet, fibra óptica.
 - **Inalámbricos:** Wi-Fi, Bluetooth, redes móviles (4G/5G).
@@ -227,7 +187,7 @@ La **comunicación en redes** es el proceso mediante el cual los **dispositivos 
 - **Recepción y verificación** de errores.
 - **Entrega** al dispositivo o aplicación correcta.
 
----
+***
 
 ## 9. Protocolos de Aplicación
 Los **protocolos de aplicación** son reglas que permiten a los **programas o aplicaciones** comunicarse a través de la red. Trabajan en la **capa más alta** de los modelos de red (OSI o TCP/IP).
@@ -244,25 +204,21 @@ Los **protocolos de aplicación** son reglas que permiten a los **programas o ap
 Nota: Cada protocolo de aplicación funciona **encima de TCP o UDP** para garantizar que los datos lleguen correctamente.
 
 </blockquote>
----
+***
 
 ## 10. Direcciones IP
 Una **dirección IP (Internet Protocol)** es un **identificador único** que permite que un dispositivo se comunique en una red. Funciona como una **dirección postal** para enviar información.
 
 ### <strong>Tipos de direcciones IP:</strong>
-- **IPv4:** <Lista> Formato: 192.168.1.10 (números de 0 a 255).
-- Ejemplo: 172.16.0.5
-- Tiene espacio limitado (~4.000 millones de direcciones).
 
-</li>
-<li>
-**IPv6:**
+- **IPv4:**
+  - Formato: 192.168.1.10 (números de 0 a 255).
+  - Ejemplo: 172.16.0.5
+  - Tiene espacio limitado (~4.000 millones de direcciones).
+- **IPv6:**
+  - Formato: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
+  - Diseñada para soportar millones de dispositivos más.
 
-- Formato: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
-- Diseñada para soportar millones de dispositivos más.
-
-</li>
-</Lista>
 ### <strong>Clases de direcciones IP (IPv4):</strong>
 - **Públicas:** Únicas en Internet, accesibles desde cualquier lugar.
 - **Privadas:** Usadas en redes locales, no accesibles directamente desde Internet. Ej: 192.168.0.0/16
@@ -277,10 +233,9 @@ Una **dirección IP (Internet Protocol)** es un **identificador único** que per
 <blockquote>
 Ejemplo práctico:
 
-- Quiero abrir un sitio web: <Lista> Mi navegador usa **HTTP/HTTPS** (protocolo de aplicación).
-- Se conecta a la **IP del servidor web** (dirección IP).
-- Los datos llegan gracias a TCP/IP.
+- Quiero abrir un sitio web:
+  - Mi navegador usa **HTTP/HTTPS** (protocolo de aplicación).
+  - Se conecta a la **IP del servidor web** (dirección IP).
+  - Los datos llegan gracias a TCP/IP.
 
-</li>
-</Lista>
 </blockquote>

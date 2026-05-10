@@ -6,7 +6,7 @@ description: Funciones - Notas de hacking y ciberseguridad.
 # Funciones, Variables y Argumentos en Bash Script
 Este documento explica como usar **funciones**, **variables globales y locales**, y **argumentos**.
 
----
+***
 
 ## 1. Definición de funciones
 En Bash, una función agrupa comandos que puedes reutilizar. Existen dos formas equivalentes:
@@ -26,7 +26,7 @@ echo "Hola desde la función 2"
 mi_funcion
 ```
 
----
+***
 
 ## 2. Parámetros en funciones
 Los argumentos se manejan igual que en un script:
@@ -42,7 +42,7 @@ saludar "Francisco" "Vélez"
 # → Hola Francisco Vélez
 ```
 
----
+***
 
 ## 3. Devolver valores
 En Bash, return solo devuelve **códigos de salida (= éxito, ≠0 = error)**. Para devolver datos reales se usa echo y **captura de comandos**:
@@ -55,7 +55,7 @@ echo "La suma es: $resultado"
 # → La suma es: 12
 ```
 
----
+***
 
 ## 4. Variables Globales y Locales
 Por defecto, todas las variables son **globales**. Para que existan solo dentro de la función, usa local.
@@ -77,7 +77,7 @@ echo "Después: $mensaje"
 
 Usa **local** para evitar modificar variables globales sin querer.
 
----
+***
 
 ## 5. Argumentos en scripts
 Cuando ejecutas un script, puedes pasarle argumentos:
@@ -96,7 +96,7 @@ Variables especiales:
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 6. Validaciones útiles
 **Validar número de argumentos:**
@@ -123,7 +123,7 @@ exit 1
 fi
 ```
 
----
+***
 
 ## 7. Recorrer argumentos
 ### Con for
@@ -144,7 +144,7 @@ done
 
 shift 2 eliminaría los dos primeros argumentos de golpe.
 
----
+***
 
 ## 8. Ejemplo práctico: mini calculadora
 ```bash
@@ -168,7 +168,7 @@ resta) echo "Resultado: $(restar $1 $2)" ;;
 esac
 ```
 
----
+***
 
 ## En resumen
 <!-- Tabla convertida manualmente -->

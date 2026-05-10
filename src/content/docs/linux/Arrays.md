@@ -4,7 +4,7 @@ description: Arrays - Notas de hacking y ciberseguridad.
 ---
 
 # Arrays en bash script
----
+***
 
 ## Temario
 ## 1. Definir arrays
@@ -18,105 +18,141 @@ numeros[1]=20
 numeros[2]=30
 ```
 
----
+***
 
 ## 2. Acceder a elementos
-<Codigo language="bash" code=
-{"echo \"${nombres[0]}\" # Ana\necho \"${nombres[2]}\" # Pedro"}
-/>
+
+```bash
+echo "${nombres[0]}" # Ana
+echo "${nombres[2]}" # Pedro
+```
 
 Si usas un índice que no existe:
 
-<Codigo language="bash" code=
-{"echo \"${nombres[5]}\" # vacío"}
-/>
+```bash
+echo "${nombres[5]}" # vacío
+```
 
----
+***
 
 ## 3. Mostrar todos los elementos
-<Codigo language="bash" code=
-{"echo \"${nombres[@]}\" # Ana Luis Pedro\necho \"${numeros[*]}\" # 10 20 30"}
-/>
 
----
+```bash
+echo "${nombres[@]}" # Ana Luis Pedro
+echo "${numeros[*]}" # 10 20 30
+```
+
+***
 
 ## 4. Tamaño del array
-<Codigo language="bash" code=
-{"echo \"$\" # 3"}
-/>
 
----
+```bash
+echo "${#nombres[@]}" # 3
+```
+
+***
 
 ## 5. Recorrer arrays
 ### Con for
-<Codigo language="bash" code=
-{"for nombre in \"${nombres[@]}\"; do\necho \"Hola $nombre\"\ndone"}
-/>
+
+```bash
+for nombre in "${nombres[@]}"; do
+  echo "Hola $nombre"
+done
+```
 
 Salida:
 
-<Codigo language="bash" code=
-{`Hola Ana
+```bash
+Hola Ana
 Hola Luis
-Hola Pedro`}
-/>
+Hola Pedro
+```
 
 ### Con índices
-<Codigo language="bash" code=
-{"for i in \"${!nombres[@]}\"; do\n echo \"Índice: $i → Valor: ${nombres[$i]}\"\ndone"}
-/>
 
----
+```bash
+for i in "${!nombres[@]}"; do
+  echo "Índice: $i → Valor: ${nombres[$i]}"
+done
+```
+
+***
 
 ## 6. Añadir y modificar elementos
-<Codigo language="bash" code=
-{`nombres+=("Carla") # Agregar al final
-nombres[1]="Lucía" # Modificar el índice 1`}
-/>
 
----
+```bash
+nombres+=("Carla") # Agregar al final
+nombres[1]="Lucía" # Modificar el índice 1
+```
+
+***
 
 ## 7. Eliminar elementos
-<Codigo language="bash" code=
-{`unset nombres[1] # Elimina solo el índice 1
-unset nombres # Borra todo el array`}
-/>
 
----
+```bash
+unset nombres[1] # Elimina solo el índice 1
+unset nombres    # Borra todo el array
+```
+
+***
 
 ## 8. Subarrays (rebanadas)
-<Codigo language="bash" code=
-{"echo \"${nombres[@]:1:2}\" # desde índice 1, tomar 2 elementos"}
-/>
 
----
+```bash
+echo "${nombres[@]:1:2}" # desde índice 1, tomar 2 elementos
+```
+
+***
 
 ## 9. Arrays asociativos (tipo diccionario)
 Disponibles en **Bash 4+**.
 
-<Codigo language="bash" code=
-{"declare -A capitales\ncapitales[Colombia]=\"Bogotá\"\ncapitales[México]=\"CDMX\"\ncapitales[España]=\"Madrid\"\n\necho \"${capitales[Colombia]}\" # Bogotá\n\n# Recorrer claves y valores\nfor pais in \"${!capitales[@]}\"; do\n echo \"$pais → ${capitales[$pais]}\"\ndone"}
-/>
+```bash
+declare -A capitales
+capitales[Colombia]="Bogotá"
+capitales[México]="CDMX"
+capitales[España]="Madrid"
+
+echo "${capitales[Colombia]}" # Bogotá
+
+# Recorrer claves y valores
+for pais in "${!capitales[@]}"; do
+  echo "$pais → ${capitales[$pais]}"
+done
+```
 
 Salida:
 
-<Codigo language="bash" code=
-{`México → CDMX
+```bash
+México → CDMX
 España → Madrid
-Colombia → Bogotá`}
-/>
+Colombia → Bogotá
+```
 
----
+***
 
 ## 10. Cosas útiles
-- **Índice del último elemento**: <Codigo language="bash" code= {"echo \"${!nombres[@]}\" # muestra todos los índices"} />
-- **Ordenar un array**: <Codigo language="bash" code= {"numeros=(3 8 1)\nsorted=($(printf \"%s\n\" \"${numeros[@]}\" | sort -n))\necho \"${sorted[@]}\" # 1 3 8"} />
 
----
+- **Índice del último elemento**:
+
+  ```bash
+  echo "${!nombres[@]}" # muestra todos los índices
+  ```
+
+- **Ordenar un array**:
+
+  ```bash
+  numeros=(3 8 1)
+  sorted=($(printf '%s\n' "${numeros[@]}" | sort -n))
+  echo "${sorted[@]}" # 1 3 8
+  ```
+
+***
 
 En resumen:
 
-- {"array=(val1 val2 val3) → define."}
-- {"${array[i]} → acceder."}
-- {"${array[@]} → todos los valores."}
-- {"declare -A → arrays asociativos."}
+- `array=(val1 val2 val3)` → define.
+- `${array[i]}` → acceder.
+- `${array[@]}` → todos los valores.
+- `declare -A` → arrays asociativos.

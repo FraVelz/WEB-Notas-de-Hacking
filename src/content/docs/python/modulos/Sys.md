@@ -4,7 +4,7 @@ description: Sys - Notas de hacking y ciberseguridad.
 ---
 
 # Sys en Python
----
+***
 
 ## ¿Qué es sys?
 sys es un módulo integrado que ofrece **interfaz con el intérprete de Python** y el entorno donde corre (argumentos de línea de comandos, rutas, streams estándar, información de la plataforma, manejo de errores, configuración del intérprete, etc.). Se importa con:
@@ -130,7 +130,7 @@ Disponible solo en Windows; usar hasattr(sys, "getwindowsversion") para comproba
 ### sys.getswitchinterval() / sys.setswitchinterval()
 Controla la frecuencia de cambio de contexto entre threads (CPython).
 
----
+***
 
 ## Ejemplos prácticos
 ### 1) Script que procesa CLI simple

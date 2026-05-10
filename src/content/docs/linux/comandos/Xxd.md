@@ -4,19 +4,19 @@ description: Xxd - Notas de hacking y ciberseguridad.
 ---
 
 # Xxd en Linux
----
+***
 
 ## Que es el comando xxd
 El comando xxd en Linux (y otros sistemas Unix) **convierte datos binarios en una representación hexadecimal** y también puede hacer lo contrario (convertir de hexadecimal a binario). Es muy útil para inspeccionar o editar archivos binarios, ver bytes en formato legible o reconstruir archivos desde texto hexadecimal.
 
----
+***
 
 ## Sintaxis básica
 ```bash
 xxd [opciones] [archivo]
 ```
 
----
+***
 
 ## Ejemplos comunes
 ### 1. Ver un archivo en formato hexadecimal
@@ -33,7 +33,7 @@ Muestra el contenido de archivo.bin así:
 - Luego vienen los bytes en formato hex.
 - A la derecha aparece la interpretación ASCII (sí los bytes son imprimibles).
 
----
+***
 
 ### 2. Convertir de binario a texto hexadecimal
 ```bash
@@ -42,7 +42,7 @@ cat archivo | xxd
 
 Convierte los bytes de la entrada estándar en texto hexadecimal.
 
----
+***
 
 ### 3. Convertir de texto hexadecimal a binario
 ```bash
@@ -52,7 +52,7 @@ cat archivo_hex.txt | xxd -r > archivo_original
 - -r significa **reverse** (revertir).
 - Esto toma una representación en hex (por ejemplo, hecha por xxd) y reconstruye el archivo binario original.
 
----
+***
 
 ### 4. Mostrar solo los bytes (sin dirección ni texto ASCII)
 ```bash
@@ -66,7 +66,7 @@ Salida “plana” (plain):
 
 Perfecta para copiar y pegar en scripts o codificaciones.
 
----
+***
 
 ### 5. Ver solo los primeros bytes
 ```bash
@@ -75,7 +75,7 @@ xxd -l 16 archivo.bin
 
 Muestra solo los primeros 16 bytes.
 
----
+***
 
 ## En resumen
 <!-- Tabla convertida manualmente -->

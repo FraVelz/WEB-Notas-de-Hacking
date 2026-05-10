@@ -4,7 +4,7 @@ description: Conceptos Basicos - Notas de hacking y ciberseguridad.
 ---
 
 # Conceptos Basicos
----
+***
 
 ## 0. Seguridad de la información Vs Seguridad informática Vs Ciberseguridad
 **Seguridad de la información**: Procedimientos de medidas para asegurar los datos independientemente en que formato estén.
@@ -13,19 +13,19 @@ description: Conceptos Basicos - Notas de hacking y ciberseguridad.
 
 **Ciberseguridad**: Proteger los datos e información en formato virtual (digitales).
 
----
+***
 
 ## 1. ¿Qué es?
 Es la práctica de proteger sistemas, redes, datos y programas frente a ataques, o accesos no autorizados.
 
----
+***
 
 ## 2. Objetivos
 - **Confidencialidad:** Solo las personas autorizadas acceden a la información.
 - **Integridad:** La información no puede ser alterada sin permiso.
 - **Disponibilidad:** Los sistemas y datos deben estar accesibles cuando se necesiten.
 
----
+***
 
 ## 3. Terminologías
 ### Exploit
@@ -93,7 +93,7 @@ Cualquier tipo de circunstancia posible que se pueda manifestar donde se pueda a
 ### Riesgo
 Probabilidad o posibilidad que una amenaza se materialice y afecte al sistema en cuestión, aprovechándose de una vulnerabilidad.
 
----
+***
 
 ## 4. Amenazas comunes
 - **Malware:** Software malicioso (virus, troyanos, gusanos, ransomware, spyware).
@@ -102,7 +102,7 @@ Probabilidad o posibilidad que una amenaza se materialice y afecte al sistema en
 - **Ataques DDoS:** sobrecargar un servidor para dejarlo fuera de servicio.
 - **Exploits:** Aprovechar vulnerabilidades en software y sistemas.
 
----
+***
 
 ## 5. Vectores de ataque
 Son los caminos que usan los atacantes:
@@ -113,7 +113,7 @@ Son los caminos que usan los atacantes:
 - Aplicaciones maliciosas.
 - Dispositivos externos (USB).
 
----
+***
 
 ## 6. Buenas prácticas de seguridad
 - Usar contraseñas seguras (y diferentes en cada cuenta).
@@ -123,7 +123,7 @@ Son los caminos que usan los atacantes:
 - Usar VPN en redes públicas.
 - No haga clic en enlaces sospechosos.
 
----
+***
 
 ## 7. Áreas de ciberseguridad
 - **Seguridad de Redes:** Proteger tráfico de datos.
@@ -133,7 +133,7 @@ Son los caminos que usan los atacantes:
 - **Ciberinteligencia:** Detección y análisis de amenazas.
 - **Hacking Ético:** Buscar vulnerabilidades para fortalecer sistemas.
 
----
+***
 
 ## 8. Tipos de hackers (por su actuar)
 - **White hat:** Éticos, ayudan a mejorar la seguridad.
@@ -142,7 +142,7 @@ Son los caminos que usan los atacantes:
 
 Normalmente a los “hackers de sombrero, negro o gris” se les da el nombre de ciberdelincuentes.
 
----
+***
 
 ## 9. Tipos de hackers (por su rol)
 - **Red team:** Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u organización.
@@ -151,7 +151,7 @@ Normalmente a los “hackers de sombrero, negro o gris” se les da el nombre de
 
 Existen más tipos de hackers por su rol, pero son muy desconocidos normalmente en el mundo laboral, y comunidades onlines.
 
----
+***
 
 ## 10. Herramientas básicas en ciberseguridad
 - **Wireshark:** Análisis de tráfico de red.
@@ -159,7 +159,7 @@ Existen más tipos de hackers por su rol, pero son muy desconocidos normalmente 
 - **Metasploit:** Pruebas de penetración.
 - **Kali Linux:** Sistema operativo con herramientas de hacking ético, se puede utilizar otros no importa, pero kali ya viene con las herramientas incluidas.
 
----
+***
 
 Para conocer muchos más conceptos y fortalecer los aprendidos, también esta este video de YouTube:
 

@@ -1,4 +1,166 @@
 ---
-// Redirige al inicio cuando la página no existe
-return Astro.redirect('/');
+import "../styles/theme.css";
+
+Astro.response.status = 404;
+
+const baseTrailing = `${import.meta.env.BASE_URL.replace(/\/?$/, "/")}`;
+const faviconHref = `${baseTrailing}favicon.png`;
 ---
+
+<!doctype html>
+
+<html lang="es" class="page-404">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Lee starlight-theme como ThemeProvider de Starlight: light/dark, auto (''), u oscuro si nunca hubo valor. -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored =
+            typeof localStorage !== "undefined"
+              ? localStorage.getItem("starlight-theme")
+              : null;
+          var theme;
+          if (stored === "light") {
+            theme = "light";
+          } else if (stored === "dark") {
+            theme = "dark";
+          } else if (stored === "") {
+            theme = window.matchMedia("(prefers-color-scheme: light)").matches
+              ? "light"
+              : "dark";
+          } else {
+            theme = "dark";
+          }
+          document.documentElement.dataset.theme =
+            theme === "light" ? "light" : "dark";
+        } catch {
+          document.documentElement.dataset.theme = "dark";
+        }
+      })();
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href={faviconHref} />
+
+    <title>404 — Notas de Hacking</title>
+
+    <meta
+      name="description"
+      content="Página no encontrada — Notas de Hacking."
+    />
+  </head>
+
+  <body>
+    <main class="err">
+      <p class="err__code">404</p>
+      <h1 class="err__title">Página no encontrada</h1>
+
+      <p class="err__text">
+        La URL no existe o fue movida. Vuelve al inicio para seguir navegando
+        las notas.
+      </p>
+      <a class="err__link" href={baseTrailing}>Ir al inicio</a>
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  ::selection,
+  ::-moz-selection {
+    background: var(--sl-selection-bg);
+    color: var(--sl-selection-color);
+  }
+
+  html.page-404,
+  html.page-404 body {
+    margin: 0;
+  }
+
+  html.page-404 body {
+    box-sizing: border-box;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+    background: var(--sl-color-black);
+    color: var(--sl-color-gray-2);
+
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.page-404 .err {
+    max-width: 28rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  html.page-404 .err__code {
+    margin: 0 0 0.5rem;
+    font-family:
+      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 4rem;
+    line-height: 1.5;
+    color: var(--sl-color-accent);
+  }
+
+  html.page-404 .err__title {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--sl-color-gray-1);
+  }
+
+  html.page-404 .err__text {
+    margin: 0 0 2rem;
+    line-height: 1.625;
+    color: var(--sl-color-gray-3);
+  }
+
+  html.page-404 .err__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--sl-color-accent);
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  html.page-404 .err__link:hover {
+    opacity: 0.8;
+  }
+
+  html.page-404 .err__link:focus {
+    outline: none;
+  }
+
+  html.page-404 .err__link:focus-visible {
+    outline: 2px solid var(--sl-color-accent-high);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--sl-color-black);
+  }
+
+  @media (min-width: 768px) {
+    html.page-404 .err__title {
+      font-size: 1.875rem;
+    }
+  }
+</style>

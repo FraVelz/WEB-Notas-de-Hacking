@@ -6,7 +6,7 @@ description: Est Control - Notas de hacking y ciberseguridad.
 # Estructuras de Control en Bash Script
 Este documento explica cómo usar **bucles**, **estructuras de control** y el comando **case** en Bash.<br /> Incluye ejemplos prácticos y comentarios explicativos.
 
----
+***
 
 ## Bucle for
 El bucle for permite ejecutar una serie de comandos repetidamente para una lista de valores o rangos numéricos.
@@ -41,7 +41,7 @@ done
 
 > Esta forma usa la sintaxis tradicional tipo C: `for (( inicialización; condición; incremento )); do … done`.
 
----
+***
 
 ## Bucle while
 Ejecuta un bloque de código **mientras una condición sea verdadera**.
@@ -69,7 +69,7 @@ done < archivo.txt
 
 > Esto imprimirá cada línea del archivo precedida de un guion.
 
----
+***
 
 ## Bucle until
 El bucle until funciona igual que while, pero **se ejecuta mientras la condición sea falsa**.
@@ -85,7 +85,7 @@ done
 
 > En este ejemplo, el bucle incrementa el contador desde 1 hasta 5.
 
----
+***
 
 ## Comandos continue y break
 Los comandos continue y break sirven para **controlar el flujo dentro de los bucles**.
@@ -114,7 +114,7 @@ done
 
 > `break n` rompe `n` niveles de bucles anidados.<br /> `continue` salta directamente a la siguiente iteración.
 
----
+***
 
 ## Estructura case
 La estructura case permite comparar una variable con múltiples patrones, similar al switch en otros lenguajes.

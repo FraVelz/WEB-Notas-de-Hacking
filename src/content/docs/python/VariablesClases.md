@@ -4,7 +4,7 @@ description: Variables Clases - Notas de hacking y ciberseguridad.
 ---
 
 # Variables protegidas y privadas en clases
----
+***
 
 ## 1. self._variable (un guion bajo)
 Por **convención**, el **guion bajo simple _** indica que el atributo es **“protegido” (protected)**, o sea:
@@ -23,7 +23,7 @@ p = Persona("Ana")
 print(p._nombre)  # 😅 Funciona, pero no deberías accederlo así
 ```
 
----
+***
 
 ## 2. self.__variable (doble guion bajo)
 El **doble guion bajo __** activa el mecanismo de **name mangling** o “ofuscación de nombre”.
@@ -51,7 +51,7 @@ En otras palabras:
 - No lo vuelve *totalmente privado*, pero **dificulta** su acceso externo.
 - Se usa para **evitar colisiones de nombres** en clases hijas (herencia) y **proteger la integridad interna**.
 
----
+***
 
 ## En resumen
 <!-- Tabla convertida manualmente -->

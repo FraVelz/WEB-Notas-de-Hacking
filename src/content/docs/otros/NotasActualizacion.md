@@ -8,7 +8,7 @@ description: Notas Actualizacion - Notas de hacking y ciberseguridad.
 
 Información general y amplia, de herramientas, colaboradores, actualizaciones, etc.
 
----
+***
 
 ## Herramientas utilizadas
 - **VS Code,** para variedad de herramientas para largas jornadas de documentación y escritura.
@@ -19,15 +19,15 @@ Información general y amplia, de herramientas, colaboradores, actualizaciones, 
 - **Extensión de VS Code:** markdown All in One, funciones y atajos de teclado para funciones en markdown como el formateo u otros.
 - **nvim** para hacer modificaciones simples y rápidas a archivos y carpetas.
 
----
+***
 
 ## Colabores más importantes
-- Student Ethical <strong>(<span className="citation" data-cites="studentethical">@studentethical</span>)</strong>
-- Tvrs8<strong> (<span className="citation" data-cites="studentethical">@tvrs8</span>)</strong>
+- Student Ethical <strong>(<span class="citation" data-cites="studentethical">@studentethical</span>)</strong>
+- Tvrs8<strong> (<span class="citation" data-cites="studentethical">@tvrs8</span>)</strong>
 
 …
 
----
+***
 
 ## Actualización Existentes
 Para rangos de fechas -, para fechas específicas ;.
@@ -40,7 +40,7 @@ Para rangos de fechas -, para fechas específicas ;.
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Actualización (0.0v - 0.1.0v)
 **actualizaciones diarias desde:** 2025-09-20
@@ -67,7 +67,7 @@ Mejor organización de directorios y archivos. (dentro de cada directorio ya con
 - Cambios pequeños como arreglar algunos enlaces, nuevas secciones y organizar mejor los textos de diferentes archivos.
 - Agregando nuevos archivos en la sección del readme.md, google doorks.
 
----
+***
 
 ## Actualización (1.0v - 0.2.0v)
 **cosas implementadas:**
@@ -79,7 +79,7 @@ Mejor organización de directorios y archivos. (dentro de cada directorio ya con
 - Se agregó un nuevo apartado Windows y también Privacidad y anonimato.
 - Se organizó mejor el readme.md archivo principal, para que los temas que se muestren en este mismo, sean los más importantes y fundamentales.
 
----
+***
 
 ## Actualizaciones +0.2.0v
 Estas versiones en adelante, son de la creación de esta pagina web, y como hay muchos cambios e informacion no registrare en adelante mas, los cambios aqui pero si te interesa podrias ver las ramas, y los commits, en el repositorio de esta pagina web en github…

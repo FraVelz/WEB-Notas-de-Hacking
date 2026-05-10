@@ -4,7 +4,7 @@ description: Getter Setter - Notas de hacking y ciberseguridad.
 ---
 
 # Getters y Setters
----
+***
 
 ## ¿Qué son los getters y setters?
 - **Getter:** método que **obtiene** (lee) el valor de un atributo.
@@ -12,7 +12,7 @@ description: Getter Setter - Notas de hacking y ciberseguridad.
 
 Se usan para **controlar el acceso a los atributos** de una clase, especialmente cuando son “protegidos” o “privados”.
 
----
+***
 
 ## Ejemplo básico
 ```python
@@ -43,7 +43,7 @@ print(p.get_nombre())  # ✅ Luis
 p.set_nombre("")  # ❌ El nombre no puede estar vacío.
 ```
 
----
+***
 
 ## Pero Python tiene una forma más elegante → <strong>@property</strong>
 Python permite crear *getters* y *setters* de manera más limpia y natural usando **decoradores**.
@@ -77,12 +77,12 @@ print(p.nombre)   # ✅ Andrés
 p.nombre = ""     # ❌ El nombre no puede estar vacío.
 ```
 
----
+***
 
-## Ventajas de usar <span className="citation" data-cites="property">@property</span>
+## Ventajas de usar <span class="citation" data-cites="property">@property</span>
 ✅ No cambias la forma de usar los atributos. ✅ Puedes añadir validaciones sin romper el código existente. ✅ Encapsulas correctamente los datos. ✅ Evitas accesos o cambios indebidos.
 
----
+***
 
 ## En resumen
 <!-- Tabla convertida manualmente -->

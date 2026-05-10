@@ -3,10 +3,10 @@ title: Classmethod
 description: Classmethod - Notas de hacking y ciberseguridad.
 ---
 
-# Decorador <span className="citation" data-cites="classmethod">@classmethod</span>
+# Decorador <span class="citation" data-cites="classmethod">@classmethod</span>
 @classmethod permite crear funciones que pueden **acceder o modificar el estado de la clase**, sin necesidad de crear un objeto.
 
----
+***
 
 ## Ejemplo
 ```python
@@ -32,12 +32,12 @@ p2 = Persona("Luis")
 print(Persona.cuantos_hay())  # Hay 2 personas registradas.
 ```
 
----
+***
 
 ## Diferencias entre tipos de métodos
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## En resumen
 - @staticmethod: método **independiente**, solo usa los parámetros que se le pasen.

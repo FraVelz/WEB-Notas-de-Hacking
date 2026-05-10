@@ -4,7 +4,7 @@ description: Wc - Notas de hacking y ciberseguridad.
 ---
 
 # Wc en Linux
----
+***
 
 ## wc — word count (resumen rápido)
 wc es una utilidad de Unix/Linux que **cuenta** cosas en archivos o en la entrada estándar: **líneas, palabras, bytes o caracteres**, y también la longitud de la línea más larga.

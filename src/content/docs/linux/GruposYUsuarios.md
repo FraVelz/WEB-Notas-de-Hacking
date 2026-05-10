@@ -4,7 +4,7 @@ description: Grupos YUsuarios - Notas de hacking y ciberseguridad.
 ---
 
 # Grupos y Usuarios
----
+***
 
 ## 1. Gestión de usuarios
 <!-- Tabla convertida manualmente -->
@@ -45,11 +45,7 @@ sudo passwd francisco
 - Permisos correctos
 - Pide la contraseña y otros datos de forma interactiva
 
-<li>
-Está pensado para <strong>uso cotidiano y comodidad del
-administrador</strong>
-</li>
-</Lista>
+- Está pensado para **uso cotidiano y comodidad del administrador**
 
 **Ejemplo:**
 ```bash
@@ -71,7 +67,7 @@ Esto:
 - Usa **adduser** cuando creas usuarios manualmente (más seguro y rápido).
 - Usa **useradd** en **scripts o configuraciones personalizadas**, donde controlas cada detalle.
 
----
+***
 
 ## 2. Grupos
 ### Gestión de grupos

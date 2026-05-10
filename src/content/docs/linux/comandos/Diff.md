@@ -4,7 +4,7 @@ description: Diff - Notas de hacking y ciberseguridad.
 ---
 
 # Diff en Linux
----
+***
 
 ## Temario
 ### En resumen
@@ -15,7 +15,7 @@ diff archivo1 archivo2
 
 Muestra qué líneas **cambian, se agregan o eliminan** de un archivo respecto al otro.
 
----
+***
 
 ### Ejemplo básico
 Supongamos que tienes dos archivos:
@@ -43,7 +43,7 @@ La salida será:
 ```bash
 2c2
 < mundo
----
+***
 > mundo!!!
 ```
 
@@ -52,12 +52,12 @@ Significa:
 - En la **línea 2** (2c2 → *línea 2 cambiada*),
 - mundo fue reemplazado por mundo!!!.
 
----
+***
 
 ### Símbolos principales
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ### Opciones útiles
 <!-- Tabla convertida manualmente -->
@@ -78,7 +78,7 @@ hola
 como estas
 ```
 
----
+***
 
 ### Usos comunes
 - Ver qué cambió entre dos versiones de un archivo.

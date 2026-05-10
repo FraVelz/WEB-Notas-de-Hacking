@@ -4,17 +4,17 @@ description: Gestion Permisos - Notas de hacking y ciberseguridad.
 ---
 
 # Comandos y cmdlets de gestión de permisos
----
+***
 
 ## CMD — Comandos de Gestión de Permisos
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## PowerShell — Cmdlets de Gestión de Permisos
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Ejemplos prácticos
 ### CMD

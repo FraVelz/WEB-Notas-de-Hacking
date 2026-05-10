@@ -4,14 +4,14 @@ description: Clases Python - Notas de hacking y ciberseguridad.
 ---
 
 # Clases en Python
----
+***
 
 ## ¿Qué es una clase en Python?
 Una **clase** es una **plantilla o molde** para crear **objetos** (instancias) que agrupan **datos (atributos)** y **funciones (métodos)** relacionados.
 
 Los **objetos** son las copias o instancias creadas a partir de esa clase.
 
----
+***
 
 ## Sintaxis básica
 ```python
@@ -34,7 +34,7 @@ p1.saludar()
 - self → referencia al **objeto actual** (similar a this en otros lenguajes).
 - p1 → **instancia** de la clase Persona.
 
----
+***
 
 ## Atributos
 ### 1. De instancia
@@ -59,7 +59,7 @@ b = Coche("Honda")
 print(a.ruedas, b.ruedas)  # ambos tienen 4
 ```
 
----
+***
 
 ## Métodos
 ### Método de instancia
@@ -85,7 +85,7 @@ def es_mayor(edad):
 return edad >= 18
 ```
 
----
+***
 
 ## Herencia
 Permite crear una clase nueva basada en otra (reutiliza código).
@@ -104,7 +104,7 @@ p.hablar()
 
 ✔️ La clase hija **sobrescribe** métodos de la clase padre. ✔️ Se puede usar super() para llamar métodos del padre.
 
----
+***
 
 ## Polimorfismo
 Diferentes clases pueden usar el mismo método con comportamientos distintos:
@@ -119,7 +119,7 @@ for animal in [Gato(), Perro()]:
 animal.hablar()
 ```
 
----
+***
 
 ## Encapsulación
 Controla la visibilidad de los atributos/métodos.
@@ -135,9 +135,9 @@ def mostrar(self):
 print(self.__nombre)
 ```
 
----
+***
 
-## Propiedades (<span className="citation" data-cites="property">@property</span>)
+## Propiedades (<span class="citation" data-cites="property">@property</span>)
 Permiten acceder a métodos como sí fueran atributos.
 ```python
 class Rectangulo:
@@ -153,7 +153,7 @@ r = Rectangulo(4, 5)
 print(r.area)  # No se usa paréntesis
 ```
 
----
+***
 
 ## Composición
 Una clase contiene objetos de otras clases:
@@ -170,7 +170,7 @@ c = Coche()
 c.motor.arrancar()
 ```
 
----
+***
 
 ## Ejemplo completo
 ```python
@@ -201,7 +201,7 @@ cuenta.retirar(200)
 print(cuenta.saldo)
 ```
 
----
+***
 
 ## Resumen rápido
 <!-- Tabla convertida manualmente -->

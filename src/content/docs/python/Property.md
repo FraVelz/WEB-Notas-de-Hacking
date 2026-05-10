@@ -3,10 +3,10 @@ title: Property
 description: Property - Notas de hacking y ciberseguridad.
 ---
 
-# Decorador <span className="citation" data-cites="property">@property</span>
+# Decorador <span class="citation" data-cites="property">@property</span>
 @property se usa para **encapsular atributos**, **añadir validaciones o lógica interna**, pero sin cambiar la forma natural de acceder o modificar una variable.
 
----
+***
 
 ## ¿Qué hace @property en Python?
 El decorador **@property** convierte un **método de una clase** en un **atributo “solo de lectura”** (al menos inicialmente).
@@ -19,7 +19,7 @@ En otras palabras:
 Permite usar *métodos* como sí fueran *atributos*, **sin cambiar la sintaxis de acceso**.
 
 </blockquote>
----
+***
 
 ## Ejemplo básico sin @property
 ```python
@@ -39,7 +39,7 @@ print(p.get_nombre())  # ✅ Funciona
 
 Pero se ve *feo* tener que escribir .get_nombre() cada vez. Ahí entra @property.
 
----
+***
 
 ## Con @property
 ```python
@@ -61,7 +61,7 @@ print(p.nombre)  # ✅ Sin paréntesis, parece un atributo
 - Python llama automáticamente al método nombre() cuando escribes p.nombre.
 - Es solo de lectura por ahora (no se puede cambiar el valor directamente).
 
----
+***
 
 ## Agregando un <strong>setter</strong> para modificar el valor
 ```python
@@ -90,7 +90,7 @@ print(p.nombre)   # Andrés
 p.nombre = ""     # ❌ El nombre no puede estar vacío.
 ```
 
----
+***
 
 ## También existe el deleter (opcional)
 ```python
@@ -100,7 +100,7 @@ print("Eliminando el nombre...")
 del self.__nombre
 ```
 
----
+***
 
 ## En resumen
 <!-- Tabla convertida manualmente -->

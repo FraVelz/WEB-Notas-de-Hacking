@@ -1,6 +1,4 @@
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import react from '@astrojs/react';
 import mdx from '@astrojs/mdx';
 import starlight from '@astrojs/starlight';
 import path from 'path';
@@ -34,7 +32,7 @@ export default defineConfig({
       favicon: '/favicon.png',
       sidebar: starlightSidebar,
       disable404Route: true,
-      customCss: ['./src/styles/theme.css'],
+      customCss: ['./src/styles/theme.css', './src/styles/markdown-layout.css'],
       social: [
         {
           icon: 'github',
@@ -55,11 +53,6 @@ export default defineConfig({
         { tag: 'meta', attrs: { name: 'twitter:image:alt', content: 'Notas de Hacking - Guía de ciberseguridad' } },
       ],
     }),
-    react(),
     mdx(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
   ],
 });
-
