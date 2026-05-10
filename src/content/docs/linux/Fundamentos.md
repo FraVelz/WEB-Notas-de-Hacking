@@ -4,7 +4,7 @@ description: Fundamentos - Notas de hacking y ciberseguridad.
 ---
 
 # Fundamentos de Bash Script
----
+***
 
 **Recurso Extra:** Video de YouTube de Bash Script desde cero:
 
@@ -12,7 +12,7 @@ description: Fundamentos - Notas de hacking y ciberseguridad.
 - [Ir a curso de bash script desde cero - Fazt (2h 23m)](https://www.youtube.com/watch?v=H4ayPYcZEfI)
 - [Buscar curso de bash script desde cero](https://www.youtube.com/results?search_query=curso+de+bash+script+desde+cero)
 
----
+***
 
 ## Cabecera del Script
 La **cabecera** o *shebang* indica qué intérprete ejecutará el script.
@@ -20,7 +20,7 @@ La **cabecera** o *shebang* indica qué intérprete ejecutará el script.
 #!/bin/bash
 ```
 
----
+***
 
 ## Imprimir texto y comentarios
 Puedes imprimir texto con echo y escribir comentarios de varias formas.
@@ -46,7 +46,7 @@ con here document descartado.
 EOF
 ```
 
----
+***
 
 ## Variables en Bash
 En Bash solo existe un tipo de dato: **string** (cadena de texto). Se puede escribir **sin comillas**, o con **comillas simples** o **dobles**.
@@ -72,7 +72,7 @@ Para imprimir valores (evitando errores con espacios), se recomienda:
 echo "$variable"
 ```
 
----
+***
 
 ## Strings
 ```bash
@@ -96,7 +96,7 @@ echo $message
 echo $text
 ```
 
----
+***
 
 ## Valores constantes
 Usa readonly para declarar constantes:
@@ -104,7 +104,7 @@ Usa readonly para declarar constantes:
 readonly PI=3.1416
 ```
 
----
+***
 
 ## Operaciones matemáticas
 Bash permite realizar operaciones aritméticas en las siguientes formas:
@@ -119,7 +119,7 @@ echo $(expr $a + $b)
 ### Símbolos matemáticos
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Leer entrada del usuario
 El comando read se usa para leer datos del usuario.

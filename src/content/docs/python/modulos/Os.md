@@ -4,7 +4,7 @@ description: Os - Notas de hacking y ciberseguridad.
 ---
 
 # Os en Python
----
+***
 
 ## ¿Qué es os en Python?
 El módulo **os** (Operating System) permite **interactuar directamente con el sistema operativo**: manejar archivos, carpetas, variables de entorno, procesos, permisos, rutas, y más.
@@ -14,7 +14,7 @@ Se importa así:
 import os
 ```
 
----
+***
 
 ## 1. Manejo de directorios
 ### Ver el directorio actual
@@ -42,7 +42,7 @@ os.rmdir("nueva_carpeta")        # Eliminar carpeta vacía
 os.removedirs("a/b/c")           # Eliminar jerarquía vacía
 ```
 
----
+***
 
 ## 2. Manejo de archivos
 ### Eliminar archivos
@@ -55,7 +55,7 @@ os.remove("archivo.txt")
 os.rename("viejo.txt", "nuevo.txt")
 ```
 
----
+***
 
 ## 3. Trabajar con rutas (os.path)
 ### Unir rutas correctamente (independiente del sistema)
@@ -77,7 +77,7 @@ print(os.path.isfile("archivo.txt"))  # True si es archivo
 print(os.path.isdir("carpeta"))       # True si es carpeta
 ```
 
----
+***
 
 ## 4. Variables de entorno
 ### Ver todas las variables del sistema
@@ -96,7 +96,7 @@ print(usuario)
 os.environ["MI_VARIABLE"] = "1234"
 ```
 
----
+***
 
 ## 5. Ejecutar comandos del sistema
 ```python
@@ -111,7 +111,7 @@ os.system("ping google.com -c 2")
 
 👉 Sí quieres más control (por ejemplo, capturar la salida del comando), es mejor usar el módulo subprocess.
 
----
+***
 
 ## 6. Permisos y propiedades
 ```python
@@ -119,7 +119,7 @@ os.chmod("archivo.txt", 0o777)  # Dar todos los permisos
 print(os.stat("archivo.txt"))   # Ver información (tamaño, permisos, etc.)
 ```
 
----
+***
 
 ## 7. Ejemplo práctico
 Este script organiza los archivos de una carpeta en subcarpetas por tipo:
@@ -140,14 +140,14 @@ shutil.move(ruta_completa, os.path.join(carpeta, archivo))
 
 📦 Sí tienes archivos .png, .mp3, .pdf, los moverá a carpetas “PNG”, “MP3”, “PDF”, etc.
 
----
+***
 
 ## 8. Combinación con otros módulos
 - os + shutil → mover/copiar archivos.
 - os + sys → detectar sistema operativo (sys.platform).
 - os + subprocess → ejecutar comandos con control total.
 
----
+***
 
 ## 9. Ejemplo: crear un script portable
 ```python
@@ -161,7 +161,7 @@ limpiar_pantalla()
 print("Pantalla limpia 😎")
 ```
 
----
+***
 
 ## 10. Resumen de funciones más útiles
 <!-- Tabla convertida manualmente -->

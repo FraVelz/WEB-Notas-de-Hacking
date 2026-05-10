@@ -4,12 +4,12 @@ description: Comodines - Notas de hacking y ciberseguridad.
 ---
 
 # Comodines
----
+***
 
 ## 1. Comodines básicos
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 2. Ejemplos prácticos
 - **Listar todos los archivos de un tipo**:
@@ -42,7 +42,7 @@ copy doc*.* D:\/Backup\/
 Rename-Item "archivo?.txt" -NewName "nuevo_?.txt"
 ```
 
----
+***
 
 **Tip importante:**
 

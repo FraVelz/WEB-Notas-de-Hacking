@@ -5,7 +5,7 @@ description: Permisos - Notas de hacking y ciberseguridad.
 
 # Permisos en Linux
 ## Temario
----
+***
 
 ## 1. Concepto básico de permisos
 Cada archivo o carpeta tiene **3 tipos de permisos** y **3 categorías de usuarios**:
@@ -16,7 +16,7 @@ Cada archivo o carpeta tiene **3 tipos de permisos** y **3 categorías de usuari
 ### Categorías
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 2. Ver permisos
 ```bash
@@ -36,7 +36,7 @@ Significado:
 - francisco → dueño
 - users → grupo
 
----
+***
 
 ## 3. Cambiar permisos (chmod)
 ### a) Modo simbólico
@@ -54,7 +54,7 @@ chmod 755 script.sh
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 4. Cambiar dueño o grupo (chown, chgrp)
 ```bash
@@ -68,7 +68,7 @@ Ejemplo:
 sudo chown francisco:users script.sh
 ```
 
----
+***
 
 ## 5. Permisos especiales
 Existen tres permisos especiales en Linux:
@@ -127,7 +127,7 @@ Efecto:
 Los nuevos archivos heredan el grupo del directorio, útil para carpetas compartidas.
 
 </blockquote>
----
+***
 
 ## 6. Atributos de archivos (chattr, lsattr)
 Los **atributos** controlan *cómo* se comporta un archivo, más allá de los permisos.
@@ -177,7 +177,7 @@ done
 lsattr "$(ARCHIVOS[@])"
 ```
 
----
+***
 
 ## 7. Resumen visual
 <!-- Tabla convertida manualmente -->

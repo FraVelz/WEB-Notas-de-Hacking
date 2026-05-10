@@ -6,7 +6,7 @@ description: Entrada YSalida - Notas de hacking y ciberseguridad.
 # Entradas y Salidas en Bash Script
 Este documento explica como usar la **redirección de contenido en bash script** de (entradas y salidas y errores en bash).
 
----
+***
 
 ## Descriptores de archivos
 En Bash hay **3 descriptores de archivos principales**:
@@ -31,7 +31,7 @@ echo "mundo!" >> ./salida.txt  # Agrega al final
 ls noExiste 2> errores.txt
 ```
 
----
+***
 
 ## Juntar salida y errores
 ```bash
@@ -52,7 +52,7 @@ En resumen:
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Pipes (|)
 ```bash
@@ -61,7 +61,7 @@ ls | grep .txt
 
 Envía la salida de ls al comando grep, que muestra solo los archivos .txt.
 
----
+***
 
 ## Redirección combinada &amp;&gt;
 ```bash
@@ -73,7 +73,7 @@ Equivale a:
 ls carpeta_inexistente > salida.txt 2>&1
 ```
 
----
+***
 
 ## Comando cat (concatenate)
 ```bash
@@ -90,7 +90,7 @@ Mundo
 # (Presiona CTRL+D para terminar)
 ```
 
----
+***
 
 ## Comando tee
 El comando tee **guarda la salida en archivos y también la muestra en pantalla**.
@@ -100,7 +100,7 @@ ls | tee -a lista.txt                       # Modo append
 ls | tee archivo1.txt archivo2.txt          # Guardar en varios archivos
 ```
 
----
+***
 
 ### Resumen rápido
 <!-- Tabla convertida manualmente -->

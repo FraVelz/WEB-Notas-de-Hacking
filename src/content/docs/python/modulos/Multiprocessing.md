@@ -4,14 +4,14 @@ description: Multiprocessing - Notas de hacking y ciberseguridad.
 ---
 
 # Multiprocessing en Python
----
+***
 
 ## ¿Qué es multiprocessing?
 multiprocessing permite **ejecutar varios procesos en paralelo**, aprovechando **todos los núcleos del CPU**. A diferencia de los **hilos (threading)**, cada proceso tiene su **propia memoria** → no hay bloqueo por el **GIL (Global Interpreter Lock)**.
 
 Es ideal para tareas **pesadas en CPU**, como cálculos, IA, simulaciones, etc.
 
----
+***
 
 ## Conceptos básicos
 ### Crear un proceso
@@ -33,7 +33,7 @@ print("Proceso finalizado")
 - start(): inicia el proceso.
 - join(): bloquea hasta que el proceso termina.
 
----
+***
 
 ## Enviar datos entre procesos
 ### Con Queue
@@ -56,7 +56,7 @@ p1.start(); p1.join()
 p2.start(); p2.join()
 ```
 
----
+***
 
 ### Con Pipe
 ```python
@@ -74,7 +74,7 @@ print(conn1.recv())  # Recibe mensaje
 p.join()
 ```
 
----
+***
 
 ## Uso de Pool (grupo de procesos)
 Permite ejecutar una función muchas veces en paralelo fácilmente.
@@ -92,7 +92,7 @@ print(resultados)
 
 ➡️ Ejecuta cuadrado en paralelo para cada valor.
 
----
+***
 
 ## Variables compartidas
 Para compartir datos entre procesos de forma segura:
@@ -114,7 +114,7 @@ p.start(); p.join()
 print(v.value, a[:])
 ```
 
----
+***
 
 ## Sincronización entre procesos
 Se usan mecanismos como Lock, Event, Semaphore, etc., para evitar conflictos.
@@ -133,7 +133,7 @@ for i in range(3):
 Process(target=imprimir, args=(lock, f"Proceso {i}")).start()
 ```
 
----
+***
 
 ## Ejemplo completo
 ```python
@@ -156,7 +156,7 @@ while not q.empty():
 print(q.get())
 ```
 
----
+***
 
 ## Resumen rápido
 <!-- Tabla convertida manualmente -->

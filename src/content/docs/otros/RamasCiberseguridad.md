@@ -4,7 +4,7 @@ description: Ramas Ciberseguridad - Notas de hacking y ciberseguridad.
 ---
 
 # Ramas y Especializaciones de ciberseguridad
----
+***
 
 ## 1. Seguridad Ofensiva (Ethical Hacking o Red Team)
 Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como los hackers para encontrar vulnerabilidades antes de que lo hagan los delincuentes.
@@ -19,7 +19,7 @@ Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como
 
 *Herramientas comunes:* Metasploit, Burp Suite, Nmap, Wireshark, Hydra, Aircrack-ng.
 
----
+***
 
 ## 2. Seguridad Defensiva (Blue Team)
 Su función es **detectar, detener y responder** ante los ataques.
@@ -34,7 +34,7 @@ Su función es **detectar, detener y responder** ante los ataques.
 
 *Herramientas comunes:* Splunk, SIEM, Suricata, OSSEC, ELK Stack, Wireshark.
 
----
+***
 
 ## 3. Ciberinteligencia (Cyber Threat Intelligence)
 Se centra en **recolectar, analizar y anticipar amenazas** cibernéticas.
@@ -48,7 +48,7 @@ Se centra en **recolectar, analizar y anticipar amenazas** cibernéticas.
 
 *Herramientas comunes:* Maltego, Shodan, TheHarvester, MISP, VirusTotal.
 
----
+***
 
 ## 4. Criptografía y Seguridad de la Información
 Protege los **datos** mediante matemáticas, algoritmos y protocolos seguros.
@@ -62,7 +62,7 @@ Protege los **datos** mediante matemáticas, algoritmos y protocolos seguros.
 
 *Herramientas comunes:* OpenSSL, GPG, Hashcat, VeraCrypt.
 
----
+***
 
 ## 5. Seguridad en Redes
 Asegura la **infraestructura** que conecta dispositivos y servidores.
@@ -76,7 +76,7 @@ Asegura la **infraestructura** que conecta dispositivos y servidores.
 
 *Herramientas comunes:* pfSense, Cisco Security, Snort, Wireshark, Aircrack-ng.
 
----
+***
 
 ## 6. Seguridad en la Nube (Cloud Security)
 Protege los servicios y datos alojados en plataformas como AWS, Azure o Google Cloud.
@@ -90,7 +90,7 @@ Protege los servicios y datos alojados en plataformas como AWS, Azure o Google C
 
 *Herramientas comunes:* Prisma Cloud, AWS Security Hub, Azure Defender.
 
----
+***
 
 ## 7. Seguridad en Aplicaciones
 Se enfoca en asegurar el **software** desde su desarrollo.
@@ -104,7 +104,7 @@ Se enfoca en asegurar el **software** desde su desarrollo.
 
 *Herramientas comunes:* OWASP ZAP, SonarQube, Burp Suite, Checkmarx.
 
----
+***
 
 ## 8. Gobernanza, Riesgo y Cumplimiento (GRC)
 Enfocada en la **gestión estratégica de la seguridad**, políticas, normas y auditorías.
@@ -116,7 +116,7 @@ Enfocada en la **gestión estratégica de la seguridad**, políticas, normas y a
 - **Auditorías de seguridad.**
 - **Concienciación y capacitación en ciberseguridad.**
 
----
+***
 
 ## 9. Seguridad Industrial y de Infraestructuras Críticas
 Protege sistemas industriales y servicios esenciales (energía, transporte, agua, etc.).
@@ -127,7 +127,7 @@ Protege sistemas industriales y servicios esenciales (energía, transporte, agua
 - **SCADA y sistemas de control industrial.**
 - **Ciberseguridad en IoT (Internet of Things).**
 
----
+***
 
 ## 10. Ciberseguridad en IA y Datos
 Campo nuevo y en crecimiento.

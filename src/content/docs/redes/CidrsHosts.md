@@ -4,14 +4,14 @@ description: Cidrs Hosts - Notas de hacking y ciberseguridad.
 ---
 
 # Cidrs y Host
----
+***
 
 ## 1. Qué es CIDR
 **CIDR** significa **Classless Inter-Domain Routing**, o en español, **Enrutamiento entre dominios sin clases**.
 
 Se usa para **representar redes IP y su tamaño** de forma compacta.
 
----
+***
 
 ### Ejemplo
 ```bash
@@ -26,7 +26,7 @@ Se usa para **representar redes IP y su tamaño** de forma compacta.
 - 24 bits → red
 - 8 bits restantes (de los 32 de una IPv4) → **hosts** o dispositivos
 
----
+***
 
 ### Cómo se interpreta
 Cada número después de la barra / indica cuántos bits de la IP pertenecen a la red:
@@ -37,7 +37,7 @@ Cada número después de la barra / indica cuántos bits de la IP pertenecen a l
 (Se restan 2 hosts: uno para la dirección de red y otro para broadcast)
 
 </blockquote>
----
+***
 
 ## 2. Qué es una máscara de red (o de host)
 Una **máscara de subred** (subnet mask) indica **qué parte de la IP identifica la red** y **qué parte identifica al host**.
@@ -46,7 +46,7 @@ Por ejemplo:
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ### Máscara de host
 A veces se habla de “máscara de host”, que simplemente es **el complemento** de la máscara de red.
@@ -63,12 +63,12 @@ Porque:
 
 Es decir, la máscara de host muestra **qué bits pueden variar** para asignar direcciones a los dispositivos.
 
----
+***
 
 ## 3. Relación entre CIDR y máscaras
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 4. Ejemplo práctico
 Supón que tienes:

@@ -3,16 +3,15 @@ title: Privacidad Anonimato
 description: Privacidad Anonimato - Notas de hacking y ciberseguridad.
 ---
 
-<Estructura>
 # Conceptos Generales (privacidad, Anonimato y mucho más)
----
+***
 
 ## 1. Internet: niveles o capas
 El Internet puede dividirse en tres niveles según la **visibilidad y accesibilidad** de la información:
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 2. El anonimato digital
 El **anonimato** es la capacidad de **ocultar tu identidad real** (nombre, IP, ubicación, etc.) en Internet.
@@ -32,30 +31,28 @@ El **anonimato** es la capacidad de **ocultar tu identidad real** (nombre, IP, u
 - Desactivar JavaScript en TOR (reduce riesgo de exploits).
 - No descargar archivos desde la Dark Web (podrían revelar tú IP).
 
----
+***
 
 ## 3. Deep Web vs Dark Web
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 4. Legalidad y ética
 - **Usar la Deep Web o TOR es totalmente legal.**
 - Lo **ilegal** es acceder, comprar o distribuir contenido prohibido (drogas, armas, pornografía infantil, datos robados, etc.).
 - Hay **activistas, periodistas y agencias de inteligencia** que usan la Dark Web para proteger fuentes o investigar delitos.
-- También existen **proyectos legítimos**: <Lista> SecureDrop (para denuncias anónimas a medios).
-- Hidden Wiki (índice de sitios .onion).
-- Foros de privacidad y criptografía.
+- También existen **proyectos legítimos**:
+  - SecureDrop (para denuncias anónimas a medios).
+  - Hidden Wiki (índice de sitios .onion).
+  - Foros de privacidad y criptografía.
 
-</li>
-</Lista>
-
----
+***
 
 ## 5. Tecnologías principales
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 6. Riesgos de la Dark Web
 - **Estafas:** muchos vendedores falsos.
@@ -64,7 +61,7 @@ El **anonimato** es la capacidad de **ocultar tu identidad real** (nombre, IP, u
 - **Rastreo por agencias:** aunque TOR es seguro, los errores humanos exponen.
 - **Phishing o troyanos:** muchos sitios buscan robar criptomonedas o identidad.
 
----
+***
 
 ## 7. Usos legítimos del anonimato y la Dark Web
 - Periodismo de investigación.
@@ -73,40 +70,35 @@ El **anonimato** es la capacidad de **ocultar tu identidad real** (nombre, IP, u
 - Intercambio de conocimiento técnico o científico sin censura.
 - Acceso a información bloqueada por gobiernos.
 
----
+***
 
 ## 8. Privacidad
 La **privacidad** se refiere al{' '} **control que una persona tiene sobre su información personal**: qué datos comparte, con quién, cuándo y para qué.
 
 - **Idea central:** “Yo decido quién sabe qué sobre mí.”
-- Ejemplo: <Lista> Cuando configuras tus redes sociales para que solo tus amigos vean tus fotos, estás **protegiendo tu privacidad**.
-- Si das tu nombre y correo a una empresa, pero solo para recibir un servicio, esperas que **no usen esos datos para otra cosa**.
-
-</li>
-</Lista>
+- Ejemplo:
+  - Cuando configuras tus redes sociales para que solo tus amigos vean tus fotos, estás **protegiendo tu privacidad**.
+  - Si das tu nombre y correo a una empresa, pero solo para recibir un servicio, esperas que **no usen esos datos para otra cosa**.
 
 Privacidad = tener el control de tus datos personales.
 
----
+***
 
 ## 9. Anonimato
 El **anonimato** significa que **nadie puede saber quién eres realmente**, aunque vean tus acciones o tus mensajes.
 
 - **Idea central:** “Pueden ver lo que hago, pero no saben que soy yo.”
-- Ejemplo: <Lista> Si publicas un comentario en un foro con un nombre falso o navegas por Tor sin revelar tu identidad, estás{' '} **actuando de forma anónima**.
-- Los “whistleblowers” (personas que revelan información confidencial de forma segura) buscan **mantener el anonimato**.
-
-</li>
-</Lista>
+- Ejemplo:
+  - Si publicas un comentario en un foro con un nombre falso o navegas por Tor sin revelar tu identidad, estás **actuando de forma anónima**.
+  - Los “whistleblowers” (personas que revelan información confidencial de forma segura) buscan **mantener el anonimato**.
 
 Anonimato = ocultar tu identidad.
 
----
+***
 
 ## 10. Diferencias clave
 <!-- Tabla convertida manualmente -->
 
 - Puedes tener **privacidad sin anonimato**: por ejemplo, tu banco sabe quién eres, pero **protege tus datos**.
-- Y puedes tener **anonimato sin privacidad**: si actúas con un seudónimo, pero tus mensajes quedan guardados o analizados, ** no tienes privacidad** aunque nadie sepa tu nombre.
+- Y puedes tener **anonimato sin privacidad**: si actúas con un seudónimo, pero tus mensajes quedan guardados o analizados, **no tienes privacidad** aunque nadie sepa tu nombre.
 
-</Estructura>

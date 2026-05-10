@@ -4,7 +4,7 @@ description: Request - Notas de hacking y ciberseguridad.
 ---
 
 # Request en Python
----
+***
 
 ## 1) ¿Qué es requests?
 - requests es una biblioteca de Python de terceros para realizar **solicitudes HTTP/HTTPS** de forma sencilla y elegante.
@@ -12,7 +12,7 @@ description: Request - Notas de hacking y ciberseguridad.
 - Permite hacer peticiones como GET, POST, PUT, DELETE, HEAD, PATCH, etc., y gestionar cabeceras, datos, autenticación, cookies, sesiones, entre otros.
 - Es muy usada para acceder a APIs web, hacer scraping ligero, o interaccionar con servicios HTTP.
 
----
+***
 
 ## 2) Instalación y configuración básica
 ```bash
@@ -28,7 +28,7 @@ Asegúrate de que la versión de Python sea compatible (por ejemplo Python 3.8+ 
 
 *Tip:* Usa un entorno virtual (venv) para instalarla sin afectar dependencias globales.
 
----
+***
 
 ## 3) Uso básico — Peticiones HTTP
 ### GET
@@ -56,7 +56,7 @@ response = requests.post("https://api.example.com/login", json=payload)
 ### Otros métodos
 También puedes usar requests.put(), requests.delete(), requests.head(), requests.patch().
 
----
+***
 
 ## 4) Elementos importantes de la respuesta (Response)
 Al hacer una petición, obtienes un objeto Response. Algunos atributos y métodos clave:
@@ -69,14 +69,14 @@ Al hacer una petición, obtienes un objeto Response. Algunos atributos y método
 - response.elapsed → tiempo que tardó la petición.
 - response.raise_for_status() → lanza excepción requests.exceptions.HTTPError sí el código de estado indica error (&gt;=400).
 
----
+***
 
 ## 5) Parámetros útiles en la petición
 Al llamar a requests.get() o requests.post() puedes pasar varios parámetros adicionales para mayor control:
 
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 6) Sesiones (requests.Session)
 Una característica potente: puedes crear un objeto Session para persistir ciertas opciones (como cookies, cabeceras comunes, autenticación) entre múltiples peticiones. Mejora el rendimiento al reutilizar conexiones. Ejemplo:
@@ -89,14 +89,14 @@ response1 = s.get("https://api.example.com/resource1")
 response2 = s.get("https://api.example.com/resource2")
 ```
 
----
+***
 
 ## 7) Autenticación, SSL y proxies
 - Autenticación básica: requests.get(url, auth=('user','pass')).
 - Verificación SSL: por defecto verify=True. Sí el servidor tiene certificado inválido, se puede poner verify=False **pero no recomendado en producción**.
 - Puedes especificar proxies para HTTP/HTTPS usando el parámetro proxies.
 
----
+***
 
 ## 8) Manejo de errores y excepciones
 Es importante manejar posibles fallos (timeout, conexión rechazada, etc.). Ejemplo:
@@ -118,7 +118,7 @@ print("Otro error:", err)
 
 Este patrón aparece en tutoriales de requests.
 
----
+***
 
 ## 9) Ejemplos completos
 ### a) Petición GET con parámetros
@@ -166,7 +166,7 @@ for chunk in r.iter_content(chunk_size=8192):
 f.write(chunk)
 ```
 
----
+***
 
 ## 10) Buenas prácticas y consideraciones
 - Siempre establece un timeout razonable para evitar que la petición quede colgada.
@@ -177,7 +177,7 @@ f.write(chunk)
 - Evita exponer en el código credenciales sin protección.
 - Sí haces scraping de páginas web, respeta los términos de uso del sitio, usa cabeceras User-Agent adecuadas y considera la ética/legales.
 
----
+***
 
 ## 11) Resumen rápido
 - Librería simple, pero potente para hacer peticiones HTTP en Python.

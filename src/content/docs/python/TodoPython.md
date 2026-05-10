@@ -8,7 +8,7 @@ description: Todo Python - Notas de hacking y ciberseguridad.
 
 - [Ir a curso de Python Básico Completo - YoSoyDalto (8h)](https://www.youtube.com/watch?v=nKPbfIU442g)
 
----
+***
 
 ## 1. ¿Qué es Python?
 **Python** es un lenguaje de programación:
@@ -23,7 +23,7 @@ Ejemplo básico:
 print("Hola, mundo!")
 ```
 
----
+***
 
 ## 2. Sintaxis básica
 ### Variables y tipos de datos
@@ -50,7 +50,7 @@ print(a ** b) # Potencia
 print(a // b) # División entera
 ```
 
----
+***
 
 ## 3. Control de flujo
 ### Condicionales
@@ -72,7 +72,7 @@ while edad < 18:
 edad += 1
 ```
 
----
+***
 
 ## 4. Estructuras de datos
 ### Listas
@@ -99,7 +99,7 @@ persona = {"nombre": "Francisco", "edad": 17I}
 print(persona["nombre"])
 ```
 
----
+***
 
 ## 5. Funciones
 ```python
@@ -109,7 +109,7 @@ return f"Hola, {"{nombre}"}"
 print(saludar("Francisco"))
 ```
 
----
+***
 
 ## 6. Programación orientada a objetos (POO)
 ```python
@@ -125,7 +125,7 @@ p1 = Persona("Francisco", 17)
 p1.saludar()
 ```
 
----
+***
 
 ## 7. Módulos y paquetes
 ```python
@@ -138,7 +138,7 @@ También puedes crear tus propios módulos (mimodulo.py) y luego:
 import mimodulo
 ```
 
----
+***
 
 ## 8. Archivos
 ```python
@@ -149,12 +149,12 @@ with open("datos.txt", "r") as archivo:
 print(archivo.read())
 ```
 
----
+***
 
 ## 9. Librerías populares (por áreas)
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## 10. Conceptos avanzados
 - **List comprehensions:**

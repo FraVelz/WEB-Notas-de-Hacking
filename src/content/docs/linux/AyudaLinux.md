@@ -8,7 +8,7 @@ Tras haber establecido una base sólida sobre la estructura de Linux, sus divers
 
 Siempre nos encontraremos con herramientas cuyos parámetros opcionales desconocemos de memoria o que nunca hemos visto. Por lo tanto, es vital saber cómo podemos familiarizarnos con ellas. Las dos primeras maneras son las páginas de manual y las funciones de ayuda. Siempre es buena idea familiarizarse primero con la herramienta que queremos probar. También aprenderemos algunos trucos con algunas herramientas que creíamos imposibles. En las páginas de manual encontraremos manuales detallados con explicaciones completas.
 
----
+***
 
 ## Primer comando
 ```bash
@@ -59,7 +59,7 @@ Manual page ls(1) line 1 (press h for help or q to quit)
 
 Tras ver algunos ejemplos, también podemos consultar rápidamente los parámetros opcionales sin tener que consultar toda la documentación. Disponemos de varias maneras de hacerlo.
 
----
+***
 
 ## Ayuda rápida (--help y -h)
 **Sintaxis:**
@@ -120,7 +120,7 @@ Usage: curl [options...]
 
 Como podemos ver, los resultados no difieren mucho en este ejemplo: man ofrece la documentación completa y --help/-h suele dar un resumen rápido y práctico.
 
----
+***
 
 ## Buscar comandos y documentación relacionada (apropos)
 Otra herramienta útil al principio es apropos. Cada página del manual incluye una breve descripción. Esta herramienta busca en las descripciones instancias de una palabra clave determinada.
@@ -149,11 +149,11 @@ visudo (8)           - edit the sudoers file
 
 Otro recurso útil cuando tenemos problemas para entender un comando largo es: [https://explainshell.com/](https://explainshell.com/)
 
----
+***
 
 ## Conclusión
 A continuación cubriremos una gran cantidad de comandos, muchos de los cuales pueden ser nuevos para usted. Sin embargo, ahora sabe cómo buscar ayuda con cualquier comando que no conozca o con el que no esté seguro de sus opciones. Además, le animamos a explorar su curiosidad y a dedicar el tiempo que necesite para experimentar con las herramientas presentadas. Siempre será tiempo bien invertido.
 
 [Regresar al inicio](/)
 
-**Colaborador:** <span className="citation" data-cites="studentethical">@studentethical</span> (Student Ethical)
+**Colaborador:** <span class="citation" data-cites="studentethical">@studentethical</span> (Student Ethical)

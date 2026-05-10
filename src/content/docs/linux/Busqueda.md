@@ -4,11 +4,11 @@ description: Busqueda - Notas de hacking y ciberseguridad.
 ---
 
 # Comandos de Gestión de Búsqueda
----
+***
 
 [Regresar al inicio](/)
 
----
+***
 
 ## 1. Buscar archivos y directorios
 ### find
@@ -30,7 +30,7 @@ find / -type f -size +10M
 find /tmp -name "*.log" -exec rm {} \;
 ```
 
----
+***
 
 ## 2. Buscar texto dentro de archivos
 ### grep
@@ -59,7 +59,7 @@ grep -l "root" /etc/*
 Tip: Usa grep -rni "palabra" . para buscar en todo el directorio actual con número de línea y sin distinguir mayúsculas/minúsculas.
 
 </blockquote>
----
+***
 
 ## 3. Buscar archivos rápidamente
 ### locate
@@ -72,7 +72,7 @@ locate archivo.txt
 # Actualizar la base de datos de locate sudo updatedb
 ```
 
----
+***
 
 ## 4. Buscar comandos o ejecutables
 ### which, whereis, type
@@ -85,7 +85,7 @@ which python3
 # Mostrar tipo de comando type ls
 ```
 
----
+***
 
 ## 5. Buscar en el historial o procesos
 ### Buscar en historial
@@ -98,7 +98,7 @@ which python3
 ps aux | grep firefox
 ```
 
----
+***
 
 ## 6. Buscar dentro de archivos comprimidos o binarios
 ```bash

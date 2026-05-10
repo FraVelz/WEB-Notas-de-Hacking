@@ -10,14 +10,14 @@ Enlace para aprender a reconocer Phishing, y concientizar a las personas en ento
 
 La concientización en ciberseguridad es uno de los pilares más importantes para proteger una empresa, o uno mismo, de ataques cibernéticos. La mayoría los ataques no se basan en hackeos avanzados, sino en errores humanos, por ejemplo, dar clic en un enlace malicioso, usar una red pública sin protección o compartir información sensible sin pensarlo.
 
----
+***
 
 ## ¿Qué es la concientización en ciberseguridad?
 Es el conjunto de conocimientos, hábitos y comportamientos que te ayudan a reconocer, evitar y responder correctamente ante amenazas digitales. Su objetivo es que tú seas la primera línea de defensa, evitando caer en trampas que los hackers usan para robar información o dinero.
 
 A continuación los riesgos más comunes y cómo prevenirlos…
 
----
+***
 
 ## 1. Redes Wi-Fi públicas o desconocidas
 **Ejemplo:** Conectarte al Wi-Fi gratis de un café, aeropuerto o centro comercial.
@@ -35,7 +35,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Nunca entres a tú banco, correo o redes sociales en una red pública.
 - Desactiva la conexión automática a redes Wi-Fi.
 
----
+***
 
 ## 2. Phishing (suplantación para robar datos)
 **Ejemplo:** Te llega un correo o mensaje diciendo que tú cuenta será suspendida, con un botón para “verificar”.
@@ -54,7 +54,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Escribe tú mismo la URL oficial en el navegador.
 - Activa la verificación en dos pasos (2FA) en tus cuentas.
 
----
+***
 
 ## 3. Enlaces y URLs maliciosas
 **Ejemplo:** Un amigo te manda un enlace “gracioso” o de una “oferta increíble”.
@@ -67,7 +67,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Usa acortadores con precaución (bit.ly, tinyurl) —algunos ocultan direcciones falsas.
 - Sí dudas, analiza el enlace con [VirusTotal.com](https://www.virustotal.com).
 
----
+***
 
 ## 4. Códigos QR maliciosos
 **Ejemplo:** Ves un QR pegado en una pared o en una mesa de restaurante.
@@ -80,7 +80,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Verifica que el QR no esté pegado encima de otro (común en fraudes).
 - Usa apps que muestren la URL antes de abrirla.
 
----
+***
 
 ## 5. Contraseñas débiles o reutilizadas
 **Riesgo:** Sí un sitio donde usaste tú contraseña se filtra, los atacantes pueden acceder a todas tus otras cuentas.
@@ -91,7 +91,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Usa un gestor de contraseñas (como Bitwarden, KeePass o 1Password).
 - Activa autenticación de dos factores (2FA) siempre que sea posible.
 
----
+***
 
 ## 6. Software y actualizaciones
 **Riesgo:** Usar sistemas o apps desactualizadas te deja vulnerable a exploits conocidos.
@@ -102,7 +102,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Instala software solo desde fuentes oficiales.
 - Evita cracks o programas piratas —muchos incluyen troyanos o spyware.
 
----
+***
 
 ## 7. Ingeniería social
 **Ejemplo:** Un atacante se hace pasar por técnico de soporte o amigo para obtener tus datos.
@@ -113,7 +113,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Verifica su identidad por otro medio oficial.
 - Nunca compartas códigos de verificación o contraseñas, ni siquiera “por ayuda”.
 
----
+***
 
 ## 8. Dispositivos físicos
 **Ejemplo:** Conectas una memoria USB que encontraste.
@@ -126,7 +126,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Desactiva la ejecución automática.
 - Escanea los dispositivos externos con un antivirus.
 
----
+***
 
 ## Hábitos esenciales de ciberseguridad personal
 - Usa contraseñas únicas y seguras.
@@ -137,7 +137,7 @@ A continuación los riesgos más comunes y cómo prevenirlos…
 - Desconfía de mensajes o llamadas “urgentes” que pidan datos o dinero.
 - Haz copias de seguridad de tus archivos importantes.
 
----
+***
 
 ## En resumen
 <blockquote>

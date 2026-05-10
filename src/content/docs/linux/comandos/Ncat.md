@@ -4,12 +4,12 @@ description: Ncat - Notas de hacking y ciberseguridad.
 ---
 
 # Ncat en Linux
----
+***
 
 ## ¿Qué hace ncat?
 ncat (o **Ncat**) es la versión moderna de **netcat** incluida con **Nmap**. Es una herramienta de línea de comandos para leer/escribir datos a través de conexiones **TCP** o **UDP**, con muchas mejoras: soporte SSL/TLS, proxys, ejecución remota de comandos, modo servidor/cliente, reconexiones, y más. Es el “cuchillo suizo” de redes pero con opciones extra de seguridad y flexibilidad.
 
----
+***
 
 ## Usos típicos
 - Conectar a un puerto remoto (cliente).
@@ -19,7 +19,7 @@ ncat (o **Ncat**) es la versión moderna de **netcat** incluida con **Nmap**. Es
 - Tunelizar con SSL/TLS o a través de proxies.
 - Depuración y pruebas de red (chat, eco, escaneo, etc.).
 
----
+***
 
 ## Opciones comunes (útiles y seguras)
 - -l : escuchar (modo server).
@@ -32,15 +32,13 @@ ncat (o **Ncat**) es la versión moderna de **netcat** incluida con **Nmap**. Es
 - --ssl : asegurar la conexión con TLS/SSL.
 - --send-only / --recv-only : solo enviar o solo recibir (útil en transferencias).
 - --proxy &lt;host:puerto&gt; y --proxy-type socks4, socks5, http : conectar a través de un proxy.
-- --exec &lt;comando&gt; o -e &lt;programa&gt; : ejecutar un comando al conectar (p.ej. crear una shell remota). <Lista> **ATENCIÓN:** usar con extremo cuidado — esto permite ejecución remota y es peligroso sí se habilita en producción sin control.
+- --exec &lt;comando&gt; o -e &lt;programa&gt; : ejecutar un comando al conectar (p.ej. crear una shell remota). **ATENCIÓN:** usar con extremo cuidado — esto permite ejecución remota y es peligroso sí se habilita en producción sin control.
 
-</li>
-</Lista >
 <blockquote>
 Nota: Ncat tiene muchas más opciones (certificados TLS, límites de tasa, timeouts). Consulta ncat --help o man ncat para la lista completa en tú versión.
 
 </blockquote>
----
+***
 
 ## Ejemplos prácticos
 ### Cliente simple (TCP)
@@ -103,7 +101,7 @@ ncat 192.168.1.20 4444
 
 **Nunca** hagas esto en máquinas expuestas sin autorización.
 
----
+***
 
 ## Seguridad y buenas prácticas
 - --exec / -e y reverse shells son poderosas pero **peligrosas**: úsalas solo en entornos de laboratorio o con permiso explícito.

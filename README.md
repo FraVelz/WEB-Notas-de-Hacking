@@ -1,73 +1,92 @@
 # Notas de Hacking
 
-[English Version](./README.EN.md)
+[English version](./README.EN.md)
+
+Sitio publicado en: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fravelz.github.io/WEB-Notas-de-Hacking/)
 
 ![Captura de pantalla](./public/screenshot.png)
 
-Guía completa para aprender o repasar ciberseguridad desde cero. Un sitio web estático construido con Astro que contiene notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.
+Guía para aprender o repasar ciberseguridad desde cero. Es un sitio estático generado con [Astro](https://astro.build/) y el tema [Starlight](https://starlight.astro.build/): las notas viven en Markdown (y MDX donde aplica), con búsqueda, tema oscuro y barra lateral definida explícitamente para mantener el orden de los temas.
 
 ## ✨ Características
 
-- 📖 **Contenido organizado**: Notas estructuradas por categorías y temas
-- 🔍 **Búsqueda avanzada**: Busca en títulos y contenido completo de todas las notas
-- 📑 **Índice dinámico**: Tabla de contenidos generada automáticamente para cada página
-- 🎨 **Interfaz moderna**: Diseño oscuro con navegación intuitiva
-- 📱 **Responsive**: Adaptado para dispositivos móviles y desktop
-- ⚡ **Rápido**: Sitio estático optimizado con Astro
+- **Contenido por secciones**: notas agrupadas (Linux, Python, Windows, redes, pentesting, etc.).
+- **Búsqueda**: incluida por Starlight sobre títulos y cuerpo de las páginas.
+- **Tabla de contenidos**: por página cuando aplica.
+- **Tema personalizado**: paleta en `src/styles/theme.css` y contenido Markdown / foco / selección en `src/styles/markdown-layout.css`, cargados en orden como `customCss` de Starlight (`astro.config.mjs`).
+- **Responsive**: enlaces públicos desde GitHub Pages (`base`: `/WEB-Notas-de-Hacking`).
 
 ## 🛠️ Tecnologías
 
-- **[Astro](https://astro.build/)** - Framework web moderno
-- **[React](https://react.dev/)** - Componentes interactivos
-- **[MDX](https://mdxjs.com/)** - Markdown con componentes
-- **[Tailwind CSS](https://tailwindcss.com/)** - Estilos utilitarios
-- **[TypeScript](https://www.typescriptlang.org/)** - Tipado estático
-- **[Content Collections](https://docs.astro.build/en/guides/content-collections/)** - Gestión de contenido
+- **[Astro 5](https://astro.build/)** — generador del sitio y rutas estáticas.
+- **[@astrojs/starlight](https://starlight.astro.build/)** — documentación, navegación y búsqueda.
+- **[@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/)** — Markdown con componentes cuando hace falta.
+- **[TypeScript](https://www.typescriptlang.org/)** — tipos en configuración y tipos de contenido.
+- **[Content Collections](https://docs.astro.build/en/guides/content-collections/)** — colección `docs` en `src/content/docs` (definida en `src/content.config.ts`).
 
-## �📁 Estructura del Proyecto
+## 🚀 Desarrollo local
 
-(Aproximación...).
+Requisitos: Node.js compatible con Astro 5. El repo incluye `pnpm-lock.yaml` (recomendado usar [pnpm](https://pnpm.io/)).
 
-``` text
-├── src/
-│   ├── components/        # Componentes reutilizables
-│   │   ├── layout/        # Header, Sidebar, Footer, TableOfContents
-│   │   ├── atomos/        # Componentes básicos
-│   │   ├── moleculas/     # Componentes compuestos
-│   │   └── organismos/    # Componentes complejos
-│   ├── content/
-│   │   └── secciones/     # Contenido Markdown/MDX organizado por categorías
-│   ├── layouts/           # Layouts principales
-│   ├── pages/             # Páginas del sitio
-│   └── styles/            # Estilos globales
-├── public/                # Archivos estáticos
-└── astro.config.mjs       # Configuración de Astro
+```bash
+pnpm install
+pnpm dev
 ```
 
-## 🎯 Categorías de Contenido
+Otros comandos útiles:
 
-- **Conceptos Básicos** - Fundamentos de ciberseguridad
-- **Linux** - Comandos, scripts y administración
-- **Python** - Programación y módulos útiles
-- **Redes** - Teoría y herramientas de redes
-- **Windows** - PowerShell y administración Windows
-- **Pentesting** - Fases y metodologías
-- **OSINT** - Inteligencia de fuentes abiertas
-- **Anonimato** - Privacidad y anonimato
-- **Otros** - Recursos y herramientas adicionales
+- `pnpm build` — genera la salida en `dist/` (lista para GitHub Pages con el `base` configurado).
+- `pnpm preview` — sirve el build localmente para revisar antes de desplegar.
+
+## 📁 Estructura del proyecto
+
+```text
+├── public/                    # Estáticos (favicon, capturas, robots, etc.)
+├── src/
+│   ├── content/
+│   │   └── docs/               # Notas Markdown / MDX (rutas = slugs Starlight)
+│   ├── pages/
+│   │   └── 404.astro           # 404 personalizado (Starlight tiene disable404Route)
+│   ├── styles/
+│   │   ├── theme.css           # Paleta (--sl-*) y modo claro/oscuro
+│   │   └── markdown-layout.css # Tablas, listas, código en línea, foco, selección
+│   ├── content.config.ts       # Colección `docs` (loader y schema de Starlight)
+│   └── env.d.ts
+├── astro.config.mjs            # Integraciones Starlight + MDX, site/base, metadatos
+├── starlight-sidebar.mjs       # Árbol y orden del menú lateral
+└── package.json
+```
+
+La barra lateral no se deduce solo de carpetas: el orden visible lo controla **`starlight-sidebar.mjs`** para alinearlo con la página de inicio (`src/content/docs/index.md`).
+
+## 🎯 Áreas de contenido
+
+- **Conceptos básicos** — fundamentos, legalidad, mitos.
+- **Virtualización** — conceptos y notas relacionadas.
+- **Linux** — comandos, bash, Bandit y subpáginas de comandos.
+- **Python** — lenguaje y módulos (subprocess, threading, sockets, etc.).
+- **Windows** — PowerShell, permisos, procesos y administración.
+- **Redes** — teoría, subnetting, herramientas.
+- **Pentesting** — fases, tipos de entornos (cajas).
+- **OSINT** — terminología, Google dorks, básicos.
+- **Anonimato** — privacidad, huella digital, filtraciones, user-agent.
+- **Otros** — ramas de ciberseguridad, herramientas, recursos, actualizaciones.
 
 ## 📝 Información
 
-**Licencia:** Apache Licence 2.0
+**Licencia:** Apache License 2.0
 
 **Fravelz**
 
 - GitHub: [@fravelz](https://github.com/fravelz)
+- Repositorio: [WEB-Notas-de-Hacking](https://github.com/FraVelz/WEB-Notas-de-Hacking)
 
 ## 🙏 Contribuciones
 
-Las contribuciones son bienvenidas. Si encuentras errores o tienes sugerencias, no dudes en abrir un issue o pull request.
+Las contribuciones son bienvenidas. Si encuentras errores o tienes sugerencias, abre un issue o un pull request.
 
 ---
 
-⭐ Si este proyecto te resulta útil, considera darle una estrella en GitHub.
+Si te resulta útil el proyecto, puedes darle una estrella en GitHub.
+
+> Este documento fue generado o actualizado con asistencia de inteligencia artificial. Última actualización: **10 de mayo de 2026**.

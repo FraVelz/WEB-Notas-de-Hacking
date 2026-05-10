@@ -4,7 +4,7 @@ description: Threading - Notas de hacking y ciberseguridad.
 ---
 
 # Threading en Python
----
+***
 
 ## 1) ¿Qué es threading?
 threading es el módulo estándar de Python para **concurrencia mediante hilos** (threads). Permite ejecutar varias tareas aparentemente al mismo tiempo dentro del mismo proceso. Es ideal para operaciones **I/O-bound** (espera de red, disco, etc.). Importarlo:
@@ -12,7 +12,7 @@ threading es el módulo estándar de Python para **concurrencia mediante hilos**
 import threading
 ```
 
----
+***
 
 ## 2) Conceptos clave
 - **Thread (hilo):** unidad de ejecución.
@@ -21,7 +21,7 @@ import threading
 - **Race condition:** condición de carrera cuando varios hilos acceden/actualizan recursos compartidos sin sincronización.
 - **Thread-safe:** código que puede ejecutarse en varios hilos sin errores por concurrencia.
 
----
+***
 
 ## 3) Crear y usar hilos — ejemplos básicos
 ### a) Usando Thread con target
@@ -64,7 +64,7 @@ h.start()
 h.join()
 ```
 
----
+***
 
 ## 4) Daemon threads y uso correcto
 ```python
@@ -75,7 +75,7 @@ t.start()
 
 Usa daemon para tareas de fondo opcionales (logs en tiempo real, watchers). Para trabajo crítico, **no** uses daemon; asegúrate de join().
 
----
+***
 
 ## 5) Sincronización — primitivas importantes
 ### Lock (mutual exclusion)
@@ -122,7 +122,7 @@ bar = threading.Barrier(3)
 bar.wait()  # todos los hilos esperan aquí hasta que lleguen los 3
 ```
 
----
+***
 
 ## 6) Comunicación segura entre hilos: queue.Queue
 queue.Queue es **thread-safe** y la forma recomendada para pasar datos entre hilos (producer-consumer).
@@ -152,7 +152,7 @@ t1.start(); t2.start()
 t1.join(); q.join()
 ```
 
----
+***
 
 ## 7) Manejo de excepciones en hilos
 Las excepciones en Thread no se propagan al hilo principal. Opciones:
@@ -176,7 +176,7 @@ except Exception as e:
 print("error en hilo:", e)
 ```
 
----
+***
 
 ## 8) ThreadPoolExecutor (alta abstracción)
 Más cómodo que crear hilos manualmente.
@@ -192,13 +192,13 @@ for f in as_completed(futures):
 print(f.result())
 ```
 
----
+***
 
 ## 9) GIL — cuándo usar threading vs multiprocessing
 - **I/O-bound:** usa threading (o asyncio) — hilos dan mejoras reales (espera de I/O libera GIL).
 - **CPU-bound:** threading no escala por GIL; usa multiprocessing (procesos) o extensiones nativas (numpy, C) que sueltan GIL. Explicación corta: el GIL permite que solo un hilo ejecute bytecode Python simultáneamente; por eso multiples hilos no aceleran cálculos puros en CPython.
 
----
+***
 
 ## 10) Operaciones atómicas y seguridad
 - Algunos objetos y operaciones son atómicas en CPython (por ejemplo, asignación simple de variable, operaciones sobre tipos integrales?) — **no confíes en ello**.
@@ -214,7 +214,7 @@ counter += 1  # no es atómico: leer-modificar-escribir
 
 Siempre protege con Lock sí hay acceso concurrente.
 
----
+***
 
 ## 11) Cancelación y parada de hilos
 No existe Thread.kill() seguro. Patrones para parar:
@@ -232,7 +232,7 @@ stop_event.set()
 
 - Usar sentinels en queue (None).
 
----
+***
 
 ## 12) Thread-local storage
 Datos separados por hilo:
@@ -250,7 +250,7 @@ t1.start(); t2.start()
 
 Cada hilo ve su propio local.x.
 
----
+***
 
 ## 13) Debugging y utilidades
 - threading.enumerate() → lista hilos activos.
@@ -272,7 +272,7 @@ t = threading.Thread(target=worker, name="hilo-1")
 t.start(); t.join()
 ```
 
----
+***
 
 ## 14) Buenas prácticas
 - Para I/O concurrency, prefiere ThreadPoolExecutor o asyncio según el caso.
@@ -282,7 +282,7 @@ t.start(); t.join()
 - Sí necesitas paralelismo real para CPU-bound, usa multiprocessing o librerías que suelten el GIL.
 - Añade timeouts a join() y bloqueos (lock.acquire(timeout=...)) sí corres riesgos de deadlock.
 
----
+***
 
 ## 15) Ejemplos prácticos (útiles)
 ### a) Producer-consumer con Queue (resumen)
@@ -337,17 +337,16 @@ results = list(ex.map(fetch, urls))
 print(results)
 ```
 
----
+***
 
 ## 16) Limitaciones y alternativas
 - threading no es la mejor opción para CPU-bound por el GIL.
 - Alternativas:
-- multiprocessing — procesos (paralelismo real).
-- asyncio — concurrencia en un solo hilo usando corutinas (muy eficiente para I/O con muchas conexiones).
-- concurrent.futures.ProcessPoolExecutor — API parecida a ThreadPool pero con procesos.
+  - multiprocessing — procesos (paralelismo real).
+  - asyncio — concurrencia en un solo hilo usando corutinas (muy eficiente para I/O con muchas conexiones).
+  - concurrent.futures.ProcessPoolExecutor — API parecida a ThreadPool pero con procesos.
 
-</Lista>
----
+***
 
 ## 17) Resumen
 - Usa threading para **I/O-bound**.

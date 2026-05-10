@@ -4,14 +4,14 @@ description: Sockets - Notas de hacking y ciberseguridad.
 ---
 
 # Python
----
+***
 
 ## Resumen
 Los **sockets** permiten la **comunicación entre computadoras o procesos** a través de una red (como Internet o una LAN).
 
 Python ofrece el módulo socket para manejar conexiones **TCP** (orientadas a conexión) y **UDP** (sin conexión).
 
----
+***
 
 ## ️TCP (Transmission Control Protocol)
 - Conexión establecida entre cliente y servidor (3-way handshake).
@@ -52,7 +52,7 @@ data = s.recv(1024)
 print("Servidor responde:", data.decode())
 ```
 
----
+***
 
 ## UDP (User Datagram Protocol)
 - No hay conexión, se envían “paquetes” sin confirmar recepción.
@@ -86,7 +86,7 @@ data, _ = s.recvfrom(1024)
 print("Servidor responde:", data.decode())
 ```
 
----
+***
 
 ## Diferencias rápidas
 <!-- Tabla convertida manualmente -->

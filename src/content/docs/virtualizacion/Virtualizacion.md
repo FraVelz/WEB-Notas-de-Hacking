@@ -49,6 +49,4 @@ Asigna a la VM lo mínimo razonable para el SO invitado; dejar **siempre** RAM y
 
 Ejemplo de entorno en VirtualBox:
 
-<Imagen src="/WEB-Notas-de-Hacking/imagenes/image-virtualbox.png" alt="Imagen de VirtualBox" className="
-py-4 w-full
-" />
+![Captura de VirtualBox](/WEB-Notas-de-Hacking/imagenes/image-virtualbox.png)

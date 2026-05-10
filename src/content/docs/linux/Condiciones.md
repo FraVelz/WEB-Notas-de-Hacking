@@ -4,7 +4,7 @@ description: Condiciones - Notas de hacking y ciberseguridad.
 ---
 
 # Condiciones en Bash Script
----
+***
 
 ## Booleanos en Bash
 En Bash **no existen valores booleanos nativos**, pero sí existen **comandos que devuelven verdadero o falso**:
@@ -17,7 +17,7 @@ false  # Devuelve 1 (falso)
 En Bash, un **0 significa verdadero** y un **número distinto de 0 (generalmente 1)** significa falso.
 
 </blockquote>
----
+***
 
 ## Operadores Condicionales
 Los operadores se usan para comparar **números** o **cadenas de texto**.
@@ -28,7 +28,7 @@ Los operadores se usan para comparar **números** o **cadenas de texto**.
 ### Para cadenas de texto
 <!-- Tabla convertida manualmente -->
 
----
+***
 
 ## Estructura if - elif - else
 Ejemplo de uso básico:
@@ -52,7 +52,7 @@ fi
 - La instrucción then debe ir en la misma línea o en una nueva, separada con ;.
 
 </blockquote>
----
+***
 
 ## Condiciones compuestas (&amp;&amp;, ||)
 Puedes combinar condiciones con operadores lógicos.
@@ -73,7 +73,7 @@ fi
 [[ ... ]] permite el uso de operadores lógicos &amp;&amp; y || dentro del mismo bloque sin necesidad de múltiples [ ].
 
 </blockquote>
----
+***
 
 ## Formas de escribir condiciones
 Las tres siguientes formas son equivalentes:

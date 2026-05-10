@@ -4,7 +4,7 @@ description: Variables Entorno - Notas de hacking y ciberseguridad.
 ---
 
 # Variables de Entorno
----
+***
 
 ### Tipos de variables de entorno
 <ol type="1">
@@ -25,7 +25,7 @@ usuarios del equipo. Por ejemplo:
 
 </li>
 </ol >
----
+***
 
 ### Cómo ver las variables de entorno
 <ol type="1">
@@ -60,7 +60,7 @@ usuarios del equipo. Por ejemplo:
 
 </li>
 </ol >
----
+***
 
 ### Editar o crear variables
 - Para agregar una carpeta al PATH: <ol type="1"> Abrir **Variables de entorno**.

@@ -4,13 +4,16 @@ description: Guía completa para aprender o repasar ciberseguridad desde cero. N
 hero:
   tagline: Guía para aprender o repasar ciberseguridad desde cero. Enfoque en pentesting.
   actions:
-    - text: Conceptos Básicos
-      link: /conceptos-basicos/conceptosbasicos/
+    - text: Conceptos Básicos|Mitos
+      link: /WEB-Notas-de-Hacking/conceptos-basicos/mitos/
       icon: right-arrow
     - text: Ver en GitHub
       link: https://github.com/FraVelz/WEB-Notas-de-Hacking
       icon: external
       variant: minimal
+      attrs:
+        target: '_blank'
+        rel: noopener noreferrer
 ---
 
 # Bienvenido
