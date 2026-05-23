@@ -8,7 +8,7 @@ Sitio publicado en: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fr
 
 Guía para aprender o repasar ciberseguridad desde cero. Es un sitio estático generado con [Astro](https://astro.build/) y el tema [Starlight](https://starlight.astro.build/): las notas viven en Markdown (y MDX donde aplica), con búsqueda, tema oscuro y barra lateral definida explícitamente para mantener el orden de los temas.
 
-Con esta carpeta como raíz del workspace en Cursor, el comando `/update-readme` y las reglas completas están en [`.cursor/commands/update-readme.md`](.cursor/commands/update-readme.md) para mantener README bilingüe.
+Con esta carpeta como raíz del workspace en Cursor, los comandos `/update-docs` y `/auto-commit` están en [`.cursor/commands/`](.cursor/commands/) para mantener documentación bilingüe y commits alineados al repo.
 
 ## ✨ Características
 
