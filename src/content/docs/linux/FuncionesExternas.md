@@ -4,11 +4,13 @@ description: Funciones Externas - Notas de hacking y ciberseguridad.
 ---
 
 # Herramientas externas en Bash
+
 Todo lo que se usa para comandos bash se puede usar para comandos de la terminal, también y a la viceversa.
 
-***
+---
 
 ## 1. <strong>Manejo de texto</strong>
+
 - **cat**: Muestra el contenido de archivos.
 
   ```bash
@@ -39,7 +41,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
   wc -l archivo.txt # número de líneas wc -w archivo.txt # número de palabras
   ```
 
-***
+---
 
 ## 2. <strong>Búsqueda y filtrado</strong>
 
@@ -59,7 +61,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 - **locate**: Búsqueda rápida en una base de datos actualizada con updatedb.
 
-***
+---
 
 ## 3. <strong>Transformación de texto</strong>
 
@@ -109,9 +111,10 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 - **kill**: Termina un proceso.
 - **jobs, bg, fg**: Control de trabajos en Bash.
 
-***
+---
 
 ## 5. <strong>Archivos y directorios</strong>
+
 - **ls**: Lista archivos.
 - **cp**: Copia.
 - **mv**: Mueve/renombra.
@@ -124,7 +127,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 - **stat**: Muestra metadatos del archivo.
 
-***
+---
 
 ## 6. <strong>Compresión y empaquetado</strong>
 
@@ -160,11 +163,12 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
   cat lista.txt | xargs rm
   ```
 
-***
+---
 
 **Idea clave**:
 
-Bash es más poderoso **cuando combinas estas herramientas** usando **pipes (|)** y redirecciones (&gt;, &lt;, &gt;&gt;). Ejemplo: buscar errores en un log, contarlos y guardarlos:
+Bash es más poderoso **cuando combinas estas herramientas** usando **pipes (|)** y redirecciones (&gt;, &lt;, &gt;&gt;).
+Ejemplo: buscar errores en un log, contarlos y guardarlos:
 
 ```bash
 grep "ERROR" log.txt | wc -l > total_errores.txt

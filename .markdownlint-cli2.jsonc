@@ -1,0 +1,10 @@
+{
+  "globs": [
+    "**/*.md",
+    "!node_modules/**",
+    "!dist/**",
+    "!build/**",
+    "!.astro/**",
+    "!coverage/**"
+  ]
+}

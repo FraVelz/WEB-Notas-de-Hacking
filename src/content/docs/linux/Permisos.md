@@ -4,26 +4,33 @@ description: Permisos - Notas de hacking y ciberseguridad.
 ---
 
 # Permisos en Linux
+
 ## Temario
-***
+
+---
 
 ## 1. Concepto básico de permisos
+
 Cada archivo o carpeta tiene **3 tipos de permisos** y **3 categorías de usuarios**:
 
 ### Tipos de permisos
+
 <!-- Tabla convertida manualmente -->
 
 ### Categorías
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## 2. Ver permisos
+
 ```bash
 ls -l
 ```
 
 Ejemplo:
+
 ```bash
 -rwxr-xr--  1 francisco users 1234 oct 21  script.sh
 ```
@@ -36,10 +43,12 @@ Significado:
 - francisco → dueño
 - users → grupo
 
-***
+---
 
 ## 3. Cambiar permisos (chmod)
+
 ### a) Modo simbólico
+
 ```bash
 chmod u+x script.sh     # añadir ejecución al usuario
 chmod g-w script.sh     # quitar escritura al grupo
@@ -48,15 +57,17 @@ chmod a+r file.txt      # todos pueden leer
 ```
 
 ### b) Modo numérico
+
 ```bash
 chmod 755 script.sh
 ```
 
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## 4. Cambiar dueño o grupo (chown, chgrp)
+
 ```bash
 chown usuario archivo
 chgrp grupo archivo
@@ -64,19 +75,23 @@ chown usuario:grupo archivo
 ```
 
 Ejemplo:
+
 ```bash
 sudo chown francisco:users script.sh
 ```
 
-***
+---
 
 ## 5. Permisos especiales
+
 Existen tres permisos especiales en Linux:
 
 <!-- Tabla convertida manualmente -->
 
 ### Sticky Bit
+
 El **sticky bit** se usa en directorios **para evitar que otros borren archivos ajenos**.
+
 ```bash
 chmod +t /tmp/publico
 # o modo numérico
@@ -84,6 +99,7 @@ chmod 1777 /tmp/publico
 ```
 
 Ver resultado:
+
 ```bash
 ls -ld /tmp/publico
 drwxrwxrwt  9 root root 4096 oct 21 09:00 /tmp/publico
@@ -94,6 +110,7 @@ drwxrwxrw**t** → el “t” final indica el sticky bit activo.
 Ejemplo típico: El directorio /tmp **siempre lo tiene activado**.
 
 ### SUID y SGID
+
 <h4 id="suid">SUID</h4>
 Ejemplo:
 ```bash
@@ -105,6 +122,7 @@ ls -l /usr/bin/passwd
 - Permite ejecutar con permisos del **dueño del archivo** (en este caso, root).
 
 Activar o desactivar manualmente:
+
 ```bash
 chmod u+s archivo   # activar
 chmod u-s archivo   # desactivar
@@ -117,6 +135,7 @@ chmod g+s archivo
 ```
 
 En directorios:
+
 ```bash
 chmod g+s carpeta/
 ```
@@ -130,38 +149,47 @@ Los nuevos archivos heredan el grupo del directorio, útil para carpetas compart
 ***
 
 ## 6. Atributos de archivos (chattr, lsattr)
-Los **atributos** controlan *cómo* se comporta un archivo, más allá de los permisos.
+
+Los **atributos** controlan _cómo_ se comporta un archivo, más allá de los permisos.
 
 ### Ver atributos
+
 ```bash
 lsattr archivo
 ```
 
 Ejemplo:
+
 ```bash
 ----i--------e-----  documento.txt
 ```
 
 ### Cambiar atributos (chattr)
+
 Hacer un archivo **inmutable**:
+
 ```bash
 sudo chattr +i archivo.txt
 ```
 
 Solo **root** puede revertirlo:
+
 ```bash
 sudo chattr -i archivo.txt
 ```
 
 Modo **append-only** (solo añadir contenido):
+
 ```bash
 sudo chattr +a log.txt
 ```
 
 ### Atributos comunes
+
 <!-- Tabla convertida manualmente -->
 
 ### Ejemplo práctico en script Bash
+
 ```bash
 #!/bin/bash
 # Proteger archivos del sistema
@@ -177,7 +205,8 @@ done
 lsattr "$(ARCHIVOS[@])"
 ```
 
-***
+---
 
 ## 7. Resumen visual
+
 <!-- Tabla convertida manualmente -->

@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "scan:md": "node scripts/scan-markdown.mjs"
+    "lint:md": "markdownlint-cli2",
+    "lint:md:fix": "markdownlint-cli2 --fix"
   },
   "dependencies": {
     "@astrojs/mdx": "4.3.13",
@@ -16,6 +17,7 @@
     "astro": "^5.18.0"
   },
   "devDependencies": {
+    "markdownlint-cli2": "^0.17.2",
     "typescript": "^5.6.0"
   }
 }

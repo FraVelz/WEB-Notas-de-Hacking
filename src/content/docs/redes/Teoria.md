@@ -4,28 +4,34 @@ description: Teoria - Notas de hacking y ciberseguridad.
 ---
 
 # Parte Teórica (conceptos)
+
 Cursos videos de YouTube:
 
 - [Ir curso de YouTube Contando bits - Redes Informáticas](https://www.youtube.com/watch?v=OLSKCWjI778)
 - [Ir curso de YouTube Hixec - Redes para ciberseguridad](https://www.youtube.com/watch?v=7ejIdyu8hug)
 
-***
+---
 
 ## 1. base (fundamentos)
-**¿Qué son las redes?**
+
+### ¿Qué son las redes?
 
 - Una **red** es un conjunto de dispositivos conectados entre sí que comparten información y recursos.
-- Los dispositivos dentro de una red se llaman **nodos**. Los nodos son puntos de conexión y pueden ser cualquier dispositivo capaz de conectarse a la red, como computadoras, teléfonos, impresoras o servidores.
+- Los dispositivos dentro de una red se llaman **nodos**. Los nodos son puntos de conexión y pueden ser cualquier
+  dispositivo capaz de conectarse a la red, como computadoras, teléfonos, impresoras o servidores.
 - El **Internet** es la red más grande del mundo, conectando millones de dispositivos alrededor del planeta.
 
-**Componentes de una red:**
+### Componentes de una red:
 
 - **Nodo:** Cualquier dispositivo conectado a la red.
-- **Medio de transmisión:** Puede ser **cableado** (como cables de cobre o fibra óptica) o **inalámbrico** (como Wi-Fi o Bluetooth).
-- **Dispositivos de red:** Facilitan el tráfico de información dentro de la red. Ejemplos incluyen **routers**, **switches** y **puntos de acceso**.
-- **Protocolo:** Conjunto de reglas y estándares que permite la comunicación entre dos dispositivos, asegurando que se entiendan correctamente.
+- **Medio de transmisión:** Puede ser **cableado** (como cables de cobre o fibra óptica) o **inalámbrico** (como Wi-Fi o
+  Bluetooth).
+- **Dispositivos de red:** Facilitan el tráfico de información dentro de la red. Ejemplos incluyen **routers**,
+  **switches** y **puntos de acceso**.
+- **Protocolo:** Conjunto de reglas y estándares que permite la comunicación entre dos dispositivos, asegurando que se
+  entiendan correctamente.
 
-**Conceptos básicos de redes:**
+### Conceptos básicos de redes:
 
 - **Cliente:** Dispositivo que solicita servicios o información de otro dispositivo (el servidor).
 - **Servidor:** Dispositivo que ofrece servicios o información a otros dispositivos (clientes).
@@ -33,18 +39,19 @@ Cursos videos de YouTube:
 - **Puerto:** Punto de conexión dentro de un dispositivo que permite la comunicación de servicios específicos.
 - **Protocolo:** Reglas que regulan cómo se envía y recibe la información en la red.
 
-**Funciones principales:**
+### Funciones principales:
 
 - Compartir recursos.
 - Comunicación.
 - Almacenamiento de datos.
 
-***
+---
 
 ## 2. Historia de las redes
 
 - **Década de 1960 – Orígenes**: se crean las primeras ideas de redes para compartir información entre computadoras.
-- **ARPANET (1969)**: la primera red a gran escala, financiada por el Departamento de Defensa de EE. UU., conectaba universidades y laboratorios.
+- **ARPANET (1969)**: la primera red a gran escala, financiada por el Departamento de Defensa de EE. UU., conectaba
+  universidades y laboratorios.
 - **Objetivo**: comunicación eficiente y compartir recursos informáticos.
 - **Década de 1970 – Protocolos y estandarización**
   - Se desarrolla **TCP/IP**: protocolo que permite que diferentes redes se comuniquen.
@@ -61,9 +68,10 @@ Cursos videos de YouTube:
   - Redes sociales, streaming y servicios en la nube transforman la forma de comunicarse.
   - Mayor enfoque en seguridad y privacidad.
 
-***
+---
 
 ## 3. Modelos de redes
+
 Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos:
 
 ### <strong>Modelo OSI (Open Systems Interconnection)</strong>
@@ -86,25 +94,33 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
   - **Transporte**: comunicación confiable (TCP) o rápida (UDP).
   - **Aplicación**: servicios de red como HTTP, FTP, SMTP.
 
-***
+---
 
 ## 4. Tipos de redes según su alcance
+
 - **LAN (Local Area Network)**: red local, p. ej., en una casa o escuela.
 - **WAN (Wide Area Network)**: red de largo alcance, p. ej., Internet.
 - **MAN (Metropolitan Area Network)**: cubre una ciudad.
 - **PAN (Personal Area Network)**: dispositivos cercanos, p. ej., Bluetooth.
 
-***
+---
 
 ## 5. Arquitectura Cliente-Servidor
-La **arquitectura cliente-servidor** es un modelo de diseño de sistemas en el que las tareas se distribuyen entre dos tipos de entidades: **clientes** y **servidores**.
+
+La **arquitectura cliente-servidor** es un modelo de diseño de sistemas en el que las tareas se distribuyen entre dos
+tipos de entidades: **clientes** y **servidores**.
 
 ### <strong>Componentes principales:</strong>
-- **Servidor:** Es un equipo o programa que **ofrece servicios** o recursos a otros dispositivos. Ejemplo: un servidor web que envía páginas HTML.
-- **Cliente:** Es un equipo o programa que **solicita servicios** al servidor. Ejemplo: un navegador web que solicita páginas a un servidor.
-- **Red:** Medio que permite la comunicación entre cliente y servidor. Puede ser cableada (Ethernet) o inalámbrica (Wi-Fi).
+
+- **Servidor:** Es un equipo o programa que **ofrece servicios** o recursos a otros dispositivos. Ejemplo: un servidor
+  web que envía páginas HTML.
+- **Cliente:** Es un equipo o programa que **solicita servicios** al servidor. Ejemplo: un navegador web que solicita
+  páginas a un servidor.
+- **Red:** Medio que permite la comunicación entre cliente y servidor. Puede ser cableada (Ethernet) o inalámbrica
+  (Wi-Fi).
 
 ### <strong>Funcionamiento:</strong>
+
 - El cliente envía una **solicitud** al servidor.
 - El servidor procesa la solicitud.
 - El servidor envía una **respuesta** al cliente.
@@ -123,13 +139,17 @@ Ejemplo práctico: Cuando abres YouTube:
 - Escalabilidad: se pueden añadir más clientes sin cambiar el servidor.
 
 ### <strong>Desventajas:</strong>
+
 - Sí el servidor falla, los clientes quedan sin servicio.
 - Requiere buena infraestructura para manejar muchos clientes.
 
-***
+---
 
 ## 6. Arquitectura de Red
-La **arquitectura de red** describe cómo los **dispositivos y servicios están organizados y conectados** para comunicarse. La arquitectura cliente-servidor es un tipo de arquitectura de red, pero existen otros modelos, como **peer-to-peer (P2P)**.
+
+La **arquitectura de red** describe cómo los **dispositivos y servicios están organizados y conectados** para
+comunicarse. La arquitectura cliente-servidor es un tipo de arquitectura de red, pero existen otros modelos, como
+**peer-to-peer (P2P)**.
 
 ### <strong>Tipos comunes de arquitectura de red:</strong>
 
@@ -144,17 +164,21 @@ La **arquitectura de red** describe cómo los **dispositivos y servicios están 
   - Cada dispositivo está conectado a varios otros dispositivos.
   - Alta confiabilidad y redundancia.
 
-***
+---
 
 ## 7. Protocolos de red
-Un **protocolo de red** es un conjunto de **reglas y estándares** que permiten que los dispositivos se comuniquen correctamente a través de una red.
+
+Un **protocolo de red** es un conjunto de **reglas y estándares** que permiten que los dispositivos se comuniquen
+correctamente a través de una red.
 
 ### <strong>Funciones principales de los protocolos:</strong>
+
 - Determinan **cómo se envían los datos**.
 - Definen **cómo se reciben y verifican**.
 - Aseguran que **dispositivos distintos puedan entenderse**.
 
 ### <strong>Ejemplos de protocolos comunes:</strong>
+
 <!-- Tabla convertida manualmente -->
 
 <blockquote>
@@ -164,7 +188,9 @@ Nota: Muchos protocolos trabajan **juntos en capas** según el modelo OSI o TCP/
 ***
 
 ## 8. Comunicaciones en Redes
-La **comunicación en redes** es el proceso mediante el cual los **dispositivos intercambian información** siguiendo protocolos.
+
+La **comunicación en redes** es el proceso mediante el cual los **dispositivos intercambian información** siguiendo
+protocolos.
 
 ### <strong>Tipos de comunicación:</strong>
 
@@ -178,26 +204,32 @@ La **comunicación en redes** es el proceso mediante el cual los **dispositivos 
   - Ejemplo: transmisión de video en vivo a varios usuarios.
 
 ### <strong>Medios de transmisión:</strong>
+
 - **Alámbricos:** Cable Ethernet, fibra óptica.
 - **Inalámbricos:** Wi-Fi, Bluetooth, redes móviles (4G/5G).
 
 ### <strong>Procesos clave en la comunicación:</strong>
+
 - **Codificación y empaquetado de datos** (se forman los paquetes de información).
 - **Transmisión** por el medio (cable o aire).
 - **Recepción y verificación** de errores.
 - **Entrega** al dispositivo o aplicación correcta.
 
-***
+---
 
 ## 9. Protocolos de Aplicación
-Los **protocolos de aplicación** son reglas que permiten a los **programas o aplicaciones** comunicarse a través de la red. Trabajan en la **capa más alta** de los modelos de red (OSI o TCP/IP).
+
+Los **protocolos de aplicación** son reglas que permiten a los **programas o aplicaciones** comunicarse a través de la
+red. Trabajan en la **capa más alta** de los modelos de red (OSI o TCP/IP).
 
 ### <strong>Funciones principales:</strong>
+
 - Definen cómo las aplicaciones intercambian datos.
 - Permiten que diferentes programas se entiendan aunque sean de fabricantes distintos.
 - Usan protocolos de transporte como **TCP o UDP** para enviar los datos.
 
 ### <strong>Ejemplos importantes:</strong>
+
 <!-- Tabla convertida manualmente -->
 
 <blockquote>
@@ -207,7 +239,9 @@ Nota: Cada protocolo de aplicación funciona **encima de TCP o UDP** para garant
 ***
 
 ## 10. Direcciones IP
-Una **dirección IP (Internet Protocol)** es un **identificador único** que permite que un dispositivo se comunique en una red. Funciona como una **dirección postal** para enviar información.
+
+Una **dirección IP (Internet Protocol)** es un **identificador único** que permite que un dispositivo se comunique en
+una red. Funciona como una **dirección postal** para enviar información.
 
 ### <strong>Tipos de direcciones IP:</strong>
 
@@ -220,15 +254,19 @@ Una **dirección IP (Internet Protocol)** es un **identificador único** que per
   - Diseñada para soportar millones de dispositivos más.
 
 ### <strong>Clases de direcciones IP (IPv4):</strong>
+
 - **Públicas:** Únicas en Internet, accesibles desde cualquier lugar.
 - **Privadas:** Usadas en redes locales, no accesibles directamente desde Internet. Ej: 192.168.0.0/16
 
 ### <strong>Funciones de la IP:</strong>
+
 - Identificar dispositivos en la red.
 - Dirigir los paquetes de datos hacia el destino correcto.
 
 ### <strong>Relación con los protocolos de aplicación:</strong>
-- Los **protocolos de aplicación** usan la **IP** para localizar a los dispositivos y el **puerto** para identificar la aplicación dentro de ese dispositivo.
+
+- Los **protocolos de aplicación** usan la **IP** para localizar a los dispositivos y el **puerto** para identificar la
+  aplicación dentro de ese dispositivo.
 
 <blockquote>
 Ejemplo práctico:

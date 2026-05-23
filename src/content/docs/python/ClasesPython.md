@@ -4,16 +4,20 @@ description: Clases Python - Notas de hacking y ciberseguridad.
 ---
 
 # Clases en Python
-***
+
+---
 
 ## ¿Qué es una clase en Python?
-Una **clase** es una **plantilla o molde** para crear **objetos** (instancias) que agrupan **datos (atributos)** y **funciones (métodos)** relacionados.
+
+Una **clase** es una **plantilla o molde** para crear **objetos** (instancias) que agrupan **datos (atributos)** y
+**funciones (métodos)** relacionados.
 
 Los **objetos** son las copias o instancias creadas a partir de esa clase.
 
-***
+---
 
 ## Sintaxis básica
+
 ```python
 class Persona:
 def __init__(self, nombre, edad):  # Constructor
@@ -29,16 +33,20 @@ p1.saludar()
 ```
 
 ### Explicación
+
 - class Persona: → define la clase.
-- __init__ → **constructor**, se ejecuta al crear el objeto.
+- **init** → **constructor**, se ejecuta al crear el objeto.
 - self → referencia al **objeto actual** (similar a this en otros lenguajes).
 - p1 → **instancia** de la clase Persona.
 
-***
+---
 
 ## Atributos
+
 ### 1. De instancia
+
 Son únicos para cada objeto:
+
 ```python
 class Coche:
 def __init__(self, marca):
@@ -46,31 +54,39 @@ self.marca = marca
 ```
 
 ### 2. De clase
+
 Son **compartidos por todas las instancias**:
+
 ```python
 class Coche:
 ruedas = 4  # atributo de clase
 def __init__(self, marca):
 self.marca = marca
 ```
+
 ```python
 a = Coche("Toyota")
 b = Coche("Honda")
 print(a.ruedas, b.ruedas)  # ambos tienen 4
 ```
 
-***
+---
 
 ## Métodos
+
 ### Método de instancia
+
 Opera sobre el objeto (self).
+
 ```python
 def mostrar(self):
 print(self.nombre)
 ```
 
 ### Método de clase
+
 Opera sobre la clase, no sobre un objeto.
+
 ```python
 @classmethod
 def crear_desde_edad(cls, edad):
@@ -78,17 +94,21 @@ return cls("Desconocido", edad)
 ```
 
 ### Método estático
+
 No usa self ni cls. Funciona como una función normal dentro de la clase.
+
 ```python
 @staticmethod
 def es_mayor(edad):
 return edad >= 18
 ```
 
-***
+---
 
 ## Herencia
+
 Permite crear una clase nueva basada en otra (reutiliza código).
+
 ```python
 class Animal:
 def hablar(self):
@@ -104,10 +124,12 @@ p.hablar()
 
 ✔️ La clase hija **sobrescribe** métodos de la clase padre. ✔️ Se puede usar super() para llamar métodos del padre.
 
-***
+---
 
 ## Polimorfismo
+
 Diferentes clases pueden usar el mismo método con comportamientos distintos:
+
 ```python
 class Gato:
 def hablar(self): print("Miau")
@@ -119,9 +141,10 @@ for animal in [Gato(), Perro()]:
 animal.hablar()
 ```
 
-***
+---
 
 ## Encapsulación
+
 Controla la visibilidad de los atributos/métodos.
 
 <!-- Tabla convertida manualmente -->
@@ -135,10 +158,12 @@ def mostrar(self):
 print(self.__nombre)
 ```
 
-***
+---
 
 ## Propiedades (<span class="citation" data-cites="property">@property</span>)
+
 Permiten acceder a métodos como sí fueran atributos.
+
 ```python
 class Rectangulo:
 def __init__(self, base, altura):
@@ -153,10 +178,12 @@ r = Rectangulo(4, 5)
 print(r.area)  # No se usa paréntesis
 ```
 
-***
+---
 
 ## Composición
+
 Una clase contiene objetos de otras clases:
+
 ```python
 class Motor:
 def arrancar(self):
@@ -170,9 +197,10 @@ c = Coche()
 c.motor.arrancar()
 ```
 
-***
+---
 
 ## Ejemplo completo
+
 ```python
 class CuentaBancaria:
 tasa_interes = 0.05  # atributo de clase
@@ -201,7 +229,8 @@ cuenta.retirar(200)
 print(cuenta.saldo)
 ```
 
-***
+---
 
 ## Resumen rápido
+
 <!-- Tabla convertida manualmente -->

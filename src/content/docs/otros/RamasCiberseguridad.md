@@ -4,12 +4,15 @@ description: Ramas Ciberseguridad - Notas de hacking y ciberseguridad.
 ---
 
 # Ramas y Especializaciones de ciberseguridad
-***
+
+---
 
 ## 1. Seguridad Ofensiva (Ethical Hacking o Red Team)
-Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como los hackers para encontrar vulnerabilidades antes de que lo hagan los delincuentes.
 
-**Subramas:**
+Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como los hackers para encontrar
+vulnerabilidades antes de que lo hagan los delincuentes.
+
+### Subramas:
 
 - **Pentesting (Pruebas de penetración):** Simular ataques reales para detectar fallos.
 - **Red Teaming:** Ataques avanzados y coordinados contra toda la infraestructura.
@@ -17,14 +20,15 @@ Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como
 - **Explotación de vulnerabilidades:** Encontrar y aprovechar fallos en software o sistemas.
 - **Hacking físico:** Acceso no autorizado a lugares o dispositivos.
 
-*Herramientas comunes:* Metasploit, Burp Suite, Nmap, Wireshark, Hydra, Aircrack-ng.
+_Herramientas comunes:_ Metasploit, Burp Suite, Nmap, Wireshark, Hydra, Aircrack-ng.
 
-***
+---
 
 ## 2. Seguridad Defensiva (Blue Team)
+
 Su función es **detectar, detener y responder** ante los ataques.
 
-**Subramas:**
+### Subramas:
 
 - **Monitoreo de seguridad (SOC):** Vigilancia constante de redes y sistemas.
 - **Análisis de malware:** Estudio de programas maliciosos para entender su funcionamiento.
@@ -32,107 +36,115 @@ Su función es **detectar, detener y responder** ante los ataques.
 - **Caza de amenazas (Threat Hunting):** Buscar ataques ocultos o sofisticados antes de que causen daño.
 - **Fortificación de sistemas (Hardening):** Configurar y reforzar sistemas para minimizar riesgos.
 
-*Herramientas comunes:* Splunk, SIEM, Suricata, OSSEC, ELK Stack, Wireshark.
+_Herramientas comunes:_ Splunk, SIEM, Suricata, OSSEC, ELK Stack, Wireshark.
 
-***
+---
 
 ## 3. Ciberinteligencia (Cyber Threat Intelligence)
+
 Se centra en **recolectar, analizar y anticipar amenazas** cibernéticas.
 
-**Subramas:**
+### Subramas:
 
 - **Inteligencia de amenazas (CTI):** Estudio de grupos de hackers, sus tácticas y herramientas.
 - **Análisis forense digital:** Investigación después de un ataque (seguimiento, evidencia, trazas).
 - **OSINT (Open Source Intelligence):** Recolección de información pública útil para prevenir ataques.
 - **Contrainteligencia cibernética:** Detectar y neutralizar espionaje o desinformación.
 
-*Herramientas comunes:* Maltego, Shodan, TheHarvester, MISP, VirusTotal.
+_Herramientas comunes:_ Maltego, Shodan, TheHarvester, MISP, VirusTotal.
 
-***
+---
 
 ## 4. Criptografía y Seguridad de la Información
+
 Protege los **datos** mediante matemáticas, algoritmos y protocolos seguros.
 
-**Subramas:**
+### Subramas:
 
 - **Criptografía aplicada:** Uso de algoritmos para cifrar datos (AES, RSA, SHA).
 - **Gestión de claves y certificados digitales.**
 - **Firmas digitales y blockchain.**
 - **Seguridad en comunicaciones (VPN, SSL/TLS).**
 
-*Herramientas comunes:* OpenSSL, GPG, Hashcat, VeraCrypt.
+_Herramientas comunes:_ OpenSSL, GPG, Hashcat, VeraCrypt.
 
-***
+---
 
 ## 5. Seguridad en Redes
+
 Asegura la **infraestructura** que conecta dispositivos y servidores.
 
-**Subramas:**
+### Subramas:
 
 - **Seguridad perimetral (firewalls, IDS/IPS).**
 - **Seguridad en routers y switches.**
 - **Segmentación y control de tráfico.**
 - **Seguridad en redes inalámbricas (Wi-Fi).**
 
-*Herramientas comunes:* pfSense, Cisco Security, Snort, Wireshark, Aircrack-ng.
+_Herramientas comunes:_ pfSense, Cisco Security, Snort, Wireshark, Aircrack-ng.
 
-***
+---
 
 ## 6. Seguridad en la Nube (Cloud Security)
+
 Protege los servicios y datos alojados en plataformas como AWS, Azure o Google Cloud.
 
-**Subramas:**
+### Subramas:
 
 - **Configuración segura de entornos cloud.**
 - **Gestión de identidades y accesos (IAM).**
 - **Auditoría y cumplimiento normativo.**
 - **Cifrado y protección de datos en la nube.**
 
-*Herramientas comunes:* Prisma Cloud, AWS Security Hub, Azure Defender.
+_Herramientas comunes:_ Prisma Cloud, AWS Security Hub, Azure Defender.
 
-***
+---
 
 ## 7. Seguridad en Aplicaciones
+
 Se enfoca en asegurar el **software** desde su desarrollo.
 
-**Subramas:**
+### Subramas:
 
 - **AppSec (Application Security):** Protección de aplicaciones web y móviles.
 - **DevSecOps:** Integrar la seguridad en el ciclo de desarrollo.
 - **Revisión de código y análisis estático.**
 - **Pruebas de seguridad automatizadas.**
 
-*Herramientas comunes:* OWASP ZAP, SonarQube, Burp Suite, Checkmarx.
+_Herramientas comunes:_ OWASP ZAP, SonarQube, Burp Suite, Checkmarx.
 
-***
+---
 
 ## 8. Gobernanza, Riesgo y Cumplimiento (GRC)
+
 Enfocada en la **gestión estratégica de la seguridad**, políticas, normas y auditorías.
 
-**Subramas:**
+### Subramas:
 
 - **Políticas y normativas de seguridad (ISO 27001, NIST, GDPR).**
 - **Gestión de riesgos cibernéticos.**
 - **Auditorías de seguridad.**
 - **Concienciación y capacitación en ciberseguridad.**
 
-***
+---
 
 ## 9. Seguridad Industrial y de Infraestructuras Críticas
+
 Protege sistemas industriales y servicios esenciales (energía, transporte, agua, etc.).
 
-**Subramas:**
+### Subramas:
 
 - **Seguridad OT (Operational Technology).**
 - **SCADA y sistemas de control industrial.**
 - **Ciberseguridad en IoT (Internet of Things).**
 
-***
+---
 
 ## 10. Ciberseguridad en IA y Datos
+
 Campo nuevo y en crecimiento.
 
-**Subramas:**
+### Subramas:
 
 - **Seguridad en modelos de IA (ataques adversarios).**
 - **Protección de datos usados para entrenar IA.**

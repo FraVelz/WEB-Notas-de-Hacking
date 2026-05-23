@@ -4,14 +4,19 @@ description: Property - Notas de hacking y ciberseguridad.
 ---
 
 # Decorador <span class="citation" data-cites="property">@property</span>
-@property se usa para **encapsular atributos**, **añadir validaciones o lógica interna**, pero sin cambiar la forma natural de acceder o modificar una variable.
 
-***
+@property se usa para **encapsular atributos**, **añadir validaciones o lógica interna**, pero sin cambiar la forma
+natural de acceder o modificar una variable.
+
+---
 
 ## ¿Qué hace @property en Python?
-El decorador **@property** convierte un **método de una clase** en un **atributo “solo de lectura”** (al menos inicialmente).
 
-Sirve para **controlar cómo se accede a un atributo**, pero permitiendo que el código **parezca estar accediendo directamente a una variable**.
+El decorador **@property** convierte un **método de una clase** en un **atributo “solo de lectura”** (al menos
+inicialmente).
+
+Sirve para **controlar cómo se accede a un atributo**, pero permitiendo que el código **parezca estar accediendo
+directamente a una variable**.
 
 En otras palabras:
 
@@ -22,6 +27,7 @@ Permite usar *métodos* como sí fueran *atributos*, **sin cambiar la sintaxis d
 ***
 
 ## Ejemplo básico sin @property
+
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -32,16 +38,18 @@ return self.__nombre
 ```
 
 Uso:
+
 ```python
 p = Persona("Ana")
 print(p.get_nombre())  # ✅ Funciona
 ```
 
-Pero se ve *feo* tener que escribir .get_nombre() cada vez. Ahí entra @property.
+Pero se ve _feo_ tener que escribir .get_nombre() cada vez. Ahí entra @property.
 
-***
+---
 
 ## Con @property
+
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -53,6 +61,7 @@ return self.__nombre
 ```
 
 Uso:
+
 ```python
 p = Persona("Luis")
 print(p.nombre)  # ✅ Sin paréntesis, parece un atributo
@@ -61,9 +70,10 @@ print(p.nombre)  # ✅ Sin paréntesis, parece un atributo
 - Python llama automáticamente al método nombre() cuando escribes p.nombre.
 - Es solo de lectura por ahora (no se puede cambiar el valor directamente).
 
-***
+---
 
 ## Agregando un <strong>setter</strong> para modificar el valor
+
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -82,6 +92,7 @@ print("❌ El nombre no puede estar vacío.")
 ```
 
 Uso:
+
 ```python
 p = Persona("Carlos")
 print(p.nombre)   # ✅ Getter
@@ -90,9 +101,10 @@ print(p.nombre)   # Andrés
 p.nombre = ""     # ❌ El nombre no puede estar vacío.
 ```
 
-***
+---
 
 ## También existe el deleter (opcional)
+
 ```python
 @nombre.deleter
 def nombre(self):
@@ -100,7 +112,8 @@ print("Eliminando el nombre...")
 del self.__nombre
 ```
 
-***
+---
 
 ## En resumen
+
 <!-- Tabla convertida manualmente -->

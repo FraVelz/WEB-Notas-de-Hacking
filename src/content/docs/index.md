@@ -1,6 +1,8 @@
 ---
 title: Notas de Hacking
-description: Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.
+description:
+  Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting,
+  Linux, Python, redes y más.
 hero:
   tagline: Guía para aprender o repasar ciberseguridad desde cero. Enfoque en pentesting.
   actions:
@@ -12,15 +14,18 @@ hero:
       icon: external
       variant: minimal
       attrs:
-        target: '_blank'
+        target: "_blank"
         rel: noopener noreferrer
 ---
 
 # Bienvenido
 
-Notas organizadas por categorías para **aprender o repasar** ciberseguridad con enfoque en **pentesting** y fundamentos técnicos. No sustituyen cursos de pago ni plataformas prácticas (Hack The Box, TryHackMe, etc.): son material de apoyo para ordenar conceptos y comandos.
+Notas organizadas por categorías para **aprender o repasar** ciberseguridad con enfoque en **pentesting** y fundamentos
+técnicos. No sustituyen cursos de pago ni plataformas prácticas (Hack The Box, TryHackMe, etc.): son material de apoyo
+para ordenar conceptos y comandos.
 
-Usa el menú lateral para navegar por tema. Las páginas combinan explicación breve, ejemplos y enlaces a documentación oficial cuando aplica.
+Usa el menú lateral para navegar por tema. Las páginas combinan explicación breve, ejemplos y enlaces a documentación
+oficial cuando aplica.
 
 ## Mapa rápido
 

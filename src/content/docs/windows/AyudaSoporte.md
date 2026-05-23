@@ -4,7 +4,8 @@ description: Ayuda Soporte - Notas de hacking y ciberseguridad.
 ---
 
 # Comandos y cmdlets de ayuda y soporte
-***
+
+---
 
 ## Temario
 
@@ -17,17 +18,19 @@ description: Ayuda Soporte - Notas de hacking y ciberseguridad.
 
 [Regresar al inicio](/)
 
-***
+---
 
 ## 1. Comandos de ayuda y soporte en CMD
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## 2. Cmdlets de ayuda y soporte en PowerShell
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## 3. Ayuda interactiva y documentación
 
@@ -39,17 +42,19 @@ description: Ayuda Soporte - Notas de hacking y ciberseguridad.
   - `Get-Help <cmdlet> -Detailed` → descripción, parámetros y ejemplos.
   - `Get-Help <cmdlet> -Online` → abre la documentación oficial en el navegador.
 
-***
+---
 
 ## Sugerencia práctica
+
 Para explorar PowerShell como un pro:
+
 ```bash
 Get-Command | Out-GridView
 ```
 
 Te abre una ventana interactiva donde puedes **buscar, filtrar y explorar** todos los cmdlets disponibles.
 
-***
+---
 
 [Regresar al inicio](/)
 

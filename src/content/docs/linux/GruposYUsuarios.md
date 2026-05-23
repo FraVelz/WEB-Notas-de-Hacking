@@ -4,20 +4,25 @@ description: Grupos YUsuarios - Notas de hacking y ciberseguridad.
 ---
 
 # Grupos y Usuarios
-***
+
+---
 
 ## 1. Gestión de usuarios
+
 <!-- Tabla convertida manualmente -->
 
 ### useradd vs adduser
+
 ### 1. useradd (programa básico del sistema)
+
 - Es el **comando original** de bajo nivel de Linux para crear usuarios.
 - Pertenece al paquete **passwd** o **shadow** (dependiendo de la distro).
 - No crea automáticamente todo lo necesario (por ejemplo, la carpeta personal).
 - Solo ejecuta **una instrucción directa al sistema**, sin preguntar nada.
 - Se usa mucho en **scripts o administración avanzada**.
 
-**Ejemplo:**
+### Ejemplo:
+
 ```bash
 sudo useradd francisco
 ```
@@ -29,6 +34,7 @@ Esto **solo** crea la entrada en /etc/passwd, pero:
 - No asigna contraseña
 
 Tendrías que hacer todo manualmente:
+
 ```bash
 sudo mkdir /home/francisco
 sudo cp -r /etc/skel/. /home/francisco
@@ -37,6 +43,7 @@ sudo passwd francisco
 ```
 
 ### 2. adduser (script de alto nivel)
+
 - Es un **script en Perl** que usa internamente useradd, pero con **asistentes interactivos**.
 - **Crea automáticamente:**
 - Carpeta personal (/home/usuario)
@@ -47,7 +54,8 @@ sudo passwd francisco
 
 - Está pensado para **uso cotidiano y comodidad del administrador**
 
-**Ejemplo:**
+### Ejemplo:
+
 ```bash
 sudo adduser francisco
 ```
@@ -61,25 +69,33 @@ Esto:
 - Te deja todo listo en un paso
 
 ### Comparación directa
+
 <!-- Tabla convertida manualmente -->
 
 ### En resumen (gestión de usuarios)
+
 - Usa **adduser** cuando creas usuarios manualmente (más seguro y rápido).
 - Usa **useradd** en **scripts o configuraciones personalizadas**, donde controlas cada detalle.
 
-***
+---
 
 ## 2. Grupos
+
 ### Gestión de grupos
+
 <!-- Tabla convertida manualmente -->
 
 ### ¿Qué es un grupo en Linux?
-Un **grupo** es un conjunto de usuarios que **comparten ciertos permisos**. Sirve para **organizar quién puede hacer qué** con los archivos, carpetas o procesos del sistema.
+
+Un **grupo** es un conjunto de usuarios que **comparten ciertos permisos**. Sirve para **organizar quién puede hacer
+qué** con los archivos, carpetas o procesos del sistema.
 
 Piensa que un grupo es como un “equipo” dentro del sistema operativo.
 
 ### Ejemplo simple
+
 Imagina que tienes tres usuarios:
+
 ```bash
 juan
 maria
@@ -89,22 +105,26 @@ pedro
 Y quieres que **solo juan y maria puedan entrar** a una carpeta llamada /proyecto.
 
 En lugar de dar permisos a cada uno individualmente, puedes crear un grupo:
+
 ```bash
 sudo groupadd proyecto
 ```
 
 Luego agregas a los usuarios al grupo:
+
 ```bash
 sudo usermod -aG proyecto juan
 sudo usermod -aG proyecto maria
 ```
 
 Después haces que la carpeta pertenezca a ese grupo:
+
 ```bash
 sudo chown :proyecto /proyecto
 ```
 
 Y le das permisos solo al grupo:
+
 ```bash
 sudo chmod 770 /proyecto
 ```
@@ -116,6 +136,7 @@ Ahora:
 - Pedro ❌ no puede.
 
 ### Cada usuario tiene
+
 <ol type="1">
 <li><strong>Un grupo principal (primario):</strong> Se crea
 automáticamente con el mismo nombre que el usuario. Ejemplo: el usuario
@@ -141,11 +162,13 @@ groups francisco
 ```
 
 Salida posible:
+
 ```bash
 francisco : francisco sudo video audio
 ```
 
 ### Archivos donde se guardan los grupos
+
 - /etc/group → lista todos los grupos del sistema. Ejemplo de líneas:
 
   ```bash
@@ -154,14 +177,14 @@ francisco : francisco sudo video audio
 
       ### En resumen (gestión de grupos)
 
-      
 <!-- Tabla convertida manualmente -->
 
       ---
 
       ## 3. Archivos importantes del sistema
 
-      
+
+
 <!-- Tabla convertida manualmente -->
 
       ---
@@ -203,6 +226,7 @@ francisco : francisco sudo video audio
       Ejemplo: En un servidor o una universidad, hay muchos usuarios distintos:
 
       - Cada uno tiene su cuenta (/home/juan, /home/maria, etc.)
+
 - Cada uno solo puede entrar a su carpeta
 - Los administradores (grupo sudo) pueden cambiar configuraciones del sistema
 - Otros grupos controlan quién puede acceder a redes, dispositivos USB, cámaras, etc.
@@ -218,9 +242,12 @@ francisco : francisco sudo video audio
       ### a) Seguridad interna
 
       - El sistema separa procesos y permisos por usuario.
-- Ejemplo: sí un programa malicioso se ejecuta como “usuario normal”, **no puede dañar el sistema**, porque no tiene permisos de administrador.
 
-      Tú usuario normal pertenece a su propio grupo (por ejemplo, francisco:francisco), y no puede tocar archivos del sistema (/etc, /usr, etc.) sin usar sudo.
+- Ejemplo: sí un programa malicioso se ejecuta como “usuario normal”, **no puede dañar el sistema**, porque no tiene
+  permisos de administrador.
+
+Tú usuario normal pertenece a su propio grupo (por ejemplo, francisco:francisco), y no puede tocar archivos del sistema
+(/etc, /usr, etc.) sin usar sudo.
 
       ---
 
@@ -229,6 +256,7 @@ francisco : francisco sudo video audio
       Linux trata **cada servicio como sí fuera un usuario separado** para aislarlos.
 
       Por ejemplo:
+
 ```bash
 root → superusuario
 mysql → usuario del servicio MySQL
@@ -236,7 +264,8 @@ www-data → usuario del servidor web Apache o Nginx
 nobody → usuario “vacío” usado por procesos sin privilegios
 ```
 
-      Así, sí un servicio (como un servidor web) es hackeado, el atacante **no puede controlar todo el sistema**, solo ese usuario limitado.
+Así, sí un servicio (como un servidor web) es hackeado, el atacante **no puede controlar todo el sistema**, solo ese
+usuario limitado.
 
       ---
 
@@ -245,6 +274,7 @@ nobody → usuario “vacío” usado por procesos sin privilegios
       Los grupos también controlan **qué puede hacer tú usuario con el hardware**, incluso sí eres el único:
 
       - audio → para reproducir sonido
+
 - video → para usar la cámara
 - network → para cambiar redes
 - docker, kvm, vboxusers, etc. → para manejar máquinas virtuales, contenedores, etc.
@@ -255,7 +285,7 @@ nobody → usuario “vacío” usado por procesos sin privilegios
 
       <h5 id="en-resumen-utilidad-de-grupos-y-usuarios">En resumen (utilidad
       de grupos y usuarios)</h5>
-      
+
 <!-- Tabla convertida manualmente -->
 
       ---
@@ -264,11 +294,13 @@ nobody → usuario “vacío” usado por procesos sin privilegios
 
       ### 1. Cuando creas o manejas máquinas (virtuales o reales)
 
-      Cada máquina (por ejemplo, una que instalas con VirtualBox, KVM o Docker) tiene su propio **sistema Linux**, y dentro de él **todo funciona con usuarios y grupos**.
+Cada máquina (por ejemplo, una que instalas con VirtualBox, KVM o Docker) tiene su propio **sistema Linux**, y dentro de
+él **todo funciona con usuarios y grupos**.
 
       Sí no los entiendes:
 
       - No sabrás **por qué un programa no puede acceder a un archivo.**
+
 - No podrás **dar permisos** a scripts, servidores o procesos.
 - No entenderás **por qué “root” puede hacerlo todo** y tú usuario no.
 
@@ -279,19 +311,23 @@ nobody → usuario “vacío” usado por procesos sin privilegios
       Sí quieres aprender hacking ético, pentesting o proteger sistemas, necesitas dominar esto porque:
 
       - Los atacantes intentan **escapar del usuario limitado** (por ejemplo, www-data) y conseguir permisos de root.
+
 - Los administradores deben **configurar correctamente los grupos y permisos** para que eso no sea posible.
 
-      Ejemplo: Sí un servicio web corre como usuario www-data, no debería poder leer /etc/shadow (donde están las contraseñas). Ese aislamiento lo logran los **usuarios y grupos**.
+Ejemplo: Sí un servicio web corre como usuario www-data, no debería poder leer /etc/shadow (donde están las
+contraseñas). Ese aislamiento lo logran los **usuarios y grupos**.
 
       ### 3. En desarrollo o automatización
 
       Cuando haces tus propias máquinas, scripts o aplicaciones:
 
       - Puedes crear **usuarios específicos para cada proceso** (por seguridad).
+
 - Asignar **grupos** para definir qué scripts pueden acceder a ciertos archivos.
 - Controlar **permisos de ejecución (rwx)** para evitar errores o accesos indebidos.
 
       Ejemplo real:
+
 ```bash
 sudo useradd -r -s /bin/false servidor_web
 ```
@@ -300,12 +336,14 @@ sudo useradd -r -s /bin/false servidor_web
 
       ### En resumen (otros)
 
-      
+
+
 <!-- Tabla convertida manualmente -->
 
       En palabras simples:
 
       <blockquote>
-      Sí no entiendes cómo Linux maneja usuarios, grupos y permisos, nunca tendrás **control real** de una máquina. Pero cuando lo dominas, puedes **construir, romper y proteger sistemas** a tú gusto.
+Sí no entiendes cómo Linux maneja usuarios, grupos y permisos, nunca tendrás **control real** de una máquina. Pero
+cuando lo dominas, puedes **construir, romper y proteger sistemas** a tú gusto.
 
       </blockquote>

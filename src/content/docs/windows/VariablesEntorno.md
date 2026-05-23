@@ -4,9 +4,11 @@ description: Variables Entorno - Notas de hacking y ciberseguridad.
 ---
 
 # Variables de Entorno
-***
+
+---
 
 ### Tipos de variables de entorno
+
 <ol type="1">
 <li><strong>Variables del sistema</strong>: Aplican a todos los
 usuarios del equipo. Por ejemplo:
@@ -28,6 +30,7 @@ usuarios del equipo. Por ejemplo:
 ***
 
 ### Cómo ver las variables de entorno
+
 <ol type="1">
 <li>
 **Usando CMD**:
@@ -44,6 +47,7 @@ usuarios del equipo. Por ejemplo:
       **Usando PowerShell**:
 
       - Get-ChildItem Env: → lista todas las variables.
+
 - $Env:VARIABLE → muestra el valor de una variable específica. Ejemplo:
 
   ```bash
@@ -63,6 +67,7 @@ usuarios del equipo. Por ejemplo:
 ***
 
 ### Editar o crear variables
+
 - Para agregar una carpeta al PATH: <ol type="1"> Abrir **Variables de entorno**.
 - Seleccionar PATH → Editar → Nuevo → pegar la ruta.
 - Guardar y reiniciar CMD/PowerShell para que tome efecto.

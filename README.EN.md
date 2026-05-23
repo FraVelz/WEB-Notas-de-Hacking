@@ -6,29 +6,36 @@ Live site: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fravelz.git
 
 ![Screenshot](./public/screenshot.png)
 
-A guide to learn or refresh cybersecurity from the ground up. It is a static site built with [Astro](https://astro.build/) and the [Starlight](https://starlight.astro.build/) theme: notes are written in Markdown (and MDX where needed), with search, dark theme, and an explicit sidebar to keep topics in a sensible order.
+A guide to learn or refresh cybersecurity from the ground up. It is a static site built with
+[Astro](https://astro.build/) and the [Starlight](https://starlight.astro.build/) theme: notes are written in Markdown
+(and MDX where needed), with search, dark theme, and an explicit sidebar to keep topics in a sensible order.
 
-With this folder as the Cursor workspace root, the `/update-docs` and `/auto-commit` slash commands live in [`.cursor/commands/`](.cursor/commands/) to keep bilingual docs and commits aligned with the repo.
+With this folder as the Cursor workspace root, the `/update-docs` and `/auto-commit` slash commands live in
+[`.cursor/commands/`](.cursor/commands/) to keep bilingual docs and commits aligned with the repo.
 
 ## ✨ Features
 
 - **Sectioned content**: notes grouped by area (Linux, Python, Windows, networking, pentesting, and more).
 - **Search**: provided by Starlight across titles and page body.
 - **Table of contents**: per page when applicable.
-- **Custom theme**: palette in `src/styles/theme.css` plus Markdown content / focus / selection in `src/styles/markdown-layout.css`, loaded in sequence as Starlight `customCss` (`astro.config.mjs`).
+- **Custom theme**: palette in `src/styles/theme.css` plus Markdown content / focus / selection in
+  `src/styles/markdown-layout.css`, loaded in sequence as Starlight `customCss` (`astro.config.mjs`).
 - **Responsive**: deployed on GitHub Pages with `base` set to `/WEB-Notas-de-Hacking`.
 
 ## 🛠️ Stack
 
 - **[Astro 5](https://astro.build/)** — static site generator and routing.
 - **[@astrojs/starlight](https://starlight.astro.build/)** — docs layout, navigation, and search.
-- **[@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/)** — Markdown with components where needed.
+- **[@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/)** — Markdown with components where
+  needed.
 - **[TypeScript](https://www.typescriptlang.org/)** — typings for config and content layer.
-- **[Content Collections](https://docs.astro.build/en/guides/content-collections/)** — `docs` collection under `src/content/docs`, defined in `src/content.config.ts`.
+- **[Content Collections](https://docs.astro.build/en/guides/content-collections/)** — `docs` collection under
+  `src/content/docs`, defined in `src/content.config.ts`.
 
 ## 🚀 Local development
 
-Requirements: a Node.js version compatible with Astro 5. This repo ships with `pnpm-lock.yaml`; [pnpm](https://pnpm.io/) is recommended.
+Requirements: a Node.js version compatible with Astro 5. This repo ships with `pnpm-lock.yaml`; [pnpm](https://pnpm.io/)
+is recommended.
 
 ```bash
 pnpm install
@@ -59,7 +66,8 @@ Other useful commands:
 └── package.json
 ```
 
-The sidebar order is **not** inferred from folders alone: **`starlight-sidebar.mjs`** keeps it aligned with the welcome page (`src/content/docs/index.md`).
+The sidebar order is **not** inferred from folders alone: **`starlight-sidebar.mjs`** keeps it aligned with the welcome
+page (`src/content/docs/index.md`).
 
 ## 🎯 Content areas
 
@@ -78,7 +86,7 @@ The sidebar order is **not** inferred from folders alone: **`starlight-sidebar.m
 
 **License:** Apache License 2.0
 
-**Fravelz**
+### Fravelz
 
 - GitHub: [@fravelz](https://github.com/fravelz)
 - Repository: [WEB-Notas-de-Hacking](https://github.com/FraVelz/WEB-Notas-de-Hacking)
