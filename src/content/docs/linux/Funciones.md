@@ -4,12 +4,15 @@ description: Funciones - Notas de hacking y ciberseguridad.
 ---
 
 # Funciones, Variables y Argumentos en Bash Script
+
 Este documento explica como usar **funciones**, **variables globales y locales**, y **argumentos**.
 
-***
+---
 
 ## 1. Definición de funciones
+
 En Bash, una función agrupa comandos que puedes reutilizar. Existen dos formas equivalentes:
+
 ```bash
 # Forma 1 (más común)
 mi_funcion() {
@@ -21,19 +24,22 @@ echo "Hola desde la función 2"
 
 ```
 
-**Llamar una función:**
+### Llamar una función:
+
 ```bash
 mi_funcion
 ```
 
-***
+---
 
 ## 2. Parámetros en funciones
+
 Los argumentos se manejan igual que en un script:
 
 <!-- Tabla convertida manualmente -->
 
 Ejemplo:
+
 ```bash
 saludar() {
 echo "Hola $1 $2"
@@ -42,10 +48,13 @@ saludar "Francisco" "Vélez"
 # → Hola Francisco Vélez
 ```
 
-***
+---
 
 ## 3. Devolver valores
-En Bash, return solo devuelve **códigos de salida (= éxito, ≠0 = error)**. Para devolver datos reales se usa echo y **captura de comandos**:
+
+En Bash, return solo devuelve **códigos de salida (= éxito, ≠0 = error)**. Para devolver datos reales se usa echo y
+**captura de comandos**:
+
 ```bash
 sumar() {
 echo $(( $1 + $2 ))
@@ -55,10 +64,12 @@ echo "La suma es: $resultado"
 # → La suma es: 12
 ```
 
-***
+---
 
 ## 4. Variables Globales y Locales
+
 Por defecto, todas las variables son **globales**. Para que existan solo dentro de la función, usa local.
+
 ```bash
 mensaje="Hola mundo"
 
@@ -71,22 +82,25 @@ cambiar
 echo "Después: $mensaje"
 ```
 
-**Diferencias clave:**
+### Diferencias clave:
 
 <!-- Tabla convertida manualmente -->
 
 Usa **local** para evitar modificar variables globales sin querer.
 
-***
+---
 
 ## 5. Argumentos en scripts
+
 Cuando ejecutas un script, puedes pasarle argumentos:
+
 ```bash
 #!/bin/bash
 echo "Hola $1"
 ```
 
 Ejecución:
+
 ```bash
 bash script.sh Francisco
 # → Hola Francisco
@@ -96,10 +110,12 @@ Variables especiales:
 
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## 6. Validaciones útiles
-**Validar número de argumentos:**
+
+### Validar número de argumentos:
+
 ```bash
 if [ $# -ne 2 ]; then
 echo "Uso: $0 num1 num2"
@@ -107,7 +123,8 @@ exit 1
 fi
 ```
 
-**Validar argumento vacío:**
+### Validar argumento vacío:
+
 ```bash
 if [ -z "$1" ]; then
 echo "Error: falta argumento"
@@ -115,7 +132,8 @@ exit 1
 fi
 ```
 
-**Validar que sea un número:**
+### Validar que sea un número:
+
 ```bash
 if ! [[ "$1" =~ ^[0-9]+$ ]]; then
 echo "Error: $1 no es un número"
@@ -123,10 +141,12 @@ exit 1
 fi
 ```
 
-***
+---
 
 ## 7. Recorrer argumentos
+
 ### Con for
+
 ```bash
 for arg in "$@"; do
 echo "Argumento: $arg"
@@ -134,7 +154,9 @@ done
 ```
 
 ### Con shift
+
 shift elimina el primer argumento ($1) y mueve los demás a la izquierda.
+
 ```bash
 while [ $# -gt 0 ]; do
 echo "Actual: $1"
@@ -144,9 +166,10 @@ done
 
 shift 2 eliminaría los dos primeros argumentos de golpe.
 
-***
+---
 
 ## 8. Ejemplo práctico: mini calculadora
+
 ```bash
 #!/bin/bash
 
@@ -168,7 +191,8 @@ resta) echo "Resultado: $(restar $1 $2)" ;;
 esac
 ```
 
-***
+---
 
 ## En resumen
+
 <!-- Tabla convertida manualmente -->

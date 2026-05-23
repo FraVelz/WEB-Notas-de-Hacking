@@ -4,9 +4,11 @@ description: Gestion De Procesos - Notas de hacking y ciberseguridad.
 ---
 
 # Gestión de procesos
-***
+
+---
 
 ## Terminologías
+
 - **Proceso**: Programa en ejecución administrado por el kernel.
 - **PID (Process ID)**: Identificador único asignado por el sistema a cada proceso.
 - **PPID (Parent PID)**: Identificador del proceso padre (quien lo creó).
@@ -17,9 +19,10 @@ description: Gestion De Procesos - Notas de hacking y ciberseguridad.
   - Z → zombi (Zombie)
 - **Señales**: Mensajes que el kernel o el usuario pueden enviar a un proceso (ej: SIGKILL, SIGSTOP, SIGINT).
 
-***
+---
 
 ## Comandos para ver procesos
+
 - **ps**: Lista los procesos activos.
 
   ```bash
@@ -45,30 +48,34 @@ description: Gestion De Procesos - Notas de hacking y ciberseguridad.
   pidof bash
   ```
 
-***
+---
 
 ## Ejecución de procesos
+
 - **Primer plano (foreground)**:
 
   ```bash
   ./programa
   ```
 
- El terminal queda ocupado hasta que el proceso termine.
+El terminal queda ocupado hasta que el proceso termine.
+
 - **Segundo plano (background)**:
 
   ```bash
   ./programa &
   ```
 
-El shell sigue disponible mientras el proceso corre. Tener en cuenta que normalmente al cerrar la shell el proceso se termina, pero se puede utilizar el comando disown en la shell para que el proceso no dependa de la shell.
+El shell sigue disponible mientras el proceso corre. Tener en cuenta que normalmente al cerrar la shell el proceso se
+termina, pero se puede utilizar el comando disown en la shell para que el proceso no dependa de la shell.
+
 - **Ejemplo práctico:**
 
   ```bash
   long_task.sh & echo "Sigo usando la terminal"
   ```
 
-***
+---
 
 ## Control de trabajos
 
@@ -87,7 +94,8 @@ bg %2 # reanuda el job 2 en segundo plano
 sleep 1d && echo "Ya paso 1 dia"
 ```
 
-Luego das Ctrl+Z y se pausa el proceso (importante no equivocarse con Ctrl+C porque este terminaría el proceso en vez de pausarlo). Cuando escribas:
+Luego das Ctrl+Z y se pausa el proceso (importante no equivocarse con Ctrl+C porque este terminaría el proceso en vez de
+pausarlo). Cuando escribas:
 
 ```bash
 jobs
@@ -99,7 +107,7 @@ Podrás visualizar el proceso, todo se vería algo así:
 
 Con el comando `fg %1` o `bg %1` puedes despausar el proceso, con las implicaciones que se dieron arriba.
 
-***
+---
 
 ## Señales a procesos
 
@@ -121,10 +129,9 @@ Con el comando `fg %1` o `bg %1` puedes despausar el proceso, con las implicacio
 
 Algunos nombres comunes:
 
-  
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## Prioridades de procesos
 
@@ -134,30 +141,32 @@ Cada proceso tiene un **"valor bueno"**, que define su prioridad de CPU.
 - Valor por defecto: **0**.
 - Solo root puede asignar valores negativos.
 
-**Cambiar prioridad al iniciar:**
+### Cambiar prioridad al iniciar:
 
 ```bash
 nice -n 10 ./programa
 ```
 
-**Modificar proceso existente:**
+### Modificar proceso existente:
 
 ```bash
 renice -n 5 -p 1234
 ```
 
-**Ver prioridades actuales:**
+### Ver prioridades actuales:
 
 ```bash
 ps -eo pid,ni,comm
 ```
 
-***
+---
 
 ## Procesos huérfanos y zombis
 
-- **Huérfano**: cuando el proceso padre termina antes que su hijo. El proceso hijo pasa a ser adoptado por el **init** o **systemd**. No es dañino, pero indica una gestión no controlada de procesos.
-- **Zombi**: proceso que terminó, pero su entrada en la tabla de procesos aún existe porque su padre no leyó su estado de salida (wait() no fue llamado). Se muestran con estado Z.
+- **Huérfano**: cuando el proceso padre termina antes que su hijo. El proceso hijo pasa a ser adoptado por el **init** o
+  **systemd**. No es dañino, pero indica una gestión no controlada de procesos.
+- **Zombi**: proceso que terminó, pero su entrada en la tabla de procesos aún existe porque su padre no leyó su estado
+  de salida (wait() no fue llamado). Se muestran con estado Z.
 
   ```bash
   ps aux | grep 'Z'
@@ -165,7 +174,8 @@ ps -eo pid,ni,comm
 
 Para eliminarlos, normalmente basta con terminar el proceso padre.
 
-***
+---
 
 ## Resumen visual
+
 <!-- Tabla convertida manualmente -->

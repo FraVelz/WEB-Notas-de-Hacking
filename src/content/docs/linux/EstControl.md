@@ -4,14 +4,17 @@ description: Est Control - Notas de hacking y ciberseguridad.
 ---
 
 # Estructuras de Control en Bash Script
-Este documento explica cómo usar **bucles**, **estructuras de control** y el comando **case** en Bash.<br /> Incluye ejemplos prácticos y comentarios explicativos.
 
-***
+Este documento explica cómo usar **bucles**, **estructuras de control** y el comando **case** en Bash.<br /> Incluye
+ejemplos prácticos y comentarios explicativos.
+
+---
 
 ## Bucle for
+
 El bucle for permite ejecutar una serie de comandos repetidamente para una lista de valores o rangos numéricos.
 
-**Ejemplo 1: Lista de elementos:**
+### Ejemplo 1: Lista de elementos:
 
 ```bash
 for fruta in manzana mango pera; do
@@ -21,7 +24,7 @@ done
 
 > Recorre una lista de palabras (en este caso, frutas) y ejecuta el bloque `do ... done` para cada elemento.
 
-**Ejemplo 2: Rango de números:**
+### Ejemplo 2: Rango de números:
 
 ```bash
 for i in {1..3}; do
@@ -29,9 +32,10 @@ for i in {1..3}; do
 done
 ```
 
-> Esa forma usa *brace expansion*: la secuencia numérica del 1 al 3 sale de la expresión entre llaves en la línea del `for` (véase el bloque de código).
+> Esa forma usa _brace expansion_: la secuencia numérica del 1 al 3 sale de la expresión entre llaves en la línea del
+> `for` (véase el bloque de código).
 
-**Ejemplo 3: Sintaxis estilo C**
+### Ejemplo 3: Sintaxis estilo C
 
 ```bash
 for (( j=10; j>=5; j-- )); do
@@ -41,9 +45,10 @@ done
 
 > Esta forma usa la sintaxis tradicional tipo C: `for (( inicialización; condición; incremento )); do … done`.
 
-***
+---
 
 ## Bucle while
+
 Ejecuta un bloque de código **mientras una condición sea verdadera**.
 
 ```bash
@@ -57,7 +62,7 @@ done
 
 > En este ejemplo, el bucle incrementa `i` desde 0 hasta que ya no sea menor que 3.
 
-**Leer líneas desde un archivo:**
+### Leer líneas desde un archivo:
 
 Puedes usar while junto con read para leer archivos línea por línea.
 
@@ -69,9 +74,10 @@ done < archivo.txt
 
 > Esto imprimirá cada línea del archivo precedida de un guion.
 
-***
+---
 
 ## Bucle until
+
 El bucle until funciona igual que while, pero **se ejecuta mientras la condición sea falsa**.
 
 ```bash
@@ -85,9 +91,10 @@ done
 
 > En este ejemplo, el bucle incrementa el contador desde 1 hasta 5.
 
-***
+---
 
 ## Comandos continue y break
+
 Los comandos continue y break sirven para **controlar el flujo dentro de los bucles**.
 
 ```bash
@@ -114,9 +121,10 @@ done
 
 > `break n` rompe `n` niveles de bucles anidados.<br /> `continue` salta directamente a la siguiente iteración.
 
-***
+---
 
 ## Estructura case
+
 La estructura case permite comparar una variable con múltiples patrones, similar al switch en otros lenguajes.
 
 ```bash

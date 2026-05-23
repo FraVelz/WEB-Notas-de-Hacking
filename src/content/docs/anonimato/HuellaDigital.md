@@ -4,12 +4,15 @@ description: Huella Digital - Notas de hacking y ciberseguridad.
 ---
 
 # Definiciones
+
 Definiciones y diferencias entre privacidad y anonimato.
 
-***
+---
 
 ## ¿Qué es la huella digital?
-Es **el rastro que dejamos cada vez que usamos internet o dispositivos digitales**. Incluye todo lo que generamos, compartimos o registramos en línea.
+
+Es **el rastro que dejamos cada vez que usamos internet o dispositivos digitales**. Incluye todo lo que generamos,
+compartimos o registramos en línea.
 
 - **Ejemplo:**
   - Publicar fotos o comentarios en redes sociales
@@ -19,19 +22,20 @@ Es **el rastro que dejamos cada vez que usamos internet o dispositivos digitales
 
 Cada acción deja **información que puede ser almacenada, analizada o usada por terceros**.
 
-***
+---
 
 ## Tipos de huella digital
+
 <ol type="1">
 <li>
-**Activa:**
+### Activa:
 
 - Todo lo que **tú publicas o compartes voluntariamente**.
 - Ejemplo: fotos en Instagram, comentarios en foros, mensajes en WhatsApp.
 
 </li>
 <li>
-**Pasiva:**
+### Pasiva:
 
 - Información que **se genera sin que tú la publiques directamente**.
 - Ejemplo: dirección IP, historial de navegación, cookies, geolocalización de tú celular.
@@ -41,23 +45,28 @@ Cada acción deja **información que puede ser almacenada, analizada o usada por
 ***
 
 ## Por qué es importante
+
 - Puede afectar tú **privacidad** y seguridad.
 - Las empresas y gobiernos pueden usar tú huella digital para **publicidad, análisis de comportamiento o vigilancia**.
-- También puede afectar tú **reputación**, profesional o personal, sí algo que publicaste se hace público o se interpreta mal.
+- También puede afectar tú **reputación**, profesional o personal, sí algo que publicaste se hace público o se
+  interpreta mal.
 
-***
+---
 
 ## Cómo protegerla
+
 - Configura **privacidad** en redes sociales y apps.
 - Borra cookies y rastros de navegación periódicamente.
 - Usa herramientas de **anonimato** (VPN, Tor, navegadores privados).
 - Piensa antes de publicar: todo lo que subes deja un **rastro permanente**.
 
-***
+---
 
 ## Visualizar tú huella digital al navegar
-En la página *“Cover your tracks”*, **puedes ver toda la información actual que tú navegador** puede dar a las páginas webs, cuando tú navegas, te dan incluso algunos consejos para ciertos casos.
+
+En la página _“Cover your tracks”_, **puedes ver toda la información actual que tú navegador** puede dar a las páginas
+webs, cuando tú navegas, te dan incluso algunos consejos para ciertos casos.
 
 [Ir a Cover your tracks](https://coveryourtracks.eff.org/)
 
-***
+---

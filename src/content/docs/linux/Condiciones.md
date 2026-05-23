@@ -4,10 +4,13 @@ description: Condiciones - Notas de hacking y ciberseguridad.
 ---
 
 # Condiciones en Bash Script
-***
+
+---
 
 ## Booleanos en Bash
+
 En Bash **no existen valores booleanos nativos**, pero sí existen **comandos que devuelven verdadero o falso**:
+
 ```bash
 true   # Devuelve 0 (verdadero)
 false  # Devuelve 1 (falso)
@@ -20,18 +23,23 @@ En Bash, un **0 significa verdadero** y un **número distinto de 0 (generalmente
 ***
 
 ## Operadores Condicionales
+
 Los operadores se usan para comparar **números** o **cadenas de texto**.
 
 ### Para números
+
 <!-- Tabla convertida manualmente -->
 
 ### Para cadenas de texto
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## Estructura if - elif - else
+
 Ejemplo de uso básico:
+
 ```bash
 if [ 3 -gt 4 ]; then
 echo "Mayor que 4"
@@ -45,7 +53,7 @@ fi
 ```
 
 <blockquote>
-**Notas:**
+### Notas:
 
 - Los corchetes [ ] son equivalentes al comando test.
 - Siempre debe haber un **espacio** después del [ y antes del ].
@@ -55,14 +63,17 @@ fi
 ***
 
 ## Condiciones compuestas (&amp;&amp;, ||)
+
 Puedes combinar condiciones con operadores lógicos.
+
 ```bash
 if [ 10 -lt 14 ] && [ 10 -gt 12 ]; then
 echo "verdadero"
 fi
 ```
 
-También puedes usar [[ ... ]] para condiciones más seguras (recomendado):
+También puedes usar [[...]] para condiciones más seguras (recomendado):
+
 ```bash
 if [[ 10 -lt 14  &&  10 -gt 12 ]]; then
 echo "verdadero"
@@ -76,7 +87,9 @@ fi
 ***
 
 ## Formas de escribir condiciones
+
 Las tres siguientes formas son equivalentes:
+
 ```bash
 test condition
 [ condition ]
@@ -84,6 +97,7 @@ test condition
 ```
 
 Ejemplo real:
+
 ```bash
 if test 10 -eq 10; then
 echo "10 es igual a 10"

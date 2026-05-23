@@ -4,10 +4,13 @@ description: Arrays - Notas de hacking y ciberseguridad.
 ---
 
 # Arrays en bash script
-***
+
+---
 
 ## Temario
+
 ## 1. Definir arrays
+
 ```
 # Array con valores
 nombres=("Ana" "Luis" "Pedro")
@@ -18,7 +21,7 @@ numeros[1]=20
 numeros[2]=30
 ```
 
-***
+---
 
 ## 2. Acceder a elementos
 
@@ -33,7 +36,7 @@ Si usas un índice que no existe:
 echo "${nombres[5]}" # vacío
 ```
 
-***
+---
 
 ## 3. Mostrar todos los elementos
 
@@ -42,7 +45,7 @@ echo "${nombres[@]}" # Ana Luis Pedro
 echo "${numeros[*]}" # 10 20 30
 ```
 
-***
+---
 
 ## 4. Tamaño del array
 
@@ -50,9 +53,10 @@ echo "${numeros[*]}" # 10 20 30
 echo "${#nombres[@]}" # 3
 ```
 
-***
+---
 
 ## 5. Recorrer arrays
+
 ### Con for
 
 ```bash
@@ -77,7 +81,7 @@ for i in "${!nombres[@]}"; do
 done
 ```
 
-***
+---
 
 ## 6. Añadir y modificar elementos
 
@@ -86,7 +90,7 @@ nombres+=("Carla") # Agregar al final
 nombres[1]="Lucía" # Modificar el índice 1
 ```
 
-***
+---
 
 ## 7. Eliminar elementos
 
@@ -95,7 +99,7 @@ unset nombres[1] # Elimina solo el índice 1
 unset nombres    # Borra todo el array
 ```
 
-***
+---
 
 ## 8. Subarrays (rebanadas)
 
@@ -103,9 +107,10 @@ unset nombres    # Borra todo el array
 echo "${nombres[@]:1:2}" # desde índice 1, tomar 2 elementos
 ```
 
-***
+---
 
 ## 9. Arrays asociativos (tipo diccionario)
+
 Disponibles en **Bash 4+**.
 
 ```bash
@@ -130,7 +135,7 @@ España → Madrid
 Colombia → Bogotá
 ```
 
-***
+---
 
 ## 10. Cosas útiles
 
@@ -148,7 +153,7 @@ Colombia → Bogotá
   echo "${sorted[@]}" # 1 3 8
   ```
 
-***
+---
 
 En resumen:
 

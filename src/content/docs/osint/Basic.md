@@ -5,14 +5,18 @@ description: Metodología, ética, herramientas por categoría y enlaces oficial
 
 # OSINT básico
 
-**OSINT** (*Open Source Intelligence*) es recopilar, contrastar y usar información de **fuentes públicas y legales** (web, registros, redes, fugas ya agregadas de forma responsable, etc.). No sustituye a un mandato legal ni a un contrato de pentesting: el marco general está en [Legalidad del hacking](/conceptos-basicos/legalidadhacking/).
+### OSINT** (_Open Source Intelligence_) es recopilar, contrastar y usar información de **fuentes públicas y legales
+(web, registros, redes, fugas ya agregadas de forma responsable, etc.). No sustituye a un mandato legal ni a un contrato
+de pentesting: el marco general está en [Legalidad del hacking](/conceptos-basicos/legalidadhacking/).
 
 ## Ética y límites
 
-- **Proporcionalidad:** recopila solo lo necesario para un fin legítimo (empleo, investigación autorizada, reducir tu propia huella).
+- **Proporcionalidad:** recopila solo lo necesario para un fin legítimo (empleo, investigación autorizada, reducir tu
+  propia huella).
 - **No acoso:** seguir, publicar datos para intimidar o contactar de forma obsesiva no es OSINT profesional.
 - **Datos personales:** respeta la normativa local (RGPD y equivalentes) y las políticas del cliente.
-- **Filtraciones:** comprobar si un correo apareció en brechas puede ser válido para conciencia de riesgo; **descargar o comercializar** bases filtradas suele ser ilegal.
+- **Filtraciones:** comprobar si un correo apareció en brechas puede ser válido para conciencia de riesgo; **descargar o
+  comercializar** bases filtradas suele ser ilegal.
 
 ## Metodología básica
 
@@ -43,7 +47,8 @@ Recolección **pasiva:** registros públicos, transparencia de certificados, agr
 
 - **[Have I Been Pwned](https://haveibeenpwned.com/)** — Comprobar correo en filtraciones conocidas.
 - **[WhatsMyName](https://whatsmyname.app/)** — Comprobar un nombre de usuario en muchas plataformas.
-- **[Sherlock](https://github.com/sherlock-project/sherlock)** y **[Maigret](https://github.com/soxoj/maigret)** — Búsqueda de perfiles por *handle* (uso ético imprescindible).
+- **[Sherlock](https://github.com/sherlock-project/sherlock)** y **[Maigret](https://github.com/soxoj/maigret)** —
+  Búsqueda de perfiles por _handle_ (uso ético imprescindible).
 - **[Epieos](https://epieos.com/)** — Varios pivotes OSINT en torno a correo/teléfono (respeta TOS y leyes).
 
 ## Archivos y metadatos
@@ -64,13 +69,16 @@ Motores que **indexan** servicios visibles en Internet (no sustituyen autorizaci
 - **[OSINT Framework](https://osintframework.com/)** — Mapa de enlaces por categoría.
 - **[Maltego](https://www.maltego.com/)** — Grafos de relaciones entre entidades (producto comercial).
 - **[SpiderFoot](https://www.spiderfoot.net/)** — Automatización modular (autohospedable).
-- **[DataSploit](https://github.com/datasploit/datasploit)** — Conjunto de scripts; revisa mantenimiento antes de depender de ello.
+- **[DataSploit](https://github.com/datasploit/datasploit)** — Conjunto de scripts; revisa mantenimiento antes de
+  depender de ello.
 
 Herramientas antiguas como **creepy** suelen estar desactualizadas; prioriza proyectos con soporte activo.
 
 ## SocMINT (redes sociales)
 
-Rama del OSINT centrada en **redes sociales y foros**: publicaciones públicas, hashtags, eventos. Sirve para verificación o investigaciones con mandato claro. Cruza con [Huella digital](/anonimato/huelladigital/) y [Concientización](/otros/concientizacion/) para el lado defensivo.
+Rama del OSINT centrada en **redes sociales y foros**: publicaciones públicas, hashtags, eventos. Sirve para
+verificación o investigaciones con mandato claro. Cruza con [Huella digital](/anonimato/huelladigital/) y
+[Concientización](/otros/concientizacion/) para el lado defensivo.
 
 ## Herramientas generales del día a día
 

@@ -4,17 +4,20 @@ description: Getter Setter - Notas de hacking y ciberseguridad.
 ---
 
 # Getters y Setters
-***
+
+---
 
 ## ¿Qué son los getters y setters?
+
 - **Getter:** método que **obtiene** (lee) el valor de un atributo.
 - **Setter:** método que **establece** (modifica) el valor de un atributo.
 
 Se usan para **controlar el acceso a los atributos** de una clase, especialmente cuando son “protegidos” o “privados”.
 
-***
+---
 
 ## Ejemplo básico
+
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -33,6 +36,7 @@ print("❌ El nombre no puede estar vacío.")
 ```
 
 Uso:
+
 ```python
 p = Persona("Ana")
 print(p.get_nombre())  # ✅ Ana
@@ -43,12 +47,14 @@ print(p.get_nombre())  # ✅ Luis
 p.set_nombre("")  # ❌ El nombre no puede estar vacío.
 ```
 
-***
+---
 
 ## Pero Python tiene una forma más elegante → <strong>@property</strong>
-Python permite crear *getters* y *setters* de manera más limpia y natural usando **decoradores**.
+
+Python permite crear _getters_ y _setters_ de manera más limpia y natural usando **decoradores**.
 
 ### Ejemplo con @property
+
 ```python
 class Persona:
 def __init__(self, nombre):
@@ -67,6 +73,7 @@ print("❌ El nombre no puede estar vacío.")
 ```
 
 Ahora se usa como sí fuera un **atributo normal**:
+
 ```python
 p = Persona("Carlos")
 
@@ -77,12 +84,15 @@ print(p.nombre)   # ✅ Andrés
 p.nombre = ""     # ❌ El nombre no puede estar vacío.
 ```
 
-***
+---
 
 ## Ventajas de usar <span class="citation" data-cites="property">@property</span>
-✅ No cambias la forma de usar los atributos. ✅ Puedes añadir validaciones sin romper el código existente. ✅ Encapsulas correctamente los datos. ✅ Evitas accesos o cambios indebidos.
 
-***
+✅ No cambias la forma de usar los atributos. ✅ Puedes añadir validaciones sin romper el código existente. ✅
+Encapsulas correctamente los datos. ✅ Evitas accesos o cambios indebidos.
+
+---
 
 ## En resumen
+
 <!-- Tabla convertida manualmente -->

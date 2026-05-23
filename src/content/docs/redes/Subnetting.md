@@ -4,22 +4,31 @@ description: Subnetting - Notas de hacking y ciberseguridad.
 ---
 
 # Subnetting
-***
+
+---
 
 ## En palabras simples
-**Subnetting** (o **subneteo**) es un proceso que se usa en redes informáticas para **dividir una red grande en redes más pequeñas llamadas subredes** (*subnets*). Esto se hace para **organizar mejor el tráfico**, **aprovechar direcciones IP**, **mejorar la seguridad** y **optimizar el rendimiento** de la red.
 
-Imagina que tienes una gran red con muchas computadoras (por ejemplo, toda una empresa). En lugar de que todas estén en la misma red —lo que puede causar congestión y desorden—, **divides esa red en partes más pequeñas** (por departamentos, pisos, o funciones). Cada parte se comporta como una “mini red” dentro de la red principal.
+**Subnetting** (o **subneteo**) es un proceso que se usa en redes informáticas para **dividir una red grande en redes
+más pequeñas llamadas subredes** (_subnets_). Esto se hace para **organizar mejor el tráfico**, **aprovechar direcciones
+IP**, **mejorar la seguridad** y **optimizar el rendimiento** de la red.
 
-***
+Imagina que tienes una gran red con muchas computadoras (por ejemplo, toda una empresa). En lugar de que todas estén en
+la misma red —lo que puede causar congestión y desorden—, **divides esa red en partes más pequeñas** (por departamentos,
+pisos, o funciones). Cada parte se comporta como una “mini red” dentro de la red principal.
+
+---
 
 ## Conceptos clave
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## Ejemplo básico
+
 Supongamos que tienes la red:
+
 ```bash
 192.168.1.0 /24
 ```
@@ -36,9 +45,10 @@ Sí haces **subnetting** y divides /24 en **dos subredes /25**, obtienes:
 
 Ahora tienes **dos subredes** con **126 hosts válidos** cada una.
 
-***
+---
 
 ## Ventajas del subnetting
+
 ✅ Reduce el tráfico innecesario (broadcasts).
 
 ✅ Mejora la seguridad al aislar segmentos.

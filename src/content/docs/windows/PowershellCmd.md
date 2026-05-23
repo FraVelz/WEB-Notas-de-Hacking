@@ -4,12 +4,13 @@ description: Powershell Cmd - Notas de hacking y ciberseguridad.
 ---
 
 # Diferencias entre Powershell y CMD
-***
+
+---
 
 ## CMD (Command Prompt)
 
 - **Origen**: Basado en MS-DOS, presente en Windows desde versiones muy antiguas.
-- **Lenguaje**: Usa un lenguaje de comandos muy básico, llamado *batch*.
+- **Lenguaje**: Usa un lenguaje de comandos muy básico, llamado _batch_.
 - **Funciones principales**:
   - Ejecutar comandos simples del sistema (dir, copy, del, etc.).
   - Automatizar tareas básicas con archivos .bat.
@@ -18,7 +19,7 @@ description: Powershell Cmd - Notas de hacking y ciberseguridad.
   - Automatización avanzada complicada.
   - Funciones modernas de Windows (como administración de registros o servicios) son más difíciles de hacer.
 
-***
+---
 
 ## PowerShell
 
@@ -26,26 +27,32 @@ description: Powershell Cmd - Notas de hacking y ciberseguridad.
 - **Lenguaje**: Basado en .NET, orientado a objetos.
 - **Funciones principales**:
   - No solo ejecuta comandos, sino que devuelve **objetos completos**, no solo texto.
-  - Ejemplo: `Get-Process` devuelve un objeto de proceso con propiedades (Id, CPU, Memory, etc.) que se pueden filtrar o manipular.
-  - Automatización avanzada: scripts `.ps1` pueden hacer casi cualquier cosa en Windows, desde tareas de administración hasta manipulación de servicios, registro, Active Directory, etc.
+  - Ejemplo: `Get-Process` devuelve un objeto de proceso con propiedades (Id, CPU, Memory, etc.) que se pueden filtrar o
+    manipular.
+  - Automatización avanzada: scripts `.ps1` pueden hacer casi cualquier cosa en Windows, desde tareas de administración
+    hasta manipulación de servicios, registro, Active Directory, etc.
   - Combinación de cmdlets (comandos especializados de PowerShell) para tareas complejas.
 - **Compatibilidad**: Puede ejecutar casi todos los comandos de CMD, y mucho más.
 - **Multiplataforma**: PowerShell 7+ funciona en Windows, Linux y macOS.
 
-***
+---
 
 ## Diferencias clave en práctica
+
 <!-- Tabla convertida manualmente -->
 
-***
+---
 
 ## Ejemplo
+
 - CMD:
+
 ```bash
 dir | find "archivo.txt"
 ```
 
 - PowerShell:
+
 ```bash
 Get-ChildItem | Where-Object { $_.Name -eq "archivo.txt" }
 ```

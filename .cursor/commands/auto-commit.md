@@ -1,6 +1,7 @@
 # Autocommit — WEB-Notas-de-Hacking (Astro + Starlight)
 
-Usar cuando el usuario pida **hacer commit** del trabajo actual. Mensajes **Conventional Commits**, coherentes con `git log` de este repo. **No** hacer `git push` salvo petición explícita.
+Usar cuando el usuario pida **hacer commit** del trabajo actual. Mensajes **Conventional Commits**, coherentes con
+`git log` de este repo. **No** hacer `git push` salvo petición explícita.
 
 ## Cuándo ejecutar
 
@@ -19,7 +20,8 @@ Usar cuando el usuario pida **hacer commit** del trabajo actual. Mensajes **Conv
 
 `docs`, `content`, `starlight`, `sidebar`, `styles`, `ci`, `readme`, `cursor`, `astro`, `theme`, `pages`.
 
-Rutas de referencia: `src/content/docs/`, `starlight-sidebar.mjs`, `astro.config.mjs`, `src/styles/`, `public/`, `README.md` / `README.EN.md`, `.cursor/commands/`, `.github/workflows/ci.yml`.
+Rutas de referencia: `src/content/docs/`, `starlight-sidebar.mjs`, `astro.config.mjs`, `src/styles/`, `public/`,
+`README.md` / `README.EN.md`, `.cursor/commands/`, `.github/workflows/ci.yml`.
 
 ## Formas de mensaje
 
@@ -38,18 +40,19 @@ fix(content): repair broken links on index
 ci: fix workflow to use pnpm instead of npm
 ```
 
-**Evitar** commits con muchos `feat:` / `docs:` / `delete:` encadenados en una sola línea; separar por líneas o commits atómicos.
+**Evitar** commits con muchos `feat:` / `docs:` / `delete:` encadenados en una sola línea; separar por líneas o commits
+atómicos.
 
 ## Tipos
 
-| Tipo | Uso aquí |
-| --- | --- |
-| `feat` | Contenido MDX/Markdown, páginas Starlight |
-| `fix` | Enlaces, sintaxis MD, CI |
-| `docs` | README, comandos `.cursor/` |
-| `refactor` | Estilos, tema, sidebar |
-| `ci` | `.github/workflows/ci.yml` |
-| `chore` | Config Astro, deps |
+| Tipo       | Uso aquí                                  |
+| ---------- | ----------------------------------------- |
+| `feat`     | Contenido MDX/Markdown, páginas Starlight |
+| `fix`      | Enlaces, sintaxis MD, CI                  |
+| `docs`     | README, comandos `.cursor/`               |
+| `refactor` | Estilos, tema, sidebar                    |
+| `ci`       | `.github/workflows/ci.yml`                |
+| `chore`    | Config Astro, deps                        |
 
 ## Commit
 
@@ -66,7 +69,8 @@ EOF
 
 - Mensaje en **inglés**; respuesta al chat en **español**.
 - **No** añadir `Co-authored-by:` ni firmas de Cursor/IA en el mensaje.
-- Si el entorno inyecta `Co-authored-by: Cursor` y el commit **no está en remoto**: enmendar con el mismo texto sin ese trailer.
+- Si el entorno inyecta `Co-authored-by: Cursor` y el commit **no está en remoto**: enmendar con el mismo texto sin ese
+  trailer.
 - Hook rechazado → nuevo commit; sin `--no-verify` salvo petición explícita.
 
 ## Comandos relacionados
