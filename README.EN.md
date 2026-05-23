@@ -8,7 +8,7 @@ Live site: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fravelz.git
 
 A guide to learn or refresh cybersecurity from the ground up. It is a static site built with [Astro](https://astro.build/) and the [Starlight](https://starlight.astro.build/) theme: notes are written in Markdown (and MDX where needed), with search, dark theme, and an explicit sidebar to keep topics in a sensible order.
 
-With this folder as the Cursor workspace root, the `/update-readme` slash command and the full rules live in [`.cursor/commands/update-readme.md`](.cursor/commands/update-readme.md) to keep bilingual READMEs aligned.
+With this folder as the Cursor workspace root, the `/update-docs` and `/auto-commit` slash commands live in [`.cursor/commands/`](.cursor/commands/) to keep bilingual docs and commits aligned with the repo.
 
 ## ✨ Features
 
