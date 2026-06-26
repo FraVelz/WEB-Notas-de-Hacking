@@ -69,7 +69,7 @@ EOF
 ## Reglas
 
 - Mensaje en **inglés**; respuesta al chat en **español**.
-- **No** añadir `Co-authored-by:` ni firmas de Cursor/IA en el mensaje.
+- Cumplir [`.cursor/rules/git-commits.mdc`](../rules/git-commits.mdc) (sin coautoría IA).
 - Si el entorno inyecta `Co-authored-by: Cursor` y el commit **no está en remoto**: enmendar con el mismo texto sin ese
   trailer.
 - Hook rechazado → nuevo commit; sin `--no-verify` salvo petición explícita.
