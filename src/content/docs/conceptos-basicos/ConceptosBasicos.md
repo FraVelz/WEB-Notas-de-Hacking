@@ -1,206 +1,91 @@
 ---
 title: Conceptos Basicos
-description: "Definiciones base: ciberseguridad, CIA, amenazas, vulnerabilidades y más."
+description: CIA, exploit/payload, malware, riesgo y roles red/blue.
 ---
 
-# Conceptos Basicos
+# Conceptos básicos
 
----
+Glosario corto para no mezclar términos en labs y reportes.
 
-## 0. Seguridad de la información Vs Seguridad informática Vs Ciberseguridad
+## Tres capas (a menudo se confunden)
 
-**Seguridad de la información**: Procedimientos de medidas para asegurar los datos independientemente en que formato
-estén.
+| Concepto | Alcance |
+| -------- | ------- |
+| Seguridad de la información | Datos en cualquier formato |
+| Seguridad informática | Datos en sistemas informáticos (físico + digital) |
+| Ciberseguridad | Sobre todo el entorno digital / redes |
 
-**Seguridad informática**: Solo proteger los datos en formato informático tanto físico como virtual.
+## CIA
 
-**Ciberseguridad**: Proteger los datos e información en formato virtual (digitales).
+| Objetivo | Idea |
+| -------- | ---- |
+| Confidencialidad | Solo quien debe, lee |
+| Integridad | No se altera sin permiso |
+| Disponibilidad | Accesible cuando hace falta |
 
----
+## Exploit, payload, 0-day
 
-## 1. ¿Qué es?
+| Concepto | Significado |
+| -------- | ----------- |
+| Vulnerabilidad | Fallo de diseño, config o implementación |
+| Exploit | Método/código que aprovecha esa falla |
+| Payload | Qué ejecutas tras entrar (shell, downloader, etc.) |
+| 0-day | Vuln aún sin parche público; el fabricante tiene “día cero” |
 
-Es la práctica de proteger sistemas, redes, datos y programas frente a ataques, o accesos no autorizados.
+En Metasploit: eliges exploit + payload.
 
----
+Payloads típicos: reverse shell, Meterpreter, downloader, privesc.
 
-## 2. Objetivos
+## Malware (tipos que salen mucho)
 
-- **Confidencialidad:** Solo las personas autorizadas acceden a la información.
-- **Integridad:** La información no puede ser alterada sin permiso.
-- **Disponibilidad:** Los sistemas y datos deben estar accesibles cuando se necesiten.
+| Tipo | Idea |
+| ---- | ---- |
+| Virus | Se adjunta a archivos; necesita ejecución |
+| Gusano | Se propaga solo por red |
+| Troyano | Parece legítimo; abre puerta |
+| Ransomware | Cifra y pide rescate |
+| Spyware / keylogger / stealer | Roba actividad o creds |
+| Rootkit / bootkit | Se esconde (o en el boot) |
+| Botnet / RAT | Control remoto / red de bots |
+| Fileless | Vive en memoria / Living-off-the-Land |
+| Cryptominer | Mina con tu CPU/GPU |
 
----
+## Amenaza, vulnerabilidad, riesgo
 
-## 3. Terminologías
+| Concepto | Significado |
+| -------- | ----------- |
+| Amenaza | Qué puede pasar (actor o evento) |
+| Vulnerabilidad | Debilidad explotable |
+| Riesgo | Probabilidad × impacto si la amenaza usa la vuln |
 
-### Exploit
+## Amenazas / vectores habituales
 
-Es un **programa, código o técnica** que **aprovecha una vulnerabilidad** (un error o debilidad en un sistema, software
-o aplicación) para **ejecutar acciones no autorizadas**.
+- Malware, phishing, ingeniería social, DDoS, exploits
+- Vectores: correo, Wi‑Fi flojo, descargas, apps, USB
 
-<blockquote>
-El exploit es *el método o herramienta que “explota” la falla.*
+## Prácticas mínimas
 
-</blockquote>
-### Payload
-(en español, *carga útil*) es **lo que el exploit ejecuta una vez que logra entrar**.
+Contraseñas distintas + 2FA, updates, backups, VPN en redes públicas, no clicar links raros.
 
-Piensa así:
+## Áreas y roles
 
-- El _exploit_ es la **llave que abre la puerta**.
-- El _payload_ es **lo que metes una vez abierta**.
+| Área / rol | Idea |
+| ---------- | ---- |
+| Redes / info / cloud / cripto / CTI / hacking ético | Especializaciones habituales |
+| White / black / grey hat | Por intención y permiso |
+| Red team | Ofensivo (simula ataque) |
+| Blue team | Defensivo (detecta/responde) |
+| Purple team | Colaboración red + blue |
 
-Algunos tipos de payloads:
+## Tools básicas
 
-- **Reverse shell:** le da al atacante control remoto sobre la máquina.
-- **Meterpreter / comandos personalizados:** carga herramientas para moverse por el sistema.
-- **Downloader:** descarga malware adicional o instala puertas traseras (_backdoors_).
-- **Privilege escalation payloads:** aumentan permisos dentro del sistema.
+| Tool | Para qué |
+| ---- | -------- |
+| Wireshark | Tráfico |
+| Nmap | Puertos / hosts |
+| Metasploit | Exploits en lab |
+| Kali (u otra distro) | Caja de tools |
 
-En herramientas como **Metasploit**, esto se ve muy claro: eliges un exploit y luego le asocias un payload.
+Video de refuerzo: [conceptos — Hixec](https://www.youtube.com/watch?v=spMYZHepjko).
 
-### 0-day (Zero-Day)
-
-(se pronuncia _zero day_) es una **vulnerabilidad desconocida por el fabricante o por el público** —y por tanto **no
-tiene parche ni defensa aún**.
-
-<blockquote>
-“Zero-day” significa literalmente *día cero desde que se descubrió*, es decir, **el fabricante tiene 0 días para
-corregirlo**.
-
-</blockquote>
-Un **0-day exploit** es cuando alguien crea un exploit que aprovecha esa vulnerabilidad secreta. Es el tipo de ataque
-más peligroso y valioso, porque **ni antivirus ni firewalls lo detectan** (ya que nadie sabía que existía).
-
-### Malware y tipos de Malware
-
-(Malicious Software) Cualquier tipo de código malicioso que busca aprovecharse de una vulnerabilidad y casuar daño.
-
-Los tipos mas conocidos son:
-
-- **1. Virus:** Programa que se adjunta a archivos o programas legítimos y se activa al ejecutarlos. Se replica
-  infectando otros archivos.
-- **2. Gusano (Worm):** Malware que se autorreplica sin intervención del usuario, generalmente explotando
-  vulnerabilidades de red. Se propaga muy rápido.
-- **3. Troyano:** Se hace pasar por software legítimo para engañar al usuario. Abre puertas traseras, roba datos o
-  instala otros malware.
-- **4. Ransomware:** Cifra archivos o bloquea el sistema y exige un pago para devolver el acceso. Uno de los más
-  peligrosos hoy en día.
-- **5. Spyware:** Espía la actividad del usuario: teclas, contraseñas, navegación, cámaras, etc. Roba información sin
-  que el usuario lo note.
-- **6. Adware:** Muestra publicidad invasiva sin permiso. Puede rastrear actividad y ralentizar el sistema.
-- **7. Rootkit:** Oculta procesos, archivos o accesos maliciosos para que el malware pase desapercibido. Muy difícil de
-  detectar.
-- **8. Botnet (Bot):** Computadoras infectadas que quedan bajo control de un atacante para hacer ataques DDoS, spam,
-  minería, etc.
-- **9. Keylogger:** Registra todo lo que el usuario escribe en el teclado: contraseñas, mensajes, tarjetas, etc.
-- **10. Backdoor (Puerta trasera):** Permite acceso remoto oculto al equipo o servidor, saltándose la autenticación
-  normal.
-- **11. Stealer:** Roban información rápida y silenciosamente: contraseñas guardadas, cookies, wallet de criptos, sesión
-  de Discord, etc.
-- **12. Banker / Malware Bancario:** Especializado en robar credenciales y datos financieros, interceptar transacciones
-  y suplantar bancos.
-- **13. Cryptominer / Cryptojacking:** Usa el CPU o GPU del usuario para minar criptomonedas sin permiso.
-- **14. Fileless Malware:** No se instala como archivo. Vive en la memoria RAM y usa herramientas legítimas del sistema
-  (como PowerShell). Muy difícil de detectar.
-- **15. RAT (Remote Access Trojan):** Da control total del dispositivo al atacante: cámara, teclado, archivos, pantalla.
-- **16. Scareware:** Asusta al usuario con mensajes falsos (“tienes 32 virus”) para que compre un software fraudulento.
-- **17. Bootkit:** Infecta el sector de arranque (MBR/UEFI) para ejecutarse antes que el sistema operativo.
-
-### Vulnerabilidad
-
-Fallo de configuración, de diseño o de implementación que pone en riesgo la seguridad del entorno o sistema.
-
-### Amenaza
-
-Cualquier tipo de circunstancia posible que se pueda manifestar donde se pueda a través de una vulnerabilidad poner en
-peligro el sistema.
-
-### Riesgo
-
-Probabilidad o posibilidad que una amenaza se materialice y afecte al sistema en cuestión, aprovechándose de una
-vulnerabilidad.
-
----
-
-## 4. Amenazas comunes
-
-- **Malware:** Software malicioso (virus, troyanos, gusanos, ransomware, spyware).
-- **Phishing:** Engaños (emails o mensajes falsos) para robar credenciales.
-- **Ingeniería Social:** Manipular personas para obtener información.
-- **Ataques DDoS:** sobrecargar un servidor para dejarlo fuera de servicio.
-- **Exploits:** Aprovechar vulnerabilidades en software y sistemas.
-
----
-
-## 5. Vectores de ataque
-
-Son los caminos que usan los atacantes:
-
-- Correos electrónicos.
-- Redes wifi inseguras.
-- Descargas de archivos.
-- Aplicaciones maliciosas.
-- Dispositivos externos (USB).
-
----
-
-## 6. Buenas prácticas de seguridad
-
-- Usar contraseñas seguras (y diferentes en cada cuenta).
-- Activar la autenticación en dos pasos (2FA).
-- Mantener software y sistemas actualizados.
-- Hacer copias de seguridad (backups).
-- Usar VPN en redes públicas.
-- No haga clic en enlaces sospechosos.
-
----
-
-## 7. Áreas de ciberseguridad
-
-- **Seguridad de Redes:** Proteger tráfico de datos.
-- **Seguridad de la Información:** Proteger datos en depósito y en tránsito.
-- **Seguridad en la Nube:** Protección en servicios iCloud.
-- **Criptografía:** Usar algoritmos para proteger información. (ej: cifrado AES, RSA).
-- **Ciberinteligencia:** Detección y análisis de amenazas.
-- **Hacking Ético:** Buscar vulnerabilidades para fortalecer sistemas.
-
----
-
-## 8. Tipos de hackers (por su actuar)
-
-- **White hat:** Éticos, ayudan a mejorar la seguridad.
-- **Black hat:** Atacantes maliciosos.
-- **Grey hat:** A veces actúan éticamente, otras veces no.
-
-Normalmente a los “hackers de sombrero, negro o gris” se les da el nombre de ciberdelincuentes.
-
----
-
-## 9. Tipos de hackers (por su rol)
-
-- **Red team:** Ofensivos (atacantes), simula todo tipo de ataques para saber la seguridad que tiene una empresa u
-  organización.
-- **Blue team:** Defensivo (guardianes), son los que protegen de los ataques, los encargados de reforzar seguridad a la
-  empresa sí los de **red team** encuentran alguna falla.
-- **Purple team:** híbrido (colaboración), es una mezcla de ambos mundos de red team, y blue team.
-
-Existen más tipos de hackers por su rol, pero son muy desconocidos normalmente en el mundo laboral, y comunidades
-onlines.
-
----
-
-## 10. Herramientas básicas en ciberseguridad
-
-- **Wireshark:** Análisis de tráfico de red.
-- **Nmap:** Escaneo de puertos y redes.
-- **Metasploit:** Pruebas de penetración.
-- **Kali Linux:** Sistema operativo con herramientas de hacking ético, se puede utilizar otros no importa, pero kali ya
-  viene con las herramientas incluidas.
-
----
-
-Para conocer muchos más conceptos y fortalecer los aprendidos, también esta este video de YouTube:
-
-[Ir a conceptos de ciberseguridad - Hixec](https://www.youtube.com/watch?v=spMYZHepjko)
+Legal: [Legalidad del hacking](/WEB-Notas-de-Hacking/conceptos-basicos/legalidadhacking/).
