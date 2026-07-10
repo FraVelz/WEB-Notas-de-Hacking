@@ -5,17 +5,7 @@ description: Volcado hex/binario con `xxd` (inspección y reverse `-r`).
 
 # Xxd en Linux
 
----
-
-## Que es el comando xxd
-
-El comando xxd en Linux (y otros sistemas Unix) **convierte datos binarios en una representación hexadecimal** y también
-puede hacer lo contrario (convertir de hexadecimal a binario). Es muy útil para inspeccionar o editar archivos binarios,
-ver bytes en formato legible o reconstruir archivos desde texto hexadecimal.
-
----
-
-## Sintaxis básica
+Hex dump de binarios (y reverse: hex → binario). Útil para inspeccionar bytes o reconstruir archivos.
 
 ```bash
 xxd [opciones] [archivo]
@@ -23,74 +13,7 @@ xxd [opciones] [archivo]
 
 ---
 
-## Ejemplos comunes
-
-### 1. Ver un archivo en formato hexadecimal
-
-```bash
-xxd archivo.bin
-```
-
-Muestra el contenido de archivo.bin así:
-
-```bash
-00000000: 486f 6c61 206d 756e 646f          Hola mundo
-```
-
-- La primera columna (00000000) es el desplazamiento (offset) en hexadecimal.
-- Luego vienen los bytes en formato hex.
-- A la derecha aparece la interpretación ASCII (sí los bytes son imprimibles).
-
----
-
-### 2. Convertir de binario a texto hexadecimal
-
-```bash
-cat archivo | xxd
-```
-
-Convierte los bytes de la entrada estándar en texto hexadecimal.
-
----
-
-### 3. Convertir de texto hexadecimal a binario
-
-```bash
-cat archivo_hex.txt | xxd -r > archivo_original
-```
-
-- -r significa **reverse** (revertir).
-- Esto toma una representación en hex (por ejemplo, hecha por xxd) y reconstruye el archivo binario original.
-
----
-
-### 4. Mostrar solo los bytes (sin dirección ni texto ASCII)
-
-```bash
-xxd -p archivo.bin
-```
-
-Salida “plana” (plain):
-
-```bash
-486f6c61206d756e646f
-```
-
-Perfecta para copiar y pegar en scripts o codificaciones.
-
----
-
-### 5. Ver solo los primeros bytes
-
-```bash
-xxd -l 16 archivo.bin
-```
-
-Muestra solo los primeros 16 bytes.
-
----
-
-## En resumen
+## Comandos
 
 | Comando | Qué hace | Ejemplo |
 | ------- | -------- | ------- |
@@ -99,3 +22,16 @@ Muestra solo los primeros 16 bytes.
 | `xxd -r` | Reverse: hex → binario. | `xxd -r hex.txt > out.bin` |
 | `xxd -l N` | Solo los primeros N bytes. | `xxd -l 16 archivo.bin` |
 | `xxd -s N` | Empieza en el offset N. | `xxd -s 0x100 f.bin` |
+
+```bash
+xxd archivo.bin
+# 00000000: 486f 6c61 206d 756e 646f          Hola mundo
+# offset | bytes hex | ASCII
+
+cat archivo | xxd
+cat archivo_hex.txt | xxd -r > archivo_original
+xxd -p archivo.bin
+# 486f6c61206d756e646f
+```
+
+Docs: [man xxd](https://linux.die.net/man/1/xxd).

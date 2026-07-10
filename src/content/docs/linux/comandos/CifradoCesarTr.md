@@ -3,88 +3,27 @@ title: Cifrado Cesar Tr
 description: ROT13 y cifrado César con el comando tr en Linux.
 ---
 
-# Cifrado Cesar con tr en Linux
+# Cifrado César con tr
 
----
-
-El comando que vamos a revisar y analizar que hace cifrado cesar de 13 caracteres hacia delante:
+ROT13 con `tr`: cada letra se sustituye por la que está 13 posiciones más adelante. Aplicarlo dos veces vuelve al original.
 
 ```bash
 cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
 ```
 
----
-
-### Parte 1
-
-```bash
-cat data.txt
-```
-
-Muestra el contenido del archivo data.txt (lo envía al _stdout_).
-
----
-
-### Parte 2
-
-```bash
-| tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
-```
-
-El **pipe (|)** pasa ese texto al comando **tr**, que significa _translate_ (traducir o sustituir caracteres).
-
-La sintaxis:
-
-```bash
-tr 'caracteres_originales' 'caracteres_nuevos'
-```
-
-sustituye cada carácter del primer conjunto por el correspondiente del segundo.
-
----
-
-### 3. Qué hace exactamente este caso
-
-[A-Za-z] → todas las letras del alfabeto (mayúsculas y minúsculas).
-
-[N-ZA-Mn-za-m] → es el mismo alfabeto, pero **rotado 13 posiciones**.
-
-Esto significa que cada letra se reemplaza por la letra que está 13 lugares después en el alfabeto.
-
-A eso se le llama **cifrado ROT13 (Rotation by 13 places)**.
-
-Es decir de la N-Z es 13 posiciones, de la A-M, de la n-z y de la a-m, todas son 13 posiciones, continuación una imagen
-representativa:
+| Parte | Qué hace |
+| ----- | -------- |
+| `cat data.txt` | Manda el texto por stdout. |
+| `\| tr 'set1' 'set2'` | Sustituye cada carácter de set1 por el de set2. |
+| `[A-Za-z]` | Alfabeto completo. |
+| `[N-ZA-Mn-za-m]` | Mismo alfabeto rotado 13. |
 
 ![Alfabeto con rotación para cifrado César](/WEB-Notas-de-Hacking/imagenes/abdcedario-cifrado-con-tr.png)
 
----
-
-### Ejemplo práctico
-
-Sí data.txt contiene:
-
 ```bash
-Hola Mundo
-```
-
-El comando:
-
-```bash
+# data.txt → Hola Mundo
 cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+# Ubya Zhaqb
 ```
 
-producirá:
-
-```bash
-Uby nZhaqb
-```
-
-Y sí vuelves a aplicarlo una segunda vez, vuelve al texto original (porque ROT13 es su propio inverso).
-
----
-
-### En resumen
-
-Este comando aplica el **cifrado ROT13** al texto del archivo data.txt, sustituyendo cada letra por la que está 13
-posiciones más adelante en el alfabeto (y viceversa sí se aplica de nuevo).
+César con otro desplazamiento: cambia el segundo conjunto (p. ej. rotar 3: `[D-ZA-Cd-za-c]`). Docs: [man tr](https://man7.org/linux/man-pages/man1/tr.1.html).

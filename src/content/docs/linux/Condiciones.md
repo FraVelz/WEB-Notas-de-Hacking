@@ -3,120 +3,62 @@ title: Condiciones
 description: Comparaciones numéricas y de cadenas con `if`, `test`, `[ ]` y `[[ ]]`.
 ---
 
-# Condiciones en Bash Script
+# Condiciones en Bash
+
+No hay booleanos nativos: los comandos devuelven **0 = verdadero**, distinto de 0 = falso (`true` / `false`).
 
 ---
 
-## Booleanos en Bash
+## Operadores
 
-En Bash **no existen valores booleanos nativos**, pero sí existen **comandos que devuelven verdadero o falso**:
+| Concepto | Significado |
+| -------- | ----------- |
+| `-eq` `-ne` `-lt` `-le` `-gt` `-ge` | Comparar números. |
+| `=` / `==` | Cadenas iguales (`=` en `[ ]`). |
+| `!=` | Cadenas distintas. |
+| `-z` / `-n` | Vacía / no vacía. |
+| `<` / `>` | Orden lexicográfico (mejor en `[[ ]]`). |
 
 ```bash
-true   # Devuelve 0 (verdadero)
-false  # Devuelve 1 (falso)
+[ "$a" -gt 10 ]
+[[ -z "$1" ]]
+[[ "$user" == "root" ]]
 ```
-
-<blockquote>
-En Bash, un **0 significa verdadero** y un **número distinto de 0 (generalmente 1)** significa falso.
-
-</blockquote>
-***
-
-## Operadores Condicionales
-
-Los operadores se usan para comparar **números** o **cadenas de texto**.
-
-### Para números
-
-| Concepto | Significado |
-| -------- | ----------- |
-| `-eq` | Igual (`==` numérico). |
-| `-ne` | Distinto. |
-| `-lt` | Menor que (`<`). |
-| `-le` | Menor o igual. |
-| `-gt` | Mayor que (`>`). |
-| `-ge` | Mayor o igual. |
-
-Ejemplo: `[ "$a" -gt 10 ]`
-
-### Para cadenas de texto
-
-| Concepto | Significado |
-| -------- | ----------- |
-| `=` / `==` | Cadenas iguales (en `[ ]` suele usarse `=`). |
-| `!=` | Cadenas distintas. |
-| `-z` | Cadena vacía (longitud 0). |
-| `-n` | Cadena no vacía. |
-| `<` / `>` | Orden lexicográfico (mejor dentro de `[[ ]]`). |
-
-Ejemplo: `[[ -z "$1" ]]` o `[[ "$user" == "root" ]]`
 
 ---
 
-## Estructura if - elif - else
+## if / test / [[ ]]
 
-Ejemplo de uso básico:
+`[ ]` ≈ `test`. Espacios obligatorios tras `[` y antes de `]`. Preferir `[[ ]]` (más seguro, `&&`/`||` dentro).
 
 ```bash
 if [ 3 -gt 4 ]; then
-echo "Mayor que 4"
-
+  echo "Mayor que 4"
 elif false; then
-echo "Nunca pasar"
-
+  echo "Nunca"
 else
-echo "4 o menor"
+  echo "4 o menor"
 fi
-```
 
-<blockquote>
-### Notas:
-
-- Los corchetes [ ] son equivalentes al comando test.
-- Siempre debe haber un **espacio** después del [ y antes del ].
-- La instrucción then debe ir en la misma línea o en una nueva, separada con ;.
-
-</blockquote>
-***
-
-## Condiciones compuestas (&amp;&amp;, ||)
-
-Puedes combinar condiciones con operadores lógicos.
-
-```bash
 if [ 10 -lt 14 ] && [ 10 -gt 12 ]; then
-echo "verdadero"
+  echo "verdadero"
+fi
+
+if [[ 10 -lt 14 && 10 -gt 12 ]]; then
+  echo "verdadero"
 fi
 ```
 
-También puedes usar [[...]] para condiciones más seguras (recomendado):
-
-```bash
-if [[ 10 -lt 14  &&  10 -gt 12 ]]; then
-echo "verdadero"
-fi
-```
-
-<blockquote>
-[[ ... ]] permite el uso de operadores lógicos &amp;&amp; y || dentro del mismo bloque sin necesidad de múltiples [ ].
-
-</blockquote>
-***
-
-## Formas de escribir condiciones
-
-Las tres siguientes formas son equivalentes:
+Formas equivalentes:
 
 ```bash
 test condition
 [ condition ]
 [[ condition || condition ]]
-```
 
-Ejemplo real:
-
-```bash
 if test 10 -eq 10; then
-echo "10 es igual a 10"
+  echo "10 es igual a 10"
 fi
 ```
+
+Docs: [Bash Conditional Constructs](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html).

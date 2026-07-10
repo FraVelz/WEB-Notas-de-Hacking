@@ -1,260 +1,112 @@
 ---
 title: Comandos Linux
-description: Historia, filosofía, FHS y comandos básicos de Linux para ciberseguridad.
+description: Historia breve, FHS, variables de entorno y comandos básicos de Linux.
 ---
 
-# Introducción a Linux para Ciberseguridad
+# Introducción a Linux
 
-Linux es un **sistema operativo (SO)**, al igual que Windows, macOS, iOS o Android. Un SO gestiona los recursos de
-hardware de una computadora y permite la comunicación entre aplicaciones y componentes físicos.
-
-A diferencia de otros sistemas operativos, Linux es **libre, de código abierto** y cuenta con una gran cantidad de
-**distribuciones** (“distros”), adaptadas a diferentes necesidades (ejemplo: Ubuntu, Debian, Fedora, Manjaro, Parrot OS,
-etc.).
-
-En ciberseguridad, Linux es un pilar por su **robustez, flexibilidad y seguridad**, siendo ampliamente usado en
-servidores, dispositivos embebidos, mainframes y sistemas móviles como Android.
+SO libre/open source con muchas distros (Ubuntu, Debian, Fedora, Parrot…). En ciberseguridad aparece en servidores, labs y Android (kernel).
 
 ---
 
-## 1. Historia
+## Historia (muy breve)
 
-- **1970**: Ken Thompson y Dennis Ritchie (trabajaban en AT&amp;T). ellos crean **Unix**.
-- **1977**: Surge BSD (Berkeley Software Distribution), pero enfrenta problemas legales por usar código de AT&amp;T.
-- **1983**: Richard Stallman inicia el **Proyecto GNU** y crea la **GPL (Licencia Pública General)**.
-- **1991**: Linus Torvalds (estudiante Filandés) desarrolla el **núcleo de Linux** como proyecto personal, liberado como
-  software libre.
-- **Hoy**: Linux cuenta con más de **23 millones de líneas de código** y más de **600 distribuciones**.
+| Año | Qué pasó |
+| --- | -------- |
+| 1970 | Thompson y Ritchie crean Unix (AT&T). |
+| 1977 | BSD (luego líos legales con código AT&T). |
+| 1983 | Stallman: proyecto GNU + GPL. |
+| 1991 | Torvalds libera el kernel Linux. |
 
-Ejemplos de distros populares: Ubuntu, Debian, Fedora, OpenSUSE, Manjaro, Gentoo, Red Hat, Linux Mint, Elementary y
-Parrot OS (enfocada en ciberseguridad).
+Distros típicas: Ubuntu, Debian, Fedora, OpenSUSE, Manjaro, Gentoo, RHEL, Mint, Parrot OS.
 
 ---
 
-## 2. Filosofía de Linux
-
-Linux se basa en la **simplicidad, modularidad y apertura**. Su enfoque es crear herramientas pequeñas que realizan una
-tarea bien definida y que pueden combinarse.
-
-### Principios clave:
+## Filosofía y componentes
 
 | Concepto | Significado |
 | -------- | ----------- |
 | Todo es un archivo | Dispositivos, pipes y sockets se tratan como archivos. |
-| Una herramienta, una tarea | Programas pequeños que se combinan con pipes. |
+| Una herramienta, una tarea | Programas pequeños combinados con pipes. |
 | Texto plano | Configs y logs legibles; fácil de automatizar. |
-| Modularidad | Kernel + userland + distro; piezas intercambiables. |
-| Libertad / código abierto | Estudiar, modificar y redistribuir el software. |
+| Kernel | Memoria, CPU, drivers, procesos. |
+| Shell | Intérprete (bash, zsh…). |
+| Daemons | Servicios en segundo plano (sshd, units de systemd). |
+
+Capas: hardware → kernel → shell/utilidades → apps.
 
 ---
 
-## 3. Componentes de Linux
+## Jerarquía FHS
 
 | Concepto | Significado |
 | -------- | ----------- |
-| Kernel | Núcleo: memoria, CPU, drivers, procesos. |
-| Shell | Intérprete de comandos (bash, zsh, …). |
-| Sistema de archivos | Jerarquía FHS bajo `/`. |
-| Utilidades GNU/coreutils | `ls`, `cp`, `grep`, etc. |
-| Daemons / servicios | Procesos en segundo plano (sshd, systemd units). |
-| Librerías | Código compartido (`libc`, etc.). |
-
----
-
-## 4. Arquitectura de Linux
-
-Linux se organiza en capas:
-
-- **Hardware:** CPU, RAM, disco, periféricos.
-- **Kernel:** Controla y virtualiza el hardware.
-- **Shell:** Intérprete de comandos (CLI).
-- **System Utilities:** Herramientas y aplicaciones que interactúan con el sistema.
-
----
-
-## 5. Jerarquía del Sistema de Archivos (FHS)
-
-Linux organiza los archivos en una **estructura en forma de árbol**, con / como raíz.
-
-| Concepto | Significado |
-| -------- | ----------- |
-| `/` | Raíz del sistema. |
+| `/` | Raíz. |
 | `/bin`, `/usr/bin` | Binarios esenciales / de usuario. |
 | `/sbin`, `/usr/sbin` | Binarios de administración. |
-| `/etc` | Configuración del sistema. |
-| `/home` | Directorios de usuarios. |
-| `/root` | Home del superusuario. |
+| `/etc` | Configuración. |
+| `/home` | Homes de usuarios. |
+| `/root` | Home de root. |
 | `/var` | Datos variables (logs, spools). |
-| `/tmp` | Temporal (suele limpiarse). |
-| `/proc`, `/sys` | Interfaces virtuales al kernel. |
+| `/tmp` | Temporal. |
+| `/proc`, `/sys` | Interfaces al kernel. |
 | `/dev` | Dispositivos. |
-| `/opt` | Software de terceros opcional. |
-| `/usr` | Programas y datos de usuario compartidos. |
+| `/opt` | Software de terceros. |
+| `/usr` | Programas y datos compartidos. |
 
 ---
 
-**Analogía**, imagina Linux como una empresa:
+## Variables de entorno
 
-- El **kernel** es la gerencia (organiza recursos).
-- Los **daemons** son empleados invisibles que mantienen todo funcionando.
-- El **shell** es la recepción, donde das órdenes.
-- La **filosofía** es la cultura de trabajo: simplicidad, eficiencia y cooperación.
-
----
-
-## 6. Qué es comando?
-
-Es un nombre que se coloca en la terminal, que ejecuta varias líneas de código.
+```bash
+env                    # listar
+export name=data       # crear (se pierde al reiniciar la sesión)
+echo $name
+name="$name:text"      # concatenar
+```
 
 ---
 
-## 7. Variables de entorno
-
-son variables de datos por defecto en la terminal, puedes ver cuáles son con el comando “env”.
-
-“export name=data”: Crear una variable de entorno con nombre “name” y valor “data”. (Al reiniciar el sistema operativo
-se borra la variable.)
-
-para visualizar puedes usar “echo $name”. También puedes concatenar “name = $name:text” quedaría el texto de la variable
-name como “data:text”
-
----
-
-## 8. Comandos de Linux
+## Comandos básicos
 
 | Comando | Qué hace | Ejemplo |
 | ------- | -------- | ------- |
-| `ls` | Lista archivos y directorios. | `ls -la` |
+| `ls` | Lista archivos. | `ls -la` |
 | `cd` | Cambia de directorio. | `cd /var/log` |
-| `pwd` | Muestra el directorio actual. | `pwd` |
-| `cat` | Muestra o concatena archivos. | `cat /etc/passwd` |
-| `cp` / `mv` / `rm` | Copiar, mover/renombrar, borrar. | `cp a.txt b.txt` |
-| `mkdir` / `rmdir` | Crear / borrar directorios vacíos. | `mkdir lab` |
-| `grep` | Busca texto en archivos o pipes. | `grep root /etc/passwd` |
-| `find` | Busca archivos por nombre, tipo, etc. | `find / -name "*.conf"` |
+| `pwd` | Directorio actual. | `pwd` |
+| `cat` | Muestra/concatena archivos. | `cat /etc/passwd` |
+| `cp` / `mv` / `rm` | Copiar, mover, borrar. | `cp a.txt b.txt` |
+| `mkdir` / `rmdir` | Crear / borrar dirs vacíos. | `mkdir lab` |
+| `grep` | Busca texto. | `grep root /etc/passwd` |
+| `find` | Busca archivos. | `find / -name "*.conf"` |
 | `chmod` / `chown` | Permisos y dueño. | `chmod 755 script.sh` |
-| `ps` / `kill` | Ver y señalar procesos. | `ps aux` |
-| `sudo` | Ejecutar como otro usuario (suele ser root). | `sudo apt update` |
-| `man` | Manual del comando. | `man ls` |
+| `ps` / `kill` | Procesos. | `ps aux` |
+| `sudo` | Ejecutar como root (si estás en sudoers). | `sudo apt update` |
+| `man` | Manual. | `man ls` |
 
-Y muchos más comandos, y variaciones de los mismos…
+Más detalle de permisos: [Permisos](/WEB-Notas-de-Hacking/linux/Permisos/). Ayuda en terminal: [AyudaLinux](/WEB-Notas-de-Hacking/linux/AyudaLinux/).
 
 ---
 
-## 9. Permisos y usuarios
-
-En Linux, **los permisos controlan quién puede leer, escribir o ejecutar un archivo**. Cada archivo tiene permisos para:
-
-- **Usuario (u)** – propietario del archivo
-- **Grupo (g)** – grupo al que pertenece el usuario
-- **Otros (o)** – todos los demás usuarios
-
-### Ver permisos
+## Permisos (rápido)
 
 ```bash
 ls -l
-```
-
-Salida típica:
-
-```bash
--rwxr-xr--
-```
-
-Interpretación:
-
-- r → leer (read)
-- w → escribir (write)
-- x → ejecutar (execute)
-
-→ Ejemplo anterior:
-
-- Usuario: **rwx** (leer, escribir, ejecutar)
-- Grupo: **r-x** (leer, ejecutar)
-- Otros: **r–** (solo leer)
-
-### Cambiar permisos
-
-```bash
+# -rwxr-xr--  → u=rwx, g=r-x, o=r--
 chmod 755 archivo.sh
-```
-
-- 7 → rwx
-- 5 → r-x (Esto da permisos completos al dueño, y solo lectura/ejecución al resto.)
-
-Otra forma:
-
-```bash
-chmod u+x script.sh   # Dar permiso de ejecución al usuario
-chmod g-w archivo.txt # Quitar permiso de escritura al grupo
-```
-
-### Cambiar propietario
-
-```bash
+chmod u+x script.sh
 chown usuario:grupo archivo.txt
 ```
 
 ---
 
-## 10. Sudo
+## sudo
 
-El comando sudo en Linux y sistemas tipo Unix significa **“superuser do”** (hacer como superusuario). Básicamente,
-permite ejecutar comandos con **privilegios de administrador**, incluso sí tú usuario normal no los tiene. Esto es útil
-porque algunas acciones (como instalar programas, modificar archivos del sistema o cambiar configuraciones importantes)
-requieren permisos elevados para proteger el sistema de cambios accidentales. Así funciona paso a paso:
-
-### 1. <strong>Ejecutar un comando como administrador</strong>
-
-Cuando escribes:
-
-```bash
-sudo comando
-```
-
-Linux hace lo siguiente:
-
-- Te pregunta la contraseña de tú usuario (no la del root) sí no la has usado sudo recientemente.
-- Verifica que tú usuario esté en el archivo /etc/sudoers, que define quién puede usar sudo y qué comandos.
-- Sí está permitido, ejecuta el comando con **permisos de root**, es decir, como sí fueras el administrador del sistema.
-
-### 2. <strong>Ejemplo práctico</strong>
+Ejecuta un comando con privilegios de root si tu usuario está en `/etc/sudoers` (editar con `visudo`). Pide tu password (no la de root) y la cachea unos minutos.
 
 ```bash
 sudo apt update
+sudo -i          # shell de root (cuidado)
 ```
 
-- apt update actualiza la lista de paquetes en sistemas basados en Debian (Ubuntu, Mint, etc.).
-- Normalmente un usuario normal no puede cambiar la base de datos de paquetes.
-- sudo permite hacerlo porque ejecuta el comando con permisos de root.
-
-### 3. <strong>Comando interactivo</strong>
-
-Sí escribes:
-
-```bash
-sudo -i
-```
-
-o
-
-```bash
-sudo su
-```
-
-- Obtienes un **shell de root**, es decir, todos los comandos que escribas después se ejecutan con permisos de
-  administrador.
-- Esto es más riesgoso porque cualquier error puede afectar gravemente el sistema.
-
-### 4. <strong>Seguridad y tiempo de sesión</strong>
-
-- sudo recuerda tú contraseña durante unos minutos (por defecto 5) para que no tengas que escribirla cada vez.
-- Sí tú usuario no está en sudoers, no podrás usarlo.
-
----
-
-<blockquote>
-**Autor:** Fravelz<br /> **Colaborador:** <span class="citation" data-cites="studentethical">@studentethical</span>
-(Student Ethical)
-
-</blockquote>
+**Autor:** Fravelz · **Colaborador:** @studentethical (Student Ethical)

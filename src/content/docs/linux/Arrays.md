@@ -3,161 +3,75 @@ title: Arrays
 description: Definir, indexar y recorrer arrays indexados y asociativos en Bash.
 ---
 
-# Arrays en bash script
+# Arrays en Bash
+
+Listas indexadas y (Bash 4+) asociativas. Siempre entre comillas al expandir: `"${arr[@]}"`.
 
 ---
 
-## Temario
+## Definir y acceder
 
-## 1. Definir arrays
-
-```
-# Array con valores
+```bash
 nombres=("Ana" "Luis" "Pedro")
-
-# Otra forma (asignando por índice)
 numeros[0]=10
 numeros[1]=20
-numeros[2]=30
+
+echo "${nombres[0]}"      # Ana
+echo "${nombres[@]}"      # todos
+echo "${#nombres[@]}"     # tamaño → 3
+echo "${nombres[@]:1:2}"  # slice: desde 1, 2 elems
 ```
+
+| Concepto | Significado |
+| -------- | ----------- |
+| `arr=(a b c)` | Definir. |
+| `${arr[i]}` | Elemento i. |
+| `${arr[@]}` / `${arr[*]}` | Todos (mejor `@` en bucles). |
+| `${#arr[@]}` | Longitud. |
+| `${!arr[@]}` | Índices. |
+| `arr+=("x")` | Añadir al final. |
+| `unset arr[i]` | Quitar un índice. |
+| `declare -A` | Array asociativo (Bash 4+). |
 
 ---
 
-## 2. Acceder a elementos
-
-```bash
-echo "${nombres[0]}" # Ana
-echo "${nombres[2]}" # Pedro
-```
-
-Si usas un índice que no existe:
-
-```bash
-echo "${nombres[5]}" # vacío
-```
-
----
-
-## 3. Mostrar todos los elementos
-
-```bash
-echo "${nombres[@]}" # Ana Luis Pedro
-echo "${numeros[*]}" # 10 20 30
-```
-
----
-
-## 4. Tamaño del array
-
-```bash
-echo "${#nombres[@]}" # 3
-```
-
----
-
-## 5. Recorrer arrays
-
-### Con for
+## Recorrer / modificar
 
 ```bash
 for nombre in "${nombres[@]}"; do
   echo "Hola $nombre"
 done
-```
 
-Salida:
-
-```bash
-Hola Ana
-Hola Luis
-Hola Pedro
-```
-
-### Con índices
-
-```bash
 for i in "${!nombres[@]}"; do
-  echo "Índice: $i → Valor: ${nombres[$i]}"
+  echo "Índice: $i → ${nombres[$i]}"
 done
+
+nombres+=("Carla")
+nombres[1]="Lucía"
+unset nombres[1]
 ```
 
 ---
 
-## 6. Añadir y modificar elementos
-
-```bash
-nombres+=("Carla") # Agregar al final
-nombres[1]="Lucía" # Modificar el índice 1
-```
-
----
-
-## 7. Eliminar elementos
-
-```bash
-unset nombres[1] # Elimina solo el índice 1
-unset nombres    # Borra todo el array
-```
-
----
-
-## 8. Subarrays (rebanadas)
-
-```bash
-echo "${nombres[@]:1:2}" # desde índice 1, tomar 2 elementos
-```
-
----
-
-## 9. Arrays asociativos (tipo diccionario)
-
-Disponibles en **Bash 4+**.
+## Asociativos
 
 ```bash
 declare -A capitales
 capitales[Colombia]="Bogotá"
 capitales[México]="CDMX"
-capitales[España]="Madrid"
 
-echo "${capitales[Colombia]}" # Bogotá
-
-# Recorrer claves y valores
+echo "${capitales[Colombia]}"
 for pais in "${!capitales[@]}"; do
   echo "$pais → ${capitales[$pais]}"
 done
 ```
 
-Salida:
+Ordenar números:
 
 ```bash
-México → CDMX
-España → Madrid
-Colombia → Bogotá
+numeros=(3 8 1)
+sorted=($(printf '%s\n' "${numeros[@]}" | sort -n))
+echo "${sorted[@]}"   # 1 3 8
 ```
 
----
-
-## 10. Cosas útiles
-
-- **Índice del último elemento**:
-
-  ```bash
-  echo "${!nombres[@]}" # muestra todos los índices
-  ```
-
-- **Ordenar un array**:
-
-  ```bash
-  numeros=(3 8 1)
-  sorted=($(printf '%s\n' "${numeros[@]}" | sort -n))
-  echo "${sorted[@]}" # 1 3 8
-  ```
-
----
-
-En resumen:
-
-- `array=(val1 val2 val3)` → define.
-- `${array[i]}` → acceder.
-- `${array[@]}` → todos los valores.
-- `declare -A` → arrays asociativos.
+Docs: [Bash arrays](https://www.gnu.org/software/bash/manual/html_node/Arrays.html).

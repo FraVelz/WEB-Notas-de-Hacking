@@ -3,126 +3,60 @@ title: Busqueda
 description: find, locate, which y grep para localizar archivos y texto.
 ---
 
-# Comandos de Gestión de Búsqueda
+# Búsqueda en Linux
+
+Archivos con `find`/`locate`, texto con `grep`, ejecutables con `which`/`type`.
 
 ---
 
-[Regresar al inicio](/)
+## find
+
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `find / -name "f"` | Por nombre. | `find / -name "archivo.txt"` |
+| `find … -iname` | Sin importar mayúsculas. | `find /home -iname "foto.png"` |
+| `find … -type d/f` | Solo dirs / archivos. | `find /home -type d -name "Documentos"` |
+| `find … -size +10M` | Por tamaño. | `find / -type f -size +10M` |
+| `find … -exec … \;` | Comando sobre cada match. | `find /tmp -name "*.log" -exec rm {} \;` |
 
 ---
 
-## 1. Buscar archivos y directorios
+## grep
 
-### find
-
-Busca archivos y carpetas según nombre, tipo, tamaño, fecha, etc.
-
-```bash
-# Buscar por nombre (en todo el sistema)
-find / -name "archivo.txt"
-
-# Buscar sin importar mayúsculas/minúsculas
-find /home -iname "foto.png"
-
-# Buscar solo directorios
-find /home -type d -name "Documentos"
-
-# Buscar archivos mayores de 10 MB
-find / -type f -size +10M
-
-# Ejecutar un comando sobre los resultados
-find /tmp -name "*.log" -exec rm {} \;
-```
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `grep pat file` | Busca en un archivo. | `grep "error" archivo.log` |
+| `grep -r` | Recursivo. | `grep -r "usuario" /etc/` |
+| `grep -n` | Con número de línea. | `grep -n "config" settings.conf` |
+| `grep -i` | Ignora mayúsculas. | `grep -i "Warning" log` |
+| `grep -l` | Solo nombres de archivo. | `grep -l "root" /etc/*` |
+| `grep -rni` | Recursivo + línea + case-insensitive. | `grep -rni "palabra" .` |
 
 ---
 
-## 2. Buscar texto dentro de archivos
-
-### grep
-
-Busca texto dentro del contenido de archivos.
+## locate, which, historial
 
 ```bash
-# Buscar una palabra en un archivo
-grep "error" archivo.log
-
-# Buscar en todos los archivos de una carpeta
-grep "main" *.cpp
-
-# Buscar recursivamente (en subcarpetas)
-grep -r "usuario" /etc/
-
-# Mostrar el número de línea
-grep -n "config" settings.conf
-
-# Ignorar mayúsculas/minúsculas
-grep -i "Warning" archivo.log
-
-# Mostrar solo el nombre del archivo donde se encuentra
-grep -l "root" /etc/*
-```
-
-<blockquote>
-Tip: Usa grep -rni "palabra" . para buscar en todo el directorio actual con número de línea y sin distinguir
-mayúsculas/minúsculas.
-
-</blockquote>
-***
-
-## 3. Buscar archivos rápidamente
-
-### locate
-
-Usa una base de datos indexada (más rápido que find).
-
-```bash
-# Buscar archivos por nombre
 locate archivo.txt
+sudo updatedb              # actualizar índice de locate
 
-# Buscar archivos que contengan una palabra locate config
-# Actualizar la base de datos de locate sudo updatedb
-```
-
----
-
-## 4. Buscar comandos o ejecutables
-
-### which, whereis, type
-
-Sirven para ubicar programas instalados o saber cómo se ejecutan.
-
-```bash
-# Ver ruta del ejecutable de un comando
 which python3
+whereis bash
+type ls
 
-# Mostrar archivos binarios, man pages, etc. whereis bash
-# Mostrar tipo de comando type ls
-```
-
----
-
-## 5. Buscar en el historial o procesos
-
-### Buscar en historial
-
-```bash
-# Buscar un comando usado anteriormente history | grep "ssh"
-```
-
-### Buscar procesos en ejecución
-
-```bash
+history | grep "ssh"
 ps aux | grep firefox
-```
 
----
-
-## 6. Buscar dentro de archivos comprimidos o binarios
-
-```bash
-# Buscar dentro de un .tar.gz
 tar -tzf archivo.tar.gz | grep "config"
-
-# Buscar dentro de un binario (si tiene texto legible)
 strings archivo.bin | grep "password"
 ```
+
+| Comando | Qué hace |
+| ------- | -------- |
+| `locate` | Búsqueda rápida por índice (hay que `updatedb`). |
+| `which` / `whereis` / `type` | Ruta o tipo de un comando. |
+| `history \| grep` | Comandos usados. |
+| `ps aux \| grep` | Procesos. |
+| `strings \| grep` | Texto legible en binarios. |
+
+Más sobre `which`: [Which](/WEB-Notas-de-Hacking/linux/comandos/Which/). Docs: [man find](https://man7.org/linux/man-pages/man1/find.1.html), [man grep](https://man7.org/linux/man-pages/man1/grep.1.html).

@@ -5,68 +5,33 @@ description: Paginador `less` para leer archivos y salidas largas en terminal.
 
 # Less en Linux
 
----
-
-### ¿Qué hace exactamente?
-
-less muestra el contenido **por páginas**, no todo de golpe. Esto es muy útil cuando el archivo es largo (como logs,
-código, o configuraciones grandes).
-
-Ejemplo:
+Paginador: muestra el contenido por pantallas (logs, configs, pipes largos). No edita.
 
 ```bash
 less archivo.txt
+ls -l | less
 ```
 
 ---
 
-### Controles básicos dentro de less
-
-Una vez abierto el archivo:
+## Controles
 
 | Concepto | Significado |
 | -------- | ----------- |
 | `Espacio` / `f` | Página siguiente. |
 | `b` | Página anterior. |
-| `↑` / `↓` o `j` / `k` | Línea arriba / abajo. |
-| `g` / `G` | Inicio / final del archivo. |
-| `/texto` | Buscar hacia adelante. |
-| `?texto` | Buscar hacia atrás. |
-| `n` / `N` | Siguiente / anterior coincidencia. |
+| `↑`/`↓` o `j`/`k` | Línea arriba / abajo. |
+| `g` / `G` | Inicio / final. |
+| `/texto` | Buscar adelante. |
+| `?texto` | Buscar atrás. |
+| `n` / `N` | Siguiente / anterior match. |
+| `:n` / `:p` | Siguiente / anterior archivo (si abriste varios). |
 | `q` | Salir. |
 | `h` | Ayuda de teclas. |
 
----
-
-### Ejemplos útiles
-
-Ver varios archivos:
-
 ```bash
 less *.txt
+less /var/log/syslog   # luego /error para buscar
 ```
 
-(Mueve con :n para siguiente archivo y :p para anterior)
-
-Ver salida de un comando largo (por ejemplo, un ls con muchos resultados):
-
-```bash
-ls -l | less
-```
-
-Buscar dentro de un log:
-
-```bash
-less /var/log/syslog
-# Luego escribe /error para buscar la palabra "error"
-```
-
----
-
-### En resumen
-
-less:
-
-- **No edita archivos**, solo los muestra.
-- **Carga rápido**, aunque el archivo sea enorme.
-- **Permite búsqueda y navegación avanzada**.
+Docs: [man less](https://man7.org/linux/man-pages/man1/less.1.html).
