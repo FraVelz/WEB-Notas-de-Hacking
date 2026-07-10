@@ -5,9 +5,10 @@ description: Metodología, ética, herramientas por categoría y enlaces oficial
 
 # OSINT básico
 
-### OSINT** (_Open Source Intelligence_) es recopilar, contrastar y usar información de **fuentes públicas y legales
+**OSINT** (_Open Source Intelligence_) es recopilar, contrastar y usar información de **fuentes públicas y legales**
 (web, registros, redes, fugas ya agregadas de forma responsable, etc.). No sustituye a un mandato legal ni a un contrato
-de pentesting: el marco general está en [Legalidad del hacking](/conceptos-basicos/legalidadhacking/).
+de pentesting: el marco general está en
+[Legalidad del hacking](/WEB-Notas-de-Hacking/conceptos-basicos/legalidadhacking/).
 
 ## Ética y límites
 
@@ -25,7 +26,7 @@ de pentesting: el marco general está en [Legalidad del hacking](/conceptos-basi
 3. **Documentar:** URL, fecha y herramienta (y captura si el informe lo requiere).
 4. **Verificar:** cruza fuentes; los homónimos y perfiles falsos son frecuentes.
 
-Glosario: [Terminología OSINT](/osint/terminologia/). Búsqueda avanzada: [Google Dorks](/osint/googledoorks/).
+Glosario: [Terminología OSINT](/WEB-Notas-de-Hacking/osint/terminologia/). Búsqueda avanzada: [Google Dorks](/WEB-Notas-de-Hacking/osint/googledoorks/).
 
 ## Navegador y tecnologías web
 
@@ -34,7 +35,7 @@ Glosario: [Terminología OSINT](/osint/terminologia/). Búsqueda avanzada: [Goog
 
 ## Búsqueda y archivo web
 
-- Operadores de búsqueda: [Google Dorks](/osint/googledoorks/).
+- Operadores de búsqueda: [Google Dorks](/WEB-Notas-de-Hacking/osint/googledoorks/).
 - **[Internet Archive (Wayback Machine)](https://web.archive.org/)** — Versiones antiguas de páginas.
 
 ## Dominio, DNS y subdominios
@@ -77,9 +78,9 @@ Herramientas antiguas como **creepy** suelen estar desactualizadas; prioriza pro
 ## SocMINT (redes sociales)
 
 Rama del OSINT centrada en **redes sociales y foros**: publicaciones públicas, hashtags, eventos. Sirve para
-verificación o investigaciones con mandato claro. Cruza con [Huella digital](/anonimato/huelladigital/) y
-[Concientización](/otros/concientizacion/) para el lado defensivo.
+verificación o investigaciones con mandato claro. Cruza con [Huella digital](/WEB-Notas-de-Hacking/anonimato/huelladigital/) y
+[Concientización](/WEB-Notas-de-Hacking/otros/concientizacion/) para el lado defensivo.
 
 ## Herramientas generales del día a día
 
-Enlaces rápidos en [Herramientas](/otros/herramientas/) (VirusTotal, reputación de dominios, contraseñas).
+Enlaces rápidos en [Herramientas](/WEB-Notas-de-Hacking/otros/herramientas/) (VirusTotal, reputación de dominios, contraseñas).

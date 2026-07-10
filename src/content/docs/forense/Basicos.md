@@ -37,6 +37,16 @@ Sin eso, la evidencia puede no servir en un proceso.
 - Confiar solo en el reloj del host atacado.
 - Publicar dumps con datos personales.
 
+## Ejemplo lab (hash de evidencia)
+
+```bash
+sha256sum disco.img > disco.img.sha256
+sha256sum -c disco.img.sha256
+# disco.img: OK
+```
+
+Guarda el digest con fecha/quién lo tomó. Trabajo siempre sobre copia.
+
 ## Relacionado
 
 - [Artefactos](/WEB-Notas-de-Hacking/forense/artefactos/)

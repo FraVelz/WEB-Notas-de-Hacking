@@ -25,6 +25,15 @@ Solo en evidencias propias o con autorización. Preferir copia/imagen, no el ori
 3. Anotar comandos y hallazgos.  
 4. Correlacionar logs + binarios + red.
 
+## Ejemplo (binario desconocido)
+
+```bash
+file sospechoso.bin
+strings -n 8 sospechoso.bin | head -50
+xxd sospechoso.bin | head
+sha256sum sospechoso.bin
+```
+
 ## Relacionado
 
 - [Básicos](/WEB-Notas-de-Hacking/forense/basicos/)

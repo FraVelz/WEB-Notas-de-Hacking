@@ -26,7 +26,12 @@ Notas con `tr` (pipe + tablas de caracteres):
 
 ```bash
 echo 'hola' | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+# ubyn
+echo 'ubyn' | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+# hola  (ROT13 otra vez = original)
 ```
+
+Fuerza bruta mental: 25 desplazamientos distintos (además de 0). En CTF a veces basta un script o CyberChef.
 
 ## Relacionado
 

@@ -24,6 +24,13 @@ Ideas mínimas para no mezclar conceptos en labs y reportes.
 - Certificados autofirmados / caducados (aviso, no siempre “hack”).
 - Secretos en reposo: keys en repos, `.env`, backups.
 
+## Ejemplo rápido (OpenSSL)
+
+```bash
+# ver cert de un host (lab / tuyo)
+openssl s_client -connect ejemplo.com:443 -servername ejemplo.com </dev/null 2>/dev/null | openssl x509 -noout -dates -subject
+```
+
 ## Relacionado
 
 - [Hashing](/WEB-Notas-de-Hacking/criptografia/hashing/)

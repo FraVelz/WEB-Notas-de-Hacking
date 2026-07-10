@@ -33,3 +33,11 @@ Dos inputs distintos con el **mismo** hash. En MD5/SHA-1 es factible en contexto
 ## Passwords
 
 No guardes `md5(password)`. Usa KDF (bcrypt/Argon2) con sal única. En pentest, si encuentras hashes, el tipo (formato John/Hashcat) marca cómo atacarlos **en lab autorizado**.
+
+## Ejemplo lab
+
+```bash
+echo -n 'password' | md5sum
+# 5f4dcc3b5aa765d61d8327deb882cf99  -
+# mismo string → mismo digest; por eso hace falta sal + KDF lento
+```

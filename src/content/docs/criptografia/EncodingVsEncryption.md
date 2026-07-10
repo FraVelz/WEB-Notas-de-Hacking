@@ -32,3 +32,10 @@ Espacios y caracteres especiales → `%20`, `%3D`, etc. Solo para transporte en 
 - ¿Hay clave? → puede ser cifrado (o al menos autenticación).
 - ¿Solo `base64` / hex / URL? → **encoding**, léelo y sigue.
 - Hash ≠ cifrado: el hash no se “descifra”; se compara o se ataca por fuerza bruta/diccionario.
+
+## Ejemplo (JWT header)
+
+```bash
+echo 'eyJhbGciOiJub25lIn0' | base64 -d; echo
+# {"alg":"none"}  ← encoding, no cifrado
+```
