@@ -1,6 +1,6 @@
 ---
 title: Distribuciones Linux
-description: Distribuciones Linux - Notas de hacking y ciberseguridad.
+description: Distros habituales en labs de pentesting y para qué sirve cada una.
 ---
 
 # Distribuciones de Linux

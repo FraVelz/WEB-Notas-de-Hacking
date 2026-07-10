@@ -1,123 +1,64 @@
 ---
 title: Herramientas
-description: Herramientas - Notas de hacking y ciberseguridad.
+description: Wireshark, Nmap y Metasploit: qué hacen, un ejemplo y cuándo usarlas.
 ---
 
-# Parte Práctica (Herramientas)
+# Herramientas de red (práctica)
 
----
-
-## Resumen rápido
-
-Te explico de forma clara qué hace cada herramienta, para qué se usa en la práctica, qué puedes aprender con cada una y
-recomendaciones de uso seguro/ético.
+Tres herramientas que salen todo el rato en labs y pentests. Solo en redes propias o con permiso.
 
 ---
 
-## Wireshark — analizador de paquetes (deep packet inspection)
+## Wireshark
 
-### Qué es / para qué sirve:
+Captura e inspecciona paquetes en una interfaz. Sirve para ver handshakes TCP, HTTP en claro, retransmisiones, etc.
 
-Wireshark es un analizador de protocolos de red que captura y muestra los paquetes que circulan por una interfaz de red,
-permitiendo inspeccionar cada capa (Ethernet, IP, TCP/UDP, HTTP, etc.). Es la “lupa” para ver exactamente qué se está
-enviando y recibiendo en la red.
+- Filtros de visualización: `http`, `ip.addr == 10.0.0.5`, `tcp.flags.syn == 1`
+- Capture filter vs display filter: el primero limita qué se guarda; el segundo filtra lo ya capturado
 
-### Usos típicos:
+```bash
+# Ejemplo: captura en eth0 (GUI o tshark)
+tshark -i eth0 -f "tcp port 80"
+```
 
-- Diagnóstico de problemas de red (pérdida de paquetes, retransmisiones, latencia).
-- Analizar protocolos y entender comportamientos (ej. por qué una app falla).
-- Forense de red (reconstruir sesiones, analizar tráfico malicioso) — siempre con permiso.
-
-### Conceptos/práctica básica:
-
-- Captura en una interfaz y luego aplica **filtros de visualización** (p. ej. http, ip.addr == 10.0.0.5) para aislar lo
-  que te interesa.
-- Diferencia entre _capture filters_ (filtran en el momento de captura) y _display filters_ (filtran lo ya capturado).
-
-**Recomendación:** aprende primero a interpretar paquetes (handshakes TCP, flags, reintentos). Wireshark es excelente
-para entender protocolos desde la base.
+**Cuándo:** diagnóstico de red, entender un protocolo, forense de tráfico en lab.
 
 ---
 
-## Nmap — descubrimiento y escaneo de redes
+## Nmap
 
-### Qué es / para qué sirve:
+Descubre hosts, puertos y servicios. Suele ser el primer vistazo a una red.
 
-Nmap (Network Mapper) es una utilidad para descubrir hosts en red y auditar servicios/puertos. Sirve para mapear qué
-equipos están “vivos”, qué puertos y servicios exponen y para obtener información inicial de seguridad.
+```bash
+nmap -sn 192.168.1.0/24          # hosts vivos
+nmap -sV -p 1-1000 10.10.10.5    # puertos + versiones
+```
 
-### Usos típicos:
+- Host discovery → port scan → service/version (`-sV`)
+- Scripts NSE cuando hace falta (`-sC` o `--script`)
 
-- Inventario de red (¿qué máquinas hay y qué servicios corren?).
-- Evaluación inicial de superficie de ataque (qué puertos abiertos, versiones de servicios).
-- Comprobaciones administrativas (monitorizar disponibilidad).
-
-### Conceptos/práctica básica:
-
-- _Host discovery_ (detectar hosts activos).
-- _Port scanning_ (ver puertos abiertos).
-- _Service/version detection_ (intentar identificar qué servicio/version corre en un puerto). Nmap tiene muchísimas
-  opciones; la documentación oficial y el libro de Nmap son excelentes para progresar paso a paso.
-
-**Recomendación:** úsalo en tú propia red o en entornos de laboratorio (p. ej. máquinas virtuales o laboratorios
-vulnerables). Es la herramienta que muchas veces se usa como “primer vistazo” antes de cualquier otra prueba.
+**Cuándo:** inventario, superficie de ataque inicial, comprobar qué quedó abierto tras un cambio.
 
 ---
 
-## Metasploit — plataforma modular para pruebas de penetración
+## Metasploit
 
-### Qué es / para qué sirve:
+Framework modular (auxiliary / exploit / payload / post) para validar vulnerabilidades en entornos controlados.
 
-Metasploit es un framework modular orientado a pruebas de penetración y desarrollo/ejecución de exploits. Permite
-combinar módulos (exploits, payloads, auxiliares) para probar sí una vulnerabilidad real puede ser explotada. Es una
-suite más orientada a la fase _explotación/post-explotación_ de una evaluación de seguridad.
+```bash
+msfconsole
+# search type:exploit name:eternalblue
+# use exploit/... ; set RHOSTS ... ; run
+```
 
-### Usos típicos:
-
-- Validación controlada de vulnerabilidades (demostrar riesgos en entornos con permiso).
-- Automatizar explotación y post-explotación (por ejemplo, abrir una shell controlada para evidencia).
-- Entrenamiento y desarrollo de payloads y pruebas de detección. ([WIRED][8])
-
-### Conceptos/práctica básica (alto nivel y ética):
-
-- Metasploit es modular: _auxiliary_ (escanear/recopilar), _exploit_ (intentarlo), _payload_ (qué ejecutas sí funciona),
-  _post_ (acciones después de obtener acceso).
-- **Importante:** usar Metasploit para atacar sistemas sin autorización es ilegal y dañino. Está pensado para
-  laboratorios y pruebas autorizadas; su uso responsable ayuda a mejorar la seguridad.
+**Cuándo:** después de tener un vector claro (Nmap + CVE/lab) y quieres PoC de explotación o post-explotación. Solo labs (Metasploitable, HTB, THM) o pruebas autorizadas.
 
 ---
 
-## Diferencias clave entre las tres
+## Orden habitual
 
-- **Wireshark** = inspección detallada del tráfico (qué pasa en cada paquete). Ideal para diagnóstico y análisis de
-  protocolos.
-- **Nmap** = reconocimiento y mapeo (quién está en la red y qué servicios/puertos ofrece). Excelente para obtener el
-  panorama inicial.
-- **Metasploit** = probar/explotar vulnerabilidades (validación de riesgos en entornos controlados). Se usa después de
-  identificar objetivos y vulnerabilidades.
+1. **Nmap** — qué hay y qué escucha.
+2. **Wireshark** — si necesitas mirar el tráfico concreto.
+3. **Metasploit** — validar un fallo ya identificado.
 
----
-
-## Flujo típico en una evaluación ética (resumen)
-
-<ol type="1">
-<li><strong>Descubrir</strong> hosts y servicios con Nmap.</li> <li><strong>Analizar</strong> tráfico y problemas
-concretos con
-Wireshark (sí hace falta inspección de paquetes).</li> <li><strong>Validar</strong> vulnerabilidades (con autorización)
-usando Metasploit u otras herramientas especializadas.</li> </ol>
-***
-
-## Recursos oficiales y seguridad
-
-- Wireshark: sitio oficial y manual (para filtros y conceptos).
-- Nmap: sitio oficial y el libro \*Nmap Network Scanning- (excelente para aprender desde cero).
-- Metasploit / Rapid7: documentación oficial y guías; recuerda que es una herramienta potente que requiere uso ético.
-
----
-
-## Recomendación de aprendizaje (práctico)
-
-- Empieza por **Wireshark** para entender cómo funciona el tráfico (te hará mejor en redes y debugging).
-- Luego aprende **Nmap** para mapear redes y practicar reconocimiento.
-- Finalmente, estudia **Metasploit** y explotación, pero sólo en laboratorios (máquinas virtuales, entornos como
-  Metasploitable, TryHackMe, Hack The Box) y siempre con permiso.
+Docs: [Wireshark](https://www.wireshark.org/docs/) · [Nmap](https://nmap.org/book/man.html) · [Metasploit](https://docs.metasploit.com/)

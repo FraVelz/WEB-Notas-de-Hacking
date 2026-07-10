@@ -1,6 +1,6 @@
 ---
 title: Threading
-description: Threading - Notas de hacking y ciberseguridad.
+description: Hilos en Python con el módulo threading: crear, unir y sincronizar.
 ---
 
 # Threading en Python

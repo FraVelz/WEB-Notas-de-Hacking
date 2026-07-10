@@ -1,6 +1,6 @@
 ---
 title: Ncat
-description: Ncat - Notas de hacking y ciberseguridad.
+description: Ncat (netcat de Nmap): cliente/servidor TCP-UDP, transferencias y shells.
 ---
 
 # Ncat en Linux

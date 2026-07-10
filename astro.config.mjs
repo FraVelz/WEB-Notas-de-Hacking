@@ -28,7 +28,7 @@ export default defineConfig({
     // mantenemos el orden recomendado: primero Starlight, luego el resto.
     starlight({
       title: 'Notas de Hacking',
-      description: 'Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting, Linux, Python, redes y más.',
+      description: 'Apuntes personales de pentesting, Linux, Python, redes y bases de ciberseguridad.',
       favicon: '/favicon.png',
       sidebar: starlightSidebar,
       disable404Route: true,

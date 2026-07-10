@@ -1,10 +1,8 @@
 ---
 title: Notas de Hacking
-description:
-  Guía completa para aprender o repasar ciberseguridad desde cero. Notas organizadas sobre hacking ético, pentesting,
-  Linux, Python, redes y más.
+description: Apuntes personales para repasar bases de pentesting, Linux, redes y Python.
 hero:
-  tagline: Guía para aprender o repasar ciberseguridad desde cero. Enfoque en pentesting.
+  tagline: Apuntes para repasar bases de pentesting y ciberseguridad.
   actions:
     - text: Conceptos Básicos|Mitos
       link: /WEB-Notas-de-Hacking/conceptos-basicos/mitos/
@@ -20,22 +18,19 @@ hero:
 
 # Bienvenido
 
-Notas organizadas por categorías para **aprender o repasar** ciberseguridad con enfoque en **pentesting** y fundamentos
-técnicos. No sustituyen cursos de pago ni plataformas prácticas (Hack The Box, TryHackMe, etc.): son material de apoyo
-para ordenar conceptos y comandos.
+Notas personales para **ordenar y repasar** conceptos y comandos de pentesting. No sustituyen labs (HTB, TryHackMe, etc.) ni cursos: son material de apoyo.
 
-Usa el menú lateral para navegar por tema. Las páginas combinan explicación breve, ejemplos y enlaces a documentación
-oficial cuando aplica.
+Menú lateral por tema. En cada página: contexto corto, tablas/listas y algún ejemplo cuando aplica.
 
 ## Mapa rápido
 
-- **Conceptos básicos** — Fundamentos, mitos y **marco legal** del hacking ético
-- **Virtualización** — Bases para montar laboratorios
+- **Conceptos básicos** — Fundamentos, mitos y marco legal
+- **Virtualización** — Labs en VMs
 - **Linux** — Comandos, Bash y permisos
-- **Python** — Sintaxis y módulos útiles en seguridad
-- **Redes** — Teoría, subnetting, CIDR y herramientas (Nmap, Wireshark…)
+- **Python** — Sintaxis y módulos útiles
+- **Redes** — Teoría, subnetting, CIDR y herramientas
 - **Windows** — CMD, PowerShell y administración
-- **Pentesting** — Fases y tipos de caja (black/grey/white)
-- **OSINT** — Metodología, dorks y terminología
+- **Pentesting** — Fases y tipos de caja
+- **OSINT** — Metodología, dorks y términos
 - **Anonimato** — Privacidad y huella digital
-- **Otros** — Concientización, herramientas web, recursos y créditos
+- **Otros** — Concientización, recursos y créditos

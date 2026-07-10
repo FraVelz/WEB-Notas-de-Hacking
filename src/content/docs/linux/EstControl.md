@@ -1,6 +1,6 @@
 ---
 title: Est Control
-description: Est Control - Notas de hacking y ciberseguridad.
+description: Bucles for/while, if/elif y case en scripts Bash.
 ---
 
 # Estructuras de Control en Bash Script

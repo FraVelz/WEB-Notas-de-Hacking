@@ -1,6 +1,6 @@
 ---
 title: Mitos
-description: Mitos - Notas de hacking y ciberseguridad.
+description: Mitos habituales de hacking y ciberseguridad, con la realidad al lado.
 ---
 
 # Desmintiendo mitos de la ciberseguridad

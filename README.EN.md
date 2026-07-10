@@ -98,5 +98,3 @@ Contributions are welcome. If you spot mistakes or have suggestions, open an iss
 ---
 
 If this project helps you, consider starring it on GitHub.
-
-> This document was generated or updated with AI assistance. Last updated: **May 10, 2026**.

@@ -1,6 +1,6 @@
 ---
 title: Conceptos Basicos
-description: Conceptos Basicos - Notas de hacking y ciberseguridad.
+description: Definiciones base: ciberseguridad, CIA, amenazas, vulnerabilidades y más.
 ---
 
 # Conceptos Basicos

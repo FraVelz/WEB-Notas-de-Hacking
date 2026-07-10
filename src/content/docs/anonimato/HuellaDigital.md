@@ -1,72 +1,35 @@
 ---
 title: Huella Digital
-description: Huella Digital - Notas de hacking y ciberseguridad.
+description: Huella digital activa vs pasiva y mitigaciones prácticas al navegar.
 ---
 
-# Definiciones
+# Huella digital
 
-Definiciones y diferencias entre privacidad y anonimato.
-
----
-
-## ¿Qué es la huella digital?
-
-Es **el rastro que dejamos cada vez que usamos internet o dispositivos digitales**. Incluye todo lo que generamos,
-compartimos o registramos en línea.
-
-- **Ejemplo:**
-  - Publicar fotos o comentarios en redes sociales
-  - Entrar a un sitio web o buscar algo en Google
-  - Comprar en tiendas online
-  - Usar apps o enviar mensajes
-
-Cada acción deja **información que puede ser almacenada, analizada o usada por terceros**.
+Rastro que dejas al usar internet o dispositivos: lo que publicas y lo que el sistema genera sin que lo “subas”.
 
 ---
 
-## Tipos de huella digital
+## Activa vs pasiva
 
-<ol type="1">
-<li>
-### Activa:
+| Tipo | Qué es | Ejemplos |
+| --- | --- | --- |
+| **Activa** | Lo publicas o compartes a propósito | Posts, fotos, comentarios, mensajes en foros |
+| **Pasiva** | Se genera sin que lo publiques | IP, cookies, historial, fingerprint del navegador, geoloc de apps |
 
-- Todo lo que **tú publicas o compartes voluntariamente**.
-- Ejemplo: fotos en Instagram, comentarios en foros, mensajes en WhatsApp.
-
-</li>
-<li>
-### Pasiva:
-
-- Información que **se genera sin que tú la publiques directamente**.
-- Ejemplo: dirección IP, historial de navegación, cookies, geolocalización de tú celular.
-
-</li>
-</ol>
-***
-
-## Por qué es importante
-
-- Puede afectar tú **privacidad** y seguridad.
-- Las empresas y gobiernos pueden usar tú huella digital para **publicidad, análisis de comportamiento o vigilancia**.
-- También puede afectar tú **reputación**, profesional o personal, sí algo que publicaste se hace público o se
-  interpreta mal.
+La activa la controlas más (privacidad de cuentas, qué subes). La pasiva es más técnica: headers, canvas/WebGL, fuentes, plugins, resolución, etc.
 
 ---
 
-## Cómo protegerla
+## Mitigaciones concretas
 
-- Configura **privacidad** en redes sociales y apps.
-- Borra cookies y rastros de navegación periódicamente.
-- Usa herramientas de **anonimato** (VPN, Tor, navegadores privados).
-- Piensa antes de publicar: todo lo que subes deja un **rastro permanente**.
-
----
-
-## Visualizar tú huella digital al navegar
-
-En la página _“Cover your tracks”_, **puedes ver toda la información actual que tú navegador** puede dar a las páginas
-webs, cuando tú navegas, te dan incluso algunos consejos para ciertos casos.
-
-[Ir a Cover your tracks](https://coveryourtracks.eff.org/)
+- Revisar privacidad de redes/apps (quién ve posts, listas, ubicación).
+- Limpiar cookies / usar contenedores o perfiles separados (trabajo vs personal).
+- VPN o Tor según el caso: VPN oculta IP al destino; Tor es más fuerte en anonimato pero más lento y a veces bloqueado.
+- No reutilizar el mismo “perfil” (mismo UA + misma IP + mismos logins) si quieres separar identidades.
+- Pensar antes de publicar: lo activo suele quedar indexado o archivado.
 
 ---
+
+## Ver qué filtra tu navegador
+
+[Cover Your Tracks (EFF)](https://coveryourtracks.eff.org/) muestra qué datos puede leer un sitio de tu navegador y cómo de única es tu huella.

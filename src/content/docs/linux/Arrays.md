@@ -1,6 +1,6 @@
 ---
 title: Arrays
-description: Arrays - Notas de hacking y ciberseguridad.
+description: Definir, indexar y recorrer arrays indexados y asociativos en Bash.
 ---
 
 # Arrays en bash script

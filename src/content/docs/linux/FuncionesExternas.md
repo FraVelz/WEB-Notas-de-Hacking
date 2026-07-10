@@ -1,6 +1,6 @@
 ---
 title: Funciones Externas
-description: Funciones Externas - Notas de hacking y ciberseguridad.
+description: Comandos externos útiles desde Bash: texto, red, procesos y archivos.
 ---
 
 # Herramientas externas en Bash
@@ -9,7 +9,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 ---
 
-## 1. <strong>Manejo de texto</strong>
+## 1. Manejo de texto
 
 - **cat**: Muestra el contenido de archivos.
 
@@ -43,7 +43,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 ---
 
-## 2. <strong>Búsqueda y filtrado</strong>
+## 2. Búsqueda y filtrado
 
 - **grep**: Busca patrones de texto.
 
@@ -63,7 +63,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 ---
 
-## 3. <strong>Transformación de texto</strong>
+## 3. Transformación de texto
 
 - **cut**: Extrae columnas de texto.
 
@@ -113,7 +113,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 ---
 
-## 5. <strong>Archivos y directorios</strong>
+## 5. Archivos y directorios
 
 - **ls**: Lista archivos.
 - **cp**: Copia.
@@ -129,7 +129,7 @@ Todo lo que se usa para comandos bash se puede usar para comandos de la terminal
 
 ---
 
-## 6. <strong>Compresión y empaquetado</strong>
+## 6. Compresión y empaquetado
 
 - **tar**: Empaqueta múltiples archivos.
 

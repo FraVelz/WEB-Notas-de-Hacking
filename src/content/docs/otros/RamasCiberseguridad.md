@@ -1,152 +1,153 @@
 ---
 title: Ramas Ciberseguridad
-description: Ramas Ciberseguridad - Notas de hacking y ciberseguridad.
+description: Mapa de ramas de ciberseguridad: ofensiva, defensiva, redes, cloud, AppSec y más.
 ---
 
-# Ramas y Especializaciones de ciberseguridad
+# Ramas y especializaciones
 
----
-
-## 1. Seguridad Ofensiva (Ethical Hacking o Red Team)
-
-Su objetivo es **atacar para proteger**. Los expertos en esta área piensan como los hackers para encontrar
-vulnerabilidades antes de que lo hagan los delincuentes.
-
-### Subramas:
-
-- **Pentesting (Pruebas de penetración):** Simular ataques reales para detectar fallos.
-- **Red Teaming:** Ataques avanzados y coordinados contra toda la infraestructura.
-- **Ingeniería social:** Manipular a las personas para obtener información (phishing, pretexting, etc.).
-- **Explotación de vulnerabilidades:** Encontrar y aprovechar fallos en software o sistemas.
-- **Hacking físico:** Acceso no autorizado a lugares o dispositivos.
-
-_Herramientas comunes:_ Metasploit, Burp Suite, Nmap, Wireshark, Hydra, Aircrack-ng.
+Apunte rápido de las áreas habituales. Cada una: definición corta, subramas y herramientas típicas.
 
 ---
 
-## 2. Seguridad Defensiva (Blue Team)
+## 1. Seguridad ofensiva (Red Team / ethical hacking)
 
-Su función es **detectar, detener y responder** ante los ataques.
+Buscar vulnerabilidades simulando un atacante, con autorización.
 
-### Subramas:
+### Subramas
 
-- **Monitoreo de seguridad (SOC):** Vigilancia constante de redes y sistemas.
-- **Análisis de malware:** Estudio de programas maliciosos para entender su funcionamiento.
-- **Gestión de incidentes:** Responder ante ataques o brechas de seguridad.
-- **Caza de amenazas (Threat Hunting):** Buscar ataques ocultos o sofisticados antes de que causen daño.
-- **Fortificación de sistemas (Hardening):** Configurar y reforzar sistemas para minimizar riesgos.
+- **Pentesting:** pruebas de penetración acotadas.
+- **Red Teaming:** campaña más amplia contra la organización.
+- **Ingeniería social:** phishing, pretexting, etc.
+- **Explotación:** aprovechar fallos de software/sistemas.
+- **Hacking físico:** acceso a instalaciones o dispositivos.
 
-_Herramientas comunes:_ Splunk, SIEM, Suricata, OSSEC, ELK Stack, Wireshark.
-
----
-
-## 3. Ciberinteligencia (Cyber Threat Intelligence)
-
-Se centra en **recolectar, analizar y anticipar amenazas** cibernéticas.
-
-### Subramas:
-
-- **Inteligencia de amenazas (CTI):** Estudio de grupos de hackers, sus tácticas y herramientas.
-- **Análisis forense digital:** Investigación después de un ataque (seguimiento, evidencia, trazas).
-- **OSINT (Open Source Intelligence):** Recolección de información pública útil para prevenir ataques.
-- **Contrainteligencia cibernética:** Detectar y neutralizar espionaje o desinformación.
-
-_Herramientas comunes:_ Maltego, Shodan, TheHarvester, MISP, VirusTotal.
+_Herramientas:_ Metasploit, Burp Suite, Nmap, Wireshark, Hydra, Aircrack-ng.
 
 ---
 
-## 4. Criptografía y Seguridad de la Información
+## 2. Seguridad defensiva (Blue Team)
 
-Protege los **datos** mediante matemáticas, algoritmos y protocolos seguros.
+Detectar, contener y responder a incidentes.
 
-### Subramas:
+### Subramas
 
-- **Criptografía aplicada:** Uso de algoritmos para cifrar datos (AES, RSA, SHA).
-- **Gestión de claves y certificados digitales.**
-- **Firmas digitales y blockchain.**
-- **Seguridad en comunicaciones (VPN, SSL/TLS).**
+- **SOC / monitoreo:** vigilancia de logs y alertas.
+- **Análisis de malware:** entender qué hace un binario malicioso.
+- **Gestión de incidentes:** respuesta ante brechas.
+- **Threat hunting:** buscar amenazas que el SIEM no marcó.
+- **Hardening:** endurecer configs y reducir superficie.
 
-_Herramientas comunes:_ OpenSSL, GPG, Hashcat, VeraCrypt.
-
----
-
-## 5. Seguridad en Redes
-
-Asegura la **infraestructura** que conecta dispositivos y servidores.
-
-### Subramas:
-
-- **Seguridad perimetral (firewalls, IDS/IPS).**
-- **Seguridad en routers y switches.**
-- **Segmentación y control de tráfico.**
-- **Seguridad en redes inalámbricas (Wi-Fi).**
-
-_Herramientas comunes:_ pfSense, Cisco Security, Snort, Wireshark, Aircrack-ng.
+_Herramientas:_ Splunk, SIEM, Suricata, OSSEC, ELK, Wireshark.
 
 ---
 
-## 6. Seguridad en la Nube (Cloud Security)
+## 3. Ciberinteligencia (CTI)
 
-Protege los servicios y datos alojados en plataformas como AWS, Azure o Google Cloud.
+Recolectar y analizar amenazas para anticiparlas.
 
-### Subramas:
+### Subramas
 
-- **Configuración segura de entornos cloud.**
-- **Gestión de identidades y accesos (IAM).**
-- **Auditoría y cumplimiento normativo.**
-- **Cifrado y protección de datos en la nube.**
+- **CTI:** TTPs de grupos, IOCs, campañas.
+- **Forense digital:** evidencia tras un incidente.
+- **OSINT:** fuentes públicas.
+- **Contrainteligencia:** espionaje / desinformación.
 
-_Herramientas comunes:_ Prisma Cloud, AWS Security Hub, Azure Defender.
-
----
-
-## 7. Seguridad en Aplicaciones
-
-Se enfoca en asegurar el **software** desde su desarrollo.
-
-### Subramas:
-
-- **AppSec (Application Security):** Protección de aplicaciones web y móviles.
-- **DevSecOps:** Integrar la seguridad en el ciclo de desarrollo.
-- **Revisión de código y análisis estático.**
-- **Pruebas de seguridad automatizadas.**
-
-_Herramientas comunes:_ OWASP ZAP, SonarQube, Burp Suite, Checkmarx.
+_Herramientas:_ Maltego, Shodan, theHarvester, MISP, VirusTotal.
 
 ---
 
-## 8. Gobernanza, Riesgo y Cumplimiento (GRC)
+## 4. Criptografía y seguridad de la información
 
-Enfocada en la **gestión estratégica de la seguridad**, políticas, normas y auditorías.
+Proteger datos con algoritmos, claves y protocolos.
 
-### Subramas:
+### Subramas
 
-- **Políticas y normativas de seguridad (ISO 27001, NIST, GDPR).**
-- **Gestión de riesgos cibernéticos.**
-- **Auditorías de seguridad.**
-- **Concienciación y capacitación en ciberseguridad.**
+- Criptografía aplicada (AES, RSA, hashes).
+- Gestión de claves y certificados.
+- Firmas digitales / blockchain (cuando aplica).
+- Comunicaciones seguras (VPN, TLS).
 
----
-
-## 9. Seguridad Industrial y de Infraestructuras Críticas
-
-Protege sistemas industriales y servicios esenciales (energía, transporte, agua, etc.).
-
-### Subramas:
-
-- **Seguridad OT (Operational Technology).**
-- **SCADA y sistemas de control industrial.**
-- **Ciberseguridad en IoT (Internet of Things).**
+_Herramientas:_ OpenSSL, GPG, Hashcat, VeraCrypt.
 
 ---
 
-## 10. Ciberseguridad en IA y Datos
+## 5. Seguridad en redes
 
-Campo nuevo y en crecimiento.
+Proteger la infraestructura que conecta hosts y servicios.
 
-### Subramas:
+### Subramas
 
-- **Seguridad en modelos de IA (ataques adversarios).**
-- **Protección de datos usados para entrenar IA.**
-- **Privacidad diferencial y anonimización.**
-- **Detección de deepfakes y manipulación de información.**
+- Perímetro (firewall, IDS/IPS).
+- Routers / switches.
+- Segmentación y control de tráfico.
+- Wi-Fi.
+
+_Herramientas:_ pfSense, Snort, Wireshark, Aircrack-ng.
+
+---
+
+## 6. Seguridad en la nube (Cloud Security)
+
+AWS, Azure, GCP y similares: configs, identidades y datos.
+
+### Subramas
+
+- Configuración segura del entorno.
+- IAM (identidades y accesos).
+- Auditoría / cumplimiento.
+- Cifrado de datos en cloud.
+
+_Herramientas:_ Prisma Cloud, AWS Security Hub, Azure Defender.
+
+---
+
+## 7. Seguridad en aplicaciones (AppSec)
+
+Seguridad del software en el ciclo de desarrollo.
+
+### Subramas
+
+- AppSec web/móvil.
+- DevSecOps.
+- Revisión de código / SAST.
+- Pruebas automatizadas de seguridad.
+
+_Herramientas:_ OWASP ZAP, SonarQube, Burp Suite, Checkmarx.
+
+---
+
+## 8. Gobernanza, riesgo y cumplimiento (GRC)
+
+Políticas, normas, riesgos y auditorías (lado estratégico).
+
+### Subramas
+
+- Normativas (ISO 27001, NIST, GDPR…).
+- Gestión de riesgos.
+- Auditorías.
+- Concienciación / formación.
+
+---
+
+## 9. Seguridad industrial e infraestructuras críticas
+
+OT, SCADA y servicios esenciales (energía, transporte, agua…).
+
+### Subramas
+
+- Seguridad OT.
+- SCADA / control industrial.
+- IoT industrial.
+
+---
+
+## 10. Ciberseguridad en IA y datos
+
+Modelos, datasets y manipulación de contenido.
+
+### Subramas
+
+- Ataques a modelos (adversarios, prompt injection, etc.).
+- Protección de datos de entrenamiento.
+- Privacidad diferencial / anonimización.
+- Deepfakes y desinformación.

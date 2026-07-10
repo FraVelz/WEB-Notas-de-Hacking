@@ -1,6 +1,6 @@
 ---
 title: Wc
-description: Wc - Notas de hacking y ciberseguridad.
+description: Contar líneas, palabras, bytes y caracteres con wc.
 ---
 
 # Wc en Linux

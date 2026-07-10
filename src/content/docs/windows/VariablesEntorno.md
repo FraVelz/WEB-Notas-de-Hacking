@@ -1,73 +1,55 @@
 ---
 title: Variables Entorno
-description: Variables Entorno - Notas de hacking y ciberseguridad.
+description: Variables de sistema y de usuario en Windows (PATH, USERPROFILE, etc.).
 ---
 
-# Variables de Entorno
+# Variables de entorno
 
 ---
 
-### Tipos de variables de entorno
+## Tipos
 
-<ol type="1">
-<li><strong>Variables del sistema</strong>: Aplican a todos los
-usuarios del equipo. Por ejemplo:
-- PATH: lista de rutas donde Windows busca ejecutables.
-- COMPUTERNAME: nombre del equipo.
-- SYSTEMROOT: ruta de la carpeta del sistema, generalmente C:\Windows.
-- TEMP o TMP: carpeta temporal.
+1. **Variables del sistema** — aplican a todos los usuarios:
+   - `PATH`: rutas donde Windows busca ejecutables
+   - `COMPUTERNAME`: nombre del equipo
+   - `SYSTEMROOT`: carpeta del sistema (suele ser `C:\Windows`)
+   - `TEMP` / `TMP`: carpeta temporal
 
-</li>
-<li>
-**Variables de usuario**: Solo aplican al usuario actual. Por ejemplo:
+2. **Variables de usuario** — solo el usuario actual:
+   - `USERNAME`: nombre del usuario
+   - `USERPROFILE`: perfil (`C:\Users\TuUsuario`)
+   - `HOMEPATH`: ruta relativa (`\Users\TuUsuario`)
 
-- USERNAME: nombre del usuario actual.
-- USERPROFILE: ruta del perfil del usuario (C:\Users\TuUsuario).
-- HOMEPATH: ruta relativa de la carpeta del usuario (\Users\TuUsuario).
+---
 
-</li>
-</ol >
-***
+## Cómo verlas
 
-### Cómo ver las variables de entorno
+### CMD
 
-<ol type="1">
-<li>
-**Usando CMD**:
+```cmd
+set
+echo %PATH%
+echo %USERPROFILE%
+```
 
-- set → muestra todas las variables de usuario y del sistema.
-- echo %VARIABLE% → muestra el valor de una variable específica. Ejemplo:
+### PowerShell
 
-  ```bash
-  echo %PATH% echo %USERPROFILE%
-  ```
+```powershell
+Get-ChildItem Env:
+$Env:PATH
+$Env:USERNAME
+```
 
-      </li >
-      <li>
-      **Usando PowerShell**:
+### GUI
 
-      - Get-ChildItem Env: → lista todas las variables.
+1. `Win + R` → `sysdm.cpl` → Enter
+2. **Opciones avanzadas** → **Variables de entorno**
+3. Ver / crear / editar / eliminar (usuario o sistema)
 
-- $Env:VARIABLE → muestra el valor de una variable específica. Ejemplo:
+---
 
-  ```bash
-  $Env:PATH $Env:USERNAME
-  ```
+## Editar o crear (PATH)
 
-</li>
-<li>
-**Usando la interfaz gráfica**:
-
-- Presiona Win + R → escribe sysdm.cpl → Enter.
-- Ve a la pestaña **Opciones avanzadas** → **Variables de entorno**.
-- Aquí puedes **ver, crear, editar o eliminar** variables de usuario o del sistema.
-
-</li>
-</ol >
-***
-
-### Editar o crear variables
-
-- Para agregar una carpeta al PATH: <ol type="1"> Abrir **Variables de entorno**.
-- Seleccionar PATH → Editar → Nuevo → pegar la ruta.
-- Guardar y reiniciar CMD/PowerShell para que tome efecto.
+1. Abrir **Variables de entorno**
+2. Seleccionar `PATH` → Editar → Nuevo → pegar la ruta
+3. Guardar y reiniciar CMD/PowerShell para que tome efecto

@@ -1,6 +1,6 @@
 ---
 title: Filtraciones
-description: Filtraciones - Notas de hacking y ciberseguridad.
+description: Cómo comprobar si tus datos aparecen en filtraciones y qué hacer después.
 ---
 
 # Filtraciones de datos
@@ -11,7 +11,7 @@ Guía para saber sí tus datos están filtrados:
 
 ## Precauciones
 
-Para que tus datos no sean filtrados, lo mejor que se puede hacer es no{" "} **caer en estafas ni en phishing** por
+Para que tus datos no sean filtrados, lo mejor que se puede hacer es no **caer en estafas ni en phishing** por
 internet.
 
 Como también sí una empresa cae en un hackeo y se filtran los datos de todos sus clientes como por ejemplo es hackeado

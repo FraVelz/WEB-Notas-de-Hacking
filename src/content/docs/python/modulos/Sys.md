@@ -1,6 +1,6 @@
 ---
 title: Sys
-description: Sys - Notas de hacking y ciberseguridad.
+description: Módulo sys: argv, paths, stdin/stdout y salida del intérprete.
 ---
 
 # Sys en Python

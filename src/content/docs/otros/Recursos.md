@@ -1,6 +1,6 @@
 ---
 title: Recursos
-description: Recursos - Notas de hacking y ciberseguridad.
+description: Videos, plataformas y enlaces útiles para aprender ciberseguridad.
 ---
 
 # Recursos para Aprender Ciberseguridad

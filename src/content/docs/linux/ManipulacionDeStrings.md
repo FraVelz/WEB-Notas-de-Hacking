@@ -1,6 +1,6 @@
 ---
 title: Manipulacion De Strings
-description: Manipulacion De Strings - Notas de hacking y ciberseguridad.
+description: Subcadenas, longitud, reemplazo y expansión de variables en Bash.
 ---
 
 # Manipulación de strings en bash script

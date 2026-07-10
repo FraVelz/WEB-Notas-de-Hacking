@@ -1,6 +1,6 @@
 ---
 title: Busqueda
-description: Busqueda - Notas de hacking y ciberseguridad.
+description: find, locate, which y grep para localizar archivos y texto.
 ---
 
 # Comandos de Gestión de Búsqueda

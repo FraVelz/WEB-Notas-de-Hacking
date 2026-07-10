@@ -1,6 +1,6 @@
 ---
 title: Historia
-description: Historia - Notas de hacking y ciberseguridad.
+description: Línea de tiempo de Windows desde 1.0 hasta las versiones actuales.
 ---
 
 # Historia

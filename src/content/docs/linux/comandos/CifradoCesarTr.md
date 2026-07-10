@@ -1,6 +1,6 @@
 ---
 title: Cifrado Cesar Tr
-description: Cifrado Cesar Tr - Notas de hacking y ciberseguridad.
+description: ROT13 y cifrado César con el comando tr en Linux.
 ---
 
 # Cifrado Cesar con tr en Linux

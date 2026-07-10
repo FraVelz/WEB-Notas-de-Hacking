@@ -1,7 +1,6 @@
 /**
  * Orden de la barra lateral alineado con `src/content/docs/index.md` (lista de bienvenida).
  * Los `slug` corresponden a las rutas de Starlight (colección docs).
- * Virtualización no aparece en esa lista pero existe en el repo; va al final para no perder la página.
  */
 export const starlightSidebar = [
   { label: 'Inicio', link: '/' },

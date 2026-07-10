@@ -1,6 +1,6 @@
 ---
 title: Ayuda Linux
-description: Ayuda Linux - Notas de hacking y ciberseguridad.
+description: Cómo pedir ayuda en la terminal: man, --help, info y apropos.
 ---
 
 # Obtener ayuda

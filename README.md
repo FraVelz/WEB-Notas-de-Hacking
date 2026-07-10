@@ -98,6 +98,3 @@ Las contribuciones son bienvenidas. Si encuentras errores o tienes sugerencias, 
 ---
 
 Si te resulta útil el proyecto, puedes darle una estrella en GitHub.
-
-> Este documento fue generado o actualizado con asistencia de inteligencia artificial. Última actualización: **10 de
-> mayo de 2026**.

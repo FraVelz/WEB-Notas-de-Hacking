@@ -379,10 +379,4 @@ sudo useradd -r -s /bin/false servidor_web
 | Hardening | Menos privilegios por servicio = menor impacto si cae. |
 | Automatización | Usuarios de sistema (`-r`, shell `/bin/false`) para daemons. |
 
-En palabras simples:
-
-      <blockquote>
-Sí no entiendes cómo Linux maneja usuarios, grupos y permisos, nunca tendrás **control real** de una máquina. Pero
-cuando lo dominas, puedes **construir, romper y proteger sistemas** a tú gusto.
-
-      </blockquote>
+Sin usuarios/grupos claros no hay control real de la máquina: es la base para administrar, endurecer y (en lab) escalar privilegios.
