@@ -142,6 +142,12 @@ export const starlightSidebar = [
   },
 
   {
+    label: 'Active Directory',
+    collapsed: false,
+    items: ['ad/conceptos', 'ad/enumeracion', 'ad/ataqueslab'],
+  },
+
+  {
     label: 'Criptografía',
     collapsed: false,
     items: [
