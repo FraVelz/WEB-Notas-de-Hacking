@@ -1,6 +1,6 @@
 ---
 title: Comandos Linux
-description: Comandos Linux - Notas de hacking y ciberseguridad.
+description: Historia, filosofía, FHS y comandos básicos de Linux para ciberseguridad.
 ---
 
 # Introducción a Linux para Ciberseguridad
@@ -38,13 +38,26 @@ tarea bien definida y que pueden combinarse.
 
 ### Principios clave:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Todo es un archivo | Dispositivos, pipes y sockets se tratan como archivos. |
+| Una herramienta, una tarea | Programas pequeños que se combinan con pipes. |
+| Texto plano | Configs y logs legibles; fácil de automatizar. |
+| Modularidad | Kernel + userland + distro; piezas intercambiables. |
+| Libertad / código abierto | Estudiar, modificar y redistribuir el software. |
 
 ---
 
 ## 3. Componentes de Linux
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Kernel | Núcleo: memoria, CPU, drivers, procesos. |
+| Shell | Intérprete de comandos (bash, zsh, …). |
+| Sistema de archivos | Jerarquía FHS bajo `/`. |
+| Utilidades GNU/coreutils | `ls`, `cp`, `grep`, etc. |
+| Daemons / servicios | Procesos en segundo plano (sshd, systemd units). |
+| Librerías | Código compartido (`libc`, etc.). |
 
 ---
 
@@ -63,7 +76,20 @@ Linux se organiza en capas:
 
 Linux organiza los archivos en una **estructura en forma de árbol**, con / como raíz.
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `/` | Raíz del sistema. |
+| `/bin`, `/usr/bin` | Binarios esenciales / de usuario. |
+| `/sbin`, `/usr/sbin` | Binarios de administración. |
+| `/etc` | Configuración del sistema. |
+| `/home` | Directorios de usuarios. |
+| `/root` | Home del superusuario. |
+| `/var` | Datos variables (logs, spools). |
+| `/tmp` | Temporal (suele limpiarse). |
+| `/proc`, `/sys` | Interfaces virtuales al kernel. |
+| `/dev` | Dispositivos. |
+| `/opt` | Software de terceros opcional. |
+| `/usr` | Programas y datos de usuario compartidos. |
 
 ---
 
@@ -96,7 +122,20 @@ name como “data:text”
 
 ## 8. Comandos de Linux
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `ls` | Lista archivos y directorios. | `ls -la` |
+| `cd` | Cambia de directorio. | `cd /var/log` |
+| `pwd` | Muestra el directorio actual. | `pwd` |
+| `cat` | Muestra o concatena archivos. | `cat /etc/passwd` |
+| `cp` / `mv` / `rm` | Copiar, mover/renombrar, borrar. | `cp a.txt b.txt` |
+| `mkdir` / `rmdir` | Crear / borrar directorios vacíos. | `mkdir lab` |
+| `grep` | Busca texto en archivos o pipes. | `grep root /etc/passwd` |
+| `find` | Busca archivos por nombre, tipo, etc. | `find / -name "*.conf"` |
+| `chmod` / `chown` | Permisos y dueño. | `chmod 755 script.sh` |
+| `ps` / `kill` | Ver y señalar procesos. | `ps aux` |
+| `sudo` | Ejecutar como otro usuario (suele ser root). | `sudo apt update` |
+| `man` | Manual del comando. | `man ls` |
 
 Y muchos más comandos, y variaciones de los mismos…
 

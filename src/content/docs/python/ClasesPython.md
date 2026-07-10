@@ -1,6 +1,6 @@
 ---
 title: Clases Python
-description: Clases Python - Notas de hacking y ciberseguridad.
+description: Clases, atributos, métodos, herencia, encapsulación y @property en Python.
 ---
 
 # Clases en Python
@@ -20,12 +20,12 @@ Los **objetos** son las copias o instancias creadas a partir de esa clase.
 
 ```python
 class Persona:
-def __init__(self, nombre, edad):  # Constructor
-self.nombre = nombre           # Atributos
-self.edad = edad
+    def __init__(self, nombre, edad):  # Constructor
+        self.nombre = nombre           # Atributos
+        self.edad = edad
 
-def saludar(self):                 # Método
-print(f"Hola, soy (self.nombre) y tengo (self.edad) años")
+    def saludar(self):                 # Método
+        print(f"Hola, soy {self.nombre} y tengo {self.edad} años")
 
 # Crear objeto
 p1 = Persona("Francisco", 17)
@@ -34,10 +34,10 @@ p1.saludar()
 
 ### Explicación
 
-- class Persona: → define la clase.
-- **init** → **constructor**, se ejecuta al crear el objeto.
-- self → referencia al **objeto actual** (similar a this en otros lenguajes).
-- p1 → **instancia** de la clase Persona.
+- `class Persona:` → define la clase.
+- `__init__` → **constructor**, se ejecuta al crear el objeto.
+- `self` → referencia al **objeto actual** (similar a `this` en otros lenguajes).
+- `p1` → **instancia** de la clase Persona.
 
 ---
 
@@ -49,8 +49,8 @@ Son únicos para cada objeto:
 
 ```python
 class Coche:
-def __init__(self, marca):
-self.marca = marca
+    def __init__(self, marca):
+        self.marca = marca
 ```
 
 ### 2. De clase
@@ -59,9 +59,9 @@ Son **compartidos por todas las instancias**:
 
 ```python
 class Coche:
-ruedas = 4  # atributo de clase
-def __init__(self, marca):
-self.marca = marca
+    ruedas = 4  # atributo de clase
+    def __init__(self, marca):
+        self.marca = marca
 ```
 
 ```python
@@ -80,7 +80,7 @@ Opera sobre el objeto (self).
 
 ```python
 def mostrar(self):
-print(self.nombre)
+    print(self.nombre)
 ```
 
 ### Método de clase
@@ -90,7 +90,7 @@ Opera sobre la clase, no sobre un objeto.
 ```python
 @classmethod
 def crear_desde_edad(cls, edad):
-return cls("Desconocido", edad)
+    return cls("Desconocido", edad)
 ```
 
 ### Método estático
@@ -100,7 +100,7 @@ No usa self ni cls. Funciona como una función normal dentro de la clase.
 ```python
 @staticmethod
 def es_mayor(edad):
-return edad >= 18
+    return edad >= 18
 ```
 
 ---
@@ -111,18 +111,19 @@ Permite crear una clase nueva basada en otra (reutiliza código).
 
 ```python
 class Animal:
-def hablar(self):
-print("El animal hace un sonido")
+    def hablar(self):
+        print("El animal hace un sonido")
 
 class Perro(Animal):  # Hereda de Animal
-def hablar(self):
-print("Guau")
+    def hablar(self):
+        print("Guau")
 
 p = Perro()
 p.hablar()
 ```
 
-✔️ La clase hija **sobrescribe** métodos de la clase padre. ✔️ Se puede usar super() para llamar métodos del padre.
+- La clase hija **sobrescribe** métodos de la clase padre.
+- Se puede usar `super()` para llamar métodos del padre.
 
 ---
 
@@ -132,13 +133,13 @@ Diferentes clases pueden usar el mismo método con comportamientos distintos:
 
 ```python
 class Gato:
-def hablar(self): print("Miau")
+    def hablar(self): print("Miau")
 
 class Perro:
-def hablar(self): print("Guau")
+    def hablar(self): print("Guau")
 
 for animal in [Gato(), Perro()]:
-animal.hablar()
+    animal.hablar()
 ```
 
 ---
@@ -147,32 +148,36 @@ animal.hablar()
 
 Controla la visibilidad de los atributos/métodos.
 
-<!-- Tabla convertida manualmente -->
+| Prefijo | Visibilidad | Acceso externo |
+| --- | --- | --- |
+| `nombre` | Público | Libre |
+| `_nombre` | Protegido (convención) | Posible, pero “no deberías” |
+| `__nombre` | Privado (name mangling) | Solo vía `_Clase__nombre` |
 
 ```python
 class Persona:
-def __init__(self, nombre):
-self.__nombre = nombre  # privado
+    def __init__(self, nombre):
+        self.__nombre = nombre  # privado
 
-def mostrar(self):
-print(self.__nombre)
+    def mostrar(self):
+        print(self.__nombre)
 ```
 
 ---
 
-## Propiedades (<span class="citation" data-cites="property">@property</span>)
+## Propiedades (@property)
 
-Permiten acceder a métodos como sí fueran atributos.
+Permiten acceder a métodos como si fueran atributos.
 
 ```python
 class Rectangulo:
-def __init__(self, base, altura):
-self.base = base
-self.altura = altura
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
 
-@property
-def area(self):
-return self.base * self.altura
+    @property
+    def area(self):
+        return self.base * self.altura
 
 r = Rectangulo(4, 5)
 print(r.area)  # No se usa paréntesis
@@ -186,12 +191,12 @@ Una clase contiene objetos de otras clases:
 
 ```python
 class Motor:
-def arrancar(self):
-print("Motor encendido")
+    def arrancar(self):
+        print("Motor encendido")
 
 class Coche:
-def __init__(self):
-self.motor = Motor()
+    def __init__(self):
+        self.motor = Motor()
 
 c = Coche()
 c.motor.arrancar()
@@ -203,24 +208,24 @@ c.motor.arrancar()
 
 ```python
 class CuentaBancaria:
-tasa_interes = 0.05  # atributo de clase
+    tasa_interes = 0.05  # atributo de clase
 
-def __init__(self, titular, saldo=0):
-self.titular = titular
-self.__saldo = saldo  # privado
+    def __init__(self, titular, saldo=0):
+        self.titular = titular
+        self.__saldo = saldo  # privado
 
-def depositar(self, cantidad):
-self.__saldo += cantidad
+    def depositar(self, cantidad):
+        self.__saldo += cantidad
 
-def retirar(self, cantidad):
-if cantidad <= self.__saldo:
-self.__saldo -= cantidad
-else:
-print("Fondos insuficientes")
+    def retirar(self, cantidad):
+        if cantidad <= self.__saldo:
+            self.__saldo -= cantidad
+        else:
+            print("Fondos insuficientes")
 
-@property
-def saldo(self):
-return self.__saldo
+    @property
+    def saldo(self):
+        return self.__saldo
 
 # Uso
 cuenta = CuentaBancaria("Francisco", 1000)
@@ -233,4 +238,13 @@ print(cuenta.saldo)
 
 ## Resumen rápido
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| --- | --- |
+| Clase | Plantilla para crear objetos |
+| Instancia | Objeto concreto creado con la clase |
+| `__init__` | Constructor; se ejecuta al crear el objeto |
+| `self` | Referencia al objeto actual |
+| Atributo de clase | Compartido por todas las instancias |
+| Herencia | Reutilizar/extender otra clase |
+| `@property` | Método que se usa como atributo |
+| Encapsulación | Controlar acceso a datos internos |

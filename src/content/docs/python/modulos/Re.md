@@ -1,9 +1,9 @@
 ---
 title: Re
-description: Re - Notas de hacking y ciberseguridad.
+description: Buscar, reemplazar y validar texto con expresiones regulares usando el módulo re.
 ---
 
-# Re en Python (expreciones regulares)
+# Re en Python (expresiones regulares)
 
 ---
 
@@ -60,7 +60,7 @@ Devuelve un **iterador** con objetos Match (útil para posiciones).
 
 ```python
 for m in re.finditer(r"\d+", "x=5 y=10 z=20"):
-print(m.group(), m.start(), m.end())
+    print(m.group(), m.start(), m.end())
 ```
 
 ---
@@ -108,7 +108,7 @@ print(m.end())      # 8
 print(m.span())     # (6, 8)
 ```
 
-Sí hay **grupos** (entre paréntesis):
+Si hay **grupos** (entre paréntesis):
 
 ```python
 m = re.search(r"(\d+)\s*(años)", "Edad: 25 años")
@@ -121,19 +121,46 @@ print(m.group(2))   # 'años'
 
 ## METACARACTERES MÁS IMPORTANTES
 
-<!-- Tabla convertida manualmente -->
+| Metacaracter | Significado | Ejemplo |
+| --- | --- | --- |
+| `.` | Cualquier carácter (excepto salto de línea) | `a.c` → `abc` |
+| `^` | Inicio de cadena / línea | `^Hola` |
+| `$` | Fin de cadena / línea | `mundo$` |
+| `*` | 0 o más repeticiones | `ab*` → `a`, `ab`, `abb` |
+| `+` | 1 o más repeticiones | `\d+` → `17` |
+| `?` | 0 o 1 (opcional) / modo lazy | `colou?r` |
+| `{n}` / `{n,m}` | Exactamente n / entre n y m | `\d{4}` |
+| `[]` | Clase de caracteres | `[aeiou]` |
+| `\|` | Alternativa (OR) | `gato\|gato` |
+| `()` | Grupo de captura | `(\d+)-(\d+)` |
+| `\` | Escapa metacaracteres | `\.` → punto literal |
 
 ---
 
 ## SECUENCIAS ESPECIALES
 
-<!-- Tabla convertida manualmente -->
+| Secuencia | Significado | Ejemplo |
+| --- | --- | --- |
+| `\d` | Dígito `[0-9]` | `\d+` → `2025` |
+| `\D` | No dígito | `\D+` → `abc` |
+| `\w` | Letra, dígito o `_` | `\w+` → `user_1` |
+| `\W` | No “word char” | `\W` → `@` |
+| `\s` | Espacio en blanco | `\s+` |
+| `\S` | No espacio | `\S+` |
+| `\b` | Límite de palabra | `\bhola\b` |
+| `\A` / `\Z` | Inicio / fin de toda la cadena | `\AOK\Z` |
 
 ---
 
 ## FLAGS COMUNES
 
-<!-- Tabla convertida manualmente -->
+| Flag | Qué hace | Ejemplo |
+| --- | --- | --- |
+| `re.IGNORECASE` / `re.I` | Ignora mayúsculas/minúsculas | `re.search(r"hola", "HOLA", re.I)` |
+| `re.MULTILINE` / `re.M` | `^` y `$` por cada línea | `re.findall(r"^#.*", texto, re.M)` |
+| `re.DOTALL` / `re.S` | `.` también coincide con `\n` | `re.search(r"a.*b", texto, re.S)` |
+| `re.VERBOSE` / `re.X` | Permite comentarios y espacios en el patrón | Ver ejemplo abajo |
+| `re.ASCII` / `re.A` | `\w`, `\d`, etc. solo ASCII | `re.findall(r"\w+", s, re.A)` |
 
 Ejemplo:
 
@@ -188,12 +215,13 @@ re.split(r"[, ]+", "rojo, verde azul,amarillo")  # ['rojo', 'verde', 'azul', 'am
 
 ## Buenas prácticas
 
-✅ Usa r"./..." (raw strings) para no tener que escapar \. ✅ Compila patrones que usarás muchas veces con re.compile().
-✅ Usa re.fullmatch() sí necesitas que toda la cadena coincida. ✅ Usa ? después de \* o + para **modo no codicioso**
-(lazy).
+- Usa `r"..."` (raw strings) para no tener que escapar `\`.
+- Compila patrones que usarás muchas veces con `re.compile()`.
+- Usa `re.fullmatch()` si necesitas que toda la cadena coincida.
+- Usa `?` después de `*` o `+` para **modo no codicioso** (lazy).
 
 ```python
-re.findall(r"", "")  # ['', '']
+re.findall(r"<.*?>", "<a>uno</a><b>dos</b>")  # ['<a>', '</a>', '<b>', '</b>']
 ```
 
 ---

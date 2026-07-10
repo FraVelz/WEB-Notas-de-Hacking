@@ -1,6 +1,6 @@
 ---
 title: Funciones
-description: Funciones - Notas de hacking y ciberseguridad.
+description: Funciones, variables locales/globales y argumentos en Bash.
 ---
 
 # Funciones, Variables y Argumentos en Bash Script
@@ -36,7 +36,14 @@ mi_funcion
 
 Los argumentos se manejan igual que en un script:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `$0` | Nombre del script o de la función (según el contexto). |
+| `$1`, `$2`, … | Primer, segundo, … argumento. |
+| `$#` | Cantidad de argumentos. |
+| `$@` | Todos los argumentos, cada uno como palabra separada. |
+| `$*` | Todos los argumentos como una sola cadena (según `IFS`). |
+| `$?` | Código de salida del último comando. |
 
 Ejemplo:
 
@@ -84,7 +91,11 @@ echo "Después: $mensaje"
 
 ### Diferencias clave:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Variable global | Visible en todo el script; se declara sin `local`. |
+| Variable `local` | Solo existe dentro de la función; no pisa la global homónima. |
+| Sin `local` | Asignar dentro de la función también cambia la global. |
 
 Usa **local** para evitar modificar variables globales sin querer.
 
@@ -108,7 +119,15 @@ bash script.sh Francisco
 
 Variables especiales:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `$0` | Ruta/nombre del script. |
+| `$1` … `$9` | Argumentos posicionales (más allá: `${10}`, etc.). |
+| `$#` | Número de argumentos recibidos. |
+| `"$@"` | Lista de argumentos (preferible en bucles). |
+| `$$` | PID del shell actual. |
+| `$!` | PID del último proceso en segundo plano. |
+| `$?` | Código de salida del último comando (0 = OK). |
 
 ---
 
@@ -195,4 +214,11 @@ esac
 
 ## En resumen
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Función | Bloque reutilizable: `nombre() { … }`. |
+| `return` | Solo código de salida (0–255), no “valores” de datos. |
+| `echo` + `$()` | Forma habitual de “devolver” texto desde una función. |
+| `local` | Aísla variables dentro de la función. |
+| `$1`, `$#`, `"$@"` | Argumentos de función o de script. |
+| `shift` | Descarta `$1` y reindexa el resto. |

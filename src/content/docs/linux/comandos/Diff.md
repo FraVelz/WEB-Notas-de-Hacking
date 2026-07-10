@@ -1,6 +1,6 @@
 ---
 title: Diff
-description: Diff - Notas de hacking y ciberseguridad.
+description: Comparar archivos o directorios línea a línea con `diff` y opciones útiles.
 ---
 
 # Diff en Linux
@@ -66,13 +66,27 @@ Significa:
 
 ### Símbolos principales
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `<` | Línea del primer archivo. |
+| `>` | Línea del segundo archivo. |
+| `a` | Añadir (add): líneas que hay que insertar. |
+| `c` | Cambiar (change): líneas distintas. |
+| `d` | Borrar (delete): líneas que hay que quitar. |
+| `2c2` | La línea 2 del primero se cambia por la línea 2 del segundo. |
 
 ---
 
 ### Opciones útiles
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `diff -u` | Formato unificado (estilo Git/patch). | `diff -u a.txt b.txt` |
+| `diff -y` | Comparación lado a lado. | `diff -y a.txt b.txt` |
+| `diff -r` | Compara directorios de forma recursiva. | `diff -r dir1/ dir2/` |
+| `diff -i` | Ignora mayúsculas/minúsculas. | `diff -i a.txt b.txt` |
+| `diff -q` | Solo indica si difieren (sin detalle). | `diff -q a.txt b.txt` |
+| `diff -N` | Trata archivos ausentes como vacíos. | `diff -ruN old/ new/` |
 
 Ejemplo:
 

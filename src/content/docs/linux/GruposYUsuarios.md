@@ -1,6 +1,6 @@
 ---
 title: Grupos YUsuarios
-description: Grupos YUsuarios - Notas de hacking y ciberseguridad.
+description: Crear y gestionar usuarios y grupos; archivos `/etc/passwd`, `/etc/group` y `/etc/shadow`.
 ---
 
 # Grupos y Usuarios
@@ -9,7 +9,15 @@ description: Grupos YUsuarios - Notas de hacking y ciberseguridad.
 
 ## 1. Gestión de usuarios
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `useradd` | Crea usuario (bajo nivel). | `sudo useradd -m lab` |
+| `adduser` | Crea usuario de forma interactiva (Debian/Ubuntu). | `sudo adduser lab` |
+| `passwd` | Define o cambia contraseña. | `sudo passwd lab` |
+| `usermod` | Modifica cuenta (shell, grupos, bloqueo…). | `sudo usermod -aG sudo lab` |
+| `userdel` | Elimina usuario. | `sudo userdel -r lab` |
+| `id` / `whoami` | Identidad y grupos del usuario. | `id lab` |
+| `su` / `sudo` | Cambiar a otro usuario / elevar privilegios. | `su - lab` |
 
 ### useradd vs adduser
 
@@ -70,7 +78,12 @@ Esto:
 
 ### Comparación directa
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `useradd` | Bajo nivel; no crea home ni pide password por defecto. |
+| `adduser` | Script amigable; crea home, grupo, skel y pide datos. |
+| Uso típico de `useradd` | Scripts y automatización con flags (`-m`, `-s`, …). |
+| Uso típico de `adduser` | Administración manual en Debian/Ubuntu. |
 
 ### En resumen (gestión de usuarios)
 
@@ -83,7 +96,14 @@ Esto:
 
 ### Gestión de grupos
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `groupadd` | Crea un grupo. | `sudo groupadd proyecto` |
+| `groupdel` | Elimina un grupo. | `sudo groupdel proyecto` |
+| `groupmod` | Renombra o cambia GID. | `sudo groupmod -n nuevo viejo` |
+| `usermod -aG` | Añade usuario a grupos secundarios (sin quitar los actuales). | `sudo usermod -aG docker lab` |
+| `gpasswd` | Administra miembros del grupo. | `sudo gpasswd -a lab proyecto` |
+| `groups` | Lista grupos de un usuario. | `groups lab` |
 
 ### ¿Qué es un grupo en Linux?
 
@@ -177,19 +197,30 @@ francisco : francisco sudo video audio
 
       ### En resumen (gestión de grupos)
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Grupo primario | Suele crearse con el mismo nombre que el usuario. |
+| Grupos secundarios | Extra (`sudo`, `docker`, `audio`…). |
+| `/etc/group` | Lista de grupos y miembros. |
+| Permisos por grupo | `chown :grupo` + `chmod` sobre carpetas compartidas. |
 
-      ---
+---
 
-      ## 3. Archivos importantes del sistema
+## 3. Archivos importantes del sistema
 
+| Concepto | Significado |
+| -------- | ----------- |
+| `/etc/passwd` | Usuarios, UID, GID, home, shell (legible). |
+| `/etc/shadow` | Hashes de contraseñas (solo root). |
+| `/etc/group` | Grupos y miembros. |
+| `/etc/gshadow` | Secretos/admins de grupos. |
+| `/etc/sudoers` | Quién puede usar `sudo` (editar con `visudo`). |
+| `/home/<user>` | Directorio personal. |
+| `/etc/skel` | Plantilla de archivos al crear home. |
 
+---
 
-<!-- Tabla convertida manualmente -->
-
-      ---
-
-      ## 4. Ejemplos prácticos comunes
+## 4. Ejemplos prácticos comunes
 
       - **Crear un usuario con carpeta personal y shell bash:**
 
@@ -286,11 +317,16 @@ usuario limitado.
       <h5 id="en-resumen-utilidad-de-grupos-y-usuarios">En resumen (utilidad
       de grupos y usuarios)</h5>
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Varios usuarios | Aísla homes y limita quién toca qué. |
+| Un solo usuario | Sigue protegiendo el sistema frente a procesos sin root. |
+| Servicios | Cada daemon con su usuario (`www-data`, `mysql`…). |
+| Hardware | Grupos como `audio`, `video`, `docker` controlan dispositivos. |
 
-      ---
+---
 
-      ### 3. Otros
+### 3. Otros
 
       ### 1. Cuando creas o manejas máquinas (virtuales o reales)
 
@@ -336,11 +372,14 @@ sudo useradd -r -s /bin/false servidor_web
 
       ### En resumen (otros)
 
+| Concepto | Significado |
+| -------- | ----------- |
+| VMs / contenedores | Cada sistema tiene su propio mapa de UIDs/GIDs. |
+| Pentesting | Objetivo típico: salir de un usuario limitado hacia root. |
+| Hardening | Menos privilegios por servicio = menor impacto si cae. |
+| Automatización | Usuarios de sistema (`-r`, shell `/bin/false`) para daemons. |
 
-
-<!-- Tabla convertida manualmente -->
-
-      En palabras simples:
+En palabras simples:
 
       <blockquote>
 Sí no entiendes cómo Linux maneja usuarios, grupos y permisos, nunca tendrás **control real** de una máquina. Pero

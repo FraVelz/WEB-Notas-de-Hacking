@@ -1,6 +1,6 @@
 ---
 title: Os
-description: Os - Notas de hacking y ciberseguridad.
+description: Interactuar con el sistema operativo: rutas, archivos, directorios y variables de entorno con os.
 ---
 
 # Os en Python
@@ -131,7 +131,7 @@ Ejemplo útil:
 os.system("ping google.com -c 2")
 ```
 
-👉 Sí quieres más control (por ejemplo, capturar la salida del comando), es mejor usar el módulo subprocess.
+Si quieres más control (por ejemplo, capturar la salida del comando), es mejor usar el módulo subprocess.
 
 ---
 
@@ -150,20 +150,21 @@ Este script organiza los archivos de una carpeta en subcarpetas por tipo:
 
 ```python
 import os
+import shutil
 
 ruta = "/home/fravelz/Descargas"
 
 for archivo in os.listdir(ruta):
-ruta_completa = os.path.join(ruta, archivo)
+    ruta_completa = os.path.join(ruta, archivo)
 
-if os.path.isfile(ruta_completa):
-extension = archivo.split(".")[-1]
-carpeta = os.path.join(ruta, extension.upper())
-os.makedirs(carpeta, exist_ok=True)
-shutil.move(ruta_completa, os.path.join(carpeta, archivo))
+    if os.path.isfile(ruta_completa):
+        extension = archivo.split(".")[-1]
+        carpeta = os.path.join(ruta, extension.upper())
+        os.makedirs(carpeta, exist_ok=True)
+        shutil.move(ruta_completa, os.path.join(carpeta, archivo))
 ```
 
-📦 Sí tienes archivos .png, .mp3, .pdf, los moverá a carpetas “PNG”, “MP3”, “PDF”, etc.
+Si tienes archivos .png, .mp3, .pdf, los moverá a carpetas “PNG”, “MP3”, “PDF”, etc.
 
 ---
 
@@ -179,17 +180,31 @@ shutil.move(ruta_completa, os.path.join(carpeta, archivo))
 
 ```python
 import os
+import platform
 
 def limpiar_pantalla():
-comando = "cls" if platform.system() == "Windows" else "clear"
-os.system(comando)
+    comando = "cls" if platform.system() == "Windows" else "clear"
+    os.system(comando)
 
 limpiar_pantalla()
-print("Pantalla limpia 😎")
+print("Pantalla limpia")
 ```
 
 ---
 
 ## 10. Resumen de funciones más útiles
 
-<!-- Tabla convertida manualmente -->
+| Función | Qué hace | Ejemplo |
+| --- | --- | --- |
+| `os.getcwd()` | Directorio de trabajo actual | `os.getcwd()` |
+| `os.chdir(ruta)` | Cambiar de directorio | `os.chdir("/tmp")` |
+| `os.listdir(ruta)` | Listar contenido | `os.listdir(".")` |
+| `os.mkdir` / `makedirs` | Crear carpeta(s) | `os.makedirs("a/b", exist_ok=True)` |
+| `os.remove(path)` | Borrar archivo | `os.remove("x.txt")` |
+| `os.rename(a, b)` | Renombrar o mover | `os.rename("a.txt", "b.txt")` |
+| `os.path.join(...)` | Unir rutas portables | `os.path.join(home, "docs")` |
+| `os.path.exists` | ¿Existe? | `os.path.exists("x")` |
+| `os.path.isfile` / `isdir` | Tipo de ruta | `os.path.isfile("x.txt")` |
+| `os.getenv(name)` | Variable de entorno | `os.getenv("USER")` |
+| `os.system(cmd)` | Ejecutar comando (básico) | `os.system("ls")` |
+| `os.stat(path)` | Metadatos del archivo | `os.stat("x.txt")` |

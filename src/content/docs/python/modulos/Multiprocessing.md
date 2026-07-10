@@ -1,6 +1,6 @@
 ---
 title: Multiprocessing
-description: Multiprocessing - Notas de hacking y ciberseguridad.
+description: Ejecutar procesos en paralelo con Process, Pool, Queue, Pipe y sincronización.
 ---
 
 # Multiprocessing en Python
@@ -25,13 +25,13 @@ Es ideal para tareas **pesadas en CPU**, como cálculos, IA, simulaciones, etc.
 from multiprocessing import Process
 
 def tarea():
-print("Ejecutando en otro proceso")
+    print("Ejecutando en otro proceso")
 
 if __name__ == "__main__":
-p = Process(target=tarea)  # Crear proceso
-p.start()                  # Iniciar
-p.join()                   # Esperar a que termine
-print("Proceso finalizado")
+    p = Process(target=tarea)  # Crear proceso
+    p.start()                  # Iniciar
+    p.join()                   # Esperar a que termine
+    print("Proceso finalizado")
 ```
 
 - target: función a ejecutar.
@@ -49,19 +49,19 @@ print("Proceso finalizado")
 from multiprocessing import Process, Queue
 
 def productor(q):
-for i in range(3):
-q.put(i)  # Enviar a la cola
+    for i in range(3):
+        q.put(i)  # Enviar a la cola
 
 def consumidor(q):
-while not q.empty():
-print("Recibido:", q.get())
+    while not q.empty():
+        print("Recibido:", q.get())
 
 if __name__ == "__main__":
-q = Queue()
-p1 = Process(target=productor, args=(q,))
-p2 = Process(target=consumidor, args=(q,))
-p1.start(); p1.join()
-p2.start(); p2.join()
+    q = Queue()
+    p1 = Process(target=productor, args=(q,))
+    p2 = Process(target=consumidor, args=(q,))
+    p1.start(); p1.join()
+    p2.start(); p2.join()
 ```
 
 ---
@@ -72,15 +72,15 @@ p2.start(); p2.join()
 from multiprocessing import Process, Pipe
 
 def enviar(conexion):
-conexion.send("Hola desde otro proceso")
-conexion.close()
+    conexion.send("Hola desde otro proceso")
+    conexion.close()
 
 if __name__ == "__main__":
-conn1, conn2 = Pipe()
-p = Process(target=enviar, args=(conn2,))
-p.start()
-print(conn1.recv())  # Recibe mensaje
-p.join()
+    conn1, conn2 = Pipe()
+    p = Process(target=enviar, args=(conn2,))
+    p.start()
+    print(conn1.recv())  # Recibe mensaje
+    p.join()
 ```
 
 ---
@@ -93,15 +93,15 @@ Permite ejecutar una función muchas veces en paralelo fácilmente.
 from multiprocessing import Pool
 
 def cuadrado(x):
-return x * x
+    return x * x
 
 if __name__ == "__main__":
-with Pool(4) as pool:  # 4 procesos
-resultados = pool.map(cuadrado, [1, 2, 3, 4, 5])
-print(resultados)
+    with Pool(4) as pool:  # 4 procesos
+        resultados = pool.map(cuadrado, [1, 2, 3, 4, 5])
+        print(resultados)
 ```
 
-➡️ Ejecuta cuadrado en paralelo para cada valor.
+Ejecuta cuadrado en paralelo para cada valor.
 
 ---
 
@@ -115,16 +115,16 @@ Para compartir datos entre procesos de forma segura:
 from multiprocessing import Process, Value, Array
 
 def modificar(v, a):
-v.value += 10
-for i in range(len(a)):
-a[i] *= 2
+    v.value += 10
+    for i in range(len(a)):
+        a[i] *= 2
 
 if __name__ == "__main__":
-v = Value('i', 5)           # Entero compartido
-a = Array('i', [1, 2, 3])   # Arreglo compartido
-p = Process(target=modificar, args=(v, a))
-p.start(); p.join()
-print(v.value, a[:])
+    v = Value('i', 5)           # Entero compartido
+    a = Array('i', [1, 2, 3])   # Arreglo compartido
+    p = Process(target=modificar, args=(v, a))
+    p.start(); p.join()
+    print(v.value, a[:])
 ```
 
 ---
@@ -139,13 +139,13 @@ Se usan mecanismos como Lock, Event, Semaphore, etc., para evitar conflictos.
 from multiprocessing import Process, Lock
 
 def imprimir(lock, texto):
-with lock:
-print(texto)
+    with lock:
+        print(texto)
 
 if __name__ == "__main__":
-lock = Lock()
-for i in range(3):
-Process(target=imprimir, args=(lock, f"Proceso {i}")).start()
+    lock = Lock()
+    for i in range(3):
+        Process(target=imprimir, args=(lock, f"Proceso {i}")).start()
 ```
 
 ---
@@ -154,26 +154,35 @@ Process(target=imprimir, args=(lock, f"Proceso {i}")).start()
 
 ```python
 from multiprocessing import Process, Queue, current_process
+import time
 
 def trabajo(q):
-nombre = current_process().name
-q.put(f"{nombre} inicia tarea")
-time.sleep(1)
-q.put(f"{nombre} termina tarea")
+    nombre = current_process().name
+    q.put(f"{nombre} inicia tarea")
+    time.sleep(1)
+    q.put(f"{nombre} termina tarea")
 
 if __name__ == "__main__":
-q = Queue()
-procesos = [Process(target=trabajo, args=(q,)) for _ in range(4)]
+    q = Queue()
+    procesos = [Process(target=trabajo, args=(q,)) for _ in range(4)]
 
-for p in procesos: p.start()
-for p in procesos: p.join()
+    for p in procesos: p.start()
+    for p in procesos: p.join()
 
-while not q.empty():
-print(q.get())
+    while not q.empty():
+        print(q.get())
 ```
 
 ---
 
 ## Resumen rápido
 
-<!-- Tabla convertida manualmente -->
+| Herramienta | Qué hace | Ejemplo |
+| --- | --- | --- |
+| `Process` | Lanza un proceso | `Process(target=f).start()` |
+| `Pool` | Varios workers en paralelo | `pool.map(f, datos)` |
+| `Queue` | Cola segura entre procesos | `q.put(x)` / `q.get()` |
+| `Pipe` | Canal bidireccional | `conn.send()` / `conn.recv()` |
+| `Value` / `Array` | Memoria compartida tipada | `Value('i', 0)` |
+| `Lock` | Exclusión mutua | `with lock: ...` |
+| `if __name__ == "__main__"` | Evita re-spawn en Windows/fork | Obligatorio al crear procesos |

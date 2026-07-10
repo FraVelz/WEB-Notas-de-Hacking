@@ -1,6 +1,6 @@
 ---
 title: Less
-description: Less - Notas de hacking y ciberseguridad.
+description: Paginador `less` para leer archivos y salidas largas en terminal.
 ---
 
 # Less en Linux
@@ -24,7 +24,17 @@ less archivo.txt
 
 Una vez abierto el archivo:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `Espacio` / `f` | Página siguiente. |
+| `b` | Página anterior. |
+| `↑` / `↓` o `j` / `k` | Línea arriba / abajo. |
+| `g` / `G` | Inicio / final del archivo. |
+| `/texto` | Buscar hacia adelante. |
+| `?texto` | Buscar hacia atrás. |
+| `n` / `N` | Siguiente / anterior coincidencia. |
+| `q` | Salir. |
+| `h` | Ayuda de teclas. |
 
 ---
 

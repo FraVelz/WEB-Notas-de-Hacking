@@ -1,6 +1,6 @@
 ---
 title: Tkinter
-description: Tkinter - Notas de hacking y ciberseguridad.
+description: Crear interfaces gráficas con widgets, gestores de diseño y eventos en Tkinter.
 ---
 
 # Tkinter en Python
@@ -27,7 +27,8 @@ ventana.geometry("400x300")      # Tamaño (ancho x alto)
 ventana.mainloop()               # Inicia el bucle principal
 ```
 
-🔹 Tk() → crea la aplicación. 🔹 mainloop() → mantiene la ventana abierta escuchando eventos (clics, teclas, etc.).
+- `Tk()` → crea la aplicación.
+- `mainloop()` → mantiene la ventana abierta escuchando eventos (clics, teclas, etc.).
 
 ---
 
@@ -35,7 +36,18 @@ ventana.mainloop()               # Inicia el bucle principal
 
 Los _widgets_ son los componentes visuales de Tkinter.
 
-<!-- Tabla convertida manualmente -->
+| Widget | Qué hace | Ejemplo |
+| --- | --- | --- |
+| `Label` | Texto o imagen estática | `tk.Label(ventana, text="Hola")` |
+| `Button` | Botón con acción | `tk.Button(ventana, text="OK", command=f)` |
+| `Entry` | Campo de texto de una línea | `tk.Entry(ventana)` |
+| `Text` | Área de texto multilínea | `tk.Text(ventana, height=5)` |
+| `Frame` | Contenedor para agrupar widgets | `tk.Frame(ventana)` |
+| `Checkbutton` | Casilla on/off | `tk.Checkbutton(ventana, text="OK", variable=var)` |
+| `Radiobutton` | Opción excluyente | `tk.Radiobutton(ventana, value="A")` |
+| `Listbox` | Lista seleccionable | `tk.Listbox(ventana)` |
+| `Canvas` | Dibujo / gráficos | `tk.Canvas(ventana, width=200)` |
+| `Menu` | Barra o menú desplegable | `tk.Menu(ventana)` |
 
 ---
 
@@ -45,7 +57,7 @@ Los _widgets_ son los componentes visuales de Tkinter.
 import tkinter as tk
 
 def saludar():
-etiqueta.config(text=f"Hola, {entrada.get()}!")
+    etiqueta.config(text=f"Hola, {entrada.get()}!")
 
 ventana = tk.Tk()
 ventana.title("Ejemplo Widgets")
@@ -68,7 +80,11 @@ ventana.mainloop()
 
 Tkinter tiene tres formas principales de organizar widgets:
 
-<!-- Tabla convertida manualmente -->
+| Gestor | Qué hace | Cuándo usarlo |
+| --- | --- | --- |
+| `pack()` | Apila widgets (arriba/abajo/lados) | Layouts simples y rápidos |
+| `grid()` | Tabla filas/columnas | Formularios alineados |
+| `place()` | Coordenadas absolutas (x, y) | Posición pixel a pixel (poco flexible) |
 
 ### Ejemplo
 
@@ -86,7 +102,7 @@ Puedes ejecutar funciones al hacer clic o escribir algo.
 
 ```python
 def al_hacer_click():
-print("¡Botón presionado!")
+    print("¡Botón presionado!")
 
 boton = tk.Button(ventana, text="Haz clic", command=al_hacer_click)
 ```
@@ -95,9 +111,9 @@ También puedes manejar eventos con .bind():
 
 ```python
 def tecla_presionada(evento):
-print("Tecla:", evento.char)
+    print("Tecla:", evento.char)
 
-ventana.bind("", tecla_presionada)
+ventana.bind("<Key>", tecla_presionada)
 ```
 
 ---
@@ -138,7 +154,7 @@ tk.Radiobutton(ventana, text="Opción B", variable=opcion, value="B").pack()
 ```python
 lista = tk.Listbox(ventana)
 for i in ["Python", "C++", "Java"]:
-lista.insert(tk.END, i)
+    lista.insert(tk.END, i)
 lista.pack()
 ```
 
@@ -194,11 +210,11 @@ import tkinter as tk
 from tkinter import messagebox
 
 def saludar():
-nombre = entrada.get()
-if nombre:
-messagebox.showinfo("Saludo", f"Hola, {nombre}!")
-else:
-messagebox.showwarning("Advertencia", "Debes ingresar un nombre")
+    nombre = entrada.get()
+    if nombre:
+        messagebox.showinfo("Saludo", f"Hola, {nombre}!")
+    else:
+        messagebox.showwarning("Advertencia", "Debes ingresar un nombre")
 
 ventana = tk.Tk()
 ventana.title("App Completa")
@@ -216,4 +232,11 @@ ventana.mainloop()
 
 ## Resumen rápido
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Uso |
+| --- | --- |
+| `Tk()` + `mainloop()` | Crear y mantener la ventana |
+| Widgets | Componentes visuales (Label, Button, Entry…) |
+| `pack` / `grid` / `place` | Organizar el layout |
+| `command=` / `.bind()` | Reaccionar a clics y teclas |
+| `Frame` | Agrupar secciones de la UI |
+| `messagebox` | Diálogos emergentes |

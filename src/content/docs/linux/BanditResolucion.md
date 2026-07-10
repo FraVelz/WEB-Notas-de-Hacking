@@ -50,7 +50,41 @@ dado, caso de querer saltar algún nivel, para luego estudiarlo.
 
 Aunque, en la página oficial, ya hay material, para aprender, y pistas de como resolver los ejercicios (todo en ingles).
 
-<!-- Tabla convertida manualmente -->
+| Nivel | Sección |
+| ----- | ------- |
+| 0 | [Bandit0](#bandit0) |
+| 1 | [Bandit1](#bandit1) |
+| 2 | [Bandit2](#bandit2) |
+| 3 | [Bandit3](#bandit3) |
+| 4 | [Bandit4](#bandit4) |
+| 5 | [Bandit5](#bandit5) |
+| 6 | [Bandit6](#bandit6-contiene-clave-siguiente) |
+| 7 | [Bandit7](#bandit7) |
+| 8 | [Bandit8](#bandit8) |
+| 9 | [Bandit9](#bandit9) |
+| 10 | [Bandit10](#bandit10-contiene-clave-para-el-siguiente) |
+| 11 | [Bandit11](#bandit11-contiene-clave-para-el-siguiente) |
+| 12 | [Bandit12](#bandit12) |
+| 13 | [Bandit13](#bandit13) |
+| 14 | [Bandit14](#bandit14) |
+| 15 | [Bandit15](#bandit15-contiene-clave-para-el-siguiente) |
+| 16 | [Bandit16](#bandit16) |
+| 17 | [Bandit17](#bandit17) |
+| 18 | [Bandit18](#bandit18) |
+| 19 | [Bandit19](#bandit19-contiene-clave-para-el-siguiente) |
+| 20 | [Bandit20](#bandit20) |
+| 21 | [Bandit21](#bandit21) |
+| 22 | [Bandit22](#bandit22) |
+| 23 | [Bandit23](#bandit23-contiene-clave-para-el-siguiente) |
+| 24 | [Bandit24](#bandit24) |
+| 25 | [Bandit25](#bandit25) |
+| 26 | [Bandit26](#bandit26) |
+| 27 | [Bandit27](#bandit27-contiene-clave-propia) |
+| 28 | [Bandit28](#bandit28) |
+| 29 | [Bandit29](#bandit29) |
+| 30 | [Bandit30](#bandit30) |
+| 31 | [Bandit31](#bandit31) |
+| 32 | [Bandit32](#bandit32) |
 
 Página web:
 

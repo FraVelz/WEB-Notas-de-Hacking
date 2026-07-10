@@ -1,6 +1,6 @@
 ---
 title: Request
-description: Request - Notas de hacking y ciberseguridad.
+description: Hacer peticiones HTTP con requests: métodos, parámetros, sesiones y manejo de errores.
 ---
 
 # Request en Python
@@ -24,7 +24,7 @@ description: Request - Notas de hacking y ciberseguridad.
 pip install requests
 ```
 
-Luego en tú script:
+Luego en tu script:
 
 ```python
 import requests
@@ -77,11 +77,11 @@ Al hacer una petición, obtienes un objeto Response. Algunos atributos y método
 - response.status_code → código de estado HTTP (200, 404, 500, etc.).
 - response.text → contenido decodificado como texto (string).
 - response.content → contenido en bytes.
-- response.json() → interpreta el contenido como JSON y devuelve dict o lista (sí aplica).
+- response.json() → interpreta el contenido como JSON y devuelve dict o lista (si aplica).
 - response.headers → diccionario con cabeceras HTTP de la respuesta.
 - response.elapsed → tiempo que tardó la petición.
-- response.raise_for_status() → lanza excepción requests.exceptions.HTTPError sí el código de estado indica error
-  (&gt;=400).
+- response.raise_for_status() → lanza excepción requests.exceptions.HTTPError si el código de estado indica error
+  (>=400).
 
 ---
 
@@ -89,7 +89,20 @@ Al hacer una petición, obtienes un objeto Response. Algunos atributos y método
 
 Al llamar a requests.get() o requests.post() puedes pasar varios parámetros adicionales para mayor control:
 
-<!-- Tabla convertida manualmente -->
+| Parámetro | Qué hace | Ejemplo |
+| --- | --- | --- |
+| `params` | Query string en la URL | `get(url, params={"q": "python"})` |
+| `data` | Cuerpo form-urlencoded | `post(url, data={"user": "a"})` |
+| `json` | Cuerpo JSON | `post(url, json={"user": "a"})` |
+| `headers` | Cabeceras HTTP | `get(url, headers={"User-Agent": "..."})` |
+| `auth` | Auth básica | `get(url, auth=("user", "pass"))` |
+| `timeout` | Segundos máximos de espera | `get(url, timeout=5)` |
+| `verify` | Verificar certificado SSL | `get(url, verify=True)` |
+| `proxies` | Proxy HTTP/HTTPS | `get(url, proxies={"https": "..."})` |
+| `cookies` | Cookies de la petición | `get(url, cookies={"sid": "1"})` |
+| `stream` | Descargar por chunks | `get(url, stream=True)` |
+| `files` | Subir archivos multipart | `post(url, files={"f": open("a.txt")})` |
+| `allow_redirects` | Seguir redirecciones | `get(url, allow_redirects=False)` |
 
 ---
 
@@ -112,7 +125,7 @@ response2 = s.get("https://api.example.com/resource2")
 ## 7) Autenticación, SSL y proxies
 
 - Autenticación básica: requests.get(url, auth=('user','pass')).
-- Verificación SSL: por defecto verify=True. Sí el servidor tiene certificado inválido, se puede poner verify=False
+- Verificación SSL: por defecto verify=True. Si el servidor tiene certificado inválido, se puede poner verify=False
   **pero no recomendado en producción**.
 - Puedes especificar proxies para HTTP/HTTPS usando el parámetro proxies.
 
@@ -126,16 +139,16 @@ Es importante manejar posibles fallos (timeout, conexión rechazada, etc.). Ejem
 import requests
 
 try:
-response = requests.get("https://api.example.com", timeout=5)
-response.raise_for_status()
+    response = requests.get("https://api.example.com", timeout=5)
+    response.raise_for_status()
 except requests.exceptions.HTTPError as errh:
-print("HTTP Error:", errh)
+    print("HTTP Error:", errh)
 except requests.exceptions.ConnectionError as errc:
-print("Error de conexión:", errc)
+    print("Error de conexión:", errc)
 except requests.exceptions.Timeout as errt:
-print("Timeout:", errt)
+    print("Timeout:", errt)
 except requests.exceptions.RequestException as err:
-print("Otro error:", err)
+    print("Otro error:", err)
 ```
 
 Este patrón aparece en tutoriales de requests.
@@ -187,10 +200,10 @@ import requests
 
 url = "https://example.com/largefile.zip"
 with requests.get(url, stream=True) as r:
-r.raise_for_status()
-with open("largefile.zip", "wb") as f:
-for chunk in r.iter_content(chunk_size=8192):
-f.write(chunk)
+    r.raise_for_status()
+    with open("largefile.zip", "wb") as f:
+        for chunk in r.iter_content(chunk_size=8192):
+            f.write(chunk)
 ```
 
 ---
@@ -203,7 +216,7 @@ f.write(chunk)
 - Verifica el estado de la respuesta (status_code, raise_for_status()) antes de procesar los datos.
 - Cuando trabajes con APIs, respeta los límites de rate-limit, y maneja redirecciones, errores, retries.
 - Evita exponer en el código credenciales sin protección.
-- Sí haces scraping de páginas web, respeta los términos de uso del sitio, usa cabeceras User-Agent adecuadas y
+- Si haces scraping de páginas web, respeta los términos de uso del sitio, usa cabeceras User-Agent adecuadas y
   considera la ética/legales.
 
 ---

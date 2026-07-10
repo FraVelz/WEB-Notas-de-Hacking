@@ -1,6 +1,6 @@
 ---
 title: Fundamentos
-description: Fundamentos - Notas de hacking y ciberseguridad.
+description: Shebang, variables, aritmética y `read` para scripts Bash.
 ---
 
 # Fundamentos de Bash Script
@@ -75,7 +75,16 @@ Para usar una variable se coloca $ antes de su nombre: $variable
 
 ### Variables especiales
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `$0` | Nombre del script. |
+| `$1` … `$n` | Argumentos posicionales. |
+| `$#` | Número de argumentos. |
+| `"$@"` | Todos los argumentos, separados. |
+| `$?` | Código de salida del último comando. |
+| `$$` | PID del shell. |
+| `$!` | PID del último job en background. |
+| `$HOME`, `$PATH`, `$USER` | Variables de entorno habituales. |
 
 Para imprimir valores (evitando errores con espacios), se recomienda:
 
@@ -136,7 +145,13 @@ echo $(expr $a + $b)
 
 ### Símbolos matemáticos
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `+` `-` `*` `/` | Suma, resta, multiplicación, división entera. |
+| `%` | Módulo (resto). |
+| `**` | Potencia (en `$(( ))`). |
+| `$(( … ))` | Expansión aritmética de Bash. |
+| `expr` | Aritmética clásica (espacios y escape de `*`). |
 
 ---
 
@@ -146,7 +161,14 @@ El comando read se usa para leer datos del usuario.
 
 ### Parámetros útiles
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `read var` | Lee una línea a `var`. | `read nombre` |
+| `read -p "msg" var` | Muestra prompt y lee. | `read -p "User: " u` |
+| `read -s var` | Lectura silenciosa (passwords). | `read -s pass` |
+| `read -t N var` | Timeout de N segundos. | `read -t 4 -p "> " v` |
+| `read -n N var` | Lee N caracteres. | `read -n 1 tecla` |
+| `read -a arr` | Guarda palabras en un array. | `read -a campos` |
 
 Ejemplo:
 

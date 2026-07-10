@@ -1,6 +1,6 @@
 ---
 title: Netcat
-description: Netcat - Notas de hacking y ciberseguridad.
+description: Cliente/servidor TCP-UDP con `nc`: chat, transferencia, escaneo y shells de práctica.
 ---
 
 # Netcat en Linux
@@ -189,7 +189,15 @@ Esto le da al servidor una consola remota de la otra máquina. _(Solo en entorno
 
 ## Otras opciones útiles
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `nc -l -p` | Escucha en un puerto (servidor). | `nc -l -p 8080` |
+| `nc -u` | Usa UDP en lugar de TCP. | `nc -u -l -p 6000` |
+| `nc -z` | Escaneo sin enviar datos. | `nc -z 192.168.1.10 22` |
+| `nc -v` | Salida detallada (verbose). | `nc -zv host 80` |
+| `nc -n` | No resuelve DNS (solo IPs). | `nc -nv 10.0.0.1 443` |
+| `nc -w` | Timeout en segundos. | `nc -w 3 host 80` |
+| `nc -e` | Ejecuta un programa al conectar (si la build lo permite). | `nc -e /bin/bash …` |
 
 ---
 
@@ -214,7 +222,14 @@ Ahora cualquier texto que envíes se reflejará entre ambos.
 
 ## Resumen rápido
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Cliente | `nc host puerto` — conectar a un servicio. |
+| Servidor | `nc -l -p puerto` — escuchar conexiones. |
+| UDP | Añadir `-u` en ambos extremos. |
+| Archivos | Redirigir con `<` / `>` hacia/desde `nc`. |
+| Escaneo | `nc -zv host inicio-fin`. |
+| Shell inversa | Solo en labs autorizados; muchas distros desactivan `-e`. |
 
 ---
 

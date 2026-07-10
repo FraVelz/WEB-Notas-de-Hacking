@@ -1,6 +1,6 @@
 ---
 title: Permisos
-description: Permisos - Notas de hacking y ciberseguridad.
+description: Permisos rwx, chmod/chown, SUID/SGID/sticky y atributos con chattr.
 ---
 
 # Permisos en Linux
@@ -15,11 +15,20 @@ Cada archivo o carpeta tiene **3 tipos de permisos** y **3 categorías de usuari
 
 ### Tipos de permisos
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `r` (read) | Leer archivo / listar directorio. |
+| `w` (write) | Modificar archivo / crear-borrar en directorio. |
+| `x` (execute) | Ejecutar archivo / entrar al directorio (`cd`). |
 
 ### Categorías
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `u` (user) | Dueño del archivo. |
+| `g` (group) | Grupo propietario. |
+| `o` (others) | Resto de usuarios. |
+| `a` (all) | u + g + o. |
 
 ---
 
@@ -62,7 +71,15 @@ chmod a+r file.txt      # todos pueden leer
 chmod 755 script.sh
 ```
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `4` | Lectura (`r`). |
+| `2` | Escritura (`w`). |
+| `1` | Ejecución (`x`). |
+| `7` (`4+2+1`) | rwx |
+| `5` (`4+1`) | r-x |
+| `755` | dueño rwx, grupo r-x, otros r-x |
+| `644` | dueño rw-, grupo/otros r-- |
 
 ---
 
@@ -86,7 +103,11 @@ sudo chown francisco:users script.sh
 
 Existen tres permisos especiales en Linux:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| SUID | El proceso corre con el UID del dueño del binario (`u+s`). |
+| SGID | En binario: GID del grupo; en dir: nuevos archivos heredan el grupo (`g+s`). |
+| Sticky bit | En directorios: solo el dueño (o root) borra sus archivos (`+t`, típico `/tmp`). |
 
 ### Sticky Bit
 
@@ -186,7 +207,13 @@ sudo chattr +a log.txt
 
 ### Atributos comunes
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `+i` / `-i` | Inmutable: no borrar ni modificar (solo root quita `i`). |
+| `+a` / `-a` | Append-only: solo añadir al final (logs). |
+| `+c` | Compresión (según FS). |
+| `+s` | Secure deletion (según FS). |
+| `e` | Extents (ext4); suele aparecer en `lsattr`. |
 
 ### Ejemplo práctico en script Bash
 
@@ -209,4 +236,10 @@ lsattr "$(ARCHIVOS[@])"
 
 ## 7. Resumen visual
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `ls -l` | Ver permisos, dueño y grupo. | `ls -l script.sh` |
+| `chmod` | Cambiar permisos (simbólico o numérico). | `chmod 755 script.sh` |
+| `chown` / `chgrp` | Cambiar dueño / grupo. | `chown user:group f` |
+| `chmod u+s` / `g+s` / `+t` | SUID, SGID, sticky. | `chmod 1777 /tmp/pub` |
+| `lsattr` / `chattr` | Ver / cambiar atributos extendidos. | `sudo chattr +i f` |

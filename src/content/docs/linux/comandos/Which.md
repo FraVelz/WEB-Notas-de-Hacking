@@ -1,6 +1,6 @@
 ---
 title: Which
-description: Which - Notas de hacking y ciberseguridad.
+description: Localiza la ruta del ejecutable que usará el shell según `$PATH`.
 ---
 
 # Which en Linux
@@ -80,4 +80,10 @@ Te muestra **todas** las ubicaciones posibles que coinciden, en orden de priorid
 
 ### En resumen
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `which cmd` | Muestra la primera ruta de `cmd` en `$PATH`. | `which python` |
+| `which -a cmd` | Lista todas las coincidencias en `$PATH`. | `which -a python` |
+| (sin salida / not found) | El comando no está en `$PATH`. | `which pepe` |
+
+Alternativa moderna en muchos sistemas: `command -v python` o `type -a python`.

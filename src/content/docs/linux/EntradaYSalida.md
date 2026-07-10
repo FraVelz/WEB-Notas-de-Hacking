@@ -1,6 +1,6 @@
 ---
 title: Entrada YSalida
-description: Entrada YSalida - Notas de hacking y ciberseguridad.
+description: Redirecciones, pipes, descriptores 0/1/2, `tee` y `cat` en Bash.
 ---
 
 # Entradas y Salidas en Bash Script
@@ -14,7 +14,11 @@ bash).
 
 En Bash hay **3 descriptores de archivos principales**:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `0` stdin | Entrada estándar (teclado por defecto). |
+| `1` stdout | Salida estándar (pantalla). |
+| `2` stderr | Salida de errores. |
 
 Los descriptores **3, 4, 5, …** son opcionales y se usan en programas más avanzados. Para referirse a un descriptor se
 usa su número (por ejemplo 2&gt; archivo). Para el descriptor **1**, el número puede omitirse (&gt; equivale a 1&gt;).
@@ -58,7 +62,15 @@ En resumen:
 
 </blockquote>
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `>` | Sobrescribe stdout en un archivo. | `echo hola > out.txt` |
+| `>>` | Añade stdout al final. | `echo mundo >> out.txt` |
+| `<` | Usa un archivo como stdin. | `cat < in.txt` |
+| `2>` | Redirige solo stderr. | `ls x 2> err.txt` |
+| `> file 2>&1` | Junta stdout y stderr en `file`. | `cmd > todo.txt 2>&1` |
+| `&>` | Atajo bash: stdout+stderr. | `cmd &> todo.txt` |
+| `\|` | Pipe: stdout del izquierdo → stdin del derecho. | `ls \| grep .txt` |
 
 ---
 
@@ -119,4 +131,11 @@ ls | tee archivo1.txt archivo2.txt          # Guardar en varios archivos
 
 ### Resumen rápido
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| stdin / stdout / stderr | Descriptores 0, 1 y 2. |
+| `>` / `>>` / `<` | Redirigir salida, append y entrada. |
+| `2>&1` / `&>` | Mezclar errores con la salida normal. |
+| `\|` | Encadenar comandos. |
+| `tee` | Escribir a archivo y seguir mostrando en pantalla. |
+| `cat` | Ver, unir o crear archivos por stdin. |

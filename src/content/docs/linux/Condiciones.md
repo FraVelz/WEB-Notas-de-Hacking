@@ -1,6 +1,6 @@
 ---
 title: Condiciones
-description: Condiciones - Notas de hacking y ciberseguridad.
+description: Comparaciones numéricas y de cadenas con `if`, `test`, `[ ]` y `[[ ]]`.
 ---
 
 # Condiciones en Bash Script
@@ -28,11 +28,28 @@ Los operadores se usan para comparar **números** o **cadenas de texto**.
 
 ### Para números
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `-eq` | Igual (`==` numérico). |
+| `-ne` | Distinto. |
+| `-lt` | Menor que (`<`). |
+| `-le` | Menor o igual. |
+| `-gt` | Mayor que (`>`). |
+| `-ge` | Mayor o igual. |
+
+Ejemplo: `[ "$a" -gt 10 ]`
 
 ### Para cadenas de texto
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `=` / `==` | Cadenas iguales (en `[ ]` suele usarse `=`). |
+| `!=` | Cadenas distintas. |
+| `-z` | Cadena vacía (longitud 0). |
+| `-n` | Cadena no vacía. |
+| `<` / `>` | Orden lexicográfico (mejor dentro de `[[ ]]`). |
+
+Ejemplo: `[[ -z "$1" ]]` o `[[ "$user" == "root" ]]`
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Gestion De Procesos
-description: Gestion De Procesos - Notas de hacking y ciberseguridad.
+description: Ver, pausar, matar y priorizar procesos con ps, jobs, kill y nice.
 ---
 
 # Gestión de procesos
@@ -129,7 +129,15 @@ Con el comando `fg %1` o `bg %1` puedes despausar el proceso, con las implicacio
 
 Algunos nombres comunes:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| `SIGTERM` (15) | Pedir cierre limpio (por defecto de `kill`). |
+| `SIGKILL` (9) | Forzar terminación; no se puede atrapar. |
+| `SIGINT` (2) | Interrumpir (Ctrl+C). |
+| `SIGSTOP` | Pausar el proceso (no atrapable). |
+| `SIGCONT` | Reanudar tras STOP/Ctrl+Z. |
+| `SIGHUP` (1) | “Hang up”; muchos daemons recargan config. |
+| `SIGQUIT` (3) | Salir + core dump (Ctrl+\). |
 
 ---
 
@@ -178,4 +186,11 @@ Para eliminarlos, normalmente basta con terminar el proceso padre.
 
 ## Resumen visual
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `ps aux` | Lista procesos con usuario y recursos. | `ps aux \| grep nginx` |
+| `top` / `htop` | Monitor interactivo. | `htop` |
+| `jobs` / `fg` / `bg` | Control de jobs de la sesión. | `fg %1` |
+| `kill` / `pkill` | Envía señales a procesos. | `kill -9 1234` |
+| `nice` / `renice` | Ajusta prioridad (nice). | `nice -n 10 ./job` |
+| `pstree` / `pidof` | Árbol o PID por nombre. | `pidof sshd` |

@@ -1,9 +1,9 @@
 ---
 title: Property
-description: Property - Notas de hacking y ciberseguridad.
+description: Usar @property, setter y deleter para encapsular atributos sin cambiar la sintaxis de acceso.
 ---
 
-# Decorador <span class="citation" data-cites="property">@property</span>
+# Decorador @property
 
 @property se usa para **encapsular atributos**, **añadir validaciones o lógica interna**, pero sin cambiar la forma
 natural de acceder o modificar una variable.
@@ -20,21 +20,19 @@ directamente a una variable**.
 
 En otras palabras:
 
-<blockquote>
-Permite usar *métodos* como sí fueran *atributos*, **sin cambiar la sintaxis de acceso**.
+> Permite usar *métodos* como si fueran *atributos*, **sin cambiar la sintaxis de acceso**.
 
-</blockquote>
 ***
 
 ## Ejemplo básico sin @property
 
 ```python
 class Persona:
-def __init__(self, nombre):
-self.__nombre = nombre  # atributo privado
+    def __init__(self, nombre):
+        self.__nombre = nombre  # atributo privado
 
-def get_nombre(self):
-return self.__nombre
+    def get_nombre(self):
+        return self.__nombre
 ```
 
 Uso:
@@ -52,12 +50,12 @@ Pero se ve _feo_ tener que escribir .get_nombre() cada vez. Ahí entra @property
 
 ```python
 class Persona:
-def __init__(self, nombre):
-self.__nombre = nombre
+    def __init__(self, nombre):
+        self.__nombre = nombre
 
-@property
-def nombre(self):
-return self.__nombre
+    @property
+    def nombre(self):
+        return self.__nombre
 ```
 
 Uso:
@@ -72,23 +70,23 @@ print(p.nombre)  # ✅ Sin paréntesis, parece un atributo
 
 ---
 
-## Agregando un <strong>setter</strong> para modificar el valor
+## Agregando un **setter** para modificar el valor
 
 ```python
 class Persona:
-def __init__(self, nombre):
-self.__nombre = nombre
+    def __init__(self, nombre):
+        self.__nombre = nombre
 
-@property
-def nombre(self):
-return self.__nombre
+    @property
+    def nombre(self):
+        return self.__nombre
 
-@nombre.setter
-def nombre(self, nuevo_nombre):
-if len(nuevo_nombre) > 0:
-self.__nombre = nuevo_nombre
-else:
-print("❌ El nombre no puede estar vacío.")
+    @nombre.setter
+    def nombre(self, nuevo_nombre):
+        if len(nuevo_nombre) > 0:
+            self.__nombre = nuevo_nombre
+        else:
+            print("❌ El nombre no puede estar vacío.")
 ```
 
 Uso:
@@ -108,12 +106,16 @@ p.nombre = ""     # ❌ El nombre no puede estar vacío.
 ```python
 @nombre.deleter
 def nombre(self):
-print("Eliminando el nombre...")
-del self.__nombre
+    print("Eliminando el nombre...")
+    del self.__nombre
 ```
 
 ---
 
 ## En resumen
 
-<!-- Tabla convertida manualmente -->
+| Decorador | Qué hace | Ejemplo de uso |
+| --- | --- | --- |
+| `@property` | Getter: lee como atributo | `print(p.nombre)` |
+| `@nombre.setter` | Setter: asigna con validación | `p.nombre = "Ana"` |
+| `@nombre.deleter` | Deleter: borra el atributo | `del p.nombre` |

@@ -1,6 +1,6 @@
 ---
 title: Sockets
-description: Sockets - Notas de hacking y ciberseguridad.
+description: Comunicación en red con sockets TCP y UDP en Python (cliente y servidor).
 ---
 
 # Python
@@ -16,7 +16,7 @@ Python ofrece el módulo socket para manejar conexiones **TCP** (orientadas a co
 
 ---
 
-## ️TCP (Transmission Control Protocol)
+## TCP (Transmission Control Protocol)
 
 - Conexión establecida entre cliente y servidor (3-way handshake).
 - Garantiza entrega, orden y fiabilidad.
@@ -26,36 +26,40 @@ Python ofrece el módulo socket para manejar conexiones **TCP** (orientadas a co
 
 ```python
 # servidor_tcp.py
+import socket
+
 HOST = '127.0.0.1'   # Dirección local
 PORT = 5000          # Puerto del servidor
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-s.bind((HOST, PORT))     # Asociar dirección y puerto
-s.listen()               # Escuchar conexiones
-print("Servidor TCP esperando conexión...")
-conn, addr = s.accept()  # Aceptar cliente
-with conn:
-print("Conectado a:", addr)
-while True:
-data = conn.recv(1024)      # Recibir datos
-if not data:
-break
-print("Cliente dice:", data.decode())
-conn.sendall(b"Mensaje recibido")
+    s.bind((HOST, PORT))     # Asociar dirección y puerto
+    s.listen()               # Escuchar conexiones
+    print("Servidor TCP esperando conexión...")
+    conn, addr = s.accept()  # Aceptar cliente
+    with conn:
+        print("Conectado a:", addr)
+        while True:
+            data = conn.recv(1024)      # Recibir datos
+            if not data:
+                break
+            print("Cliente dice:", data.decode())
+            conn.sendall(b"Mensaje recibido")
 ```
 
 ### Cliente TCP
 
 ```python
 # cliente_tcp.py
+import socket
+
 HOST = '127.0.0.1'
 PORT = 5000
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-s.connect((HOST, PORT))
-s.sendall(b"Hola servidor TCP")
-data = s.recv(1024)
-print("Servidor responde:", data.decode())
+    s.connect((HOST, PORT))
+    s.sendall(b"Hola servidor TCP")
+    data = s.recv(1024)
+    print("Servidor responde:", data.decode())
 ```
 
 ---
@@ -70,33 +74,43 @@ print("Servidor responde:", data.decode())
 
 ```python
 # servidor_udp.py
+import socket
+
 HOST = '127.0.0.1'
 PORT = 6000
 
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-s.bind((HOST, PORT))
-print("Servidor UDP esperando mensajes...")
-while True:
-data, addr = s.recvfrom(1024)
-print("Mensaje de", addr, ":", data.decode())
-s.sendto(b"Mensaje recibido", addr)
+    s.bind((HOST, PORT))
+    print("Servidor UDP esperando mensajes...")
+    while True:
+        data, addr = s.recvfrom(1024)
+        print("Mensaje de", addr, ":", data.decode())
+        s.sendto(b"Mensaje recibido", addr)
 ```
 
 ### Cliente UDP
 
 ```python
 # cliente_udp.py
+import socket
+
 HOST = '127.0.0.1'
 PORT = 6000
 
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
-s.sendto(b"Hola servidor UDP", (HOST, PORT))
-data, _ = s.recvfrom(1024)
-print("Servidor responde:", data.decode())
+    s.sendto(b"Hola servidor UDP", (HOST, PORT))
+    data, _ = s.recvfrom(1024)
+    print("Servidor responde:", data.decode())
 ```
 
 ---
 
 ## Diferencias rápidas
 
-<!-- Tabla convertida manualmente -->
+| Aspecto | TCP (`SOCK_STREAM`) | UDP (`SOCK_DGRAM`) |
+| --- | --- | --- |
+| Conexión | Sí (handshake) | No |
+| Fiabilidad | Garantiza entrega y orden | Puede perder o desordenar paquetes |
+| Velocidad | Más overhead | Más ligero / rápido |
+| API típica | `listen`, `accept`, `connect`, `sendall`, `recv` | `sendto`, `recvfrom` |
+| Uso típico | HTTP, chats, transferencias | Streaming, DNS, juegos |

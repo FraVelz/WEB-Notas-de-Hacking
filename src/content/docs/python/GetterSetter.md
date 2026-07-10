@@ -1,6 +1,6 @@
 ---
 title: Getter Setter
-description: Getter Setter - Notas de hacking y ciberseguridad.
+description: Controlar lectura y escritura de atributos con getters/setters clásicos y con @property.
 ---
 
 # Getters y Setters
@@ -20,19 +20,19 @@ Se usan para **controlar el acceso a los atributos** de una clase, especialmente
 
 ```python
 class Persona:
-def __init__(self, nombre):
-self.__nombre = nombre  # atributo privado
+    def __init__(self, nombre):
+        self.__nombre = nombre  # atributo privado
 
-# Getter
-def get_nombre(self):
-return self.__nombre
+    # Getter
+    def get_nombre(self):
+        return self.__nombre
 
-# Setter
-def set_nombre(self, nuevo_nombre):
-if len(nuevo_nombre) > 0:
-self.__nombre = nuevo_nombre
-else:
-print("❌ El nombre no puede estar vacío.")
+    # Setter
+    def set_nombre(self, nuevo_nombre):
+        if len(nuevo_nombre) > 0:
+            self.__nombre = nuevo_nombre
+        else:
+            print("❌ El nombre no puede estar vacío.")
 ```
 
 Uso:
@@ -49,7 +49,7 @@ p.set_nombre("")  # ❌ El nombre no puede estar vacío.
 
 ---
 
-## Pero Python tiene una forma más elegante → <strong>@property</strong>
+## Pero Python tiene una forma más elegante → **@property**
 
 Python permite crear _getters_ y _setters_ de manera más limpia y natural usando **decoradores**.
 
@@ -57,22 +57,22 @@ Python permite crear _getters_ y _setters_ de manera más limpia y natural usand
 
 ```python
 class Persona:
-def __init__(self, nombre):
-self.__nombre = nombre
+    def __init__(self, nombre):
+        self.__nombre = nombre
 
-@property
-def nombre(self):
-return self.__nombre
+    @property
+    def nombre(self):
+        return self.__nombre
 
-@nombre.setter
-def nombre(self, nuevo_nombre):
-if len(nuevo_nombre) > 0:
-self.__nombre = nuevo_nombre
-else:
-print("❌ El nombre no puede estar vacío.")
+    @nombre.setter
+    def nombre(self, nuevo_nombre):
+        if len(nuevo_nombre) > 0:
+            self.__nombre = nuevo_nombre
+        else:
+            print("❌ El nombre no puede estar vacío.")
 ```
 
-Ahora se usa como sí fuera un **atributo normal**:
+Ahora se usa como si fuera un **atributo normal**:
 
 ```python
 p = Persona("Carlos")
@@ -86,13 +86,19 @@ p.nombre = ""     # ❌ El nombre no puede estar vacío.
 
 ---
 
-## Ventajas de usar <span class="citation" data-cites="property">@property</span>
+## Ventajas de usar @property
 
-✅ No cambias la forma de usar los atributos. ✅ Puedes añadir validaciones sin romper el código existente. ✅
-Encapsulas correctamente los datos. ✅ Evitas accesos o cambios indebidos.
+- No cambias la forma de usar los atributos.
+- Puedes añadir validaciones sin romper el código existente.
+- Encapsulas correctamente los datos.
+- Evitas accesos o cambios indebidos.
 
 ---
 
 ## En resumen
 
-<!-- Tabla convertida manualmente -->
+| Forma | Lectura | Escritura | Cuándo usarla |
+| --- | --- | --- | --- |
+| Métodos clásicos | `p.get_nombre()` | `p.set_nombre("x")` | Estilo Java / APIs explícitas |
+| `@property` | `p.nombre` | `p.nombre = "x"` | Estilo idiomático en Python |
+| Atributo público | `p.nombre` | `p.nombre = "x"` | Sin validación ni encapsulación |

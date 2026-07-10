@@ -1,6 +1,6 @@
 ---
 title: Xxd
-description: Xxd - Notas de hacking y ciberseguridad.
+description: Volcado hex/binario con `xxd` (inspección y reverse `-r`).
 ---
 
 # Xxd en Linux
@@ -92,4 +92,10 @@ Muestra solo los primeros 16 bytes.
 
 ## En resumen
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `xxd archivo` | Hex dump con offset y ASCII. | `xxd archivo.bin` |
+| `xxd -p` | Hex plano (sin columnas). | `xxd -p archivo.bin` |
+| `xxd -r` | Reverse: hex → binario. | `xxd -r hex.txt > out.bin` |
+| `xxd -l N` | Solo los primeros N bytes. | `xxd -l 16 archivo.bin` |
+| `xxd -s N` | Empieza en el offset N. | `xxd -s 0x100 f.bin` |

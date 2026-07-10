@@ -1,6 +1,6 @@
 ---
 title: Legalidad Hacking
-description: Legalidad Hacking - Notas de hacking y ciberseguridad.
+description: Marco legal y ético del hacking: autorización, delitos y tipos de hacker.
 ---
 
 # Legalidad en el Hacking
@@ -42,7 +42,14 @@ todos los países existen leyes que penalizan:
 El **Código Penal Colombiano (Ley 1273 de 2009)** protege la “información y los datos” en el ciberespacio. Algunos
 delitos contemplados son:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Acceso abusivo a sistema informático | Entrar sin autorización a un sistema. |
+| Violación de datos personales | Obtener, modificar o divulgar datos sin permiso. |
+| Interceptación de datos | Capturar comunicaciones o tráfico sin autorización. |
+| Daño informático | Borrar, alterar o sabotear datos/sistemas. |
+| Uso de software malicioso | Crear, distribuir o usar malware. |
+| Suplantación de sitios / phishing | Engañar para obtener credenciales o datos. |
 
 **Sanciones:** Pueden incluir **penas de prisión** y **multas económicas** dependiendo de la gravedad del caso.
 
@@ -70,7 +77,14 @@ hacker”** o **“ética del pentester”**.
 
 ## 4. Ejemplos prácticos
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Legal | Pentest con contrato/autorización escrita del dueño. |
+| Legal | CTF, labs (HackTheBox, Bandit) y VMs propias. |
+| Legal | Bug bounty dentro del alcance del programa. |
+| Ilegal | Escanear o explotar sistemas ajenos “por curiosidad”. |
+| Ilegal | Usar credenciales filtradas o malware contra terceros. |
+| Zona gris peligrosa | Publicar exploits de sistemas reales sin coordinación. |
 
 ---
 
@@ -78,10 +92,22 @@ hacker”** o **“ética del pentester”**.
 
 Bueno esto lo vimos en el otro archivo en el de conceptos básicos, pero no esta de más, repasarlo.
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| White hat | Ético: con permiso, reporta y ayuda a corregir. |
+| Black hat | Malicioso: ataca sin autorización por lucro o daño. |
+| Grey hat | Opera sin permiso claro, a veces “avisa” después; sigue siendo riesgoso/legalmente dudoso. |
+| Script kiddie | Usa herramientas ajenas sin mucho conocimiento. |
+| Hacktivista | Motivo político/social; la legalidad depende del método. |
 
 ---
 
 ## 6. En resumen
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| -------- | ----------- |
+| Autorización | Sin permiso escrito, no hay pentest ético. |
+| Daño / privacidad | No alterar ni filtrar datos ajenos. |
+| Ley local | En Colombia, Ley 1273 tipifica delitos informáticos. |
+| Práctica segura | Labs, CTFs y entornos propios. |
+| Ética | Reportar responsablemente; no abusar del conocimiento. |

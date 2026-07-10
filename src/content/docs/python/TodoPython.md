@@ -1,6 +1,6 @@
 ---
 title: Todo Python
-description: Todo Python - Notas de hacking y ciberseguridad.
+description: Apunte rápido de sintaxis, estructuras, POO y librerías útiles de Python.
 ---
 
 # Python
@@ -64,21 +64,21 @@ print(a // b) # División entera
 
 ```python
 if edad >= 18:
-print("Eres adulto")
+    print("Eres adulto")
 elif edad >= 13:
-print("Eres adolescente")
+    print("Eres adolescente")
 else:
-print("Eres niño")
+    print("Eres niño")
 ```
 
 ### Bucles
 
 ```python
 for i in range(5):
-print(i)  # Imprime 0 a 4
+    print(i)  # Imprime 0 a 4
 
 while edad < 18:
-edad += 1
+    edad += 1
 ```
 
 ---
@@ -102,14 +102,14 @@ coordenadas = (10, 20)
 ### Conjuntos
 
 ```python
-numeros = {"{1, 2, 3, 3}"}
-print(numeros)  # {"{1, 2, 3}"} (no repite)
+numeros = {1, 2, 3, 3}
+print(numeros)  # {1, 2, 3} (no repite)
 ```
 
 ### Diccionarios
 
 ```python
-persona = {"nombre": "Francisco", "edad": 17I}
+persona = {"nombre": "Francisco", "edad": 17}
 print(persona["nombre"])
 ```
 
@@ -119,7 +119,7 @@ print(persona["nombre"])
 
 ```python
 def saludar(nombre):
-return f"Hola, {"{nombre}"}"
+    return f"Hola, {nombre}"
 
 print(saludar("Francisco"))
 ```
@@ -130,12 +130,12 @@ print(saludar("Francisco"))
 
 ```python
 class Persona:
-def __init__(self, nombre, edad):
-self.nombre = nombre
-self.edad = edad
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
 
-def saludar(self):
-print(f"Hola, soy {"{self.nombre}"}")
+    def saludar(self):
+        print(f"Hola, soy {self.nombre}")
 
 p1 = Persona("Francisco", 17)
 p1.saludar()
@@ -162,17 +162,27 @@ import mimodulo
 
 ```python
 with open("datos.txt", "w") as archivo:
-archivo.write("Hola mundo")
+    archivo.write("Hola mundo")
 
 with open("datos.txt", "r") as archivo:
-print(archivo.read())
+    print(archivo.read())
 ```
 
 ---
 
 ## 9. Librerías populares (por áreas)
 
-<!-- Tabla convertida manualmente -->
+| Área | Librería | Para qué |
+| --- | --- | --- |
+| HTTP / APIs | `requests` | GET/POST a APIs y scraping ligero |
+| Datos | `pandas`, `numpy` | Tablas, arrays, análisis |
+| Web | `Flask`, `Django`, `FastAPI` | Servidores y APIs |
+| GUI | `tkinter` | Ventanas nativas (viene con Python) |
+| Scraping | `BeautifulSoup`, `Selenium` | Parsear HTML / automatizar navegador |
+| Hacking / red | `socket`, `scapy` | Sockets y paquetes de red |
+| Regex | `re` | Expresiones regulares (stdlib) |
+| SO | `os`, `subprocess` | Archivos, rutas, comandos externos |
+| Paralelismo | `threading`, `multiprocessing` | Hilos y procesos |
 
 ---
 
@@ -195,10 +205,12 @@ print(archivo.read())
 - **Manejo de errores (try/except)**
 - **Multithreading y multiprocessing**
 - **Expresiones regulares (re)**
-- **Ejecutar:** python archivo.py
-- **Gestor de paquetes:** pip install nombre_paquete
+- **Ejecutar:** `python archivo.py`
+- **Gestor de paquetes:** `pip install nombre_paquete`
 - **Entornos virtuales:**
 
   ```bash
-  python -m venv entorno source entorno/bin/activate # Linux entorno\Scripts\activate # Windows
+  python -m venv entorno
+  source entorno/bin/activate   # Linux
+  entorno\Scripts\activate      # Windows
   ```
