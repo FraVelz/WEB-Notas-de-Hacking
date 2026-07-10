@@ -1,6 +1,6 @@
 # Hacking Notes
 
-[Versión en español](./README.md)
+This document is in English. [Versión en español](./README.md)
 
 Live site: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fravelz.github.io/WEB-Notas-de-Hacking/)
 
