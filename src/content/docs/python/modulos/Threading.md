@@ -1,6 +1,6 @@
 ---
 title: Threading
-description: Hilos en Python con el módulo threading: crear, unir y sincronizar.
+description: "Hilos en Python con el módulo threading: crear, unir y sincronizar."
 ---
 
 # Threading en Python

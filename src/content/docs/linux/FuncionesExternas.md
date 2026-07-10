@@ -1,6 +1,6 @@
 ---
 title: Funciones Externas
-description: Comandos externos útiles desde Bash: texto, red, procesos y archivos.
+description: "Comandos externos útiles desde Bash: texto, red, procesos y archivos."
 ---
 
 # Herramientas externas en Bash

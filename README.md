@@ -6,7 +6,7 @@ Sitio publicado en: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fr
 
 ![Captura de pantalla](./public/screenshot.png)
 
-Guía para aprender o repasar ciberseguridad desde cero. Es un sitio estático generado con [Astro](https://astro.build/)
+Apuntes para repasar ciberseguridad. Sitio estático con [Astro](https://astro.build/)
 y el tema [Starlight](https://starlight.astro.build/): las notas viven en Markdown (y MDX donde aplica), con búsqueda,
 tema oscuro y barra lateral definida explícitamente para mantener el orden de los temas.
 
@@ -78,6 +78,8 @@ con la página de inicio (`src/content/docs/index.md`).
 - **Windows** — PowerShell, permisos, procesos y administración.
 - **Redes** — teoría, subnetting, herramientas.
 - **Pentesting** — fases, tipos de entornos (cajas).
+- **Criptografía** — hash, encoding vs cifrado, César.
+- **Forense** — volatilidad, artefactos, herramientas básicas.
 - **OSINT** — terminología, Google dorks, básicos.
 - **Anonimato** — privacidad, huella digital, filtraciones, user-agent.
 - **Otros** — ramas de ciberseguridad, herramientas, recursos, actualizaciones.

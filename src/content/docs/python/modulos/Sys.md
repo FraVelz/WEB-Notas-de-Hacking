@@ -1,6 +1,6 @@
 ---
 title: Sys
-description: Módulo sys: argv, paths, stdin/stdout y salida del intérprete.
+description: "Módulo sys: argv, paths, stdin/stdout y salida del intérprete."
 ---
 
 # Sys en Python

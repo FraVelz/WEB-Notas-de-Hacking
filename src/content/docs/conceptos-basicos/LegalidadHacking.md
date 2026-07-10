@@ -1,6 +1,6 @@
 ---
 title: Legalidad Hacking
-description: Marco legal y ético del hacking: autorización, delitos y tipos de hacker.
+description: "Marco legal y ético del hacking: autorización, delitos y tipos de hacker."
 ---
 
 # Legalidad en el Hacking

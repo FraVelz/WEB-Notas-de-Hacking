@@ -1,6 +1,6 @@
 ---
 title: Conceptos Basicos
-description: Definiciones base: ciberseguridad, CIA, amenazas, vulnerabilidades y más.
+description: "Definiciones base: ciberseguridad, CIA, amenazas, vulnerabilidades y más."
 ---
 
 # Conceptos Basicos

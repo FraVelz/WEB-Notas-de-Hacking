@@ -1,6 +1,6 @@
 ---
 title: Ayuda Linux
-description: Cómo pedir ayuda en la terminal: man, --help, info y apropos.
+description: "Cómo pedir ayuda en la terminal: man, --help, info y apropos."
 ---
 
 # Obtener ayuda

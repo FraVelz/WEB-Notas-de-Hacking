@@ -1,6 +1,6 @@
 ---
 title: Ncat
-description: Ncat (netcat de Nmap): cliente/servidor TCP-UDP, transferencias y shells.
+description: "Ncat (netcat de Nmap): cliente/servidor TCP-UDP, transferencias y shells."
 ---
 
 # Ncat en Linux

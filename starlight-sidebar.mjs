@@ -130,6 +130,23 @@ export const starlightSidebar = [
   },
 
   {
+    label: 'Criptografía',
+    collapsed: false,
+    items: [
+      'criptografia/basicos',
+      'criptografia/hashing',
+      'criptografia/encodingvsencryption',
+      'criptografia/cifradocesar',
+    ],
+  },
+
+  {
+    label: 'Forense',
+    collapsed: false,
+    items: ['forense/basicos', 'forense/artefactos', 'forense/herramientas'],
+  },
+
+  {
     label: 'OSINT',
     collapsed: false,
     items: ['osint/basic', 'osint/googledoorks', 'osint/terminologia'],

@@ -1,6 +1,6 @@
 ---
 title: Os
-description: Interactuar con el sistema operativo: rutas, archivos, directorios y variables de entorno con os.
+description: "Interactuar con el sistema operativo: rutas, archivos, directorios y variables de entorno con os."
 ---
 
 # Os en Python

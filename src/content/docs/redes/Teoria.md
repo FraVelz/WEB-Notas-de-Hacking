@@ -1,6 +1,6 @@
 ---
 title: Teoria
-description: Fundamentos de redes: OSI/TCP-IP, protocolos, IPs y arquitecturas.
+description: "Fundamentos de redes: OSI/TCP-IP, protocolos, IPs y arquitecturas."
 ---
 
 # Parte Teórica (conceptos)

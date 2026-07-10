@@ -1,6 +1,6 @@
 ---
 title: Request
-description: Hacer peticiones HTTP con requests: métodos, parámetros, sesiones y manejo de errores.
+description: "Hacer peticiones HTTP con requests: métodos, parámetros, sesiones y manejo de errores."
 ---
 
 # Request en Python

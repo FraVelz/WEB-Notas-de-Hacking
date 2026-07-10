@@ -78,6 +78,8 @@ page (`src/content/docs/index.md`).
 - **Windows** — PowerShell, permissions, processes, administration.
 - **Networking** — theory, subnetting, tools.
 - **Penetration testing** — phases, lab styles (boxes).
+- **Cryptography** — hashing, encoding vs encryption, Caesar cipher.
+- **Forensics** — volatility, artifacts, basic tools.
 - **OSINT** — terminology, Google dorks, introductory material.
 - **Anonymity** — privacy, digital footprint, leaks, user-agent.
 - **Other** — security branches, tooling, resources, changelog-style notes.

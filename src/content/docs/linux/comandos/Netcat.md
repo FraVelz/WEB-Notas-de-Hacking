@@ -1,6 +1,6 @@
 ---
 title: Netcat
-description: Cliente/servidor TCP-UDP con `nc`: chat, transferencia, escaneo y shells de práctica.
+description: "Cliente/servidor TCP-UDP con `nc`: chat, transferencia, escaneo y shells de práctica."
 ---
 
 # Netcat en Linux

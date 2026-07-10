@@ -1,6 +1,6 @@
 ---
 title: Notas Actualizacion
-description: Changelog del repo: herramientas, colaboradores y versiones 0.0–0.2+.
+description: "Changelog del repo: herramientas, colaboradores y versiones 0.0–0.2+."
 ---
 
 # Notas de actualizaciones
