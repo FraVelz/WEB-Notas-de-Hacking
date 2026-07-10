@@ -31,6 +31,8 @@ Menú lateral por tema. En cada página: contexto corto, tablas/listas y algún 
 - **Redes** — Teoría, subnetting, CIDR y herramientas
 - **Windows** — CMD, PowerShell y administración
 - **Pentesting** — Fases y tipos de caja
+- **Web** — HTTP, Burp, SQLi, XSS
+- **Privilege escalation** — Linux y Windows (lab)
 - **Criptografía** — Hash, encoding vs cifrado, César
 - **Forense** — Volatilidad, artefactos y tools básicas
 - **OSINT** — Metodología, dorks y términos

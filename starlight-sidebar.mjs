@@ -130,6 +130,18 @@ export const starlightSidebar = [
   },
 
   {
+    label: 'Web',
+    collapsed: false,
+    items: ['web/httpbasico', 'web/burpbasico', 'web/sqli', 'web/xss'],
+  },
+
+  {
+    label: 'Privilege escalation',
+    collapsed: false,
+    items: ['privesc/linux', 'privesc/windows'],
+  },
+
+  {
     label: 'Criptografía',
     collapsed: false,
     items: [
