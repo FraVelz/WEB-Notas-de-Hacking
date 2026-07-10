@@ -34,6 +34,7 @@ Menú lateral por tema. En cada página: contexto corto, tablas/listas y algún 
 - **Web** — HTTP, Burp, SQLi, XSS
 - **Privilege escalation** — Linux y Windows (lab)
 - **Active Directory** — Conceptos, enum y ataques de lab
+- **CTF / labs** — Plantilla, cheatsheet e índice
 - **Criptografía** — Hash, encoding vs cifrado, César
 - **Forense** — Volatilidad, artefactos y tools básicas
 - **OSINT** — Metodología, dorks y términos

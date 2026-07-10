@@ -148,6 +148,12 @@ export const starlightSidebar = [
   },
 
   {
+    label: 'CTF / labs',
+    collapsed: false,
+    items: ['ctf/plantilla', 'ctf/cheatsheet', 'ctf/labs'],
+  },
+
+  {
     label: 'Criptografía',
     collapsed: false,
     items: [
