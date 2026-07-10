@@ -1,45 +1,64 @@
 ---
 title: Alias Powershell
-description: Alias Powershell - Notas de hacking y ciberseguridad.
+description: Alias built-in (ls, cd, cat) y cómo crear, listar y persistir alias en PowerShell.
 ---
 
 # Alias en powershell
 
----
+Un **alias** es un **nombre corto** para un comando existente. Por ejemplo:
 
-## Qué es un alias
-
-Un **alias** es simplemente un **nombre alternativo** para un comando existente. Por ejemplo:
-
-```bash
+```powershell
 Get-ChildItem     # Nombre completo
 ls                # Alias
 ```
 
-Ambos hacen lo mismo: listar archivos y carpetas.
+Ambos listan archivos y carpetas.
 
 ---
 
 ## Alias comunes en PowerShell
 
-<!-- Tabla convertida manualmente -->
+| Alias | Cmdlet real | Uso típico |
+| ----- | ----------- | ---------- |
+| `ls` / `dir` / `gci` | `Get-ChildItem` | Listar archivos |
+| `cd` / `sl` / `chdir` | `Set-Location` | Cambiar directorio |
+| `pwd` / `gl` | `Get-Location` | Ruta actual |
+| `cat` / `gc` / `type` | `Get-Content` | Leer archivo |
+| `cp` / `copy` / `cpi` | `Copy-Item` | Copiar |
+| `mv` / `move` / `mi` | `Move-Item` | Mover/renombrar |
+| `rm` / `del` / `ri` | `Remove-Item` | Borrar |
+| `ps` / `gps` | `Get-Process` | Procesos |
+| `kill` / `spps` | `Stop-Process` | Matar proceso |
+| `echo` / `write` | `Write-Output` | Escribir a la pipeline |
+| `cls` / `clear` | `Clear-Host` | Limpiar pantalla |
+| `sleep` | `Start-Sleep` | Esperar N segundos |
+| `%` | `ForEach-Object` | Bucle en pipeline |
+| `?` | `Where-Object` | Filtrar en pipeline |
 
 ---
 
 ## Cmdlets relacionados con alias
 
-<!-- Tabla convertida manualmente -->
+| Comando | Qué hace | Ejemplo |
+| ------- | -------- | ------- |
+| `Get-Alias` | Lista alias (todos o uno) | `Get-Alias ls` |
+| `Get-Alias -Definition <cmdlet>` | Alias que apuntan a un cmdlet | `Get-Alias -Definition Get-ChildItem` |
+| `Set-Alias` | Crea o cambia un alias | `Set-Alias editar notepad.exe` |
+| `New-Alias` | Crea alias (falla si ya existe) | `New-Alias np notepad` |
+| `Export-Alias` | Exporta alias a archivo | `Export-Alias aliases.txt` |
+| `Import-Alias` | Importa alias desde archivo | `Import-Alias aliases.txt` |
+| `Remove-Item alias:<nombre>` | Elimina un alias de la sesión | `Remove-Item alias:editar` |
 
 ---
 
 ## Ejemplos prácticos
 
-```bash
+```powershell
 # Ver todos los alias
 Get-Alias
 
 # Crear un alias personalizado
-Set-Alias editar "notepad.exe"
+Set-Alias editar notepad.exe
 
 # Usar el alias
 editar archivo.txt
@@ -55,17 +74,17 @@ Remove-Item alias:editar
 
 ## Alias persistentes
 
-Por defecto, los alias creados con Set-Alias o New-Alias **solo duran mientras PowerShell está abierto**.
+Por defecto, los alias creados con `Set-Alias` o `New-Alias` **solo duran mientras PowerShell está abierto**.
 
 Para hacerlos **permanentes**, agrégalos al **perfil de PowerShell**:
 
-```bash
+```powershell
 notepad $PROFILE
 ```
 
 Luego agrega tus alias personalizados:
 
-```bash
+```powershell
 Set-Alias editar notepad.exe
 Set-Alias borrar Remove-Item
 ```
@@ -76,9 +95,10 @@ Guarda el archivo y la próxima vez que abras PowerShell, estarán disponibles.
 
 ## Nota importante
 
-- Los alias **no aceptan parámetros por defecto**. Por ejemplo, Set-Alias buscar "Get-ChildItem -Recurse" no funcionará.
+- Los alias **no aceptan parámetros por defecto**. Por ejemplo, `Set-Alias buscar "Get-ChildItem -Recurse"` no funcionará.
   En ese caso, usa una **función**:
 
-  ```bash
-  function buscar { Get-ChildItem -Recurse @args } Set-Alias buscar buscar
-  ```
+```powershell
+function buscar { Get-ChildItem -Recurse @args }
+Set-Alias buscar buscar
+```

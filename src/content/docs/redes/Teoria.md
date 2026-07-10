@@ -1,6 +1,6 @@
 ---
 title: Teoria
-description: Teoria - Notas de hacking y ciberseguridad.
+description: Fundamentos de redes: OSI/TCP-IP, protocolos, IPs y arquitecturas.
 ---
 
 # Parte Teórica (conceptos)
@@ -177,15 +177,25 @@ correctamente a través de una red.
 - Definen **cómo se reciben y verifican**.
 - Aseguran que **dispositivos distintos puedan entenderse**.
 
-### <strong>Ejemplos de protocolos comunes:</strong>
+### Ejemplos de protocolos comunes:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| --- | --- |
+| IP | Direccionamiento y enrutamiento de paquetes (capa Internet / red). |
+| TCP | Transporte confiable: conexión, reordenamiento, retransmisión. |
+| UDP | Transporte rápido sin garantía de entrega (DNS, streaming, juegos). |
+| ICMP | Diagnóstico y errores de red (`ping`, mensajes de unreachable). |
+| ARP | Resuelve IP → MAC en la red local. |
+| DNS | Resuelve nombres → IP. |
+| DHCP | Asigna IP, máscara, gateway y DNS automáticamente. |
+| HTTP / HTTPS | Web; HTTPS añade TLS. |
+| FTP / SFTP | Transferencia de archivos (SFTP va sobre SSH). |
+| SMTP / IMAP / POP3 | Envío / lectura de correo. |
+| SSH | Acceso remoto cifrado a shells/servidores. |
 
-<blockquote>
-Nota: Muchos protocolos trabajan **juntos en capas** según el modelo OSI o TCP/IP.
+Muchos protocolos trabajan **juntos en capas** (OSI o TCP/IP).
 
-</blockquote>
-***
+---
 
 ## 8. Comunicaciones en Redes
 
@@ -228,15 +238,24 @@ red. Trabajan en la **capa más alta** de los modelos de red (OSI o TCP/IP).
 - Permiten que diferentes programas se entiendan aunque sean de fabricantes distintos.
 - Usan protocolos de transporte como **TCP o UDP** para enviar los datos.
 
-### <strong>Ejemplos importantes:</strong>
+### Ejemplos importantes:
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| --- | --- |
+| HTTP | Petición/respuesta web en texto claro (puerto 80). |
+| HTTPS | HTTP sobre TLS (puerto 443). |
+| DNS | Consultas de nombres; suele ir sobre UDP/53 (TCP en respuestas grandes/zona). |
+| SMTP | Envío de correo entre servidores/clientes. |
+| IMAP | Leer correo dejando mensajes en el servidor. |
+| POP3 | Descargar correo al cliente (suele borrarlo del servidor). |
+| FTP | Transferencia de archivos (control + datos; poco seguro sin TLS). |
+| SSH | Shell remoto y túneles cifrados (puerto 22). |
+| NTP | Sincronización de reloj. |
+| SNMP | Monitorización de equipos de red. |
 
-<blockquote>
-Nota: Cada protocolo de aplicación funciona **encima de TCP o UDP** para garantizar que los datos lleguen correctamente.
+Cada uno va **encima de TCP o UDP** (capa de transporte).
 
-</blockquote>
-***
+---
 
 ## 10. Direcciones IP
 

@@ -1,6 +1,6 @@
 ---
 title: Cidrs Hosts
-description: Cidrs Hosts - Notas de hacking y ciberseguridad.
+description: CIDR, máscaras de red/host y cuántas IPs caben en cada prefijo.
 ---
 
 # Cidrs y Host
@@ -9,11 +9,7 @@ description: Cidrs Hosts - Notas de hacking y ciberseguridad.
 
 ## 1. Qué es CIDR
 
-**CIDR** significa **Classless Inter-Domain Routing**, o en español, **Enrutamiento entre dominios sin clases**.
-
-Se usa para **representar redes IP y su tamaño** de forma compacta.
-
----
+**CIDR** (_Classless Inter-Domain Routing_) representa una red IP y su tamaño en forma compacta: `IP/prefijo`.
 
 ### Ejemplo
 
@@ -21,76 +17,70 @@ Se usa para **representar redes IP y su tamaño** de forma compacta.
 192.168.1.0/24
 ```
 
-- 192.168.1.0 → Dirección de red
-- /24 → Indica **cuántos bits** de la dirección se usan para la **parte de red**.
-
-💭 En este caso:
-
-- 24 bits → red
-- 8 bits restantes (de los 32 de una IPv4) → **hosts** o dispositivos
-
----
+- `192.168.1.0` → dirección de red
+- `/24` → 24 bits de red; los 8 restantes (de 32 en IPv4) son hosts
 
 ### Cómo se interpreta
 
-Cada número después de la barra / indica cuántos bits de la IP pertenecen a la red:
+| CIDR | Bits host | Direcciones totales | Hosts útiles (−2) | Máscara |
+| --- | --- | --- | --- | --- |
+| `/24` | 8 | 256 | 254 | `255.255.255.0` |
+| `/25` | 7 | 128 | 126 | `255.255.255.128` |
+| `/26` | 6 | 64 | 62 | `255.255.255.192` |
+| `/27` | 5 | 32 | 30 | `255.255.255.224` |
+| `/28` | 4 | 16 | 14 | `255.255.255.240` |
+| `/30` | 2 | 4 | 2 | `255.255.255.252` |
+| `/32` | 0 | 1 | 1 (host único) | `255.255.255.255` |
 
-<!-- Tabla convertida manualmente -->
-
-<blockquote>
-(Se restan 2 hosts: uno para la dirección de red y otro para broadcast)
-
-</blockquote>
-***
-
-## 2. Qué es una máscara de red (o de host)
-
-Una **máscara de subred** (subnet mask) indica **qué parte de la IP identifica la red** y **qué parte identifica al
-host**.
-
-Por ejemplo:
-
-<!-- Tabla convertida manualmente -->
+Se restan 2: dirección de red y broadcast (salvo `/31` y `/32`, casos especiales).
 
 ---
 
+## 2. Qué es una máscara de red (o de host)
+
+La **máscara de subred** marca qué bits son red (1) y cuáles son host (0).
+
+| IP | Máscara | CIDR | Parte red | Parte host |
+| --- | --- | --- | --- | --- |
+| `192.168.1.10` | `255.255.255.0` | `/24` | `192.168.1` | `.10` |
+| `10.0.5.20` | `255.255.0.0` | `/16` | `10.0` | `.5.20` |
+| `172.16.0.50` | `255.255.255.128` | `/25` | `172.16.0.0` | `.50` (en el bloque `.0`–`.127`) |
+
 ### Máscara de host
 
-A veces se habla de “máscara de host”, que simplemente es **el complemento** de la máscara de red.
-
-👉 Sí la máscara de red es 255.255.255.0 entonces la **máscara de host** es:
+Complemento de la máscara de red. Si la de red es `255.255.255.0`, la de host es:
 
 ```bash
 0.0.0.255
 ```
 
-Porque:
-
-- Los bits 1 (255) indican red
-- Los bits 0 (0) indican host
-
-Es decir, la máscara de host muestra **qué bits pueden variar** para asignar direcciones a los dispositivos.
+- Bits `1` → red
+- Bits `0` → host (pueden variar al asignar IPs)
 
 ---
 
 ## 3. Relación entre CIDR y máscaras
 
-<!-- Tabla convertida manualmente -->
+| CIDR | Máscara de red | Máscara de host (aprox.) |
+| --- | --- | --- |
+| `/8` | `255.0.0.0` | `0.255.255.255` |
+| `/16` | `255.255.0.0` | `0.0.255.255` |
+| `/24` | `255.255.255.0` | `0.0.0.255` |
+| `/25` | `255.255.255.128` | `0.0.0.127` |
+| `/30` | `255.255.255.252` | `0.0.0.3` |
+
+Misma idea: CIDR = conteo de bits `1` en la máscara.
 
 ---
 
 ## 4. Ejemplo práctico
 
-Supón que tienes:
-
 ```bash
 Red: 10.0.0.0/24
 ```
 
-Entonces:
-
-- Máscara de red: 255.255.255.0
-- Máscara de host: 0.0.0.255
-- Rango de hosts: 10.0.0.1 → 10.0.0.254
-- Dirección de broadcast: 10.0.0.255
-- Total hosts: 254
+- Máscara de red: `255.255.255.0`
+- Máscara de host: `0.0.0.255`
+- Hosts: `10.0.0.1` → `10.0.0.254`
+- Broadcast: `10.0.0.255`
+- Total hosts útiles: **254**

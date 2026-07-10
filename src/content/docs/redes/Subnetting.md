@@ -1,58 +1,55 @@
 ---
 title: Subnetting
-description: Subnetting - Notas de hacking y ciberseguridad.
+description: Dividir una red IP en subredes más pequeñas cambiando la máscara (CIDR).
 ---
 
 # Subnetting
 
 ---
 
-## En palabras simples
+## Qué es
 
-**Subnetting** (o **subneteo**) es un proceso que se usa en redes informáticas para **dividir una red grande en redes
-más pequeñas llamadas subredes** (_subnets_). Esto se hace para **organizar mejor el tráfico**, **aprovechar direcciones
-IP**, **mejorar la seguridad** y **optimizar el rendimiento** de la red.
-
-Imagina que tienes una gran red con muchas computadoras (por ejemplo, toda una empresa). En lugar de que todas estén en
-la misma red —lo que puede causar congestión y desorden—, **divides esa red en partes más pequeñas** (por departamentos,
-pisos, o funciones). Cada parte se comporta como una “mini red” dentro de la red principal.
+**Subnetting** (subneteo) es dividir una red grande en **subredes** más pequeñas. Sirve para organizar tráfico, aprovechar IPs y aislar segmentos.
 
 ---
 
 ## Conceptos clave
 
-<!-- Tabla convertida manualmente -->
+| Concepto | Significado |
+| --- | --- |
+| Red / subred | Bloque de IPs que comparten el mismo prefijo (misma máscara). |
+| Máscara / CIDR | Bits de red vs bits de host (`/24` = 24 bits de red). |
+| Dirección de red | Primera IP del bloque; identifica la subred (no se asigna a un host). |
+| Broadcast | Última IP del bloque; llega a todos los hosts de esa subred. |
+| Hosts válidos | IPs asignables: total − 2 (red y broadcast). Fórmula: `2^(bits host) − 2`. |
+| Prefijo más largo | Más bits de red → subredes más chicas (menos hosts cada una). |
 
 ---
 
 ## Ejemplo básico
 
-Supongamos que tienes la red:
+Red de partida:
 
 ```bash
-192.168.1.0 /24
+192.168.1.0/24
 ```
 
-Esto significa:
+- Rango: `192.168.1.0` – `192.168.1.255`
+- 256 direcciones; **254 hosts** válidos
 
-- **Rango total:** 192.168.1.0 – 192.168.1.255
-- **256 direcciones posibles (0–255)**
-- **Host válidos:** 254 (porque una es la dirección de red y otra la de broadcast)
+Si divides `/24` en dos `/25`:
 
-Sí haces **subnetting** y divides /24 en **dos subredes /25**, obtienes:
+| Subred | Rango | Red | Broadcast | Hosts válidos |
+| --- | --- | --- | --- | --- |
+| `192.168.1.0/25` | `.0` – `.127` | `.0` | `.127` | 126 (`.1`–`.126`) |
+| `192.168.1.128/25` | `.128` – `.255` | `.128` | `.255` | 126 (`.129`–`.254`) |
 
-<!-- Tabla convertida manualmente -->
-
-Ahora tienes **dos subredes** con **126 hosts válidos** cada una.
+Dos subredes, **126 hosts** cada una.
 
 ---
 
-## Ventajas del subnetting
+## Para qué sirve (rápido)
 
-✅ Reduce el tráfico innecesario (broadcasts).
-
-✅ Mejora la seguridad al aislar segmentos.
-
-✅ Permite administrar mejor las direcciones IP.
-
-✅ Hace más eficiente la red y su mantenimiento.
+- Menos broadcasts por segmento.
+- Aislar departamentos / VLANs / labs.
+- Asignar solo las IPs que necesitas (menos desperdicio).

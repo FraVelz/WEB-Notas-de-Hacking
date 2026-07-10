@@ -1,49 +1,34 @@
 ---
 title: Notas Actualizacion
-description: Notas Actualizacion - Notas de hacking y ciberseguridad.
+description: Changelog del repo: herramientas, colaboradores y versiones 0.0–0.2+.
 ---
 
 # Notas de actualizaciones
 
 **creación del repositorio:** 2025-09-4
 
-Información general y amplia, de herramientas, colaboradores, actualizaciones, etc.
+Información general: herramientas, colaboradores, actualizaciones, etc.
 
 ---
 
 ## Herramientas utilizadas
 
-- **VS Code,** para variedad de herramientas para largas jornadas de documentación y escritura.
-- **Extensión de VS Code:** markdownlint, para documentar archivos en markdown con formato estándar.
-- **Extensión de VS Code:** ltex, para la revisión de la ortografía en español.
-- **Extensión de VS Code:** vim para escribir cómodamente y rápido en vs code.
-- **Extensión de VS Code:** cmake tools, para visualizar archivos tipo markdown.
-- **Extensión de VS Code:** markdown All in One, funciones y atajos de teclado para funciones en markdown como el
-  formateo u otros.
-- **nvim** para hacer modificaciones simples y rápidas a archivos y carpetas.
+- **VS Code,** para documentación y escritura larga.
+- **Extensión de VS Code:** markdownlint, formato Markdown estándar.
+- **Extensión de VS Code:** ltex, ortografía en español.
+- **Extensión de VS Code:** vim, escritura rápida en VS Code.
+- **Extensión de VS Code:** cmake tools, previsualizar Markdown.
+- **Extensión de VS Code:** Markdown All in One, atajos y formateo.
+- **nvim** para cambios simples y rápidos en archivos/carpetas.
 
 ---
 
-## Colabores más importantes
+## Colaboradores más importantes
 
-- Student Ethical <strong>(<span class="citation" data-cites="studentethical">@studentethical</span>)</strong>
-- Tvrs8<strong> (<span class="citation" data-cites="studentethical">@tvrs8</span>)</strong>
+- Student Ethical (**@studentethical**)
+- Tvrs8 (**@tvrs8**)
 
 …
-
----
-
-## Actualización Existentes
-
-Para rangos de fechas -, para fechas específicas ;.
-
-### Fase 1:
-
-<!-- Tabla convertida manualmente -->
-
-### Fase 2:
-
-<!-- Tabla convertida manualmente -->
 
 ---
 
@@ -53,28 +38,25 @@ Para rangos de fechas -, para fechas específicas ;.
 
 ### cosas implementadas:
 
-- Creación de todas las secciones del readme.md, faltan información más completa y especifica de cada sección es decir
-  de ciertas áreas, como redes, bash script, comandos bash, forense, osint, criptografía, pentesting, etc.
-- nuevo apartado readme.md =&gt; 3.ramas de ciberseguridad
-- nuevo apartado readme.md =&gt; 4.pentesting
-- nuevo apartado readme.md =&gt; 5.osint
-- nuevo apartado readme.md =&gt; 6.criptografia
-- nuevo apartado readme.md =&gt; 7.forense
-- nuevo archivo completo =&gt; \_ramasciberseguridad.md
+- Creación de todas las secciones del readme.md; falta info más completa por área (redes, bash, forense, OSINT, criptografía, pentesting, etc.).
+- nuevo apartado readme.md => 3.ramas de ciberseguridad
+- nuevo apartado readme.md => 4.pentesting
+- nuevo apartado readme.md => 5.osint
+- nuevo apartado readme.md => 6.criptografia
+- nuevo apartado readme.md => 7.forense
+- nuevo archivo completo => \_ramasciberseguridad.md
 
-Mejor organización de directorios y archivos. (dentro de cada directorio ya contiene aunque sea 1 archivo con una
-estructura por defecto para algunos).
+Mejor organización de directorios y archivos (cada directorio con al menos 1 archivo y estructura por defecto).
 
-- nuevo directorio creado =&gt; otros
-- nuevo directorio creado =&gt; 3.ramas
-- nuevo directorio creado =&gt; 4.pentesting
-- nuevo directorio creado =&gt; 5.osint
-- nuevo directorio creado =&gt; 6.criptografia
-- nuevo directorio creado =&gt; 7.forense
-- Archivos creados dentro del directorio 3.ramas: me da pereza escribir cada nombre, pero son 10 archivos y cada uno ya
-  tiene una estructura textual por defecto.
-- Cambios pequeños como arreglar algunos enlaces, nuevas secciones y organizar mejor los textos de diferentes archivos.
-- Agregando nuevos archivos en la sección del readme.md, google doorks.
+- nuevo directorio creado => otros
+- nuevo directorio creado => 3.ramas
+- nuevo directorio creado => 4.pentesting
+- nuevo directorio creado => 5.osint
+- nuevo directorio creado => 6.criptografia
+- nuevo directorio creado => 7.forense
+- Archivos creados dentro del directorio 3.ramas: 10 archivos con estructura textual por defecto.
+- Cambios pequeños: enlaces, secciones nuevas y textos reorganizados.
+- Nuevos archivos en el readme: Google dorks.
 
 ---
 
@@ -82,23 +64,15 @@ estructura por defecto para algunos).
 
 ### cosas implementadas:
 
-- **Se organizó mejor el temario** y **los títulos** de la parte del readme para que fuesen más claros.
-- Se agregó más contenido, y se completó mucha información incompleta como la parte de los no fundamentales del
-  **temario**, y el apartado de 3. bash script para que ese apartado fuese lo más completo posible explicando temas de
-  bash script.
-- En anteriores actualizaciones había organizado las carpetas, en esta también se organizaron los archivos en **carpetas
-  mejores organizadas y más explícitas,** esto causo que muchos enlaces dejaran de funcionar correctamente también se
-  arreglaron estos enlaces.
-- Previamente se habían **agregado también 10 archivos** que decía una ruta especifica para cada rama en la seguridad
-  que aparecen en el apartado de 5. Ramas y Especializaciones de ciberseguridad.
-- Se agregó un nuevo apartado Windows y también Privacidad y anonimato.
-- Se organizó mejor el readme.md archivo principal, para que los temas que se muestren en este mismo, sean los más
-  importantes y fundamentales.
+- **Se organizó mejor el temario** y **los títulos** del readme.
+- Más contenido: no fundamentales del temario y apartado de bash script más completo.
+- Carpetas más explícitas; se rompieron y se arreglaron muchos enlaces.
+- 10 archivos de rutas por rama (apartado Ramas y Especializaciones).
+- Nuevos apartados: Windows y Privacidad/anonimato.
+- Readme principal centrado en temas fundamentales.
 
 ---
 
 ## Actualizaciones +0.2.0v
 
-Estas versiones en adelante, son de la creación de esta pagina web, y como hay muchos cambios e informacion no
-registrare en adelante mas, los cambios aqui pero si te interesa podrias ver las ramas, y los commits, en el repositorio
-de esta pagina web en github…
+Desde aquí es la web; hay demasiados cambios para listarlos todos. Mira ramas y commits en el repo de GitHub.
