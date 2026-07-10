@@ -1,59 +1,42 @@
 ---
 title: Getter Setter
-description: Controlar lectura y escritura de atributos con getters/setters clásicos y con @property.
+description: Getters/setters clásicos vs @property para validar atributos.
 ---
 
-# Getters y Setters
+# Getters y setters
 
----
+Controlar lectura/escritura de atributos (sobre todo “privados”).
 
-## ¿Qué son los getters y setters?
+| Forma | Lectura | Escritura | Cuándo |
+| ----- | ------- | --------- | ------ |
+| Métodos | `p.get_nombre()` | `p.set_nombre("x")` | Estilo Java / API explícita |
+| `@property` | `p.nombre` | `p.nombre = "x"` | Idiomático en Python |
+| Público | `p.nombre` | `p.nombre = "x"` | Sin validación |
 
-- **Getter:** método que **obtiene** (lee) el valor de un atributo.
-- **Setter:** método que **establece** (modifica) el valor de un atributo.
-
-Se usan para **controlar el acceso a los atributos** de una clase, especialmente cuando son “protegidos” o “privados”.
-
----
-
-## Ejemplo básico
+## Clásico
 
 ```python
 class Persona:
     def __init__(self, nombre):
-        self.__nombre = nombre  # atributo privado
+        self.__nombre = nombre
 
-    # Getter
     def get_nombre(self):
         return self.__nombre
 
-    # Setter
-    def set_nombre(self, nuevo_nombre):
-        if len(nuevo_nombre) > 0:
-            self.__nombre = nuevo_nombre
+    def set_nombre(self, nuevo):
+        if len(nuevo) > 0:
+            self.__nombre = nuevo
         else:
-            print("❌ El nombre no puede estar vacío.")
-```
+            raise ValueError("nombre vacío")
 
-Uso:
-
-```python
 p = Persona("Ana")
-print(p.get_nombre())  # ✅ Ana
-
+print(p.get_nombre())
 p.set_nombre("Luis")
-print(p.get_nombre())  # ✅ Luis
-
-p.set_nombre("")  # ❌ El nombre no puede estar vacío.
 ```
 
----
+## Con @property
 
-## Pero Python tiene una forma más elegante → **@property**
-
-Python permite crear _getters_ y _setters_ de manera más limpia y natural usando **decoradores**.
-
-### Ejemplo con @property
+Misma idea, sintaxis de atributo. Detalle: [Property](/WEB-Notas-de-Hacking/python/property/).
 
 ```python
 class Persona:
@@ -65,40 +48,15 @@ class Persona:
         return self.__nombre
 
     @nombre.setter
-    def nombre(self, nuevo_nombre):
-        if len(nuevo_nombre) > 0:
-            self.__nombre = nuevo_nombre
+    def nombre(self, nuevo):
+        if len(nuevo) > 0:
+            self.__nombre = nuevo
         else:
-            print("❌ El nombre no puede estar vacío.")
-```
+            raise ValueError("nombre vacío")
 
-Ahora se usa como si fuera un **atributo normal**:
-
-```python
 p = Persona("Carlos")
-
-print(p.nombre)   # ✅ Llama automáticamente al getter
-p.nombre = "Andrés"  # ✅ Llama automáticamente al setter
-
-print(p.nombre)   # ✅ Andrés
-p.nombre = ""     # ❌ El nombre no puede estar vacío.
+print(p.nombre)
+p.nombre = "Andrés"
 ```
 
----
-
-## Ventajas de usar @property
-
-- No cambias la forma de usar los atributos.
-- Puedes añadir validaciones sin romper el código existente.
-- Encapsulas correctamente los datos.
-- Evitas accesos o cambios indebidos.
-
----
-
-## En resumen
-
-| Forma | Lectura | Escritura | Cuándo usarla |
-| --- | --- | --- | --- |
-| Métodos clásicos | `p.get_nombre()` | `p.set_nombre("x")` | Estilo Java / APIs explícitas |
-| `@property` | `p.nombre` | `p.nombre = "x"` | Estilo idiomático en Python |
-| Atributo público | `p.nombre` | `p.nombre = "x"` | Sin validación ni encapsulación |
+Docs: [property](https://docs.python.org/3/library/functions.html#property).

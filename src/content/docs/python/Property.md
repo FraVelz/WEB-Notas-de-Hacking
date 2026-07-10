@@ -1,52 +1,19 @@
 ---
 title: Property
-description: Usar @property, setter y deleter para encapsular atributos sin cambiar la sintaxis de acceso.
+description: "@property, setter y deleter: métodos con sintaxis de atributo."
 ---
 
 # Decorador @property
 
-@property se usa para **encapsular atributos**, **añadir validaciones o lógica interna**, pero sin cambiar la forma
-natural de acceder o modificar una variable.
+Convierte un método en acceso tipo atributo (`p.nombre` en vez de `p.get_nombre()`). Sirve para validar sin romper la API.
 
----
+| Decorador | Qué hace | Uso |
+| --------- | -------- | --- |
+| `@property` | Getter | `print(p.nombre)` |
+| `@nombre.setter` | Setter | `p.nombre = "Ana"` |
+| `@nombre.deleter` | Deleter | `del p.nombre` |
 
-## ¿Qué hace @property en Python?
-
-El decorador **@property** convierte un **método de una clase** en un **atributo “solo de lectura”** (al menos
-inicialmente).
-
-Sirve para **controlar cómo se accede a un atributo**, pero permitiendo que el código **parezca estar accediendo
-directamente a una variable**.
-
-En otras palabras:
-
-> Permite usar *métodos* como si fueran *atributos*, **sin cambiar la sintaxis de acceso**.
-
-***
-
-## Ejemplo básico sin @property
-
-```python
-class Persona:
-    def __init__(self, nombre):
-        self.__nombre = nombre  # atributo privado
-
-    def get_nombre(self):
-        return self.__nombre
-```
-
-Uso:
-
-```python
-p = Persona("Ana")
-print(p.get_nombre())  # ✅ Funciona
-```
-
-Pero se ve _feo_ tener que escribir .get_nombre() cada vez. Ahí entra @property.
-
----
-
-## Con @property
+## Solo lectura
 
 ```python
 class Persona:
@@ -56,21 +23,13 @@ class Persona:
     @property
     def nombre(self):
         return self.__nombre
-```
 
-Uso:
-
-```python
 p = Persona("Luis")
-print(p.nombre)  # ✅ Sin paréntesis, parece un atributo
+print(p.nombre)  # sin paréntesis
+# p.nombre = "x"  → AttributeError (sin setter)
 ```
 
-- Python llama automáticamente al método nombre() cuando escribes p.nombre.
-- Es solo de lectura por ahora (no se puede cambiar el valor directamente).
-
----
-
-## Agregando un **setter** para modificar el valor
+## Con setter
 
 ```python
 class Persona:
@@ -82,40 +41,17 @@ class Persona:
         return self.__nombre
 
     @nombre.setter
-    def nombre(self, nuevo_nombre):
-        if len(nuevo_nombre) > 0:
-            self.__nombre = nuevo_nombre
+    def nombre(self, nuevo):
+        if len(nuevo) > 0:
+            self.__nombre = nuevo
         else:
-            print("❌ El nombre no puede estar vacío.")
+            raise ValueError("nombre vacío")
+
+    @nombre.deleter
+    def nombre(self):
+        del self.__nombre
 ```
 
-Uso:
+Comparar con métodos `get_`/`set_`: [Getters y setters](/WEB-Notas-de-Hacking/python/gettersetter/).
 
-```python
-p = Persona("Carlos")
-print(p.nombre)   # ✅ Getter
-p.nombre = "Andrés"  # ✅ Setter
-print(p.nombre)   # Andrés
-p.nombre = ""     # ❌ El nombre no puede estar vacío.
-```
-
----
-
-## También existe el deleter (opcional)
-
-```python
-@nombre.deleter
-def nombre(self):
-    print("Eliminando el nombre...")
-    del self.__nombre
-```
-
----
-
-## En resumen
-
-| Decorador | Qué hace | Ejemplo de uso |
-| --- | --- | --- |
-| `@property` | Getter: lee como atributo | `print(p.nombre)` |
-| `@nombre.setter` | Setter: asigna con validación | `p.nombre = "Ana"` |
-| `@nombre.deleter` | Deleter: borra el atributo | `del p.nombre` |
+Docs: [property](https://docs.python.org/3/library/functions.html#property).

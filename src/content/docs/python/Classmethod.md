@@ -1,20 +1,22 @@
 ---
 title: Classmethod
-description: Diferencia entre métodos de instancia, de clase (@classmethod) y estáticos (@staticmethod).
+description: Instancia vs @classmethod vs @staticmethod.
 ---
 
-# Decorador @classmethod
+# @classmethod y compañía
 
-@classmethod permite crear funciones que pueden **acceder o modificar el estado de la clase**, sin necesidad de crear un
-objeto.
+| Tipo | Primer arg | Accede a | Llamada típica |
+| ---- | ---------- | -------- | -------------- |
+| Instancia | `self` | Objeto | `p1.saludar()` |
+| `@classmethod` | `cls` | Estado de la clase | `Persona.cuantos_hay()` |
+| `@staticmethod` | — | Solo args | `Persona.es_mayor(20)` |
 
----
-
-## Ejemplo
+- **classmethod:** ligado a la clase; útil para contadores, factories (`cls(...)`).
+- **staticmethod:** función suelta en el namespace de la clase.
 
 ```python
 class Persona:
-    poblacion = 0  # Atributo de clase
+    poblacion = 0
 
     def __init__(self, nombre):
         self.nombre = nombre
@@ -22,33 +24,18 @@ class Persona:
 
     @classmethod
     def cuantos_hay(cls):
-        return f"Hay {cls.poblacion} personas registradas."
+        return f"Hay {cls.poblacion} personas"
 
-# Podemos llamar al método sin crear objetos:
-print(Persona.cuantos_hay())  # Hay 0 personas registradas.
+    @staticmethod
+    def es_mayor(edad):
+        return edad >= 18
 
-# Crear algunos objetos:
-p1 = Persona("Ana")
-p2 = Persona("Luis")
-
-# Llamar de nuevo:
-print(Persona.cuantos_hay())  # Hay 2 personas registradas.
+print(Persona.cuantos_hay())  # 0
+Persona("Ana")
+Persona("Luis")
+print(Persona.cuantos_hay())  # 2
+print(Persona.es_mayor(20))
 ```
 
----
-
-## Diferencias entre tipos de métodos
-
-| Tipo | Primer parámetro | Accede a | Ejemplo de llamada |
-| --- | --- | --- | --- |
-| Instancia | `self` | Atributos del objeto | `p1.saludar()` |
-| `@classmethod` | `cls` | Atributos / estado de la clase | `Persona.cuantos_hay()` |
-| `@staticmethod` | ninguno | Solo argumentos que le pases | `Persona.es_mayor(20)` |
-
----
-
-## En resumen
-
-- @staticmethod: método **independiente**, solo usa los parámetros que se le pasen.
-- @classmethod: método **ligado a la clase**, puede **usar o modificar atributos de la clase** y se puede llamar sin
-  crear una instancia.
+Docs: [classmethod](https://docs.python.org/3/library/functions.html#classmethod),
+[staticmethod](https://docs.python.org/3/library/functions.html#staticmethod).
