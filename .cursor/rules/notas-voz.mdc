@@ -1,0 +1,45 @@
+---
+description: Voz y formato de las notas en src/content/docs
+globs: src/content/docs/**/*.md
+alwaysApply: false
+---
+
+# Voz de las notas
+
+Estas páginas son **apuntes personales**, no un curso ni un blog genérico de ciberseguridad.
+
+## Formato de nota
+
+1. Una o dos frases de contexto (para qué sirve el tema).
+2. Tabla o lista de comandos / conceptos.
+3. Un ejemplo corto ejecutable cuando aplique.
+4. Enlace a documentación oficial si aporta.
+
+## Tablas
+
+Preferir columnas fijas:
+
+- Comandos: `Comando | Qué hace | Ejemplo`
+- Teoría: `Concepto | Significado`
+
+No dejar placeholders `<!-- Tabla convertida manualmente -->`.
+
+## Frontmatter
+
+`description` debe ser **una frase concreta** del tema. Prohibido el patrón:
+
+`Título - Notas de hacking y ciberseguridad.`
+
+## Prohibido (tono IA / relleno)
+
+- “Guía completa…”, “Te explico de forma clara…”, “En palabras simples…”
+- Listas de ventajas con ✅ o marketing vacío
+- Secciones “En resumen” / “A continuación” sin contenido útil
+- Pie “generado por IA” / “AI-generated” en archivos bajo `src/content/docs/`
+- Analogías largas de empresa/pisos cuando basta una definición + ejemplo numérico
+
+## Deseado
+
+- Tono informal y directo (como `otros/NotasActualizacion.md`)
+- Densidad práctica (como `linux/BanditResolucion.md`): comando → resultado → siguiente paso
+- HTML residual de conversión (`<ol>`, `<blockquote>`, `&amp;&amp;`) → Markdown limpio

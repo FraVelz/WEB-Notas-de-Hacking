@@ -9,9 +9,10 @@ instrucción, con uno o más archivos Markdown (`@`).
    mismo archivo**.
 2. **Sincronizar el contenido** con la versión en el **otro idioma** del proyecto, manteniendo el mismo significado y
    estructura.
-3. Si el documento es o debe tratarse como **generado por IA**, mantener al final la **marca y la fecha de última
-   actualización** y **actualizar el contenido factual** según el tipo de archivo (estructura del repo, rutas, scripts,
-   etc.).
+3. Si aplica pie de asistencia de IA (ver abajo), mantener marca y fecha; **actualizar contenido factual** según el tipo
+   de archivo (estructura del repo, rutas, scripts, etc.).
+4. En notas de contenido (`src/content/docs/`), seguir [`.cursor/rules/notas-voz.mdc`](../rules/notas-voz.mdc): apuntes
+   prácticos, sin tono de plantilla ni pie “generado por IA”.
 
 ## Idioma fuente y archivo espejo
 
@@ -28,11 +29,18 @@ corregir ortografía del adjunto y **avisar** que no hay espejo bilingüe en el 
 
 ## Documentación generada por IA
 
+### Cuándo NO aplica
+
+- **Nunca** añadir ni mantener pie “generado por IA” / “AI-generated” en archivos bajo `src/content/docs/` (notas del
+  sitio). Si ya existe, **eliminarlo** al tocar el archivo.
+- Preferir no añadir pie IA en README salvo que el usuario lo pida explícitamente; si el README ya lo tiene y el usuario
+  no pide quitarlo, se puede actualizar la fecha solo en ese par bilingüe.
+
 ### Cuándo aplica
 
-- El archivo **ya incluye** al final una línea o bloque que indica que fue generado por IA (o equivalente).
-- El usuario **indica** que el archivo fue generado por IA aunque aún **no tenga la marca**: en ese caso, **añadir o
-  normalizar** el pie y tratarlo como generado por IA en lo sucesivo.
+- El archivo **ya incluye** al final una línea o bloque que indica que fue generado por IA (o equivalente), **fuera** de
+  `src/content/docs/`, y el usuario no ha pedido eliminarlo.
+- El usuario **indica** explícitamente que el archivo (no una nota de contenido) debe llevar marca de IA.
 
 ### Pie obligatorio al final del archivo
 
@@ -92,23 +100,24 @@ Cuando el usuario actualice `README.md` o su homólogo en inglés en la **raíz 
    petición explícita).
 3. **Contrastar** con el código: `package.json` (scripts, gestor `pnpm`/`npm`), estructura real de carpetas en bloques
    `text`, URLs de deploy, variables de entorno mencionadas.
-4. Si el proyecto usa **pie de asistencia de IA** en README, actualizarlo en **ambos** idiomas con la **misma fecha
-   calendario** y formato adaptado a cada lengua.
+4. Pie de IA en README: **solo** si el usuario lo pide o ya existe y no pidió quitarlo; entonces misma fecha en ambos
+   idiomas. En Fase de humanización del contenido se elimina el pie del README.
 5. No ampliar el alcance a otros `.md` salvo que el usuario lo pida; para muchos archivos bajo `docs/es` y `docs/en`,
    valorar **`/update-global-ia-docs`** si existe en este repo.
 
 ## Pasos para el agente
 
 1. **Leer** los archivos `@` indicados.
-2. Determinar si deben tratarse como **generados por IA**.
-3. **Corregir** en el archivo fuente: ortografía, tildes, puntuación, redacción breve sin cambiar alcance técnico.
-4. Si es IA o contenido factual: **actualizar** según la tabla de tipos (explorar el repo).
-5. Si es IA: **asegurar o añadir** el pie con fecha de hoy (y equivalente en el espejo).
-6. **Resolver la ruta espejo** (`README` o `docs/es` ↔ `docs/en`).
-7. **Actualizar el archivo en el otro idioma:** traducción alineada, misma estructura Markdown, enlaces relativos
-   corregidos (`docs/es/...` ↔ `docs/en/...`), identificadores de código sin traducir.
-8. Si el usuario pasó **varios** archivos, repetir por cada uno con par bilingüe.
-9. **Resumen final** al usuario: archivos tocados, tratamiento IA, ambigüedades resueltas.
+2. Si están bajo `src/content/docs/`: corregir ortografía/redacción con voz de apuntes; **no** añadir pie IA; quitarlo
+   si existe.
+3. Fuera de contenido: determinar si aplica pie IA según las reglas de arriba.
+4. **Corregir** en el archivo fuente: ortografía, tildes, puntuación, redacción breve sin cambiar alcance técnico.
+5. Si es contenido factual de repo: **actualizar** según la tabla de tipos.
+6. Si aplica pie IA (y no es nota de contenido): **asegurar o actualizar** el pie con fecha de hoy (y espejo).
+7. **Resolver la ruta espejo** (`README` o `docs/es` ↔ `docs/en`).
+8. **Actualizar el archivo en el otro idioma** cuando exista par bilingüe.
+9. Si el usuario pasó **varios** archivos, repetir por cada uno con par bilingüe.
+10. **Resumen final** al usuario: archivos tocados, si hubo pie IA, ambigüedades resueltas.
 
 ## Barrido masivo (`docs/es` + `docs/en`)
 
