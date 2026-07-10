@@ -3,43 +3,34 @@
 Criterio “nota hecha”: ver [`.cursor/rules/notas-voz.mdc`](rules/notas-voz.mdc) —
 contexto corto + tabla/lista + ejemplo + link oficial si aporta.
 
-## Señales IA / HTML (Fase 1)
+Estado: fases 0–6 aplicadas (2026-07). Mantener este archivo como referencia de señales a evitar.
+
+## Señales IA / HTML (Fase 1) — hechas
 
 ### 1a — Conceptos + pentesting
 
-- `src/content/docs/pentesting/Cajas.md` — Ventajas/Desventajas
-- `src/content/docs/conceptos-basicos/LegalidadHacking.md` — En resumen, blockquote
-- `src/content/docs/conceptos-basicos/ConceptosBasicos.md` — blockquote
+- `pentesting/Cajas.md`, `conceptos-basicos/LegalidadHacking.md`, `ConceptosBasicos.md`
 
 ### 1b — Linux
 
-- `linux/GruposYUsuarios.md` — En resumen, ✅, HTML
-- `linux/AyudaLinux.md` — “A continuación…”
-- `linux/ComandosLinux.md` — blockquote
-- `linux/comandos/{Less,Xxd,Which,Diff,CifradoCesarTr,Ncat}.md`
-- `linux/{Arrays,ManipulacionDeStrings,EntradaYSalida,Fundamentos,Permisos,Condiciones,Funciones,Busqueda}.md`
+- GruposYUsuarios, AyudaLinux, ComandosLinux, comandos individuales, Bash notes
 
 ### 1c — Python
 
-- `python/{GetterSetter,Property,Classmethod,VariablesClases}.md` — ✅, En resumen
+- GetterSetter, Property, Classmethod, VariablesClases
 
 ### 1d — Resto
 
-- `redes/Teoria.md` — Ventajas/Desventajas HTML, blockquote
-- `otros/{DistribucionesLinux,Recursos}.md` — blockquote
+- `redes/Teoria.md`, `otros/DistribucionesLinux.md`, `otros/Recursos.md`
 
-## Páginas finas (Fase 2)
+## Páginas densificadas (Fase 2) — hechas
 
-- `criptografia/*` (~31–35 líneas)
-- `forense/*` (~32–43 líneas)
-- `pentesting/{Fases,Cajas}.md`
-- `osint/Basic.md` — markdown roto (`OSINT**`)
+- cripto/*, forense/*, pentesting/Fases, osint/Basic
 
-## Huecos de mapa (Fases 3–5)
+## Secciones nuevas (Fases 3–5) — hechas
 
-- Sin `web/`, `privesc/`, `ad/`, `ctf/`
-- Pentesting solo 2 páginas
+- `web/`, `privesc/`, `ad/`, `ctf/`
 
 ## Cierre (Fase 6)
 
-- `starlight-sidebar.mjs`, `index.md`, `otros/NotasActualizacion.md`
+- `starlight-sidebar.mjs`, `index.md`, `NotasActualizacion`, README bilingüe

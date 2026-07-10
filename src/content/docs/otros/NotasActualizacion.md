@@ -76,3 +76,10 @@ Mejor organización de directorios y archivos (cada directorio con al menos 1 ar
 ## Actualizaciones +0.2.0v
 
 Desde aquí es la web; hay demasiados cambios para listarlos todos. Mira ramas y commits en el repo de GitHub.
+
+### Oleada contenido (2026-07)
+
+- Des-IA / densificar notas viejas (tono apunte, sin “En resumen” / HTML residual).
+- Secciones nuevas: **web**, **privesc**, **ad**, **ctf**.
+- Inventario operativo: `.cursor/content-inventory.md` + regla de voz `notas-voz`.
+

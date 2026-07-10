@@ -78,6 +78,10 @@ con la página de inicio (`src/content/docs/index.md`).
 - **Windows** — PowerShell, permisos, procesos y administración.
 - **Redes** — teoría, subnetting, herramientas.
 - **Pentesting** — fases, tipos de entornos (cajas).
+- **Web** — HTTP, Burp, SQLi, XSS.
+- **Privilege escalation** — Linux y Windows (lab).
+- **Active Directory** — conceptos, enum, ataques de lab.
+- **CTF / labs** — plantilla, cheatsheet, índice de walkthroughs.
 - **Criptografía** — hash, encoding vs cifrado, César.
 - **Forense** — volatilidad, artefactos, herramientas básicas.
 - **OSINT** — terminología, Google dorks, básicos.

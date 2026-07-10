@@ -78,6 +78,10 @@ page (`src/content/docs/index.md`).
 - **Windows** — PowerShell, permissions, processes, administration.
 - **Networking** — theory, subnetting, tools.
 - **Penetration testing** — phases, lab styles (boxes).
+- **Web** — HTTP, Burp, SQLi, XSS.
+- **Privilege escalation** — Linux and Windows (lab).
+- **Active Directory** — concepts, enum, lab attacks.
+- **CTF / labs** — walkthrough template, cheatsheet, lab index.
 - **Cryptography** — hashing, encoding vs encryption, Caesar cipher.
 - **Forensics** — volatility, artifacts, basic tools.
 - **OSINT** — terminology, Google dorks, introductory material.
