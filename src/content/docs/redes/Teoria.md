@@ -74,7 +74,7 @@ Cursos videos de YouTube:
 
 Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos:
 
-### <strong>Modelo OSI (Open Systems Interconnection)</strong>
+### Modelo OSI (Open Systems Interconnection)
 
 - Divide la comunicación en **7 capas**:
   - **Física**: cables, señales eléctricas o de luz.
@@ -85,7 +85,7 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
   - **Presentación**: traduce datos (ej. cifrado, formato).
   - **Aplicación**: programas que usan la red (ej. navegador, correo).
 
-### <strong>Modelo TCP/IP</strong>
+### Modelo TCP/IP
 
 - Más práctico y usado en Internet.
 - Tiene **4 capas**:
@@ -110,38 +110,21 @@ Los modelos ayudan a entender cómo funciona la comunicación entre dispositivos
 La **arquitectura cliente-servidor** es un modelo de diseño de sistemas en el que las tareas se distribuyen entre dos
 tipos de entidades: **clientes** y **servidores**.
 
-### <strong>Componentes principales:</strong>
+| Rol | Idea |
+| --- | ---- |
+| Servidor | Ofrece servicios (ej. web → HTML) |
+| Cliente | Pide servicios (ej. navegador) |
+| Red | Cable (Ethernet) o Wi‑Fi |
 
-- **Servidor:** Es un equipo o programa que **ofrece servicios** o recursos a otros dispositivos. Ejemplo: un servidor
-  web que envía páginas HTML.
-- **Cliente:** Es un equipo o programa que **solicita servicios** al servidor. Ejemplo: un navegador web que solicita
-  páginas a un servidor.
-- **Red:** Medio que permite la comunicación entre cliente y servidor. Puede ser cableada (Ethernet) o inalámbrica
-  (Wi-Fi).
+Flujo: solicitud → el servidor procesa → respuesta.
 
-### <strong>Funcionamiento:</strong>
+Ejemplo: abres YouTube → el navegador pide el video → los servidores lo mandan → se reproduce.
 
-- El cliente envía una **solicitud** al servidor.
-- El servidor procesa la solicitud.
-- El servidor envía una **respuesta** al cliente.
-
-<blockquote>
-Ejemplo práctico: Cuando abres YouTube:
-
-- Tú navegador (cliente) pide un video.
-- Los servidores de YouTube lo envían.
-- Tú navegador reproduce el video.
-
-</blockquote>
-### <strong>Ventajas:</strong>
-- Centralización de datos y control.
-- Facilita la administración y seguridad.
-- Escalabilidad: se pueden añadir más clientes sin cambiar el servidor.
-
-### <strong>Desventajas:</strong>
-
-- Sí el servidor falla, los clientes quedan sin servicio.
-- Requiere buena infraestructura para manejar muchos clientes.
+| A favor | En contra |
+| ------- | --------- |
+| Datos y control centralizados | Si cae el servidor, no hay servicio |
+| Más fácil de administrar/asegurar | Hace falta infra para muchos clientes |
+| Escalas clientes sin rehacer el servidor | |
 
 ---
 
@@ -151,7 +134,7 @@ La **arquitectura de red** describe cómo los **dispositivos y servicios están 
 comunicarse. La arquitectura cliente-servidor es un tipo de arquitectura de red, pero existen otros modelos, como
 **peer-to-peer (P2P)**.
 
-### <strong>Tipos comunes de arquitectura de red:</strong>
+### Tipos comunes
 
 - **Cliente-Servidor (como vimos):** un servidor central da servicios a múltiples clientes.
 - **Peer-to-Peer (P2P):**
@@ -171,7 +154,7 @@ comunicarse. La arquitectura cliente-servidor es un tipo de arquitectura de red,
 Un **protocolo de red** es un conjunto de **reglas y estándares** que permiten que los dispositivos se comuniquen
 correctamente a través de una red.
 
-### <strong>Funciones principales de los protocolos:</strong>
+### Funciones principales de los protocolos:
 
 - Determinan **cómo se envían los datos**.
 - Definen **cómo se reciben y verifican**.
@@ -202,7 +185,7 @@ Muchos protocolos trabajan **juntos en capas** (OSI o TCP/IP).
 La **comunicación en redes** es el proceso mediante el cual los **dispositivos intercambian información** siguiendo
 protocolos.
 
-### <strong>Tipos de comunicación:</strong>
+### Tipos de comunicación:
 
 - **Unicast:** comunicación de un dispositivo a otro específico.
   - Ejemplo: enviar un mensaje privado.
@@ -213,12 +196,12 @@ protocolos.
   - Comunicación a un **grupo específico** de dispositivos.
   - Ejemplo: transmisión de video en vivo a varios usuarios.
 
-### <strong>Medios de transmisión:</strong>
+### Medios de transmisión:
 
 - **Alámbricos:** Cable Ethernet, fibra óptica.
 - **Inalámbricos:** Wi-Fi, Bluetooth, redes móviles (4G/5G).
 
-### <strong>Procesos clave en la comunicación:</strong>
+### Procesos clave en la comunicación:
 
 - **Codificación y empaquetado de datos** (se forman los paquetes de información).
 - **Transmisión** por el medio (cable o aire).
@@ -232,7 +215,7 @@ protocolos.
 Los **protocolos de aplicación** son reglas que permiten a los **programas o aplicaciones** comunicarse a través de la
 red. Trabajan en la **capa más alta** de los modelos de red (OSI o TCP/IP).
 
-### <strong>Funciones principales:</strong>
+### Funciones principales:
 
 - Definen cómo las aplicaciones intercambian datos.
 - Permiten que diferentes programas se entiendan aunque sean de fabricantes distintos.
@@ -262,7 +245,7 @@ Cada uno va **encima de TCP o UDP** (capa de transporte).
 Una **dirección IP (Internet Protocol)** es un **identificador único** que permite que un dispositivo se comunique en
 una red. Funciona como una **dirección postal** para enviar información.
 
-### <strong>Tipos de direcciones IP:</strong>
+### Tipos de direcciones IP:
 
 - **IPv4:**
   - Formato: 192.168.1.10 (números de 0 a 255).
@@ -272,27 +255,11 @@ una red. Funciona como una **dirección postal** para enviar información.
   - Formato: 2001:0db8:85a3:0000:0000:8a2e:0370:7334
   - Diseñada para soportar millones de dispositivos más.
 
-### <strong>Clases de direcciones IP (IPv4):</strong>
+| Tipo IPv4 | Idea |
+| --------- | ---- |
+| Pública | Única en Internet |
+| Privada | LAN; no enrutable directo a Internet (ej. `192.168.0.0/16`) |
 
-- **Públicas:** Únicas en Internet, accesibles desde cualquier lugar.
-- **Privadas:** Usadas en redes locales, no accesibles directamente desde Internet. Ej: 192.168.0.0/16
+La IP identifica el host y enruta paquetes. La app usa **IP + puerto** (HTTP/HTTPS → 80/443).
 
-### <strong>Funciones de la IP:</strong>
-
-- Identificar dispositivos en la red.
-- Dirigir los paquetes de datos hacia el destino correcto.
-
-### <strong>Relación con los protocolos de aplicación:</strong>
-
-- Los **protocolos de aplicación** usan la **IP** para localizar a los dispositivos y el **puerto** para identificar la
-  aplicación dentro de ese dispositivo.
-
-<blockquote>
-Ejemplo práctico:
-
-- Quiero abrir un sitio web:
-  - Mi navegador usa **HTTP/HTTPS** (protocolo de aplicación).
-  - Se conecta a la **IP del servidor web** (dirección IP).
-  - Los datos llegan gracias a TCP/IP.
-
-</blockquote>
+Ejemplo: el navegador habla HTTPS con la IP del servidor; TCP/IP mueve los datos.

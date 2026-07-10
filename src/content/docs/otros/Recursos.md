@@ -19,9 +19,7 @@ description: Videos, plataformas y enlaces útiles para aprender ciberseguridad.
 
 **Enlace directo:** [Ver video en YouTube](https://www.youtube.com/watch?v=fUs1LM2b3JA&sttick=0)
 
-Este video ofrece una guía completa para comenzar en ciberseguridad desde cero. Presenta un **temario bien
-estructurado** con los fundamentos básicos, incluyendo **conceptos iniciales, virtualización, y organización de áreas de
-estudio**. Varios apartados de estas notas están inspirados en la estructura y contenidos de dicho video.
+Temario desde cero (conceptos, virtualización, mapa de áreas). Varias secciones de estas notas siguen esa estructura.
 
 ---
 
@@ -44,11 +42,7 @@ S4vitar](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBiHVMdKP1939J-rW
 
 **Sitio web y plataforma de práctica:** [https://hack4u.io/](https://hack4u.io/)
 
-<blockquote>
-Algunos temas de Linux y Python presentes en este repositorio provienen de conceptos aprendidos en la Academia S4vitar y
-su canal de youtube, complementados con apuntes personales.
-
-</blockquote>
+Nota: parte de Linux/Python aquí sale de lo visto en S4vitar + apuntes propios.
 
 ---
 
@@ -62,8 +56,4 @@ ciberseguridad desde una perspectiva conceptual y profesional.
 
 **Sitio web:** [https://hixec.com/](https://hixec.com/)
 
-<blockquote>
-Los apuntes de este repositorio relacionados con privacidad, anonimato y seguridad en Windows están inspirados en
-contenidos aprendidos en la Academia Hixec y su canal de YouTube.
-
-</blockquote>
+Nota: privacidad, anonimato y Windows se apoyan en material de Hixec + apuntes propios.

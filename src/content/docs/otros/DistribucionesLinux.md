@@ -104,13 +104,8 @@ más **flexibles y personalizables**.
 Aunque su configuración puede ser compleja, ofrece un **excelente control del sistema**, lo cual es muy valorado por
 usuarios avanzados.
 
-<blockquote>
-Cuanto más control tengamos sobre un sistema Linux, más complejo puede parecer,<br /> pero esa complejidad solo refleja
-las enormes posibilidades que ofrece.
-
-</blockquote>
-Sin un aprendizaje profundo, podríamos dedicar mucho más tiempo a configurar tareas simples que a aprender unos pocos
-comandos con profundidad.
+Más control = más diales que tocar. Sin base, pierdes tiempo en configs triviales; con unos comandos bien aprendidos
+avanzas más.
 
 ### Estabilidad y soporte
 
