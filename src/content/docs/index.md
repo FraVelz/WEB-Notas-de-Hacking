@@ -18,7 +18,14 @@ hero:
 
 # Bienvenido
 
-Notas personales para **ordenar y repasar** conceptos y comandos de pentesting. No sustituyen labs (HTB, TryHackMe, etc.) ni cursos: son material de apoyo.
+:::caution[Uso ético y legal]
+Estas notas son para **aprendizaje en entornos propios o con autorización escrita**. No uses técnicas
+ofensivas contra sistemas ajenos. Cumple las leyes de tu jurisdicción y el marco de
+[legalidad del hacking](/WEB-Notas-de-Hacking/conceptos-basicos/legalidadhacking/).
+:::
+
+Notas personales para **ordenar y repasar** conceptos y comandos de pentesting. No sustituyen labs
+(HTB, TryHackMe, etc.) ni cursos: son material de apoyo.
 
 Menú lateral por tema. En cada página: contexto corto, tablas/listas y algún ejemplo cuando aplica.
 
