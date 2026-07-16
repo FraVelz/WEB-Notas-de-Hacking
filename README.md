@@ -6,6 +6,10 @@ Sitio publicado en: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fr
 
 ![Captura de pantalla](./public/screenshot.png)
 
+**Posicionamiento:** jardín de notas / **Docs · Lab** — no es producto SaaS ni plataforma de cursos. En el
+portafolio ([WEB-Fravelz](https://github.com/FraVelz/WEB-Fravelz)) la ficha `notas-hacking` lleva badges de
+honestidad `lab` + `terminado` (contrato plan 11 / regresión A1-7). No pitchar como app fullstack.
+
 Apuntes para repasar ciberseguridad. Sitio estático con [Astro](https://astro.build/)
 y el tema [Starlight](https://starlight.astro.build/): las notas viven en Markdown (y MDX donde aplica), con búsqueda,
 tema oscuro y barra lateral definida explícitamente para mantener el orden de los temas.
@@ -46,6 +50,12 @@ Otros comandos útiles:
 
 - `pnpm build` — genera la salida en `dist/` (lista para GitHub Pages con el `base` configurado).
 - `pnpm preview` — sirve el build localmente para revisar antes de desplegar.
+- `pnpm lint:md` — markdownlint-cli2 (0 errores en `main`).
+- `pnpm lint:links` — link check interno del sitio compilado (requiere `pnpm build` antes).
+- `pnpm ci:local` — `lint:md` + `build` + `lint:links`.
+
+Tracks documentados en la home (Linux, Redes, OSINT) y labs reproducibles bajo `src/content/docs/labs/`.
+Plantilla de nota: [`TEMPLATE-nota.md`](./TEMPLATE-nota.md).
 
 ## 📁 Estructura del proyecto
 

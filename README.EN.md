@@ -6,6 +6,10 @@ Live site: [https://fravelz.github.io/WEB-Notas-de-Hacking/](https://fravelz.git
 
 ![Screenshot](./public/screenshot.png)
 
+**Positioning:** notes garden / **Docs · Lab** — not a SaaS product or course platform. In the portfolio
+([WEB-Fravelz](https://github.com/FraVelz/WEB-Fravelz)) the `notas-hacking` card uses honesty badges
+`lab` + `terminado` (plan 11 contract / A1-7 regression). Do not pitch it as a fullstack app.
+
 A guide to learn or refresh cybersecurity from the ground up. It is a static site built with
 [Astro](https://astro.build/) and the [Starlight](https://starlight.astro.build/) theme: notes are written in Markdown
 (and MDX where needed), with search, dark theme, and an explicit sidebar to keep topics in a sensible order.
@@ -46,6 +50,12 @@ Other useful commands:
 
 - `pnpm build` — writes output to `dist/` (ready for GitHub Pages with the configured `base`).
 - `pnpm preview` — serves the production build locally before deploy.
+- `pnpm lint:md` — markdownlint-cli2 (0 errors on `main`).
+- `pnpm lint:links` — internal link check of the built site (run `pnpm build` first).
+- `pnpm ci:local` — `lint:md` + `build` + `lint:links`.
+
+Learning tracks are documented on the home page (Linux, Networking, OSINT) and reproducible labs live under
+`src/content/docs/labs/`. Note template: [`TEMPLATE-nota.md`](./TEMPLATE-nota.md).
 
 ## 📁 Project layout
 
