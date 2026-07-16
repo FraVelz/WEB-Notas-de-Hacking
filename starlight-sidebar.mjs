@@ -6,6 +6,24 @@ export const starlightSidebar = [
   { label: 'Inicio', link: '/' },
 
   {
+    label: 'Tracks',
+    collapsed: false,
+    items: ['tracks/linux', 'tracks/redes', 'tracks/osint'],
+  },
+  {
+    label: 'Labs reproducibles',
+    collapsed: false,
+    items: [
+      'labs',
+      'labs/permisos-rwx',
+      'labs/nmap-discovery',
+      'labs/osint-whois-dns',
+      'labs/hash-verificar',
+      'labs/netcat-listener',
+    ],
+  },
+
+  {
     label: 'Conceptos básicos',
     collapsed: false,
     items: [

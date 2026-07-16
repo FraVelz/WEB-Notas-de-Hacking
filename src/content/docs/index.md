@@ -29,6 +29,18 @@ Notas personales para **ordenar y repasar** conceptos y comandos de pentesting. 
 
 Menú lateral por tema. En cada página: contexto corto, tablas/listas y algún ejemplo cuando aplica.
 
+## Tracks de aprendizaje
+
+Elige un camino ordenado (prereqs → práctica). Cada track enlaza notas del repo y labs reproducibles.
+
+| Track | Para quién | Empieza aquí |
+| ----- | ---------- | ------------ |
+| **Linux** | Terminal, permisos, Bash | [Track Linux](/WEB-Notas-de-Hacking/tracks/linux/) |
+| **Redes** | OSI/TCP-IP, nmap, labs de red | [Track Redes](/WEB-Notas-de-Hacking/tracks/redes/) |
+| **OSINT** | Fuentes abiertas, dorks, ética | [Track OSINT](/WEB-Notas-de-Hacking/tracks/osint/) |
+
+Labs con plantilla reproducible: [índice de labs](/WEB-Notas-de-Hacking/labs/).
+
 ## Mapa rápido
 
 - **Conceptos básicos** — Fundamentos, mitos y marco legal
