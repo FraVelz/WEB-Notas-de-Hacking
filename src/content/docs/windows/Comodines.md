@@ -5,7 +5,8 @@ description: Patrones * ? y [] para filtrar archivos en CMD y PowerShell.
 
 # Comodines
 
-Caracteres especiales para emparejar nombres de archivo sin escribirlos uno a uno. En CMD bastan `*` y `?`; PowerShell añade clases de caracteres `[]`.
+Caracteres especiales para emparejar nombres de archivo sin escribirlos uno a uno. En CMD bastan `*` y `?`; PowerShell
+añade clases de caracteres `[]`.
 
 ---
 
@@ -19,7 +20,8 @@ Caracteres especiales para emparejar nombres de archivo sin escribirlos uno a un
 | `[a-z]` | Un carácter en el rango (PowerShell) | `doc[a-c].txt` |
 | `[!abc]` / `[^abc]` | Un carácter que **no** esté en el conjunto (según contexto) | `*[!e].txt` (en PS con `-Path` / filtros) |
 
-En CMD, `dir` y `del` usan `*` y `?`. Los corchetes son más fiables en PowerShell (`Get-ChildItem`, `-Filter` vs `-Include` tienen matices).
+En CMD, `dir` y `del` usan `*` y `?`. Los corchetes son más fiables en PowerShell (`Get-ChildItem`, `-Filter` vs
+`-Include` tienen matices).
 
 ---
 
@@ -79,4 +81,5 @@ Get-ChildItem archivo?.txt | ForEach-Object {
 
 ### Tip importante
 
-En CMD los comodines son muy básicos (`*` y `?`), mientras que en PowerShell puedes usar expresiones más avanzadas con corchetes, rangos y, para filtros complejos, `-match` / regex sobre `$_.Name`.
+En CMD los comodines son muy básicos (`*` y `?`), mientras que en PowerShell puedes usar expresiones más avanzadas con
+corchetes, rangos y, para filtros complejos, `-match` / regex sobre `$_.Name`.

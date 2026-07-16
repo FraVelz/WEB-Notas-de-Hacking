@@ -5,13 +5,15 @@ description: Streams de salida y operadores >, >>, *>, Tee-Object y && / || en P
 
 # Redirecciones en Powershell (operadores lógicos y de redirección)
 
-Mandar stdout/stderr (y otros streams) a archivos, o encadenar comandos según éxito/fallo. PowerShell numera varios flujos, no solo “pantalla vs error” como CMD.
+Mandar stdout/stderr (y otros streams) a archivos, o encadenar comandos según éxito/fallo. PowerShell numera varios
+flujos, no solo “pantalla vs error” como CMD.
 
 ---
 
 ## Tipos de salida en PowerShell
 
-PowerShell no solo maneja texto (como CMD), sino **flujos de salida (streams)**. Cada flujo tiene un número que se usa para redirigirlo:
+PowerShell no solo maneja texto (como CMD), sino **flujos de salida (streams)**. Cada flujo tiene un número que se usa
+para redirigirlo:
 
 | Nº | Stream | Qué es |
 | -- | ------ | ------ |

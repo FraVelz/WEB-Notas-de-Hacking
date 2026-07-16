@@ -37,5 +37,5 @@ que subes con terceros (véase el aviso de VirusTotal).
 
 ## Relación con otras notas
 
-- Concientización y phishing: [Concientización](/otros/concientizacion/).
-- OSINT y búsqueda en fuentes abiertas: [OSINT básico](/osint/basic/).
+- Concientización y phishing: [Concientización](/WEB-Notas-de-Hacking/otros/concientizacion/).
+- OSINT y búsqueda en fuentes abiertas: [OSINT básico](/WEB-Notas-de-Hacking/osint/basic/).

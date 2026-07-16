@@ -59,4 +59,5 @@ strings archivo.bin | grep "password"
 | `ps aux \| grep` | Procesos. |
 | `strings \| grep` | Texto legible en binarios. |
 
-Más sobre `which`: [Which](/WEB-Notas-de-Hacking/linux/comandos/Which/). Docs: [man find](https://man7.org/linux/man-pages/man1/find.1.html), [man grep](https://man7.org/linux/man-pages/man1/grep.1.html).
+Más sobre `which`: [Which](/WEB-Notas-de-Hacking/linux/comandos/which/). Docs: [man
+find](https://man7.org/linux/man-pages/man1/find.1.html), [man grep](https://man7.org/linux/man-pages/man1/grep.1.html).

@@ -5,8 +5,10 @@ description: Glosario de términos útiles para inteligencia de fuentes abiertas
 
 # Terminología OSINT
 
-Definiciones breves para leer el resto de la sección **OSINT** y enlaces con [Teoría de redes](/redes/teoria/). Para
-práctica guiada: [OSINT básico](/osint/basic/) y [Google Dorks](/osint/googledoorks/).
+Definiciones breves para leer el resto de la sección **OSINT** y enlaces con
+[Teoría de redes](/WEB-Notas-de-Hacking/redes/teoria/). Para práctica guiada:
+[OSINT básico](/WEB-Notas-de-Hacking/osint/basic/) y
+[Google Dorks](/WEB-Notas-de-Hacking/osint/googledoorks/).
 
 ## Dominio
 
@@ -46,7 +48,7 @@ pruebas invasivas. Es el “mapa” antes de pentesting u OSINT más profundo, s
 ## Huella digital
 
 Rastro acumulado de una persona u organización en Internet: perfiles, menciones, documentos con metadatos, reutilización
-de nombres de usuario. Relacionado con la página [Huella digital](/anonimato/huelladigital/).
+de nombres de usuario. Relacionado con la página [Huella digital](/WEB-Notas-de-Hacking/anonimato/huelladigital/).
 
 ## Breach / filtración
 
@@ -68,4 +70,4 @@ Borrar metadatos antes de publicar reduce fugas involuntarias.
 - **OSINT** (_Open Source Intelligence_): inteligencia a partir de fuentes abiertas y legales en general.
 - **SocMINT**: subconjunto centrado en redes sociales, foros y comunidades.
 
-Para metodología y herramientas: [OSINT básico](/osint/basic/).
+Para metodología y herramientas: [OSINT básico](/WEB-Notas-de-Hacking/osint/basic/).

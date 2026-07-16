@@ -12,6 +12,8 @@ on:
       - "starlight-sidebar.mjs"
       - "tsconfig.json"
       - "eslint.config.js"
+      - ".markdownlint*"
+      - "TEMPLATE-nota.md"
       - ".github/workflows/**"
   pull_request:
     branches: [main]
@@ -24,6 +26,8 @@ on:
       - "starlight-sidebar.mjs"
       - "tsconfig.json"
       - "eslint.config.js"
+      - ".markdownlint*"
+      - "TEMPLATE-nota.md"
       - ".github/workflows/**"
 
 concurrency:
@@ -36,7 +40,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -53,8 +57,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Markdownlint
+        run: pnpm run lint:md
+
       - name: Build
         run: pnpm run build
+
+      - name: Link check (built site)
+        run: pnpm run lint:links
 
       - name: Upload Pages artifact
         if: github.event_name == 'push'
@@ -64,7 +74,7 @@ jobs:
 
   deploy:
     if: github.event_name == 'push'
-    needs: build
+    needs: quality
     runs-on: ubuntu-latest
     environment:
       name: github-pages

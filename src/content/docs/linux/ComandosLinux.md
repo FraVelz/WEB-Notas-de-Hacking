@@ -5,7 +5,8 @@ description: Historia breve, FHS, variables de entorno y comandos básicos de Li
 
 # Introducción a Linux
 
-SO libre/open source con muchas distros (Ubuntu, Debian, Fedora, Parrot…). En ciberseguridad aparece en servidores, labs y Android (kernel).
+SO libre/open source con muchas distros (Ubuntu, Debian, Fedora, Parrot…). En ciberseguridad aparece en servidores, labs
+y Android (kernel).
 
 ---
 
@@ -84,7 +85,8 @@ name="$name:text"      # concatenar
 | `sudo` | Ejecutar como root (si estás en sudoers). | `sudo apt update` |
 | `man` | Manual. | `man ls` |
 
-Más detalle de permisos: [Permisos](/WEB-Notas-de-Hacking/linux/Permisos/). Ayuda en terminal: [AyudaLinux](/WEB-Notas-de-Hacking/linux/AyudaLinux/).
+Más detalle de permisos: [Permisos](/WEB-Notas-de-Hacking/linux/permisos/). Ayuda en terminal:
+[AyudaLinux](/WEB-Notas-de-Hacking/linux/ayudalinux/).
 
 ---
 
@@ -102,7 +104,8 @@ chown usuario:grupo archivo.txt
 
 ## sudo
 
-Ejecuta un comando con privilegios de root si tu usuario está en `/etc/sudoers` (editar con `visudo`). Pide tu password (no la de root) y la cachea unos minutos.
+Ejecuta un comando con privilegios de root si tu usuario está en `/etc/sudoers` (editar con `visudo`). Pide tu password
+(no la de root) y la cachea unos minutos.
 
 ```bash
 sudo apt update

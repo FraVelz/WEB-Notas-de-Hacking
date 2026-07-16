@@ -5,7 +5,8 @@ description: Comandos CMD y cmdlets de PowerShell para moverte, listar y gestion
 
 # Comandos de Navegación
 
-Moverte por el sistema de archivos y crear/copiar/borrar cosas desde la terminal. En CMD son comandos clásicos; en PowerShell, cmdlets Verbo-Sustantivo (muchos tienen alias tipo `ls`, `cd`, `cp`).
+Moverte por el sistema de archivos y crear/copiar/borrar cosas desde la terminal. En CMD son comandos clásicos; en
+PowerShell, cmdlets Verbo-Sustantivo (muchos tienen alias tipo `ls`, `cd`, `cp`).
 
 ---
 

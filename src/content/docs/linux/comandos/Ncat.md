@@ -5,7 +5,8 @@ description: "Ncat (netcat de Nmap): cliente/servidor TCP-UDP, transferencias y 
 
 # Ncat en Linux
 
-Versión de netcat de Nmap: cliente/servidor TCP/UDP, transferencias, SSL, proxies. En lab, también shells remotas (solo entornos controlados).
+Versión de netcat de Nmap: cliente/servidor TCP/UDP, transferencias, SSL, proxies. En lab, también shells remotas (solo
+entornos controlados).
 
 ---
 

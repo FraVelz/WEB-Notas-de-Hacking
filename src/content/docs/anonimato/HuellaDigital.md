@@ -16,7 +16,8 @@ Rastro que dejas al usar internet o dispositivos: lo que publicas y lo que el si
 | **Activa** | Lo publicas o compartes a propósito | Posts, fotos, comentarios, mensajes en foros |
 | **Pasiva** | Se genera sin que lo publiques | IP, cookies, historial, fingerprint del navegador, geoloc de apps |
 
-La activa la controlas más (privacidad de cuentas, qué subes). La pasiva es más técnica: headers, canvas/WebGL, fuentes, plugins, resolución, etc.
+La activa la controlas más (privacidad de cuentas, qué subes). La pasiva es más técnica: headers, canvas/WebGL, fuentes,
+plugins, resolución, etc.
 
 ---
 
@@ -32,4 +33,5 @@ La activa la controlas más (privacidad de cuentas, qué subes). La pasiva es m�
 
 ## Ver qué filtra tu navegador
 
-[Cover Your Tracks (EFF)](https://coveryourtracks.eff.org/) muestra qué datos puede leer un sitio de tu navegador y cómo de única es tu huella.
+[Cover Your Tracks (EFF)](https://coveryourtracks.eff.org/) muestra qué datos puede leer un sitio de tu navegador y cómo
+de única es tu huella.

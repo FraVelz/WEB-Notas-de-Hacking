@@ -48,7 +48,9 @@ Recolectar y analizar amenazas para anticiparlas.
 ### Subramas
 
 - **CTI:** TTPs de grupos, IOCs, campañas.
-- **Forense digital:** evidencia tras un incidente — notas: [Básicos](/WEB-Notas-de-Hacking/forense/basicos/), [Artefactos](/WEB-Notas-de-Hacking/forense/artefactos/), [Herramientas](/WEB-Notas-de-Hacking/forense/herramientas/).
+- **Forense digital:** evidencia tras un incidente — notas: [Básicos](/WEB-Notas-de-Hacking/forense/basicos/),
+  - [Artefactos](/WEB-Notas-de-Hacking/forense/artefactos/),
+  - [Herramientas](/WEB-Notas-de-Hacking/forense/herramientas/).
 - **OSINT:** fuentes públicas.
 - **Contrainteligencia:** espionaje / desinformación.
 
@@ -69,7 +71,10 @@ Proteger datos con algoritmos, claves y protocolos.
 
 _Herramientas:_ OpenSSL, GPG, Hashcat, VeraCrypt.
 
-_Notas en este repo:_ [Básicos](/WEB-Notas-de-Hacking/criptografia/basicos/), [Hashing](/WEB-Notas-de-Hacking/criptografia/hashing/), [Encoding vs encryption](/WEB-Notas-de-Hacking/criptografia/encodingvsencryption/), [César](/WEB-Notas-de-Hacking/criptografia/cifradocesar/).
+_Notas en este repo:_ [Básicos](/WEB-Notas-de-Hacking/criptografia/basicos/),
+[Hashing](/WEB-Notas-de-Hacking/criptografia/hashing/), [Encoding vs
+encryption](/WEB-Notas-de-Hacking/criptografia/encodingvsencryption/),
+[César](/WEB-Notas-de-Hacking/criptografia/cifradocesar/).
 
 ---
 

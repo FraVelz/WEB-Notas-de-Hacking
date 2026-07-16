@@ -5,7 +5,8 @@ description: Crear, listar y modificar usuarios locales (y AD) desde CMD y Power
 
 # Comandos y cmdlets de gestión de usuarios
 
-Alta, baja y consulta de cuentas. En local usas `net user` o el módulo **LocalAccounts**; en dominio, el módulo **ActiveDirectory**. Casi todo pide **ejecutar como administrador**.
+Alta, baja y consulta de cuentas. En local usas `net user` o el módulo **LocalAccounts**; en dominio, el módulo
+**ActiveDirectory**. Casi todo pide **ejecutar como administrador**.
 
 ---
 
@@ -28,7 +29,8 @@ Estos comandos funcionan desde **Símbolo del sistema (cmd)** con permisos de ad
 
 ## 2. Cmdlets de gestión de usuarios en PowerShell
 
-Estos cmdlets forman parte de los módulos **Microsoft.PowerShell.LocalAccounts** o **ActiveDirectory** (si está instalado).
+Estos cmdlets forman parte de los módulos **Microsoft.PowerShell.LocalAccounts** o **ActiveDirectory** (si está
+instalado).
 
 ### Usuarios locales
 

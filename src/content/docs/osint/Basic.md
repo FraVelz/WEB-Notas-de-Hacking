@@ -26,7 +26,8 @@ de pentesting: el marco general está en
 3. **Documentar:** URL, fecha y herramienta (y captura si el informe lo requiere).
 4. **Verificar:** cruza fuentes; los homónimos y perfiles falsos son frecuentes.
 
-Glosario: [Terminología OSINT](/WEB-Notas-de-Hacking/osint/terminologia/). Búsqueda avanzada: [Google Dorks](/WEB-Notas-de-Hacking/osint/googledoorks/).
+Glosario: [Terminología OSINT](/WEB-Notas-de-Hacking/osint/terminologia/). Búsqueda avanzada: [Google
+Dorks](/WEB-Notas-de-Hacking/osint/googledoorks/).
 
 ## Navegador y tecnologías web
 
@@ -78,9 +79,11 @@ Herramientas antiguas como **creepy** suelen estar desactualizadas; prioriza pro
 ## SocMINT (redes sociales)
 
 Rama del OSINT centrada en **redes sociales y foros**: publicaciones públicas, hashtags, eventos. Sirve para
-verificación o investigaciones con mandato claro. Cruza con [Huella digital](/WEB-Notas-de-Hacking/anonimato/huelladigital/) y
+verificación o investigaciones con mandato claro. Cruza con [Huella
+digital](/WEB-Notas-de-Hacking/anonimato/huelladigital/) y
 [Concientización](/WEB-Notas-de-Hacking/otros/concientizacion/) para el lado defensivo.
 
 ## Herramientas generales del día a día
 
-Enlaces rápidos en [Herramientas](/WEB-Notas-de-Hacking/otros/herramientas/) (VirusTotal, reputación de dominios, contraseñas).
+Enlaces rápidos en [Herramientas](/WEB-Notas-de-Hacking/otros/herramientas/) (VirusTotal, reputación de dominios,
+contraseñas).

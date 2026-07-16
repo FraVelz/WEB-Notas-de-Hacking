@@ -12,7 +12,7 @@ por sitio, texto en URL, título, tipo de archivo, etc. Son útiles en investiga
 ## Uso responsable
 
 Encontrar una URL en el índice **no** te da derecho a explotar el sistema, descargar datos privados sin permiso ni
-eludir controles de acceso. Para el marco legal y ético: [Legalidad del hacking](/conceptos-basicos/legalidadhacking/).
+eludir controles de acceso. Para el marco legal y ético: [Legalidad del hacking](/WEB-Notas-de-Hacking/conceptos-basicos/legalidadhacking/).
 En **bug bounty**, respeta siempre el alcance publicado.
 
 No abras enlaces dudosos ni introduzcas credenciales en sitios no oficiales; los resultados pueden incluir páginas HTTP
@@ -96,4 +96,4 @@ En la **Google Hacking Database** hay consultas de ejemplo usadas en seguridad (
 
 - [Google Hacking Database (Exploit-DB)](https://www.exploit-db.com/google-hacking-database)
 
-Contexto más amplio: [OSINT básico](/osint/basic/) y [Terminología](/osint/terminologia/).
+Contexto más amplio: [OSINT básico](/WEB-Notas-de-Hacking/osint/basic/) y [Terminología](/WEB-Notas-de-Hacking/osint/terminologia/).

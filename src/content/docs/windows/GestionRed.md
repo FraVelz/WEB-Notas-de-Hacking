@@ -6,8 +6,8 @@ description: Comandos y cmdlets habituales para diagnóstico y configuración de
 # Comandos y cmdlets de gestión de red
 
 Referencia rápida para **CMD** y **PowerShell**. Muchas operaciones requieren **ejecutar como administrador**. Para
-fundamentos TCP/IP y DNS, complementa con [Teoría de redes](/redes/teoria/) y
-[Herramientas de red](/redes/herramientas/).
+fundamentos TCP/IP y DNS, complementa con [Teoría de redes](/WEB-Notas-de-Hacking/redes/teoria/) y
+[Herramientas de red](/WEB-Notas-de-Hacking/redes/herramientas/).
 
 ## CMD — Comandos de red
 

@@ -40,13 +40,15 @@ Hover antes de clic; cuidado con acortadores. Si dudas: [VirusTotal](https://www
 
 ## 4. QR maliciosos
 
-Pueden ir a phishing o malware. No escanear QRs sueltos en la calle; mirar si hay pegatina encima de otro QR; apps que muestren la URL antes de abrir.
+Pueden ir a phishing o malware. No escanear QRs sueltos en la calle; mirar si hay pegatina encima de otro QR; apps que
+muestren la URL antes de abrir.
 
 ---
 
 ## 5. Contraseñas
 
-Únicas, largas; gestor (Bitwarden, KeePass, 1Password); 2FA. Si un sitio se filtra y reutilizabas la pass, el resto de cuentas cae con ella.
+Únicas, largas; gestor (Bitwarden, KeePass, 1Password); 2FA. Si un sitio se filtra y reutilizabas la pass, el resto de
+cuentas cae con ella.
 
 ---
 

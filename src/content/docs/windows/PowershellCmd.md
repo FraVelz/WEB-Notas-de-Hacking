@@ -5,7 +5,8 @@ description: Diferencias prácticas entre CMD (texto/batch) y PowerShell (objeto
 
 # Diferencias entre Powershell y CMD
 
-Dos shells en Windows: CMD es el clásico basado en texto; PowerShell trabaja con **objetos .NET** y automatiza administración moderna.
+Dos shells en Windows: CMD es el clásico basado en texto; PowerShell trabaja con **objetos .NET** y automatiza
+administración moderna.
 
 ---
 

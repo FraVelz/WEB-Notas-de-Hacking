@@ -38,7 +38,8 @@ Información general: herramientas, colaboradores, actualizaciones, etc.
 
 ### cosas implementadas:
 
-- Creación de todas las secciones del readme.md; falta info más completa por área (redes, bash, forense, OSINT, criptografía, pentesting, etc.).
+- Creación de todas las secciones del readme.md; falta info más completa por área (redes, bash, forense, OSINT,
+  - criptografía, pentesting, etc.).
 - nuevo apartado readme.md => 3.ramas de ciberseguridad
 - nuevo apartado readme.md => 4.pentesting
 - nuevo apartado readme.md => 5.osint

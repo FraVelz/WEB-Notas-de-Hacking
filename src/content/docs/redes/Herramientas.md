@@ -51,7 +51,8 @@ msfconsole
 # use exploit/... ; set RHOSTS ... ; run
 ```
 
-**Cuándo:** después de tener un vector claro (Nmap + CVE/lab) y quieres PoC de explotación o post-explotación. Solo labs (Metasploitable, HTB, THM) o pruebas autorizadas.
+**Cuándo:** después de tener un vector claro (Nmap + CVE/lab) y quieres PoC de explotación o post-explotación. Solo labs
+(Metasploitable, HTB, THM) o pruebas autorizadas.
 
 ---
 
@@ -61,4 +62,5 @@ msfconsole
 2. **Wireshark** — si necesitas mirar el tráfico concreto.
 3. **Metasploit** — validar un fallo ya identificado.
 
-Docs: [Wireshark](https://www.wireshark.org/docs/) · [Nmap](https://nmap.org/book/man.html) · [Metasploit](https://docs.metasploit.com/)
+Docs: [Wireshark](https://www.wireshark.org/docs/) · [Nmap](https://nmap.org/book/man.html) ·
+[Metasploit](https://docs.metasploit.com/)

@@ -9,7 +9,8 @@ description: Dividir una red IP en subredes más pequeñas cambiando la máscara
 
 ## Qué es
 
-**Subnetting** (subneteo) es dividir una red grande en **subredes** más pequeñas. Sirve para organizar tráfico, aprovechar IPs y aislar segmentos.
+**Subnetting** (subneteo) es dividir una red grande en **subredes** más pequeñas. Sirve para organizar tráfico,
+aprovechar IPs y aislar segmentos.
 
 ---
 

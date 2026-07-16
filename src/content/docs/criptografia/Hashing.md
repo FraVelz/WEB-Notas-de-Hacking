@@ -28,11 +28,13 @@ Comparar el digest con el publicado por el autor del ISO/paquete.
 
 ## Colisiones (idea)
 
-Dos inputs distintos con el **mismo** hash. En MD5/SHA-1 es factible en contextos de ataque; por eso no se usan para firmas ni autenticidad seria.
+Dos inputs distintos con el **mismo** hash. En MD5/SHA-1 es factible en contextos de ataque; por eso no se usan para
+firmas ni autenticidad seria.
 
 ## Passwords
 
-No guardes `md5(password)`. Usa KDF (bcrypt/Argon2) con sal única. En pentest, si encuentras hashes, el tipo (formato John/Hashcat) marca cómo atacarlos **en lab autorizado**.
+No guardes `md5(password)`. Usa KDF (bcrypt/Argon2) con sal única. En pentest, si encuentras hashes, el tipo (formato
+John/Hashcat) marca cómo atacarlos **en lab autorizado**.
 
 ## Ejemplo lab
 

@@ -37,3 +37,6 @@ dist-ssr
 # Environment variables
 .env
 .env.production
+
+# Link check staging (base path)
+.ci-site/

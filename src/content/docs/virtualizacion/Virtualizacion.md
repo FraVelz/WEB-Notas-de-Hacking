@@ -52,8 +52,8 @@ que todo el equipo se quede sin recursos.
 
 ## Siguientes pasos en estas notas
 
-- [Comandos Linux](/linux/comandoslinux/) y [Fundamentos de Bash](/linux/fundamentos/)
-- [Teoría de redes](/redes/teoria/) cuando conectes varias VMs
+- [Comandos Linux](/WEB-Notas-de-Hacking/linux/comandoslinux/) y [Fundamentos de Bash](/WEB-Notas-de-Hacking/linux/fundamentos/)
+- [Teoría de redes](/WEB-Notas-de-Hacking/redes/teoria/) cuando conectes varias VMs
 
 Ejemplo de entorno en VirtualBox:
 

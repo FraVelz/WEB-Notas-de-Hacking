@@ -5,7 +5,8 @@ description: Crear grupos locales, añadir miembros y consultar grupos de domini
 
 # Comandos y cmdlets de grupos
 
-Los grupos agrupan permisos: metes usuarios y heredas derechos. Local con `net localgroup` / LocalAccounts; en dominio con el módulo ActiveDirectory.
+Los grupos agrupan permisos: metes usuarios y heredas derechos. Local con `net localgroup` / LocalAccounts; en dominio
+con el módulo ActiveDirectory.
 
 ---
 
@@ -27,7 +28,8 @@ Todos estos comandos se ejecutan en **Símbolo del sistema (CMD)** con permisos 
 
 ## 2. Cmdlets de gestión de grupos en PowerShell
 
-Estos cmdlets pertenecen al módulo **Microsoft.PowerShell.LocalAccounts** (grupos locales). Si usas Active Directory, también hay cmdlets del módulo **ActiveDirectory**.
+Estos cmdlets pertenecen al módulo **Microsoft.PowerShell.LocalAccounts** (grupos locales). Si usas Active Directory,
+también hay cmdlets del módulo **ActiveDirectory**.
 
 ### Grupos locales
 

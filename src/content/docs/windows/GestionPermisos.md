@@ -5,7 +5,8 @@ description: Ver y cambiar ACL de archivos/carpetas con icacls, takeown y Get-Ac
 
 # Comandos y cmdlets de gestión de permisos
 
-Quién puede leer, escribir o tomar posesión de un archivo/carpeta. En CMD: `icacls` y `takeown`. En PowerShell: objetos ACL con `Get-Acl` / `Set-Acl`.
+Quién puede leer, escribir o tomar posesión de un archivo/carpeta. En CMD: `icacls` y `takeown`. En PowerShell: objetos
+ACL con `Get-Acl` / `Set-Acl`.
 
 ---
 
